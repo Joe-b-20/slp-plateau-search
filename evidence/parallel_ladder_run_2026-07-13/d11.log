@@ -1,0 +1,8 @@
+[    0.0s 21:29:17] worker start: engine=lns depth=11 start=/home/joebachir20/replication_kit/method_reconstruction/record_hunter/runs_parallel/20260713_135829/seed_from_d10.json seeds=[1, 2, 3]
+[    0.3s 21:29:17]   NEW BEST 91 gates depth 5 VERIFIED  -> d11_best.json
+[  946.5s 21:45:03]   NEW BEST 90 gates depth 5 VERIFIED it=52725 -> d11_best.json
+[ 1459.5s 21:53:36] [lns] 1459s iters=80000 cur=93 best=90
+[ 4950.3s 22:51:47] [lns] 4950s iters=260000 cur=94 best=90
+[31458.4s 06:13:35] [lns] 31458s iters=1600000 cur=90 best=90
+[39912.5s 08:34:29] [lns] 39912s iters=2020000 cur=94 best=90
+[49662.7s 11:16:59] [lns] 49662s iters=2500000 cur=92 best=90

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this method or these circuits, please cite this repository."
+title: "slp-plateau-search: value-set SLP search with plateau and hub moves (record XOR circuits for AES MixColumns)"
+authors:
+  - family-names: Bachir
+    given-names: Joe
+version: "1.0.0"
+date-released: 2026-07-16
+repository-code: "https://github.com/Joe-b-20/slp-plateau-search"
+keywords:
+  - AES
+  - MixColumns
+  - XOR circuit
+  - shortest linear program
+  - local search
+  - simulated annealing
+license: MIT

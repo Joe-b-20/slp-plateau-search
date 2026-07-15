@@ -1,0 +1,30 @@
+{
+  "chunk_s": 600,
+  "reseed": true,
+  "knobs": {
+    "lns": {
+      "kmax": 6,
+      "kshake": 12,
+      "snapback": 8,
+      "nsamp": [
+        24,
+        24
+      ],
+      "up_prob": 0.5,
+      "up_slack": 4
+    },
+    "walk": {
+      "hub_move_p": 0.35,
+      "close_hamming": 4,
+      "repair_hub": 40,
+      "repair_one": 24,
+      "plateau_slack_p": 0.02
+    },
+    "anneal3": {
+      "anneal_iters": 150000,
+      "ils_rounds": 2500,
+      "sa_T0": 2.0,
+      "sa_T1": 0.05
+    }
+  }
+}

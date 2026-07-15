@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+pipeline/runs_parallel/
+pipeline/runs_smoke/
+reproduce/out_*.json
+.pytest_cache/

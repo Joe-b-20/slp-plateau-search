@@ -1,0 +1,5 @@
+[    0.0s 13:58:30] worker start: engine=anneal3 depth=3 start=scratch seeds=[1, 2, 3]
+[   13.0s 13:58:43]   NEW BEST 100 gates depth 3 VERIFIED seed=1 -> d3_best.json
+[   26.9s 13:58:56]   NEW BEST 99 gates depth 3 VERIFIED seed=2 -> d3_best.json
+[  131.7s 14:00:41]   NEW BEST 98 gates depth 3 VERIFIED seed=10 -> d3_best.json
+[  235.3s 14:02:25]   NEW BEST 97 gates depth 3 VERIFIED seed=18 -> d3_best.json

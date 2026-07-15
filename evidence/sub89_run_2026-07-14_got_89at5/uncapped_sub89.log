@@ -1,0 +1,3 @@
+[     0.0s 14:16:39] worker start: engine=lns depth=None start=/home/joebachir20/replication_kit/method_reconstruction/pipeline/seeds/seed_89_at_depth6.json seeds=[1, 2, 3] chunk=600s reseed=True
+[     0.2s 14:16:39]   NEW BEST 89 gates depth 6 VERIFIED  -> uncapped_sub89_best.json
+[   591.9s 14:26:31]   NEW BEST 89 gates depth 5 VERIFIED depth-tiebreak it=51958 -> uncapped_sub89_best.json

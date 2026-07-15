@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 390" font-family="Helvetica,Arial,sans-serif" font-size="13">
+<rect x="0" y="0" width="670" height="390" fill="white"/>
+<line x1="70" y1="330.0" x2="630" y2="330.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="334.0" text-anchor="end" fill="#555555">88</text>
+<line x1="70" y1="280.0" x2="630" y2="280.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="284.0" text-anchor="end" fill="#555555">90</text>
+<line x1="70" y1="230.0" x2="630" y2="230.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="234.0" text-anchor="end" fill="#555555">92</text>
+<line x1="70" y1="180.0" x2="630" y2="180.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="184.0" text-anchor="end" fill="#555555">94</text>
+<line x1="70" y1="130.0" x2="630" y2="130.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="134.0" text-anchor="end" fill="#555555">96</text>
+<line x1="70" y1="80.0" x2="630" y2="80.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="84.0" text-anchor="end" fill="#555555">98</text>
+<line x1="70" y1="30.0" x2="630" y2="30.0" stroke="#dddddd" stroke-width="1"/>
+<text x="62" y="34.0" text-anchor="end" fill="#555555">100</text>
+<line x1="70.0" y1="30" x2="70.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="70.0" y="350" text-anchor="middle" fill="#555555">3</text>
+<line x1="150.0" y1="30" x2="150.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="150.0" y="350" text-anchor="middle" fill="#555555">4</text>
+<line x1="230.0" y1="30" x2="230.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="230.0" y="350" text-anchor="middle" fill="#555555">5</text>
+<line x1="310.0" y1="30" x2="310.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="310.0" y="350" text-anchor="middle" fill="#555555">6</text>
+<line x1="390.0" y1="30" x2="390.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="390.0" y="350" text-anchor="middle" fill="#555555">7</text>
+<line x1="470.0" y1="30" x2="470.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="470.0" y="350" text-anchor="middle" fill="#555555">8</text>
+<line x1="550.0" y1="30" x2="550.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="550.0" y="350" text-anchor="middle" fill="#555555">9</text>
+<line x1="630.0" y1="30" x2="630.0" y2="330" stroke="#eeeeee" stroke-width="1"/>
+<text x="630.0" y="350" text-anchor="middle" fill="#555555">10</text>
+<rect x="70" y="30" width="560" height="300" fill="none" stroke="#999999"/>
+<text x="350" y="375" text-anchor="middle" fill="#333333">circuit depth</text>
+<text x="18" y="180" text-anchor="middle" fill="#333333" transform="rotate(-90 18 180)">2-input XOR gates</text>
+<polyline points="70.0,55.0 150.0,105.0 230.0,180.0 310.0,230.0 390.0,255.0" fill="none" stroke="#888888" stroke-width="2.5" stroke-dasharray="6,4"/>
+<circle cx="70.0" cy="55.0" r="5" fill="#888888"/>
+<text x="79.0" y="47.0" fill="#666666">99 SFX23</text>
+<circle cx="150.0" cy="105.0" r="5" fill="#888888"/>
+<text x="159.0" y="97.0" fill="#666666">97 OC24</text>
+<circle cx="230.0" cy="180.0" r="5" fill="#888888"/>
+<text x="239.0" y="172.0" fill="#666666">94 OC24</text>
+<circle cx="310.0" cy="230.0" r="5" fill="#888888"/>
+<text x="319.0" y="222.0" fill="#666666">92 Max19</text>
+<circle cx="390.0" cy="255.0" r="5" fill="#888888"/>
+<text x="399.0" y="247.0" fill="#666666">91 LXZZ21</text>
+<path d="M65.0 75.0 L75.0 85.0 M65.0 85.0 L75.0 75.0" stroke="#bbbbbb" stroke-width="2"/>
+<path d="M305.0 250.0 L315.0 260.0 M305.0 260.0 L315.0 250.0" stroke="#bbbbbb" stroke-width="2"/>
+<path d="M625.0 300.0 L635.0 310.0 M625.0 310.0 L635.0 300.0" stroke="#bbbbbb" stroke-width="2"/>
+<polyline points="70.0,105.0 150.0,230.0 230.0,305.0" fill="none" stroke="#1f6feb" stroke-width="2.5"/>
+<circle cx="70.0" cy="105.0" r="6" fill="#1f6feb"/>
+<text x="80.0" y="123.0" font-weight="bold" fill="#1f6feb">97</text>
+<circle cx="150.0" cy="230.0" r="6" fill="#1f6feb"/>
+<text x="160.0" y="248.0" font-weight="bold" fill="#1f6feb">92</text>
+<circle cx="230.0" cy="305.0" r="6" fill="#1f6feb"/>
+<text x="240.0" y="323.0" font-weight="bold" fill="#1f6feb">89</text>
+<line x1="390" y1="44" x2="424" y2="44" stroke="#888888" stroke-width="2.5" stroke-dasharray="6,4"/>
+<text x="432" y="48" fill="#333333">published frontier</text>
+<circle cx="407" cy="66" r="6" fill="#1f6feb"/>
+<text x="432" y="70" fill="#333333">this work</text>
+<path d="M402 83 L412 93 M402 93 L412 83" stroke="#bbbbbb" stroke-width="2"/>
+<text x="432" y="92" fill="#333333">this project, superseded (v1)</text>
+</svg>

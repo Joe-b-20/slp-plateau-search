@@ -1,0 +1,5 @@
+[     0.0s 17:00:40] worker start: engine=lns depth=4 start=/home/joebachir20/replication_kit/method_reconstruction/pipeline/runs_parallel/20260714_150032/seed_from_d3.json seeds=[1, 2, 3] chunk=600s reseed=True
+[     0.2s 17:00:40]   NEW BEST 97 gates depth 3 VERIFIED  -> d4_best.json
+[    88.1s 17:02:08]   NEW BEST 96 gates depth 4 VERIFIED it=8937 -> d4_best.json
+[   587.7s 17:10:27]   NEW BEST 95 gates depth 4 VERIFIED it=45577 -> d4_best.json
+[  3001.6s 17:50:41]   ADOPTED reseed 92 gates depth 4 from reseed_d4.json

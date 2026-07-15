@@ -1,0 +1,20 @@
+[
+ {
+  "gates": 97,
+  "depth": 3,
+  "file": "circuits/mixcolumns_97gates_depth3.json",
+  "sha256": "d7289a99cad19573d5e76cd834b8c10809967bdebaecc021ff70457ed79a170f"
+ },
+ {
+  "gates": 92,
+  "depth": 4,
+  "file": "circuits/mixcolumns_92gates_depth4.json",
+  "sha256": "3615c132cae7e4fb05beff2a1e8b55db04b5251f44629220e467b06185be0c99"
+ },
+ {
+  "gates": 89,
+  "depth": 5,
+  "file": "circuits/mixcolumns_89gates_depth5.json",
+  "sha256": "209f74d5717112f80203db4324b22a83e5f8ea0c9c45b32eda09c83413529746"
+ }
+]
