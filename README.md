@@ -1,5 +1,7 @@
 # slp-plateau-search
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21402996.svg)](https://doi.org/10.5281/zenodo.21402996)
+
 The search method and evidence behind the record 2-input XOR circuits for AES
 MixColumns: **97 gates at depth 3, 92 at depth 4, 89 at depth 5** — each
 improving the published depth–count Pareto frontier (99 @ 3, Shi–Feng–Xu ToSC

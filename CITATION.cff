@@ -7,6 +7,14 @@ authors:
 version: "1.0.0"
 date-released: 2026-07-16
 repository-code: "https://github.com/Joe-b-20/slp-plateau-search"
+doi: 10.5281/zenodo.21402996
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21402996
+    description: "Concept DOI for all versions; resolves to the latest release."
+  - type: doi
+    value: 10.5281/zenodo.21402997
+    description: "Version DOI for v1.0.0."
 keywords:
   - AES
   - MixColumns
