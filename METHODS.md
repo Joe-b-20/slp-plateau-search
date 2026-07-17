@@ -166,3 +166,31 @@ reimplemented as the dependency-free Python in this repository, which
 reproduces the results with no AI involvement. Every circuit ever claimed —
 here or in the artifact repository — is machine-verified against MixColumns
 rebuilt from GF(2⁸).
+
+## 9. Provenance of the earlier (v1) circuits
+
+The project's first three circuits — 98 @ depth 3, 91 @ depth 6, and 89 @
+depth 10, released 2026-07-10 and now superseded — were found by earlier,
+more primitive versions of the same search. **The exact code state that
+produced them was not preserved**: it was edited in place before being
+archived. That mistake is the direct reason for the current pipeline's
+discipline of self-archiving its exact code into every run folder, which is
+why every v2 record has a complete, checkable code-and-log trail and the v1
+circuits do not.
+
+What is reconstructable is stated plainly:
+
+- **91 @ depth 6** was obtained by the neutral-swap plateau walk applied to
+  the published 92-gate circuit of Xiang, Zeng, Lin, Bao, and Zhang; the same
+  reduction replays live in `reproduce/reproduce.py` (method `"91"`).
+- **89 @ depth 10** came from seeded value-set walks; the equivalent 90→89
+  reduction replays in method `"89"`. Its original discovery path is not
+  cleanly reconstructable.
+- **98 @ depth 3** came from an early version of the depth-3 constructor of
+  Section 5.
+
+None of the current claims depends on the v1 circuits or on how they were
+found: the v2 records dominate all three and carry fully logged from-scratch
+lineages (Section 7, `evidence/RESULTS.md`), and the v1 circuits remain in
+the artifact repository as verified artifacts — correctness is
+machine-checkable regardless of provenance.

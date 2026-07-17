@@ -1,6 +1,7 @@
 # slp-plateau-search
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21402996.svg)](https://doi.org/10.5281/zenodo.21402996)
+[![verify](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml/badge.svg)](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml)
 
 The search method and evidence behind the record 2-input XOR circuits for AES
 MixColumns: **97 gates at depth 3, 92 at depth 4, 89 at depth 5** — each
@@ -83,5 +84,5 @@ every intermediate best ever recorded.
 ## License / citation
 
 MIT. If you use the method or the circuits, please cite this repository and
-the artifact repository (see `CITATION.cff`; the accompanying note is on the
-IACR ePrint archive).
+the artifact repository (see `CITATION.cff`). The accompanying note has been
+submitted to the IACR Cryptology ePrint Archive and is awaiting moderation.
