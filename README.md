@@ -84,5 +84,8 @@ every intermediate best ever recorded.
 ## License / citation
 
 MIT. If you use the method or the circuits, please cite this repository and
-the artifact repository (see `CITATION.cff`). The accompanying note has been
-submitted to the IACR Cryptology ePrint Archive and is awaiting moderation.
+the artifact repository (see `CITATION.cff`). The accompanying note is
+published with the artifacts:
+[`paper/mixcolumns_note.pdf`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits/blob/main/paper/mixcolumns_note.pdf),
+archived under DOI
+[10.5281/zenodo.21299092](https://doi.org/10.5281/zenodo.21299092).
