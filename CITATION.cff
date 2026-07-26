@@ -4,8 +4,8 @@ title: "slp-plateau-search: value-set SLP search with plateau and hub moves (rec
 authors:
   - family-names: Bachir
     given-names: Joe
-version: "1.0.0"
-date-released: 2026-07-16
+version: "1.0.1"
+date-released: 2026-07-26
 repository-code: "https://github.com/Joe-b-20/slp-plateau-search"
 doi: 10.5281/zenodo.21402996
 identifiers:

@@ -117,11 +117,13 @@ python3 ../verify_circuit.py circuits/mixcolumns_89gates_depth5.json 5   # etc.
   scratch too (down the cascade ladder); 89@d5 descends from a from-scratch 97 via
   the 21h ladder to 89@d6, then a one-gate-depth reroute — i.e. seeded on the
   project's own prior output, not an independent from-scratch discovery.
-- **Not proven optimal.** Literature check completed 2026-07-15: the published
-  depth–count frontier is 99@3 (Shi–Feng–Xu, ToSC 2023), 97@4 and 94@5
-  (Osvik–Canright, ePrint 2024/1076), 92@6 (Maximov), 91@7 (Lin et al., CT-RSA
-  2021, s-XOR); the three circuits above improve it at every depth from 3 to 5
-  and 89@5 dominates the deeper points. Full audit: PRIOR_ART.md in the
-  artifact repository.
+- **Not proven optimal.** Literature status (corrected 2026-07-23; full dated
+  audit in the artifact repository PRIOR_ART.md, incl. its Corrections
+  section): the published depth–count frontier is 99@3 (Shi–Feng–Xu, ToSC
+  2023), 97@4 and 94@5 (Osvik–Canright, ePrint 2024/1076), 92@6 (Maximov),
+  and 88@7 (Jean, ePrint 2026/1481), with 89 at unstated depth from
+  Sun–Yang–Li (ePrint 2025/1493). The three circuits above improve the
+  frontier at depths 3, 4, and 5 and remain on it — neither newer point
+  dominates 89@5.
 - Every timestamp above is recoverable from the `coordinator.log` and per-worker
   `*.log` files in each run archive; every circuit from its `*_best.json`.

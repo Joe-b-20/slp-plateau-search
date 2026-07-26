@@ -17,8 +17,9 @@ the artifact repository's `PRIOR_ART.md`, including its Corrections section.
 The circuits themselves live in the artifact repository —
 **[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)**
 — as static, machine-checkable files with self-contained verifiers. This
-repository is the other half: the **method** (a value-set shortest-linear-
-program search with plateau and hub moves — see [`METHODS.md`](METHODS.md)),
+repository is the other half: the **method** (a value-set
+shortest-linear-program search with plateau and hub moves — see
+[`METHODS.md`](METHODS.md)),
 the **pipeline** that ran it, and the **evidence** of the runs that produced
 the records, archived untouched with their exact code and logs.
 
