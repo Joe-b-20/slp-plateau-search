@@ -5,9 +5,12 @@
 
 The search method and evidence behind the record 2-input XOR circuits for AES
 MixColumns: **97 gates at depth 3, 92 at depth 4, 89 at depth 5** — each
-improving the published depth–count Pareto frontier (99 @ 3, Shi–Feng–Xu ToSC
-2023; 97 @ 4 and 94 @ 5, Osvik–Canright ePrint 2024/1076; smallest published
-count at any depth: 91, Lin et al. CT-RSA 2021).
+improving the published depth–count Pareto frontier at its depth (99 @ 3,
+Shi–Feng–Xu ToSC 2023; 97 @ 4 and 94 @ 5, Osvik–Canright ePrint 2024/1076).
+At unconstrained depth the published floor is 88 @ depth 7 (Jean, ePrint
+2026/1481) and 89 at unstated depth (Sun–Yang–Li, ePrint 2025/1493); neither
+dominates the depth-5 89, so all three circuits remain on the frontier — see
+the artifact repository's `PRIOR_ART.md`, including its Corrections section.
 
 ![The published depth–count Pareto frontier for AES MixColumns vs this work](docs/frontier.svg)
 

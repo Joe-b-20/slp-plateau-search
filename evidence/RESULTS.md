@@ -70,9 +70,12 @@ python3 ../verify_circuit.py circuits/mixcolumns_89gates_depth5.json 5   # etc.
 
 - **What:** 89-gate depth-5 circuit. The fewest gates we know (89), at the
   shallowest depth we've reached them (5). Beats the published depth-5 point (94
-  gates: Osvik–Canright, ePrint 2024/1076, Appendix F) by five gates and the
-  smallest published count at any depth (91, Lin et al., CT-RSA 2021, s-XOR)
-  by two; the original 89-gate circuit needed depth 9–10.
+  gates: Osvik–Canright, ePrint 2024/1076, Appendix F) by five gates; the
+  original 89-gate circuit needed depth 9–10. (Later literature check,
+  2026-07-23: Sun–Yang–Li, ePrint 2025/1493, had 89 g-XOR at unstated depth
+  since 2025-08, and Jean, ePrint 2026/1481, posted 88 at depth 7 after these
+  runs; neither dominates 89 at depth 5 — see the artifact repository
+  PRIOR_ART.md Corrections.)
 - **How:** the `lns` engine. In the **sub-89 run** the `uncapped_sub89` worker was
   seeded with the 89@depth6 circuit and, one reroute later, found an equal-gate
   circuit at **depth 5**. The log line is `NEW BEST 89 gates depth 5 VERIFIED
