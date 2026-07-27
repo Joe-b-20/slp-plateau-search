@@ -6,7 +6,9 @@ Data sources (no number here is invented):
   - published frontier and the off-frontier Sun-Yang-Li point: ../README.md and
     ../evidence/RESULTS.md "Notes" (99@3 Shi-Feng-Xu ToSC 2023; 97@4 and 94@5
     Osvik-Canright ePrint 2024/1076; 92@6 Maximov; 88@7 Jean ePrint 2026/1481;
-    89 Sun-Yang-Li ePrint 2025/1493, depth 9 measured here).
+    89 Sun-Yang-Li ePrint 2025/1493). Neither Jean nor Sun-Yang-Li states a
+    depth: the 7 and the 9 are both this repo's measurements of its own
+    transcriptions, and are marked as such symmetrically.
   - this project's circuits: ../evidence/circuits/spectrum.json
     (97@3, 92@4, 89@5, 88@7, 88@8), all oracle-verified.
   - our 88@7 ties Jean's published 88@7 with a different circuit (61/88 shared
@@ -32,6 +34,8 @@ PUBLISHED = [(3, 99, "99 SFX23", 9, -8, "start"),
              (4, 97, "97 OC24", 9, -8, "start"),
              (5, 94, "94 OC24", 9, -8, "start"),
              (6, 92, "92 Max19", 9, -8, "start"),
+             # depth 7 is our own measurement of our transcription -- Jean's
+             # note states no depth either (same caveat as SYL25 below)
              (7, 88, "88 Jean26", 9, -22, "start")]
 # published but dominated by 88@7, so not a frontier point (depth is our own
 # measurement of our transcription -- the paper states none)
@@ -86,7 +90,9 @@ def main():
          'depth. The published frontier (dashed grey) runs 99 gates at depth 3 '
          '(Shi-Feng-Xu 2023), 97 at depth 4 and 94 at depth 5 (Osvik-Canright '
          '2024), 92 at depth 6 (Maximov) and 88 at depth 7 (Jean, ePrint '
-         '2026/1481). This work (solid blue) runs 97 at depth 3, 92 at depth 4, '
+         '2026/1481; that paper states no depth either, so the 7 is likewise '
+         'this repository\'s own measurement of its transcription). This work '
+         '(solid blue) runs 97 at depth 3, 92 at depth 4, '
          '89 at depth 5 and 88 at depth 7; the depth-7 point is drawn as a '
          'half-grey half-blue marker because our 88 ties the published 88 with '
          'an independent circuit (61 of 88 masks shared), rather than beating '

@@ -1,11 +1,17 @@
 # The method: value-set SLP search, plateau walking, and exact local certificates
 
-This document specifies the search method behind the record AES MixColumns
-XOR circuits (97 gates at depth 3, 92 at depth 4, 89 at depth 5, 88 at depth 7
-and 88 at depth 8 — see `evidence/RESULTS.md` and the artifact repository
-[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)).
-Everything here is implemented in dependency-free Python in this repository
-and runs with no AI system in the loop.
+This document specifies the search method behind this project's AES MixColumns
+XOR circuits: three frontier records (97 gates at depth 3, 92 at depth 4, 89 at
+depth 5), an independent 88 at depth 7 that *ties* the published gate-count
+floor without beating it, and a derived, dominated 88 at depth 8 — see
+`evidence/RESULTS.md` and the artifact repository
+[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits).
+Everything here is implemented in dependency-free Python in this repository.
+The three frontier records are reproduced by that code with no AI system in the
+loop; the v2 engine of Sections 4–6, the certificates of Section 10 and both
+88-gate circuits came out of a 24-agent LLM campaign directed by the author
+(Section 13), and every circuit any of it produced is machine-verified against
+MixColumns rebuilt from GF(2⁸).
 
 ## 1. Problem and model
 
@@ -33,16 +39,21 @@ all 32 MixColumns output masks. Gate count = |set|. Three things follow:
 
 ## 3. The motivating observation
 
-In the published record circuits, every gate is locally efficient — each
-looks like an optimal step. That is the signature of greedy construction, and
-it suggests such circuits sit at local optima: any further reduction has to
-pass through intermediate circuits that contain locally *suboptimal* steps.
-The method is therefore built around moves that are individually neutral or
-worse but globally productive, and acceptance rules that let the search
-traverse them.
+Good circuits at this size *look* locally efficient — every gate reads as an
+optimal step. That was true of the naive construction this project started
+from and of every circuit it produced up to the 89, and it is exactly what
+makes them hard to improve: such circuits sit at local optima, so any further
+reduction has to pass through intermediate circuits that contain locally
+*suboptimal* steps. (No claim is made here about how anyone else's circuit was
+constructed.) The method is therefore built around moves that are individually
+neutral or worse but globally productive, and acceptance rules that let the
+search traverse them.
 
-At 88 gates that reading is now measured rather than assumed: every local move
-class small enough to enumerate is **empty** on every 88 examined (Section 10).
+At 88 gates that reading is now measured rather than assumed: on every 88 whose
+shell has actually been swept — 47 canonical circuits exhaustively at k ≤ 3, and
+105 801 harvested population states at k = 2 — the enumerated move classes come
+back **empty**, every time (Section 10; this project's own 88 @ 7 is not among
+the 47, and remains the least-certified circuit here).
 Nothing is gained by searching harder for one clever step; what produced both
 new 88-gate circuits was the opposite — making the *equal-size* plateau cheap
 to walk, and walking a very large amount of it.
@@ -159,9 +170,23 @@ configuration**, because it mixes the mask provenance of every worker in a run
 
 `pipeline/ladder_parallel.py` orchestrates OS-process workers (`worker.py`),
 each running one engine at one depth cap in fixed-length chunks. The engine name
-`alt` is a worker *mode*, not an engine: it alternates a short walk chunk with a
-longer LNS chunk on the same circuit, and that is what the best-performing hunt
-workers ran, including both that found the 88s.
+`alt` is a worker *mode*, not an engine: it alternates a short walk chunk (300 s)
+with a longer LNS chunk (600 s), and that is what the best-performing hunt
+workers ran, including both that found the 88s. Crucially, a chunk does **not**
+continue from wherever the previous chunk drifted to: after every chunk the
+worker reseeds from its own Pareto best (`seed_masks = set(ctx.best_masks)`,
+`pipeline/worker.py`, and identically in the archived
+`evidence/campaign87_run_2026-07-26_got_88at7/code/hunt_worker.py`), and
+`ctx.best_masks` only moves on an oracle-verified Pareto improvement. So an LNS
+chunk that fails to improve the best is a **no-op on the state the next walk
+chunk sees** — so a non-improving LNS chunk cannot smuggle pooled masks into the
+walk's lineage at all, and this is the mechanical half of the 88 @ 7
+independence argument of Section 9 (there, *no* LNS chunk on that worker ever
+improved its best). Two facts belong together here: the archived record run had
+cross-pollination *enabled* (`pop_glob` set for its LNS chunks), while the
+shipped configuration defaults it off (`cross_pollinate=False`,
+`pipeline/ladder_parallel.py`) — the record is independent not because the knob
+was off but because no LNS chunk on that worker ever improved its best.
 
 - **Pareto tie-break**: a worker's `improve()` accepts a candidate with fewer
   gates, **or equal gates at strictly lower depth**. Equal-gate-shallower
@@ -202,7 +227,7 @@ search:
 |---|---|
 | **the hub move is dead at the frontier** | 0 successes in ~2.24 M repair samples across all seeds, then proven exactly: the remove-2-add-1 neighbourhood of every one of the five 89 seeds is *empty*, and likewise inside the certified k ≤ 3 shells of Section 10 |
 | **knobs are not the lever** | a wide grid sweep gave **0 improvements in 101 runs**; the shipped values are measured-good, but throughput and neighbourhood *shape* are what move the search |
-| **LAHC is inert** in this acceptance role | provably so; SA-with-reheat replaced it |
+| **LAHC is inert** in this acceptance role | **measured** inert: 0 uphill acceptances (up% 0.00, zero excursions) at both L = 200 and L = 2 000 in the instrumented 3-seed schedule comparison, because uphill proposals are near-nonexistent — it degenerates to hill climbing. SA-with-reheat replaced it |
 | **uniform destroys do not rebuild** | uniform sizes 3…6 gave 0 accepts in 5 633 attempts, the periodic `kshake` destroy 0 in 293 — which motivated the connected-cone operator and injection |
 | **random repair is worse than exhaustive** | missed 81–82 % of existing repairs at higher cost than enumerating all ≈ 7 (Section 4) |
 
@@ -289,10 +314,13 @@ added, with cascade unlocks in between — restore all 32 targets? A "yes" is an
 
 **The procedure.** Frontier-cascade closure with rollback, decided by budget:
 budget 1 (k = 2), budget 2 (k = 3), budget 3 (k = 4). Completeness is proved by
-first-unlock case analysis in the producing module's docstring — the first
+first-unlock case analysis in the producing modules' docstrings — the first
 unlock must have the newest added mask as a parent, which pins each added mask
 to a finite, enumerable shape — so a `None` answer with no deadline expiry is a
-machine-checked proof, not a failed search. Runs above the proved budget are
+machine-checked proof, not a failed search. **Both deciders ship with that
+proof**: `evidence/campaign87_certificates/code/exact_window.py` (budgets 1–2)
+and `exact_k4.py` (budget 3), verbatim as archived, are the modules that
+produced every verdict log in `evidence/campaign87_certificates/`. Runs above the proved budget are
 recorded as `nosol`, never as `irreducible`. Validation: budgets 1 and 2 agree
 with an independent brute force 25/25 and 12/12; budget 3 agrees on **1 257
 instances including 122 genuine NOs**, identically under CPython 3.10 and
@@ -305,8 +333,13 @@ PyPy 3.11.
   1 540 k=2 windows and all 27 720 k=3 windows each, zero reducible: Jean's 88,
   its 12 plateau siblings, and the third-family anchor with 33 representatives.
   Consequence: **any 87-gate circuit differs from each of them by ≥ 4 masks.**
-  This project's own 88 @ 7 is **not** among the 47 — its exhaustive k ≤ 3 sweep
-  was never run; what it has is 9 exact k=4 windows and 8 SAT cone windows.
+  State this plainly: **all 47 lie in Jean's-lineage families** — families 1–2
+  *are* Jean's circuit and its siblings, and the family-3 anchor's seed chain
+  runs through Jean's circuit (Section 9) — so what is certified is the rigidity
+  of *that* neighbourhood, and this project's own 88 @ 7, the one circuit here
+  independent of it, is the least-certified of all: it is **not** among the 47,
+  its exhaustive k ≤ 3 sweep was never run, and all it has is 9 exact k=4
+  windows and 8 SAT cone windows.
 - **Population sweeps.** 105 801 of the ≈ 139 878 known distinct 88-gate states
   are proven irreducible at k=2: 51 899 of families 1–2 (61.1 %, ordered
   most-distant-first, so the entire symmetric-difference ≥ 55 band is closed;
@@ -381,6 +414,22 @@ families, all mutually far apart:
 | Jean's 88 ↔ our 88 @ 7 | 61 / 88 | 0.530 |
 | Jean's 88 ↔ our 88 @ 8 | 55 | 0.455 |
 | our 88 @ 7 ↔ our 88 @ 8 | 62 | 0.544 |
+| *baseline*: Jean's 88 ↔ Sun–Yang–Li's 89 | *63* | *0.553* |
+
+The 0.7 cutoff is a working threshold, not a derived one; what justifies it is
+the margin. The three inter-family overlaps measured **0.455–0.544**, and across
+all ten pairs of the five 88/89-gate circuits compared in
+`evidence/campaign87_imported_prior_art/PROVENANCE.md` the largest Jaccard
+measured at all is **0.595** (our 88 @ 8 ↔ our 89 @ 5). Every measured pair
+therefore sits far enough below 0.7 that the cutoff could be moved anywhere in
+0.6–0.7 without changing a single family assignment; it is nowhere near a
+decision boundary.
+
+That last row is the baseline the 61/88 figure needs. Jean (ePrint 2026/1481)
+and Sun–Yang–Li (ePrint 2025/1493) are two indisputably independent published
+works, and they share **more** masks with each other (63, J = 0.553) than our
+88 @ 7 shares with Jean's (61, J = 0.530). At this problem size a 60-mask
+overlap is what independence looks like, not evidence against it.
 
 Around those anchors, harvesting mapped a population of **≈ 139 878 distinct
 88-gate mask sets** (84 989 from the first hunt, 54 889 new from the second). Of
@@ -431,8 +480,11 @@ The search programs were originally written and executed by LLM coding agents,
 used as programming tools under the author's direction; the moves and acceptance
 rules of Sections 3–4 were designed by the author. The method was then
 reimplemented as the dependency-free Python in this repository, which reproduces
-the results with no AI involvement. Every circuit ever claimed — here or in the
-artifact repository — is machine-verified against MixColumns rebuilt from GF(2⁸).
+the three frontier records (97 @ 3, 92 @ 4, 89 @ 5) with no AI in the loop —
+that is the claim the opening of this document makes, and it does not extend to
+the two 88s, which the campaign below *found*. Every circuit ever claimed — here
+or in the artifact repository, whatever produced it — is machine-verified
+against MixColumns rebuilt from GF(2⁸).
 
 The kernel, the operator set, the certificates and the symmetry analysis in this
 document come from a second chapter: over **2026-07-26/27** a 24-agent campaign,

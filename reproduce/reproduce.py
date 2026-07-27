@@ -947,7 +947,7 @@ METHODS = {
 }
 
 LABELS = {
-    "97": "from scratch -> 97 gates @ depth 3: ties the CURRENT depth-3 record",
+    "97": "from scratch -> 97 gates @ depth 3, verified: the depth-3 record of this project",
     "91": "legacy demo: published 92-gate circuit -> 91 @ depth 6 (record superseded by 89 @ depth 5)",
     "89": "legacy demo: 90-gate seed -> 89 gates, unconstrained depth (superseded by 89 @ depth 5)",
     "90": "legacy demo: local-irreducibility proof of a 91-gate seed (optional LNS)",

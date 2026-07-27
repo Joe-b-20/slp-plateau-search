@@ -187,6 +187,12 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
   all re-measured): 0.530 to Jean's 88 (61 shared, symdiff 54), 0.526 to
   Sun–Yang–Li's 89 (ePrint 2025/1493), 0.539 to our own 89@d5. The threshold
   used throughout the campaign is J ≥ 0.7 for "same family".
+- **The baseline that 61/88 has to be read against:** Jean (ePrint 2026/1481)
+  and Sun–Yang–Li (ePrint 2025/1493) are two indisputably independent published
+  works, and their circuits share **63 masks (J = 0.553) with each other** —
+  *more* than ours shares with Jean's (61, J = 0.530). At this problem size a
+  ~60-mask overlap is what independence looks like; the independence claim here
+  rests on the logged lineage above, and the overlap figure agrees with it.
 
 ---
 

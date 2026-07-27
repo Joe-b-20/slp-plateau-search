@@ -7,7 +7,7 @@ be described relative to them. They are always to be credited to their authors.
 
 | file | gates @ depth | author / source | how it got here |
 |---|---|---|---|
-| `jean_88gates_depth7_eprint_2026-1481.json` | **88 @ 7** | **Jean, ePrint 2026/1481**, Algorithm 1 (88-XOR AES MixColumns), posted 2026-07-23 | transcribed from the paper, input bits relabelled to this repo's convention, then oracle-verified |
+| `jean_88gates_depth7_eprint_2026-1481.json` | **88 @ 7\*** | **Jean, ePrint 2026/1481**, Algorithm 1 (88-XOR AES MixColumns), posted 2026-07-23 | transcribed from the paper, input bits relabelled to this repo's convention, then oracle-verified; \*the paper states no depth — depth 7 is what this repo's oracle measures for the transcribed circuit, exactly as for the 89 below |
 | `sunyangli_89gates_eprint_2025-1493.json` | **89 @ 9** | **Sun–Yang–Li, ePrint 2025/1493**, Table 4 (89 g-XOR AES MixColumns), 2025-08 | same route; the paper states no depth — depth 9 is what this repo's oracle measures for the transcribed circuit |
 
 Both files keep their original `provenance` / `source` /
@@ -36,12 +36,23 @@ this repo's oracle:
 
 | pair | shared masks | Jaccard |
 |---|---|---|
+| **Jean 88 ↔ Sun–Yang–Li 89** *(baseline: two independent published works)* | **63** | **0.553** |
 | Jean 88 ↔ **our 88@7** | 61 / 88 | 0.530 |
 | Jean 88 ↔ **our 88@8 (third family)** | 55 | 0.455 |
 | Jean 88 ↔ our 89@5 record | 61 | 0.526 |
 | Sun–Yang–Li 89 ↔ our 89@5 record | 59 | 0.496 |
 | Sun–Yang–Li 89 ↔ our 88@7 | 61 | 0.526 |
 | our 88@7 ↔ our 88@8 | 62 | 0.544 |
+
+**Read the first row before judging the second.** Jean and Sun–Yang–Li are two
+indisputably independent published works — different authors, different
+methods, a year apart, neither derived from the other — and they share **63**
+masks (J = 0.553), *more* than our 88@7 shares with Jean's (61, J = 0.530). A
+~60-mask overlap is simply what two independently found circuits for this map
+look like at this size; it is the baseline, not a red flag. Our 88@7's
+independence rests on its logged lineage
+(`../campaign87_run_2026-07-26_got_88at7/PROVENANCE.md`), and the overlap figure
+is consistent with it rather than merely tolerated by it.
 
 So our 88@7 **matches** the published 88-gate record with an independent
 circuit — it does not beat it. Our 88@8 is a third distinct family, but its

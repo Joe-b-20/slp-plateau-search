@@ -12,7 +12,11 @@ Two different kinds of certificate live here, and they carry different weight:
   procedures *is* a proof for the neighbourhood it covers, with completeness
   proofs in the producing modules' docstrings and validation against independent
   brute force (25/25, 12/12 at budgets 1–2; 1 257 instances incl. 122 genuine
-  NOs at budget 3).
+  NOs at budget 3). **Those two modules ship here**, verbatim as archived:
+  `code/exact_window.py` (budgets 1–2) and `code/exact_k4.py` (budget 3). Every
+  verdict log in this folder was produced by them, and the case analysis that
+  makes the proof is in their docstrings — the certificates are not asked to be
+  taken on trust.
 - **Windowed SAT certificates** (`sat_deep/`, `loose_sat/`, `family3_sat/`) —
   UNSAT **relative to the encoding's fixed slot order** (broken kept masks pinned
   at their original positions, free slots at the removed masks' positions). This
@@ -53,7 +57,7 @@ their stats show `nosol`, not `irreducible`. They prove nothing on their own.
 ## 2. `exact_k4/` — exact budget-3, the 12 siblings, and the first population sweep
 
 Exact budget-3 ("remove 4, restore with ≤ 3") with the completeness proof in
-`exact_k4.py`'s module docstring; validated on **1 257 instances against an
+`code/exact_k4.py`'s module docstring (shipped here); validated on **1 257 instances against an
 independent complete brute force, 100 % agreement including 122 genuine NOs**,
 identically under CPython 3.10 and PyPy 3.11 (`full_test_cpython.log`,
 `full_test_pypy.log`).
@@ -114,9 +118,18 @@ states by ≥ 3 masks, and from the anchor + 33 diverse representatives by
 
 k ≤ 3 shells are exhaustively empty for **47 canonical 88-gate circuits**:
 Jean's 88 (1) + its 12 syl-move siblings (12) + the third-family anchor and its
-33 representatives (34). **The project's own 88@7 is *not* among the 47** — its
-exhaustive k ≤ 3 sweep was never run; what it has is 9 exact k=4 windows (§3)
-and 8 SAT cone windows (§6).
+33 representatives (34).
+
+**What that population is, stated plainly.** All 47 lie in Jean's-lineage
+families: families 1–2 are Jean's circuit and its syl-move siblings, and the
+family-3 anchor's seed chain passes through Jean's circuit (§8, and
+`../../METHODS.md` §9). The theorem is therefore a **rigidity statement about
+that neighbourhood**, not about the 88-gate plateau as a whole — and the one
+circuit here that is independent of Jean's lineage, **the project's own 88@7,
+is precisely the least-certified**: it is *not* among the 47, its exhaustive
+k ≤ 3 sweep was never run, and all it has is 9 exact k=4 windows (§3) and 8 SAT
+cone windows (§6). The best-certified shell and the independent shell are
+disjoint, and that gap is the honest shape of the negative result.
 
 Population coverage at k=2: **105 801 of the ≈ 139 878 known 88-gate states**
 (51 899 of families 1–2 + all 53 902 of family 3).
