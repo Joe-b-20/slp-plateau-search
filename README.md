@@ -26,7 +26,7 @@ optimal.
 ![The published depth–count Pareto frontier for AES MixColumns vs this work, including the two 88-gate points at depths 7 and 8](docs/frontier.svg)
 
 All five verified circuits are in `evidence/circuits/`, hash-pinned in
-`evidence/circuits/spectrum.json`; the 97, 92 and 89 also live in the artifact
+`evidence/circuits/spectrum.json`; all five also live in the artifact
 repository —
 **[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)**
 — as static, machine-checkable files with self-contained verifiers. This

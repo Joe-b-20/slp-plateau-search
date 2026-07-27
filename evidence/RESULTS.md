@@ -13,7 +13,7 @@ not (the 88 @ depth 8's seed chain passes through Jean's published circuit).
 
 The project record improves 89 → 88. **87 was not found.**
 
-Hash-pinned copies of the first three circuits (with listings, Verilog, and self-contained verifiers) live in the artifact repository, [aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits). All five circuits are in `circuits/`, with SHA-256 for each in
+Hash-pinned copies of all five circuits (with listings, Verilog, and self-contained verifiers) live in the artifact repository, [aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits); the 88 @ depth 8 is shipped there as `mixcolumns_88gates_depth8.json`, labelled derived and non-frontier. All five circuits are in `circuits/`, with SHA-256 for each in
 `circuits/spectrum.json`. Every run referenced below is archived untouched in
 this folder, and each run archive contains a `code/` subfolder with the exact
 code that produced it.
@@ -166,7 +166,7 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
   | ↓ | **89 @ d6** | 21 h ladder, rung d10 | 39 725 s (11.03 h) / 07-14 01:00:34 |
   | ↓ | **89 @ d5** | sub-89 run, one reroute (`uncapped_sub89`) | 592 s (0.16 h) / 07-14 14:26:31 |
   | ↓ | **94 @ d5, exactly ρ²-symmetric** | ρ²-symmetrize + orbit-peel + orbit-LNS of the trimmed 89@d5 — 41 size-2 orbits + 12 fixed masks, sharing 82/94 masks with the 89@d5; it costs only +5 over the record | 07-26 ~20:33 wall (file mtime; that run's log carries no timestamps) |
-  | ↓ | **88 @ d7** | `merged-engine` worker `w10_sym94`, walk drift, it = 45 614 | **1 973 s (32.9 min) / 07-26 22:08:19** |
+  | ↓ | **88 @ d7** | `merged-engine` worker `w10_sym94`, walk drift, it = 45 614 (88-gate size, at depth 11) → 47 436 (depth-7 tie-break, 5.3 s later) | **1 973 s (32.9 min) / 07-26 22:08:19** |
 
   The seed circuit is archived beside the record as
   `campaign87_run_2026-07-26_got_88at7/seed_rho2sym_94gates_depth5.json`
