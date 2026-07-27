@@ -36,5 +36,6 @@ Depth cap `None` throughout (uncapped); stop target 87 (never reached).
 
 The other nine workers of the same launch are listed in `launch_hunt.sh`; five
 were seeded on the imported Jean 88, one on the imported Sun–Yang–Li 89, three on
-`basin-diversity` portfolio circuits. Their logs are in `../runs_hunt/`. Mid-hunt
-redirections (w2, w6, w7, w8, w9) are documented in `../REPORT.md`.
+portfolio circuits. Their logs are in `../runs_hunt/`; the mid-hunt reseeds
+(w2, w6, w7, w8, w9) and where each track ended are summarised in
+`../PROVENANCE.md`.

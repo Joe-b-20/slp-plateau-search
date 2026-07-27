@@ -1,22 +1,27 @@
 # Results that matter — 97@depth3, 92@depth4, 89@depth5, 88@depth7
 
-Five verified AES-MixColumns 2-input-XOR circuits. Four of them are the best we
-found at their depth; the fifth (88 @ depth 8, §5) is a same-size circuit from a
-third distinct family — dominated by the 88 @ depth 7, so not a frontier point,
-kept as a documented distinct construction. All five were re-verified
-independently against MixColumns rebuilt from GF(2^8) (`../verify_circuit.py`);
-none is claimed optimal (SLP minimization is NP-hard). For each: what it is,
-where the circuit is, the exact code that produced it, and its **full lineage**
-with the run-time and wall-clock at which every step appeared — back to a
-from-scratch construction where there is one, and said plainly where there is
-not (the 88 @ depth 8's seed chain passes through Jean's published circuit).
+Five verified AES-MixColumns 2-input-XOR circuits. Four are the best we found at
+their depth; the fifth (88 @ depth 8, §5) is a same-size circuit from a third
+distinct family, dominated by the 88 @ depth 7 and so not a frontier point.
+The project record improves 89 → 88. **87 was not found**, and none of the five
+is claimed optimal (SLP minimization is NP-hard).
 
-The project record improves 89 → 88. **87 was not found.**
+**Provenance up front.** The 88 @ depth 7 **matches** the published 88-gate
+record (Jean, ePrint 2026/1481) with an independent circuit — it does not beat
+it. The 88 @ depth 8's seed chain passes through that same published circuit, so
+it is reported as derived work. Everything else here is this project's own
+lineage, rooted in a from-scratch construction.
 
-Hash-pinned copies of all five circuits (with listings, Verilog, and self-contained verifiers) live in the artifact repository, [aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits); the 88 @ depth 8 is shipped there as `mixcolumns_88gates_depth8.json`, labelled derived and non-frontier. All five circuits are in `circuits/`, with SHA-256 for each in
-`circuits/spectrum.json`. Every run referenced below is archived untouched in
-this folder, and each run archive contains a `code/` subfolder with the exact
-code that produced it.
+Each section below gives what the circuit is, where it is, the exact code that
+produced it, and its **full lineage** with the run-time and wall-clock at which
+every step appeared. All five were re-verified against MixColumns rebuilt from
+GF(2^8) (`../verify_circuit.py`), live in `circuits/` with SHA-256 in
+`circuits/spectrum.json`, and are hash-pinned in the artifact repository
+[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)
+with listings, Verilog and self-contained verifiers (the 88 @ depth 8 ships
+there as `mixcolumns_88gates_depth8.json`, labelled derived and non-frontier).
+Every run referenced below is archived untouched in this folder, each with a
+`code/` subfolder holding the exact code that produced it.
 
 ```
 python3 ../verify_circuit.py circuits/mixcolumns_89gates_depth5.json 5   # etc.
@@ -83,7 +88,7 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
 
 ---
 
-## 3. 89 gates @ depth 5 — the headline; lineage spans two runs
+## 3. 89 gates @ depth 5 — lineage spans two runs
 
 - **What:** 89-gate depth-5 circuit. The fewest gates we know (89), at the
   shallowest depth we've reached them (5). Beats the published depth-5 point (94
@@ -128,19 +133,16 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
 
 ---
 
-## 4. 88 gates @ depth 7 — the new headline; ties the published record
+## 4. 88 gates @ depth 7 — matches the published record with an independent circuit
 
 - **What:** 88-gate depth-7 circuit — the first 88-gate circuit found by this
   project's own search, and the result that takes the project record from 89 to
-  88 (87 was not found). It **matches the published record** (Jean, ePrint
-  2026/1481, 88 gates; depth 7 is our measurement — the paper states no depth)
-  **with an independent circuit**: the two share 61 of 88 masks (Jaccard
-  0.530). It does **not** beat it. Jean's circuit, transcribed and
-  oracle-verified, is archived and credited in
-  `campaign87_imported_prior_art/`.
-- **How:** the engine rebuilt during campaign 87 (level-BFS relax, incremental
-  worklist closure, exact complete repair enumeration, victim repool, coneinj
-  destroy, peel-before-accept, SA-with-reheat, plateau harvesting). Worker
+  88. It **matches the published record** (Jean, ePrint 2026/1481, 88 gates;
+  depth 7 is our measurement — the paper states no depth) **with an independent
+  circuit**: the two share 61 of 88 masks (Jaccard 0.530). It does **not** beat
+  it. Jean's circuit, transcribed and oracle-verified, is archived and credited
+  in `campaign87_imported_prior_art/`.
+- **How:** the engine rebuilt during campaign 87 (`../METHODS.md` §5–§6). Worker
   `w10_sym94` of a 10-worker hunt, `alt` mode (alternating walk and LNS
   chunks), rng 1010, walk drift, seeded with an exactly ρ²-symmetric 94 @
   depth 5. From that seed: 94 → 90@d5 at t = 2.2 s (it = 723), 90 → 89@d8 at
@@ -216,7 +218,7 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
   **dominated by the 88 @ depth 7** (same size, greater depth), so it does not
   improve the frontier; it is documented because a genuinely third construction
   of the same size is the interesting object, not a new record.
-- **How:** the wave-3 `hunt-deeper` fleet, 12 workers. Record worker
+- **How:** the `hunt-deeper` run, 12 workers. Record worker
   `d3_orb90a`, `alt` mode, rng 3303, knobs `'{}'` — family repulsion and drift
   mode **off** for this worker (other workers of the fleet used them). From the
   90@d9 seed: 90@d5 at t = 189.4 s (it = 83 299), **89@d7 at t = 3 793.4 s
@@ -246,9 +248,10 @@ mixcolumns_88gates_depth8_thirdfamily.json 8 gates=88 depth=8 outputs_built=32/3
 
 ## 6. Machine-checked certificates for the 88-gate plateau
 
-No 87-gate circuit was found anywhere in the campaign, and a large amount of
-compute went into deciding *neighbourhoods* of the known 88s exactly. The full
-write-up, with the archived per-run verdict summaries, is in
+No 87-gate circuit was found anywhere in the campaign. Where a search cannot
+settle the question, a decision procedure was run over *neighbourhoods* of the
+known 88s instead; the full write-up, with the archived per-run verdict
+summaries, is in
 [`campaign87_certificates/CERTIFICATES.md`](campaign87_certificates/CERTIFICATES.md).
 The scope, stated exactly:
 
@@ -291,25 +294,20 @@ another 91 of ours, so it inherits the same status.
 
 ## Notes
 
-- **Provenance in one line:** 97@d3 is genuinely from scratch; 92@d4 is from
-  scratch too (down the cascade ladder); 89@d5 descends from a from-scratch 97 via
-  the 21h ladder to 89@d6, then a one-gate-depth reroute — i.e. seeded on the
-  project's own prior output, not an independent from-scratch discovery. 88@d7
-  continues that same own-lineage chain through the ρ²-symmetric 94. 88@d8 is
-  the one exception: **its seed chain passes through Jean's published 88**
-  (§5), and it is labelled derived work everywhere it appears.
-- **Not proven optimal.** Literature status (corrected 2026-07-23; full dated
-  audit in the artifact repository PRIOR_ART.md, incl. its Corrections
-  section): the published depth–count frontier is 99@3 (Shi–Feng–Xu, ToSC
-  2023), 97@4 and 94@5 (Osvik–Canright, ePrint 2024/1076), 92@6 (Maximov),
-  and 88@7 (Jean, ePrint 2026/1481), with 89 at unstated depth from
-  Sun–Yang–Li (ePrint 2025/1493). Against that: **97@3, 92@4 and 89@5 improve
-  the frontier** at their depths and remain on it (neither newer point
-  dominates 89@5); **88@7 ties the published gate-count floor with an
-  independent circuit** rather than lowering it; and **88@8 is dominated** by
-  our own 88@7, so it is documented but is not a frontier point.
-- **Nothing here beats 88.** The campaign that produced the two 88s searched
-  for an 87 and did not find one, and the certificates in §6 bound only local
-  neighbourhoods — they say nothing about whether an 87 exists.
+- **Provenance in one line:** 97@d3 and 92@d4 are from scratch; 89@d5 and 88@d7
+  continue that same own-lineage chain, seeded on the project's prior output
+  rather than rediscovered cold; 88@d8 is the derived one (§5).
+- **Literature status** (corrected 2026-07-23; full dated audit in the artifact
+  repository's PRIOR_ART.md, including its Corrections section): the published
+  depth–count frontier is 99@3 (Shi–Feng–Xu, ToSC 2023), 97@4 and 94@5
+  (Osvik–Canright, ePrint 2024/1076), 92@6 (Maximov), and 88@7 (Jean, ePrint
+  2026/1481), with 89 at unstated depth from Sun–Yang–Li (ePrint 2025/1493).
+  Against that: **97@3, 92@4 and 89@5 improve the frontier** at their depths and
+  remain on it (neither newer point dominates 89@5); **88@7 ties the published
+  gate-count floor with an independent circuit** rather than lowering it; and
+  **88@8 is dominated** by our own 88@7.
+- **Nothing here beats 88 or is proven optimal.** The campaign that produced the
+  two 88s searched for an 87 and did not find one, and the certificates in §6
+  bound only local neighbourhoods.
 - Every timestamp above is recoverable from the `coordinator.log` and per-worker
   `*.log` files in each run archive; every circuit from its `*_best.json`.

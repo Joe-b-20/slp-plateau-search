@@ -1,23 +1,21 @@
 # Provenance — campaign-87 merged-engine hunt (2026-07-26, produced 88 @ depth 7)
 
 The run that produced **88 gates @ depth 7**, the first 88-gate circuit found by
-this project's own search. It matches the published world record (Jean, ePrint
+this project's own search. It matches the published record (Jean, ePrint
 2026/1481, 88@7) with a **different circuit** — the two share 61 of 88 masks
-(Jaccard 0.530). It does not beat the published record.
+(Jaccard 0.530). It does not beat that record.
 
 This directory is the untouched archive of the run's small artifacts plus a
-`code/` folder with the exact code that produced them. The multi-hundred-MB
-plateau population files are **not** in the repo; they are listed by path, size
-and SHA-256 below.
+`code/` folder with the exact code that produced them.
 
 ## The run
 
 | | |
 |---|---|
-| what | campaign-87 wave-2 "merged engine" long hunt, 10 workers, one shared harvest directory (cross-pollination between LNS workers) |
+| what | campaign-87 "merged engine" long hunt, 10 workers, one shared harvest directory (cross-pollination between LNS workers) |
 | launched | 2026-07-26 **21:35:25**, budget 8 400 s (2 h 20 min), clean shutdown 23:55:25 |
 | launcher | `code/launch_hunt.sh 8400` (verbatim as run) |
-| engine | `code/engines.py` — the merged engine (all seven wave-1 improvements integrated) |
+| engine | `code/engines.py` — the merged engine (all seven measured improvements integrated; see `code/CODE_PROVENANCE.md`) |
 | record worker | **`w10_sym94`** — `alt` mode (alternating 300 s walk chunks and 600 s LNS chunks), rng 1010, seed = the ρ²-symmetric 94@5 (`seed_rho2sym_94gates_depth5.json`) |
 | the record | `BREAKTHROUGH_88gates_depth7.json` (= `runs_hunt/w10_sym94_best.json` = `runs_hunt/ALERT_w10_sym94_88gates.json`; identical mask sets) |
 
@@ -72,15 +70,21 @@ this record for two independent reasons, both checkable in the log:
   **Untouched.**
 - `portfolio88/` — the run's 8 maximally-diverse verified 88s + manifest
   (k-centre picks over the harvest; J to Jean 0.517–0.796).
-- `REPORT.md` — the agent's own report on the merge and the hunt (copied
-  verbatim; its numbers are the source for `../../campaign_87/FACTS.md`).
 - `code/` — the exact engine and worker scripts, with `CODE_PROVENANCE.md`
   and `CONFIG_AS_RUN.md`.
 
-## What is NOT in this archive (campaign archive, not in repo)
+Where the other nine workers ended (all oracle-verified; per-worker logs and
+bests in `runs_hunt/`): the five seeded on Jean's imported 88 all held 88@7, and
+so did the three tracks reseeded mid-hunt onto a syl-move sibling of Jean's 88,
+onto the new 88, and onto the most distant harvested 88. The tracks on the
+imported Sun–Yang–Li 89, the two diverse 89s, the hybrid 90@7 and the
+ρ²-symmetric 90 basin 2 ended at 89@6 or 89@5. **No track produced an 87.**
 
-The harvested plateau populations are far too large for the repository. They live
-in the gitignored campaign folder:
+## What is NOT in this archive
+
+The harvested plateau populations are far too large for the repository. They are
+not included here; each is referenced below by its path in the raw campaign
+archive, with its size and SHA-256:
 
 | file | size | sha256 | lines |
 |---|---|---|---|

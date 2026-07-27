@@ -60,10 +60,6 @@ and it is much faster on this seed. Re-validated **2026-07-27**, twice:
   the coordinator's 20 s status-poll cadence plus process start/stop, not
   search time.
 
-So: *~10 min in the archived run with the v1 engine; the shipped v2 engine
-re-finds the same record within a second of the worker starting, and the
-command returns in about 20 s.*
-
 ## The 88 @ depth 7
 
 ```
@@ -72,26 +68,23 @@ python3 hunt_88.py --minutes 120       # longer budget
 python3 hunt_88.py --target 87 --target-depth 0   # don't stop at 88
 ```
 
-`hunt_88.py` is not a copy of the search code — the 88 came out of the
-pipeline, so this script only *aims* the pipeline. It writes the shipped
-configuration into a run folder, launches **one** `../pipeline/worker.py`
-process (`alt` mode, uncapped, RNG 1010) on the exact seed the record worker
-used, polls its status file, and stops it as soon as an oracle-verified best
-reaches **88 gates at depth ≤ 7**. Both bounds matter: the walk finds the 88
-masks at some large depth first, and the Pareto tie-break walks that same size
-down to depth 7 a second or two later — stop on the gate count alone and you
-get an 88 at depth 8–11. The knobs are imported from
-`../pipeline/ladder_parallel.py` rather than copied, so they cannot drift from
-the shipped ones. The run folder (under `../pipeline/runs_parallel/`,
-gitignored) is deleted at the end unless you pass `--keep`; the best circuit is
-copied out to `out_88hunt.json`.
+`hunt_88.py` contains no search code: the 88 came out of the pipeline, so this
+script only *aims* it. It writes the shipped configuration into a run folder,
+launches **one** `../pipeline/worker.py` process (`alt` mode, uncapped, RNG 1010)
+on the exact seed the record worker used, polls its status file, and stops it as
+soon as an oracle-verified best reaches **88 gates at depth ≤ 7**. Both bounds
+matter: the walk finds the 88 masks at some large depth first and the Pareto
+tie-break carries that same size down to depth 7 a second or two later, so
+stopping on the gate count alone yields an 88 at depth 8–11. The knobs are
+imported from `../pipeline/ladder_parallel.py` rather than copied, so they cannot
+drift from the shipped ones. The run folder is deleted at the end unless you pass
+`--keep`; the best circuit is copied out to `out_88hunt.json`.
 
-**What the archive says.** The 88 @ depth 7 was found by worker `w10_sym94` of
-a 10-worker, 8 400 s hunt on 2026-07-26: `alt` mode, RNG 1010, seeded with the
-exactly ρ²-symmetric **94 @ depth 5** of our own lineage. It reached 90 @ 5 at
-t = 2.2 s, 89 @ 8 at t = 202.4 s, and **88 gates at t = 1 973 s (32.9 min)** at
-depth 11, which the walk's Pareto tie-break took to **depth 7 5.3 s later**. It
-then ran another ~6 400 s without finding an 87. Full log, code and provenance:
+**What the archive says.** The 88 @ depth 7 was found by worker `w10_sym94` of a
+10-worker, 8 400 s hunt on 2026-07-26 — `alt` mode, RNG 1010, seeded with the
+exactly ρ²-symmetric **94 @ depth 5** of our own lineage — at **t = 1 973 s
+(32.9 min)**, at depth 11, which the Pareto tie-break took to depth 7 5.3 s
+later. Full log, code and provenance:
 `../evidence/campaign87_run_2026-07-26_got_88at7/`.
 
 **What a single-worker re-run did here.** Two re-runs on **2026-07-27**, one
@@ -116,11 +109,10 @@ second chunk on a faster machine is at a different iteration and the
 trajectories part — which is exactly why the two re-runs above took 31.0 and
 19.4 minutes for the same work.
 
-So: a re-run, not an independent confirmation, and not a promise. Change the
-RNG, the seed, the chunk lengths or the machine and this is an open-ended
-stochastic search again; a single worker also does not reproduce the other nine
-workers' share of the luck. What it does establish is that the shipped engine,
-seed and knobs are the ones that produced the record.
+This is a re-run, not an independent confirmation and not a promise: change the
+RNG, the seed, the chunk lengths or the machine and it is an open-ended
+stochastic search again. What it establishes is that the shipped engine, seed and
+knobs are the ones that produced the record.
 
 **Provenance.** The ρ²-symmetric 94 seed is our own lineage (from-scratch 97 @ 3
 → 89 @ 6 → 89 @ 5 → symmetrized 94), so nothing this worker produces is derived
@@ -132,11 +124,11 @@ common — it does not beat it.
 The **88 @ depth 8** (a third distinct family) has no reproduction command here
 on purpose: its seed chain passes through Jean's published circuit, so it is
 reported as derived work. Its run archive is
-`../evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/`, and its seed
-ships as `../pipeline/seeds/seed_88_at_depth8_thirdfamily.json`. To continue the
-actual hunt for 87 from all three known 88-gate families at once, use the
-pipeline's shipped set: `python3 ladder_parallel.py --mode fixed` (i.e.
-`--workers hunt87`), and mind the provenance note in `../pipeline/README.md`.
+`../evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` and its seed ships
+as `../pipeline/seeds/seed_88_at_depth8_thirdfamily.json`. To continue the hunt
+for 87 from all three known 88-gate families at once, use the pipeline's shipped
+set: `python3 ladder_parallel.py --mode fixed` (i.e. `--workers hunt87`), minding
+the provenance note in `../pipeline/README.md`.
 
 ## Legacy demonstrations (opt-in)
 
@@ -167,12 +159,10 @@ the runs it reproduces, frozen. It is what those results were obtained with, and
 each method reads as one move rather than as a tuned kernel. It is *not* the
 current engine.
 
-The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign:
-level-BFS `relax`, worklist closure with incremental removal queries, exact
-complete repair enumeration, connected-cone destroys, victim repooling,
-SA-with-reheat, plateau harvesting. That rebuild is why the 89 @ depth 5 now
-comes back in seconds and why the two 88s exist at all; `hunt_88.py` here aims
-it, and `../pipeline/README.md` documents each change with its measured effect.
+The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign.
+That rebuild is why the 89 @ depth 5 now comes back in seconds and why the two
+88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
+each change with its measured effect.
 
 `mixcolumns_core.py` in this folder is a **byte-identical copy** of
 `../pipeline/mixcolumns_core.py` — both halves of the repository verify against
@@ -210,10 +200,9 @@ as a result of this project. The points the records above are measured against:
 99 @ depth 3 (Shi–Feng–Xu, ToSC 2023); 97 @ depth 4 and 94 @ depth 5
 (Osvik–Canright, ePrint 2024/1076); 92 @ depth 6 (Maximov); 92 gates
 (Xiang–Zeng–Lin–Bao–Zhang — the seed of method `"91"`); **88 @ depth 7 (Jean,
-ePrint 2026/1481)**, which our 88 @ depth 7 matches with an independent
-circuit; and **89 gates at unstated depth (Sun–Yang–Li, ePrint 2025/1493)**,
-measured at depth 9 here. Neither of the last two dominates our 89 @ depth 5, so
-the 97 @ 3, 92 @ 4 and 89 @ 5 all remain on the published frontier. Both
-imported circuits are transcribed, oracle-verified and credited under
-`../evidence/campaign87_imported_prior_art/`; the full record table and lineage
-are in `../evidence/RESULTS.md`.
+ePrint 2026/1481)**; and **89 gates at unstated depth (Sun–Yang–Li, ePrint
+2025/1493)**, measured at depth 9 here. Neither of the last two dominates our
+89 @ depth 5, so the 97 @ 3, 92 @ 4 and 89 @ 5 all remain on the published
+frontier. Both imported circuits are transcribed, oracle-verified and credited
+under `../evidence/campaign87_imported_prior_art/`; the full record table and
+lineage are in `../evidence/RESULTS.md`.

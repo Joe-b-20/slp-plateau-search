@@ -23,12 +23,13 @@ A circuit is represented not as an ordered gate list but as a **set of GF(2)
 bit-masks** over the 32 inputs (one mask per gate output). A set is a valid
 circuit iff it is *realizable* — starting from the 32 input singletons, every
 mask in the set equals the XOR of two already-available masks — and contains
-all 32 MixColumns output masks. Gate count = |set|. The representation makes
-"delete a gate and see if the circuit still works" a set operation; makes two
-circuits comparable by mask overlap regardless of gate ordering (the Jaccard
-index used for families in Section 11); and makes a *neighbourhood* — "remove
-these k masks, add at most k−1 others" — a finite object that can be enumerated
-exhaustively (Section 10).
+all 32 MixColumns output masks. Gate count = |set|. Three things follow:
+
+- "delete a gate and see if the circuit still works" becomes a set operation;
+- two circuits are comparable by mask overlap regardless of gate ordering (the
+  Jaccard index used for families in Section 11);
+- a *neighbourhood* — "remove these k masks, add at most k−1 others" — is a
+  finite object that can be enumerated exhaustively (Section 10).
 
 ## 3. The motivating observation
 
@@ -60,9 +61,10 @@ to walk, and walking a very large amount of it.
   iterating over it decides the move (`pipeline/engines.py:_repair`). Measured
   `|C| ≈ 7` — complete enumeration is *cheaper* than the 24–40 random candidates
   the previous engine tried, which missed 81–82 % of the repairs that existed.
-  Exact repair gave ~7× plateau mobility (1.9 → 13.6–16.3 distinct states/s) and
-  is how both new 88s were reached. The just-removed masks are passed as
-  `forbid`: re-adding one is a ping-pong no-op.
+  Exact repair gave ~7× plateau mobility (1.9 → 13.6–16.3 distinct states/s) —
+  time-to-89 from the 90 @ depth 5 seed went from 0 of 6 runs to 3 of 4 — and is
+  how both new 88s were reached. The just-removed masks are passed as `forbid`:
+  re-adding one is a ping-pong no-op.
 - **remove-2-add-1 ("hub" move)**: remove two masks, add one repair mask. Kept
   in the walk (`hub_move_p`) as a diversifier, but at the 88/89 frontier it is
   **provably dead** — Section 8.
@@ -115,9 +117,10 @@ plus one bug that dominated everything else:
 
 `relax_reference` is kept verbatim as ground truth and as the duplicate-mask
 fallback. End to end the merged engine walks at **480–640 it/s** against ~70–110
-before (~6×) and runs LNS at ~100–180 against ~60–100 (~2×), with much richer
-neighbourhoods. Smoke gate: from `pipeline/seeds/seed_90_at_depth5.json` the
-walk reached a verified 89 @ depth 5 in 42 s in the archived run.
+before, and runs LNS at ~100–180 against ~60–100, with much richer
+neighbourhoods — 289 k walk iterations in one 600 s chunk under full fleet load.
+Smoke gate: from `pipeline/seeds/seed_90_at_depth5.json` the walk reached a
+verified 89 @ depth 5 in 42 s in the archived run.
 
 ## 6. The engines
 
@@ -136,22 +139,21 @@ only after the GF(2⁸) oracle verifies it at the active depth cap):
 
 | LNS mechanism | why | measured |
 |---|---|---|
-| **victim-repool** (`_extract` cost classes: 1 kept, 2 sampled/injected, 3 just-destroyed victim) | victims stay available instead of being excluded, so a rebuild never dead-ends, while the higher cost still pushes it elsewhere. Before, 98.8 % of iterations bailed at `_extract`'s up-front check *after* paying for `relax` | **~34×** accepted moves/s; 100 % feasible iterations |
+| **victim-repool** (`_extract` cost classes: 1 kept, 2 sampled/injected, 3 just-destroyed victim) | victims stay available instead of being excluded, so a rebuild never dead-ends, while the higher cost still pushes it elsewhere. Before, 98.8 % of iterations bailed at `_extract`'s up-front check *after* paying for `relax` | **~34×** accepted moves/s, 6.4× distinct sets/min; 100 % feasible iterations |
 | **scored pools** (current masks + pairwise sums + accumulated masks; a "hot" list of masks a rebuild actually reintroduced, drawn `hot_frac` of the time) | concentrates candidates on what has already proved useful here | **~11×** accepted moves; 16–18× pool hit rate |
 | **peel-before-accept** (`peel_window`) | a rebuild a few masks too big is usually redundant, not wrong; peeling before judging it is also what makes the large `biginj` destroys viable | **2 630** near-miss rebuilds recovered in a 2-minute probe |
 | **SA with reheat** (`sa_T0`, `sa_cool`, `sa_reheat`) | uphill rebuilds on a cooling schedule that resets when no new best has appeared for `sa_reheat` iterations; the old threshold rule stays selectable | **~2×** drift, best simple schedule tested |
 
-**Plateau harvesting** (`_Harvester`, shared by both search engines) is the other
-half of the story. Only a strictly better — or equal-size but shallower —
-circuit is ever exported, yet the search constantly walks over sibling circuits
-of the same size and used to discard them. Harvesting appends every distinct
-equal-best mask set to a `.pop.jsonl` population file: that is where the
-≈ 139 878 distinct known 88-gate states came from, and both new 88s were found
-inside harvesting runs. With `pop_glob` a worker also merges **sibling** workers'
-harvests into its rebuild pool (cross-pollination). That knob is LNS-only and is
-**off in the shipped configuration**: it mixes the mask provenance of every
-worker in a run, and a circuit built from a pool containing imported masks is
-"derived from published work" (Section 9).
+**Plateau harvesting** (`_Harvester`, shared by both search engines) is the
+second half. Only a strictly better — or equal-size but shallower — circuit is
+ever exported, yet the search constantly walks over sibling circuits of the same
+size and used to discard them. Harvesting appends every distinct equal-best mask
+set to a `.pop.jsonl` population file; that population is the ≈ 139 878 distinct
+known 88-gate states, and both new 88s were found inside harvesting runs. With
+`pop_glob` a worker also merges **sibling** workers' harvests into its rebuild
+pool (cross-pollination) — an LNS-only knob, **off in the shipped
+configuration**, because it mixes the mask provenance of every worker in a run
+(Section 9).
 
 ## 7. The pipeline
 
@@ -204,8 +206,10 @@ search:
 | **uniform destroys do not rebuild** | uniform sizes 3…6 gave 0 accepts in 5 633 attempts, the periodic `kshake` destroy 0 in 293 — which motivated the connected-cone operator and injection |
 | **random repair is worse than exhaustive** | missed 81–82 % of existing repairs at higher cost than enumerating all ≈ 7 (Section 4) |
 
-Near-dead knobs are documented rather than silently kept: `up_prob` is a binary
-drift switch, `nsamp=(48,48)` is 3× slower for no benefit, `kmax ≥ 10` is wasted.
+The shipped `champ_fast` values (`nsamp=(12,12)`, `kmax=4`, `snapback=12`) buy
++30–80 % throughput at equal drift acceptance. Near-dead knobs are documented
+rather than silently kept: `up_prob` is a binary drift switch, `nsamp=(48,48)` is
+3× slower for no benefit, `kmax ≥ 10` is wasted.
 
 ## 9. Provenance: what is ours, what is derived, what is imported
 
@@ -257,18 +261,21 @@ The project's first three circuits — 98 @ depth 3, 91 @ depth 6, and 89 @
 depth 10, released 2026-07-10 and now superseded — were found by earlier, more
 primitive versions of the same search. **The exact code state that produced them
 was not preserved**: it was edited in place before being archived. That mistake
-is the direct reason for the pipeline's discipline of self-archiving its exact
-code into every run folder, which is why every later record has a complete,
-checkable code-and-log trail and the v1 circuits do not. What is reconstructable
-is stated plainly: **91 @ depth 6** came from the neutral-swap plateau walk
-applied to the published 92-gate circuit of Xiang, Zeng, Lin, Bao, and Zhang,
-and that reduction replays in `reproduce/reproduce.py` (method `"91"`);
-**89 @ depth 10** came from seeded value-set walks, with the equivalent 90→89
-reduction replaying in method `"89"` (its original discovery path is not cleanly
-reconstructable); **98 @ depth 3** came from an early version of the depth-3
-constructor of Section 6. No current claim depends on them — the later records
-dominate all three — and they remain in the artifact repository as verified
-artifacts, correctness being machine-checkable regardless of provenance.
+is the direct reason the pipeline now self-archives its exact code into every
+run folder, and why every later record has a complete code-and-log trail while
+these three do not. What is reconstructable:
+
+- **91 @ depth 6** — the neutral-swap plateau walk applied to the published
+  92-gate circuit of Xiang, Zeng, Lin, Bao, and Zhang; that reduction replays in
+  `reproduce/reproduce.py` (method `"91"`).
+- **89 @ depth 10** — seeded value-set walks. The original discovery path is not
+  cleanly reconstructable; the equivalent 90→89 reduction replays as method
+  `"89"`.
+- **98 @ depth 3** — an early version of the depth-3 constructor of Section 6.
+
+No current claim depends on them; the later records dominate all three. They
+remain in the artifact repository as verified artifacts, correctness being
+machine-checkable regardless of provenance.
 
 ## 10. Exact neighbourhood certificates
 
@@ -350,17 +357,16 @@ demanding full ρ-symmetry costs about +19 gates (best fully symmetric ≈ 108 =
   exactly the classic (x0^x2)/(x1^x3) sharing trick — rediscovered by the
   search, not imposed. Jean's 88 is 75 % ρ²-symmetric (66 of 88) and
   symmetrizes-and-peels to 95: a *second*, distinct symmetric basin.
-- A ρ²-equivariant orbit engine runs at ~90–120 walk it/s against ~5 it/s for
-  the naive orbit search (~20×). It produced **two exactly ρ²-symmetric 90-gate
-  circuits** (depth 9 and depth 7, Jaccard 0.463 apart) — the best exactly
-  symmetric circuits known here, the previous best being 94. Both are
-  **derived from published work** in the sense above: basin 1 (depth 9) is a
-  union of a 91 of our own lineage with a 92 symmetrized from Jean's published
-  88, and basin 2 crosses that same 90 with another 91 of ours, so it inherits
-  the status. Both are
-  machine-certified locally optimal in orbit space: every remove-1-orbit move
-  and all 666 remove-2-orbits-add-≤1 moves fail. These basins are extremely
-  rigid; further progress came from *union crossings*, not local moves.
+- A ρ²-equivariant orbit engine (~90–120 walk it/s, against ~5 for the naive
+  orbit search) produced **two exactly ρ²-symmetric 90-gate circuits** (depth 9
+  and depth 7, Jaccard 0.463 apart) — the best exactly symmetric circuits known
+  here, the previous best being 94. Both are **derived from published work** in
+  the sense above: basin 1 (depth 9) unions a 91 of our own lineage with a 92
+  symmetrized from Jean's published 88, and basin 2 crosses that same 90 with
+  another 91 of ours. Both are machine-certified locally optimal in orbit space:
+  every remove-1-orbit move and all 666 remove-2-orbits-add-≤1 moves fail. These
+  basins are extremely rigid; further progress came from *union crossings*, not
+  local moves.
 - Symmetry is also a seeding device. The ρ²-symmetric 94 @ 5 (41 size-2 orbits +
   12 fixed masks, 82 masks shared with our 89 @ 5) costs only +5 over the record
   and is the seed from which the 88 @ 7 was found — 32.9 minutes into that
@@ -398,8 +404,8 @@ where to look next:
 
 ## 12. Reproducing the records
 
-`reproduce/README.md` is the authority on commands, configurations and runtimes;
-this section only says which mechanism produces which record.
+`reproduce/README.md` is the authority on commands, configurations and runtimes.
+Which mechanism produces which record:
 
 - **97 @ depth 3**: `reproduce/reproduce.py` — single command, single core,
   from scratch, minutes.
@@ -410,19 +416,14 @@ this section only says which mechanism produces which record.
 - **The two 88s**: both came out of `alt` workers (walk + LNS chunks) with
   harvesting on, seeded from ρ²-symmetric circuits — the 88 @ 7 from the
   ρ²-symmetric 94, the 88 @ 8 from the ρ²-symmetric 90 basin 1 (Section 9 on its
-  provenance). Both seeds ship in `pipeline/seeds/`, and the `hunt87` worker set
-  is the configuration that continues the hunt. These are stochastic
-  multi-worker searches: what they took is recorded in the archives, not
-  promised — `evidence/campaign87_run_2026-07-26_got_88at7/` and
-  `evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` hold the exact
-  code, config, logs and every verified best of each run.
+  provenance). Both seeds ship in `pipeline/seeds/`; the `hunt87` worker set
+  continues the hunt. These are stochastic multi-worker searches: what they took
+  is recorded in `evidence/campaign87_run_*/` — exact code, config, logs and
+  every verified best — not promised.
 
-`reproduce/reproduce.py` also carries opt-in legacy demonstrations of the moves
-on superseded records (plateau-walk reduction of the published 92-gate circuit
-of Xiang, Zeng, Lin, Bao, and Zhang to 91; a 90→89 hub-walk cut; an
-irreducibility demonstration), with seed provenance stated per method. Every run
-in `evidence/` contains the exact code that produced it, and `pipeline/README.md`
-documents how the code evolved between record runs.
+`reproduce/reproduce.py` also carries opt-in legacy demonstrations of the
+individual moves on superseded records, with seed provenance stated per method.
+`pipeline/README.md` documents how the code evolved between record runs.
 
 ## 13. History
 
@@ -440,10 +441,11 @@ the circuits. It profiled and rewrote the kernel, replaced sampled repair with
 the exact enumeration of Section 4, added the destroy operators, acceptance
 schedule and harvesting of Section 6, killed several move classes on measurement
 (Section 8), built the decision procedures of Section 10, and found the two new
-88-gate circuits. Its raw archive (2.8 GB) is kept outside the repository under
-`campaign_87/` and is gitignored; the curated results — both record circuits,
-both untouched run archives with their code, the certificate summaries, the
-ρ²-symmetric circuits and the credited imported prior art — live in
-`evidence/campaign87_*`. The shipped `pipeline/engines.py` is that campaign's
-merged engine, and its `run_engine(...)` entry point is unchanged, so it is a
-drop-in replacement for the code that produced the earlier records.
+88-gate circuits.
+
+Its raw 2.8 GB archive is not included in this repository; the curated results —
+both record circuits, both untouched run archives with their code, the
+certificate summaries, the ρ²-symmetric circuits and the credited imported prior
+art — are in `evidence/campaign87_*`. The shipped `pipeline/engines.py` is that
+campaign's merged engine with `run_engine(...)` unchanged, so it drops in for the
+code that produced the earlier records.

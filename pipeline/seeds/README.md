@@ -9,14 +9,11 @@ cd ..            # pipeline/
 for f in seeds/*.json; do python3 ../verify_circuit.py "$f"; done
 ```
 
-**Provenance matters here**, and it is not just about the two imported files.
-The repo distinguishes three things (see `../../METHODS.md` §9 and
-`../../evidence/RESULTS.md`): our own lineage, published work imported and
-credited, and our search output whose *lineage passes through* published work.
-Three of the nine files below are in that third category — the two ρ²-symmetric
-90s were built partly by symmetrizing Jean's published 88, and the third-family
-88@8 descends from one of them; two more are the imported circuits themselves.
-Anything a worker produces inherits the status of its seed.
+**Provenance is per file, and the table below is the authority.** Three classes
+(`../../METHODS.md` §9): our own lineage; published work, imported and credited;
+and our search output whose *lineage passes through* published work. Of the nine
+files, two are imported and three are derived. Anything a worker produces
+inherits the status of its seed.
 
 | file | gates @ depth | provenance |
 |---|---|---|
@@ -37,5 +34,5 @@ the fastest-descending young basins we have (90 → 89@5 in ~15 min in the
 archived run) and are there to be pointed at.
 
 Each file's `source` field names the exact path it came from: for the record
-circuits the curated copy in `../../evidence/circuits/`, otherwise the
-gitignored `campaign_87/` raw archive.
+circuits the curated copy in `../../evidence/circuits/`, otherwise the raw
+campaign archive, which is not part of this repository.

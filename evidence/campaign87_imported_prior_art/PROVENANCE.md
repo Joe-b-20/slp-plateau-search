@@ -7,12 +7,12 @@ be described relative to them. They are always to be credited to their authors.
 
 | file | gates @ depth | author / source | how it got here |
 |---|---|---|---|
-| `jean_88gates_depth7_eprint_2026-1481.json` | **88 @ 7** | **Jean, ePrint 2026/1481**, Algorithm 1 (88-XOR AES MixColumns), posted 2026-07-23 | transcribed from the paper by the campaign's `lit-88` agent, input bits relabelled to this repo's convention, then oracle-verified |
+| `jean_88gates_depth7_eprint_2026-1481.json` | **88 @ 7** | **Jean, ePrint 2026/1481**, Algorithm 1 (88-XOR AES MixColumns), posted 2026-07-23 | transcribed from the paper, input bits relabelled to this repo's convention, then oracle-verified |
 | `sunyangli_89gates_eprint_2025-1493.json` | **89 @ 9** | **Sun–Yang–Li, ePrint 2025/1493**, Table 4 (89 g-XOR AES MixColumns), 2025-08 | same route; the paper states no depth — depth 9 is what this repo's oracle measures for the transcribed circuit |
 
 Both files keep their original `provenance` / `source` /
-`input_permutation_paper_to_repo` fields exactly as the importing agent wrote
-them. Neither is the product of any search in this repository.
+`input_permutation_paper_to_repo` fields exactly as written at import time.
+Neither is the product of any search in this repository.
 
 ## Verification (this repo's standalone oracle)
 

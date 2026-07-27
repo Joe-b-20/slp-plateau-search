@@ -16,15 +16,16 @@ Two different kinds of certificate live here, and they carry different weight:
 - **Windowed SAT certificates** (`sat_deep/`, `loose_sat/`, `family3_sat/`) —
   UNSAT **relative to the encoding's fixed slot order** (broken kept masks pinned
   at their original positions, free slots at the removed masks' positions). This
-  is strong evidence, **not** a completeness proof. Say so wherever it is cited.
+  is strong evidence, **not** a completeness proof, and is cited as such
+  throughout.
 
 The files here are the small per-run verdict summaries and per-window verdict
-logs. The multi-MB resumable progress logs stay in the gitignored campaign
-archive; each section says where.
+logs. The multi-MB resumable progress logs are not included in this repository;
+they are listed at the end by path in the raw campaign archive.
 
 ---
 
-## 1. `exact_window/` — the first exact decision procedure (wave 1)
+## 1. `exact_window/` — the first exact decision procedure
 
 "Remove a window of k masks; can k−1 or fewer new masks restore all 32 targets?"
 Frontier-cascade closure with rollback; exact at budget 1 (k=2) and budget 2
@@ -49,7 +50,7 @@ their stats show `nosol`, not `irreducible`. They prove nothing on their own.
 
 ---
 
-## 2. `exact_k4/` — exact budget-3, the 12 siblings, and the first population sweep (wave 2)
+## 2. `exact_k4/` — exact budget-3, the 12 siblings, and the first population sweep
 
 Exact budget-3 ("remove 4, restore with ≤ 3") with the completeness proof in
 `exact_k4.py`'s module docstring; validated on **1 257 instances against an
@@ -64,23 +65,21 @@ identically under CPython 3.10 and PyPy 3.11 (`full_test_cpython.log`,
   have exactly empty k ≤ 3 shells**" theorem.
 - **k=4 on Jean's 88:** 32 677 of the 367 290 windows decided exactly (8.9 %),
   all irreducible, prioritised so that every all-diff quad (2 380) and every
-  structural window is covered (`summary_*.json`; full log
-  `campaign_87/agents/exact-k4/work/results_k4/progress.jsonl`).
-- **Population k=2, first pass:** 10 617 of merged-engine's 84 989 harvested
-  88-gate states fully swept (16.35 M exact window decisions), all irreducible
-  (`pop_scan_run.log`; full log `…/work/results_pop/pop_progress.jsonl`).
+  structural window is covered (`summary_*.json`).
+- **Population k=2, first pass:** 10 617 of the 84 989 harvested 88-gate states
+  fully swept (16.35 M exact window decisions), all irreducible
+  (`pop_scan_run.log`).
 
 ---
 
-## 3. `pop_decider/` — the population sweep continued (wave 3)
+## 3. `pop_decider/` — the population sweep continued
 
 - **Population k=2 (families 1–2): 51 899 / 84 989 states (61.1 %) fully swept,
   every one irreducible** — 79 924 460 exact window decisions in the log
   (10 617 inherited + 41 282 decided here). Order was most-distant-from-Jean
   first, so the **entire symdiff ≥ 55 band is closed** — the least-covered half
   of the population is the swept half. 33 090 states remain (~2.9 h uncontended,
-  resumable). Session log: `pop_scan_phase1.log`; full log
-  `campaign_87/agents/pop-decider/work/results_pop/pop_progress.jsonl` (5.0 MB).
+  resumable). Session log: `pop_scan_phase1.log`.
 - **First k=3 theorems on population states:** the 19 most theorem-starved states
   (minimum symdiff 54–56 to *all* 13 canonical 88s, farthest-point diversified)
   closed exhaustively — **19 × 27 720 = 526 680 exact decisions, all
@@ -94,20 +93,18 @@ identically under CPython 3.10 and PyPy 3.11 (`full_test_cpython.log`,
 
 ---
 
-## 4. `family3_exact/` — the third family decided (wave 4)
+## 4. `family3_exact/` — the third family decided
 
-- **Phase 1 — 34 circuits** (the 88@8 anchor + the 25 census representatives +
-  the 8 portfolio_family3 representatives): **all 1 540 k=2 windows AND all
-  27 720 k=3 windows exhaustive for every one of them** = 52 360 + 942 480 =
-  **994 840 exact decisions, all irreducible**, zero nosol, zero timeouts
+- **34 circuits** (the 88@8 anchor + the 25 census representatives + the 8
+  portfolio_family3 representatives): **all 1 540 k=2 windows AND all 27 720 k=3
+  windows exhaustive for every one of them** = 52 360 + 942 480 = **994 840
+  exact decisions, all irreducible**, zero nosol, zero timeouts
   (`sum_<hash>_k2.json`, `sum_<hash>_k3.json`, 34 pairs; `phase1.out`).
-- **Phase 2 — the whole family at k=2:** **53 902 / 53 902 states (100 %)
-  swept, all irreducible_k2** = **83 009 080 exact decisions** in 10 841 s
-  (`f3_scan.out`; full log
-  `campaign_87/agents/family3-exact/work/results_f3/f3_progress.jsonl`, 5.2 MB).
+- **The whole family at k=2:** **53 902 / 53 902 states (100 %) swept, all
+  irreducible_k2** = **83 009 080 exact decisions** in 10 841 s (`f3_scan.out`).
   Unlike families 1–2, this family is **closed** at k=2.
-- **Phase 3 — k=4 on the anchor:** 20 432 / 367 290 windows (5.6 %), all
-  irreducible, highest-priority classes first (`k4_f3.out`).
+- **k=4 on the anchor:** 20 432 / 367 290 windows (5.6 %), all irreducible,
+  highest-priority classes first (`k4_f3.out`).
 
 **Theorem:** any 87 differs from every one of the 53 902 known third-family
 states by ≥ 3 masks, and from the anchor + 33 diverse representatives by
@@ -118,29 +115,25 @@ states by ≥ 3 masks, and from the anchor + 33 diverse representatives by
 k ≤ 3 shells are exhaustively empty for **47 canonical 88-gate circuits**:
 Jean's 88 (1) + its 12 syl-move siblings (12) + the third-family anchor and its
 33 representatives (34). **The project's own 88@7 is *not* among the 47** — its
-exhaustive k ≤ 3 sweep was never run; what it has is 9 exact k=4 windows
-(§3) and 8 SAT cone windows (§6). Do not claim otherwise.
+exhaustive k ≤ 3 sweep was never run; what it has is 9 exact k=4 windows (§3)
+and 8 SAT cone windows (§6).
 
 Population coverage at k=2: **105 801 of the ≈ 139 878 known 88-gate states**
 (51 899 of families 1–2 + all 53 902 of family 3).
 
 ### Total exact decisions
 
-| agent | exact window decisions |
+| producer | exact window decisions |
 |---|---|
-| exact-window (wave 1) | ~113 000 windows |
-| exact-k4 (wave 2) | ~16.8 M |
-| pop-decider (wave 3) | ~64.1 M |
-| family3-exact (wave 4) | ~84.0 M |
+| `exact_window/` | ~113 000 windows |
+| `exact_k4/` | ~16.8 M |
+| `pop_decider/` | ~64.1 M |
+| `family3_exact/` | ~84.0 M |
 | **total, no double counting** | **≈ 165 M** |
-
-(The campaign's own FINAL_REPORT quotes "≈ 148 million"; that figure is
-pop-decider + family3-exact only. Use ≈ 165 M for the all-agent total, or state
-the per-agent numbers.)
 
 ---
 
-## 5. `sat_deep/` — windowed SAT on Jean's 88 (wave 2)
+## 5. `sat_deep/` — windowed SAT on Jean's 88
 
 Sound windowed Fuhs–Schneider–Kamp CNF; any model is a whole realizable circuit,
 and every model found is re-verified through the oracle. CaDiCaL in killable
@@ -149,13 +142,13 @@ every run resumes.
 
 - **48 windows on Jean's 88 at budget 87 (r = k−1), k = 9–16: 34 UNSAT,
   14 timeout, 0 SAT** (`results.jsonl`; phase logs `phaseA/B/C.log`).
-- **Max window size proven UNSAT: k = 16** (wave-1's frontier was k = 12).
+- **Max window size proven UNSAT: k = 16** (the earlier frontier was k = 12).
 - Hardness anti-correlates with nB (broken kept masks), not k: every window with
   nB ≥ 19 was decided.
 - Pipeline self-test: a planted r=k window came back SAT in 1.6 s and decoded to
   an oracle-VALID 88@7 (`selftest.jsonl`).
 
-## 6. `loose_sat/` — Kissat + symmetry breaking (wave 3)
+## 6. `loose_sat/` — Kissat + symmetry breaking
 
 Two knob-gated, soundness-proved symmetry-breaking layers (SB-P parent
 commutativity; SB-F guarded lex on adjacent free slots) plus Kissat 4.0.4.
@@ -164,10 +157,10 @@ was checked by 7/7 planted selftests that all decoded to verified 88s
 (`selftest.jsonl`). Benchmark: the three slowest CaDiCaL UNSATs (960/1 000/
 1 509 s) re-decided in 28/45/106 s — **14–34× faster** (`bench_kissat_pf.jsonl`).
 
-- **Jean's 88, the 14 survivors re-adjudicated: 10 UNSAT, 4 still undecided,
-  0 SAT** (`results.jsonl`). The two loosest windows (nB = 3 and nB = 5) fell.
-  Final standing on Jean's 88 across waves 2–3: **48 windows → 44 UNSAT,
-  4 undecided, 0 SAT, frontier k = 16.**
+- **Jean's 88, the 14 survivors of §5 re-adjudicated: 10 UNSAT, 4 still
+  undecided, 0 SAT** (`results.jsonl`). The two loosest windows (nB = 3 and
+  nB = 5) fell. Final standing on Jean's 88 across §5 and §6: **48 windows →
+  44 UNSAT, 4 undecided, 0 SAT, frontier k = 16.**
 - **This project's independent 88@7, 8 loosest cone windows: 5 UNSAT,
   3 undecided, 0 SAT** (`results_indep.jsonl`) — including an nB = 1 window
   (near-pure synthesis) in 34 s. This is the only SAT coverage the independent
@@ -175,7 +168,7 @@ was checked by 7/7 planted selftests that all decoded to verified 88s
 - `results_satdeep.jsonl` is sat-deep's log copied in for comparability
   (same window ids).
 
-## 7. `family3_sat/` — the third family's first SAT attack (wave 4)
+## 7. `family3_sat/` — the third family's first SAT attack
 
 Same toolchain as §6, unchanged, on the 88@8 anchor + the 8 portfolio reps.
 
@@ -214,15 +207,14 @@ provenance.
   `make_union.py` is the (three-line) union tool.
   Basin 2 (`union_90A.json`) is a further cross of that same 90 with a 91 of our
   own lineage, so it inherits the same derived status.
-- Full orbit-ladder report: `ORBIT_LADDER_REPORT.md`.
 
 ---
 
 ## Where the full logs live
 
-Everything under `campaign_87/` is gitignored (2.8 GB raw archive). The
-resumable frontiers, with the exact resume commands, are documented in each
-agent's `REPORT.md`:
+The multi-MB resumable progress logs are not included in this repository. They
+are in the raw 2.8 GB campaign archive at the paths below; each frontier here is
+resumable from its own progress file.
 
 | what | path |
 |---|---|

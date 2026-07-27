@@ -7,14 +7,13 @@ documented distinct construction.
 
 ## Read this first: the lineage passes through Jean's published 88
 
-The seed of this descent is orbit-ladder's ρ²-symmetric **90 @ depth 9**
+The seed of this descent is the ρ²-symmetric **90 @ depth 9**
 (`seed_rho2sym_90gates_depth9_basin1.json`, "basin 1"). That 90 was produced by a
 **union of two symmetrized circuits**, and one of them is derived from Jean's
 circuit:
 
 ```
-campaign_87/agents/orbit-ladder/work/union_A88.json
-    "union_of": ["symA_91g.json", "sym88_92g.json"]
+union_A88.json  "union_of": ["symA_91g.json", "sym88_92g.json"]
 
 symA_91g.json  ← symA.log:  "seed symlns_94gates_seed44.json: 94 masks"
                             (our ρ²-symmetric 94, own lineage) → 91 gates
@@ -23,26 +22,25 @@ sym88_92g.json ← sym88.log: "seed IMPORTED_88.json: 88 masks"
                             (IMPORTED_88.json = Jean, ePrint 2026/1481)
 ```
 
-and `work/uA88_90g.json` — the 90@9 that seeded this run — is byte-identical to
-`BEST_90gates_depth9_rho2symmetric.json` (sha256
-`8642ae8702987dc4…`), produced from `union_A88.json` at walk it = 10 336.
+The 90@9 that seeded this run is byte-identical to
+`BEST_90gates_depth9_rho2symmetric.json` (sha256 `8642ae8702987dc4…`), produced
+from `union_A88.json` at walk it = 10 336.
 
-**So: the 88@8 is NOT an independent from-scratch construction. Its ancestry
-contains masks derived from Jean's published 88** (via symmetrisation, union,
-peeling and 25 000+ orbit-walk moves). This is a "derived from published work"
-lineage in the sense of METHODS.md §9, and must always be stated as such.
-The 88@7 in `../campaign87_run_2026-07-26_got_88at7/` is the one with a clean
-own-lineage claim; the two are different circuits with different provenance.
+**So the 88@8 is not an independent construction: its ancestry contains masks
+derived from Jean's published 88** (via symmetrisation, union, peeling and
+25 000+ orbit-walk moves). That is a "derived from published work" lineage in the
+sense of METHODS.md §9. The 88@7 in `../campaign87_run_2026-07-26_got_88at7/` is
+the one with a clean own-lineage claim.
 
-(The relevant orbit-ladder logs and union files are archived in
-`../campaign87_certificates/rho2_symmetric_90s/` so the chain above can be
-re-checked without the campaign folder.)
+The union files and orbit-walk logs above are archived in
+`../campaign87_certificates/rho2_symmetric_90s/`, so the chain can be re-checked
+from this repository alone.
 
 ## The run
 
 | | |
 |---|---|
-| what | campaign-87 wave-3 "hunt-deeper" fleet, 12 workers, shared harvest directory |
+| what | campaign-87 "hunt-deeper" run, 12 workers, shared harvest directory |
 | launched | 2026-07-27 **00:57:08**, budget 15 300 s (4 h 15 min), finished 05:12:08 |
 | launcher | `code/launch_hunt.sh 15300` (verbatim as run) |
 | engine | `code/engines.py` — the merged engine plus knob-gated family repulsion; `code/hunt_worker.py` adds drift-mode reseeding |
@@ -84,12 +82,29 @@ engine has no pool and does not read sibling harvests.
 - `portfolio_family3/` — 8 k-centre-diverse third-family reps + manifest.
 - `family_refs.json` — the three family anchor mask sets (jean / new88 / orb88)
   used by the census; `repel_masks.json` — the 57-mask family core used by the
-  *other* (repulsion) workers of this fleet.
-- `REPORT.md` — the agent's own report (verbatim).
+  *other* (repulsion) workers of this run.
 - `code/` — the exact engine, worker, census and launcher, with
   `CODE_PROVENANCE.md` and `CONFIG_AS_RUN.md`.
 
-## What is NOT in this archive (campaign archive, not in repo)
+Where the other tracks ended (all oracle-verified; logs in `runs_hunt/`): the
+workers that swarmed onto the new third family after 03:10 ended at 88@8; the
+distant-88 frontier worker ended at 88@7; the tracks on the hybrid 90 line, the
+ρ²-symmetric 90 basin 2, the Sun–Yang–Li 89 lineage and the four diverse 89s
+ended at 89@5 or 89@6. **No track produced an 87.** The four diverse-89 workers
+merged into one remote 89-cluster at maximum Jaccard 0.331 to all three 88
+families; two dedicated LNS workers punched at it for three hours without
+reaching an 88.
+
+Census of the 54 889 newly harvested distinct 88-gate mask sets, by maximum
+Jaccard to the three anchors (same family iff J ≥ 0.7): **53 902** third family,
+987 the 88@7 family, 0 Jean's family (no worker was pointed there), and
+**0 unaffiliated — no fourth family appeared**.
+
+## What is NOT in this archive
+
+The harvested populations and census state are too large for the repository.
+They are not included here; each is referenced by its path in the raw campaign
+archive, with its size and SHA-256:
 
 | file | size | sha256 | lines |
 |---|---|---|---|
