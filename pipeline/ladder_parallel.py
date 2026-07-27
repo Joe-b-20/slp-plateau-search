@@ -84,7 +84,14 @@ WORKER_SETS = {
              start="seeds/seed_88_at_depth8_thirdfamily.json"),
         dict(label="f3_jean88_d7", engine="alt", depth=None, reseed=False,
              start="seeds/seed_88_at_depth7_jean_imported.json"),
+        # Depth-capped worker: threshold acceptance, not SA. SA's uphill
+        # accepts were tuned uncapped, where rebuilds are almost never larger;
+        # under a cap rebuilds are systematically larger and SA drifts uphill
+        # without recovering (measured 2026-07-27: at cap 6 a threshold-greedy
+        # run descended a lifted 100-gate seed to 89@5 in 61 s; SA never got
+        # below 96 in 13 min from a comparable seed).
         dict(label="d6_from89at5", engine="lns", depth=6,
+             knobs=dict(accept="threshold", up_prob=0.10, up_slack=1, snapback=3),
              start="seeds/seed_89_at_depth5.json"),
     ],
     # The historic sub-89 configuration, kept reachable and unchanged: two
