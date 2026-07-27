@@ -1,0 +1,14 @@
+{
+ "session_windows": 9,
+ "elapsed": 8.173970937728882,
+ "throughput": 1.101056031219586,
+ "covered_total": 9,
+ "space": 367290,
+ "coverage_pct": 0.002450379808870375,
+ "stats": {
+  "win": 0,
+  "free": 0,
+  "irreducible": 9,
+  "nosol": 0
+ }
+}

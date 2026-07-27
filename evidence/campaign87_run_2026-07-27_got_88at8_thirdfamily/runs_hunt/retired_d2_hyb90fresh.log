@@ -1,0 +1,46 @@
+[     0.0s 00:57:08] hunt worker start: engine=alt seed=div_21_g90_d7_j127.json rng=3202 total=15300s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/d2_hyb90fresh.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/d2_hyb90fresh.pop.jsonl'}
+[     0.0s 00:57:08]   NEW BEST 90 gates depth 7 VERIFIED 
+[     0.0s 00:57:08]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=9
+[     0.1s 00:57:08]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=45
+[     1.7s 00:57:09]   NEW BEST 89 gates depth 5 VERIFIED it=697
+[    43.0s 00:57:51] [walk] 43s iters=20000 cur=89 best=89 harv=2191
+[    86.1s 00:58:34] [walk] 86s iters=40000 cur=89 best=89 harv=4374
+[   129.9s 00:59:18] [walk] 130s iters=60000 cur=89 best=89 harv=6552
+[   172.0s 01:00:00] [walk] 172s iters=80000 cur=89 best=89 harv=8871
+[   217.3s 01:00:45] [walk] 217s iters=100000 cur=89 best=89 harv=11128
+[   259.3s 01:01:27] [walk] 259s iters=120000 cur=89 best=89 harv=13381
+[   428.2s 01:04:16] [lns] cross-pollinated 616 masks (pool=4381)
+[   565.8s 01:06:34] [lns] 266s iters=20000 cur=91 best=89 pool=4469 hot=65523 harv=5 peelgain=5167
+[   855.2s 01:11:23] [lns] 555s iters=40000 cur=91 best=89 pool=4521 hot=133065 harv=5 peelgain=10503
+[   953.9s 01:13:02] [walk] 54s iters=20000 cur=89 best=89 harv=2153
+[  1000.9s 01:13:49] [walk] 101s iters=40000 cur=89 best=89 harv=4319
+[  1051.1s 01:14:39] [walk] 151s iters=60000 cur=89 best=89 harv=6506
+[  1101.2s 01:15:29] [walk] 201s iters=80000 cur=89 best=89 harv=8688
+[  1152.8s 01:16:21] [walk] 253s iters=100000 cur=89 best=89 harv=10945
+[  1337.1s 01:19:25] [lns] cross-pollinated 690 masks (pool=4518)
+[  1430.8s 01:20:59] [lns] 231s iters=20000 cur=93 best=89 pool=4556 hot=68395 harv=1 peelgain=2989
+[  1644.5s 01:24:32] [lns] 444s iters=40000 cur=96 best=89 pool=4627 hot=137843 harv=1 peelgain=5982
+[  1851.1s 01:27:59] [walk] 51s iters=20000 cur=89 best=89 harv=2205
+[  1899.2s 01:28:47] [walk] 99s iters=40000 cur=89 best=89 harv=4368
+[  1942.6s 01:29:30] [walk] 142s iters=60000 cur=89 best=89 harv=6538
+[  1992.9s 01:30:21] [walk] 193s iters=80000 cur=89 best=89 harv=8786
+[  2040.2s 01:31:08] [walk] 240s iters=100000 cur=89 best=89 harv=11022
+[  2084.8s 01:31:53] [walk] 285s iters=120000 cur=89 best=89 harv=13273
+[  2244.9s 01:34:33] [lns] cross-pollinated 742 masks (pool=4573)
+[  2371.3s 01:36:39] [lns] 271s iters=20000 cur=96 best=89 pool=4610 hot=70151 harv=1 peelgain=3855
+[  2581.2s 01:40:09] [lns] cross-pollinated 11 masks (pool=4692)
+[  2602.6s 01:40:30] [lns] 502s iters=40000 cur=96 best=89 pool=4696 hot=141328 harv=1 peelgain=7315
+[  2701.9s 01:42:10] [lns] cross-pollinated 11 masks (pool=4739)
+[  2748.0s 01:42:56] [walk] 46s iters=20000 cur=89 best=89 harv=2242
+[  2796.0s 01:43:44] [walk] 94s iters=40000 cur=89 best=89 harv=4441
+[  2844.2s 01:44:32] [walk] 142s iters=60000 cur=89 best=89 harv=6720
+[  2890.5s 01:45:18] [walk] 189s iters=80000 cur=89 best=89 harv=8922
+[  2939.6s 01:46:07] [walk] 238s iters=100000 cur=89 best=89 harv=11310
+[  2985.8s 01:46:54] [walk] 284s iters=120000 cur=89 best=89 harv=13526
+[  3154.4s 01:49:42] [lns] cross-pollinated 770 masks (pool=4578)
+[  3252.4s 01:51:20] [lns] 250s iters=20000 cur=92 best=89 pool=4598 hot=69238 harv=4 peelgain=4043
+[  3444.7s 01:54:33] [lns] 443s iters=40000 cur=93 best=89 pool=4639 hot=136211 harv=4 peelgain=7718
+[  3603.8s 01:57:12] [lns] cross-pollinated 18 masks (pool=4671)
+[  3651.5s 01:57:59] [walk] 48s iters=20000 cur=89 best=89 harv=2272
+[     0.0s 02:07:00] hunt worker start: engine=alt seed=d2_hyb90fresh_best.json rng=15050 total=11108s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/d2_hyb90fresh.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/d2_hyb90fresh.pop.jsonl'}
+[     0.0s 02:07:00]   NEW BEST 89 gates depth 5 VERIFIED 

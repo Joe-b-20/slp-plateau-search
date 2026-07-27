@@ -1,0 +1,59 @@
+[     0.0s 00:57:08] hunt worker start: engine=alt seed=div_04_g89_d10_j107.json rng=4111 total=15300s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 00:57:08]   NEW BEST 89 gates depth 10 VERIFIED 
+[     0.2s 00:57:08]   NEW BEST 89 gates depth 9 VERIFIED depth-tiebreak it=85
+[     2.0s 00:57:10]   NEW BEST 89 gates depth 7 VERIFIED depth-tiebreak it=924
+[     2.2s 00:57:10]   NEW BEST 89 gates depth 6 VERIFIED depth-tiebreak it=979
+[    42.7s 00:57:50] [walk] 43s iters=20000 cur=89 best=89 harv=1467
+[    85.1s 00:58:33] [walk] 85s iters=40000 cur=89 best=89 harv=2786
+[   127.3s 00:59:15] [walk] 127s iters=60000 cur=89 best=89 harv=4024
+[   167.6s 00:59:55] [walk] 168s iters=80000 cur=89 best=89 harv=5449
+[   210.9s 01:00:39] [walk] 211s iters=100000 cur=89 best=89 harv=6732
+[   253.5s 01:01:21] [walk] 253s iters=120000 cur=89 best=89 harv=8004
+[   293.7s 01:02:02] [walk] 294s iters=140000 cur=89 best=89 harv=9078
+[   428.6s 01:04:16] [lns] cross-pollinated 682 masks (pool=4530)
+[   561.7s 01:06:29] [lns] 262s iters=20000 cur=100 best=89 pool=4589 hot=67611 harv=20 peelgain=3919
+[   811.1s 01:10:39] [lns] 511s iters=40000 cur=98 best=89 pool=4693 hot=135797 harv=29 peelgain=7314
+[   950.9s 01:12:59] [walk] 51s iters=20000 cur=89 best=89 harv=1364
+[  1000.3s 01:13:48] [walk] 100s iters=40000 cur=89 best=89 harv=2916
+[     0.0s 01:14:26] hunt worker start: engine=alt seed=p6_div04_best.json rng=6666 total=14264s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 01:14:26]   NEW BEST 89 gates depth 6 VERIFIED 
+[    46.9s 01:15:13] [walk] 47s iters=20000 cur=89 best=89 harv=1449
+[    94.1s 01:16:00] [walk] 94s iters=40000 cur=89 best=89 harv=2865
+[   138.5s 01:16:45] [walk] 139s iters=60000 cur=89 best=89 harv=4311
+[   183.8s 01:17:30] [walk] 184s iters=80000 cur=89 best=89 harv=5716
+[   227.9s 01:18:14] [walk] 228s iters=100000 cur=89 best=89 harv=7069
+[   273.9s 01:19:00] [walk] 274s iters=120000 cur=89 best=89 harv=8321
+[   301.4s 01:19:28] drift reseed: 89 gates, maxJ_fam=0.331
+[   439.0s 01:21:45] [lns] cross-pollinated 760 masks (pool=4596)
+[   595.9s 01:24:22] [lns] 295s iters=20000 cur=98 best=89 pool=4672 hot=68975 harv=9 peelgain=4102
+[   859.9s 01:28:46] [lns] 559s iters=40000 cur=98 best=89 pool=4785 hot=140812 harv=14 peelgain=7824
+[   903.3s 01:29:30] [lns] cross-pollinated 8 masks (pool=4805)
+[   903.4s 01:29:30] drift reseed: 89 gates, maxJ_fam=0.331
+[   954.1s 01:30:20] [walk] 51s iters=20000 cur=89 best=89 harv=1407
+[   999.2s 01:31:05] [walk] 96s iters=40000 cur=89 best=89 harv=2668
+[  1043.9s 01:31:50] [walk] 141s iters=60000 cur=89 best=89 harv=3832
+[  1094.8s 01:32:41] [walk] 191s iters=80000 cur=89 best=89 harv=4936
+[  1144.6s 01:33:31] [walk] 241s iters=100000 cur=89 best=89 harv=6218
+[  1195.1s 01:34:21] [walk] 292s iters=120000 cur=89 best=89 harv=7521
+[  1204.0s 01:34:30] drift reseed: 89 gates, maxJ_fam=0.331
+[  1351.6s 01:36:58] [lns] cross-pollinated 798 masks (pool=4621)
+[     0.0s 01:39:08] hunt worker start: engine=alt seed=p6_div04_best.json rng=7786 total=12783s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 01:39:08]   NEW BEST 89 gates depth 6 VERIFIED 
+[    47.4s 01:39:55] [walk] 47s iters=20000 cur=89 best=89 harv=1461
+[    95.0s 01:40:43] [walk] 95s iters=40000 cur=89 best=89 harv=2951
+[   138.5s 01:41:26] [walk] 138s iters=60000 cur=89 best=89 harv=4398
+[   186.0s 01:42:14] [walk] 186s iters=80000 cur=89 best=89 harv=5834
+[   228.9s 01:42:57] [walk] 229s iters=100000 cur=89 best=89 harv=7196
+[   274.3s 01:43:42] [walk] 274s iters=120000 cur=89 best=89 harv=8526
+[   302.6s 01:44:10] drift reseed: 89 gates, maxJ_fam=0.331
+[   453.6s 01:46:41] [lns] cross-pollinated 826 masks (pool=4615)
+[   543.5s 01:48:11] [lns] cross-pollinated 1 masks (pool=4662)
+[   725.6s 01:51:13] [lns] 423s iters=20000 cur=95 best=89 pool=4729 hot=65336 harv=33 peelgain=7258
+[   902.7s 01:54:11] drift reseed: 89 gates, maxJ_fam=0.331
+[   941.3s 01:54:49] [walk] 39s iters=20000 cur=89 best=89 harv=1467
+[   980.4s 01:55:28] [walk] 78s iters=40000 cur=89 best=89 harv=2974
+[  1019.0s 01:56:07] [walk] 116s iters=60000 cur=89 best=89 harv=4314
+[  1064.6s 01:56:53] [walk] 162s iters=80000 cur=89 best=89 harv=5628
+[  1109.1s 01:57:37] [walk] 206s iters=100000 cur=89 best=89 harv=6853
+[     0.0s 02:07:00] hunt worker start: engine=alt seed=p6_div04_best.json rng=29884 total=11108s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p6_div04.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 02:07:00]   NEW BEST 89 gates depth 6 VERIFIED 

@@ -1,0 +1,42 @@
+tasks=44 already-decided=24 todo=20 timeout=1800s procs=4 solver=cadical195
+launch 999f690128b8 k=10 nB=18 nv=7722 nc=195971
+launch 07b8243f6498 k=11 nB=18 nv=8014 nc=201863
+launch cd47e7065432 k=11 nB=5 nv=4680 nc=116079
+launch 76849a40595c k=12 nB=13 nv=7077 nc=177058
+{"id": "76849a40595c", "k": 12, "r": 11, "mode": "cone", "nB": 13, "miss_t": 7, "nv": 7077, "nc": 177058, "t": 703.8, "timeout_budget": 1800.0, "status": "unsat"}
+launch 1336b730ef38 k=12 nB=17 nv=8062 nc=201609
+{"id": "1336b730ef38", "k": 12, "r": 11, "mode": "cone", "nB": 17, "miss_t": 6, "nv": 8062, "nc": 201609, "t": 999.8, "timeout_budget": 1800.0, "status": "unsat"}
+launch 71a7fe7b2db4 k=12 nB=11 nv=6567 nc=165598
+{"id": "999f690128b8", "k": 10, "r": 9, "mode": "cone", "nB": 18, "miss_t": 4, "nv": 7722, "nc": 195971, "t": 1802.7, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "07b8243f6498", "k": 11, "r": 10, "mode": "cone", "nB": 18, "miss_t": 5, "nv": 8014, "nc": 201863, "t": 1801.4, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "cd47e7065432", "k": 11, "r": 10, "mode": "cone", "nB": 5, "miss_t": 7, "nv": 4680, "nc": 116079, "t": 1800.6, "timeout_budget": 1800.0, "status": "timeout"}
+launch 651a0febfa06 k=12 nB=20 nv=8799 nc=221168
+launch 3ef1fec5bdfa k=12 nB=8 nv=5798 nc=145337
+launch 6f1ae414ea82 k=13 nB=3 nv=4758 nc=116721
+{"id": "651a0febfa06", "k": 12, "r": 11, "mode": "cone", "nB": 20, "miss_t": 7, "nv": 8799, "nc": 221168, "t": 960.5, "timeout_budget": 1800.0, "status": "unsat"}
+launch 7dbfa636b8cf k=13 nB=8 nv=6076 nc=151610
+{"id": "71a7fe7b2db4", "k": 12, "r": 11, "mode": "cone", "nB": 11, "miss_t": 7, "nv": 6567, "nc": 165598, "t": 1800.3, "timeout_budget": 1800.0, "status": "timeout"}
+launch 63873f779ead k=13 nB=27 nv=10662 nc=262751
+{"id": "3ef1fec5bdfa", "k": 12, "r": 11, "mode": "cone", "nB": 8, "miss_t": 8, "nv": 5798, "nc": 145337, "t": 1801.7, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "6f1ae414ea82", "k": 13, "r": 12, "mode": "cone", "nB": 3, "miss_t": 7, "nv": 4758, "nc": 116721, "t": 1801.1, "timeout_budget": 1800.0, "status": "timeout"}
+launch 91c6798b22ea k=13 nB=18 nv=8574 nc=216973
+launch 6c3e59873f7c k=13 nB=7 nv=5826 nc=146169
+{"id": "7dbfa636b8cf", "k": 13, "r": 12, "mode": "cone", "nB": 8, "miss_t": 6, "nv": 6076, "nc": 151610, "t": 1802.6, "timeout_budget": 1800.0, "status": "timeout"}
+launch 91ca48a04e75 k=13 nB=23 nv=9778 nc=248985
+{"id": "91ca48a04e75", "k": 13, "r": 12, "mode": "cone", "nB": 23, "miss_t": 7, "nv": 9778, "nc": 248985, "t": 553.8, "timeout_budget": 1800.0, "status": "unsat"}
+launch 8f51efe313ad k=14 nB=11 nv=7181 nc=178086
+{"id": "63873f779ead", "k": 13, "r": 12, "mode": "cone", "nB": 27, "miss_t": 5, "nv": 10662, "nc": 262751, "t": 1802.1, "timeout_budget": 1800.0, "status": "timeout"}
+launch 9c3964ec12a3 k=14 nB=15 nv=8151 nc=205868
+{"id": "91c6798b22ea", "k": 13, "r": 12, "mode": "cone", "nB": 18, "miss_t": 5, "nv": 8574, "nc": 216973, "t": 1801.8, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "6c3e59873f7c", "k": 13, "r": 12, "mode": "cone", "nB": 7, "miss_t": 7, "nv": 5826, "nc": 146169, "t": 1801.2, "timeout_budget": 1800.0, "status": "timeout"}
+launch 00a04632872e k=14 nB=32 nv=12014 nc=299053
+launch 4f0f59a64052 k=14 nB=19 nv=9102 nc=228947
+{"id": "00a04632872e", "k": 14, "r": 13, "mode": "cone", "nB": 32, "miss_t": 6, "nv": 12014, "nc": 299053, "t": 947.9, "timeout_budget": 1800.0, "status": "unsat"}
+launch e1e87ba30f6c k=14 nB=36 nv=12829 nc=323092
+{"id": "e1e87ba30f6c", "k": 14, "r": 13, "mode": "cone", "nB": 36, "miss_t": 5, "nv": 12829, "nc": 323092, "t": 211.8, "timeout_budget": 1800.0, "status": "unsat"}
+launch 7dfa3c3d0124 k=14 nB=34 nv=12419 nc=310864
+{"id": "4f0f59a64052", "k": 14, "r": 13, "mode": "cone", "nB": 19, "miss_t": 6, "nv": 9102, "nc": 228947, "t": 1509.4, "timeout_budget": 1800.0, "status": "unsat"}
+{"id": "8f51efe313ad", "k": 14, "r": 13, "mode": "cone", "nB": 11, "miss_t": 9, "nv": 7181, "nc": 178086, "t": 1802.0, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "9c3964ec12a3", "k": 14, "r": 13, "mode": "cone", "nB": 15, "miss_t": 7, "nv": 8151, "nc": 205868, "t": 1801.9, "timeout_budget": 1800.0, "status": "timeout"}
+{"id": "7dfa3c3d0124", "k": 14, "r": 13, "mode": "cone", "nB": 34, "miss_t": 5, "nv": 12419, "nc": 310864, "t": 1802.7, "timeout_budget": 1800.0, "status": "timeout"}
+run complete

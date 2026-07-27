@@ -16,5 +16,17 @@
   "depth": 5,
   "file": "circuits/mixcolumns_89gates_depth5.json",
   "sha256": "209f74d5717112f80203db4324b22a83e5f8ea0c9c45b32eda09c83413529746"
+ },
+ {
+  "gates": 88,
+  "depth": 7,
+  "file": "circuits/mixcolumns_88gates_depth7.json",
+  "sha256": "d87f6ed982518d93387ed07abbe3b6fb96e76b96a45e9e3136ed2d271f924c20"
+ },
+ {
+  "gates": 88,
+  "depth": 8,
+  "file": "circuits/mixcolumns_88gates_depth8_thirdfamily.json",
+  "sha256": "e692dfc6a5a3eaa1f7cfc7078781561ff37d331227c129b9d1665d31e5c50f5a"
  }
 ]

@@ -2,7 +2,7 @@
 """
 ladder_parallel.py  --  the record-hunting pipeline (parallel, reseeding).
 
-    python3 ladder_parallel.py [--mode cascade|fixed]
+    python3 ladder_parallel.py [--mode cascade|fixed] [--workers hunt87|sub89]
                                [--stop-gates N] [--stop-depth D]
 
 Two modes (--mode overrides the MODE default below):
@@ -12,15 +12,17 @@ Two modes (--mode overrides the MODE default below):
              deeper rung seeded from it -- all rungs keep running, all reseed.
 
   "fixed"    launch a fixed set of workers at once (each with its own depth cap
-             and seed) and let them run in parallel, continuously re-seeding
-             each other. Shipped as the exact sub-89 configuration that
+             and seed) and let them run in parallel. --workers picks the set:
+             "hunt87" (default) puts one uncapped worker on each of the three
+             known 88-gate families chasing 87, plus a depth-6-capped worker on
+             the 89@depth5 record; "sub89" is the historic two-worker set that
              produced 89@depth5.
 
 --stop-gates / --stop-depth make the coordinator shut everything down cleanly
 as soon as a verified global best satisfies BOTH given bounds (an omitted
 bound is a don't-care), e.g. to replicate the records:
 
-    python3 ladder_parallel.py --mode fixed   --stop-gates 89 --stop-depth 5
+    python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5
     python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4
 
 Without stop bounds the run continues until Ctrl-C; either way every best is
@@ -31,7 +33,8 @@ verifies-before-claim and uses a PARETO tie-break (accept fewer gates, or
 equal gates at lower depth) so shallow equal-gate circuits are not lost. The
 coordinator maintains best_overall.json and offers each worker the best circuit
 that is feasible at its depth cap (reseed_<label>.json), which the worker adopts
-between chunks.
+between chunks -- unless that worker was configured with reseed=False, which is
+how the 88-family workers are kept from collapsing onto one circuit.
 """
 import argparse
 import os, sys, json, time, shutil, subprocess
@@ -45,21 +48,61 @@ MODE = "cascade"                # "cascade" or "fixed"
 #             from the frontier). This is the configuration shape of the run
 #             that produced 92@depth4 (see ../evidence/
 #             cascade_run_2026-07-14_from_scratch_newlogic/).
-#   fixed   = the FIXED_WORKERS set below, shipped as the EXACT two-worker
-#             configuration of the sub-89 run that produced 89@depth5 (see
-#             ../evidence/sub89_run_2026-07-14_got_89at5/code/CONFIG_AS_RUN.md).
+#   fixed   = one of the WORKER_SETS below (--workers picks the set): the
+#             current 87-hunt configuration, or the historic sub-89 one.
 
-# ---- fixed-mode workers: the sub-89 configuration -------------------------
-# Two reseeding workers warm-started at the frontier: an uncapped hunter on the
-# 89@depth6 circuit (chasing 88, and free to surface equal-gate-shallower
-# circuits via the Pareto tie-break -- this is the worker that found 89@depth5
-# in ~10 minutes), and a depth-5-capped hunter on the 90@depth5 circuit.
-FIXED_WORKERS = [
-    dict(label="uncapped_sub89", engine="lns", depth=None,
-         start="seeds/seed_89_at_depth6.json"),
-    dict(label="depth5_sub90", engine="lns", depth=5,
-         start="seeds/seed_90_at_depth5.json"),
-]
+# ---- fixed-mode worker sets ----------------------------------------------
+FIXED_WORKER_SET = "hunt87"     # "hunt87" or "sub89"; --workers overrides
+
+WORKER_SETS = {
+    # The shipped hunting configuration: one uncapped worker per known 88-gate
+    # family, all chasing 87, plus one depth-capped worker still working the
+    # depth frontier. The campaign's exact certificates showed every known
+    # 88-gate circuit has an empty remove-2 shell (and the canonical ones an
+    # empty remove-3 shell), i.e. an 87 is at least 4 masks away from each of
+    # them -- so pointing one worker at each family is three independent
+    # long-jump attempts, not one search with three seeds.
+    #
+    # A worker dict key: label, engine ("lns"/"walk"/"alt"), depth (None =
+    # uncapped), start (seed path), and optionally seeds (RNG list), knobs
+    # (per-worker overrides) and reseed (False = never adopt a coordinator
+    # offer). The family workers set reseed=False on purpose: an offer is
+    # Pareto-better if it is equal-size and shallower, so a single reseed pass
+    # would collapse the 88@8 and Jean workers onto the 88@7 circuit and throw
+    # the family diversity -- the whole point of the set -- away.
+    #
+    # PROVENANCE: f3_jean88 starts from Jean's published circuit (ePrint
+    # 2026/1481), and f2's 88@8 seed is itself derived from that circuit (its
+    # rho^2-symmetric 90 seed was built partly by symmetrizing Jean's 88).
+    # Anything those two workers produce is DERIVED FROM PUBLISHED WORK and
+    # must be reported that way (../METHODS.md, seeds/README.md). Only f1 and
+    # d6 run on circuits of our own lineage.
+    "hunt87": [
+        dict(label="f1_ours88_d7", engine="alt", depth=None, reseed=False,
+             start="seeds/seed_88_at_depth7_ours.json"),
+        dict(label="f2_third88_d8", engine="alt", depth=None, reseed=False,
+             start="seeds/seed_88_at_depth8_thirdfamily.json"),
+        dict(label="f3_jean88_d7", engine="alt", depth=None, reseed=False,
+             start="seeds/seed_88_at_depth7_jean_imported.json"),
+        dict(label="d6_from89at5", engine="lns", depth=6,
+             start="seeds/seed_89_at_depth5.json"),
+    ],
+    # The historic sub-89 configuration, kept reachable and unchanged: two
+    # reseeding workers warm-started at the then-frontier -- an uncapped hunter
+    # on the 89@depth6 circuit (chasing 88, and free to surface equal-gate-
+    # shallower circuits via the Pareto tie-break: this is the worker that
+    # found 89@depth5 in ~10 minutes), and a depth-5-capped hunter on the
+    # 90@depth5 circuit. See ../evidence/sub89_run_2026-07-14_got_89at5/
+    # code/CONFIG_AS_RUN.md. NOTE it now runs the campaign engine, not the
+    # engine of that archived run -- to replay the run itself, use its code/.
+    "sub89": [
+        dict(label="uncapped_sub89", engine="lns", depth=None,
+             start="seeds/seed_89_at_depth6.json"),
+        dict(label="depth5_sub90", engine="lns", depth=5,
+             start="seeds/seed_90_at_depth5.json"),
+    ],
+}
+FIXED_WORKERS = WORKER_SETS[FIXED_WORKER_SET]
 
 # ---- cascade-mode ladder ---------------------------------------------------
 DEPTHS = [3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -73,12 +116,68 @@ ENGINE_DEEP = "lns"
 # ---- shared ---------------------------------------------------------------
 SEEDS_PER_WORKER = [1, 2, 3]    # default RNG seeds (a worker dict may override)
 POLL_S = 20                     # coordinator status cadence
-CHUNK_S = 600                   # worker chunk length (each worker continues from its OWN best)
+CHUNK_S = 600                   # lns chunk length (each worker continues from its OWN best)
+WALK_CHUNK_S = 300              # walk chunk length inside an "alt" worker
 RESEED = True                   # coordinator offers each worker the best circuit
-                                # feasible at its depth cap (as in both record runs)
+                                # feasible at its depth cap (as in both record
+                                # runs); a worker dict may opt out with reseed=False
 
-LNS_KNOBS = dict(kmax=6, kshake=12, snapback=8, nsamp=(24, 24), up_prob=0.5, up_slack=4)
-WALK_KNOBS = dict(hub_move_p=0.35, close_hamming=4, repair_hub=40, repair_one=24, plateau_slack_p=0.02)
+# Engine knobs. The values are the campaign's measured-good configuration; each
+# line says what the knob does. Anything a worker wants different goes in its
+# own knobs= dict (for an "alt" worker, keyed by engine: {"lns": {...}}).
+LNS_KNOBS = dict(
+    op_mix={"small": 0.35, "coneinj": 0.45, "biginj": 0.20},
+                        # destroy operator mix. small = 1-4 random masks (the
+                        # moves that actually rebuild); coneinj = a CONNECTED
+                        # cone of the circuit + injected local candidates
+                        # (~12x improvements/s over random destroys); biginj = a
+                        # big destroy, only viable because of peel_window.
+                        # "uniform" (1..kmax random masks, the v1 destroy) is
+                        # also accepted here.
+    kmax=4,             # victim count of the "uniform" operator
+    cone_lo=2, cone_hi=4,        # coneinj victim count range
+    biginj_lo=8, biginj_hi=16,   # biginj victim count range
+    kshake=12,          # every 997th iteration: forced kshake..kshake+4 destroy
+    nsamp=(12, 12),     # (base, extra) pool draws and kept-pair draws per rebuild
+                        # -- (12,12) is ~1.3-1.8x the throughput of v1's (24,24)
+                        # at the same drift (knob sweep: champ_fast)
+    hot_frac=0.5,       # fraction of pool draws taken from the hot list (masks a
+                        # rebuild recently reintroduced) -- ~11x accepted moves
+    vic_cost=3,         # pull-in cost class of a just-destroyed victim: victims
+                        # stay available, so a rebuild never dead-ends (~34x
+                        # accepted moves), but cost 3 pushes it to look elsewhere
+    peel_window=6,      # peel a rebuild that came out up to this many masks too
+                        # big before judging it (recovers near misses v1 dropped)
+    accept="sa",        # "sa" = annealing with reheat (default), or "threshold"
+    sa_T0=1.2, sa_cool=0.9997, sa_reheat=4000,
+                        # temperature, per-iteration cooling, and the number of
+                        # iterations without a new best that triggers a reheat
+    up_prob=0.5, up_slack=4,     # the v1 threshold rule; used only if accept="threshold"
+    snapback=12,        # restart from best once cur drifts this far above it
+    harvest=True,       # append every distinct plateau state to <label>.pop.jsonl
+                        # in the run folder (worker.py turns this switch into the
+                        # engine's harvest_path; the engines take a path, not a
+                        # bool, so that a run always states where it harvested)
+    cross_pollinate=False,
+                        # merge sibling workers' harvested masks into this
+                        # worker's pool. OFF by default: it is a measured-good
+                        # diversifier but it mixes the mask provenance of every
+                        # worker in the run, so a circuit found afterwards is
+                        # only cleanly "ours" if every seed in the run was.
+    pop_period_s=120.0, # how often cross-pollination re-reads sibling harvests
+)
+WALK_KNOBS = dict(
+    hub_move_p=0.30,    # probability of a remove-2-add-1 hub move
+    close_hamming=8,    # half the hub moves pick the second victim within this
+                        # Hamming distance of the first
+    plateau_slack_p=0.15,
+                        # probability of accepting a +1 move near the best. High
+                        # on purpose: with exact repair the equal-size plateau is
+                        # walkable (~2-3k distinct states/min), which is where
+                        # the 88s came from -- v1's 0.02 was tuned for an engine
+                        # whose repair usually failed.
+    harvest=True,       # as above: worker.py resolves this to a harvest_path
+)
 ANNEAL_KNOBS = dict(anneal_iters=150000, ils_rounds=2500, sa_T0=2.0, sa_T1=0.05)
 # ==========================================================================
 # END CONFIG
@@ -108,7 +207,8 @@ def pareto_better(g2, d2, g1, d1):
 
 def read_status(path):
     try:
-        return json.load(open(path))
+        with open(path) as f:
+            return json.load(f)
     except Exception:
         return None
 
@@ -153,7 +253,7 @@ def do_reseed(meta, procs, out_dir, log, state):
     if not RESEED:
         return
     for lbl, m in meta.items():
-        if procs[lbl].poll() is not None:
+        if procs[lbl].poll() is not None or not m.get("reseed", True):
             continue
         cap = m["cap"]
         own = bests.get(lbl)
@@ -214,7 +314,7 @@ def make_run():
         except Exception:
             pass
     worker_knobs = {w["label"]: w["knobs"] for w in FIXED_WORKERS if w.get("knobs")}
-    json.dump({"chunk_s": CHUNK_S, "reseed": RESEED,
+    json.dump({"chunk_s": CHUNK_S, "walk_chunk_s": WALK_CHUNK_S, "reseed": RESEED,
                "knobs": {"lns": LNS_KNOBS, "walk": WALK_KNOBS, "anneal3": ANNEAL_KNOBS},
                "worker_knobs": worker_knobs},
               open(os.path.join(out_dir, "config.json"), "w"), indent=2)
@@ -228,7 +328,7 @@ def run_fixed():
     def log(msg):
         line = "[%8.1fs %s] %s" % (time.time() - t0, time.strftime("%H:%M:%S"), msg)
         print(line, flush=True); masterlog.write(line + "\n")
-    log("FIXED-mode pipeline -> %s" % out_dir)
+    log("FIXED-mode pipeline (%s) -> %s" % (FIXED_WORKER_SET, out_dir))
     log("workers: %s" % [(w["label"], w["engine"], w["depth"]) for w in FIXED_WORKERS])
 
     procs, meta = {}, {}
@@ -236,7 +336,7 @@ def run_fixed():
         lbl = w["label"]
         procs[lbl] = launch(lbl, w["engine"], w["depth"], w["start"], out_dir, log,
                             seeds=w.get("seeds"))
-        meta[lbl] = {"cap": w["depth"],
+        meta[lbl] = {"cap": w["depth"], "reseed": w.get("reseed", True),
                      "status_path": os.path.join(out_dir, "%s_status.json" % lbl),
                      "best_path": os.path.join(out_dir, "%s_best.json" % lbl)}
     state = {"gb": None, "offer": {}}
@@ -322,18 +422,24 @@ def run_cascade():
 
 
 def main():
-    global STOP_GATES, STOP_DEPTH
+    global STOP_GATES, STOP_DEPTH, FIXED_WORKER_SET, FIXED_WORKERS
     parser = argparse.ArgumentParser(
         description="Record-hunting pipeline for AES MixColumns XOR circuits.")
     parser.add_argument("--mode", choices=("cascade", "fixed"), default=MODE,
                         help="cascade = from-scratch depth ladder (default); "
-                             "fixed = the shipped sub-89 worker set")
+                             "fixed = a fixed worker set (see --workers)")
+    parser.add_argument("--workers", choices=tuple(WORKER_SETS), default=FIXED_WORKER_SET,
+                        help="fixed-mode worker set: hunt87 = the three 88-gate "
+                             "families chasing 87 + a depth-6 worker (default); "
+                             "sub89 = the historic two-worker sub-89 set")
     parser.add_argument("--stop-gates", type=int, default=None, metavar="N",
                         help="stop cleanly once a verified best has <= N gates")
     parser.add_argument("--stop-depth", type=int, default=None, metavar="D",
                         help="stop cleanly once the verified best also has depth <= D")
     args = parser.parse_args()
     STOP_GATES, STOP_DEPTH = args.stop_gates, args.stop_depth
+    FIXED_WORKER_SET = args.workers
+    FIXED_WORKERS = WORKER_SETS[FIXED_WORKER_SET]
 
     os.makedirs(os.path.join(HERE, OUT_ROOT), exist_ok=True)
     if args.mode == "fixed":

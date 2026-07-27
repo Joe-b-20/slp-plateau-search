@@ -1,0 +1,75 @@
+[
+ {
+  "file": "../BREAKTHROUGH_88gates_depth8_THIRDFAMILY.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.455,
+  "J_new88": 0.544,
+  "J_orb88": 1.0,
+  "note": "third-family anchor (from rho2-symmetric-90 basin1 descent)"
+ },
+ {
+  "file": "f3_00_d10_jO725.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.467,
+  "J_new88": 0.467,
+  "J_orb88": 0.725
+ },
+ {
+  "file": "f3_01_d10_jO725.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.479,
+  "J_orb88": 0.725
+ },
+ {
+  "file": "f3_02_d10_jO778.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.467,
+  "J_orb88": 0.778
+ },
+ {
+  "file": "f3_03_d10_jO778.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.467,
+  "J_new88": 0.492,
+  "J_orb88": 0.778
+ },
+ {
+  "file": "f3_04_d10_jO796.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.517,
+  "J_orb88": 0.796
+ },
+ {
+  "file": "f3_05_d10_jO796.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.492,
+  "J_orb88": 0.796
+ },
+ {
+  "file": "f3_06_d10_jO814.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.479,
+  "J_orb88": 0.814
+ },
+ {
+  "file": "f3_07_d10_jO814.json",
+  "gates": 88,
+  "depth": 10,
+  "J_jean": 0.455,
+  "J_new88": 0.492,
+  "J_orb88": 0.814
+ }
+]

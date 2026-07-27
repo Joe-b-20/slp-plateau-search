@@ -1,0 +1,22 @@
+[     0.0s 23:23:33] hunt worker start: engine=alt seed=BEST_90gates_depth7_rho2symmetric_basin2.json rng=6606 total=1912s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/w6_orbit90.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/w6_orbit90.pop.jsonl'}
+[     0.0s 23:23:33]   NEW BEST 90 gates depth 7 VERIFIED 
+[     0.5s 23:23:34]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=130
+[     8.9s 23:23:42]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=2598
+[    64.2s 23:24:38] [walk] 64s iters=20000 cur=90 best=90 harv=2667
+[   126.5s 23:25:40] [walk] 127s iters=40000 cur=90 best=90 harv=5391
+[   194.1s 23:26:47] [walk] 194s iters=60000 cur=90 best=90 harv=8160
+[   257.0s 23:27:50] [walk] 257s iters=80000 cur=90 best=90 harv=10928
+[   464.0s 23:31:17] [lns] cross-pollinated 994 masks (pool=4966)
+[   710.3s 23:35:24] [lns] 410s iters=20000 cur=96 best=90 pool=5063 hot=68883 harv=9 peelgain=4972
+[   962.8s 23:39:36] [walk] 62s iters=20000 cur=90 best=90 harv=2682
+[   993.5s 23:40:07]   NEW BEST 89 gates depth 6 VERIFIED it=29005
+[   993.7s 23:40:07]   NEW BEST 89 gates depth 5 VERIFIED depth-tiebreak it=29055
+[  1026.7s 23:40:40] [walk] 126s iters=40000 cur=89 best=89 harv=5178
+[  1088.1s 23:41:41] [walk] 187s iters=60000 cur=89 best=89 harv=7485
+[  1146.7s 23:42:40] [walk] 246s iters=80000 cur=89 best=89 harv=9745
+[  1199.3s 23:43:33] [walk] 298s iters=100000 cur=89 best=89 harv=12008
+[  1361.9s 23:46:15] [lns] cross-pollinated 1008 masks (pool=4840)
+[  1547.1s 23:49:20] [lns] 346s iters=20000 cur=95 best=89 pool=4947 hot=69365 harv=5 peelgain=5226
+[  1845.1s 23:54:18] [walk] 43s iters=20000 cur=89 best=89 harv=2309
+[  1887.3s 23:55:01] [walk] 86s iters=40000 cur=89 best=89 harv=4463
+[  1912.0s 23:55:25] hunt worker done: best=89@5 iters(last chunk)=50601

@@ -1,0 +1,66 @@
+[
+ {
+  "file": "../BREAKTHROUGH_88gates_depth7.json",
+  "gates": 88,
+  "depth": 7,
+  "J_jean": 0.53,
+  "J_new88": 1.0,
+  "note": "independent 88 found from sym94 seed"
+ },
+ {
+  "file": "p88_00_d8_jJean517_jNew743.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.517,
+  "J_new88": 0.743
+ },
+ {
+  "file": "p88_01_d8_jJean530_jNew743.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.53,
+  "J_new88": 0.743
+ },
+ {
+  "file": "p88_02_d8_jJean544_jNew778.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.544,
+  "J_new88": 0.778
+ },
+ {
+  "file": "p88_03_d9_jJean544_jNew778.json",
+  "gates": 88,
+  "depth": 9,
+  "J_jean": 0.544,
+  "J_new88": 0.778
+ },
+ {
+  "file": "p88_04_d8_jJean544_jNew760.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.544,
+  "J_new88": 0.76
+ },
+ {
+  "file": "p88_05_d8_jJean796_jNew504.json",
+  "gates": 88,
+  "depth": 8,
+  "J_jean": 0.796,
+  "J_new88": 0.504
+ },
+ {
+  "file": "p88_06_d7_jJean530_jNew796.json",
+  "gates": 88,
+  "depth": 7,
+  "J_jean": 0.53,
+  "J_new88": 0.796
+ },
+ {
+  "file": "p88_07_d9_jJean530_jNew796.json",
+  "gates": 88,
+  "depth": 9,
+  "J_jean": 0.53,
+  "J_new88": 0.796
+ }
+]

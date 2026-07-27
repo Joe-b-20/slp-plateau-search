@@ -1,0 +1,47 @@
+[     0.0s 22:45:08] hunt worker start: engine=alt seed=w10_sym94_best.json rng=8808 total=4217s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/w8_new88b.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'op_mix': {'coneinj': 0.5, 'small': 0.3, 'biginj': 0.2}, 'cone_lo': 3, 'cone_hi': 8} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/w8_new88b.pop.jsonl'}
+[     0.0s 22:45:08]   NEW BEST 88 gates depth 7 VERIFIED 
+[    66.9s 22:46:15] [walk] 67s iters=20000 cur=88 best=88 harv=1273
+[   129.5s 22:47:18] [walk] 129s iters=40000 cur=88 best=88 harv=2390
+[   189.1s 22:48:17] [walk] 189s iters=60000 cur=88 best=88 harv=3382
+[   250.2s 22:49:18] [walk] 250s iters=80000 cur=88 best=88 harv=4567
+[   450.6s 22:52:39] [lns] cross-pollinated 897 masks (pool=4648)
+[   541.5s 22:54:10] [lns] cross-pollinated 8 masks (pool=4708)
+[   661.3s 22:56:09] [lns] cross-pollinated 5 masks (pool=4768)
+[   808.6s 22:58:37] [lns] 509s iters=20000 cur=97 best=88 pool=4829 hot=71002 harv=1 peelgain=6115
+[   964.4s 23:01:13] [walk] 64s iters=20000 cur=88 best=88 harv=1131
+[  1022.5s 23:02:11] [walk] 122s iters=40000 cur=88 best=88 harv=2124
+[  1080.8s 23:03:09] [walk] 180s iters=60000 cur=88 best=88 harv=2576
+[  1138.0s 23:04:06] [walk] 237s iters=80000 cur=88 best=88 harv=2718
+[  1366.2s 23:07:54] [lns] cross-pollinated 920 masks (pool=4646)
+[  1441.7s 23:09:10] [lns] cross-pollinated 1 masks (pool=4673)
+[  1561.8s 23:11:10] [lns] cross-pollinated 5 masks (pool=4731)
+[  1689.4s 23:13:18] [lns] 489s iters=20000 cur=96 best=88 pool=4748 hot=73414 harv=2 peelgain=4656
+[  1856.5s 23:16:05] [walk] 55s iters=20000 cur=88 best=88 harv=1291
+[  1913.7s 23:17:02] [walk] 113s iters=40000 cur=88 best=88 harv=2481
+[  1973.2s 23:18:01] [walk] 172s iters=60000 cur=88 best=88 harv=3509
+[  2028.2s 23:18:56] [walk] 227s iters=80000 cur=88 best=88 harv=4411
+[  2079.8s 23:19:48] [walk] 279s iters=100000 cur=88 best=88 harv=5303
+[  2257.3s 23:22:45] [lns] cross-pollinated 914 masks (pool=4641)
+[  2342.3s 23:24:10] [lns] cross-pollinated 41 masks (pool=4726)
+[  2462.8s 23:26:11] [lns] cross-pollinated 39 masks (pool=4790)
+[  2528.4s 23:27:16] [lns] 427s iters=20000 cur=93 best=88 pool=4805 hot=71818 harv=24 peelgain=6027
+[  2582.8s 23:28:11] [lns] cross-pollinated 10 masks (pool=4839)
+[  2752.5s 23:31:01] [walk] 51s iters=20000 cur=88 best=88 harv=1164
+[  2809.3s 23:31:57] [walk] 107s iters=40000 cur=88 best=88 harv=2397
+[  2866.3s 23:32:54] [walk] 164s iters=60000 cur=88 best=88 harv=3501
+[  2929.9s 23:33:58] [walk] 228s iters=80000 cur=88 best=88 harv=4658
+[  2983.6s 23:34:52] [walk] 282s iters=100000 cur=88 best=88 harv=5761
+[  3157.9s 23:37:46] [lns] cross-pollinated 1029 masks (pool=4756)
+[  3243.0s 23:39:11] [lns] cross-pollinated 3 masks (pool=4792)
+[  3363.6s 23:41:12] [lns] cross-pollinated 18 masks (pool=4876)
+[  3393.9s 23:41:42] [lns] 392s iters=20000 cur=96 best=88 pool=4880 hot=70720 harv=1 peelgain=5770
+[  3482.8s 23:43:11] [lns] cross-pollinated 2 masks (pool=4898)
+[  3648.7s 23:45:57] [walk] 46s iters=20000 cur=88 best=88 harv=1258
+[  3693.7s 23:46:42] [walk] 91s iters=40000 cur=88 best=88 harv=2455
+[  3733.3s 23:47:21] [walk] 131s iters=60000 cur=88 best=88 harv=3610
+[  3774.4s 23:48:02] [walk] 172s iters=80000 cur=88 best=88 harv=4698
+[  3819.2s 23:48:47] [walk] 217s iters=100000 cur=88 best=88 harv=5881
+[  3856.9s 23:49:25] [walk] 255s iters=120000 cur=88 best=88 harv=6955
+[  3895.9s 23:50:04] [walk] 293s iters=140000 cur=88 best=88 harv=7903
+[  4058.2s 23:52:46] [lns] cross-pollinated 1031 masks (pool=4810)
+[  4217.1s 23:55:25] hunt worker done: best=88@7 iters(last chunk)=18133

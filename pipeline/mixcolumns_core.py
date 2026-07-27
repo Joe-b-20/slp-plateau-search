@@ -107,7 +107,8 @@ def load_circuit_masks(path):
     """Read a circuit JSON and return the SET of non-input signal masks it
     computes. Accepts index-pair gates {"gates":[[a,b],...]} or mask-triple
     gates {"gates":[{"m","a","b"}]} or a bare list of either."""
-    data = json.load(open(path))
+    with open(path) as f:
+        data = json.load(f)
     gates = data["gates"] if isinstance(data, dict) else data
     if gates and isinstance(gates[0], dict):
         return set(int(g["m"]) & 0xFFFFFFFF for g in gates)

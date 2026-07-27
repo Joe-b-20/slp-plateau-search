@@ -9,6 +9,8 @@ circuit Pareto-beats its own best. It continuously:
   * saves the best VERIFIED circuit so far to  <out_dir>/<label>_best.json
   * writes live status to                      <out_dir>/<label>_status.json
   * appends a log to                           <out_dir>/<label>.log
+  * (if harvesting is on) appends every distinct plateau state it visits to
+    <out_dir>/<label>.pop.jsonl
 
 verify-before-claim: a candidate is only ever accepted by improve() after the
 GF(2^8) oracle verifies it at this worker's depth cap.
@@ -17,9 +19,16 @@ Pareto tie-break: improve() accepts a candidate when it has FEWER gates, OR the
 same gate count at STRICTLY LOWER depth. So an 89@depth5 found while the best is
 89@depth6 is kept, not discarded.
 
+The engine name "alt" is not an engine but a worker mode: it alternates a short
+`walk` chunk with a longer `lns` chunk, each starting from the worker's own
+best. The walk sprays across the plateau (hundreds of iterations per second,
+harvesting as it goes) and the lns then punches down from wherever the walk
+ended up; this alternation is what the campaign's best-performing hunt workers
+ran, and it is how both new 88-gate circuits were reached.
+
 Usage (the coordinator calls this):
-  python3 worker.py <label> <engine> <depth|none> <scratch|seedfile> <out_dir> <seeds_csv>
-Engine knobs, chunk length, and reseeding are read from <out_dir>/config.json.
+  python3 worker.py <label> <engine|alt> <depth|none> <scratch|seedfile> <out_dir> <seeds_csv>
+Engine knobs, chunk lengths, and reseeding are read from <out_dir>/config.json.
 """
 import os, sys, json, time
 import mixcolumns_core as core
@@ -99,21 +108,51 @@ class WorkerCtx:
         return True
 
 
+def knobs_for(cfg, engine, label):
+    """Knobs for one engine: the run's defaults plus this worker's overrides.
+    An override dict is either flat (a single-engine worker) or keyed by engine
+    name, which is how an "alt" worker overrides its walk and lns chunks
+    separately."""
+    knobs = dict(cfg["knobs"][engine])
+    over = cfg.get("worker_knobs", {}).get(label, {})
+    if any(name in over for name in cfg["knobs"]):
+        over = over.get(engine, {})
+    knobs.update(over)
+    return knobs
+
+
+def wire_harvest(knobs, out_dir, label):
+    """Turn the harvest / cross_pollinate switches into the paths the engines
+    use: this worker harvests into <label>.pop.jsonl, and -- only if explicitly
+    asked -- also reads every sibling *.pop.jsonl of the run into its rebuild
+    pool. Cross-pollination mixes the mask provenance of all workers in the run,
+    so it is off unless a config turns it on (see ladder_parallel.py)."""
+    if knobs.pop("harvest", False):
+        knobs["harvest_path"] = os.path.join(out_dir, "%s.pop.jsonl" % label)
+    if knobs.pop("cross_pollinate", False):
+        knobs["pop_glob"] = os.path.join(out_dir, "*.pop.jsonl")
+    return knobs
+
+
 def main():
     label = sys.argv[1]; engine = sys.argv[2]; depth_arg = sys.argv[3]
     start_arg = sys.argv[4]; out_dir = sys.argv[5]
     seeds = [int(x) for x in sys.argv[6].split(",")] if len(sys.argv) > 6 and sys.argv[6] else [1]
     cap = None if depth_arg.lower() in ("none", "free", "-1") else int(depth_arg)
 
-    cfg = json.load(open(os.path.join(out_dir, "config.json")))
+    with open(os.path.join(out_dir, "config.json")) as f:
+        cfg = json.load(f)
     chunk_s = cfg.get("chunk_s", 600)
+    walk_chunk_s = cfg.get("walk_chunk_s", 300)
     reseed_on = cfg.get("reseed", True)
-    knobs = dict(cfg["knobs"][engine])
-    knobs.update(cfg.get("worker_knobs", {}).get(label, {}))   # per-worker knob overrides
+    # "alt" alternates walk and lns chunks; any other name is a single engine.
+    cycle = ("walk", "lns") if engine == "alt" else (engine,)
+    knobs = {e: wire_harvest(knobs_for(cfg, e, label), out_dir, label) for e in cycle}
 
     ctx = WorkerCtx(label, cap, out_dir)
     ctx.log("worker start: engine=%s depth=%s start=%s seeds=%s chunk=%ds reseed=%s"
             % (engine, cap, start_arg, seeds, chunk_s, reseed_on))
+    ctx.log("knobs: %s" % json.dumps(knobs, sort_keys=True))
 
     # initial seed
     if start_arg == "scratch":
@@ -122,23 +161,28 @@ def main():
         seed_masks = core.load_circuit_masks(start_arg)
 
     reseed_path = os.path.join(out_dir, "reseed_%s.json" % label)
+    chunk = 0
     try:
         while True:
             # (a) consider a coordinator reseed before this chunk
             if reseed_on and os.path.exists(reseed_path):
                 try:
-                    rg = json.load(open(reseed_path))["gates"]
+                    with open(reseed_path) as f:
+                        rg = json.load(f)["gates"]
                     rmasks = core.load_circuit_masks(reseed_path)
                     if ctx.adopt(rg, rmasks, os.path.basename(reseed_path)):
                         seed_masks = set(rmasks)
                 except Exception as e:
                     ctx.log("  reseed read failed: %s" % e)
             # (b) run one bounded chunk from the current seed (never self-stops)
-            engines.run_engine(engine, seed_masks, cap, None, chunk_s, seeds, knobs, ctx)
+            eng = cycle[chunk % len(cycle)]
+            secs = walk_chunk_s if (engine == "alt" and eng == "walk") else chunk_s
+            engines.run_engine(eng, seed_masks, cap, None, secs, seeds, knobs[eng], ctx)
             # (c) continue next chunk from this worker's own best
             if ctx.best_masks is not None:
                 seed_masks = set(ctx.best_masks)
             seeds = [s + 1 for s in seeds]        # vary RNG across chunks
+            chunk += 1
     except KeyboardInterrupt:
         pass
     finally:

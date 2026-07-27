@@ -17,6 +17,8 @@ jobs:
           python verify_circuit.py evidence/circuits/mixcolumns_97gates_depth3.json 3
           python verify_circuit.py evidence/circuits/mixcolumns_92gates_depth4.json 4
           python verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
+          python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth7.json 7
+          python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth8_thirdfamily.json 8
       - name: Unit tests (core invariants)
         run: python -m unittest discover -s tests -v
       - name: Compile check

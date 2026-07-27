@@ -1,0 +1,196 @@
+[     0.0s 00:57:08] hunt worker start: engine=alt seed=div_00_g89_d7_j107.json rng=3909 total=15300s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 00:57:08]   NEW BEST 89 gates depth 7 VERIFIED 
+[     1.7s 00:57:09]   NEW BEST 89 gates depth 6 VERIFIED depth-tiebreak it=746
+[    42.5s 00:57:50] [walk] 42s iters=20000 cur=89 best=89 harv=1351
+[    84.2s 00:58:32] [walk] 84s iters=40000 cur=89 best=89 harv=2693
+[   126.4s 00:59:14] [walk] 126s iters=60000 cur=89 best=89 harv=4101
+[   166.7s 00:59:55] [walk] 167s iters=80000 cur=89 best=89 harv=5485
+[   210.4s 01:00:38] [walk] 210s iters=100000 cur=89 best=89 harv=6829
+[   253.4s 01:01:21] [walk] 253s iters=120000 cur=89 best=89 harv=8234
+[   293.7s 01:02:01] [walk] 294s iters=140000 cur=89 best=89 harv=9569
+[   428.6s 01:04:16] [lns] cross-pollinated 668 masks (pool=4498)
+[   556.8s 01:06:25] [lns] 257s iters=20000 cur=97 best=89 pool=4577 hot=68361 harv=13 peelgain=4077
+[   797.0s 01:10:25] [lns] 497s iters=40000 cur=96 best=89 pool=4674 hot=139781 harv=16 peelgain=7406
+[   950.6s 01:12:58] [walk] 50s iters=20000 cur=89 best=89 harv=1327
+[  1001.0s 01:13:49] [walk] 101s iters=40000 cur=89 best=89 harv=2782
+[     0.0s 01:14:26] hunt worker start: engine=alt seed=p4_div00_best.json rng=6444 total=14264s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 01:14:26]   NEW BEST 89 gates depth 6 VERIFIED 
+[    48.0s 01:15:14] [walk] 48s iters=20000 cur=89 best=89 harv=1350
+[    97.8s 01:16:04] [walk] 98s iters=40000 cur=89 best=89 harv=2760
+[   148.3s 01:16:54] [walk] 148s iters=60000 cur=89 best=89 harv=4119
+[   197.9s 01:17:44] [walk] 198s iters=80000 cur=89 best=89 harv=5507
+[   250.5s 01:18:37] [walk] 250s iters=100000 cur=89 best=89 harv=6900
+[   297.2s 01:19:23] [walk] 297s iters=120000 cur=89 best=89 harv=7921
+[   301.4s 01:19:28] drift reseed: 89 gates, maxJ_fam=0.331
+[   440.0s 01:21:46] [lns] cross-pollinated 776 masks (pool=4551)
+[   622.1s 01:24:48] [lns] 321s iters=20000 cur=98 best=89 pool=4638 hot=67890 harv=12 peelgain=4539
+[   903.3s 01:29:30] [lns] cross-pollinated 7 masks (pool=4742)
+[   903.4s 01:29:30] drift reseed: 89 gates, maxJ_fam=0.331
+[   951.1s 01:30:17] [walk] 48s iters=20000 cur=89 best=89 harv=1371
+[  1002.0s 01:31:08] [walk] 99s iters=40000 cur=89 best=89 harv=2801
+[  1053.7s 01:32:00] [walk] 150s iters=60000 cur=89 best=89 harv=4056
+[  1107.7s 01:32:54] [walk] 204s iters=80000 cur=89 best=89 harv=5389
+[  1155.8s 01:33:42] [walk] 252s iters=100000 cur=89 best=89 harv=6450
+[  1203.9s 01:34:30] drift reseed: 89 gates, maxJ_fam=0.331
+[  1353.3s 01:36:59] [lns] cross-pollinated 803 masks (pool=4632)
+[     0.0s 01:39:08] hunt worker start: engine=alt seed=p4_div00_best.json rng=7524 total=12783s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'repel_file': '../repel_masks.json', 'repel_pen': 2, 'repel_up_p': 0.25} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/p4_div00.pop.jsonl', 'repel_file': '../repel_masks.json', 'repel_up_p': 0.25}
+[     0.0s 01:39:08]   NEW BEST 89 gates depth 6 VERIFIED 
+[    46.6s 01:39:54] [walk] 47s iters=20000 cur=89 best=89 harv=1288
+[    93.1s 01:40:41] [walk] 93s iters=40000 cur=89 best=89 harv=2615
+[   136.1s 01:41:24] [walk] 136s iters=60000 cur=89 best=89 harv=3862
+[   183.4s 01:42:11] [walk] 183s iters=80000 cur=89 best=89 harv=5109
+[   226.8s 01:42:55] [walk] 227s iters=100000 cur=89 best=89 harv=6376
+[   271.6s 01:43:39] [walk] 272s iters=120000 cur=89 best=89 harv=7803
+[   302.4s 01:44:10] drift reseed: 89 gates, maxJ_fam=0.331
+[   453.8s 01:46:42] [lns] cross-pollinated 837 masks (pool=4614)
+[   543.3s 01:48:11] [lns] cross-pollinated 1 masks (pool=4676)
+[   668.9s 01:50:17] [lns] 366s iters=20000 cur=97 best=89 pool=4755 hot=65022 harv=27 peelgain=5628
+[   902.5s 01:54:10] drift reseed: 89 gates, maxJ_fam=0.331
+[   941.6s 01:54:49] [walk] 39s iters=20000 cur=89 best=89 harv=1435
+[   980.4s 01:55:28] [walk] 78s iters=40000 cur=89 best=89 harv=2877
+[  1019.0s 01:56:07] [walk] 116s iters=60000 cur=89 best=89 harv=4270
+[  1065.2s 01:56:53] [walk] 163s iters=80000 cur=89 best=89 harv=5678
+[  1109.8s 01:57:38] [walk] 207s iters=100000 cur=89 best=89 harv=6913
+[  1158.0s 01:58:26] [walk] 255s iters=120000 cur=89 best=89 harv=8310
+[  1203.3s 01:59:11] drift reseed: 89 gates, maxJ_fam=0.331
+[  1363.1s 02:01:51] [lns] cross-pollinated 887 masks (pool=4669)
+[  1443.8s 02:03:12] [lns] cross-pollinated 1 masks (pool=4712)
+[  1586.8s 02:05:35] [lns] 383s iters=20000 cur=97 best=89 pool=4780 hot=67834 harv=5 peelgain=6190
+[  1803.4s 02:09:11] drift reseed: 89 gates, maxJ_fam=0.331
+[  1845.5s 02:09:53] [walk] 42s iters=20000 cur=89 best=89 harv=1387
+[  1886.6s 02:10:34] [walk] 83s iters=40000 cur=89 best=89 harv=2661
+[  1927.9s 02:11:16] [walk] 125s iters=60000 cur=89 best=89 harv=4001
+[  1976.0s 02:12:04] [walk] 173s iters=80000 cur=89 best=89 harv=5260
+[  2024.6s 02:12:52] [walk] 221s iters=100000 cur=89 best=89 harv=6525
+[  2077.8s 02:13:46] [walk] 274s iters=120000 cur=89 best=89 harv=7987
+[  2104.0s 02:14:12] drift reseed: 89 gates, maxJ_fam=0.331
+[  2272.6s 02:17:00] [lns] cross-pollinated 930 masks (pool=4729)
+[  2344.7s 02:18:13] [lns] cross-pollinated 23 masks (pool=4779)
+[  2532.3s 02:21:20] [lns] 428s iters=20000 cur=96 best=89 pool=4842 hot=66856 harv=12 peelgain=6051
+[  2704.1s 02:24:12] drift reseed: 89 gates, maxJ_fam=0.331
+[  2757.2s 02:25:05] [walk] 53s iters=20000 cur=89 best=89 harv=1172
+[  2814.1s 02:26:02] [walk] 110s iters=40000 cur=89 best=89 harv=2576
+[  2868.3s 02:26:56] [walk] 164s iters=60000 cur=89 best=89 harv=3999
+[  2929.0s 02:27:57] [walk] 225s iters=80000 cur=89 best=89 harv=5448
+[  2991.7s 02:29:00] [walk] 288s iters=100000 cur=89 best=89 harv=6759
+[  3004.8s 02:29:13] drift reseed: 89 gates, maxJ_fam=0.331
+[  3194.4s 02:32:22] [lns] cross-pollinated 1006 masks (pool=4770)
+[  3245.3s 02:33:13] [lns] cross-pollinated 5 masks (pool=4784)
+[  3425.9s 02:36:14] [lns] 421s iters=20000 cur=97 best=89 pool=4944 hot=67816 harv=18 peelgain=4646
+[  3604.9s 02:39:13] drift reseed: 89 gates, maxJ_fam=0.331
+[  3652.0s 02:40:00] [walk] 47s iters=20000 cur=89 best=89 harv=1422
+[  3697.7s 02:40:46] [walk] 93s iters=40000 cur=89 best=89 harv=2799
+[  3753.3s 02:41:41] [walk] 148s iters=60000 cur=89 best=89 harv=3937
+[  3809.1s 02:42:37] [walk] 204s iters=80000 cur=89 best=89 harv=5283
+[  3862.8s 02:43:31] [walk] 258s iters=100000 cur=89 best=89 harv=6448
+[  3905.4s 02:44:13] drift reseed: 89 gates, maxJ_fam=0.331
+[  4084.4s 02:47:12] [lns] cross-pollinated 1030 masks (pool=4835)
+[  4240.4s 02:49:48] [lns] 335s iters=20000 cur=97 best=89 pool=4910 hot=69694 harv=12 peelgain=3994
+[  4505.5s 02:54:13] drift reseed: 89 gates, maxJ_fam=0.331
+[  4558.4s 02:55:06] [walk] 53s iters=20000 cur=89 best=89 harv=1169
+[  4609.9s 02:55:58] [walk] 104s iters=40000 cur=89 best=89 harv=2502
+[  4661.8s 02:56:50] [walk] 156s iters=60000 cur=89 best=89 harv=3744
+[  4712.9s 02:57:41] [walk] 207s iters=80000 cur=89 best=89 harv=4854
+[  4763.6s 02:58:31] [walk] 258s iters=100000 cur=89 best=89 harv=6060
+[  4806.0s 02:59:14] drift reseed: 89 gates, maxJ_fam=0.331
+[  4985.3s 03:02:13] [lns] cross-pollinated 1061 masks (pool=4850)
+[  5188.4s 03:05:36] [lns] 382s iters=20000 cur=96 best=89 pool=4967 hot=67275 harv=18 peelgain=5108
+[  5406.1s 03:09:14] drift reseed: 89 gates, maxJ_fam=0.331
+[  5454.7s 03:10:02] [walk] 49s iters=20000 cur=89 best=89 harv=1466
+[  5508.3s 03:10:56] [walk] 102s iters=40000 cur=89 best=89 harv=2931
+[  5559.6s 03:11:47] [walk] 154s iters=60000 cur=89 best=89 harv=4149
+[  5601.5s 03:12:29] [walk] 195s iters=80000 cur=89 best=89 harv=5442
+[  5647.1s 03:13:15] [walk] 241s iters=100000 cur=89 best=89 harv=6557
+[  5692.2s 03:14:00] [walk] 286s iters=120000 cur=89 best=89 harv=7881
+[  5706.7s 03:14:14] drift reseed: 89 gates, maxJ_fam=0.331
+[  5892.1s 03:17:20] [lns] cross-pollinated 1061 masks (pool=4829)
+[  6060.2s 03:20:08] [lns] 354s iters=20000 cur=99 best=89 pool=4909 hot=69705 harv=14 peelgain=4193
+[  6306.9s 03:24:15] drift reseed: 89 gates, maxJ_fam=0.331
+[  6351.7s 03:24:59] [walk] 45s iters=20000 cur=89 best=89 harv=1390
+[  6396.6s 03:25:44] [walk] 90s iters=40000 cur=89 best=89 harv=2810
+[  6440.1s 03:26:28] [walk] 133s iters=60000 cur=89 best=89 harv=4276
+[  6482.9s 03:27:11] [walk] 176s iters=80000 cur=89 best=89 harv=5644
+[  6527.5s 03:27:55] [walk] 221s iters=100000 cur=89 best=89 harv=6909
+[  6572.0s 03:28:40] [walk] 265s iters=120000 cur=89 best=89 harv=8262
+[  6607.5s 03:29:15] drift reseed: 89 gates, maxJ_fam=0.331
+[  6790.1s 03:32:18] [lns] cross-pollinated 1058 masks (pool=4844)
+[  6934.0s 03:34:42] [lns] 327s iters=20000 cur=97 best=89 pool=4906 hot=66907 harv=25 peelgain=4175
+[  7087.6s 03:37:15] [lns] cross-pollinated 2 masks (pool=4992)
+[  7179.0s 03:38:47] [lns] 571s iters=40000 cur=97 best=89 pool=5034 hot=134853 harv=28 peelgain=8185
+[  7207.6s 03:39:15] drift reseed: 89 gates, maxJ_fam=0.331
+[  7248.0s 03:39:56] [walk] 40s iters=20000 cur=89 best=89 harv=1385
+[  7291.7s 03:40:39] [walk] 84s iters=40000 cur=89 best=89 harv=2832
+[  7331.3s 03:41:19] [walk] 124s iters=60000 cur=89 best=89 harv=4153
+[  7373.2s 03:42:01] [walk] 166s iters=80000 cur=89 best=89 harv=5591
+[  7415.9s 03:42:44] [walk] 208s iters=100000 cur=89 best=89 harv=6651
+[  7459.6s 03:43:27] [walk] 252s iters=120000 cur=89 best=89 harv=8028
+[  7501.5s 03:44:09] [walk] 294s iters=140000 cur=89 best=89 harv=9423
+[  7508.2s 03:44:16] drift reseed: 89 gates, maxJ_fam=0.331
+[  7691.8s 03:47:20] [lns] cross-pollinated 1080 masks (pool=4864)
+[  7850.8s 03:49:59] [lns] 343s iters=20000 cur=100 best=89 pool=4942 hot=67560 harv=23 peelgain=4585
+[  8104.6s 03:54:12] [lns] 596s iters=40000 cur=99 best=89 pool=5039 hot=136970 harv=27 peelgain=8738
+[  8108.5s 03:54:16] drift reseed: 89 gates, maxJ_fam=0.331
+[  8147.7s 03:54:56] [walk] 39s iters=20000 cur=89 best=89 harv=1328
+[  8188.0s 03:55:36] [walk] 79s iters=40000 cur=89 best=89 harv=2670
+[  8228.1s 03:56:16] [walk] 120s iters=60000 cur=89 best=89 harv=3932
+[  8266.5s 03:56:54] [walk] 158s iters=80000 cur=89 best=89 harv=5162
+[  8306.3s 03:57:34] [walk] 198s iters=100000 cur=89 best=89 harv=6362
+[  8349.3s 03:58:17] [walk] 241s iters=120000 cur=89 best=89 harv=7830
+[  8388.2s 03:58:56] [walk] 280s iters=140000 cur=89 best=89 harv=9274
+[  8409.1s 03:59:17] drift reseed: 89 gates, maxJ_fam=0.331
+[  8596.8s 04:02:25] [lns] cross-pollinated 1089 masks (pool=4848)
+[  8749.7s 04:04:58] [lns] 341s iters=20000 cur=97 best=89 pool=4930 hot=67057 harv=11 peelgain=4675
+[  9009.3s 04:09:17] [lns] cross-pollinated 1 masks (pool=5081)
+[  9009.3s 04:09:17] drift reseed: 89 gates, maxJ_fam=0.331
+[  9049.8s 04:09:58] [walk] 40s iters=20000 cur=89 best=89 harv=1205
+[  9089.2s 04:10:37] [walk] 80s iters=40000 cur=89 best=89 harv=2682
+[  9130.8s 04:11:19] [walk] 121s iters=60000 cur=89 best=89 harv=4099
+[  9170.6s 04:11:58] [walk] 161s iters=80000 cur=89 best=89 harv=5500
+[  9210.4s 04:12:38] [walk] 201s iters=100000 cur=89 best=89 harv=6877
+[  9253.2s 04:13:21] [walk] 244s iters=120000 cur=89 best=89 harv=8221
+[  9293.2s 04:14:01] [walk] 284s iters=140000 cur=89 best=89 harv=9418
+[  9309.9s 04:14:18] drift reseed: 89 gates, maxJ_fam=0.331
+[  9500.7s 04:17:29] [lns] cross-pollinated 1078 masks (pool=4862)
+[  9614.0s 04:19:22] [lns] 304s iters=20000 cur=98 best=89 pool=4932 hot=68795 harv=9 peelgain=3685
+[  9786.0s 04:22:14] [lns] 476s iters=40000 cur=101 best=89 pool=4993 hot=140310 harv=9 peelgain=6032
+[  9910.2s 04:24:18] drift reseed: 89 gates, maxJ_fam=0.331
+[  9951.3s 04:24:59] [walk] 41s iters=20000 cur=89 best=89 harv=1339
+[  9990.9s 04:25:39] [walk] 81s iters=40000 cur=89 best=89 harv=2788
+[ 10032.9s 04:26:21] [walk] 123s iters=60000 cur=89 best=89 harv=4223
+[ 10073.1s 04:27:01] [walk] 163s iters=80000 cur=89 best=89 harv=5667
+[ 10111.7s 04:27:39] [walk] 201s iters=100000 cur=89 best=89 harv=7070
+[ 10155.0s 04:28:23] [walk] 245s iters=120000 cur=89 best=89 harv=8340
+[ 10196.1s 04:29:04] [walk] 286s iters=140000 cur=89 best=89 harv=9621
+[ 10210.8s 04:29:19] drift reseed: 89 gates, maxJ_fam=0.331
+[ 10405.6s 04:32:33] [lns] cross-pollinated 1095 masks (pool=4852)
+[ 10587.8s 04:35:36] [lns] 377s iters=20000 cur=96 best=89 pool=4961 hot=66541 harv=15 peelgain=5440
+[ 10810.9s 04:39:19] drift reseed: 89 gates, maxJ_fam=0.331
+[ 10848.2s 04:39:56] [walk] 37s iters=20000 cur=89 best=89 harv=1374
+[ 10888.5s 04:40:36] [walk] 78s iters=40000 cur=89 best=89 harv=2834
+[ 10925.5s 04:41:13] [walk] 115s iters=60000 cur=89 best=89 harv=4174
+[ 10964.8s 04:41:53] [walk] 154s iters=80000 cur=89 best=89 harv=5489
+[ 11004.1s 04:42:32] [walk] 193s iters=100000 cur=89 best=89 harv=6919
+[ 11044.4s 04:43:12] [walk] 233s iters=120000 cur=89 best=89 harv=8355
+[ 11081.7s 04:43:50] [walk] 271s iters=140000 cur=89 best=89 harv=9694
+[ 11111.5s 04:44:19] drift reseed: 89 gates, maxJ_fam=0.331
+[ 11308.5s 04:47:36] [lns] cross-pollinated 1068 masks (pool=4856)
+[ 11442.7s 04:49:51] [lns] 331s iters=20000 cur=100 best=89 pool=4946 hot=70276 harv=6 peelgain=4575
+[ 11711.7s 04:54:20] drift reseed: 89 gates, maxJ_fam=0.331
+[ 11751.0s 04:54:59] [walk] 39s iters=20000 cur=89 best=89 harv=1448
+[ 11790.3s 04:55:38] [walk] 79s iters=40000 cur=89 best=89 harv=2703
+[ 11829.1s 04:56:17] [walk] 117s iters=60000 cur=89 best=89 harv=3705
+[ 11866.0s 04:56:54] [walk] 154s iters=80000 cur=89 best=89 harv=4786
+[ 11904.7s 04:57:33] [walk] 193s iters=100000 cur=89 best=89 harv=6190
+[ 11943.7s 04:58:12] [walk] 232s iters=120000 cur=89 best=89 harv=7534
+[ 11980.4s 04:58:48] [walk] 269s iters=140000 cur=89 best=89 harv=8898
+[ 12012.2s 04:59:20] drift reseed: 89 gates, maxJ_fam=0.331
+[ 12211.4s 05:02:39] [lns] cross-pollinated 1076 masks (pool=4853)
+[ 12353.4s 05:05:01] [lns] 341s iters=20000 cur=96 best=89 pool=4936 hot=67611 harv=13 peelgain=5108
+[ 12612.5s 05:09:20] drift reseed: 89 gates, maxJ_fam=0.331
+[ 12646.5s 05:09:54] [walk] 34s iters=20000 cur=89 best=89 harv=1318
+[ 12678.9s 05:10:27] [walk] 66s iters=40000 cur=89 best=89 harv=2747
+[ 12711.8s 05:11:00] [walk] 99s iters=60000 cur=89 best=89 harv=4166
+[ 12744.6s 05:11:32] [walk] 132s iters=80000 cur=89 best=89 harv=5540
+[ 12777.9s 05:12:06] [walk] 165s iters=100000 cur=89 best=89 harv=6930
+[ 12783.2s 05:12:11] drift reseed: 89 gates, maxJ_fam=0.331
+[ 12783.2s 05:12:11] hunt worker done: best=89@6 iters(last chunk)=103315

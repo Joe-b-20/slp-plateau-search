@@ -1,0 +1,8 @@
+phase2 k3: 13 done, 187 todo
+rank 013 key=c1ebdfe5092f904d d=56 -> irreducible_k3 (90s)
+rank 014 key=03679144733862fe d=56 -> irreducible_k3 (92s)
+rank 015 key=d055be96184bfb71 d=54 -> irreducible_k3 (95s)
+rank 016 key=8223fe2658f131cc d=54 -> irreducible_k3 (93s)
+rank 017 key=252d25cedc78925e d=54 -> irreducible_k3 (94s)
+rank 018 key=12fc5e4902af71d7 d=54 -> irreducible_k3 (93s)
+phase2 time cap reached

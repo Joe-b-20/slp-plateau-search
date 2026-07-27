@@ -1,0 +1,14 @@
+stage0 crafted per-case: 12/12 ok
+stage1s states (nin=6): 150 states agree with brute (150 YES, 0 NO), 0.0s
+stage1s states (nin=8): 120 states agree with brute (88 YES, 32 NO), 27.8s
+stage1s states (nin=9): 60 states agree with brute (21 YES, 39 NO), 86.4s
+stage1 lean (nin=6,g=9): 360 windows agree with brute (360 YES, 0 NO), 0.1s
+stage1b lean (nin=7,g=11): 360 windows agree with brute (360 YES, 0 NO), 0.5s
+stage1c redundant (nin=6,g=14): 120 windows agree with brute (120 YES, 0 NO), 0.0s
+stage2 medium (nin=8,g=16): 32 windows agree with brute (32 YES, 0 NO), 0.1s
+fuzz total: 1202 windows, 1131 YES / 71 NO
+stage3a planted-YES k=4 on 88(+chain): 9/9 ok, 0.1s
+stage3b k=3 budget-3 on the 88: 6/6 YES as required, 0.1s
+case histogram (winning branch): {'A': 894, 'B1b': 18}
+ALL TESTS PASSED
+exit=0

@@ -4,22 +4,34 @@ reproduce.py  --  single-command, single-core, stdlib-only reproduction of the
 from-scratch depth-3 record for AES MixColumns (97 gates at depth 3), plus
 optional legacy demonstrations of the search moves.
 
-    python3 reproduce.py
+    python3 reproduce.py            # the record: 97 @ depth 3, from scratch
+    python3 reproduce.py 91 89      # opt in to the legacy demonstrations
 
 Edit the CONFIG block just below to choose which methods run and to tune every
-search parameter.  The math and the verifier live in mixcolumns_core.py; the
-seed circuits live in seeds.py.  Each method writes out_<method>.json and is
-checked by the independent GF(2^8) verifier before it is reported.
+search parameter (method names on the command line override RUN, nothing else
+does).  The math and the verifier live in mixcolumns_core.py -- a byte-identical
+copy of ../pipeline/mixcolumns_core.py -- and the seed circuits live in
+seeds.py.  Each method writes out_<method>.json and is checked by the
+independent GF(2^8) verifier before it is reported.
+
+The search code in this file is the ORIGINAL per-method code of the runs it
+reproduces, deliberately frozen: it is what these results were obtained with,
+and each method is a readable statement of one move.  It is NOT the current
+engine.  The rebuilt v2 engine -- level-BFS relax, worklist closure, exact
+complete repair, cone destroys -- lives in ../pipeline/engines.py and is what
+the current records are hunted with; hunt_88.py in this folder aims it at the
+88-gate seed.
 
 The methods, and what each really is:
 
   "97"  CURRENT RECORD, depth-3, FROM SCRATCH.  Simulated-annealing +
         iterated-local-search over a "shared depth-1 pairs / depth-2 parts"
         model.  Reaches 97 gates at depth 3 -- the current record count at the
-        minimum possible depth -- from nothing, in minutes.
-        (The other current records need the multi-worker pipeline:
-         92@depth4 via ../pipeline MODE="cascade"; 89@depth5 via
-         ../pipeline MODE="fixed".  See ../pipeline/README.md.)
+        minimum possible depth -- from nothing, in a minute or two.  This model
+        is specific to depth 3 and untouched by the v2 engine rebuild.
+        (The other current records need the pipeline: 92@depth4 via
+         ../pipeline --mode cascade; 89@depth5 via --mode fixed --workers
+         sub89; 88@depth7 via hunt_88.py.  See README.md.)
 
   "91"  LEGACY demo.  Value-set reduction of the PUBLISHED 92-gate circuit of
         Xiang-Zeng-Lin-Bao-Zhang: walk the plateau of equal-size circuits
@@ -36,16 +48,18 @@ The methods, and what each really is:
 # ==========================================================================
 
 # Which methods to run.  Default: just "97" -- the from-scratch reproduction
-# of the CURRENT depth-3 record (97 gates at depth 3, ~1-3 min single core).
+# of the CURRENT depth-3 record (97 gates at depth 3, ~1-2 min single core;
+# 81 s when this was last re-validated, 2026-07-27).
 #
-# The other two current records need the multi-worker pipeline, not this file:
-#   92 @ depth 4  ->  ../pipeline/ MODE="cascade"   (hours, from scratch)
-#   89 @ depth 5  ->  ../pipeline/ MODE="fixed"     (~10-15 min from the
-#                     shipped 89@depth6 seed; see ../pipeline/README.md)
+# The other current records need the multi-worker pipeline, not this file:
+#   92 @ depth 4  ->  ../pipeline  --mode cascade                (hours)
+#   89 @ depth 5  ->  ../pipeline  --mode fixed --workers sub89  (seconds)
+#   88 @ depth 7  ->  hunt_88.py in this folder      (19-31 min in two re-runs)
+# See README.md for the exact commands and their measured times.
 #
 # The remaining methods here are LEGACY demonstrations of the moves on this
-# project's superseded records ("91" ~5-60s, "89" ~1-4min, "90" ~10-30s);
-# add them to RUN if you want to see the walk cut real circuits step by step.
+# project's superseded records; add them to RUN, or name them on the command
+# line (`python3 reproduce.py 91 89`), to watch the walk cut real circuits.
 RUN = ["97"]
 
 OUT_DIR = "."          # folder for out_<record>.json files
@@ -940,10 +954,13 @@ LABELS = {
 }
 
 
-def main():
+def main(run=None):
+    # Method names on the command line override RUN; no other CONFIG value is
+    # settable from outside this file.
+    run = run or [a for a in sys.argv[1:] if not a.startswith("-")] or RUN
     os.makedirs(OUT_DIR, exist_ok=True)
     results = []
-    for rec in RUN:
+    for rec in run:
         if rec not in METHODS:
             print("unknown record %r (choose from %s)" % (rec, list(METHODS)))
             continue
@@ -970,8 +987,9 @@ def main():
     print("=" * 72)
     print("Every out_<method>.json is independently checkable:")
     print("  python3 ../verify_circuit.py out_97.json 3")
-    print("The current 92@depth4 and 89@depth5 records reproduce with the")
-    print("pipeline, not this file -- see ../pipeline/README.md.")
+    print("The 92@depth4, 89@depth5 and 88@depth7 records reproduce with the")
+    print("pipeline, not this file -- see README.md for the commands and what")
+    print("each of them measured.")
 
 
 if __name__ == "__main__":

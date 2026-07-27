@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 390" font-family="Helvetica,Arial,sans-serif" font-size="13">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 390" font-family="Helvetica,Arial,sans-serif" font-size="13" role="img" aria-labelledby="ftitle fdesc">
+<title id="ftitle">AES MixColumns: the published depth-count Pareto frontier versus this work</title>
+<desc id="fdesc">Scatter plot, 2-input XOR gate count against circuit depth. The published frontier (dashed grey) runs 99 gates at depth 3 (Shi-Feng-Xu 2023), 97 at depth 4 and 94 at depth 5 (Osvik-Canright 2024), 92 at depth 6 (Maximov) and 88 at depth 7 (Jean, ePrint 2026/1481). This work (solid blue) runs 97 at depth 3, 92 at depth 4, 89 at depth 5 and 88 at depth 7; the depth-7 point is drawn as a half-grey half-blue marker because our 88 ties the published 88 with an independent circuit (61 of 88 masks shared), rather than beating it. A hollow blue marker shows our 88 at depth 8, a third distinct family that is dominated by our own 88 at depth 7. A hollow grey marker shows the published Sun-Yang-Li 89 (ePrint 2025/1493), off the frontier; that paper states no depth, so it is placed at depth 9, this repository's own measurement of its transcription. Crosses mark this project's own superseded earlier results.</desc>
 <rect x="0" y="0" width="670" height="390" fill="white"/>
 <line x1="70" y1="330.0" x2="630" y2="330.0" stroke="#dddddd" stroke-width="1"/>
 <text x="62" y="334.0" text-anchor="end" fill="#555555">86</text>
@@ -44,22 +46,40 @@
 <text x="239.0" y="150.6" fill="#666666">94 OC24</text>
 <circle cx="310.0" cy="201.4" r="5" fill="#888888"/>
 <text x="319.0" y="193.4" fill="#666666">92 Max19</text>
-<circle cx="390.0" cy="287.1" r="5" fill="#888888"/>
-<text x="399.0" y="279.1" fill="#666666">88 Jean26</text>
+<text x="399.0" y="265.1" fill="#666666">88 Jean26</text>
+<circle cx="550.0" cy="265.7" r="5.5" fill="#ffffff" stroke="#888888" stroke-width="2"/>
+<text x="559.0" y="256.7" font-size="12" fill="#666666">89 SYL25</text>
 <path d="M65.0 67.9 L75.0 77.9 M65.0 77.9 L75.0 67.9" stroke="#bbbbbb" stroke-width="2"/>
 <path d="M305.0 217.9 L315.0 227.9 M305.0 227.9 L315.0 217.9" stroke="#bbbbbb" stroke-width="2"/>
 <path d="M625.0 260.7 L635.0 270.7 M625.0 270.7 L635.0 260.7" stroke="#bbbbbb" stroke-width="2"/>
-<polyline points="70.0,94.3 150.0,201.4 230.0,265.7" fill="none" stroke="#1f6feb" stroke-width="2.5"/>
+<polyline points="70.0,94.3 150.0,201.4 230.0,265.7 390.0,287.1" fill="none" stroke="#1f6feb" stroke-width="2.5"/>
 <circle cx="70.0" cy="94.3" r="6" fill="#1f6feb"/>
 <text x="80.0" y="112.3" font-weight="bold" fill="#1f6feb">97</text>
 <circle cx="150.0" cy="201.4" r="6" fill="#1f6feb"/>
 <text x="160.0" y="219.4" font-weight="bold" fill="#1f6feb">92</text>
 <circle cx="230.0" cy="265.7" r="6" fill="#1f6feb"/>
 <text x="240.0" y="283.7" font-weight="bold" fill="#1f6feb">89</text>
-<line x1="390" y1="44" x2="424" y2="44" stroke="#888888" stroke-width="2.5" stroke-dasharray="6,4"/>
-<text x="432" y="48" fill="#333333">published frontier</text>
-<circle cx="407" cy="66" r="6" fill="#1f6feb"/>
-<text x="432" y="70" fill="#333333">this work</text>
-<path d="M402 83 L412 93 M402 93 L412 83" stroke="#bbbbbb" stroke-width="2"/>
-<text x="432" y="92" fill="#333333">this project, superseded (v1)</text>
+<path d="M390.0 281.1 A6 6 0 0 0 390.0 293.1 Z" fill="#888888"/>
+<path d="M390.0 281.1 A6 6 0 0 1 390.0 293.1 Z" fill="#1f6feb"/>
+<circle cx="390.0" cy="287.1" r="6" fill="none" stroke="#444444" stroke-width="0.8"/>
+<text x="384.0" y="306" text-anchor="end" font-size="11.5" fill="#1f6feb">ours: 88 @ 7 - ties the published point</text>
+<text x="384.0" y="320" text-anchor="end" font-size="10.5" fill="#666666">independent circuit, 61/88 shared masks</text>
+<circle cx="470.0" cy="287.1" r="5.5" fill="#ffffff" stroke="#1f6feb" stroke-width="2"/>
+<text x="480.0" y="307.1" font-size="12" fill="#1f6feb">88 @ 8 ours (dominated)</text>
+<line x1="390" y1="40" x2="424" y2="40" stroke="#888888" stroke-width="2.5" stroke-dasharray="6,4"/>
+<circle cx="407.0" cy="40.0" r="5" fill="#888888"/>
+<text x="432" y="44" font-size="12" fill="#333333">published frontier</text>
+<line x1="390" y1="62" x2="424" y2="62" stroke="#1f6feb" stroke-width="2.5"/>
+<circle cx="407.0" cy="62.0" r="6" fill="#1f6feb"/>
+<text x="432" y="66" font-size="12" fill="#333333">this work</text>
+<path d="M407.0 78.0 A6 6 0 0 0 407.0 90.0 Z" fill="#888888"/>
+<path d="M407.0 78.0 A6 6 0 0 1 407.0 90.0 Z" fill="#1f6feb"/>
+<circle cx="407.0" cy="84.0" r="6" fill="none" stroke="#444444" stroke-width="0.8"/>
+<text x="432" y="88" font-size="12" fill="#333333">88 @ 7: ours ties published</text>
+<circle cx="407" cy="106" r="5.5" fill="#ffffff" stroke="#1f6feb" stroke-width="2"/>
+<text x="432" y="110" font-size="12" fill="#333333">88 @ 8: ours, dominated</text>
+<circle cx="407" cy="128" r="5.5" fill="#ffffff" stroke="#888888" stroke-width="2"/>
+<text x="432" y="132" font-size="12" fill="#333333">published, off-frontier</text>
+<path d="M402.0 145.0 L412.0 155.0 M402.0 155.0 L412.0 145.0" stroke="#bbbbbb" stroke-width="2"/>
+<text x="432" y="154" font-size="12" fill="#333333">this project, superseded (v1)</text>
 </svg>

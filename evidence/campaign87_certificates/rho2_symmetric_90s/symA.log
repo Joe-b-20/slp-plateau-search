@@ -1,0 +1,77 @@
+[symA rng101] seed symlns_94gates_seed44.json: 94 masks
+[symA rng101] symmetrized+peeled: 53 orbits, 94 gates
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 94 gates depth 5 (start)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_94g.json: 94 gates depth 5 (start)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 93 gates depth 6 (walk it=70)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_93g.json: 93 gates depth 6 (walk it=70)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 92 gates depth 7 (walk it=139)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_92g.json: 92 gates depth 7 (walk it=139)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 91 gates depth 7 (walk it=197)
+[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_91g.json: 91 gates depth 7 (walk it=197)
+[symA rng101] [walk] 24s it=4000 acc=1873 cur=91 best=91 loose=0
+[symA rng101] [walk] 67s it=12000 acc=5576 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=27617 acc=12841 cur=91 best=91
+[symA rng101] [lns] 56s it=2000 acc=1917 cur=92 best=91
+[symA rng101] [lns] done 75s it=2668 acc=2557 cur=92 best=91
+[symA rng101] [walk] 42s it=4000 acc=1829 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=16823 acc=7866 cur=91 best=91
+[symA rng101] [lns] 75s it=2000 acc=1949 cur=92 best=91
+[symA rng101] [lns] done 75s it=2006 acc=1955 cur=92 best=91
+[symA rng101] [walk] 42s it=4000 acc=1916 cur=91 best=91 loose=0
+[symA rng101] [walk] 150s it=16000 acc=7548 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=16058 acc=7569 cur=91 best=91
+[symA rng101] [lns] 68s it=2000 acc=1911 cur=91 best=91
+[symA rng101] [lns] done 75s it=2199 acc=2106 cur=92 best=91
+[symA rng101] [walk] 37s it=4000 acc=1862 cur=91 best=91 loose=0
+[symA rng101] [walk] 78s it=8000 acc=3714 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=14399 acc=6729 cur=91 best=91
+[symA rng101] [lns] 67s it=2000 acc=1925 cur=92 best=91
+[symA rng101] [lns] done 75s it=2225 acc=2142 cur=92 best=91
+[symA rng101] [walk] 40s it=4000 acc=1844 cur=91 best=91 loose=0
+[symA rng101] [walk] 73s it=8000 acc=3683 cur=91 best=91 loose=0
+[symA rng101] [walk] 108s it=12000 acc=5580 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=16428 acc=7575 cur=91 best=91
+[symA rng101] [lns] 68s it=2000 acc=1944 cur=92 best=91
+[symA rng101] [lns] done 75s it=2197 acc=2132 cur=92 best=91
+[symA rng101] [walk] 135s it=12000 acc=5588 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=13274 acc=6176 cur=91 best=91
+[symA rng101] [lns] done 75s it=1927 acc=1849 cur=92 best=91
+[symA rng101] [walk] 42s it=4000 acc=1898 cur=91 best=91 loose=0
+[symA rng101] [walk] 129s it=12000 acc=5638 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=13818 acc=6493 cur=91 best=91
+[symA rng101] [lns] 74s it=2000 acc=1923 cur=92 best=91
+[symA rng101] [lns] done 75s it=2033 acc=1956 cur=92 best=91
+[symA rng101] [walk] 41s it=4000 acc=1899 cur=91 best=91 loose=0
+[symA rng101] [walk] 117s it=12000 acc=5615 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=14828 acc=6896 cur=91 best=91
+[symA rng101] [lns] 71s it=2000 acc=1939 cur=92 best=91
+[symA rng101] [lns] done 75s it=2113 acc=2047 cur=93 best=91
+[symA rng101] [walk] 88s it=8000 acc=3827 cur=91 best=91 loose=0
+[symA rng101] [walk] 126s it=12000 acc=5663 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=14243 acc=6719 cur=91 best=91
+[symA rng101] [lns] done 75s it=1878 acc=1821 cur=92 best=91
+[symA rng101] [walk] done 150s it=14029 acc=6526 cur=91 best=91
+[symA rng101] [lns] done 75s it=1881 acc=1833 cur=92 best=91
+[symA rng101] [walk] 40s it=4000 acc=1836 cur=91 best=91 loose=0
+[symA rng101] [walk] 74s it=8000 acc=3742 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=15504 acc=7347 cur=91 best=91
+[symA rng101] [lns] done 75s it=1795 acc=1737 cur=92 best=91
+[symA rng101] [walk] 41s it=4000 acc=1845 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=13280 acc=6141 cur=91 best=91
+[symA rng101] [lns] done 75s it=1916 acc=1851 cur=92 best=91
+[symA rng101] [walk] 132s it=12000 acc=5643 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=13617 acc=6426 cur=91 best=91
+[symA rng101] [lns] 70s it=2000 acc=1941 cur=92 best=91
+[symA rng101] [lns] done 75s it=2132 acc=2071 cur=92 best=91
+[symA rng101] [walk] 83s it=8000 acc=3793 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=15190 acc=7141 cur=91 best=91
+[symA rng101] [lns] 63s it=2000 acc=1934 cur=92 best=91
+[symA rng101] [lns] done 75s it=2342 acc=2268 cur=92 best=91
+[symA rng101] [walk] 40s it=4000 acc=1902 cur=91 best=91 loose=0
+[symA rng101] [walk] 76s it=8000 acc=3785 cur=91 best=91 loose=0
+[symA rng101] [walk] 114s it=12000 acc=5643 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=15563 acc=7315 cur=91 best=91
+[symA rng101] [lns] 65s it=2000 acc=1926 cur=92 best=91
+[symA rng101] [lns] done 75s it=2281 acc=2202 cur=92 best=91
+[symA rng101] [walk] 35s it=4000 acc=1866 cur=91 best=91 loose=0
+[symA rng101] [walk] done 150s it=15912 acc=7423 cur=91 best=91

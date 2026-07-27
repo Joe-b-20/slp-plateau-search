@@ -1,0 +1,10 @@
+tasks=4 already-decided=0 todo=4 timeout=480s procs=4 solver=cadical195
+launch cae6f1984de6 k=15 nB=39 nv=13662 nc=341117
+launch 161f15472c25 k=15 nB=30 nv=11826 nc=297963
+launch c24fbf496c42 k=15 nB=28 nv=11424 nc=286057
+launch 9172c050b193 k=16 nB=29 nv=11878 nc=299437
+{"id": "9172c050b193", "k": 16, "r": 15, "mode": "cone", "nB": 29, "miss_t": 6, "nv": 11878, "nc": 299437, "t": 59.9, "timeout_budget": 480.0, "status": "unsat"}
+{"id": "cae6f1984de6", "k": 15, "r": 14, "mode": "cone", "nB": 39, "miss_t": 5, "nv": 13662, "nc": 341117, "t": 75.9, "timeout_budget": 480.0, "status": "unsat"}
+{"id": "c24fbf496c42", "k": 15, "r": 14, "mode": "cone", "nB": 28, "miss_t": 7, "nv": 11424, "nc": 286057, "t": 472.6, "timeout_budget": 480.0, "status": "unsat"}
+{"id": "161f15472c25", "k": 15, "r": 14, "mode": "cone", "nB": 30, "miss_t": 5, "nv": 11826, "nc": 297963, "t": 480.8, "timeout_budget": 480.0, "status": "timeout"}
+run complete

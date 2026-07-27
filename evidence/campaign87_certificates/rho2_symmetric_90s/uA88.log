@@ -1,0 +1,87 @@
+[uA88 rng511] seed union_A88.json: 113 masks
+[uA88 rng511] symmetrized+peeled: 55 orbits, 94 gates
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 94 gates depth 5 (start)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_94g.json: 94 gates depth 5 (start)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 93 gates depth 6 (walk it=35)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_93g.json: 93 gates depth 6 (walk it=35)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 92 gates depth 6 (walk it=309)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_92g.json: 92 gates depth 6 (walk it=309)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 91 gates depth 6 (walk it=1204)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_91g.json: 91 gates depth 6 (walk it=1204)
+[uA88 rng511] [walk] 41s it=4000 acc=1876 cur=91 best=91 loose=0
+[uA88 rng511] [walk] done 150s it=14979 acc=6998 cur=91 best=91
+[uA88 rng511] [lns] done 75s it=1763 acc=1675 cur=91 best=91
+[uA88 rng511] [walk] 42s it=4000 acc=1916 cur=91 best=91 loose=0
+[uA88 rng511] [walk] 81s it=8000 acc=3776 cur=91 best=91 loose=0
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 90 gates depth 9 (walk it=10336)
+[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_90g.json: 90 gates depth 9 (walk it=10336)
+[uA88 rng511] [walk] done 150s it=15324 acc=7200 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1508 acc=1454 cur=91 best=90
+[uA88 rng511] [walk] 33s it=4000 acc=1891 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 106s it=12000 acc=5729 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 144s it=16000 acc=7636 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=16647 acc=7915 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1887 acc=1807 cur=91 best=90
+[uA88 rng511] [walk] 32s it=4000 acc=1804 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 65s it=8000 acc=3634 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=19119 acc=8881 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1863 acc=1786 cur=92 best=90
+[uA88 rng511] [walk] 62s it=8000 acc=3752 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 90s it=12000 acc=5666 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 123s it=16000 acc=7560 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=19190 acc=9057 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1866 acc=1800 cur=92 best=90
+[uA88 rng511] [walk] 40s it=4000 acc=1868 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 72s it=8000 acc=3754 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 106s it=12000 acc=5688 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=17640 acc=8266 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1962 acc=1886 cur=91 best=90
+[uA88 rng511] [walk] 98s it=12000 acc=5705 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 131s it=16000 acc=7558 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18172 acc=8563 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1848 acc=1785 cur=92 best=90
+[uA88 rng511] [walk] 39s it=4000 acc=1823 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 74s it=8000 acc=3658 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 108s it=12000 acc=5475 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 137s it=16000 acc=7334 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=17732 acc=8163 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1907 acc=1824 cur=91 best=90
+[uA88 rng511] [walk] 30s it=4000 acc=1870 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 131s it=16000 acc=7475 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18688 acc=8733 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1931 acc=1855 cur=91 best=90
+[uA88 rng511] [walk] 33s it=4000 acc=1876 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18708 acc=8706 cur=90 best=90
+[uA88 rng511] [lns] 69s it=2000 acc=1922 cur=91 best=90
+[uA88 rng511] [lns] done 75s it=2172 acc=2089 cur=91 best=90
+[uA88 rng511] [walk] 30s it=4000 acc=1839 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 91s it=12000 acc=5560 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18707 acc=8690 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1960 acc=1898 cur=92 best=90
+[uA88 rng511] [walk] 68s it=8000 acc=3689 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 131s it=16000 acc=7428 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18232 acc=8441 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1975 acc=1917 cur=91 best=90
+[uA88 rng511] [walk] 34s it=4000 acc=1890 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 100s it=12000 acc=5649 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18321 acc=8668 cur=90 best=90
+[uA88 rng511] [lns] 73s it=2000 acc=1939 cur=91 best=90
+[uA88 rng511] [lns] done 75s it=2109 acc=2046 cur=91 best=90
+[uA88 rng511] [walk] 61s it=8000 acc=3710 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=19120 acc=8917 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1750 acc=1682 cur=91 best=90
+[uA88 rng511] [walk] 40s it=4000 acc=1883 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 81s it=8000 acc=3773 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=14990 acc=7019 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1561 acc=1506 cur=91 best=90
+[uA88 rng511] [walk] 38s it=4000 acc=1883 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=15426 acc=7129 cur=90 best=90
+[uA88 rng511] [lns] done 75s it=1773 acc=1720 cur=91 best=90
+[uA88 rng511] [walk] 35s it=4000 acc=1889 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 102s it=12000 acc=5566 cur=90 best=90 loose=0
+[uA88 rng511] [walk] 133s it=16000 acc=7445 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=17997 acc=8379 cur=90 best=90
+[uA88 rng511] [lns] 69s it=2000 acc=1921 cur=91 best=90
+[uA88 rng511] [lns] done 75s it=2214 acc=2131 cur=91 best=90
+[uA88 rng511] [walk] 29s it=4000 acc=1841 cur=90 best=90 loose=0
+[uA88 rng511] [walk] done 150s it=18998 acc=8838 cur=90 best=90

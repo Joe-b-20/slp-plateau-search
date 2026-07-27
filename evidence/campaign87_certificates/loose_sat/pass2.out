@@ -1,0 +1,14 @@
+tasks=14 already-decided=8 todo=6 timeout=3000s procs=4 solver=kissat
+launch 161f15472c25 k=15 nB=30 nv=13283 nc=306705
+launch 91c6798b22ea k=13 nB=18 nv=9721 nc=223855
+launch 9c3964ec12a3 k=14 nB=15 nv=9205 nc=212192
+launch 71a7fe7b2db4 k=12 nB=11 nv=7404 nc=170620
+{"id": "71a7fe7b2db4", "k": 12, "r": 11, "mode": "cone", "nB": 11, "miss_t": 7, "nv": 7404, "nc": 170620, "t": 2405.0, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "unsat"}
+launch 7dbfa636b8cf k=13 nB=8 nv=6944 nc=156818
+{"id": "161f15472c25", "k": 15, "r": 14, "mode": "cone", "nB": 30, "miss_t": 5, "nv": 13283, "nc": 306705, "t": 3002.1, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "timeout"}
+{"id": "91c6798b22ea", "k": 13, "r": 12, "mode": "cone", "nB": 18, "miss_t": 5, "nv": 9721, "nc": 223855, "t": 3001.4, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "timeout"}
+{"id": "9c3964ec12a3", "k": 14, "r": 13, "mode": "cone", "nB": 15, "miss_t": 7, "nv": 9205, "nc": 212192, "t": 3000.6, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "timeout"}
+launch 6c3e59873f7c k=13 nB=7 nv=6694 nc=151377
+{"id": "7dbfa636b8cf", "k": 13, "r": 12, "mode": "cone", "nB": 8, "miss_t": 6, "nv": 6944, "nc": 156818, "t": 2294.1, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "unsat"}
+{"id": "6c3e59873f7c", "k": 13, "r": 12, "mode": "cone", "nB": 7, "miss_t": 7, "nv": 6694, "nc": 151377, "t": 3001.5, "sb": "pf", "solver": "kissat", "timeout_budget": 3000.0, "status": "timeout"}
+run complete

@@ -1,0 +1,13 @@
+[     0.0s 21:35:25] hunt worker start: engine=lns seed=IMPORTED_88.json rng=202 total=8400s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/w2_88_big.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'op_mix': {'biginj': 0.5, 'coneinj': 0.3, 'small': 0.2}, 'peel_window': 8} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/w2_88_big.pop.jsonl'}
+[     0.0s 21:35:25]   NEW BEST 88 gates depth 7 VERIFIED 
+[   123.4s 21:37:29] [lns] cross-pollinated 524 masks (pool=4331)
+[   242.0s 21:39:27] [lns] cross-pollinated 138 masks (pool=4538)
+[   361.4s 21:41:27] [lns] cross-pollinated 52 masks (pool=4644)
+[   726.6s 21:47:32] [lns] cross-pollinated 741 masks (pool=4494)
+[   961.9s 21:51:27] [lns] cross-pollinated 21 masks (pool=4605)
+[  1083.0s 21:53:28] [lns] cross-pollinated 18 masks (pool=4684)
+[  1202.2s 21:55:28] [lns] cross-pollinated 11 masks (pool=4743)
+[  1335.6s 21:57:41] [lns] cross-pollinated 781 masks (pool=4541)
+[  1939.3s 22:07:45] [lns] cross-pollinated 844 masks (pool=4667)
+[  2044.3s 22:09:30] [lns] cross-pollinated 47 masks (pool=4755)
+[  2163.7s 22:11:29] [lns] cross-pollinated 2 masks (pool=4842)

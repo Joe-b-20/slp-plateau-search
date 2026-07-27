@@ -1,0 +1,22 @@
+[     0.0s 23:23:52] hunt worker start: engine=alt seed=sib_88g_j85_05.json rng=7707 total=1893s lns={'kmax': 4, 'kshake': 12, 'snapback': 12, 'nsamp': (12, 12), 'up_prob': 0.5, 'up_slack': 4, 'harvest_path': '../runs_hunt/w7_sylsib.pop.jsonl', 'pop_glob': '../runs_hunt/*.pop.jsonl', 'pop_period_s': 120.0, 'op_mix': {'coneinj': 0.6, 'small': 0.4}, 'cone_lo': 3, 'cone_hi': 10} walk={'hub_move_p': 0.3, 'close_hamming': 8, 'repair_one': 40, 'repair_hub': 24, 'plateau_slack_p': 0.15, 'harvest_path': '../runs_hunt/w7_sylsib.pop.jsonl'}
+[     0.0s 23:23:52]   NEW BEST 88 gates depth 7 VERIFIED 
+[    54.6s 23:24:46] [walk] 55s iters=20000 cur=88 best=88 harv=1885
+[   110.2s 23:25:42] [walk] 110s iters=40000 cur=88 best=88 harv=3715
+[   163.1s 23:26:35] [walk] 163s iters=60000 cur=88 best=88 harv=5363
+[   217.3s 23:27:29] [walk] 217s iters=80000 cur=88 best=88 harv=6954
+[   269.6s 23:28:21] [walk] 270s iters=100000 cur=88 best=88 harv=8337
+[   466.5s 23:31:38] [lns] cross-pollinated 1171 masks (pool=4810)
+[   590.2s 23:33:42] [lns] 290s iters=20000 cur=91 best=88 pool=4829 hot=40952 harv=16 peelgain=3294
+[   787.0s 23:36:59] [lns] 487s iters=40000 cur=92 best=88 pool=4873 hot=82089 harv=16 peelgain=6109
+[   955.2s 23:39:47] [walk] 54s iters=20000 cur=88 best=88 harv=1795
+[  1009.7s 23:40:41] [walk] 109s iters=40000 cur=88 best=88 harv=3662
+[  1060.7s 23:41:32] [walk] 160s iters=60000 cur=88 best=88 harv=5252
+[  1114.3s 23:42:26] [walk] 213s iters=80000 cur=88 best=88 harv=6710
+[  1168.3s 23:43:20] [walk] 267s iters=100000 cur=88 best=88 harv=8227
+[  1360.1s 23:46:32] [lns] cross-pollinated 1179 masks (pool=4837)
+[  1451.2s 23:48:03] [lns] 250s iters=20000 cur=91 best=88 pool=4850 hot=41515 harv=4 peelgain=3561
+[  1606.2s 23:50:38] [lns] 405s iters=40000 cur=90 best=88 pool=4861 hot=82631 harv=4 peelgain=5975
+[  1748.2s 23:53:00] [lns] 547s iters=60000 cur=92 best=88 pool=4875 hot=123692 harv=4 peelgain=8267
+[  1841.2s 23:54:33] [walk] 40s iters=20000 cur=88 best=88 harv=1937
+[  1883.2s 23:55:15] [walk] 81s iters=40000 cur=88 best=88 harv=3698
+[  1893.0s 23:55:25] hunt worker done: best=88@7 iters(last chunk)=44721

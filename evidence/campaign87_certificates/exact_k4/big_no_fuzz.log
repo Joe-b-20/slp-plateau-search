@@ -1,0 +1,4 @@
+big states (nin=10): 40 states agree with brute (4 YES, 36 NO), 25.6s
+big states (nin=11): 15 states agree with brute (0 YES, 15 NO), 22.9s
+BIG-FUZZ DONE: 55 states, 4 YES / 51 NO, hist={'A': 3, 'B1b': 1}
+exit=0

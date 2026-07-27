@@ -1,0 +1,50 @@
+[sym88 rng202] seed IMPORTED_88.json: 88 masks
+[sym88 rng202] symmetrized+peeled: 53 orbits, 95 gates
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 95 gates depth 8 (start)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_95g.json: 95 gates depth 8 (start)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 94 gates depth 9 (walk it=42)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_94g.json: 94 gates depth 9 (walk it=42)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 93 gates depth 7 (walk it=1076)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_93g.json: 93 gates depth 7 (walk it=1076)
+[sym88 rng202] [walk] 24s it=4000 acc=1784 cur=93 best=93 loose=0
+[sym88 rng202] [walk] 46s it=8000 acc=3615 cur=93 best=93 loose=0
+[sym88 rng202] [walk] 114s it=20000 acc=8987 cur=93 best=93 loose=0
+[sym88 rng202] [walk] done 150s it=27503 acc=12385 cur=93 best=93
+[sym88 rng202] [lns] 65s it=2000 acc=1934 cur=95 best=93
+[sym88 rng202] [lns] done 75s it=2351 acc=2278 cur=95 best=93
+[sym88 rng202] [walk] 70s it=8000 acc=3596 cur=93 best=93 loose=0
+[sym88 rng202] [walk] 106s it=12000 acc=5381 cur=93 best=93 loose=0
+[sym88 rng202] [walk] done 150s it=17286 acc=7819 cur=93 best=93
+[sym88 rng202] [lns] done 75s it=1711 acc=1633 cur=94 best=93
+[sym88 rng202] [walk] 75s it=8000 acc=3708 cur=93 best=93 loose=0
+[sym88 rng202] [walk] done 150s it=16730 acc=7718 cur=93 best=93
+[sym88 rng202] [lns] done 75s it=1749 acc=1680 cur=94 best=93
+[sym88 rng202] [walk] 41s it=4000 acc=1850 cur=94 best=93 loose=0
+[sym88 rng202] [walk] 80s it=8000 acc=3658 cur=94 best=93 loose=0
+[sym88 rng202] [walk] 119s it=12000 acc=5475 cur=94 best=93 loose=0
+[sym88 rng202] [walk] done 150s it=14802 acc=6718 cur=94 best=93
+[sym88 rng202] [lns] done 75s it=1684 acc=1611 cur=94 best=93
+[sym88 rng202] [walk] 39s it=4000 acc=1886 cur=94 best=93 loose=0
+[sym88 rng202] [walk] done 150s it=15669 acc=7113 cur=93 best=93
+[sym88 rng202] [lns] done 75s it=1919 acc=1843 cur=95 best=93
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 92 gates depth 7 (walk it=1359)
+[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_92g.json: 92 gates depth 7 (walk it=1359)
+[sym88 rng202] [walk] 51s it=4000 acc=1848 cur=92 best=92 loose=0
+[sym88 rng202] [walk] 148s it=12000 acc=5424 cur=92 best=92 loose=0
+[sym88 rng202] [walk] done 150s it=12175 acc=5504 cur=92 best=92
+[sym88 rng202] [lns] done 75s it=1691 acc=1611 cur=92 best=92
+[sym88 rng202] [walk] 85s it=8000 acc=3705 cur=92 best=92 loose=0
+[sym88 rng202] [walk] done 150s it=14545 acc=6697 cur=92 best=92
+[sym88 rng202] [lns] done 75s it=1763 acc=1690 cur=93 best=92
+[sym88 rng202] [walk] done 150s it=13471 acc=6150 cur=92 best=92
+[sym88 rng202] [lns] done 75s it=1881 acc=1830 cur=92 best=92
+[sym88 rng202] [walk] 53s it=4000 acc=1747 cur=92 best=92 loose=0
+[sym88 rng202] [walk] 90s it=8000 acc=3547 cur=92 best=92 loose=0
+[sym88 rng202] [walk] 128s it=12000 acc=5348 cur=92 best=92 loose=0
+[sym88 rng202] [walk] done 150s it=14266 acc=6383 cur=92 best=92
+[sym88 rng202] [lns] 75s it=2000 acc=1918 cur=92 best=92
+[sym88 rng202] [lns] done 75s it=2005 acc=1923 cur=92 best=92
+[sym88 rng202] [walk] done 150s it=14966 acc=6822 cur=92 best=92
+[sym88 rng202] [lns] done 75s it=1929 acc=1856 cur=92 best=92
+[sym88 rng202] [walk] 43s it=4000 acc=1770 cur=92 best=92 loose=0
+[sym88 rng202] [walk] 82s it=8000 acc=3611 cur=92 best=92 loose=0
