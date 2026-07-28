@@ -32,7 +32,8 @@ CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 
 # The record list, exactly as CI verifies it: 97@3, 92@4, 89@5, 88@7, 88@8.
 # 88@7 matches the published record (Jean, ePrint 2026/1481) with a different
-# circuit; 88@8 is a third distinct family, dominated by 88@7.
+# circuit; 88@8 is a third distinct family, dominated by 88@7, and its seed
+# chain passes through Jean's circuit (derived work).
 RECORDS = {
     "mixcolumns_97gates_depth3.json": (97, 3),
     "mixcolumns_92gates_depth4.json": (92, 4),

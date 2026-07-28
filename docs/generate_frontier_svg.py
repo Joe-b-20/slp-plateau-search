@@ -12,8 +12,9 @@ Data sources (no number here is invented):
   - this project's circuits: ../evidence/circuits/spectrum.json
     (97@3, 92@4, 89@5, 88@7, 88@8), all oracle-verified.
   - our 88@7 ties Jean's published 88@7 with a different circuit (61/88 shared
-    masks) -- it does not beat it; the 88@8 is a third distinct family and is
-    dominated by our own 88@7, so it is not a frontier point.
+    masks) -- it does not beat it; the 88@8 is a third distinct family whose
+    seed chain is derived from Jean's circuit, dominated by our own 88@7,
+    so it is not a frontier point.
   - the three "superseded" crosses (98@3, 91@6, 89@10) are this project's own
     earlier results, carried over unchanged from the v1 figure.
 
@@ -97,7 +98,8 @@ def main():
          'half-grey half-blue marker because our 88 ties the published 88 with '
          'an independent circuit (61 of 88 masks shared), rather than beating '
          'it. A hollow blue marker shows our 88 at depth 8, a third distinct '
-         'family that is dominated by our own 88 at depth 7. A hollow grey '
+         'family whose seed chain is derived from Jean\'s circuit and which is '
+         'dominated by our own 88 at depth 7. A hollow grey '
          'marker shows the published Sun-Yang-Li 89 (ePrint 2025/1493), off '
          'the frontier; that paper states no depth, so it is placed at depth 9, '
          'this repository\'s own measurement of its transcription. Crosses mark '
@@ -161,7 +163,7 @@ def main():
     rows = [("dashline", "published frontier"),
             ("blueline", "this work"),
             ("half", "88 @ 7: ours ties published"),
-            ("hollowblue", "88 @ 8: ours, dominated"),
+            ("hollowblue", "88 @ 8: ours, derived, dominated"),
             ("hollowgrey", "published, off-frontier"),
             ("cross", "this project, superseded (v1)")]
     for i, (kind, txt) in enumerate(rows):

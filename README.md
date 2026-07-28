@@ -12,7 +12,8 @@ depth 7**.
   Osvik–Canright ePrint 2024/1076).
 - **88 @ 7** takes this project's own record from 89 to 88 and reaches the
   published gate-count floor from a different direction: it **matches the
-  published 88 @ depth 7 (Jean, ePrint 2026/1481) with an independent circuit**
+  published 88 (Jean, ePrint 2026/1481; depth 7 is our measurement of our
+  transcription — the paper states no depth) with an independent circuit**
   — the two share 61 of their 88 masks — rather than beating it.
 - Also published at unconstrained depth: 89 at unstated depth (Sun–Yang–Li,
   ePrint 2025/1493). Neither of those points dominates the depth-5 89, so the
@@ -26,7 +27,7 @@ depth 7**.
 
 **87 was not found**, and nothing here is claimed optimal.
 
-![The published depth–count Pareto frontier for AES MixColumns vs this work, including the two 88-gate points at depths 7 and 8](docs/frontier.svg)
+![The published depth–count Pareto frontier for AES MixColumns vs this work, including the 88 @ depth 7 that ties the published record with an independent circuit and the derived, dominated 88 @ depth 8](docs/frontier.svg)
 
 All five verified circuits are in `evidence/circuits/`, hash-pinned in
 `evidence/circuits/spectrum.json`; all five also live in the artifact
@@ -53,8 +54,9 @@ archived and re-validation runs took, not guarantees):
 cd reproduce && python3 reproduce.py
 
 # 88 gates @ depth 7 -- one worker of the shipped pipeline on the record's own
-# ρ²-symmetric 94-gate seed, stopping itself at 88 @ depth <= 7. 19.4 and
-# 31.0 min in two re-runs on 2026-07-27; 32.9 min in the archived run:
+# ρ²-symmetric 94-gate seed, stopping itself at 88 @ depth <= 7. 19.4 min
+# re-validated 2026-07-27 with the shipped stop rule; 32.9 min in the
+# archived run:
 cd reproduce && python3 hunt_88.py
 
 # 89 gates @ depth 5 -- the two-worker sub-89 configuration, warm-started from
@@ -82,7 +84,7 @@ an optional depth bound:
 ```text
 python3 verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
 python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth7.json 7
-python3 verify_circuit.py reproduce/out_97.json 3
+python3 verify_circuit.py reproduce/out_97.json 3   # after running reproduce/reproduce.py
 ```
 
 ## Layout

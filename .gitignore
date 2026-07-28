@@ -6,3 +6,4 @@ pipeline/runs_smoke/
 reproduce/out_*.json
 .pytest_cache/
 campaign_87/
+.claude/

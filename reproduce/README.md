@@ -11,7 +11,7 @@ and labelled — a measurement, never a promise.
 |---|---|---|
 | **97 @ depth 3, from scratch** | `python3 reproduce.py` | **81 s**, one core, re-validated 2026-07-27 (RNG seed 6); 60–156 s across earlier runs |
 | **89 @ depth 5**, from this project's 89@6 + 90@5 circuits | `cd ../pipeline && python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5` | **19 s and 22 s** in two runs, re-validated 2026-07-27; the archived run took 592 s (~10 min), with the v1 engine (see below) |
-| **88 @ depth 7**, from our ρ²-symmetric 94 | `python3 hunt_88.py` | **19.4 min** and **31.0 min** in two re-runs, 2026-07-27; the archived run took 32.9 min. Stochastic — see [The 88 @ depth 7](#the-88--depth-7) |
+| **88 @ depth 7**, from our ρ²-symmetric 94 | `python3 hunt_88.py` | **19.4 min** with the shipped stop rule, re-validated 2026-07-27 (a second re-run reached 88 gates at 31.0 min but stopped at depth 8 under an earlier gate-count-only rule); the archived run took 32.9 min. Stochastic — see [The 88 @ depth 7](#the-88--depth-7) |
 | **92 @ depth 4**, from scratch | `cd ../pipeline && python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4` | hours: the archived run reached it at t = 9 610 s (2.67 h). Not re-measured here |
 
 Each command verifies its own output against MixColumns rebuilt from GF(2⁸)
@@ -106,8 +106,9 @@ worker's iteration numbers to the digit, reached in 82 s here against its 202 s
 (one worker on an idle box walks at ~750 it/s; that one, one of ten on a loaded
 box, ran at ~290 it/s). Chunk boundaries are **wall-clock**, though, so from the
 second chunk on a faster machine is at a different iteration and the
-trajectories part — which is exactly why the two re-runs above took 31.0 and
-19.4 minutes for the same work.
+trajectories part — which is why the two re-runs above diverged (31.0 min to
+88 gates under the old stop rule vs 19.4 min to 88 @ depth 7 under the
+shipped one).
 
 This is a re-run, not an independent confirmation and not a promise: change the
 RNG, the seed, the chunk lengths or the machine and it is an open-ended
@@ -199,9 +200,10 @@ Nothing in this folder is claimed optimal, and no published circuit is counted
 as a result of this project. The points the records above are measured against:
 99 @ depth 3 (Shi–Feng–Xu, ToSC 2023); 97 @ depth 4 and 94 @ depth 5
 (Osvik–Canright, ePrint 2024/1076); 92 @ depth 6 (Maximov); 92 gates
-(Xiang–Zeng–Lin–Bao–Zhang — the seed of method `"91"`); **88 @ depth 7 (Jean,
-ePrint 2026/1481)**; and **89 gates at unstated depth (Sun–Yang–Li, ePrint
-2025/1493)**, measured at depth 9 here. Neither of the last two dominates our
+(Xiang–Zeng–Lin–Bao–Zhang — the seed of method `"91"`); **88 gates (Jean,
+ePrint 2026/1481)**, measured at depth 7 here — the paper states no depth;
+and **89 gates at unstated depth (Sun–Yang–Li, ePrint 2025/1493)**, measured
+at depth 9 here. Neither of the last two dominates our
 89 @ depth 5, so the 97 @ 3, 92 @ 4 and 89 @ 5 all remain on the published
 frontier. Both imported circuits are transcribed, oracle-verified and credited
 under `../evidence/campaign87_imported_prior_art/`; the full record table and
