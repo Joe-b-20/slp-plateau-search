@@ -1,8 +1,9 @@
 # reproduce — one command per record, with its measured time
 
-Everything here is dependency-free Python 3 (stdlib only). Two of the four
-record reproductions run from this folder; the other two are pipeline runs,
-listed with them so all four are in one table.
+Everything here is dependency-free Python 3 (stdlib only). Four of the seven
+verified circuits have a reproduction command: two run from this folder, two are
+pipeline runs, and all four are in one table. The other three — the 88 @ depth 6,
+the 88 @ depth 5 and the 88 @ depth 8 — have none, for the reasons below.
 
 Every search is stochastic. Times below are **what a run actually took**, dated
 and labelled — a measurement, never a promise.
@@ -122,14 +123,28 @@ configuration. Our 88 @ depth 7 **matches** the published 88-gate record
 (Jean, ePrint 2026/1481) **with an independent circuit** — 61 of 88 masks in
 common — it does not beat it.
 
-The **88 @ depth 8** (a third distinct family) has no reproduction command here
-on purpose: its seed chain passes through Jean's published circuit, so it is
-reported as derived work. Its run archive is
-`../evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` and its seed ships
-as `../pipeline/seeds/seed_88_at_depth8_thirdfamily.json`. To continue the hunt
-for 87 from all three known 88-gate families at once, use the pipeline's shipped
-set: `python3 ladder_parallel.py --mode fixed` (i.e. `--workers hunt87`), minding
-the provenance note in `../pipeline/README.md`.
+## The three circuits with no command here, and why
+
+- The **88 @ depth 8** (a third distinct family) and the **88 @ depth 5** (the
+  shallowest 88 here) both have seed chains that pass through Jean's published
+  circuit, so both are reported as derived work and neither is offered as a
+  recipe. Their run archives are
+  `../evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` and
+  `../evidence/campaign87_run_2026-07-29_got_88at5_derived/`, each with the exact
+  code, the seed and the untouched logs; the 88 @ 8's seed also ships as
+  `../pipeline/seeds/seed_88_at_depth8_thirdfamily.json`.
+- The **88 @ depth 6** is clean — found from scratch — but it came out of restart
+  18 of one worker of a multi-day 16-process fleet, 18.96 h in, and no single
+  command reproduces that. What is archived instead is everything needed to
+  re-run the *step*: the root is `constructors.build("naive", 2163)` in
+  `../evidence/campaign87_run_2026-07-28_got_88at6_fromscratch/code/`, which
+  re-derives the logged 139-gate depth-3 root exactly, and the worker log records
+  every chunk from there to 88 gates.
+
+To continue the hunt for 87 from the three 88-gate family anchors the pipeline
+ships, use its shipped set: `python3 ladder_parallel.py --mode fixed` (i.e.
+`--workers hunt87`), minding the provenance note in `../pipeline/README.md`. The
+fourth family's anchor is `../evidence/circuits/mixcolumns_88gates_depth6.json`.
 
 ## Legacy demonstrations (opt-in)
 
@@ -150,7 +165,8 @@ Honest provenance and re-validated times, per method (**2026-07-27**, one core):
 | `"90"` | a 91-gate depth-6 circuit of **our own** earlier lineage (`SEED_91_TRIPLES`) | proves the seed admits no single local cut (duplicate scan, peel, all-pairs remove-2-add-1); with `C90["lns_seconds"] > 0` also runs the pure-Python LNS (reaches ~91) | **0.2 s** for the irreducibility proof |
 
 These reproduce **superseded** results, kept because each is a clean, readable
-statement of one move: the current records are the four in the table at the top.
+statement of one move: the current records are in the table at the top and in
+`../evidence/RESULTS.md`.
 From nothing, method `"89"`'s walk floors near 92 — the 89 needs its seed.
 
 ## Which engine is which
@@ -161,8 +177,8 @@ each method reads as one move rather than as a tuned kernel. It is *not* the
 current engine.
 
 The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign.
-That rebuild is why the 89 @ depth 5 now comes back in seconds and why the two
-88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
+That rebuild is why the 89 @ depth 5 now comes back in seconds and why any of
+the four 88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
 each change with its measured effect.
 
 `mixcolumns_core.py` in this folder is a **byte-identical copy** of

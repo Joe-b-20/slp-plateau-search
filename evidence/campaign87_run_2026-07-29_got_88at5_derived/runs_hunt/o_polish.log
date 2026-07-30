@@ -1,0 +1,1205 @@
+[     0.0s 20:50:39] hunt worker start: root=glob:runs/o?_c*_*g.json engines=alt repel=False seed=2301 restart=3600s stall=1200s
+[     0.0s 20:50:39] --- restart 1 from o1_c0_90g.json (rng seed 2301) ---
+[     0.0s 20:50:39]   NEW BEST 90 gates depth 9 VERIFIED  -> o_polish_best.json
+[     0.1s 20:50:39]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=87 -> o_polish_best.json
+[     0.5s 20:50:39]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=349 -> o_polish_best.json
+[     1.4s 20:50:40]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=880 -> o_polish_best.json
+[     2.2s 20:50:41]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=1333 -> o_polish_best.json
+[    34.4s 20:51:13] [walk] 34s iters=20000 cur=90 best=90 harv=0
+[    70.8s 20:51:49] [walk] 71s iters=40000 cur=90 best=90 harv=0
+[   111.2s 20:52:30] [walk] 111s iters=60000 cur=90 best=90 harv=0
+[   378.1s 20:56:57] [lns] 258s iters=20000 cur=96 best=90 pool=3956 hot=66591 harv=0 peelgain=5075
+[   579.8s 21:00:18] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[   618.7s 21:00:57] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[   656.8s 21:01:35] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[     0.0s 21:03:01] hunt worker start: root=glob:runs/o?_c*_*g.json engines=alt repel=False seed=2301 restart=3600s stall=1200s
+[     0.0s 21:03:01] --- restart 1 from o1_c0_90g.json (rng seed 2301) ---
+[     0.0s 21:03:01]   NEW BEST 90 gates depth 9 VERIFIED  -> o_polish_best.json
+[     0.1s 21:03:01]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=87 -> o_polish_best.json
+[     0.6s 21:03:02]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=349 -> o_polish_best.json
+[     1.5s 21:03:02]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=880 -> o_polish_best.json
+[     2.2s 21:03:03]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=1333 -> o_polish_best.json
+[    33.2s 21:03:34] [walk] 33s iters=20000 cur=90 best=90 harv=0
+[    71.8s 21:04:13] [walk] 72s iters=40000 cur=90 best=90 harv=0
+[   108.5s 21:04:49] [walk] 109s iters=60000 cur=90 best=90 harv=0
+[     0.0s 21:10:34] hunt worker start: root=glob:runs/o?_c*_*g.json engines=alt repel=False seed=2301 restart=3600s stall=1200s
+[     0.0s 21:10:34] --- restart 1 from o1_c0_90g.json (rng seed 2301) ---
+[     0.0s 21:10:34]   NEW BEST 90 gates depth 9 VERIFIED  -> o_polish_best.json
+[     0.1s 21:10:34]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=87 -> o_polish_best.json
+[     0.5s 21:10:34]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=349 -> o_polish_best.json
+[     1.4s 21:10:35]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=880 -> o_polish_best.json
+[     2.1s 21:10:36]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=1333 -> o_polish_best.json
+[    33.5s 21:11:07] [walk] 33s iters=20000 cur=90 best=90 harv=0
+[    68.9s 21:11:43] [walk] 69s iters=40000 cur=90 best=90 harv=0
+[   105.2s 21:12:19] [walk] 105s iters=60000 cur=90 best=90 harv=0
+[   367.3s 21:16:41] [lns] 247s iters=20000 cur=96 best=90 pool=3956 hot=66591 harv=0 peelgain=5075
+[   579.6s 21:20:13] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[   623.5s 21:20:57] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[   909.9s 21:25:44] [lns] 250s iters=20000 cur=92 best=90 pool=3953 hot=67586 harv=0 peelgain=4809
+[  1123.3s 21:29:17] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  1169.6s 21:30:03] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[  1444.3s 21:34:38] [lns] 244s iters=20000 cur=94 best=90 pool=3934 hot=68337 harv=0 peelgain=4484
+[  1620.2s 21:37:34]   stalled 1200s at 90 gates -- new root
+[  1620.2s 21:37:34] --- restart 2 from o1_c1_90g.json (rng seed 2408) ---
+[  1657.6s 21:38:11]   NEW BEST 89 gates depth 6 VERIFIED it=18837 -> o_polish_best.json
+[  1659.0s 21:38:13]   NEW BEST 89 gates depth 5 VERIFIED depth-tiebreak it=19563 -> o_polish_best.json
+[  1660.0s 21:38:14] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[  1697.0s 21:38:51] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[  1734.5s 21:39:28] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[  1983.5s 21:43:37] [lns] 243s iters=20000 cur=93 best=89 pool=3970 hot=68778 harv=0 peelgain=4802
+[  2198.2s 21:47:12] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[  2235.5s 21:47:49] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[  2273.9s 21:48:28] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[  2567.7s 21:53:22] [lns] 287s iters=20000 cur=94 best=89 pool=3980 hot=66083 harv=0 peelgain=5965
+[  2738.8s 21:56:13] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[  2779.2s 21:56:53] [walk] 79s iters=40000 cur=89 best=89 harv=0
+[  2819.0s 21:57:33] [walk] 119s iters=60000 cur=89 best=89 harv=0
+[  3090.2s 22:02:04] [lns] 270s iters=20000 cur=95 best=89 pool=4045 hot=69549 harv=0 peelgain=5002
+[  3240.4s 22:04:34]   stalled 1200s at 89 gates -- new root
+[  3240.4s 22:04:34] --- restart 3 from o1_c3_90g.json (rng seed 2515) ---
+[  3283.0s 22:05:17] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  3325.1s 22:05:59] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[  3620.7s 22:10:55] [lns] 260s iters=20000 cur=95 best=90 pool=3942 hot=68452 harv=0 peelgain=4783
+[  3825.5s 22:14:19] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  3866.6s 22:15:00] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[  4145.1s 22:19:39] [lns] 245s iters=20000 cur=97 best=90 pool=3997 hot=70178 harv=0 peelgain=4673
+[     0.0s 22:22:30] hunt worker start: root=glob:runs/o?_c*_*g.json engines=alt repel=False seed=2301 restart=3600s stall=1200s
+[     0.0s 22:22:30] --- restart 1 from o1_c0_90g.json (rng seed 2301) ---
+[     0.0s 22:22:30]   NEW BEST 90 gates depth 9 VERIFIED  -> o_polish_best.json
+[     0.2s 22:22:30]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=87 -> o_polish_best.json
+[     0.7s 22:22:31]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=349 -> o_polish_best.json
+[     0.8s 22:22:31]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=880 -> o_polish_best.json
+[     1.8s 22:22:32]   NEW BEST 90 gates depth 5 VERIFIED depth-tiebreak it=1333 -> o_polish_best.json
+[    49.7s 22:23:20] [walk] 50s iters=20000 cur=90 best=90 harv=0
+[    98.5s 22:24:09] [walk] 98s iters=40000 cur=90 best=90 harv=0
+[   380.8s 22:28:51] [lns] 261s iters=20000 cur=96 best=90 pool=3956 hot=66591 harv=0 peelgain=5075
+[   582.8s 22:32:13] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[   627.0s 22:32:57] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[   924.5s 22:37:55] [lns] 264s iters=20000 cur=92 best=90 pool=3953 hot=67586 harv=0 peelgain=4809
+[  1122.1s 22:41:12] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[  1164.4s 22:41:55] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[  1448.2s 22:46:38] [lns] 248s iters=20000 cur=94 best=90 pool=3934 hot=68337 harv=0 peelgain=4484
+[  1620.2s 22:49:30]   stalled 1200s at 90 gates -- new root
+[  1620.2s 22:49:30] --- restart 2 from o1_c1_90g.json (rng seed 2408) ---
+[  1663.1s 22:50:13]   NEW BEST 89 gates depth 6 VERIFIED it=18837 -> o_polish_best.json
+[  1664.7s 22:50:15]   NEW BEST 89 gates depth 5 VERIFIED depth-tiebreak it=19563 -> o_polish_best.json
+[  1665.7s 22:50:16] [walk] 45s iters=20000 cur=89 best=89 harv=0
+[  1708.6s 22:50:59] [walk] 88s iters=40000 cur=89 best=89 harv=0
+[  2014.2s 22:56:04] [lns] 274s iters=20000 cur=93 best=89 pool=3970 hot=68778 harv=0 peelgain=4802
+[  2205.5s 22:59:16] [walk] 45s iters=20000 cur=89 best=89 harv=0
+[  2249.6s 23:00:00] [walk] 89s iters=40000 cur=89 best=89 harv=0
+[  2599.6s 23:05:50] [lns] 319s iters=20000 cur=94 best=89 pool=3980 hot=66083 harv=0 peelgain=5965
+[  2749.9s 23:08:20] [walk] 50s iters=20000 cur=89 best=89 harv=0
+[  2797.6s 23:09:08] [walk] 97s iters=40000 cur=89 best=89 harv=0
+[  3123.5s 23:14:34] [lns] 303s iters=20000 cur=95 best=89 pool=4045 hot=69549 harv=0 peelgain=5002
+[  3240.5s 23:16:31]   stalled 1200s at 89 gates -- new root
+[  3240.5s 23:16:31] --- restart 3 from o1_c3_90g.json (rng seed 2515) ---
+[  3287.3s 23:17:18] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[  3334.3s 23:18:05] [walk] 94s iters=40000 cur=90 best=90 harv=0
+[  3628.7s 23:22:59] [lns] 268s iters=20000 cur=95 best=90 pool=3942 hot=68452 harv=0 peelgain=4783
+[  3825.3s 23:26:16] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  3873.4s 23:27:04] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[  4175.5s 23:32:06] [lns] 275s iters=20000 cur=97 best=90 pool=3997 hot=70178 harv=0 peelgain=4673
+[  4367.9s 23:35:18] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[  4416.3s 23:36:07] [walk] 96s iters=40000 cur=90 best=90 harv=0
+[  4718.9s 23:41:09] [lns] 278s iters=20000 cur=95 best=90 pool=4012 hot=70964 harv=0 peelgain=4779
+[  4860.6s 23:43:31]   stalled 1200s at 90 gates -- new root
+[  4860.7s 23:43:31] --- restart 4 from o1_c4_90g.json (rng seed 2622) ---
+[  4903.0s 23:44:13] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[  4946.3s 23:44:57] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[  5202.6s 23:49:13] [lns] 222s iters=20000 cur=96 best=90 pool=3990 hot=69386 harv=0 peelgain=4048
+[  5443.6s 23:53:14] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  5485.8s 23:53:56] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[  5742.4s 23:58:13] [lns] 222s iters=20000 cur=98 best=90 pool=4038 hot=72764 harv=0 peelgain=3426
+[  5983.6s 00:02:14] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  6025.6s 00:02:56] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[  6376.4s 00:08:47] [lns] 316s iters=20000 cur=94 best=90 pool=4089 hot=67262 harv=0 peelgain=6159
+[  6480.9s 00:10:31]   stalled 1200s at 90 gates -- new root
+[  6480.9s 00:10:31] --- restart 5 from o1_c6_90g.json (rng seed 2729) ---
+[  6524.5s 00:11:15] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[  6568.2s 00:11:58] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[  6941.7s 00:18:12] [lns] 341s iters=20000 cur=93 best=90 pool=4051 hot=67537 harv=0 peelgain=6570
+[  7063.9s 00:20:14] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  7108.3s 00:20:59] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[  7431.8s 00:26:22] [lns] 291s iters=20000 cur=95 best=90 pool=4131 hot=68631 harv=0 peelgain=5286
+[  7606.5s 00:29:17] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  7650.2s 00:30:00] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[  7931.5s 00:34:42] [lns] 250s iters=20000 cur=96 best=90 pool=4115 hot=71375 harv=0 peelgain=4430
+[  8101.2s 00:37:31]   stalled 1200s at 90 gates -- new root
+[  8101.2s 00:37:31] --- restart 6 from o1_c7_90g.json (rng seed 2836) ---
+[  8140.3s 00:38:11] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[  8181.8s 00:38:52] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[  8220.9s 00:39:31] [walk] 120s iters=60000 cur=89 best=89 harv=0
+[  8470.3s 00:43:41] [lns] 249s iters=20000 cur=93 best=89 pool=3926 hot=64446 harv=0 peelgain=5149
+[  8678.6s 00:47:09] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[  8715.9s 00:47:46] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[  8753.3s 00:48:24] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[  9031.1s 00:53:01] [lns] 270s iters=20000 cur=93 best=89 pool=3968 hot=68125 harv=0 peelgain=5992
+[  9217.8s 00:56:08] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[  9255.3s 00:56:46] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[  9293.0s 00:57:23] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[  9551.8s 01:01:42] [lns] 250s iters=20000 cur=94 best=89 pool=3967 hot=69012 harv=0 peelgain=5151
+[  9721.4s 01:04:32]   stalled 1200s at 89 gates -- new root
+[  9721.4s 01:04:32] --- restart 7 from o1_c10_90g.json (rng seed 2943) ---
+[  9761.5s 01:05:12] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[  9799.0s 01:05:49] [walk] 78s iters=40000 cur=89 best=89 harv=0
+[  9835.3s 01:06:26] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 10106.2s 01:10:56] [lns] 265s iters=20000 cur=94 best=89 pool=3966 hot=66730 harv=0 peelgain=5541
+[ 10297.3s 01:14:08] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 10334.4s 01:14:45] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 10371.5s 01:15:22] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 10636.4s 01:19:47] [lns] 255s iters=20000 cur=92 best=89 pool=3913 hot=66222 harv=0 peelgain=5320
+[ 10838.4s 01:23:09] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 10874.6s 01:23:45] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 10912.0s 01:24:22] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 11140.1s 01:28:10] [lns] 218s iters=20000 cur=97 best=89 pool=3875 hot=68199 harv=0 peelgain=4476
+[ 11341.6s 01:31:32]   stalled 1200s at 89 gates -- new root
+[ 11341.6s 01:31:32] --- restart 8 from o1_c12_90g.json (rng seed 3050) ---
+[ 11382.5s 01:32:13] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 11422.5s 01:32:53] [walk] 81s iters=40000 cur=90 best=90 harv=0
+[ 11461.1s 01:33:31] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 11671.0s 01:37:01] [lns] 209s iters=20000 cur=95 best=90 pool=3955 hot=68247 harv=0 peelgain=3708
+[ 11920.8s 01:41:11] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 11960.8s 01:41:51] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 12001.3s 01:42:32] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 12238.6s 01:46:29] [lns] 237s iters=20000 cur=95 best=90 pool=4084 hot=72354 harv=0 peelgain=4455
+[ 12461.5s 01:50:12] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 12499.8s 01:50:50] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 12540.0s 01:51:30] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 12827.3s 01:56:18] [lns] 286s iters=20000 cur=94 best=90 pool=4062 hot=68189 harv=0 peelgain=6064
+[ 12961.8s 01:58:32]   stalled 1200s at 90 gates -- new root
+[ 12961.8s 01:58:32] --- restart 9 from o1_c13_90g.json (rng seed 3157) ---
+[ 13001.7s 01:59:12] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 13042.3s 01:59:53] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 13080.3s 02:00:31] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 13317.9s 02:04:28] [lns] 236s iters=20000 cur=95 best=90 pool=4036 hot=69474 harv=0 peelgain=4899
+[ 13540.0s 02:08:10] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 13579.0s 02:08:49] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 13616.9s 02:09:27] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 13890.2s 02:14:00] [lns] 268s iters=20000 cur=94 best=89 pool=3889 hot=67542 harv=0 peelgain=5867
+[ 14079.7s 02:17:10] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 14117.4s 02:17:48] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 14153.2s 02:18:24] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 14408.7s 02:22:39] [lns] 247s iters=20000 cur=95 best=89 pool=3993 hot=66168 harv=0 peelgain=5089
+[ 14620.0s 02:26:10] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 14657.7s 02:26:48] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 14695.1s 02:27:25] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 14939.0s 02:31:29] [lns] 237s iters=20000 cur=94 best=89 pool=3896 hot=68194 harv=0 peelgain=4818
+[ 15122.2s 02:34:32]   stalled 1200s at 89 gates -- new root
+[ 15122.2s 02:34:32] --- restart 10 from o1_c15_90g.json (rng seed 3266) ---
+[ 15160.6s 02:35:11] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 15201.2s 02:35:51] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 15241.9s 02:36:32] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 15466.9s 02:40:17] [lns] 225s iters=20000 cur=93 best=90 pool=3947 hot=66668 harv=0 peelgain=4471
+[ 15656.7s 02:43:27] [lns] 414s iters=40000 cur=93 best=90 pool=4008 hot=132672 harv=0 peelgain=7751
+[ 15702.9s 02:44:13] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 15741.9s 02:44:52] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 15782.2s 02:45:32] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 16013.4s 02:49:24] [lns] 231s iters=20000 cur=94 best=90 pool=3917 hot=64821 harv=0 peelgain=4458
+[ 16242.0s 02:53:12] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 16281.7s 02:53:52] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 16320.6s 02:54:31] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 16554.2s 02:58:24] [lns] 232s iters=20000 cur=96 best=90 pool=3917 hot=68012 harv=0 peelgain=4606
+[ 16742.4s 03:01:33]   stalled 1200s at 90 gates -- new root
+[ 16742.4s 03:01:33] --- restart 11 from o1_c16_90g.json (rng seed 3373) ---
+[ 16780.4s 03:02:11] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 16819.8s 03:02:50] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 16859.3s 03:03:30] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 17110.3s 03:07:41] [lns] 248s iters=20000 cur=95 best=90 pool=4132 hot=69682 harv=0 peelgain=4855
+[ 17322.4s 03:11:13] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 17360.0s 03:11:50] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 17399.3s 03:12:30] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 17650.7s 03:16:41] [lns] 248s iters=20000 cur=93 best=90 pool=3963 hot=65875 harv=0 peelgain=5217
+[ 17862.1s 03:20:12] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 17899.4s 03:20:50] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 17935.1s 03:21:25] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 18174.5s 03:25:25] [lns] 232s iters=20000 cur=98 best=89 pool=3969 hot=67547 harv=0 peelgain=4473
+[ 18400.4s 03:29:11] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 18438.0s 03:29:48] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 18475.4s 03:30:26] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 18745.7s 03:34:56] [lns] 263s iters=20000 cur=92 best=89 pool=3890 hot=66525 harv=0 peelgain=5769
+[ 18939.6s 03:38:10] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 18975.0s 03:38:45] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 19012.5s 03:39:23] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 19264.6s 03:43:35] [lns] 242s iters=20000 cur=93 best=89 pool=3960 hot=68261 harv=0 peelgain=4844
+[ 19442.8s 03:46:33]   stalled 1200s at 89 gates -- new root
+[ 19442.8s 03:46:33] --- restart 12 from o1_c18_90g.json (rng seed 3484) ---
+[ 19483.0s 03:47:13] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 19521.2s 03:47:52] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 19561.2s 03:48:31] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 19849.4s 03:53:20] [lns] 287s iters=20000 cur=95 best=90 pool=4042 hot=68633 harv=0 peelgain=5888
+[ 20023.0s 03:56:13] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 20062.9s 03:56:53] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 20100.9s 03:57:31] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 20386.7s 04:02:17] [lns] 284s iters=20000 cur=95 best=90 pool=4006 hot=71437 harv=0 peelgain=5818
+[ 20562.3s 04:05:13] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 20599.8s 04:05:50] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 20637.8s 04:06:28] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 20943.8s 04:11:34] [lns] 301s iters=20000 cur=94 best=89 pool=3901 hot=66617 harv=0 peelgain=6520
+[ 21099.1s 04:14:09] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 21137.3s 04:14:48] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 21174.9s 04:15:25] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 21410.0s 04:19:20] [lns] 227s iters=20000 cur=94 best=89 pool=3850 hot=68963 harv=0 peelgain=4721
+[ 21640.3s 04:23:11] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 21676.3s 04:23:47] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 21714.1s 04:24:24] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 21928.6s 04:27:59] [lns] 206s iters=20000 cur=95 best=89 pool=3929 hot=70714 harv=0 peelgain=3703
+[ 22095.6s 04:30:46] [lns] 373s iters=40000 cur=96 best=89 pool=4010 hot=141502 harv=0 peelgain=6397
+[ 22143.1s 04:31:33]   stalled 1200s at 89 gates -- new root
+[ 22143.1s 04:31:33] --- restart 13 from o1_c19_90g.json (rng seed 3595) ---
+[ 22182.9s 04:32:13] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 22221.0s 04:32:51] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 22260.3s 04:33:31] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 22512.8s 04:37:43] [lns] 250s iters=20000 cur=95 best=89 pool=4024 hot=67868 harv=0 peelgain=5014
+[ 22720.6s 04:41:11] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 22757.1s 04:41:47] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 22794.6s 04:42:25] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 22998.3s 04:45:49] [lns] 195s iters=20000 cur=94 best=89 pool=3884 hot=68343 harv=0 peelgain=3637
+[ 23181.2s 04:48:51] [lns] 378s iters=40000 cur=96 best=89 pool=4043 hot=139237 harv=0 peelgain=6856
+[ 23261.0s 04:50:11] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 23298.7s 04:50:49] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 23336.9s 04:51:27] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 23584.6s 04:55:35] [lns] 241s iters=20000 cur=93 best=89 pool=3919 hot=68817 harv=0 peelgain=4902
+[ 23763.3s 04:58:34]   stalled 1200s at 89 gates -- new root
+[ 23763.4s 04:58:34] --- restart 14 from o1_c21_90g.json (rng seed 3702) ---
+[ 23801.9s 04:59:12] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 23843.0s 04:59:53] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 24099.9s 05:04:10] [lns] 217s iters=20000 cur=97 best=90 pool=3991 hot=70156 harv=0 peelgain=4026
+[ 24246.2s 05:06:36] [lns] 363s iters=40000 cur=97 best=90 pool=4014 hot=141040 harv=0 peelgain=5965
+[ 24342.1s 05:08:12] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 24383.3s 05:08:54] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 24687.2s 05:13:57] [lns] 264s iters=20000 cur=94 best=90 pool=3964 hot=65552 harv=0 peelgain=5365
+[ 24884.1s 05:17:14] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 24922.2s 05:17:52] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 24962.1s 05:18:32] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 25213.2s 05:22:43] [lns] 250s iters=20000 cur=93 best=90 pool=3968 hot=68003 harv=0 peelgain=5230
+[ 25383.5s 05:25:34]   stalled 1200s at 90 gates -- new root
+[ 25383.5s 05:25:34] --- restart 15 from o1_c22_90g.json (rng seed 3809) ---
+[ 25423.9s 05:26:14] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 25462.1s 05:26:52] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 25502.7s 05:27:33] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 25798.9s 05:32:29] [lns] 295s iters=20000 cur=94 best=90 pool=4077 hot=65556 harv=0 peelgain=6688
+[ 25963.7s 05:35:14] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 26003.3s 05:35:54] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[ 26038.6s 05:36:29] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 26296.8s 05:40:47] [lns] 253s iters=20000 cur=98 best=89 pool=4035 hot=69174 harv=0 peelgain=5180
+[ 26501.4s 05:44:12] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 26539.3s 05:44:50] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 26577.2s 05:45:28] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 26810.8s 05:49:21] [lns] 227s iters=20000 cur=95 best=89 pool=3976 hot=71723 harv=0 peelgain=4567
+[ 27041.5s 05:53:12] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 27079.0s 05:53:49] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 27117.1s 05:54:27] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 27367.4s 05:58:38] [lns] 244s iters=20000 cur=97 best=89 pool=3989 hot=70212 harv=0 peelgain=4845
+[ 27543.8s 06:01:34]   stalled 1200s at 89 gates -- new root
+[ 27543.8s 06:01:34] --- restart 16 from o1_c24_90g.json (rng seed 3918) ---
+[ 27583.2s 06:02:13] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 27623.7s 06:02:54] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 27662.6s 06:03:33] [walk] 119s iters=60000 cur=89 best=89 harv=0
+[ 27931.9s 06:08:02] [lns] 268s iters=20000 cur=91 best=89 pool=3931 hot=67247 harv=0 peelgain=5684
+[ 28118.3s 06:11:09] [walk] 34s iters=20000 cur=89 best=89 harv=0
+[ 28155.1s 06:11:45] [walk] 71s iters=40000 cur=89 best=89 harv=0
+[ 28192.4s 06:12:23] [walk] 109s iters=60000 cur=89 best=89 harv=0
+[ 28441.6s 06:16:32] [lns] 238s iters=20000 cur=94 best=89 pool=3898 hot=68856 harv=0 peelgain=5030
+[ 28660.4s 06:20:11] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 28696.2s 06:20:46] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 28734.1s 06:21:24] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 28990.0s 06:25:40] [lns] 246s iters=20000 cur=96 best=89 pool=4012 hot=69767 harv=0 peelgain=4938
+[ 29164.0s 06:28:34]   stalled 1200s at 89 gates -- new root
+[ 29164.1s 06:28:34] --- restart 17 from o1_c25_90g.json (rng seed 4025) ---
+[ 29202.9s 06:29:13] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 29241.0s 06:29:51] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 29280.2s 06:30:30] [walk] 116s iters=60000 cur=90 best=90 harv=0
+[ 29512.3s 06:34:23] [lns] 228s iters=20000 cur=97 best=90 pool=4024 hot=71320 harv=0 peelgain=4635
+[ 29742.7s 06:38:13] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 29778.2s 06:38:48] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 29815.8s 06:39:26] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 30041.2s 06:43:11] [lns] 217s iters=20000 cur=95 best=89 pool=3953 hot=69957 harv=0 peelgain=4466
+[ 30281.4s 06:47:12] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 30317.8s 06:47:48] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 30352.6s 06:48:23] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 30596.6s 06:52:27] [lns] 232s iters=20000 cur=94 best=89 pool=3913 hot=67918 harv=0 peelgain=4862
+[ 30772.9s 06:55:23] [lns] 409s iters=40000 cur=96 best=89 pool=4031 hot=137244 harv=0 peelgain=8144
+[ 30820.2s 06:56:10] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 30856.1s 06:56:46] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 30892.4s 06:57:23] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 31132.5s 07:01:23] [lns] 228s iters=20000 cur=92 best=89 pool=3900 hot=69277 harv=0 peelgain=5043
+[ 31324.3s 07:04:35]   stalled 1200s at 89 gates -- new root
+[ 31324.4s 07:04:35] --- restart 18 from o1_c27_90g.json (rng seed 4134) ---
+[ 31364.8s 07:05:15] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 31403.2s 07:05:53] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 31443.8s 07:06:34] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 31639.9s 07:09:50] [lns] 196s iters=20000 cur=97 best=90 pool=3964 hot=69534 harv=0 peelgain=3397
+[ 31796.2s 07:12:26] [lns] 352s iters=40000 cur=96 best=90 pool=4029 hot=140173 harv=0 peelgain=5741
+[ 31903.6s 07:14:14] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 31943.1s 07:14:53] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 31981.0s 07:15:31] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 32205.2s 07:19:15] [lns] 221s iters=20000 cur=96 best=90 pool=3960 hot=67136 harv=0 peelgain=4391
+[ 32443.6s 07:23:14] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 32482.3s 07:23:53] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 32519.7s 07:24:30] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 32752.1s 07:28:22] [lns] 228s iters=20000 cur=99 best=90 pool=3992 hot=69137 harv=0 peelgain=4492
+[ 32931.4s 07:31:22] [lns] 407s iters=40000 cur=96 best=90 pool=4126 hot=139728 harv=0 peelgain=7673
+[ 32944.5s 07:31:35]   stalled 1200s at 90 gates -- new root
+[ 32944.6s 07:31:35] --- restart 19 from o1_c28_90g.json (rng seed 4241) ---
+[ 32984.1s 07:32:14] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 33022.4s 07:32:53] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 33059.7s 07:33:30] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 33306.6s 07:37:37] [lns] 242s iters=20000 cur=91 best=90 pool=4004 hot=67225 harv=0 peelgain=5586
+[ 33522.5s 07:41:13] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 33558.6s 07:41:49] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 33596.0s 07:42:26] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 33876.0s 07:47:06] [lns] 271s iters=20000 cur=93 best=89 pool=3941 hot=65937 harv=0 peelgain=6052
+[ 34061.5s 07:50:12] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 34098.5s 07:50:49] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 34136.5s 07:51:27] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 34399.6s 07:55:50] [lns] 255s iters=20000 cur=95 best=89 pool=4025 hot=68715 harv=0 peelgain=5425
+[ 34600.9s 07:59:11] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 34637.5s 07:59:48] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 34674.0s 08:00:24] [walk] 109s iters=60000 cur=89 best=89 harv=0
+[ 34939.8s 08:04:50] [lns] 255s iters=20000 cur=91 best=89 pool=3913 hot=68305 harv=0 peelgain=5739
+[ 35104.9s 08:07:35]   stalled 1200s at 89 gates -- new root
+[ 35104.9s 08:07:35] --- restart 20 from o1_c30_90g.json (rng seed 4350) ---
+[ 35141.5s 08:08:12] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 35180.7s 08:08:51] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 35222.1s 08:09:32] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 35449.4s 08:13:20] [lns] 224s iters=20000 cur=96 best=90 pool=4039 hot=69428 harv=0 peelgain=4605
+[ 35616.9s 08:16:07] [lns] 392s iters=40000 cur=97 best=90 pool=4149 hot=140695 harv=0 peelgain=7517
+[ 35680.9s 08:17:11] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 35719.3s 08:17:50] [walk] 74s iters=40000 cur=90 best=90 harv=0
+[ 35757.3s 08:18:28] [walk] 112s iters=60000 cur=90 best=90 harv=0
+[ 35970.8s 08:22:01] [lns] 206s iters=20000 cur=95 best=90 pool=3991 hot=68500 harv=0 peelgain=3880
+[ 36155.1s 08:25:05] [lns] 390s iters=40000 cur=93 best=90 pool=4096 hot=135366 harv=0 peelgain=7258
+[ 36222.9s 08:26:13] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 36261.4s 08:26:52] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 36301.2s 08:27:31] [walk] 116s iters=60000 cur=90 best=90 harv=0
+[ 36525.1s 08:31:15] [lns] 220s iters=20000 cur=93 best=90 pool=3947 hot=67314 harv=0 peelgain=4580
+[ 36725.1s 08:34:35]   stalled 1200s at 90 gates -- new root
+[ 36725.1s 08:34:35] --- restart 21 from o1_c31_90g.json (rng seed 4457) ---
+[ 36761.2s 08:35:11] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 36799.1s 08:35:49] [walk] 74s iters=40000 cur=90 best=90 harv=0
+[ 36837.6s 08:36:28] [walk] 112s iters=60000 cur=90 best=90 harv=0
+[ 37069.2s 08:40:19] [lns] 224s iters=20000 cur=96 best=90 pool=4037 hot=69001 harv=0 peelgain=4528
+[ 37300.8s 08:44:11] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 37339.9s 08:44:50] [walk] 75s iters=40000 cur=90 best=90 harv=0
+[ 37378.3s 08:45:29] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 37635.5s 08:49:46] [lns] 250s iters=20000 cur=96 best=89 pool=4010 hot=68375 harv=0 peelgain=5671
+[ 37839.5s 08:53:10] [walk] 34s iters=20000 cur=89 best=89 harv=0
+[ 37875.9s 08:53:46] [walk] 71s iters=40000 cur=89 best=89 harv=0
+[ 37912.7s 08:54:23] [walk] 107s iters=60000 cur=89 best=89 harv=0
+[ 38151.1s 08:58:21] [lns] 226s iters=20000 cur=95 best=89 pool=4009 hot=67450 harv=0 peelgain=4849
+[ 38325.0s 09:01:15] [lns] 400s iters=40000 cur=96 best=89 pool=4119 hot=139786 harv=0 peelgain=8036
+[ 38382.4s 09:02:13] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 38419.8s 09:02:50] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 38457.5s 09:03:28] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 38692.0s 09:07:22] [lns] 227s iters=20000 cur=92 best=89 pool=3896 hot=64832 harv=0 peelgain=4778
+[ 38885.3s 09:10:36]   stalled 1200s at 89 gates -- new root
+[ 38885.3s 09:10:36] --- restart 22 from o1_c33_90g.json (rng seed 4566) ---
+[ 38924.5s 09:11:15] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 38963.1s 09:11:53] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 39003.0s 09:12:33] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 39260.7s 09:16:51] [lns] 255s iters=20000 cur=92 best=90 pool=3965 hot=65357 harv=0 peelgain=5556
+[ 39461.9s 09:20:12] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 39501.2s 09:20:51] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 39540.5s 09:21:31] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 39787.2s 09:25:38] [lns] 242s iters=20000 cur=96 best=90 pool=4177 hot=69572 harv=0 peelgain=4750
+[ 40002.2s 09:29:12] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 40041.7s 09:29:52] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 40082.1s 09:30:32] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 40309.1s 09:34:19] [lns] 224s iters=20000 cur=96 best=90 pool=4015 hot=69169 harv=0 peelgain=4530
+[ 40471.2s 09:37:01] [lns] 386s iters=40000 cur=95 best=90 pool=4094 hot=139473 harv=0 peelgain=7276
+[ 40505.6s 09:37:36]   stalled 1200s at 90 gates -- new root
+[ 40505.6s 09:37:36] --- restart 23 from o1_c34_90g.json (rng seed 4673) ---
+[ 40543.6s 09:38:14] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 40583.6s 09:38:54] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 40622.9s 09:39:33] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 40860.0s 09:43:30] [lns] 234s iters=20000 cur=94 best=90 pool=4042 hot=67363 harv=0 peelgain=5048
+[ 41084.4s 09:47:15] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 41120.3s 09:47:51] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 41156.1s 09:48:26] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 41392.6s 09:52:23] [lns] 227s iters=20000 cur=95 best=89 pool=4086 hot=70995 harv=0 peelgain=4531
+[ 41623.7s 09:56:14] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 41662.7s 09:56:53] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 41699.5s 09:57:30] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 41980.0s 10:02:10] [lns] 274s iters=20000 cur=93 best=89 pool=3937 hot=66553 harv=0 peelgain=6029
+[ 42166.6s 10:05:17] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 42203.2s 10:05:53] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 42242.6s 10:06:33] [walk] 117s iters=60000 cur=89 best=89 harv=0
+[ 42501.8s 10:10:52] [lns] 256s iters=20000 cur=94 best=89 pool=4097 hot=68671 harv=0 peelgain=5341
+[ 42665.9s 10:13:36]   stalled 1200s at 89 gates -- new root
+[ 42665.9s 10:13:36] --- restart 24 from o1_c36_90g.json (rng seed 4782) ---
+[ 42706.7s 10:14:17] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 42744.9s 10:14:55] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 42785.7s 10:15:36] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 43023.9s 10:19:34] [lns] 238s iters=20000 cur=93 best=90 pool=3977 hot=66942 harv=0 peelgain=4748
+[ 43244.6s 10:23:15] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 43285.5s 10:23:56] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 43483.6s 10:27:14] [lns] 158s iters=20000 cur=95 best=90 pool=3927 hot=69265 harv=0 peelgain=2099
+[ 43640.3s 10:29:51] [lns] 314s iters=40000 cur=94 best=90 pool=3951 hot=137094 harv=0 peelgain=3913
+[ 43789.9s 10:32:20] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 43838.5s 10:33:09] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[ 44177.8s 10:38:48] [lns] 312s iters=20000 cur=94 best=90 pool=3979 hot=66969 harv=0 peelgain=5498
+[ 44286.1s 10:40:36]   stalled 1200s at 90 gates -- new root
+[ 44286.1s 10:40:36] --- restart 25 from o1_c37_90g.json (rng seed 4889) ---
+[ 44334.0s 10:41:24] [walk] 48s iters=20000 cur=90 best=90 harv=0
+[ 44378.3s 10:42:09] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 44677.4s 10:47:08] [lns] 271s iters=20000 cur=93 best=90 pool=4030 hot=68185 harv=0 peelgain=5619
+[ 44866.6s 10:50:17] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 44905.9s 10:50:56] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[ 44940.7s 10:51:31] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 45202.0s 10:55:52] [lns] 256s iters=20000 cur=96 best=89 pool=3991 hot=69170 harv=0 peelgain=5660
+[ 45405.1s 10:59:15] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 45442.6s 10:59:53] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 45483.0s 11:00:33] [walk] 117s iters=60000 cur=89 best=89 harv=0
+[ 45710.9s 11:04:21] [lns] 225s iters=20000 cur=93 best=89 pool=3950 hot=67798 harv=0 peelgain=4415
+[ 45944.3s 11:08:15] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 45981.2s 11:08:51] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 46018.6s 11:09:29] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 46280.3s 11:13:51] [lns] 254s iters=20000 cur=93 best=89 pool=3936 hot=69718 harv=0 peelgain=5723
+[ 46446.4s 11:16:37]   stalled 1200s at 89 gates -- new root
+[ 46446.5s 11:16:37] --- restart 26 from o1_c39_90g.json (rng seed 4998) ---
+[ 46486.4s 11:17:17] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 46529.3s 11:18:00] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[ 46784.7s 11:22:15] [lns] 218s iters=20000 cur=95 best=90 pool=4005 hot=71150 harv=0 peelgain=3768
+[ 46982.0s 11:25:32] [lns] 415s iters=40000 cur=98 best=90 pool=4077 hot=142723 harv=0 peelgain=7037
+[ 47027.1s 11:26:17] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 47068.3s 11:26:59] [walk] 82s iters=40000 cur=90 best=90 harv=0
+[ 47316.4s 11:31:07] [lns] 210s iters=20000 cur=95 best=90 pool=3956 hot=68843 harv=0 peelgain=4130
+[ 47476.1s 11:33:46] [lns] 370s iters=40000 cur=95 best=90 pool=3999 hot=135318 harv=0 peelgain=6568
+[ 47565.8s 11:35:16] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 47602.9s 11:35:53] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 47642.0s 11:36:32] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 47862.4s 11:40:13] [lns] 216s iters=20000 cur=94 best=90 pool=3984 hot=70873 harv=0 peelgain=4282
+[ 48054.0s 11:43:24] [lns] 407s iters=40000 cur=97 best=90 pool=4077 hot=142445 harv=0 peelgain=7877
+[ 48066.7s 11:43:37]   stalled 1200s at 90 gates -- new root
+[ 48066.7s 11:43:37] --- restart 27 from o1_c40_90g.json (rng seed 5105) ---
+[ 48107.2s 11:44:17] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 48143.8s 11:44:54] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 48181.9s 11:45:32] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 48389.5s 11:49:00] [lns] 203s iters=20000 cur=95 best=89 pool=3913 hot=70118 harv=0 peelgain=3851
+[ 48578.7s 11:52:09] [lns] 392s iters=40000 cur=95 best=89 pool=3995 hot=142148 harv=0 peelgain=7323
+[ 48642.3s 11:53:13] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 48679.9s 11:53:50] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 48717.6s 11:54:28] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 48967.7s 11:58:38] [lns] 241s iters=20000 cur=94 best=89 pool=3958 hot=67307 harv=0 peelgain=4742
+[ 49182.3s 12:02:13] [walk] 35s iters=20000 cur=89 best=89 harv=0
+[ 49220.2s 12:02:50] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 49257.8s 12:03:28] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 49477.6s 12:07:08] [lns] 211s iters=20000 cur=97 best=89 pool=3958 hot=68740 harv=0 peelgain=4180
+[ 49687.0s 12:10:37]   stalled 1200s at 89 gates -- new root
+[ 49687.0s 12:10:37] --- restart 28 from o1_c42_90g.json (rng seed 5212) ---
+[ 49727.8s 12:11:18] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 49765.6s 12:11:56] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 49806.7s 12:12:37] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 50030.1s 12:16:20] [lns] 223s iters=20000 cur=96 best=90 pool=4044 hot=69610 harv=0 peelgain=4317
+[ 50267.4s 12:20:18] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 50304.5s 12:20:55] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 50344.8s 12:21:35] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 50604.4s 12:25:55] [lns] 257s iters=20000 cur=94 best=90 pool=3945 hot=69934 harv=0 peelgain=5359
+[ 50804.9s 12:29:15] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 50845.3s 12:29:56] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 50883.6s 12:30:34] [walk] 116s iters=60000 cur=90 best=90 harv=0
+[ 51144.1s 12:34:54] [lns] 257s iters=20000 cur=93 best=90 pool=3995 hot=68046 harv=0 peelgain=4673
+[ 51307.2s 12:37:37]   stalled 1200s at 90 gates -- new root
+[ 51307.2s 12:37:37] --- restart 29 from o1_c43_90g.json (rng seed 5319) ---
+[ 51346.7s 12:38:17] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 51382.8s 12:38:53] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 51419.5s 12:39:30] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 51638.3s 12:43:09] [lns] 211s iters=20000 cur=95 best=89 pool=3959 hot=70089 harv=0 peelgain=4223
+[ 51882.8s 12:47:13] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 51920.5s 12:47:51] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 51961.1s 12:48:31] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 52282.0s 12:53:52] [lns] 315s iters=20000 cur=95 best=89 pool=4023 hot=66902 harv=0 peelgain=5977
+[ 52427.8s 12:56:18] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 52469.3s 12:57:00] [walk] 82s iters=40000 cur=89 best=89 harv=0
+[ 52874.4s 13:03:45] [lns] 367s iters=20000 cur=95 best=89 pool=4012 hot=65989 harv=0 peelgain=6677
+[ 52927.5s 13:04:38]   stalled 1200s at 89 gates -- new root
+[ 52927.5s 13:04:38] --- restart 30 from o1_c45_90g.json (rng seed 5426) ---
+[ 52972.9s 13:05:23] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[ 53019.4s 13:06:10] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 53301.9s 13:10:52] [lns] 254s iters=20000 cur=94 best=90 pool=4049 hot=71804 harv=0 peelgain=3998
+[ 53515.1s 13:14:25] [walk] 48s iters=20000 cur=90 best=90 harv=0
+[ 53568.2s 13:15:18] [walk] 101s iters=40000 cur=90 best=90 harv=0
+[ 53895.1s 13:20:45] [lns] 308s iters=20000 cur=95 best=90 pool=3974 hot=66816 harv=0 peelgain=4590
+[ 54069.4s 13:23:40] [walk] 62s iters=20000 cur=90 best=90 harv=0
+[ 54341.2s 13:28:11] [lns] 214s iters=20000 cur=95 best=90 pool=3874 hot=65434 harv=0 peelgain=2095
+[ 54547.7s 13:31:38]   stalled 1200s at 90 gates -- new root
+[ 54547.8s 13:31:38] --- restart 31 from o1_c46_90g.json (rng seed 5533) ---
+[ 54610.9s 13:32:41] [walk] 63s iters=20000 cur=90 best=90 harv=0
+[ 54665.6s 13:33:36] [walk] 118s iters=40000 cur=90 best=90 harv=0
+[ 54888.3s 13:37:19] [lns] 220s iters=20000 cur=97 best=90 pool=3973 hot=68606 harv=0 peelgain=3387
+[ 55083.6s 13:40:34] [lns] 416s iters=40000 cur=95 best=90 pool=4090 hot=138064 harv=0 peelgain=6160
+[ 55135.4s 13:41:26] [walk] 48s iters=20000 cur=89 best=89 harv=0
+[ 55180.1s 13:42:10] [walk] 92s iters=40000 cur=89 best=89 harv=0
+[ 55445.7s 13:46:36] [lns] 238s iters=20000 cur=95 best=89 pool=3894 hot=69024 harv=0 peelgain=3704
+[ 55669.0s 13:50:19] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 55708.5s 13:50:59] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 56036.3s 13:56:27] [lns] 288s iters=20000 cur=92 best=89 pool=3957 hot=64591 harv=0 peelgain=5665
+[ 56207.7s 13:59:18] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 56251.1s 14:00:01] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[ 56556.1s 14:05:06] [lns] 268s iters=20000 cur=97 best=89 pool=4031 hot=69267 harv=0 peelgain=4923
+[ 56708.1s 14:07:38]   stalled 1200s at 89 gates -- new root
+[ 56708.2s 14:07:38] --- restart 32 from o1_c48_90g.json (rng seed 5642) ---
+[ 56753.6s 14:08:24] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[ 56794.4s 14:09:05] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[ 57052.4s 14:13:23] [lns] 224s iters=20000 cur=95 best=90 pool=3959 hot=70235 harv=0 peelgain=3878
+[ 57293.8s 14:17:24] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 57341.5s 14:18:12] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[ 57628.8s 14:22:59] [lns] 261s iters=20000 cur=93 best=90 pool=4008 hot=70063 harv=0 peelgain=4526
+[ 57834.8s 14:26:25] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 57880.3s 14:27:11] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 58132.5s 14:31:23] [lns] 224s iters=20000 cur=94 best=90 pool=3988 hot=71135 harv=0 peelgain=4003
+[ 58328.4s 14:34:39]   stalled 1200s at 90 gates -- new root
+[ 58328.4s 14:34:39] --- restart 33 from o1_c49_90g.json (rng seed 5749) ---
+[ 58368.4s 14:35:19] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 58405.4s 14:35:56] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 58445.2s 14:36:36] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 58685.0s 14:40:35] [lns] 237s iters=20000 cur=94 best=90 pool=4074 hot=69911 harv=0 peelgain=4481
+[ 58913.4s 14:44:24] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[ 58953.8s 14:45:04] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[ 59255.8s 14:50:06] [lns] 267s iters=20000 cur=92 best=89 pool=3909 hot=65581 harv=0 peelgain=5597
+[ 59453.0s 14:53:23] [walk] 44s iters=20000 cur=89 best=89 harv=0
+[ 59498.4s 14:54:09] [walk] 90s iters=40000 cur=89 best=89 harv=0
+[ 59821.7s 14:59:32] [lns] 293s iters=20000 cur=92 best=89 pool=4070 hot=69580 harv=0 peelgain=5220
+[ 59993.5s 15:02:24] [walk] 45s iters=20000 cur=89 best=89 harv=0
+[ 60037.2s 15:03:07] [walk] 89s iters=40000 cur=89 best=89 harv=0
+[ 60294.4s 15:07:25] [lns] 226s iters=20000 cur=97 best=89 pool=3920 hot=69244 harv=0 peelgain=3992
+[ 60488.8s 15:10:39]   stalled 1200s at 89 gates -- new root
+[ 60488.8s 15:10:39] --- restart 34 from o1_c51_90g.json (rng seed 5858) ---
+[ 60532.3s 15:11:23] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[ 60572.1s 15:12:02] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[ 60843.6s 15:16:34] [lns] 235s iters=20000 cur=95 best=90 pool=3980 hot=69171 harv=0 peelgain=4258
+[ 61069.7s 15:20:20] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 61114.6s 15:21:05] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[ 61444.2s 15:26:35] [lns] 295s iters=20000 cur=93 best=90 pool=4003 hot=68035 harv=0 peelgain=5964
+[ 61612.1s 15:29:22] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[ 61652.7s 15:30:03] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 62002.8s 15:35:53] [lns] 314s iters=20000 cur=95 best=90 pool=4003 hot=67464 harv=0 peelgain=6272
+[ 62109.0s 15:37:39]   stalled 1200s at 90 gates -- new root
+[ 62109.1s 15:37:39] --- restart 35 from o1_c52_90g.json (rng seed 5965) ---
+[ 62150.8s 15:38:21] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 62189.8s 15:39:00] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 62490.8s 15:44:01] [lns] 262s iters=20000 cur=92 best=89 pool=3993 hot=67847 harv=0 peelgain=5139
+[ 62688.8s 15:47:19] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 62731.5s 15:48:02] [walk] 82s iters=40000 cur=89 best=89 harv=0
+[ 63009.7s 15:52:40] [lns] 241s iters=20000 cur=96 best=89 pool=4080 hot=70671 harv=0 peelgain=4473
+[ 63230.0s 15:56:20] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 63266.9s 15:56:57] [walk] 78s iters=40000 cur=89 best=89 harv=0
+[ 63307.2s 15:57:37] [walk] 118s iters=60000 cur=89 best=89 harv=0
+[ 63572.6s 16:02:03] [lns] 263s iters=20000 cur=93 best=89 pool=3988 hot=68752 harv=0 peelgain=5144
+[ 63729.3s 16:04:40]   stalled 1200s at 89 gates -- new root
+[ 63729.3s 16:04:40] --- restart 36 from o1_c54_90g.json (rng seed 6072) ---
+[ 63769.1s 16:05:19] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 63811.4s 16:06:02] [walk] 82s iters=40000 cur=90 best=90 harv=0
+[ 64118.4s 16:11:09] [lns] 269s iters=20000 cur=94 best=90 pool=4074 hot=67154 harv=0 peelgain=5318
+[ 64311.9s 16:14:22] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[ 64349.2s 16:15:00] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 64643.5s 16:19:54] [lns] 254s iters=20000 cur=95 best=90 pool=3981 hot=69023 harv=0 peelgain=5215
+[ 64847.4s 16:23:18] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 64888.1s 16:23:58] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 64928.9s 16:24:39] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 65188.3s 16:28:59] [lns] 259s iters=20000 cur=94 best=90 pool=4006 hot=70303 harv=0 peelgain=5319
+[ 65349.5s 16:31:40]   stalled 1200s at 90 gates -- new root
+[ 65349.6s 16:31:40] --- restart 37 from o1_c55_90g.json (rng seed 6179) ---
+[ 65389.6s 16:32:20] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 65429.6s 16:33:00] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 65467.9s 16:33:38] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 65708.0s 16:37:38] [lns] 238s iters=20000 cur=97 best=90 pool=4079 hot=69194 harv=0 peelgain=4859
+[ 65930.1s 16:41:20] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 65967.2s 16:41:57] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 66007.1s 16:42:37] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 66230.9s 16:46:21] [lns] 221s iters=20000 cur=96 best=90 pool=4047 hot=69836 harv=0 peelgain=4599
+[ 66413.8s 16:49:24] [lns] 404s iters=40000 cur=98 best=90 pool=4180 hot=140916 harv=0 peelgain=7887
+[ 66465.0s 16:50:15] [walk] 35s iters=20000 cur=90 best=90 harv=0
+[ 66504.5s 16:50:55] [walk] 75s iters=40000 cur=90 best=90 harv=0
+[ 66545.5s 16:51:36] [walk] 116s iters=60000 cur=90 best=90 harv=0
+[ 66780.0s 16:55:30] [lns] 230s iters=20000 cur=95 best=90 pool=4067 hot=68541 harv=0 peelgain=4456
+[ 66960.6s 16:58:31] [lns] 411s iters=40000 cur=97 best=90 pool=4137 hot=138383 harv=0 peelgain=7789
+[ 66969.7s 16:58:40]   stalled 1200s at 90 gates -- new root
+[ 66969.8s 16:58:40] --- restart 38 from o1_c57_90g.json (rng seed 6286) ---
+[ 67009.3s 16:59:20] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 67045.2s 16:59:56] [walk] 75s iters=40000 cur=90 best=90 harv=0
+[ 67084.3s 17:00:35] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 67315.0s 17:04:25] [lns] 225s iters=20000 cur=98 best=90 pool=4048 hot=70682 harv=0 peelgain=4727
+[ 67506.9s 17:07:37] [lns] 417s iters=40000 cur=96 best=90 pool=4191 hot=144311 harv=0 peelgain=8306
+[ 67547.0s 17:08:17] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 67586.9s 17:08:57] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 67625.5s 17:09:36] [walk] 116s iters=60000 cur=90 best=90 harv=0
+[ 67879.1s 17:13:49] [lns] 249s iters=20000 cur=95 best=90 pool=3994 hot=70010 harv=0 peelgain=5437
+[ 68089.4s 17:17:20] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 68128.5s 17:17:59] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 68164.9s 17:18:35] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 68397.5s 17:22:28] [lns] 228s iters=20000 cur=97 best=90 pool=3973 hot=70509 harv=0 peelgain=4633
+[ 68557.6s 17:25:08] [lns] 388s iters=40000 cur=98 best=90 pool=4004 hot=142408 harv=0 peelgain=7026
+[ 68590.0s 17:25:40]   stalled 1200s at 90 gates -- new root
+[ 68590.1s 17:25:40] --- restart 39 from o1_c58_90g.json (rng seed 6393) ---
+[ 68630.7s 17:26:21] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 68667.9s 17:26:58] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 68709.0s 17:27:39] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 68980.3s 17:32:11] [lns] 270s iters=20000 cur=96 best=90 pool=4126 hot=70782 harv=0 peelgain=5836
+[ 69169.9s 17:35:20] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 69209.6s 17:36:00] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 69247.0s 17:36:37] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 69495.9s 17:40:46] [lns] 246s iters=20000 cur=95 best=90 pool=4089 hot=68155 harv=0 peelgain=4849
+[ 69714.3s 17:44:25] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 69754.2s 17:45:04] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 70073.3s 17:50:24] [lns] 283s iters=20000 cur=95 best=90 pool=4170 hot=69682 harv=0 peelgain=5718
+[ 70210.3s 17:52:41]   stalled 1200s at 90 gates -- new root
+[ 70210.4s 17:52:41] --- restart 40 from o1_c60_90g.json (rng seed 6500) ---
+[ 70248.9s 17:53:19] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 70290.5s 17:54:01] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 70575.4s 17:58:46] [lns] 245s iters=20000 cur=93 best=90 pool=3962 hot=68115 harv=0 peelgain=4983
+[ 70792.6s 18:02:23] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 70831.8s 18:03:02] [walk] 81s iters=40000 cur=90 best=90 harv=0
+[ 71110.7s 18:07:41] [lns] 240s iters=20000 cur=94 best=90 pool=3960 hot=68091 harv=0 peelgain=4172
+[ 71331.4s 18:11:22] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 71374.3s 18:12:05] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 71646.7s 18:16:37] [lns] 236s iters=20000 cur=96 best=90 pool=3976 hot=72167 harv=0 peelgain=4062
+[ 71830.6s 18:19:41]   stalled 1200s at 90 gates -- new root
+[ 71830.7s 18:19:41] --- restart 41 from o1_c61_90g.json (rng seed 6607) ---
+[ 71874.3s 18:20:25] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 71915.5s 18:21:06] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[ 72196.5s 18:25:47] [lns] 246s iters=20000 cur=98 best=90 pool=4096 hot=70453 harv=0 peelgain=4225
+[ 72412.9s 18:29:23] [walk] 42s iters=20000 cur=89 best=89 harv=0
+[ 72451.4s 18:30:02] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 72747.0s 18:34:57] [lns] 256s iters=20000 cur=94 best=89 pool=3922 hot=65839 harv=0 peelgain=4896
+[ 72949.3s 18:38:20] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 72990.5s 18:39:01] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[ 73028.8s 18:39:39] [walk] 118s iters=60000 cur=89 best=89 harv=0
+[ 73333.9s 18:44:44] [lns] 303s iters=20000 cur=92 best=89 pool=3937 hot=64739 harv=0 peelgain=6033
+[ 73492.9s 18:47:23] [walk] 42s iters=20000 cur=89 best=89 harv=0
+[ 73531.9s 18:48:02] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 73818.1s 18:52:48] [lns] 247s iters=20000 cur=94 best=89 pool=3933 hot=70994 harv=0 peelgain=4672
+[ 73991.0s 18:55:41]   stalled 1200s at 89 gates -- new root
+[ 73991.0s 18:55:41] --- restart 42 from o1_c63_90g.json (rng seed 6716) ---
+[ 74032.1s 18:56:22] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 74075.4s 18:57:06] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 74293.0s 19:00:43] [lns] 182s iters=20000 cur=96 best=90 pool=3925 hot=70791 harv=0 peelgain=2751
+[ 74473.9s 19:03:44] [lns] 363s iters=40000 cur=96 best=90 pool=4062 hot=143063 harv=0 peelgain=5609
+[ 74573.4s 19:05:24] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 74612.4s 19:06:03] [walk] 81s iters=40000 cur=90 best=90 harv=0
+[ 74964.0s 19:11:54] [lns] 313s iters=20000 cur=94 best=90 pool=3957 hot=66496 harv=0 peelgain=6549
+[ 75109.4s 19:14:20] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 75149.7s 19:15:00] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 75190.8s 19:15:41] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 75434.3s 19:19:45] [lns] 243s iters=20000 cur=98 best=90 pool=4092 hot=70138 harv=0 peelgain=4899
+[ 75611.2s 19:22:41]   stalled 1200s at 90 gates -- new root
+[ 75611.3s 19:22:42] --- restart 43 from o1_c64_90g.json (rng seed 6823) ---
+[ 75651.4s 19:23:22] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 75691.0s 19:24:01] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 75728.7s 19:24:39] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 75958.9s 19:28:29] [lns] 228s iters=20000 cur=96 best=90 pool=4070 hot=70613 harv=0 peelgain=4342
+[ 76192.4s 19:32:23] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 76229.3s 19:33:00] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 76268.9s 19:33:39] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 76504.0s 19:37:34] [lns] 233s iters=20000 cur=93 best=90 pool=4004 hot=70677 harv=0 peelgain=4543
+[ 76728.8s 19:41:19] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 76769.8s 19:42:00] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 76810.2s 19:42:40] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 77009.3s 19:46:00] [lns] 198s iters=20000 cur=95 best=90 pool=3966 hot=69149 harv=0 peelgain=3647
+[ 77182.7s 19:48:53] [lns] 371s iters=40000 cur=95 best=90 pool=4020 hot=136670 harv=0 peelgain=6681
+[ 77231.5s 19:49:42]   stalled 1200s at 90 gates -- new root
+[ 77231.5s 19:49:42] --- restart 44 from o1_c66_90g.json (rng seed 6930) ---
+[ 77272.1s 19:50:22] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 77309.5s 19:51:00] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 77350.5s 19:51:41] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 77541.6s 19:54:52] [lns] 190s iters=20000 cur=98 best=90 pool=3962 hot=68739 harv=0 peelgain=3428
+[ 77698.6s 19:57:29] [lns] 347s iters=40000 cur=97 best=90 pool=4012 hot=139153 harv=0 peelgain=5848
+[ 77809.4s 19:59:20] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 77850.1s 20:00:00] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 77890.7s 20:00:41] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 78086.4s 20:03:57] [lns] 195s iters=20000 cur=94 best=90 pool=3979 hot=69200 harv=0 peelgain=3369
+[ 78237.5s 20:06:28] [lns] 346s iters=40000 cur=95 best=90 pool=4046 hot=138328 harv=0 peelgain=5485
+[ 78352.6s 20:08:23] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 78393.7s 20:09:04] [walk] 82s iters=40000 cur=90 best=90 harv=0
+[ 78431.4s 20:09:42] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 78650.2s 20:13:20] [lns] 219s iters=20000 cur=97 best=90 pool=3960 hot=65697 harv=0 peelgain=3913
+[ 78851.7s 20:16:42]   stalled 1200s at 90 gates -- new root
+[ 78851.8s 20:16:42] --- restart 45 from o1_c67_90g.json (rng seed 7037) ---
+[ 78891.7s 20:17:22] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 78934.5s 20:18:05] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[ 79214.3s 20:22:45] [lns] 242s iters=20000 cur=92 best=89 pool=3872 hot=65271 harv=0 peelgain=4466
+[ 79433.3s 20:26:24] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 79474.0s 20:27:04] [walk] 82s iters=40000 cur=89 best=89 harv=0
+[ 79790.1s 20:32:20] [lns] 278s iters=20000 cur=94 best=89 pool=3950 hot=69204 harv=0 peelgain=5591
+[ 79969.5s 20:35:20] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 80005.4s 20:35:56] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 80045.6s 20:36:36] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 80337.3s 20:41:28] [lns] 285s iters=20000 cur=92 best=89 pool=3944 hot=67231 harv=0 peelgain=6043
+[ 80472.0s 20:43:42]   stalled 1200s at 89 gates -- new root
+[ 80472.1s 20:43:42] --- restart 46 from o1_c69_90g.json (rng seed 7144) ---
+[ 80509.1s 20:44:19] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 80549.3s 20:45:00] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 80589.7s 20:45:40] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 80826.6s 20:49:37] [lns] 234s iters=20000 cur=92 best=90 pool=3958 hot=67640 harv=0 peelgain=4882
+[ 81002.1s 20:52:32] [lns] 410s iters=40000 cur=96 best=90 pool=4077 hot=135799 harv=0 peelgain=7960
+[ 81052.4s 20:53:23] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 81091.3s 20:54:02] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 81348.1s 20:58:18] [lns] 216s iters=20000 cur=96 best=90 pool=3977 hot=71672 harv=0 peelgain=3712
+[ 81591.7s 21:02:22] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 81635.4s 21:03:06] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[ 81885.8s 21:07:16] [lns] 214s iters=20000 cur=95 best=90 pool=4007 hot=67983 harv=0 peelgain=3950
+[ 82092.3s 21:10:43]   stalled 1200s at 90 gates -- new root
+[ 82092.4s 21:10:43] --- restart 47 from o1_c70_90g.json (rng seed 7251) ---
+[ 82131.7s 21:11:22] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 82169.5s 21:12:00] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 82205.8s 21:12:36] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 82503.5s 21:17:34] [lns] 291s iters=20000 cur=91 best=89 pool=3982 hot=67436 harv=0 peelgain=6304
+[ 82673.8s 21:20:24] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 82709.5s 21:21:00] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 82748.7s 21:21:39] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 83022.2s 21:26:12] [lns] 270s iters=20000 cur=91 best=89 pool=4005 hot=66711 harv=0 peelgain=5398
+[ 83212.9s 21:29:23] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 83255.2s 21:30:06] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[ 83553.1s 21:35:03] [lns] 261s iters=20000 cur=96 best=89 pool=3989 hot=69600 harv=0 peelgain=5173
+[ 83712.6s 21:37:43]   stalled 1200s at 89 gates -- new root
+[ 83712.7s 21:37:43] --- restart 48 from o1_c72_90g.json (rng seed 7358) ---
+[ 83753.2s 21:38:23] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 83789.7s 21:39:00] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[ 83827.9s 21:39:38] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 84128.1s 21:44:38] [lns] 295s iters=20000 cur=97 best=89 pool=4031 hot=69317 harv=0 peelgain=6186
+[ 84287.2s 21:47:17] [walk] 34s iters=20000 cur=89 best=89 harv=0
+[ 84325.0s 21:47:55] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 84364.7s 21:48:35] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 84628.2s 21:52:58] [lns] 255s iters=20000 cur=94 best=89 pool=3909 hot=68300 harv=0 peelgain=5382
+[ 84831.3s 21:56:22] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 84868.9s 21:56:59] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 84904.6s 21:57:35] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 85165.4s 22:01:56] [lns] 253s iters=20000 cur=94 best=89 pool=3902 hot=67750 harv=0 peelgain=4966
+[ 85332.9s 22:04:43]   stalled 1200s at 89 gates -- new root
+[ 85332.9s 22:04:43] --- restart 49 from o1_c73_90g.json (rng seed 7465) ---
+[ 85369.6s 22:05:20] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 85409.2s 22:05:59] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 85448.3s 22:06:39] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 85721.6s 22:11:12] [lns] 269s iters=20000 cur=94 best=89 pool=3897 hot=65681 harv=0 peelgain=5568
+[ 85911.6s 22:14:22] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 85950.2s 22:15:00] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 85985.9s 22:15:36] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 86241.3s 22:19:52] [lns] 248s iters=20000 cur=94 best=89 pool=3991 hot=68706 harv=0 peelgain=5051
+[ 86453.1s 22:23:23] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 86489.3s 22:24:00] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 86528.2s 22:24:38] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 86798.9s 22:29:09] [lns] 266s iters=20000 cur=95 best=89 pool=4014 hot=67758 harv=0 peelgain=5375
+[ 86953.2s 22:31:43]   stalled 1200s at 89 gates -- new root
+[ 86953.3s 22:31:44] --- restart 50 from o1_c75_90g.json (rng seed 7572) ---
+[ 86990.6s 22:32:21] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 87031.9s 22:33:02] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 87070.2s 22:33:40] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 87293.5s 22:37:24] [lns] 220s iters=20000 cur=94 best=90 pool=3950 hot=70105 harv=0 peelgain=4240
+[ 87485.6s 22:40:36] [lns] 412s iters=40000 cur=95 best=90 pool=4002 hot=140352 harv=0 peelgain=7583
+[ 87534.8s 22:41:25] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 87573.3s 22:42:04] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 87892.2s 22:47:22] [lns] 279s iters=20000 cur=94 best=90 pool=3960 hot=68423 harv=0 peelgain=5797
+[ 88074.0s 22:50:24] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 88111.7s 22:51:02] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 88152.5s 22:51:43] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 88387.3s 22:55:38] [lns] 234s iters=20000 cur=93 best=90 pool=3964 hot=68803 harv=0 peelgain=4699
+[ 88573.4s 22:58:44]   stalled 1200s at 90 gates -- new root
+[ 88573.5s 22:58:44] --- restart 51 from o1_c76_90g.json (rng seed 7679) ---
+[ 88609.7s 22:59:20] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 88648.3s 22:59:59] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 88686.4s 23:00:37] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 88935.2s 23:04:45] [lns] 242s iters=20000 cur=94 best=89 pool=3917 hot=67405 harv=0 peelgain=4922
+[ 89152.2s 23:08:22] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 89190.7s 23:09:01] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 89226.1s 23:09:36] [walk] 112s iters=60000 cur=89 best=89 harv=0
+[ 89484.0s 23:13:54] [lns] 250s iters=20000 cur=97 best=89 pool=4004 hot=68893 harv=0 peelgain=4862
+[ 89690.7s 23:17:21] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 89724.7s 23:17:55] [walk] 71s iters=40000 cur=89 best=89 harv=0
+[ 89761.5s 23:18:32] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 89996.7s 23:22:27] [lns] 223s iters=20000 cur=95 best=89 pool=3894 hot=68300 harv=0 peelgain=4823
+[ 90193.7s 23:25:44]   stalled 1200s at 89 gates -- new root
+[ 90193.8s 23:25:44] --- restart 52 from o1_c100_90g.json (rng seed 7786) ---
+[ 90229.7s 23:26:20] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 90269.9s 23:27:00] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 90310.5s 23:27:41] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 90569.5s 23:32:00] [lns] 256s iters=20000 cur=94 best=90 pool=4062 hot=68037 harv=0 peelgain=5136
+[ 90774.0s 23:35:24] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 90811.7s 23:36:02] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 90852.2s 23:36:43] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 91108.7s 23:40:59] [lns] 255s iters=20000 cur=94 best=90 pool=4037 hot=67941 harv=0 peelgain=5265
+[ 91308.6s 23:44:19] [walk] 35s iters=20000 cur=89 best=89 harv=0
+[ 91345.8s 23:44:56] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 91382.3s 23:45:33] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 91621.4s 23:49:32] [lns] 227s iters=20000 cur=95 best=89 pool=3965 hot=68181 harv=0 peelgain=4553
+[ 91851.0s 23:53:21] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 91888.0s 23:53:58] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 91922.8s 23:54:33] [walk] 109s iters=60000 cur=89 best=89 harv=0
+[ 92173.6s 23:58:44] [lns] 240s iters=20000 cur=93 best=89 pool=3942 hot=69359 harv=0 peelgain=4861
+[ 92391.8s 00:02:22] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 92426.2s 00:02:56] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 92463.7s 00:03:34] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 92703.9s 00:07:34] [lns] 230s iters=20000 cur=92 best=89 pool=3897 hot=65612 harv=0 peelgain=4868
+[ 92894.1s 00:10:44]   stalled 1200s at 89 gates -- new root
+[ 92894.2s 00:10:44] --- restart 53 from o1_c102_90g.json (rng seed 7897) ---
+[ 92933.7s 00:11:24] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 92973.6s 00:12:04] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 93011.1s 00:12:41] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[ 93242.6s 00:16:33] [lns] 228s iters=20000 cur=94 best=90 pool=3987 hot=68413 harv=0 peelgain=4556
+[ 93474.3s 00:20:25] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 93508.9s 00:20:59] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 93547.1s 00:21:37] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 93799.6s 00:25:50] [lns] 245s iters=20000 cur=93 best=89 pool=3851 hot=66614 harv=0 peelgain=5019
+[ 94009.4s 00:29:20] [walk] 35s iters=20000 cur=89 best=89 harv=0
+[ 94047.2s 00:29:57] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 94084.9s 00:30:35] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 94365.7s 00:35:16] [lns] 271s iters=20000 cur=91 best=89 pool=3937 hot=67615 harv=0 peelgain=5951
+[ 94554.1s 00:38:24] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 94591.4s 00:39:02] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 94630.8s 00:39:41] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 94879.5s 00:43:50] [lns] 245s iters=20000 cur=94 best=89 pool=3896 hot=70029 harv=0 peelgain=5248
+[ 95054.5s 00:46:45]   stalled 1200s at 89 gates -- new root
+[ 95054.6s 00:46:45] --- restart 54 from o1_c103_90g.json (rng seed 8006) ---
+[ 95090.5s 00:47:21] [walk] 36s iters=20000 cur=90 best=90 harv=0
+[ 95128.7s 00:47:59] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 95165.1s 00:48:35] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 95436.8s 00:53:07] [lns] 262s iters=20000 cur=93 best=89 pool=3974 hot=65416 harv=0 peelgain=6021
+[ 95631.0s 00:56:21] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 95667.7s 00:56:58] [walk] 73s iters=40000 cur=89 best=89 harv=0
+[ 95704.3s 00:57:35] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 95952.8s 01:01:43] [lns] 238s iters=20000 cur=96 best=89 pool=3925 hot=67981 harv=0 peelgain=5034
+[ 96171.7s 01:05:22] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 96208.4s 01:05:59] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 96245.8s 01:06:36] [walk] 111s iters=60000 cur=89 best=89 harv=0
+[ 96514.0s 01:11:04] [lns] 259s iters=20000 cur=98 best=89 pool=3947 hot=68035 harv=0 peelgain=5055
+[ 96674.8s 01:13:45]   stalled 1200s at 89 gates -- new root
+[ 96674.9s 01:13:45] --- restart 55 from o1_c105_90g.json (rng seed 8113) ---
+[ 96721.3s 01:14:32] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 96762.9s 01:15:13] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[ 97072.4s 01:20:23] [lns] 277s iters=20000 cur=93 best=90 pool=3931 hot=67123 harv=0 peelgain=5096
+[ 97259.8s 01:23:30] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[ 97306.6s 01:24:17] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 97571.0s 01:28:41] [lns] 236s iters=20000 cur=94 best=90 pool=4017 hot=69405 harv=0 peelgain=3970
+[ 97798.9s 01:32:29] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 97845.4s 01:33:16] [walk] 90s iters=40000 cur=90 best=90 harv=0
+[ 98146.7s 01:38:17] [lns] 272s iters=20000 cur=95 best=90 pool=4042 hot=68705 harv=0 peelgain=4278
+[ 98295.1s 01:40:45]   stalled 1200s at 90 gates -- new root
+[ 98295.2s 01:40:45] --- restart 56 from o1_c106_90g.json (rng seed 8220) ---
+[ 98342.5s 01:41:33] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[ 98386.8s 01:42:17] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 98716.0s 01:47:46] [lns] 301s iters=20000 cur=99 best=90 pool=4141 hot=71485 harv=0 peelgain=5013
+[ 98884.6s 01:50:35] [walk] 49s iters=20000 cur=90 best=90 harv=0
+[ 98933.0s 01:51:23] [walk] 98s iters=40000 cur=90 best=90 harv=0
+[ 99222.6s 01:56:13] [lns] 267s iters=20000 cur=95 best=90 pool=4130 hot=71304 harv=0 peelgain=4468
+[ 99425.4s 01:59:36] [walk] 50s iters=20000 cur=90 best=90 harv=0
+[ 99468.2s 02:00:18] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[ 99763.0s 02:05:13] [lns] 268s iters=20000 cur=96 best=90 pool=4057 hot=70884 harv=0 peelgain=4281
+[ 99915.5s 02:07:46]   stalled 1200s at 90 gates -- new root
+[ 99915.6s 02:07:46] --- restart 57 from o1_c108_90g.json (rng seed 8327) ---
+[ 99975.8s 02:08:46] [walk] 60s iters=20000 cur=90 best=90 harv=0
+[100020.9s 02:09:31] [walk] 105s iters=40000 cur=90 best=90 harv=0
+[100344.0s 02:14:54] [lns] 308s iters=20000 cur=96 best=90 pool=4029 hot=67959 harv=0 peelgain=5421
+[100502.8s 02:17:33] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[100546.9s 02:18:17] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[100792.3s 02:22:23] [lns] 217s iters=20000 cur=95 best=90 pool=3974 hot=68193 harv=0 peelgain=3364
+[100972.0s 02:25:22] [lns] 396s iters=40000 cur=96 best=90 pool=4014 hot=139503 harv=0 peelgain=5227
+[101047.9s 02:26:38] [walk] 52s iters=20000 cur=90 best=90 harv=0
+[101097.6s 02:27:28] [walk] 102s iters=40000 cur=90 best=90 harv=0
+[101453.0s 02:33:23] [lns] 337s iters=20000 cur=93 best=90 pool=4013 hot=67827 harv=0 peelgain=6247
+[101535.8s 02:34:46]   stalled 1200s at 90 gates -- new root
+[101535.9s 02:34:46] --- restart 58 from o1_c109_90g.json (rng seed 8434) ---
+[101576.5s 02:35:27] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[101619.6s 02:36:10] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[101935.3s 02:41:26] [lns] 279s iters=20000 cur=91 best=90 pool=4015 hot=68366 harv=0 peelgain=5465
+[102121.9s 02:44:32] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[102165.2s 02:45:15] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[102456.6s 02:50:07] [lns] 261s iters=20000 cur=94 best=89 pool=4123 hot=67757 harv=0 peelgain=4600
+[102656.1s 02:53:26] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[102699.2s 02:54:09] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[103032.4s 02:59:43] [lns] 296s iters=20000 cur=93 best=89 pool=3927 hot=65877 harv=0 peelgain=5864
+[103199.4s 03:02:30] [walk] 43s iters=20000 cur=89 best=89 harv=0
+[103244.1s 03:03:14] [walk] 88s iters=40000 cur=89 best=89 harv=0
+[103535.6s 03:08:06] [lns] 259s iters=20000 cur=96 best=89 pool=3978 hot=67926 harv=0 peelgain=4652
+[103696.2s 03:10:46]   stalled 1200s at 89 gates -- new root
+[103696.3s 03:10:47] --- restart 59 from o1_c111_90g.json (rng seed 8543) ---
+[103736.7s 03:11:27] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[103780.1s 03:12:10] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[104053.6s 03:16:44] [lns] 237s iters=20000 cur=94 best=90 pool=3920 hot=70136 harv=0 peelgain=4140
+[104277.9s 03:20:28] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[104322.4s 03:21:13] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[104607.6s 03:25:58] [lns] 251s iters=20000 cur=97 best=90 pool=3944 hot=68881 harv=0 peelgain=4376
+[104821.5s 03:29:32] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[104864.1s 03:30:14] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[105184.5s 03:35:35] [lns] 288s iters=20000 cur=93 best=90 pool=3933 hot=68760 harv=0 peelgain=5269
+[105316.5s 03:37:47]   stalled 1200s at 90 gates -- new root
+[105316.6s 03:37:47] --- restart 60 from o1_c112_90g.json (rng seed 8650) ---
+[105357.4s 03:38:28] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[105400.4s 03:39:11] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[105715.5s 03:44:26] [lns] 279s iters=20000 cur=95 best=89 pool=3922 hot=67289 harv=0 peelgain=5121
+[105897.9s 03:47:28] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[105936.2s 03:48:06] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[106277.5s 03:53:48] [lns] 301s iters=20000 cur=96 best=89 pool=3988 hot=67210 harv=0 peelgain=5913
+[106436.7s 03:56:27] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[106479.5s 03:57:10] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[106757.2s 04:01:47] [lns] 240s iters=20000 cur=95 best=89 pool=3917 hot=68949 harv=0 peelgain=3957
+[106936.8s 04:04:47]   stalled 1200s at 89 gates -- new root
+[106936.9s 04:04:47] --- restart 61 from o1_c114_90g.json (rng seed 8757) ---
+[106982.6s 04:05:33] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[107026.6s 04:06:17] [walk] 90s iters=40000 cur=90 best=90 harv=0
+[107262.3s 04:10:13] [lns] 205s iters=20000 cur=97 best=90 pool=3977 hot=71753 harv=0 peelgain=2923
+[107433.7s 04:13:04] [lns] 377s iters=40000 cur=97 best=90 pool=4019 hot=142751 harv=0 peelgain=4990
+[107520.1s 04:14:30] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[107565.8s 04:15:16] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[107872.6s 04:20:23] [lns] 276s iters=20000 cur=95 best=90 pool=3966 hot=69894 harv=0 peelgain=5066
+[108059.3s 04:23:30] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[108104.8s 04:24:15] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[108367.2s 04:28:38] [lns] 230s iters=20000 cur=95 best=90 pool=3974 hot=69165 harv=0 peelgain=3874
+[108557.2s 04:31:47]   stalled 1200s at 90 gates -- new root
+[108557.3s 04:31:48] --- restart 62 from o1_c115_90g.json (rng seed 8864) ---
+[108600.9s 04:32:31] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[108641.7s 04:33:12] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[108930.0s 04:38:00] [lns] 253s iters=20000 cur=96 best=90 pool=4102 hot=71193 harv=0 peelgain=4525
+[109142.2s 04:41:32] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[109189.2s 04:42:19] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[109510.0s 04:47:40] [lns] 293s iters=20000 cur=93 best=89 pool=3970 hot=67845 harv=0 peelgain=5626
+[109678.4s 04:50:29] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[109717.3s 04:51:08] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[110040.9s 04:56:31] [lns] 283s iters=20000 cur=91 best=89 pool=3906 hot=63626 harv=0 peelgain=5635
+[110215.1s 04:59:25] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[110255.6s 05:00:06] [walk] 78s iters=40000 cur=89 best=89 harv=0
+[110296.4s 05:00:47] [walk] 119s iters=60000 cur=89 best=89 harv=0
+[110597.8s 05:05:48] [lns] 300s iters=20000 cur=92 best=89 pool=3925 hot=64416 harv=0 peelgain=6185
+[110717.6s 05:07:48]   stalled 1200s at 89 gates -- new root
+[110717.7s 05:07:48] --- restart 63 from o1_c117_90g.json (rng seed 8973) ---
+[110767.1s 05:08:37] [walk] 49s iters=20000 cur=90 best=90 harv=0
+[110814.0s 05:09:24] [walk] 96s iters=40000 cur=90 best=90 harv=0
+[111084.0s 05:13:54] [lns] 246s iters=20000 cur=94 best=90 pool=4041 hot=70544 harv=0 peelgain=4225
+[111307.7s 05:17:38] [walk] 50s iters=20000 cur=90 best=90 harv=0
+[111356.2s 05:18:26] [walk] 98s iters=40000 cur=90 best=90 harv=0
+[111641.1s 05:23:11] [lns] 263s iters=20000 cur=97 best=90 pool=4044 hot=72025 harv=0 peelgain=4519
+[111841.0s 05:26:31] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[111884.2s 05:27:14] [walk] 86s iters=40000 cur=89 best=89 harv=0
+[112238.3s 05:33:09] [lns] 320s iters=20000 cur=98 best=89 pool=4036 hot=69628 harv=0 peelgain=5897
+[112379.6s 05:35:30] [walk] 42s iters=20000 cur=89 best=89 harv=0
+[112418.1s 05:36:08] [walk] 80s iters=40000 cur=89 best=89 harv=0
+[112757.2s 05:41:47] [lns] 299s iters=20000 cur=94 best=89 pool=4024 hot=68707 harv=0 peelgain=5759
+[112916.2s 05:44:26] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[112957.3s 05:45:08] [walk] 79s iters=40000 cur=89 best=89 harv=0
+[113273.9s 05:50:24] [lns] 276s iters=20000 cur=91 best=89 pool=3845 hot=68052 harv=0 peelgain=5570
+[113459.5s 05:53:30] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[113500.9s 05:54:11] [walk] 83s iters=40000 cur=89 best=89 harv=0
+[113811.3s 05:59:22] [lns] 273s iters=20000 cur=94 best=89 pool=3942 hot=68309 harv=0 peelgain=5186
+[114001.2s 06:02:31] [walk] 43s iters=20000 cur=89 best=89 harv=0
+[114045.5s 06:03:16] [walk] 87s iters=40000 cur=89 best=89 harv=0
+[114351.5s 06:08:22] [lns] 273s iters=20000 cur=91 best=89 pool=3865 hot=68483 harv=0 peelgain=5187
+[114495.3s 06:10:46]   restart budget reached (best 89@5) -- new root
+[114495.4s 06:10:46] --- restart 64 from o1_c118_90g.json (rng seed 9088) ---
+[114542.9s 06:11:33] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[114587.7s 06:12:18] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[114868.0s 06:16:58] [lns] 253s iters=20000 cur=95 best=90 pool=4089 hot=69517 harv=0 peelgain=4455
+[115080.3s 06:20:31] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[115123.6s 06:21:14] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[115476.1s 06:27:06] [lns] 321s iters=20000 cur=97 best=90 pool=4116 hot=71465 harv=0 peelgain=6132
+[115620.1s 06:29:30] [walk] 45s iters=20000 cur=89 best=89 harv=0
+[115660.4s 06:30:11] [walk] 85s iters=40000 cur=89 best=89 harv=0
+[115996.5s 06:35:47] [lns] 301s iters=20000 cur=92 best=89 pool=3977 hot=68674 harv=0 peelgain=6114
+[116156.1s 06:38:26] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[116196.8s 06:39:07] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[116234.8s 06:39:45] [walk] 119s iters=60000 cur=89 best=89 harv=0
+[116497.0s 06:44:07] [lns] 261s iters=20000 cur=92 best=89 pool=3912 hot=66732 harv=0 peelgain=4774
+[116695.9s 06:47:26] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[116733.1s 06:48:03] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[116773.4s 06:48:44] [walk] 118s iters=60000 cur=89 best=89 harv=0
+[117075.9s 06:53:46] [lns] 300s iters=20000 cur=91 best=89 pool=3921 hot=66340 harv=0 peelgain=5866
+[117195.7s 06:55:46]   stalled 1200s at 89 gates -- new root
+[117195.9s 06:55:46] --- restart 65 from o1_c120_90g.json (rng seed 9199) ---
+[117245.4s 06:56:36] [walk] 50s iters=20000 cur=90 best=90 harv=0
+[117290.4s 06:57:21] [walk] 95s iters=40000 cur=90 best=90 harv=0
+[117600.2s 07:02:30] [lns] 284s iters=20000 cur=93 best=90 pool=3905 hot=65788 harv=0 peelgain=5161
+[117782.1s 07:05:32] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[117832.4s 07:06:23] [walk] 96s iters=40000 cur=90 best=90 harv=0
+[118124.9s 07:11:15] [lns] 269s iters=20000 cur=93 best=90 pool=3923 hot=67483 harv=0 peelgain=4774
+[118321.5s 07:14:32] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[118366.6s 07:15:17] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[118689.7s 07:20:40] [lns] 294s iters=20000 cur=94 best=90 pool=3986 hot=67440 harv=0 peelgain=5191
+[118816.1s 07:22:46]   stalled 1200s at 90 gates -- new root
+[118816.2s 07:22:46] --- restart 66 from o1_c121_90g.json (rng seed 9306) ---
+[118861.0s 07:23:31] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[118901.2s 07:24:11] [walk] 85s iters=40000 cur=89 best=89 harv=0
+[119193.8s 07:29:04] [lns] 258s iters=20000 cur=96 best=89 pool=3985 hot=68630 harv=0 peelgain=4530
+[119395.8s 07:32:26] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[119438.3s 07:33:09] [walk] 82s iters=40000 cur=89 best=89 harv=0
+[119771.5s 07:38:42] [lns] 295s iters=20000 cur=93 best=89 pool=3984 hot=66162 harv=0 peelgain=5509
+[119941.5s 07:41:32] [walk] 45s iters=20000 cur=89 best=89 harv=0
+[119984.5s 07:42:15] [walk] 88s iters=40000 cur=89 best=89 harv=0
+[120298.9s 07:47:29] [lns] 283s iters=20000 cur=93 best=89 pool=3892 hot=67979 harv=0 peelgain=5276
+[120436.4s 07:49:47]   stalled 1200s at 89 gates -- new root
+[120436.5s 07:49:47] --- restart 67 from o1_c123_90g.json (rng seed 9413) ---
+[120478.0s 07:50:28] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[120522.3s 07:51:13] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[120791.8s 07:55:42] [lns] 235s iters=20000 cur=95 best=90 pool=3995 hot=69842 harv=0 peelgain=4076
+[121020.3s 07:59:31] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[121063.0s 08:00:13] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[121350.7s 08:05:01] [lns] 254s iters=20000 cur=97 best=90 pool=4025 hot=71732 harv=0 peelgain=4237
+[121562.5s 08:08:33] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[121606.4s 08:09:17] [walk] 90s iters=40000 cur=90 best=90 harv=0
+[121936.9s 08:14:47] [lns] 300s iters=20000 cur=93 best=90 pool=4019 hot=68361 harv=0 peelgain=5555
+[122056.7s 08:16:47]   stalled 1200s at 90 gates -- new root
+[122056.8s 08:16:47] --- restart 68 from o1_c124_90g.json (rng seed 9520) ---
+[122099.7s 08:17:30] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[122145.3s 08:18:16] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[122496.2s 08:24:06] [lns] 319s iters=20000 cur=92 best=89 pool=4092 hot=68502 harv=0 peelgain=6545
+[122646.9s 08:26:37] [walk] 50s iters=20000 cur=89 best=89 harv=0
+[122690.9s 08:27:21] [walk] 94s iters=40000 cur=89 best=89 harv=0
+[122998.8s 08:32:29] [lns] 282s iters=20000 cur=95 best=89 pool=3922 hot=66038 harv=0 peelgain=5390
+[123179.7s 08:35:30] [walk] 43s iters=20000 cur=89 best=89 harv=0
+[123225.2s 08:36:15] [walk] 88s iters=40000 cur=89 best=89 harv=0
+[123494.5s 08:40:45] [lns] 237s iters=20000 cur=96 best=89 pool=3893 hot=69290 harv=0 peelgain=4086
+[123677.1s 08:43:47]   stalled 1200s at 89 gates -- new root
+[123677.2s 08:43:47] --- restart 69 from o1_c126_90g.json (rng seed 9627) ---
+[123724.1s 08:44:34] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[123770.2s 08:45:20] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[124063.2s 08:50:13] [lns] 266s iters=20000 cur=96 best=90 pool=4003 hot=68671 harv=0 peelgain=4569
+[124259.4s 08:53:30] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[124303.8s 08:54:14] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[124609.4s 08:59:20] [lns] 272s iters=20000 cur=95 best=90 pool=3938 hot=69696 harv=0 peelgain=4796
+[124804.3s 09:02:35] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[124853.2s 09:03:23] [walk] 96s iters=40000 cur=90 best=90 harv=0
+[125124.0s 09:07:54] [lns] 247s iters=20000 cur=94 best=90 pool=4002 hot=69758 harv=0 peelgain=4073
+[125297.5s 09:10:48]   stalled 1200s at 90 gates -- new root
+[125297.6s 09:10:48] --- restart 70 from o1_c127_90g.json (rng seed 9734) ---
+[125344.0s 09:11:34] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[125389.4s 09:12:20] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[125665.4s 09:16:56] [lns] 248s iters=20000 cur=97 best=90 pool=4014 hot=71422 harv=0 peelgain=4271
+[125881.0s 09:20:31] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[125920.6s 09:21:11] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[126203.3s 09:25:54] [lns] 246s iters=20000 cur=97 best=90 pool=4077 hot=70092 harv=0 peelgain=4264
+[126419.7s 09:29:30] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[126464.8s 09:30:15] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[126760.6s 09:35:11] [lns] 263s iters=20000 cur=96 best=90 pool=4030 hot=70073 harv=0 peelgain=4384
+[126917.9s 09:37:48]   stalled 1200s at 90 gates -- new root
+[126918.0s 09:37:48] --- restart 71 from o1_c129_90g.json (rng seed 9841) ---
+[126964.1s 09:38:34] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[127003.3s 09:39:14]   NEW BEST 88 gates depth 6 VERIFIED it=38447 -> o_polish_best.json
+[127006.6s 09:39:17] [walk] 89s iters=40000 cur=88 best=88 harv=65
+[127007.5s 09:39:18]   NEW BEST 88 gates depth 5 VERIFIED depth-tiebreak it=40419 -> o_polish_best.json
+[127293.6s 09:44:04] [lns] 255s iters=20000 cur=92 best=88 pool=3761 hot=68432 harv=499 peelgain=4605
+[127498.7s 09:47:29] [walk] 41s iters=20000 cur=88 best=88 harv=656
+[127534.8s 09:48:05] [walk] 77s iters=40000 cur=88 best=88 harv=710
+[127574.0s 09:48:44] [walk] 116s iters=60000 cur=88 best=88 harv=723
+[127917.2s 09:54:27] [lns] 339s iters=20000 cur=92 best=88 pool=3758 hot=65283 harv=723 peelgain=5475
+[128047.9s 09:56:38] [walk] 50s iters=20000 cur=88 best=88 harv=729
+[128116.1s 09:57:46] [walk] 118s iters=40000 cur=88 best=88 harv=729
+[128448.4s 10:03:19] [lns] 330s iters=20000 cur=93 best=88 pool=3739 hot=69171 harv=729 peelgain=4782
+[128538.3s 10:04:49]   stalled 1200s at 88 gates -- new root
+[128538.6s 10:04:49] --- restart 72 from o1_c130_90g.json (rng seed 9948) ---
+[128617.3s 10:06:08] [walk] 79s iters=20000 cur=90 best=90 harv=729
+[129021.7s 10:12:52] [lns] 363s iters=20000 cur=94 best=90 pool=4067 hot=67113 harv=729 peelgain=4526
+[129158.4s 10:15:09] [walk] 80s iters=20000 cur=90 best=90 harv=729
+[129553.0s 10:21:43] [lns] 354s iters=20000 cur=94 best=90 pool=4070 hot=68730 harv=729 peelgain=5252
+[129672.8s 10:23:43] [walk] 54s iters=20000 cur=90 best=90 harv=729
+[129720.6s 10:24:31] [walk] 102s iters=40000 cur=90 best=90 harv=729
+[130012.4s 10:29:23] [lns] 273s iters=20000 cur=96 best=90 pool=4164 hot=69922 harv=729 peelgain=4629
+[130159.0s 10:31:49]   stalled 1200s at 90 gates -- new root
+[130159.1s 10:31:49] --- restart 73 from o1_c132_90g.json (rng seed 10055) ---
+[130203.3s 10:32:34] [walk] 44s iters=20000 cur=90 best=90 harv=729
+[130249.8s 10:33:20] [walk] 91s iters=40000 cur=90 best=90 harv=729
+[130572.6s 10:38:43] [lns] 293s iters=20000 cur=93 best=90 pool=3954 hot=67131 harv=729 peelgain=4594
+[130748.8s 10:41:39] [walk] 50s iters=20000 cur=90 best=90 harv=729
+[130795.4s 10:42:26] [walk] 96s iters=40000 cur=90 best=90 harv=729
+[131137.3s 10:48:08] [lns] 318s iters=20000 cur=93 best=90 pool=3969 hot=69784 harv=729 peelgain=4614
+[131293.9s 10:50:44] [walk] 55s iters=20000 cur=90 best=90 harv=729
+[131344.1s 10:51:34] [walk] 105s iters=40000 cur=90 best=90 harv=729
+[131583.3s 10:55:34] [lns] 224s iters=20000 cur=94 best=90 pool=3908 hot=70679 harv=729 peelgain=2590
+[131770.0s 10:58:40] [lns] 411s iters=40000 cur=95 best=90 pool=3937 hot=138150 harv=729 peelgain=4231
+[131779.3s 10:58:50]   stalled 1200s at 90 gates -- new root
+[131779.4s 10:58:50] --- restart 74 from o1_c133_90g.json (rng seed 10162) ---
+[131823.8s 10:59:34] [walk] 44s iters=20000 cur=90 best=90 harv=729
+[131867.9s 11:00:18] [walk] 88s iters=40000 cur=90 best=90 harv=729
+[132272.1s 11:07:02] [lns] 373s iters=20000 cur=92 best=90 pool=4004 hot=67988 harv=729 peelgain=5688
+[132365.6s 11:08:36] [walk] 46s iters=20000 cur=89 best=89 harv=729
+[132419.2s 11:09:30] [walk] 100s iters=40000 cur=89 best=89 harv=729
+[132800.4s 11:15:51] [lns] 361s iters=20000 cur=93 best=89 pool=3909 hot=64765 harv=729 peelgain=5186
+[132911.3s 11:17:42] [walk] 52s iters=20000 cur=89 best=89 harv=729
+[132963.2s 11:18:33] [walk] 104s iters=40000 cur=89 best=89 harv=729
+[133325.3s 11:24:36] [lns] 346s iters=20000 cur=94 best=89 pool=3953 hot=67866 harv=729 peelgain=5610
+[133457.2s 11:26:47] [walk] 58s iters=20000 cur=89 best=89 harv=729
+[133510.6s 11:27:41] [walk] 111s iters=40000 cur=89 best=89 harv=729
+[133886.0s 11:33:56] [lns] 366s iters=20000 cur=96 best=89 pool=3910 hot=65571 harv=729 peelgain=5515
+[133939.8s 11:34:50]   stalled 1200s at 89 gates -- new root
+[133940.1s 11:34:50] --- restart 75 from o1_c135_90g.json (rng seed 10271) ---
+[134007.5s 11:35:58] [walk] 67s iters=20000 cur=90 best=90 harv=729
+[134359.9s 11:41:50] [lns] 300s iters=20000 cur=93 best=90 pool=3936 hot=67045 harv=729 peelgain=3466
+[134547.4s 11:44:58] [walk] 67s iters=20000 cur=90 best=90 harv=729
+[134959.0s 11:51:49] [lns] 359s iters=20000 cur=98 best=90 pool=3996 hot=65864 harv=729 peelgain=5732
+[135085.1s 11:53:55] [walk] 65s iters=20000 cur=90 best=90 harv=729
+[135479.9s 12:00:30] [lns] 339s iters=20000 cur=93 best=90 pool=3928 hot=68340 harv=729 peelgain=4942
+[135616.4s 12:02:47] [walk] 56s iters=20000 cur=90 best=90 harv=729
+[135669.1s 12:03:39] [walk] 109s iters=40000 cur=90 best=90 harv=729
+[135947.0s 12:08:17] [lns] 267s iters=20000 cur=96 best=90 pool=4034 hot=69808 harv=729 peelgain=3919
+[136100.5s 12:10:51]   stalled 1200s at 90 gates -- new root
+[136100.7s 12:10:51] --- restart 76 from o1_c136_90g.json (rng seed 10380) ---
+[136162.3s 12:11:53] [walk] 62s iters=20000 cur=90 best=90 harv=729
+[136539.8s 12:18:10] [lns] 319s iters=20000 cur=95 best=90 pool=4047 hot=68880 harv=729 peelgain=4787
+[136718.1s 12:21:08] [walk] 77s iters=20000 cur=90 best=90 harv=729
+[137040.3s 12:26:31] [lns] 279s iters=20000 cur=94 best=90 pool=4038 hot=70464 harv=729 peelgain=4238
+[137228.3s 12:29:39] [walk] 47s iters=20000 cur=90 best=90 harv=729
+[137280.3s 12:30:31] [walk] 99s iters=40000 cur=90 best=90 harv=729
+[137624.7s 12:36:15] [lns] 324s iters=20000 cur=95 best=90 pool=4048 hot=67616 harv=729 peelgain=5486
+[137721.0s 12:37:51]   stalled 1200s at 90 gates -- new root
+[137721.1s 12:37:51] --- restart 77 from o1_c138_90g.json (rng seed 10487) ---
+[137769.1s 12:38:39] [walk] 48s iters=20000 cur=90 best=90 harv=729
+[137819.3s 12:39:30] [walk] 98s iters=40000 cur=90 best=90 harv=729
+[138088.2s 12:43:59] [lns] 247s iters=20000 cur=95 best=90 pool=3964 hot=68025 harv=729 peelgain=4141
+[138307.4s 12:47:38] [walk] 46s iters=20000 cur=90 best=90 harv=729
+[138356.4s 12:48:27] [walk] 95s iters=40000 cur=90 best=90 harv=729
+[138621.4s 12:52:52] [lns] 240s iters=20000 cur=96 best=90 pool=3964 hot=68974 harv=729 peelgain=3880
+[138844.0s 12:56:34] [walk] 43s iters=20000 cur=90 best=90 harv=729
+[138890.8s 12:57:21] [walk] 90s iters=40000 cur=90 best=90 harv=729
+[139143.6s 13:01:34] [lns] 222s iters=20000 cur=93 best=90 pool=3989 hot=69715 harv=729 peelgain=3574
+[139341.3s 13:04:52]   stalled 1200s at 90 gates -- new root
+[139341.5s 13:04:52] --- restart 78 from o1_c139_90g.json (rng seed 10594) ---
+[139384.1s 13:05:34] [walk] 43s iters=20000 cur=89 best=89 harv=729
+[139430.1s 13:06:20] [walk] 89s iters=40000 cur=89 best=89 harv=729
+[139751.6s 13:11:42] [lns] 290s iters=20000 cur=94 best=89 pool=3908 hot=66628 harv=729 peelgain=5409
+[139929.3s 13:14:40] [walk] 48s iters=20000 cur=89 best=89 harv=729
+[139974.1s 13:15:24] [walk] 93s iters=40000 cur=89 best=89 harv=729
+[140244.5s 13:19:55] [lns] 243s iters=20000 cur=96 best=89 pool=3956 hot=69763 harv=729 peelgain=4091
+[140460.9s 13:23:31] [walk] 39s iters=20000 cur=89 best=89 harv=729
+[140506.3s 13:24:17] [walk] 85s iters=40000 cur=89 best=89 harv=729
+[140878.2s 13:30:28] [lns] 337s iters=20000 cur=95 best=89 pool=4039 hot=67810 harv=729 peelgain=5034
+[140961.7s 13:31:52]   stalled 1200s at 89 gates -- new root
+[140961.8s 13:31:52] --- restart 79 from o1_c141_90g.json (rng seed 10701) ---
+[141014.6s 13:32:45] [walk] 53s iters=20000 cur=90 best=90 harv=729
+[141066.5s 13:33:37] [walk] 105s iters=40000 cur=90 best=90 harv=729
+[141380.7s 13:38:51] [lns] 299s iters=20000 cur=95 best=90 pool=4041 hot=69955 harv=729 peelgain=5377
+[141569.8s 13:42:00] [walk] 68s iters=20000 cur=90 best=90 harv=729
+[141618.9s 13:42:49] [walk] 117s iters=40000 cur=90 best=90 harv=729
+[141864.6s 13:46:55] [lns] 243s iters=20000 cur=99 best=90 pool=4057 hot=74262 harv=729 peelgain=2439
+[142093.4s 13:50:44] [walk] 51s iters=20000 cur=90 best=90 harv=729
+[142156.4s 13:51:47] [walk] 114s iters=40000 cur=90 best=90 harv=729
+[142515.9s 13:57:46] [lns] 354s iters=20000 cur=93 best=90 pool=3938 hot=69047 harv=729 peelgain=5394
+[142582.1s 13:58:52]   stalled 1200s at 90 gates -- new root
+[142582.3s 13:58:53] --- restart 80 from o1_c142_90g.json (rng seed 10808) ---
+[142648.1s 13:59:58] [walk] 66s iters=20000 cur=89 best=89 harv=729
+[143027.9s 14:06:18] [lns] 326s iters=20000 cur=92 best=89 pool=3920 hot=68168 harv=729 peelgain=5354
+[143197.9s 14:09:08] [walk] 76s iters=20000 cur=89 best=89 harv=729
+[143593.0s 14:15:43] [lns] 351s iters=20000 cur=97 best=89 pool=4015 hot=69785 harv=729 peelgain=4562
+[143732.8s 14:18:03] [walk] 70s iters=20000 cur=89 best=89 harv=729
+[144177.6s 14:25:28] [lns] 395s iters=20000 cur=96 best=89 pool=4054 hot=66477 harv=729 peelgain=5756
+[144202.5s 14:25:53]   stalled 1200s at 89 gates -- new root
+[144202.7s 14:25:53] --- restart 81 from o1_c144_90g.json (rng seed 10915) ---
+[144277.7s 14:27:08] [walk] 75s iters=20000 cur=90 best=90 harv=729
+[144704.5s 14:34:15] [lns] 382s iters=20000 cur=97 best=90 pool=4088 hot=69166 harv=729 peelgain=6249
+[144807.9s 14:35:58] [walk] 65s iters=20000 cur=90 best=90 harv=729
+[145212.8s 14:42:43] [lns] 350s iters=20000 cur=93 best=90 pool=3971 hot=70603 harv=729 peelgain=4382
+[145336.1s 14:44:46] [walk] 53s iters=20000 cur=90 best=90 harv=729
+[145384.0s 14:45:34] [walk] 101s iters=40000 cur=90 best=90 harv=729
+[145676.5s 14:50:27] [lns] 274s iters=20000 cur=94 best=90 pool=3919 hot=67982 harv=729 peelgain=3647
+[145823.0s 14:52:53]   stalled 1200s at 90 gates -- new root
+[145823.3s 14:52:54] --- restart 82 from o1_c145_90g.json (rng seed 11022) ---
+[145898.8s 14:54:09] [walk] 75s iters=20000 cur=90 best=90 harv=729
+[146208.1s 14:59:18] [lns] 265s iters=20000 cur=96 best=90 pool=3996 hot=69475 harv=729 peelgain=3579
+[146415.3s 15:02:46] [walk] 52s iters=20000 cur=89 best=89 harv=729
+[146468.8s 15:03:39] [walk] 105s iters=40000 cur=89 best=89 harv=729
+[146797.0s 15:09:07] [lns] 314s iters=20000 cur=92 best=89 pool=4061 hot=67911 harv=729 peelgain=5994
+[146945.8s 15:11:36] [walk] 42s iters=20000 cur=89 best=89 harv=729
+[146991.0s 15:12:21] [walk] 88s iters=40000 cur=89 best=89 harv=729
+[147297.7s 15:17:28] [lns] 274s iters=20000 cur=92 best=89 pool=3866 hot=69682 harv=729 peelgain=4527
+[147489.9s 15:20:40] [walk] 46s iters=20000 cur=89 best=89 harv=729
+[147540.0s 15:21:30] [walk] 96s iters=40000 cur=89 best=89 harv=729
+[147953.8s 15:28:24] [lns] 390s iters=20000 cur=96 best=89 pool=3922 hot=67415 harv=729 peelgain=5602
+[147983.6s 15:28:54]   stalled 1200s at 89 gates -- new root
+[147983.7s 15:28:54] --- restart 83 from o1_c147_90g.json (rng seed 11131) ---
+[148031.9s 15:29:42] [walk] 48s iters=20000 cur=90 best=90 harv=729
+[148086.9s 15:30:37] [walk] 103s iters=40000 cur=90 best=90 harv=729

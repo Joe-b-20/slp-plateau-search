@@ -17,8 +17,26 @@ jobs:
           python verify_circuit.py evidence/circuits/mixcolumns_97gates_depth3.json 3
           python verify_circuit.py evidence/circuits/mixcolumns_92gates_depth4.json 4
           python verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
+          python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json 5
+          python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth6.json 6
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth7.json 7
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth8_thirdfamily.json 8
+      - name: Every stated depth is tight - each record must FAIL at depth-1
+        run: |
+          set -e
+          fail_at() {
+            if python verify_circuit.py "$1" "$2" > /dev/null; then
+              echo "ERROR: $1 unexpectedly verified at depth $2"; exit 1
+            fi
+            echo "ok: $1 correctly rejected at depth $2"
+          }
+          fail_at evidence/circuits/mixcolumns_97gates_depth3.json 2
+          fail_at evidence/circuits/mixcolumns_92gates_depth4.json 3
+          fail_at evidence/circuits/mixcolumns_89gates_depth5.json 4
+          fail_at evidence/circuits/mixcolumns_88gates_depth5.json 4
+          fail_at evidence/circuits/mixcolumns_88gates_depth6.json 5
+          fail_at evidence/circuits/mixcolumns_88gates_depth7.json 6
+          fail_at evidence/circuits/mixcolumns_88gates_depth8_thirdfamily.json 7
       - name: Unit tests (core invariants)
         run: python -m unittest discover -s tests -v
       - name: Compile check

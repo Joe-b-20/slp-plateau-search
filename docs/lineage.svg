@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1354 210" font-family="Helvetica,Arial,sans-serif" font-size="14" role="img" aria-labelledby="ltitle ldesc">
-<title id="ltitle">Lineage of the 88-gate depth-7 AES MixColumns circuit</title>
-<desc id="ldesc">A left-to-right chain of boxes, each a verified circuit labelled gates-at-depth. From scratch to 97 at depth 3, then down the 2026-07-13 parallel ladder (96, 95, 94, 93, 92, 92) to 89 at depth 6, then 89 at depth 5 in the 2026-07-14 sub-89 run by a single reroute. From there an uphill step to an exactly rho-squared-symmetric 94 at depth 5 (five gates worse than the record, 82 of 94 masks shared with the 89), used as the seed from which the merged-engine worker w10_sym94 found the 88-gate depth-7 circuit on 2026-07-26. The 97, the 89 at depth 5 and the 88 are highlighted as records.</desc>
-<rect width="1354" height="210" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1354 380" font-family="Helvetica,Arial,sans-serif" font-size="14" role="img" aria-labelledby="ltitle ldesc">
+<title id="ltitle">The two own-lineage chains: to the 88-gate depth-7 circuit, and to the 88-gate depth-6 circuit found from scratch</title>
+<desc id="ldesc">Two left-to-right chains of boxes, each box a verified circuit labelled gates-at-depth. The top chain runs from scratch to 97 at depth 3, then down the 2026-07-13 parallel ladder (96, 95, 94, 93, 92, 92) to 89 at depth 6, then 89 at depth 5 in the 2026-07-14 sub-89 run by a single reroute, then an uphill step to an exactly rho-squared-symmetric 94 at depth 5 (five gates worse than the record, 82 of 94 masks shared with the 89), used as the seed from which the merged-engine worker w10_sym94 found the 88-gate depth-7 circuit on 2026-07-26. The bottom chain is independent of the top one and of all published work: on 2026-07-28 a from-scratch worker of the 87-hunt fleet built a randomized 139-gate depth-3 circuit as its root and reduced it through 95, 92, 90 and 89 to 88 gates at depth 7 and then, half a second later, depth 6. The 97, the 89 at depth 5, the 88 at depth 7 and the 88 at depth 6 are highlighted as records.</desc>
+<rect width="1354" height="380" fill="white"/>
 <line x1="20" y1="42" x2="970" y2="42" stroke="#aaaaaa"/>
 <line x1="20" y1="42" x2="20" y2="48" stroke="#aaaaaa"/>
 <line x1="970" y1="42" x2="970" y2="48" stroke="#aaaaaa"/>
@@ -75,8 +75,37 @@
 <rect x="1208" y="56" width="86" height="40" rx="7" fill="#1f6feb" stroke="#8899aa"/>
 <text x="1251" y="81" text-anchor="middle" fill="#ffffff" font-weight="bold">88@7</text>
 <text x="1251" y="114" text-anchor="middle" fill="#888888" font-size="11">w10_sym94</text>
-<text x="20" y="144" fill="#666666" font-size="11.5">gates@depth per node; every arrow is a seeded search step with a timestamped log line and a verified circuit in evidence/.</text>
-<text x="20" y="161" fill="#666666" font-size="11.5">Root 97@3 from scratch (anneal3, 2026-07-13, t = 235 s); 89@6 at t = 39 725 s of the 21 h ladder; 89@5 by one reroute (t = 592 s).</text>
-<text x="20" y="178" fill="#666666" font-size="11.5">The +5-gate exactly &#961;&#178;-symmetric 94@5 shares 82/94 masks with the 89@5; the 88@7 came from merged-engine worker w10_sym94 at t = 1 973 s (2026-07-26 22:08:19).</text>
-<text x="20" y="195" fill="#666666" font-size="11.5">The 88@7 ties the published 88@7 (Jean, ePrint 2026/1481) with an independent circuit - 61/88 shared masks. The 88@8 third family is not shown: its seed chain passes through Jean's published 88.</text>
+<line x1="20" y1="162" x2="538" y2="162" stroke="#aaaaaa"/>
+<line x1="20" y1="162" x2="20" y2="168" stroke="#aaaaaa"/>
+<line x1="538" y1="162" x2="538" y2="168" stroke="#aaaaaa"/>
+<text x="279" y="140" text-anchor="middle" fill="#666666" font-size="12">87-hunt fleet, worker c_naive, restart 18 (2026-07-28) &#8212; 37 min, no seed circuit</text>
+<rect x="20" y="176" width="86" height="40" rx="7" fill="#ffffff" stroke="#8899aa"/>
+<text x="63" y="201" text-anchor="middle" fill="#222222" font-weight="bold">scratch</text>
+<line x1="106" y1="196" x2="122" y2="196" stroke="#556677" stroke-width="1.6"/>
+<path d="M122 192 L128 196 L122 200" fill="#556677"/>
+<rect x="128" y="176" width="86" height="40" rx="7" fill="#eef2f7" stroke="#8899aa"/>
+<text x="171" y="201" text-anchor="middle" fill="#222222" font-weight="bold">139@3</text>
+<text x="171" y="234" text-anchor="middle" fill="#888888" font-size="11">naive#2163</text>
+<line x1="214" y1="196" x2="230" y2="196" stroke="#556677" stroke-width="1.6"/>
+<path d="M230 192 L236 196 L230 200" fill="#556677"/>
+<rect x="236" y="176" width="86" height="40" rx="7" fill="#eef2f7" stroke="#8899aa"/>
+<text x="279" y="201" text-anchor="middle" fill="#222222" font-weight="bold">95 &#8594; 89</text>
+<text x="279" y="234" text-anchor="middle" fill="#888888" font-size="11">walk + lns chunks</text>
+<line x1="322" y1="196" x2="338" y2="196" stroke="#556677" stroke-width="1.6"/>
+<path d="M338 192 L344 196 L338 200" fill="#556677"/>
+<rect x="344" y="176" width="86" height="40" rx="7" fill="#eef2f7" stroke="#8899aa"/>
+<text x="387" y="201" text-anchor="middle" fill="#222222" font-weight="bold">88@7</text>
+<text x="387" y="234" text-anchor="middle" fill="#888888" font-size="11">it = 37 270</text>
+<line x1="430" y1="196" x2="446" y2="196" stroke="#556677" stroke-width="1.6"/>
+<path d="M446 192 L452 196 L446 200" fill="#556677"/>
+<rect x="452" y="176" width="86" height="40" rx="7" fill="#1f6feb" stroke="#8899aa"/>
+<text x="495" y="201" text-anchor="middle" fill="#ffffff" font-weight="bold">88@6</text>
+<text x="495" y="234" text-anchor="middle" fill="#888888" font-size="11">it = 37 501</text>
+<text x="20" y="258" fill="#666666" font-size="11.5">gates@depth per node; every arrow is a search step with a timestamped log line and a verified circuit in evidence/.</text>
+<text x="20" y="275" fill="#666666" font-size="11.5">Top chain: root 97@3 from scratch (anneal3, 2026-07-13, t = 235 s); 89@6 at t = 39 725 s of the 21 h ladder; 89@5 by one reroute (t = 592 s).</text>
+<text x="20" y="292" fill="#666666" font-size="11.5">The +5-gate exactly &#961;&#178;-symmetric 94@5 shares 82/94 masks with the 89@5; the 88@7 came from worker w10_sym94 at t = 1 973 s (2026-07-26 22:08:19).</text>
+<text x="20" y="309" fill="#666666" font-size="11.5">Bottom chain: no seed circuit at all - randomized balanced XOR trees over the 32 raw inputs (139 gates at depth 3), reduced to 88 gates in 37 min,</text>
+<text x="20" y="326" fill="#666666" font-size="11.5">the depth-6 tie-break landing 0.5 s after the depth-7 one (2026-07-28 17:19:45). A fourth 88-gate family, at Jaccard 0.313-0.323 to every other known 88.</text>
+<text x="20" y="343" fill="#666666" font-size="11.5">The 88@7 ties the published 88@7 (Jean, ePrint 2026/1481) with an independent circuit - 61/88 shared masks; 88 is Jean's count and Jean has priority.</text>
+<text x="20" y="360" fill="#666666" font-size="11.5">Not shown: the seed chains of the 88@8 and the 88@5 both pass through Jean's published 88 - see evidence/RESULTS.md sections 5 and 7.</text>
 </svg>

@@ -371,15 +371,23 @@ class _Harvester:
     """
     LIMIT = 300000                       # bound the in-memory dedupe set
 
-    def __init__(self, path, glob_pat=None, period_s=120.0):
+    def __init__(self, path, glob_pat=None, period_s=120.0, max_size=None):
         self.path = path
         self.glob_pat = glob_pat
         self.period_s = period_s
+        self.max_size = max_size         # skip states larger than this
         self.seen = set()
         self.offsets = {}                # per sibling file: bytes already read
 
     def add(self, mset):
         if self.path is None:
+            return
+        # A multi-day fleet writes tens of GB if it records every plateau it
+        # crosses on the way down.  Only the sizes the 87-detector can USE are
+        # worth the disk: with max_size=88 the 87-hunt's harvest is 5x smaller
+        # and loses nothing the pipeline reads (campaign: measured on a
+        # 14-worker smoke run, 88-gate states were 20% of the bytes).
+        if self.max_size is not None and len(mset) > self.max_size:
             return
         fz = frozenset(mset)
         if fz in self.seen or len(self.seen) >= self.LIMIT:
@@ -414,9 +422,53 @@ class _Harvester:
         return n_new
 
 
+_HARVESTERS = {}
+
+
+def _harvester(k):
+    """One harvester per output path, REUSED across chunks.
+
+    A worker runs the engines in chunks, so a fresh _Harvester per call would
+    forget its dedupe set every few minutes and re-append plateau states it had
+    already written.  Caching by path keeps a worker's harvest deduplicated for
+    its whole life at no extra cost."""
+    path = k.get("harvest_path")
+    if path is None:
+        return _Harvester(None)
+    h = _HARVESTERS.get(path)
+    if h is None:
+        h = _Harvester(path, k.get("pop_glob"), k.get("pop_period_s", 120.0),
+                       k.get("harvest_max"))
+        _HARVESTERS[path] = h
+    return h
+
+
 # ==========================================================================
 # ENGINE  "lns"  --  depth-capped destroy & rebuild
 # ==========================================================================
+def _load_repel(k):
+    """Family repulsion (campaign: hunt-deeper wave 3; default OFF).
+
+    `repel_file` is a JSON list of masks belonging to the ALREADY-EXPLORED 88
+    families.  Two effects, both cheap and both off unless the file is given:
+      * a rebuild candidate that is a repelled mask (and is not already kept)
+        gets `repel_pen` added to its _extract pull-in cost, so the greedy
+        rebuild prefers structurally new material;
+      * a plateau/uphill move that INCREASES overlap with the repelled set is
+        rejected with probability 1 - repel_up_p, so drift is biased away from
+        the known basins instead of sliding back into them.
+    Shrinking moves are never blocked -- an 87 is an 87 wherever it lives.
+    This is the machinery that produced the third independent 88 family."""
+    repel = set()
+    if k.get("repel_file"):
+        try:
+            with open(k["repel_file"]) as f:
+                repel = set(json.load(f))
+        except (OSError, ValueError):
+            repel = set()
+    return repel, k.get("repel_pen", 2), k.get("repel_up_p", 0.25)
+
+
 def _extract(avail, dep, pos, cost_of, rng, cap, noise=True):
     """Greedy top-down rebuild of all targets out of the candidate pool.
 
@@ -607,8 +659,8 @@ def engine_lns(start_masks, cap, target, time_limit, seeds, k, ctx):
     use_sa = k.get("accept", "sa") == "sa"
     sa_T0 = k.get("sa_T0", 1.2); sa_cool = k.get("sa_cool", 0.9997)
     sa_reheat = k.get("sa_reheat", 4000)
-    harv = _Harvester(k.get("harvest_path"), k.get("pop_glob"),
-                      k.get("pop_period_s", 120.0))
+    harv = _harvester(k)
+    repel, repel_pen, repel_up_p = _load_repel(k)
 
     # pool = current masks + all pairwise sums (weight>1)
     sol = list(start)
@@ -716,6 +768,8 @@ def engine_lns(start_masks, cap, target, time_limit, seeds, k, ctx):
         for i in range(32, len(avail)):
             m = avail[i]
             cost_of[i] = 1 if m in keptset else (vic_cost if m in vset else 2)
+            if repel and m in repel and m not in keptset:
+                cost_of[i] += repel_pen        # push the rebuild off known families
         res = _extract(avail, dep, pos, cost_of, rng, cap)
         if res is None:
             continue
@@ -748,6 +802,11 @@ def engine_lns(start_masks, cap, target, time_limit, seeds, k, ctx):
                 Temp = sa_T0; last_record_it = iters
         else:
             accept = (d <= 0) or (d <= k["up_slack"] and rng.random() < k["up_prob"])
+        if accept and repel and d >= 0:
+            # plateau/uphill moves must not drift back toward a known family
+            dov = len(repel.intersection(res)) - len(repel.intersection(Ucur))
+            if dov > 0 and rng.random() > repel_up_p:
+                accept = False
         if accept:
             for m in res:
                 if m not in accumulate:
@@ -804,7 +863,7 @@ def _repair(S2, rng, avail=None, forbid=()):
     EVERY possible single-mask repair (campaign: repair-move); the v1 engine
     sampled random candidates and gave up after `tries`, which is why its 88
     plateau looked frozen -- exact repair made it move (~7x plateau mobility,
-    and it is how all four 88s were reached).  `forbid` holds the masks just
+    and it is how both new 88s were reached).  `forbid` holds the masks just
     removed: re-adding one is a no-op ping-pong.  Among valid repairs, prefer
     the one that trims smallest, tie-broken by low weight then reuse."""
     if avail is None:
@@ -893,10 +952,21 @@ def engine_walk(start_masks, cap, target, time_limit, seeds, k, ctx):
     def ok_cap(mset):
         return cap is None or feasible_at(mset, cap)
 
-    harv = _Harvester(k.get("harvest_path"))
+    harv = _harvester(k)
+    repel, _repel_pen, repel_up_p = _load_repel(k)
     cur = trim_masks(start_masks)
     if not ok_cap(cur):
         ctx.log("[walk] trimmed start exceeds depth cap -- aborting"); return
+
+    def rep_ok(nxt):
+        """Repulsion gate: a shrinking move always passes; a plateau move that
+        increases overlap with the known families passes only with probability
+        repel_up_p (see _load_repel)."""
+        if not repel or len(nxt) < len(cur):
+            return True
+        dov = len(repel.intersection(nxt)) - len(repel.intersection(cur))
+        return dov <= 0 or rng.random() < repel_up_p
+
     best = set(cur)
     ctx.improve(_walk_gates(best, cap), set(best))
     harv.add(best)
@@ -941,7 +1011,7 @@ def engine_walk(start_masks, cap, target, time_limit, seeds, k, ctx):
                     nxt = trim_masks(fixed)
                     slack = 1 if (rng.random() < k["plateau_slack_p"]
                                   and len(cur) < len(best) + 2) else 0
-                    if len(nxt) <= len(cur) + slack and ok_cap(nxt):
+                    if len(nxt) <= len(cur) + slack and ok_cap(nxt) and rep_ok(nxt):
                         cur = nxt; moved = True
         # Only an iteration that actually changed cur can produce a new
         # candidate; re-verifying an unchanged set was ~40% of v1's walk time.

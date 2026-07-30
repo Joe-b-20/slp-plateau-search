@@ -1,0 +1,1505 @@
+[     0.0s 20:50:35] hunt worker start: root=constructor:naive engines=alt repel=False seed=201 restart=7200s stall=2400s
+[     0.0s 20:50:35] --- restart 1 from naive#201 (142g d3) (rng seed 201) ---
+[     0.0s 20:50:35]   NEW BEST 135 gates depth 3 VERIFIED  -> c_naive_best.json
+[     0.0s 20:50:35]   NEW BEST 134 gates depth 4 VERIFIED it=4 -> c_naive_best.json
+[     0.0s 20:50:35]   NEW BEST 130 gates depth 4 VERIFIED it=5 -> c_naive_best.json
+[     0.0s 20:50:35]   NEW BEST 129 gates depth 5 VERIFIED it=9 -> c_naive_best.json
+[     0.0s 20:50:35]   NEW BEST 128 gates depth 5 VERIFIED it=21 -> c_naive_best.json
+[     0.1s 20:50:35]   NEW BEST 127 gates depth 5 VERIFIED it=31 -> c_naive_best.json
+[     0.1s 20:50:35]   NEW BEST 126 gates depth 5 VERIFIED it=33 -> c_naive_best.json
+[     0.1s 20:50:35]   NEW BEST 125 gates depth 5 VERIFIED it=39 -> c_naive_best.json
+[     0.1s 20:50:35]   NEW BEST 124 gates depth 6 VERIFIED it=56 -> c_naive_best.json
+[     0.1s 20:50:35]   NEW BEST 123 gates depth 6 VERIFIED it=66 -> c_naive_best.json
+[     0.2s 20:50:35]   NEW BEST 121 gates depth 6 VERIFIED it=67 -> c_naive_best.json
+[     0.2s 20:50:35]   NEW BEST 120 gates depth 6 VERIFIED it=70 -> c_naive_best.json
+[     0.2s 20:50:35]   NEW BEST 118 gates depth 6 VERIFIED it=71 -> c_naive_best.json
+[     0.2s 20:50:35]   NEW BEST 117 gates depth 6 VERIFIED it=97 -> c_naive_best.json
+[     0.2s 20:50:35]   NEW BEST 116 gates depth 6 VERIFIED it=101 -> c_naive_best.json
+[     0.3s 20:50:35]   NEW BEST 115 gates depth 6 VERIFIED it=126 -> c_naive_best.json
+[     0.3s 20:50:35]   NEW BEST 114 gates depth 6 VERIFIED it=129 -> c_naive_best.json
+[     0.3s 20:50:35]   NEW BEST 113 gates depth 6 VERIFIED it=141 -> c_naive_best.json
+[     0.4s 20:50:35]   NEW BEST 111 gates depth 8 VERIFIED it=215 -> c_naive_best.json
+[     0.5s 20:50:35]   NEW BEST 110 gates depth 8 VERIFIED it=236 -> c_naive_best.json
+[     0.5s 20:50:35]   NEW BEST 109 gates depth 8 VERIFIED it=250 -> c_naive_best.json
+[     0.5s 20:50:35]   NEW BEST 109 gates depth 7 VERIFIED depth-tiebreak it=255 -> c_naive_best.json
+[     0.5s 20:50:36]   NEW BEST 108 gates depth 7 VERIFIED it=275 -> c_naive_best.json
+[     0.5s 20:50:36]   NEW BEST 107 gates depth 8 VERIFIED it=281 -> c_naive_best.json
+[     0.6s 20:50:36]   NEW BEST 106 gates depth 10 VERIFIED it=336 -> c_naive_best.json
+[     0.7s 20:50:36]   NEW BEST 105 gates depth 10 VERIFIED it=374 -> c_naive_best.json
+[     0.8s 20:50:36]   NEW BEST 104 gates depth 11 VERIFIED it=451 -> c_naive_best.json
+[     0.9s 20:50:36]   NEW BEST 103 gates depth 8 VERIFIED it=503 -> c_naive_best.json
+[     0.9s 20:50:36]   NEW BEST 103 gates depth 7 VERIFIED depth-tiebreak it=520 -> c_naive_best.json
+[     1.0s 20:50:36]   NEW BEST 102 gates depth 7 VERIFIED it=563 -> c_naive_best.json
+[     1.3s 20:50:36]   NEW BEST 102 gates depth 6 VERIFIED depth-tiebreak it=754 -> c_naive_best.json
+[     1.7s 20:50:37]   NEW BEST 101 gates depth 7 VERIFIED it=981 -> c_naive_best.json
+[     1.8s 20:50:37]   NEW BEST 101 gates depth 6 VERIFIED depth-tiebreak it=1061 -> c_naive_best.json
+[     2.9s 20:50:38]   NEW BEST 100 gates depth 7 VERIFIED it=1677 -> c_naive_best.json
+[     4.0s 20:50:39]   NEW BEST 99 gates depth 8 VERIFIED it=2238 -> c_naive_best.json
+[     4.2s 20:50:39]   NEW BEST 99 gates depth 7 VERIFIED depth-tiebreak it=2321 -> c_naive_best.json
+[     4.8s 20:50:40]   NEW BEST 98 gates depth 8 VERIFIED it=2601 -> c_naive_best.json
+[     4.9s 20:50:40]   NEW BEST 98 gates depth 7 VERIFIED depth-tiebreak it=2635 -> c_naive_best.json
+[     7.0s 20:50:42]   NEW BEST 98 gates depth 6 VERIFIED depth-tiebreak it=3921 -> c_naive_best.json
+[    11.7s 20:50:47]   NEW BEST 97 gates depth 11 VERIFIED it=5877 -> c_naive_best.json
+[    11.8s 20:50:47]   NEW BEST 97 gates depth 8 VERIFIED depth-tiebreak it=5891 -> c_naive_best.json
+[    11.8s 20:50:47]   NEW BEST 97 gates depth 6 VERIFIED depth-tiebreak it=5894 -> c_naive_best.json
+[    12.0s 20:50:47]   NEW BEST 96 gates depth 6 VERIFIED it=5986 -> c_naive_best.json
+[    12.0s 20:50:47]   NEW BEST 95 gates depth 6 VERIFIED it=5991 -> c_naive_best.json
+[    28.3s 20:51:03]   NEW BEST 94 gates depth 8 VERIFIED it=13088 -> c_naive_best.json
+[    28.5s 20:51:03]   NEW BEST 94 gates depth 7 VERIFIED depth-tiebreak it=13164 -> c_naive_best.json
+[    30.5s 20:51:06]   NEW BEST 94 gates depth 6 VERIFIED depth-tiebreak it=14106 -> c_naive_best.json
+[    42.7s 20:51:18] [walk] 43s iters=20000 cur=94 best=94 harv=0
+[    48.3s 20:51:23]   NEW BEST 93 gates depth 8 VERIFIED it=22479 -> c_naive_best.json
+[    48.6s 20:51:24]   NEW BEST 93 gates depth 7 VERIFIED depth-tiebreak it=22599 -> c_naive_best.json
+[    48.6s 20:51:24]   NEW BEST 93 gates depth 6 VERIFIED depth-tiebreak it=22600 -> c_naive_best.json
+[    84.8s 20:52:00]   NEW BEST 92 gates depth 7 VERIFIED it=38643 -> c_naive_best.json
+[    86.8s 20:52:02]   NEW BEST 92 gates depth 6 VERIFIED depth-tiebreak it=39444 -> c_naive_best.json
+[    88.1s 20:52:03] [walk] 88s iters=40000 cur=92 best=92 harv=0
+[   377.5s 20:56:52] [lns] 257s iters=20000 cur=96 best=92 pool=4275 hot=71149 harv=0 peelgain=4613
+[   584.8s 21:00:20] [walk] 45s iters=20000 cur=92 best=92 harv=0
+[   628.4s 21:01:03] [walk] 88s iters=40000 cur=92 best=92 harv=0
+[   640.9s 21:01:16]   NEW BEST 91 gates depth 12 VERIFIED it=46146 -> c_naive_best.json
+[   641.0s 21:01:16]   NEW BEST 91 gates depth 9 VERIFIED depth-tiebreak it=46196 -> c_naive_best.json
+[   641.2s 21:01:16]   NEW BEST 91 gates depth 8 VERIFIED depth-tiebreak it=46261 -> c_naive_best.json
+[   641.9s 21:01:17]   NEW BEST 91 gates depth 7 VERIFIED depth-tiebreak it=46632 -> c_naive_best.json
+[   654.8s 21:01:30]   NEW BEST 91 gates depth 6 VERIFIED depth-tiebreak it=52853 -> c_naive_best.json
+[     0.0s 21:02:57] hunt worker start: root=constructor:naive engines=alt repel=False seed=201 restart=7200s stall=2400s
+[     0.0s 21:02:57] --- restart 1 from naive#201 (142g d3) (rng seed 201) ---
+[     0.0s 21:02:57]   NEW BEST 135 gates depth 3 VERIFIED  -> c_naive_best.json
+[     0.0s 21:02:57]   NEW BEST 134 gates depth 4 VERIFIED it=4 -> c_naive_best.json
+[     0.0s 21:02:57]   NEW BEST 130 gates depth 4 VERIFIED it=5 -> c_naive_best.json
+[     0.0s 21:02:57]   NEW BEST 129 gates depth 5 VERIFIED it=9 -> c_naive_best.json
+[     0.0s 21:02:57]   NEW BEST 128 gates depth 5 VERIFIED it=21 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 127 gates depth 5 VERIFIED it=31 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 126 gates depth 5 VERIFIED it=33 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 125 gates depth 5 VERIFIED it=39 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 124 gates depth 6 VERIFIED it=56 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 123 gates depth 6 VERIFIED it=66 -> c_naive_best.json
+[     0.1s 21:02:57]   NEW BEST 121 gates depth 6 VERIFIED it=67 -> c_naive_best.json
+[     0.2s 21:02:57]   NEW BEST 120 gates depth 6 VERIFIED it=70 -> c_naive_best.json
+[     0.2s 21:02:57]   NEW BEST 118 gates depth 6 VERIFIED it=71 -> c_naive_best.json
+[     0.2s 21:02:58]   NEW BEST 117 gates depth 6 VERIFIED it=97 -> c_naive_best.json
+[     0.2s 21:02:58]   NEW BEST 116 gates depth 6 VERIFIED it=101 -> c_naive_best.json
+[     0.3s 21:02:58]   NEW BEST 115 gates depth 6 VERIFIED it=126 -> c_naive_best.json
+[     0.3s 21:02:58]   NEW BEST 114 gates depth 6 VERIFIED it=129 -> c_naive_best.json
+[     0.3s 21:02:58]   NEW BEST 113 gates depth 6 VERIFIED it=141 -> c_naive_best.json
+[     0.4s 21:02:58]   NEW BEST 111 gates depth 8 VERIFIED it=215 -> c_naive_best.json
+[     0.4s 21:02:58]   NEW BEST 110 gates depth 8 VERIFIED it=236 -> c_naive_best.json
+[     0.5s 21:02:58]   NEW BEST 109 gates depth 8 VERIFIED it=250 -> c_naive_best.json
+[     0.5s 21:02:58]   NEW BEST 109 gates depth 7 VERIFIED depth-tiebreak it=255 -> c_naive_best.json
+[     0.5s 21:02:58]   NEW BEST 108 gates depth 7 VERIFIED it=275 -> c_naive_best.json
+[     0.5s 21:02:58]   NEW BEST 107 gates depth 8 VERIFIED it=281 -> c_naive_best.json
+[     0.6s 21:02:58]   NEW BEST 106 gates depth 10 VERIFIED it=336 -> c_naive_best.json
+[     0.7s 21:02:58]   NEW BEST 105 gates depth 10 VERIFIED it=374 -> c_naive_best.json
+[     0.8s 21:02:58]   NEW BEST 104 gates depth 11 VERIFIED it=451 -> c_naive_best.json
+[     0.9s 21:02:58]   NEW BEST 103 gates depth 8 VERIFIED it=503 -> c_naive_best.json
+[     0.9s 21:02:58]   NEW BEST 103 gates depth 7 VERIFIED depth-tiebreak it=520 -> c_naive_best.json
+[     1.0s 21:02:58]   NEW BEST 102 gates depth 7 VERIFIED it=563 -> c_naive_best.json
+[     1.3s 21:02:59]   NEW BEST 102 gates depth 6 VERIFIED depth-tiebreak it=754 -> c_naive_best.json
+[     1.6s 21:02:59]   NEW BEST 101 gates depth 7 VERIFIED it=981 -> c_naive_best.json
+[     1.7s 21:02:59]   NEW BEST 101 gates depth 6 VERIFIED depth-tiebreak it=1061 -> c_naive_best.json
+[     2.7s 21:03:00]   NEW BEST 100 gates depth 7 VERIFIED it=1677 -> c_naive_best.json
+[     3.7s 21:03:01]   NEW BEST 99 gates depth 8 VERIFIED it=2238 -> c_naive_best.json
+[     3.9s 21:03:01]   NEW BEST 99 gates depth 7 VERIFIED depth-tiebreak it=2321 -> c_naive_best.json
+[     4.5s 21:03:02]   NEW BEST 98 gates depth 8 VERIFIED it=2601 -> c_naive_best.json
+[     4.6s 21:03:02]   NEW BEST 98 gates depth 7 VERIFIED depth-tiebreak it=2635 -> c_naive_best.json
+[     7.5s 21:03:05]   NEW BEST 98 gates depth 6 VERIFIED depth-tiebreak it=3921 -> c_naive_best.json
+[    11.9s 21:03:09]   NEW BEST 97 gates depth 11 VERIFIED it=5877 -> c_naive_best.json
+[    11.9s 21:03:09]   NEW BEST 97 gates depth 8 VERIFIED depth-tiebreak it=5891 -> c_naive_best.json
+[    11.9s 21:03:09]   NEW BEST 97 gates depth 6 VERIFIED depth-tiebreak it=5894 -> c_naive_best.json
+[    12.2s 21:03:09]   NEW BEST 96 gates depth 6 VERIFIED it=5986 -> c_naive_best.json
+[    12.2s 21:03:09]   NEW BEST 95 gates depth 6 VERIFIED it=5991 -> c_naive_best.json
+[    26.6s 21:03:24]   NEW BEST 94 gates depth 8 VERIFIED it=13088 -> c_naive_best.json
+[    26.7s 21:03:24]   NEW BEST 94 gates depth 7 VERIFIED depth-tiebreak it=13164 -> c_naive_best.json
+[    28.7s 21:03:26]   NEW BEST 94 gates depth 6 VERIFIED depth-tiebreak it=14106 -> c_naive_best.json
+[    41.3s 21:03:39] [walk] 41s iters=20000 cur=94 best=94 harv=0
+[    47.3s 21:03:45]   NEW BEST 93 gates depth 8 VERIFIED it=22479 -> c_naive_best.json
+[    47.6s 21:03:45]   NEW BEST 93 gates depth 7 VERIFIED depth-tiebreak it=22599 -> c_naive_best.json
+[    47.6s 21:03:45]   NEW BEST 93 gates depth 6 VERIFIED depth-tiebreak it=22600 -> c_naive_best.json
+[    82.0s 21:04:19]   NEW BEST 92 gates depth 7 VERIFIED it=38643 -> c_naive_best.json
+[    83.8s 21:04:21]   NEW BEST 92 gates depth 6 VERIFIED depth-tiebreak it=39444 -> c_naive_best.json
+[    84.9s 21:04:22] [walk] 85s iters=40000 cur=92 best=92 harv=0
+[     0.0s 21:10:31] hunt worker start: root=constructor:naive engines=alt repel=False seed=201 restart=7200s stall=2400s
+[     0.0s 21:10:31] --- restart 1 from naive#201 (142g d3) (rng seed 201) ---
+[     0.0s 21:10:31]   NEW BEST 135 gates depth 3 VERIFIED  -> c_naive_best.json
+[     0.0s 21:10:31]   NEW BEST 134 gates depth 4 VERIFIED it=4 -> c_naive_best.json
+[     0.0s 21:10:31]   NEW BEST 130 gates depth 4 VERIFIED it=5 -> c_naive_best.json
+[     0.0s 21:10:31]   NEW BEST 129 gates depth 5 VERIFIED it=9 -> c_naive_best.json
+[     0.0s 21:10:31]   NEW BEST 128 gates depth 5 VERIFIED it=21 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 127 gates depth 5 VERIFIED it=31 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 126 gates depth 5 VERIFIED it=33 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 125 gates depth 5 VERIFIED it=39 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 124 gates depth 6 VERIFIED it=56 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 123 gates depth 6 VERIFIED it=66 -> c_naive_best.json
+[     0.1s 21:10:31]   NEW BEST 121 gates depth 6 VERIFIED it=67 -> c_naive_best.json
+[     0.2s 21:10:31]   NEW BEST 120 gates depth 6 VERIFIED it=70 -> c_naive_best.json
+[     0.2s 21:10:31]   NEW BEST 118 gates depth 6 VERIFIED it=71 -> c_naive_best.json
+[     0.2s 21:10:31]   NEW BEST 117 gates depth 6 VERIFIED it=97 -> c_naive_best.json
+[     0.2s 21:10:31]   NEW BEST 116 gates depth 6 VERIFIED it=101 -> c_naive_best.json
+[     0.3s 21:10:31]   NEW BEST 115 gates depth 6 VERIFIED it=126 -> c_naive_best.json
+[     0.3s 21:10:31]   NEW BEST 114 gates depth 6 VERIFIED it=129 -> c_naive_best.json
+[     0.3s 21:10:31]   NEW BEST 113 gates depth 6 VERIFIED it=141 -> c_naive_best.json
+[     0.4s 21:10:32]   NEW BEST 111 gates depth 8 VERIFIED it=215 -> c_naive_best.json
+[     0.4s 21:10:32]   NEW BEST 110 gates depth 8 VERIFIED it=236 -> c_naive_best.json
+[     0.5s 21:10:32]   NEW BEST 109 gates depth 8 VERIFIED it=250 -> c_naive_best.json
+[     0.5s 21:10:32]   NEW BEST 109 gates depth 7 VERIFIED depth-tiebreak it=255 -> c_naive_best.json
+[     0.5s 21:10:32]   NEW BEST 108 gates depth 7 VERIFIED it=275 -> c_naive_best.json
+[     0.5s 21:10:32]   NEW BEST 107 gates depth 8 VERIFIED it=281 -> c_naive_best.json
+[     0.6s 21:10:32]   NEW BEST 106 gates depth 10 VERIFIED it=336 -> c_naive_best.json
+[     0.6s 21:10:32]   NEW BEST 105 gates depth 10 VERIFIED it=374 -> c_naive_best.json
+[     0.8s 21:10:32]   NEW BEST 104 gates depth 11 VERIFIED it=451 -> c_naive_best.json
+[     0.8s 21:10:32]   NEW BEST 103 gates depth 8 VERIFIED it=503 -> c_naive_best.json
+[     0.9s 21:10:32]   NEW BEST 103 gates depth 7 VERIFIED depth-tiebreak it=520 -> c_naive_best.json
+[    -0.0s 21:10:31]   NEW BEST 102 gates depth 7 VERIFIED it=563 -> c_naive_best.json
+[     0.3s 21:10:31]   NEW BEST 102 gates depth 6 VERIFIED depth-tiebreak it=754 -> c_naive_best.json
+[     0.6s 21:10:32]   NEW BEST 101 gates depth 7 VERIFIED it=981 -> c_naive_best.json
+[     0.7s 21:10:32]   NEW BEST 101 gates depth 6 VERIFIED depth-tiebreak it=1061 -> c_naive_best.json
+[     1.7s 21:10:33]   NEW BEST 100 gates depth 7 VERIFIED it=1677 -> c_naive_best.json
+[     2.7s 21:10:34]   NEW BEST 99 gates depth 8 VERIFIED it=2238 -> c_naive_best.json
+[     2.9s 21:10:34]   NEW BEST 99 gates depth 7 VERIFIED depth-tiebreak it=2321 -> c_naive_best.json
+[     3.4s 21:10:35]   NEW BEST 98 gates depth 8 VERIFIED it=2601 -> c_naive_best.json
+[     3.5s 21:10:35]   NEW BEST 98 gates depth 7 VERIFIED depth-tiebreak it=2635 -> c_naive_best.json
+[     6.4s 21:10:38]   NEW BEST 98 gates depth 6 VERIFIED depth-tiebreak it=3921 -> c_naive_best.json
+[    10.9s 21:10:42]   NEW BEST 97 gates depth 11 VERIFIED it=5877 -> c_naive_best.json
+[    11.0s 21:10:42]   NEW BEST 97 gates depth 8 VERIFIED depth-tiebreak it=5891 -> c_naive_best.json
+[    11.0s 21:10:42]   NEW BEST 97 gates depth 6 VERIFIED depth-tiebreak it=5894 -> c_naive_best.json
+[    11.2s 21:10:42]   NEW BEST 96 gates depth 6 VERIFIED it=5986 -> c_naive_best.json
+[    11.3s 21:10:42]   NEW BEST 95 gates depth 6 VERIFIED it=5991 -> c_naive_best.json
+[    27.1s 21:10:58]   NEW BEST 94 gates depth 8 VERIFIED it=13088 -> c_naive_best.json
+[    27.3s 21:10:58]   NEW BEST 94 gates depth 7 VERIFIED depth-tiebreak it=13164 -> c_naive_best.json
+[    29.4s 21:11:01]   NEW BEST 94 gates depth 6 VERIFIED depth-tiebreak it=14106 -> c_naive_best.json
+[    41.4s 21:11:13] [walk] 41s iters=20000 cur=94 best=94 harv=0
+[    46.8s 21:11:18]   NEW BEST 93 gates depth 8 VERIFIED it=22479 -> c_naive_best.json
+[    47.1s 21:11:18]   NEW BEST 93 gates depth 7 VERIFIED depth-tiebreak it=22599 -> c_naive_best.json
+[    47.1s 21:11:18]   NEW BEST 93 gates depth 6 VERIFIED depth-tiebreak it=22600 -> c_naive_best.json
+[    81.0s 21:11:52]   NEW BEST 92 gates depth 7 VERIFIED it=38643 -> c_naive_best.json
+[    82.7s 21:11:54]   NEW BEST 92 gates depth 6 VERIFIED depth-tiebreak it=39444 -> c_naive_best.json
+[    83.8s 21:11:55] [walk] 84s iters=40000 cur=92 best=92 harv=0
+[   367.3s 21:16:38] [lns] 247s iters=20000 cur=96 best=92 pool=4275 hot=71149 harv=0 peelgain=4613
+[   584.5s 21:20:16] [walk] 44s iters=20000 cur=92 best=92 harv=0
+[   637.7s 21:21:09] [walk] 98s iters=40000 cur=92 best=92 harv=0
+[   651.3s 21:21:22]   NEW BEST 91 gates depth 12 VERIFIED it=46146 -> c_naive_best.json
+[   651.4s 21:21:23]   NEW BEST 91 gates depth 9 VERIFIED depth-tiebreak it=46196 -> c_naive_best.json
+[   651.6s 21:21:23]   NEW BEST 91 gates depth 8 VERIFIED depth-tiebreak it=46261 -> c_naive_best.json
+[   652.4s 21:21:24]   NEW BEST 91 gates depth 7 VERIFIED depth-tiebreak it=46632 -> c_naive_best.json
+[   894.6s 21:25:26] [lns] 234s iters=20000 cur=98 best=91 pool=4180 hot=71616 harv=0 peelgain=4042
+[  1065.7s 21:28:17] [lns] 406s iters=40000 cur=97 best=91 pool=4303 hot=144369 harv=0 peelgain=6617
+[  1084.7s 21:28:36]   NEW BEST 91 gates depth 6 VERIFIED depth-tiebreak it=2070 -> c_naive_best.json
+[  1090.3s 21:28:42]   NEW BEST 90 gates depth 10 VERIFIED it=4370 -> c_naive_best.json
+[  1090.4s 21:28:42]   NEW BEST 90 gates depth 9 VERIFIED depth-tiebreak it=4392 -> c_naive_best.json
+[  1124.8s 21:29:16] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  1170.0s 21:30:01] [walk] 90s iters=40000 cur=90 best=90 harv=0
+[  1451.9s 21:34:43] [lns] 252s iters=20000 cur=98 best=90 pool=4131 hot=71755 harv=0 peelgain=4249
+[  1662.5s 21:38:14] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[  1703.8s 21:38:55] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[  1972.4s 21:43:24] [lns] 232s iters=20000 cur=99 best=90 pool=4078 hot=71347 harv=0 peelgain=4150
+[  2201.1s 21:47:12] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[  2242.1s 21:47:53] [walk] 82s iters=40000 cur=90 best=90 harv=0
+[  2605.3s 21:53:57] [lns] 325s iters=20000 cur=95 best=90 pool=4113 hot=67887 harv=0 peelgain=5905
+[  2740.8s 21:56:12] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[  2785.8s 21:56:57] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[  3141.0s 22:02:52] [lns] 321s iters=20000 cur=98 best=90 pool=4189 hot=69573 harv=0 peelgain=5646
+[  3283.5s 22:05:15] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  3326.4s 22:05:58] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[  3728.3s 22:12:39] [lns] 368s iters=20000 cur=97 best=90 pool=4192 hot=67618 harv=0 peelgain=6203
+[  3780.6s 22:13:32]   stalled 2400s at 90 gates -- new root
+[  3780.6s 22:13:32] --- restart 2 from naive#316 (146g d3) (rng seed 316) ---
+[  3838.9s 22:14:30] [walk] 58s iters=20000 cur=93 best=93 harv=0
+[  3888.8s 22:15:20] [walk] 108s iters=40000 cur=93 best=93 harv=0
+[  4119.5s 22:19:11] [lns] 219s iters=20000 cur=97 best=93 pool=4243 hot=71667 harv=0 peelgain=3709
+[     0.0s 22:22:27] hunt worker start: root=constructor:naive engines=alt repel=False seed=201 restart=7200s stall=2400s
+[     0.0s 22:22:27] --- restart 1 from naive#201 (142g d3) (rng seed 201) ---
+[     0.0s 22:22:27]   NEW BEST 135 gates depth 3 VERIFIED  -> c_naive_best.json
+[     0.0s 22:22:27]   NEW BEST 134 gates depth 4 VERIFIED it=4 -> c_naive_best.json
+[     0.0s 22:22:27]   NEW BEST 130 gates depth 4 VERIFIED it=5 -> c_naive_best.json
+[     0.0s 22:22:27]   NEW BEST 129 gates depth 5 VERIFIED it=9 -> c_naive_best.json
+[     0.1s 22:22:27]   NEW BEST 128 gates depth 5 VERIFIED it=21 -> c_naive_best.json
+[     0.1s 22:22:27]   NEW BEST 127 gates depth 5 VERIFIED it=31 -> c_naive_best.json
+[     0.1s 22:22:27]   NEW BEST 126 gates depth 5 VERIFIED it=33 -> c_naive_best.json
+[     0.1s 22:22:27]   NEW BEST 125 gates depth 5 VERIFIED it=39 -> c_naive_best.json
+[     0.2s 22:22:27]   NEW BEST 124 gates depth 6 VERIFIED it=56 -> c_naive_best.json
+[     0.2s 22:22:27]   NEW BEST 123 gates depth 6 VERIFIED it=66 -> c_naive_best.json
+[     0.2s 22:22:27]   NEW BEST 121 gates depth 6 VERIFIED it=67 -> c_naive_best.json
+[     0.2s 22:22:27]   NEW BEST 120 gates depth 6 VERIFIED it=70 -> c_naive_best.json
+[     0.2s 22:22:27]   NEW BEST 118 gates depth 6 VERIFIED it=71 -> c_naive_best.json
+[     0.3s 22:22:27]   NEW BEST 117 gates depth 6 VERIFIED it=97 -> c_naive_best.json
+[     0.3s 22:22:27]   NEW BEST 116 gates depth 6 VERIFIED it=101 -> c_naive_best.json
+[     0.3s 22:22:27]   NEW BEST 115 gates depth 6 VERIFIED it=126 -> c_naive_best.json
+[     0.3s 22:22:27]   NEW BEST 114 gates depth 6 VERIFIED it=129 -> c_naive_best.json
+[     0.4s 22:22:27]   NEW BEST 113 gates depth 6 VERIFIED it=141 -> c_naive_best.json
+[     0.6s 22:22:27]   NEW BEST 111 gates depth 8 VERIFIED it=215 -> c_naive_best.json
+[     0.6s 22:22:27]   NEW BEST 110 gates depth 8 VERIFIED it=236 -> c_naive_best.json
+[     0.7s 22:22:27]   NEW BEST 109 gates depth 8 VERIFIED it=250 -> c_naive_best.json
+[     0.7s 22:22:27]   NEW BEST 109 gates depth 7 VERIFIED depth-tiebreak it=255 -> c_naive_best.json
+[     0.7s 22:22:27]   NEW BEST 108 gates depth 7 VERIFIED it=275 -> c_naive_best.json
+[     0.7s 22:22:27]   NEW BEST 107 gates depth 8 VERIFIED it=281 -> c_naive_best.json
+[     0.8s 22:22:27]   NEW BEST 106 gates depth 10 VERIFIED it=336 -> c_naive_best.json
+[     0.9s 22:22:28]   NEW BEST 105 gates depth 10 VERIFIED it=374 -> c_naive_best.json
+[     1.1s 22:22:28]   NEW BEST 104 gates depth 11 VERIFIED it=451 -> c_naive_best.json
+[     1.2s 22:22:28]   NEW BEST 103 gates depth 8 VERIFIED it=503 -> c_naive_best.json
+[     1.3s 22:22:28]   NEW BEST 103 gates depth 7 VERIFIED depth-tiebreak it=520 -> c_naive_best.json
+[     1.4s 22:22:28]   NEW BEST 102 gates depth 7 VERIFIED it=563 -> c_naive_best.json
+[     1.8s 22:22:28]   NEW BEST 102 gates depth 6 VERIFIED depth-tiebreak it=754 -> c_naive_best.json
+[     2.2s 22:22:29]   NEW BEST 101 gates depth 7 VERIFIED it=981 -> c_naive_best.json
+[     2.4s 22:22:29]   NEW BEST 101 gates depth 6 VERIFIED depth-tiebreak it=1061 -> c_naive_best.json
+[     4.2s 22:22:31]   NEW BEST 100 gates depth 7 VERIFIED it=1677 -> c_naive_best.json
+[     4.7s 22:22:31]   NEW BEST 99 gates depth 8 VERIFIED it=2238 -> c_naive_best.json
+[     4.9s 22:22:32]   NEW BEST 99 gates depth 7 VERIFIED depth-tiebreak it=2321 -> c_naive_best.json
+[     5.8s 22:22:32]   NEW BEST 98 gates depth 8 VERIFIED it=2601 -> c_naive_best.json
+[     5.9s 22:22:32]   NEW BEST 98 gates depth 7 VERIFIED depth-tiebreak it=2635 -> c_naive_best.json
+[    10.2s 22:22:37]   NEW BEST 98 gates depth 6 VERIFIED depth-tiebreak it=3921 -> c_naive_best.json
+[    16.9s 22:22:43]   NEW BEST 97 gates depth 11 VERIFIED it=5877 -> c_naive_best.json
+[    16.9s 22:22:44]   NEW BEST 97 gates depth 8 VERIFIED depth-tiebreak it=5891 -> c_naive_best.json
+[    17.0s 22:22:44]   NEW BEST 97 gates depth 6 VERIFIED depth-tiebreak it=5894 -> c_naive_best.json
+[    17.3s 22:22:44]   NEW BEST 96 gates depth 6 VERIFIED it=5986 -> c_naive_best.json
+[    17.3s 22:22:44]   NEW BEST 95 gates depth 6 VERIFIED it=5991 -> c_naive_best.json
+[    40.0s 22:23:07]   NEW BEST 94 gates depth 8 VERIFIED it=13088 -> c_naive_best.json
+[    40.2s 22:23:07]   NEW BEST 94 gates depth 7 VERIFIED depth-tiebreak it=13164 -> c_naive_best.json
+[    43.4s 22:23:10]   NEW BEST 94 gates depth 6 VERIFIED depth-tiebreak it=14106 -> c_naive_best.json
+[    64.8s 22:23:31] [walk] 65s iters=20000 cur=94 best=94 harv=0
+[    75.2s 22:23:42]   NEW BEST 93 gates depth 8 VERIFIED it=22479 -> c_naive_best.json
+[    75.5s 22:23:42]   NEW BEST 93 gates depth 7 VERIFIED depth-tiebreak it=22599 -> c_naive_best.json
+[    75.5s 22:23:42]   NEW BEST 93 gates depth 6 VERIFIED depth-tiebreak it=22600 -> c_naive_best.json
+[   112.1s 22:24:19]   NEW BEST 92 gates depth 7 VERIFIED it=38643 -> c_naive_best.json
+[   114.0s 22:24:21]   NEW BEST 92 gates depth 6 VERIFIED depth-tiebreak it=39444 -> c_naive_best.json
+[   115.2s 22:24:22] [walk] 115s iters=40000 cur=92 best=92 harv=0
+[   379.0s 22:28:46] [lns] 259s iters=20000 cur=96 best=92 pool=4275 hot=71149 harv=0 peelgain=4613
+[   586.7s 22:32:13] [walk] 47s iters=20000 cur=92 best=92 harv=0
+[   635.6s 22:33:02] [walk] 95s iters=40000 cur=92 best=92 harv=0
+[   651.2s 22:33:18]   NEW BEST 91 gates depth 12 VERIFIED it=46146 -> c_naive_best.json
+[   651.4s 22:33:18]   NEW BEST 91 gates depth 9 VERIFIED depth-tiebreak it=46196 -> c_naive_best.json
+[   651.5s 22:33:18]   NEW BEST 91 gates depth 8 VERIFIED depth-tiebreak it=46261 -> c_naive_best.json
+[   652.5s 22:33:19]   NEW BEST 91 gates depth 7 VERIFIED depth-tiebreak it=46632 -> c_naive_best.json
+[   905.6s 22:37:32] [lns] 245s iters=20000 cur=98 best=91 pool=4180 hot=71616 harv=0 peelgain=4042
+[  1084.9s 22:40:32]   NEW BEST 91 gates depth 6 VERIFIED depth-tiebreak it=2070 -> c_naive_best.json
+[  1090.3s 22:40:37]   NEW BEST 90 gates depth 10 VERIFIED it=4370 -> c_naive_best.json
+[  1090.3s 22:40:37]   NEW BEST 90 gates depth 9 VERIFIED depth-tiebreak it=4392 -> c_naive_best.json
+[  1122.9s 22:41:10] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  1163.2s 22:41:50] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[  1456.2s 22:46:43] [lns] 256s iters=20000 cur=98 best=90 pool=4131 hot=71755 harv=0 peelgain=4249
+[  1662.8s 22:50:09] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  1708.8s 22:50:55] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[  2002.1s 22:55:49] [lns] 262s iters=20000 cur=99 best=90 pool=4078 hot=71347 harv=0 peelgain=4150
+[  2206.7s 22:59:13] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[  2251.2s 22:59:58] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[  2648.1s 23:06:35] [lns] 368s iters=20000 cur=95 best=90 pool=4113 hot=67887 harv=0 peelgain=5905
+[  2747.3s 23:08:14] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[  2799.1s 23:09:06] [walk] 99s iters=40000 cur=90 best=90 harv=0
+[  3165.4s 23:15:12] [lns] 345s iters=20000 cur=98 best=90 pool=4189 hot=69573 harv=0 peelgain=5646
+[  3285.8s 23:17:12] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  3328.9s 23:17:56] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[  3730.7s 23:24:37] [lns] 370s iters=20000 cur=97 best=90 pool=4192 hot=67618 harv=0 peelgain=6203
+[  3780.7s 23:25:27]   stalled 2400s at 90 gates -- new root
+[  3780.7s 23:25:27] --- restart 2 from naive#316 (146g d3) (rng seed 316) ---
+[  3841.3s 23:26:28] [walk] 61s iters=20000 cur=93 best=93 harv=0
+[  3896.9s 23:27:24] [walk] 116s iters=40000 cur=93 best=93 harv=0
+[  4151.6s 23:31:38] [lns] 251s iters=20000 cur=97 best=93 pool=4243 hot=71667 harv=0 peelgain=3709
+[  4377.5s 23:35:24] [walk] 57s iters=20000 cur=92 best=92 harv=0
+[  4440.3s 23:36:27] [walk] 120s iters=40000 cur=92 best=92 harv=0
+[  4692.1s 23:40:39] [lns] 251s iters=20000 cur=99 best=92 pool=4376 hot=72316 harv=0 peelgain=3759
+[  4909.7s 23:44:16] [walk] 49s iters=20000 cur=91 best=91 harv=0
+[  4959.7s 23:45:06] [walk] 99s iters=40000 cur=90 best=90 harv=0
+[  5197.8s 23:49:04] [lns] 217s iters=20000 cur=97 best=90 pool=4060 hot=72148 harv=0 peelgain=3360
+[  5358.5s 23:51:45] [lns] 378s iters=40000 cur=98 best=90 pool=4112 hot=145560 harv=0 peelgain=5183
+[  5446.3s 23:53:13] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[  5451.3s 23:53:18]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=22089 -> c_naive_best.json
+[  5452.2s 23:53:19]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=22474 -> c_naive_best.json
+[  5492.2s 23:53:59] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[  5797.1s 23:59:04] [lns] 276s iters=20000 cur=98 best=90 pool=4033 hot=70305 harv=0 peelgain=4563
+[  5805.2s 23:59:12]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=20691 -> c_naive_best.json
+[  5985.5s 00:02:12] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[  6030.2s 00:02:57] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[  6293.1s 00:07:20] [lns] 232s iters=20000 cur=97 best=90 pool=4058 hot=71009 harv=0 peelgain=3743
+[  6527.4s 00:11:14] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[  6573.8s 00:12:00] [walk] 93s iters=40000 cur=90 best=90 harv=0
+[  6941.4s 00:18:08] [lns] 340s iters=20000 cur=98 best=90 pool=3963 hot=68471 harv=0 peelgain=6199
+[  7065.1s 00:20:12] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[  7110.2s 00:20:57] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[  7429.7s 00:26:16] [lns] 288s iters=20000 cur=99 best=90 pool=4087 hot=70979 harv=0 peelgain=4619
+[  7608.0s 00:29:15] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[  7653.5s 00:30:00] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[  7961.3s 00:35:08] [lns] 280s iters=20000 cur=97 best=90 pool=3952 hot=71191 harv=0 peelgain=5119
+[  8142.9s 00:38:10] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[  8188.8s 00:38:55] [walk] 88s iters=40000 cur=90 best=90 harv=0
+[  8221.3s 00:39:28]   stalled 2400s at 90 gates -- new root
+[  8221.3s 00:39:28] --- restart 3 from naive#434 (146g d3) (rng seed 434) ---
+[  8277.0s 00:40:24] [walk] 56s iters=20000 cur=98 best=98 harv=0
+[  8328.5s 00:41:15] [walk] 107s iters=40000 cur=94 best=94 harv=0
+[  8599.1s 00:45:46] [lns] 258s iters=20000 cur=101 best=94 pool=4565 hot=70862 harv=0 peelgain=4486
+[  8809.5s 00:49:16] [walk] 48s iters=20000 cur=94 best=94 harv=0
+[  8851.8s 00:49:58] [walk] 90s iters=40000 cur=91 best=91 harv=0
+[  9164.7s 00:55:11] [lns] 283s iters=20000 cur=98 best=91 pool=4308 hot=69430 harv=0 peelgain=5253
+[  9343.1s 00:58:10] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[  9384.4s 00:58:51] [walk] 83s iters=40000 cur=91 best=91 harv=0
+[  9643.2s 01:03:10] [lns] 222s iters=20000 cur=98 best=91 pool=4144 hot=70767 harv=0 peelgain=3793
+[  9812.3s 01:05:59] [lns] 391s iters=40000 cur=97 best=91 pool=4222 hot=142378 harv=0 peelgain=6314
+[  9883.6s 01:07:10] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[  9925.1s 01:07:52] [walk] 84s iters=40000 cur=91 best=91 harv=0
+[ 10219.4s 01:12:46] [lns] 258s iters=20000 cur=97 best=91 pool=4285 hot=69559 harv=0 peelgain=4639
+[ 10422.5s 01:16:09] [walk] 41s iters=20000 cur=91 best=91 harv=0
+[ 10464.1s 01:16:51] [walk] 82s iters=40000 cur=91 best=91 harv=0
+[ 10722.9s 01:21:10] [lns] 221s iters=20000 cur=96 best=91 pool=4150 hot=70753 harv=0 peelgain=3743
+[ 10897.9s 01:24:05] [lns] 396s iters=40000 cur=97 best=91 pool=4230 hot=141504 harv=0 peelgain=6497
+[ 10963.6s 01:25:10] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[ 11003.8s 01:25:50] [walk] 82s iters=40000 cur=91 best=91 harv=0
+[ 11290.2s 01:30:37] [lns] 249s iters=20000 cur=97 best=91 pool=4218 hot=70272 harv=0 peelgain=4565
+[ 11461.8s 01:33:28]   stalled 2400s at 91 gates -- new root
+[ 11461.8s 01:33:28] --- restart 4 from naive#547 (147g d3) (rng seed 547) ---
+[ 11515.2s 01:34:22] [walk] 53s iters=20000 cur=96 best=96 harv=0
+[ 11561.7s 01:35:08] [walk] 100s iters=40000 cur=93 best=93 harv=0
+[ 11879.0s 01:40:26] [lns] 297s iters=20000 cur=99 best=92 pool=4393 hot=70231 harv=0 peelgain=5645
+[ 12042.9s 01:43:09] [walk] 41s iters=20000 cur=92 best=92 harv=0
+[ 12085.5s 01:43:52] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 12360.2s 01:48:27] [lns] 238s iters=20000 cur=95 best=90 pool=3976 hot=69987 harv=0 peelgain=4286
+[ 12583.8s 01:52:10] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 12624.8s 01:52:51] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[ 12628.8s 01:52:55]   NEW BEST 89 gates depth 8 VERIFIED it=42612 -> c_naive_best.json
+[ 12634.9s 01:53:02]   NEW BEST 89 gates depth 7 VERIFIED depth-tiebreak it=45606 -> c_naive_best.json
+[ 12643.0s 01:53:10]   NEW BEST 89 gates depth 6 VERIFIED depth-tiebreak it=49629 -> c_naive_best.json
+[ 12917.4s 01:57:44] [lns] 256s iters=20000 cur=95 best=89 pool=4007 hot=69323 harv=0 peelgain=4942
+[ 13119.1s 02:01:06] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 13157.4s 02:01:44] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 13195.9s 02:02:23] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 13495.0s 02:07:22] [lns] 293s iters=20000 cur=96 best=89 pool=3936 hot=68798 harv=0 peelgain=5980
+[ 13660.4s 02:10:07] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 13696.7s 02:10:43] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 13735.1s 02:11:22] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 14032.3s 02:16:19] [lns] 290s iters=20000 cur=96 best=89 pool=3995 hot=69176 harv=0 peelgain=5867
+[ 14200.4s 02:19:07] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 14238.2s 02:19:45] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 14275.7s 02:20:22] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 14559.0s 02:25:06] [lns] 277s iters=20000 cur=95 best=89 pool=4050 hot=69230 harv=0 peelgain=5391
+[ 14739.0s 02:28:06] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 14777.5s 02:28:44] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 14815.7s 02:29:22] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 15085.2s 02:33:52] [lns] 263s iters=20000 cur=96 best=89 pool=3943 hot=70573 harv=0 peelgain=5281
+[ 15242.2s 02:36:29]   stalled 2400s at 89 gates -- new root
+[ 15242.2s 02:36:29] --- restart 5 from naive#662 (140g d3) (rng seed 662) ---
+[ 15293.3s 02:37:20] [walk] 51s iters=20000 cur=96 best=96 harv=0
+[ 15342.0s 02:38:09] [walk] 100s iters=40000 cur=92 best=92 harv=0
+[ 15643.6s 02:43:10] [lns] 281s iters=20000 cur=99 best=92 pool=4416 hot=70304 harv=0 peelgain=4972
+[ 15829.8s 02:46:16] [walk] 47s iters=20000 cur=91 best=91 harv=0
+[ 15872.3s 02:46:59] [walk] 90s iters=40000 cur=89 best=89 harv=0
+[ 16111.8s 02:50:58] [lns] 209s iters=20000 cur=96 best=89 pool=3924 hot=70319 harv=0 peelgain=3498
+[ 16283.7s 02:53:50] [lns] 381s iters=40000 cur=96 best=89 pool=4037 hot=143721 harv=0 peelgain=5919
+[ 16359.2s 02:55:06] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 16397.6s 02:55:44] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 16436.8s 02:56:23] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 16703.4s 03:00:50] [lns] 261s iters=20000 cur=98 best=89 pool=3982 hot=68364 harv=0 peelgain=4764
+[ 16901.5s 03:04:08] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 16938.4s 03:04:45] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 16976.6s 03:05:23] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 17209.1s 03:09:16] [lns] 227s iters=20000 cur=97 best=89 pool=3890 hot=70632 harv=0 peelgain=3935
+[ 17441.0s 03:13:08] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 17479.5s 03:13:46] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 17516.6s 03:14:23] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 17819.5s 03:19:26] [lns] 297s iters=20000 cur=95 best=89 pool=4096 hot=68646 harv=0 peelgain=5908
+[ 17981.4s 03:22:08] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 18019.5s 03:22:46] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 18057.9s 03:23:25] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 18368.8s 03:28:35] [lns] 306s iters=20000 cur=97 best=89 pool=4085 hot=67298 harv=0 peelgain=5803
+[ 18482.7s 03:30:29]   stalled 2400s at 89 gates -- new root
+[ 18482.7s 03:30:29] --- restart 6 from naive#775 (139g d3) (rng seed 775) ---
+[ 18536.9s 03:31:24] [walk] 54s iters=20000 cur=92 best=92 harv=0
+[ 18580.9s 03:32:08] [walk] 98s iters=40000 cur=91 best=91 harv=0
+[ 18777.0s 03:35:24] [lns] 174s iters=20000 cur=98 best=91 pool=4064 hot=70206 harv=0 peelgain=2586
+[ 18969.2s 03:38:36] [lns] 366s iters=40000 cur=97 best=91 pool=4222 hot=142252 harv=0 peelgain=5698
+[ 19064.2s 03:40:11] [walk] 41s iters=20000 cur=91 best=91 harv=0
+[ 19107.6s 03:40:54] [walk] 85s iters=40000 cur=91 best=91 harv=0
+[ 19329.1s 03:44:36] [lns] 186s iters=20000 cur=98 best=91 pool=4106 hot=73494 harv=0 peelgain=2835
+[ 19489.5s 03:47:16] [lns] 347s iters=40000 cur=98 best=91 pool=4189 hot=146549 harv=0 peelgain=5204
+[ 19605.0s 03:49:12] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 19642.8s 03:49:49] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 19682.6s 03:50:29] [walk] 120s iters=60000 cur=90 best=90 harv=0
+[ 19901.5s 03:54:08] [lns] 219s iters=20000 cur=96 best=90 pool=3966 hot=71157 harv=0 peelgain=3997
+[ 20099.0s 03:57:26] [lns] 416s iters=40000 cur=97 best=90 pool=4053 hot=143058 harv=0 peelgain=7381
+[ 20142.6s 03:58:09] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[ 20183.0s 03:58:50] [walk] 80s iters=40000 cur=90 best=90 harv=0
+[ 20221.8s 03:59:28] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 20434.3s 04:03:01] [lns] 211s iters=20000 cur=95 best=90 pool=3948 hot=70693 harv=0 peelgain=3892
+[ 20592.7s 04:05:39] [lns] 370s iters=40000 cur=98 best=90 pool=4028 hot=142413 harv=0 peelgain=6265
+[ 20681.4s 04:07:08] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 20721.3s 04:07:48] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 20761.2s 04:08:28] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 20995.9s 04:12:23] [lns] 233s iters=20000 cur=97 best=90 pool=4031 hot=70871 harv=0 peelgain=4486
+[ 21182.9s 04:15:29] [lns] 420s iters=40000 cur=98 best=90 pool=4105 hot=143800 harv=0 peelgain=7626
+[ 21221.2s 04:16:08] [walk] 38s iters=20000 cur=90 best=90 harv=0
+[ 21261.3s 04:16:48] [walk] 78s iters=40000 cur=90 best=90 harv=0
+[ 21301.1s 04:17:28] [walk] 118s iters=60000 cur=90 best=90 harv=0
+[ 21586.2s 04:22:13] [lns] 283s iters=20000 cur=98 best=90 pool=4122 hot=67351 harv=0 peelgain=5528
+[ 21763.6s 04:25:10] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 21801.8s 04:25:48] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 22081.3s 04:30:28] [lns] 238s iters=20000 cur=97 best=90 pool=4070 hot=70651 harv=0 peelgain=4434
+[ 22263.1s 04:33:30]   stalled 2400s at 90 gates -- new root
+[ 22263.1s 04:33:30] --- restart 7 from naive#890 (139g d3) (rng seed 890) ---
+[ 22313.1s 04:34:20] [walk] 50s iters=20000 cur=93 best=93 harv=0
+[ 22359.8s 04:35:06] [walk] 97s iters=40000 cur=92 best=92 harv=0
+[ 22579.6s 04:38:46] [lns] 196s iters=20000 cur=101 best=92 pool=4242 hot=74478 harv=0 peelgain=3074
+[ 22736.1s 04:41:23] [lns] 353s iters=40000 cur=102 best=92 pool=4287 hot=148919 harv=0 peelgain=5128
+[ 22849.1s 04:43:16] [walk] 46s iters=20000 cur=92 best=92 harv=0
+[ 22892.2s 04:43:59] [walk] 89s iters=40000 cur=92 best=92 harv=0
+[ 23189.2s 04:48:56] [lns] 266s iters=20000 cur=96 best=92 pool=4347 hot=72319 harv=0 peelgain=4768
+[ 23384.4s 04:52:11] [walk] 41s iters=20000 cur=91 best=91 harv=0
+[ 23426.6s 04:52:53] [walk] 83s iters=40000 cur=91 best=91 harv=0
+[ 23691.4s 04:57:18] [lns] 228s iters=20000 cur=98 best=91 pool=4039 hot=74338 harv=0 peelgain=3955
+[ 23924.6s 05:01:11] [walk] 41s iters=20000 cur=91 best=91 harv=0
+[ 23966.5s 05:01:53] [walk] 83s iters=40000 cur=91 best=91 harv=0
+[ 24294.3s 05:07:21] [lns] 291s iters=20000 cur=99 best=91 pool=4160 hot=70847 harv=0 peelgain=5542
+[ 24462.9s 05:10:09] [walk] 39s iters=20000 cur=91 best=91 harv=0
+[ 24504.7s 05:10:51] [walk] 81s iters=40000 cur=91 best=91 harv=0
+[ 24826.4s 05:16:13] [lns] 283s iters=20000 cur=97 best=91 pool=4203 hot=70413 harv=0 peelgain=5191
+[ 25005.5s 05:19:12] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[ 25044.9s 05:19:52] [walk] 81s iters=40000 cur=91 best=91 harv=0
+[ 25348.6s 05:24:55] [lns] 265s iters=20000 cur=99 best=91 pool=4072 hot=70085 harv=0 peelgain=4837
+[ 25545.6s 05:28:12] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[ 25585.2s 05:28:52] [walk] 82s iters=40000 cur=91 best=91 harv=0
+[ 25944.9s 05:34:52] [lns] 321s iters=20000 cur=97 best=91 pool=4219 hot=69076 harv=0 peelgain=6300
+[ 26043.7s 05:36:30]   stalled 2400s at 91 gates -- new root
+[ 26043.7s 05:36:30] --- restart 8 from naive#1005 (141g d3) (rng seed 1005) ---
+[ 26097.7s 05:37:24] [walk] 54s iters=20000 cur=93 best=93 harv=0
+[ 26144.9s 05:38:11] [walk] 101s iters=40000 cur=93 best=93 harv=0
+[ 26398.4s 05:42:25] [lns] 235s iters=20000 cur=95 best=93 pool=4348 hot=69569 harv=0 peelgain=4444
+[ 26580.5s 05:45:27] [lns] 417s iters=40000 cur=95 best=93 pool=4462 hot=139647 harv=0 peelgain=7423
+[ 26633.2s 05:46:20] [walk] 49s iters=20000 cur=93 best=93 harv=0
+[ 26678.3s 05:47:05] [walk] 95s iters=40000 cur=91 best=91 harv=0
+[ 26934.0s 05:51:21] [lns] 230s iters=20000 cur=98 best=91 pool=4220 hot=72338 harv=0 peelgain=3947
+[ 27163.9s 05:55:11] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 27204.4s 05:55:51] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 27533.7s 06:01:20] [lns] 290s iters=20000 cur=98 best=89 pool=4092 hot=68570 harv=0 peelgain=5729
+[ 27702.1s 06:04:09] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 27742.5s 06:04:49] [walk] 79s iters=40000 cur=89 best=89 harv=0
+[ 27783.4s 06:05:30] [walk] 119s iters=60000 cur=89 best=89 harv=0
+[ 28064.7s 06:10:11] [lns] 281s iters=20000 cur=96 best=89 pool=4042 hot=69420 harv=0 peelgain=5589
+[ 28243.4s 06:13:10] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 28279.9s 06:13:47] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 28319.5s 06:14:26] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 28596.1s 06:19:03] [lns] 272s iters=20000 cur=96 best=89 pool=4066 hot=68547 harv=0 peelgain=5747
+[ 28784.2s 06:22:11] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 28821.9s 06:22:49] [walk] 78s iters=40000 cur=89 best=89 harv=0
+[ 28862.0s 06:23:29] [walk] 118s iters=60000 cur=89 best=89 harv=0
+[ 29073.6s 06:27:00] [lns] 210s iters=20000 cur=95 best=89 pool=3962 hot=70333 harv=0 peelgain=3893
+[ 29272.6s 06:30:19] [lns] 409s iters=40000 cur=98 best=89 pool=4108 hot=142723 harv=0 peelgain=7386
+[ 29322.8s 06:31:09] [walk] 39s iters=20000 cur=89 best=89 harv=0
+[ 29359.2s 06:31:46] [walk] 75s iters=40000 cur=89 best=89 harv=0
+[ 29398.3s 06:32:25] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 29616.6s 06:36:03] [lns] 212s iters=20000 cur=97 best=89 pool=3903 hot=71253 harv=0 peelgain=4054
+[ 29806.8s 06:39:13] [lns] 403s iters=40000 cur=95 best=89 pool=4021 hot=144016 harv=0 peelgain=7341
+[ 29824.2s 06:39:31]   stalled 2400s at 89 gates -- new root
+[ 29824.2s 06:39:31] --- restart 9 from naive#1120 (143g d3) (rng seed 1120) ---
+[ 29874.7s 06:40:21] [walk] 51s iters=20000 cur=93 best=93 harv=0
+[ 29921.8s 06:41:08] [walk] 98s iters=40000 cur=92 best=92 harv=0
+[ 30167.1s 06:45:14] [lns] 223s iters=20000 cur=97 best=91 pool=4258 hot=70580 harv=0 peelgain=4072
+[ 30355.9s 06:48:23] [lns] 412s iters=40000 cur=98 best=91 pool=4401 hot=142175 harv=0 peelgain=7074
+[ 30410.2s 06:49:17] [walk] 46s iters=20000 cur=91 best=91 harv=0
+[ 30450.6s 06:49:57] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[ 30677.5s 06:53:44] [lns] 193s iters=20000 cur=98 best=90 pool=4036 hot=72528 harv=0 peelgain=3417
+[ 30873.2s 06:57:00] [lns] 389s iters=40000 cur=98 best=90 pool=4184 hot=146352 harv=0 peelgain=6903
+[ 30945.7s 06:58:12] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 30985.5s 06:58:52] [walk] 81s iters=40000 cur=90 best=90 harv=0
+[ 31309.3s 07:04:16] [lns] 285s iters=20000 cur=96 best=90 pool=4239 hot=67304 harv=0 peelgain=5659
+[ 31489.0s 07:07:16] [walk] 45s iters=20000 cur=90 best=90 harv=0
+[ 31531.0s 07:07:58] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[ 31824.3s 07:12:51] [lns] 260s iters=20000 cur=98 best=90 pool=4202 hot=69485 harv=0 peelgain=5373
+[ 32025.4s 07:16:12] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 32067.4s 07:16:54] [walk] 83s iters=40000 cur=90 best=90 harv=0
+[ 32312.3s 07:20:59] [lns] 208s iters=20000 cur=96 best=90 pool=4149 hot=71916 harv=0 peelgain=3722
+[ 32568.6s 07:25:15] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 32609.0s 07:25:56] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[ 32829.2s 07:29:36] [lns] 185s iters=20000 cur=98 best=90 pool=4085 hot=72464 harv=0 peelgain=2771
+[ 32955.9s 07:31:42] [lns] 311s iters=40000 cur=98 best=90 pool=4135 hot=148062 harv=0 peelgain=3971
+[ 33064.5s 07:33:31]   stalled 2400s at 90 gates -- new root
+[ 33064.5s 07:33:31] --- restart 10 from naive#1233 (142g d3) (rng seed 1233) ---
+[ 33116.9s 07:34:23] [walk] 52s iters=20000 cur=92 best=92 harv=0
+[ 33155.1s 07:35:02] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[ 33436.1s 07:39:43] [lns] 252s iters=20000 cur=95 best=90 pool=4037 hot=68831 harv=0 peelgain=5232
+[ 33645.7s 07:43:12] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 33685.5s 07:43:52] [walk] 81s iters=40000 cur=90 best=90 harv=0
+[ 33724.0s 07:44:31] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[ 33952.7s 07:48:19] [lns] 228s iters=20000 cur=96 best=90 pool=4074 hot=71407 harv=0 peelgain=4135
+[ 34137.3s 07:51:24] [lns] 413s iters=40000 cur=97 best=90 pool=4196 hot=143287 harv=0 peelgain=7164
+[ 34185.7s 07:52:12] [walk] 41s iters=20000 cur=89 best=89 harv=0
+[ 34222.9s 07:52:49] [walk] 78s iters=40000 cur=89 best=89 harv=0
+[ 34259.2s 07:53:26] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 34561.6s 07:58:28] [lns] 297s iters=20000 cur=95 best=89 pool=3942 hot=67117 harv=0 peelgain=6188
+[ 34722.9s 08:01:10] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 34761.1s 08:01:48] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 34798.1s 08:02:25] [walk] 113s iters=60000 cur=89 best=89 harv=0
+[ 35116.0s 08:07:43] [lns] 311s iters=20000 cur=95 best=89 pool=3957 hot=68234 harv=0 peelgain=6153
+[ 35261.7s 08:10:08] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 35296.3s 08:10:43] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 35332.6s 08:11:19] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 35638.6s 08:16:25] [lns] 294s iters=20000 cur=96 best=89 pool=3895 hot=69174 harv=0 peelgain=6146
+[ 35801.1s 08:19:08] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 35836.3s 08:19:43] [walk] 71s iters=40000 cur=89 best=89 harv=0
+[ 35873.2s 08:20:20] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 36107.8s 08:24:14] [lns] 223s iters=20000 cur=100 best=89 pool=3957 hot=71446 harv=0 peelgain=4201
+[ 36341.2s 08:28:08] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 36375.3s 08:28:42] [walk] 70s iters=40000 cur=89 best=89 harv=0
+[ 36412.0s 08:29:19] [walk] 107s iters=60000 cur=89 best=89 harv=0
+[ 36716.1s 08:34:23] [lns] 291s iters=20000 cur=96 best=89 pool=3869 hot=69726 harv=0 peelgain=6085
+[ 36845.1s 08:36:32]   stalled 2400s at 89 gates -- new root
+[ 36845.1s 08:36:32] --- restart 11 from naive#1348 (143g d3) (rng seed 1348) ---
+[ 36895.1s 08:37:22] [walk] 50s iters=20000 cur=93 best=93 harv=0
+[ 36937.3s 08:38:04] [walk] 92s iters=40000 cur=92 best=92 harv=0
+[ 37184.3s 08:42:11] [lns] 219s iters=20000 cur=97 best=92 pool=4253 hot=72248 harv=0 peelgain=3969
+[ 37379.4s 08:45:26] [lns] 414s iters=40000 cur=99 best=92 pool=4357 hot=145329 harv=0 peelgain=7291
+[ 37426.5s 08:46:13] [walk] 41s iters=20000 cur=92 best=92 harv=0
+[ 37468.8s 08:46:55] [walk] 84s iters=40000 cur=91 best=91 harv=0
+[ 37741.0s 08:51:28] [lns] 236s iters=20000 cur=97 best=91 pool=4153 hot=71559 harv=0 peelgain=4401
+[ 37963.9s 08:55:11] [walk] 39s iters=20000 cur=91 best=91 harv=0
+[ 38005.4s 08:55:52] [walk] 80s iters=40000 cur=91 best=91 harv=0
+[ 38283.9s 09:00:31] [lns] 239s iters=20000 cur=97 best=90 pool=4133 hot=71994 harv=0 peelgain=4490
+[ 38502.0s 09:04:09] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[ 38540.8s 09:04:47] [walk] 76s iters=40000 cur=90 best=90 harv=0
+[ 38580.3s 09:05:27] [walk] 115s iters=60000 cur=90 best=90 harv=0
+[ 38862.9s 09:10:09] [lns] 278s iters=20000 cur=98 best=90 pool=4013 hot=68495 harv=0 peelgain=5666
+[ 39044.0s 09:13:11] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[ 39079.1s 09:13:46] [walk] 74s iters=40000 cur=89 best=89 harv=0
+[ 39115.1s 09:14:22] [walk] 110s iters=60000 cur=89 best=89 harv=0
+[ 39415.7s 09:19:22] [lns] 290s iters=20000 cur=97 best=89 pool=4029 hot=67405 harv=0 peelgain=5933
+[ 39581.7s 09:22:08] [walk] 36s iters=20000 cur=89 best=89 harv=0
+[ 39615.4s 09:22:42] [walk] 70s iters=40000 cur=89 best=89 harv=0
+[ 39651.4s 09:23:18] [walk] 106s iters=60000 cur=89 best=89 harv=0
+[ 39945.3s 09:28:12] [lns] 280s iters=20000 cur=96 best=89 pool=4013 hot=68215 harv=0 peelgain=5906
+[ 40123.2s 09:31:10] [walk] 38s iters=20000 cur=89 best=89 harv=0
+[ 40157.3s 09:31:44] [walk] 72s iters=40000 cur=89 best=89 harv=0
+[ 40193.3s 09:32:20] [walk] 108s iters=60000 cur=89 best=89 harv=0
+[ 40498.7s 09:37:25] [lns] 293s iters=20000 cur=97 best=89 pool=4006 hot=67353 harv=0 peelgain=6219
+[ 40659.6s 09:40:06] [walk] 34s iters=20000 cur=89 best=89 harv=0
+[ 40695.8s 09:40:42] [walk] 70s iters=40000 cur=89 best=89 harv=0
+[ 40732.2s 09:41:19] [walk] 107s iters=60000 cur=89 best=89 harv=0
+[ 40999.2s 09:45:46] [lns] 254s iters=20000 cur=97 best=89 pool=3908 hot=69524 harv=0 peelgain=5196
+[ 41199.7s 09:49:06] [walk] 34s iters=20000 cur=89 best=89 harv=0
+[ 41236.1s 09:49:43] [walk] 70s iters=40000 cur=89 best=89 harv=0
+[ 41272.6s 09:50:19] [walk] 107s iters=60000 cur=89 best=89 harv=0
+[ 41540.2s 09:54:47] [lns] 255s iters=20000 cur=97 best=89 pool=3948 hot=71883 harv=0 peelgain=5024
+[ 41705.7s 09:57:32]   stalled 2400s at 89 gates -- new root
+[ 41705.7s 09:57:32] --- restart 12 from naive#1467 (143g d3) (rng seed 1467) ---
+[ 41759.2s 09:58:26] [walk] 54s iters=20000 cur=95 best=95 harv=0
+[ 41806.6s 09:59:13] [walk] 101s iters=40000 cur=94 best=94 harv=0
+[ 42049.1s 10:03:16] [lns] 223s iters=20000 cur=98 best=94 pool=4334 hot=73438 harv=0 peelgain=3892
+[ 42295.1s 10:07:22] [walk] 49s iters=20000 cur=92 best=92 harv=0
+[ 42340.9s 10:08:07] [walk] 95s iters=40000 cur=92 best=92 harv=0
+[ 42582.3s 10:12:09] [lns] 217s iters=20000 cur=100 best=92 pool=4236 hot=73047 harv=0 peelgain=3609
+[ 42831.8s 10:16:18] [walk] 46s iters=20000 cur=92 best=92 harv=0
+[ 42874.9s 10:17:02] [walk] 89s iters=40000 cur=91 best=91 harv=0
+[ 43120.2s 10:21:07] [lns] 214s iters=20000 cur=96 best=91 pool=4051 hot=72092 harv=0 peelgain=3513
+[ 43314.5s 10:24:21] [lns] 409s iters=40000 cur=97 best=91 pool=4128 hot=143982 harv=0 peelgain=6595
+[ 43367.8s 10:25:14] [walk] 42s iters=20000 cur=91 best=91 harv=0
+[ 43409.7s 10:25:56] [walk] 84s iters=40000 cur=90 best=90 harv=0
+[ 43689.9s 10:30:37] [lns] 244s iters=20000 cur=96 best=90 pool=3961 hot=70406 harv=0 peelgain=4087
+[ 43910.1s 10:34:17] [walk] 44s iters=20000 cur=89 best=89 harv=0
+[ 43955.1s 10:35:02] [walk] 89s iters=40000 cur=89 best=89 harv=0
+[ 44298.8s 10:40:45] [lns] 313s iters=20000 cur=96 best=89 pool=3922 hot=68401 harv=0 peelgain=5086
+[ 44445.9s 10:43:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 44486.5s 10:43:53] [walk] 81s iters=40000 cur=89 best=89 harv=0
+[ 44800.2s 10:49:07] [lns] 274s iters=20000 cur=95 best=89 pool=3953 hot=68007 harv=0 peelgain=5516
+[ 44985.6s 10:52:12] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 45025.1s 10:52:52] [walk] 79s iters=40000 cur=89 best=89 harv=0
+[ 45062.5s 10:53:29] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 45342.7s 10:58:09] [lns] 277s iters=20000 cur=95 best=89 pool=3967 hot=67364 harv=0 peelgain=5292
+[ 45526.6s 11:01:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 45563.0s 11:01:50] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 45602.1s 11:02:29] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 45865.7s 11:06:52] [lns] 259s iters=20000 cur=97 best=89 pool=3981 hot=67381 harv=0 peelgain=4757
+[ 46066.0s 11:10:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 46101.8s 11:10:48] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 46140.2s 11:11:27] [walk] 114s iters=60000 cur=89 best=89 harv=0
+[ 46376.0s 11:15:23] [lns] 230s iters=20000 cur=95 best=89 pool=3866 hot=65973 harv=0 peelgain=4415
+[ 46566.4s 11:18:33]   stalled 2400s at 89 gates -- new root
+[ 46566.4s 11:18:33] --- restart 13 from naive#1586 (147g d3) (rng seed 1586) ---
+[ 46624.1s 11:19:31] [walk] 58s iters=20000 cur=97 best=97 harv=0
+[ 46669.8s 11:20:16] [walk] 103s iters=40000 cur=91 best=91 harv=0
+[ 47018.7s 11:26:05] [lns] 332s iters=20000 cur=96 best=91 pool=4153 hot=69116 harv=0 peelgain=6815
+[ 47151.9s 11:28:18] [walk] 45s iters=20000 cur=91 best=91 harv=0
+[ 47193.4s 11:29:00] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[ 47460.2s 11:33:27] [lns] 234s iters=20000 cur=97 best=90 pool=4106 hot=71271 harv=0 peelgain=4530
+[ 47687.7s 11:37:14] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 47725.9s 11:37:52] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[ 48068.0s 11:43:35] [lns] 301s iters=20000 cur=99 best=90 pool=4319 hot=68681 harv=0 peelgain=6138
+[ 48226.4s 11:46:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 48263.1s 11:46:50] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 48302.1s 11:47:29] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 48637.8s 11:53:04] [lns] 331s iters=20000 cur=96 best=89 pool=4163 hot=66841 harv=0 peelgain=6426
+[ 48763.8s 11:55:10] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 48803.3s 11:55:50] [walk] 77s iters=40000 cur=89 best=89 harv=0
+[ 48843.1s 11:56:30] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 49114.6s 12:01:01] [lns] 268s iters=20000 cur=96 best=89 pool=3992 hot=70130 harv=0 peelgain=5132
+[ 49303.4s 12:04:10] [walk] 37s iters=20000 cur=89 best=89 harv=0
+[ 49342.9s 12:04:50] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 49383.7s 12:05:30] [walk] 117s iters=60000 cur=89 best=89 harv=0
+[ 49627.8s 12:09:34] [lns] 241s iters=20000 cur=96 best=89 pool=3993 hot=70837 harv=0 peelgain=4404
+[ 49846.5s 12:13:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 49885.7s 12:13:52] [walk] 79s iters=40000 cur=89 best=89 harv=0
+[ 49921.7s 12:14:28] [walk] 115s iters=60000 cur=89 best=89 harv=0
+[ 50209.1s 12:19:16] [lns] 282s iters=20000 cur=96 best=89 pool=3989 hot=67741 harv=0 peelgain=5472
+[ 50386.7s 12:22:13] [walk] 40s iters=20000 cur=89 best=89 harv=0
+[ 50423.2s 12:22:50] [walk] 76s iters=40000 cur=89 best=89 harv=0
+[ 50462.9s 12:23:30] [walk] 116s iters=60000 cur=89 best=89 harv=0
+[ 50712.7s 12:27:39] [lns] 246s iters=20000 cur=96 best=89 pool=4012 hot=69828 harv=0 peelgain=4379
+[ 50887.0s 12:30:34]   stalled 2400s at 89 gates -- new root
+[ 50887.0s 12:30:34] --- restart 14 from naive#1703 (142g d3) (rng seed 1703) ---
+[ 50940.3s 12:31:27] [walk] 53s iters=20000 cur=95 best=95 harv=0
+[ 50997.5s 12:32:24] [walk] 111s iters=40000 cur=93 best=93 harv=0
+[ 51262.2s 12:36:49] [lns] 255s iters=20000 cur=100 best=92 pool=4205 hot=72304 harv=0 peelgain=4140
+[ 51471.3s 12:40:18] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 51509.2s 12:40:56] [walk] 82s iters=40000 cur=90 best=90 harv=0
+[ 51866.4s 12:46:53] [lns] 319s iters=20000 cur=97 best=90 pool=4095 hot=70475 harv=0 peelgain=6724
+[ 52011.4s 12:49:18] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 52058.2s 12:50:05] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[ 52352.6s 12:54:59] [lns] 265s iters=20000 cur=97 best=90 pool=4087 hot=71425 harv=0 peelgain=4334
+[ 52555.6s 12:58:22] [walk] 48s iters=20000 cur=90 best=90 harv=0
+[ 52605.3s 12:59:12] [walk] 98s iters=40000 cur=90 best=90 harv=0
+[ 53019.2s 13:06:06] [lns] 392s iters=20000 cur=98 best=89 pool=4037 hot=66054 harv=0 peelgain=6182
+[ 53091.5s 13:07:18] [walk] 44s iters=20000 cur=89 best=89 harv=0
+[ 53134.6s 13:08:01] [walk] 87s iters=40000 cur=89 best=89 harv=0
+[ 53640.1s 13:16:27] [walk] 53s iters=20000 cur=89 best=89 harv=0
+[ 53695.3s 13:17:22] [walk] 108s iters=40000 cur=89 best=89 harv=0
+[ 54183.4s 13:25:30] [walk] 56s iters=20000 cur=89 best=89 harv=0
+[ 54235.6s 13:26:22] [walk] 108s iters=40000 cur=89 best=89 harv=0
+[ 54722.3s 13:34:29] [walk] 55s iters=20000 cur=89 best=89 harv=0
+[ 54765.5s 13:35:12] [walk] 98s iters=40000 cur=89 best=89 harv=0
+[ 55150.7s 13:41:37] [lns] 363s iters=20000 cur=98 best=89 pool=3995 hot=68345 harv=0 peelgain=5872
+[ 55207.6s 13:42:34]   stalled 2400s at 89 gates -- new root
+[ 55207.7s 13:42:34] --- restart 15 from naive#1820 (144g d3) (rng seed 1820) ---
+[ 55268.9s 13:43:36] [walk] 61s iters=20000 cur=93 best=93 harv=0
+[ 55321.6s 13:44:28] [walk] 114s iters=40000 cur=90 best=90 harv=0
+[ 55614.5s 13:49:21] [lns] 287s iters=20000 cur=98 best=90 pool=4001 hot=68439 harv=0 peelgain=4884
+[ 55794.3s 13:52:21] [walk] 47s iters=20000 cur=90 best=90 harv=0
+[ 55844.8s 13:53:11] [walk] 97s iters=40000 cur=90 best=90 harv=0
+[ 56081.4s 13:57:08] [lns] 214s iters=20000 cur=95 best=90 pool=4040 hot=71829 harv=0 peelgain=3198
+[ 56267.4s 14:00:14] [lns] 400s iters=40000 cur=95 best=90 pool=4123 hot=144698 harv=0 peelgain=5752
+[ 56333.5s 14:01:20] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 56377.4s 14:02:04] [walk] 90s iters=40000 cur=90 best=90 harv=0
+[ 56662.1s 14:06:49] [lns] 254s iters=20000 cur=97 best=90 pool=4078 hot=73202 harv=0 peelgain=3723
+[ 56818.3s 14:09:25] [lns] 410s iters=40000 cur=98 best=90 pool=4117 hot=148911 harv=0 peelgain=5248
+[ 56874.0s 14:10:21] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 56917.0s 14:11:04] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[ 57231.9s 14:16:18] [lns] 284s iters=20000 cur=96 best=90 pool=4049 hot=67154 harv=0 peelgain=5064
+[ 57412.3s 14:19:19] [walk] 44s iters=20000 cur=90 best=90 harv=0
+[ 57460.2s 14:20:07] [walk] 92s iters=40000 cur=90 best=90 harv=0
+[ 57745.4s 14:24:52] [lns] 257s iters=20000 cur=94 best=90 pool=3924 hot=69949 harv=0 peelgain=4629
+[ 57954.3s 14:28:21] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 57999.3s 14:29:06] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[ 58338.0s 14:34:45] [lns] 310s iters=20000 cur=95 best=90 pool=3995 hot=68508 harv=0 peelgain=6244
+[ 58448.2s 14:36:35]   stalled 2400s at 90 gates -- new root
+[ 58448.2s 14:36:35] --- restart 16 from naive#1933 (141g d3) (rng seed 1933) ---
+[ 58500.3s 14:37:27] [walk] 52s iters=20000 cur=93 best=93 harv=0
+[ 58546.9s 14:38:14] [walk] 99s iters=40000 cur=92 best=92 harv=0
+[ 58835.4s 14:43:02] [lns] 267s iters=20000 cur=96 best=92 pool=4365 hot=68625 harv=0 peelgain=4621
+[ 59035.6s 14:46:22] [walk] 47s iters=20000 cur=92 best=92 harv=0
+[ 59083.6s 14:47:10] [walk] 95s iters=40000 cur=91 best=91 harv=0
+[ 59330.6s 14:51:17] [lns] 222s iters=20000 cur=98 best=91 pool=4108 hot=71125 harv=0 peelgain=3586
+[ 59521.4s 14:54:28] [lns] 413s iters=40000 cur=97 best=91 pool=4168 hot=142927 harv=0 peelgain=6079
+[ 59581.9s 14:55:28] [walk] 53s iters=20000 cur=91 best=91 harv=0
+[ 59637.3s 14:56:24] [walk] 109s iters=40000 cur=91 best=91 harv=0
+[ 59925.5s 15:01:12] [lns] 277s iters=20000 cur=95 best=91 pool=4254 hot=69571 harv=0 peelgain=4280
+[ 60115.9s 15:04:23] [walk] 47s iters=20000 cur=91 best=91 harv=0
+[ 60159.2s 15:05:06] [walk] 91s iters=40000 cur=90 best=90 harv=0
+[ 60424.8s 15:09:31] [lns] 236s iters=20000 cur=99 best=90 pool=4078 hot=71897 harv=0 peelgain=3807
+[ 60654.4s 15:13:21] [walk] 46s iters=20000 cur=90 best=90 harv=0
+[ 60695.7s 15:14:02] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[ 60992.7s 15:18:59] [lns] 264s iters=20000 cur=97 best=90 pool=4075 hot=69514 harv=0 peelgain=4733
+[ 61191.1s 15:22:18] [walk] 42s iters=20000 cur=90 best=90 harv=0
+[ 61236.2s 15:23:03] [walk] 87s iters=40000 cur=90 best=90 harv=0
+[ 61508.6s 15:27:35] [lns] 240s iters=20000 cur=97 best=90 pool=4026 hot=67346 harv=0 peelgain=4080
+[ 61736.6s 15:31:23] [walk] 48s iters=20000 cur=90 best=90 harv=0
+[ 61777.9s 15:32:05] [walk] 89s iters=40000 cur=90 best=90 harv=0
+[ 62105.5s 15:37:32] [lns] 297s iters=20000 cur=96 best=90 pool=4146 hot=69434 harv=0 peelgain=5620
+[ 62270.1s 15:40:17] [walk] 41s iters=20000 cur=90 best=90 harv=0
+[ 62314.8s 15:41:01] [walk] 86s iters=40000 cur=90 best=90 harv=0
+[ 62637.6s 15:46:24] [lns] 289s iters=20000 cur=96 best=90 pool=4217 hot=68897 harv=0 peelgain=5097
+[ 62769.0s 15:48:36]   stalled 2400s at 90 gates -- new root
+[ 62769.0s 15:48:36] --- restart 17 from naive#2050 (142g d3) (rng seed 2050) ---
+[ 62828.8s 15:49:35] [walk] 60s iters=20000 cur=95 best=95 harv=0
+[ 62879.2s 15:50:26] [walk] 110s iters=40000 cur=93 best=93 harv=0
+[ 63157.8s 15:55:04] [lns] 269s iters=20000 cur=96 best=92 pool=4291 hot=72086 harv=0 peelgain=4632
+[ 63352.5s 15:58:19] [walk] 43s iters=20000 cur=89 best=89 harv=0
+[ 63353.7s 15:58:20]   NEW BEST 88 gates depth 8 VERIFIED it=20564 -> c_naive_best.json
+[ 63395.5s 15:59:02] [walk] 86s iters=40000 cur=88 best=88 harv=878
+[ 63827.3s 16:06:14] [lns] 398s iters=20000 cur=93 best=88 pool=3968 hot=61455 harv=1322 peelgain=7485
+[ 63884.8s 16:07:11] [walk] 36s iters=20000 cur=88 best=88 harv=1681
+[ 63924.8s 16:07:51] [walk] 76s iters=40000 cur=88 best=88 harv=1885
+[ 63963.9s 16:08:31] [walk] 115s iters=60000 cur=88 best=88 harv=2012
+[ 64327.4s 16:14:34] [lns] 358s iters=20000 cur=97 best=88 pool=3968 hot=64752 harv=2021 peelgain=6705
+[ 64425.8s 16:16:12] [walk] 36s iters=20000 cur=88 best=88 harv=2082
+[ 64462.3s 16:16:49] [walk] 73s iters=40000 cur=88 best=88 harv=2130
+[ 64498.5s 16:17:25] [walk] 109s iters=60000 cur=88 best=88 harv=2150
+[ 64819.2s 16:22:46] [lns] 310s iters=20000 cur=97 best=88 pool=3883 hot=65272 harv=2157 peelgain=5706
+[ 64965.8s 16:25:12] [walk] 36s iters=20000 cur=88 best=88 harv=2169
+[ 64999.0s 16:25:46] [walk] 70s iters=40000 cur=88 best=88 harv=2176
+[ 65035.5s 16:26:22] [walk] 106s iters=60000 cur=88 best=88 harv=2178
+[ 65369.9s 16:31:57] [lns] 321s iters=20000 cur=96 best=88 pool=3943 hot=66911 harv=2180 peelgain=6251
+[ 65505.9s 16:34:12] [walk] 36s iters=20000 cur=88 best=88 harv=2185
+[ 65541.6s 16:34:48] [walk] 72s iters=40000 cur=88 best=88 harv=2185
+[ 65577.3s 16:35:24] [walk] 108s iters=60000 cur=88 best=88 harv=2185
+[ 65935.8s 16:41:22] [lns] 346s iters=20000 cur=98 best=88 pool=3888 hot=63299 harv=2186 peelgain=6894
+[ 66009.5s 16:42:36]   stalled 2400s at 88 gates -- new root
+[ 66009.5s 16:42:36] --- restart 18 from naive#2163 (139g d3) (rng seed 2163) ---
+[ 66062.4s 16:43:29] [walk] 53s iters=20000 cur=95 best=95 harv=2186
+[ 66109.1s 16:44:16] [walk] 100s iters=40000 cur=92 best=92 harv=2186
+[ 66357.2s 16:48:24] [lns] 228s iters=20000 cur=98 best=90 pool=4118 hot=72418 harv=2186 peelgain=4206
+[ 66585.1s 16:52:12] [walk] 36s iters=20000 cur=89 best=89 harv=2186
+[ 66623.4s 16:52:50] [walk] 74s iters=40000 cur=89 best=89 harv=2186
+[ 66661.9s 16:53:28] [walk] 112s iters=60000 cur=89 best=89 harv=2186
+[ 66950.1s 16:58:17] [lns] 280s iters=20000 cur=99 best=89 pool=4109 hot=71906 harv=2186 peelgain=5262
+[ 67126.4s 17:01:13] [walk] 37s iters=20000 cur=89 best=89 harv=2186
+[ 67163.0s 17:01:50] [walk] 73s iters=40000 cur=89 best=89 harv=2186
+[ 67196.3s 17:02:23] [walk] 107s iters=60000 cur=89 best=89 harv=2186
+[ 67455.6s 17:06:42] [lns] 246s iters=20000 cur=96 best=89 pool=3964 hot=69672 harv=2186 peelgain=5016
+[ 67665.4s 17:10:12] [walk] 36s iters=20000 cur=89 best=89 harv=2186
+[ 67699.5s 17:10:46] [walk] 70s iters=40000 cur=89 best=89 harv=2186
+[ 67736.4s 17:11:23] [walk] 107s iters=60000 cur=89 best=89 harv=2186
+[ 67930.6s 17:14:37] [lns] 181s iters=20000 cur=97 best=89 pool=3862 hot=73345 harv=2186 peelgain=3148
+[ 68106.6s 17:17:33] [lns] 357s iters=40000 cur=98 best=89 pool=3947 hot=146999 harv=2186 peelgain=5849
+[ 68207.1s 17:19:14] [walk] 37s iters=20000 cur=89 best=89 harv=2186
+[ 68238.2s 17:19:45]   NEW BEST 88 gates depth 7 VERIFIED it=37270 -> c_naive_best.json
+[ 68238.7s 17:19:45]   NEW BEST 88 gates depth 6 VERIFIED depth-tiebreak it=37501 -> c_naive_best.json
+[ 68243.4s 17:19:50] [walk] 74s iters=40000 cur=88 best=88 harv=2362
+[ 68280.5s 17:20:27] [walk] 111s iters=60000 cur=88 best=88 harv=3590
+[ 68630.7s 17:26:17] [lns] 341s iters=20000 cur=96 best=88 pool=3998 hot=68094 harv=3956 peelgain=7151
+[ 68746.9s 17:28:13] [walk] 37s iters=20000 cur=88 best=88 harv=4953
+[ 68780.9s 17:28:48] [walk] 71s iters=40000 cur=88 best=88 harv=5841
+[ 68817.7s 17:29:24] [walk] 108s iters=60000 cur=88 best=88 harv=6659
+[ 69144.6s 17:34:51] [lns] 315s iters=20000 cur=98 best=88 pool=3952 hot=66677 harv=6916 peelgain=6497
+[ 69283.8s 17:37:10] [walk] 34s iters=20000 cur=88 best=88 harv=7627
+[ 69320.7s 17:37:47] [walk] 71s iters=40000 cur=88 best=88 harv=8239
+[ 69357.7s 17:38:24] [walk] 108s iters=60000 cur=88 best=88 harv=8813
+[ 69615.4s 17:42:42] [lns] 245s iters=20000 cur=97 best=88 pool=3944 hot=71591 harv=8992 peelgain=4476
+[ 69829.4s 17:46:16] [walk] 39s iters=20000 cur=88 best=88 harv=9447
+[ 69865.5s 17:46:52] [walk] 75s iters=40000 cur=88 best=88 harv=9865
+[ 69904.4s 17:47:31] [walk] 114s iters=60000 cur=88 best=88 harv=10218
+[ 70185.1s 17:52:12] [lns] 275s iters=20000 cur=96 best=88 pool=3967 hot=69543 harv=10272 peelgain=4921
+[ 70364.1s 17:55:11] [walk] 34s iters=20000 cur=88 best=88 harv=10605
+[ 70402.0s 17:55:49] [walk] 72s iters=40000 cur=88 best=88 harv=10869
+[ 70439.4s 17:56:26] [walk] 109s iters=60000 cur=88 best=88 harv=11120
+[ 70753.6s 18:01:40] [lns] 303s iters=20000 cur=96 best=88 pool=3945 hot=69653 harv=11179 peelgain=5747
+[ 70870.2s 18:03:37]   stalled 2400s at 88 gates -- new root
+[ 70870.2s 18:03:37] --- restart 19 from naive#2282 (138g d3) (rng seed 2282) ---
+[ 70925.8s 18:04:32] [walk] 56s iters=20000 cur=95 best=95 harv=11179
+[ 70978.9s 18:05:26] [walk] 109s iters=40000 cur=94 best=94 harv=11179
+[ 71214.7s 18:09:21] [lns] 225s iters=20000 cur=98 best=93 pool=4249 hot=73683 harv=11179 peelgain=3516
+[ 71451.0s 18:13:18] [walk] 41s iters=20000 cur=90 best=90 harv=11179
+[ 71494.3s 18:14:01] [walk] 84s iters=40000 cur=90 best=90 harv=11179
+[ 71782.3s 18:18:49] [lns] 252s iters=20000 cur=97 best=90 pool=4019 hot=71182 harv=11179 peelgain=4230
+[ 71992.6s 18:22:19] [walk] 42s iters=20000 cur=90 best=90 harv=11179
+[ 72035.2s 18:23:02] [walk] 85s iters=40000 cur=90 best=90 harv=11179
+[ 72330.0s 18:27:57] [lns] 260s iters=20000 cur=94 best=90 pool=3941 hot=70483 harv=11179 peelgain=4791
+[ 72533.4s 18:31:20] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[ 72573.3s 18:32:00] [walk] 83s iters=40000 cur=90 best=90 harv=11179
+[ 72855.6s 18:36:42] [lns] 245s iters=20000 cur=97 best=90 pool=4054 hot=69834 harv=11179 peelgain=4275
+[ 73069.6s 18:40:16] [walk] 39s iters=20000 cur=89 best=89 harv=11179
+[ 73109.0s 18:40:56] [walk] 79s iters=40000 cur=89 best=89 harv=11179
+[ 73426.6s 18:46:13] [lns] 276s iters=20000 cur=96 best=89 pool=3966 hot=69924 harv=11179 peelgain=4828
+[ 73612.4s 18:49:19] [walk] 42s iters=20000 cur=89 best=89 harv=11179
+[ 73649.8s 18:49:56] [walk] 79s iters=40000 cur=89 best=89 harv=11179
+[ 73690.5s 18:50:37] [walk] 120s iters=60000 cur=89 best=89 harv=11179
+[ 73988.9s 18:55:36] [lns] 298s iters=20000 cur=97 best=89 pool=4070 hot=70257 harv=11179 peelgain=5464
+[ 74147.3s 18:58:14] [walk] 37s iters=20000 cur=89 best=89 harv=11179
+[ 74186.8s 18:58:53] [walk] 76s iters=40000 cur=89 best=89 harv=11179
+[ 74226.6s 18:59:33] [walk] 116s iters=60000 cur=89 best=89 harv=11179
+[ 74464.6s 19:03:31] [lns] 234s iters=20000 cur=97 best=89 pool=3923 hot=72196 harv=11179 peelgain=3967
+[ 74648.9s 19:06:36] [lns] 418s iters=40000 cur=96 best=89 pool=4014 hot=145333 harv=11179 peelgain=6728
+[ 74689.3s 19:07:16] [walk] 39s iters=20000 cur=89 best=89 harv=11179
+[ 74727.8s 19:07:54] [walk] 77s iters=40000 cur=89 best=89 harv=11179
+[ 74763.1s 19:08:30] [walk] 112s iters=60000 cur=89 best=89 harv=11179
+[ 75062.6s 19:13:29] [lns] 292s iters=20000 cur=94 best=89 pool=3916 hot=67166 harv=11179 peelgain=5792
+[ 75227.8s 19:16:14] [walk] 37s iters=20000 cur=89 best=89 harv=11179
+[ 75261.8s 19:16:48] [walk] 71s iters=40000 cur=89 best=89 harv=11179
+[ 75298.8s 19:17:25] [walk] 108s iters=60000 cur=89 best=89 harv=11179
+[ 75635.4s 19:23:02] [lns] 325s iters=20000 cur=94 best=89 pool=4013 hot=67896 harv=11179 peelgain=6745
+[ 75730.8s 19:24:37]   stalled 2400s at 89 gates -- new root
+[ 75730.8s 19:24:37] --- restart 20 from naive#2401 (142g d3) (rng seed 2401) ---
+[ 75786.2s 19:25:33] [walk] 55s iters=20000 cur=95 best=95 harv=11179
+[ 75828.9s 19:26:16] [walk] 98s iters=40000 cur=91 best=91 harv=11179
+[ 76207.0s 19:32:34] [lns] 356s iters=20000 cur=96 best=91 pool=4225 hot=67046 harv=11179 peelgain=7457
+[ 76313.9s 19:34:21] [walk] 43s iters=20000 cur=91 best=91 harv=11179
+[ 76353.2s 19:35:00] [walk] 82s iters=40000 cur=91 best=91 harv=11179
+[ 76717.6s 19:41:04] [lns] 327s iters=20000 cur=97 best=91 pool=4126 hot=70347 harv=11179 peelgain=6412
+[ 76850.7s 19:43:17] [walk] 40s iters=20000 cur=91 best=91 harv=11179
+[ 76893.0s 19:44:00] [walk] 82s iters=40000 cur=91 best=91 harv=11179
+[ 77239.0s 19:49:46] [lns] 308s iters=20000 cur=94 best=91 pool=4185 hot=69166 harv=11179 peelgain=6025
+[ 77393.7s 19:52:20] [walk] 43s iters=20000 cur=91 best=91 harv=11179
+[ 77432.5s 19:52:59] [walk] 81s iters=40000 cur=91 best=91 harv=11179
+[ 77738.9s 19:58:05] [lns] 268s iters=20000 cur=94 best=91 pool=4044 hot=70579 harv=11179 peelgain=5347
+[ 77930.4s 20:01:17] [walk] 39s iters=20000 cur=91 best=91 harv=11179
+[ 77972.7s 20:01:59] [walk] 82s iters=40000 cur=91 best=91 harv=11179
+[ 78278.9s 20:07:06] [lns] 268s iters=20000 cur=94 best=91 pool=4082 hot=68812 harv=11179 peelgain=5367
+[ 78431.2s 20:09:38]   stalled 2400s at 91 gates -- new root
+[ 78431.2s 20:09:38] --- restart 21 from naive#2512 (142g d3) (rng seed 2512) ---
+[ 78486.0s 20:10:33] [walk] 55s iters=20000 cur=96 best=96 harv=11179
+[ 78536.6s 20:11:23] [walk] 105s iters=40000 cur=95 best=95 harv=11179
+[ 78742.3s 20:14:49] [lns] 191s iters=20000 cur=98 best=95 pool=4492 hot=73800 harv=11179 peelgain=2308
+[ 78903.6s 20:17:30] [lns] 352s iters=40000 cur=99 best=95 pool=4574 hot=147223 harv=11179 peelgain=4046
+[ 79022.6s 20:19:29] [walk] 51s iters=20000 cur=95 best=95 harv=11179
+[ 79070.3s 20:20:17] [walk] 99s iters=40000 cur=95 best=95 harv=11179
+[ 79296.2s 20:24:03] [lns] 205s iters=20000 cur=100 best=95 pool=4552 hot=74560 harv=11179 peelgain=2667
+[ 79468.3s 20:26:55] [lns] 377s iters=40000 cur=100 best=95 pool=4619 hot=150542 harv=11179 peelgain=4610
+[ 79560.8s 20:28:27] [walk] 49s iters=20000 cur=95 best=95 harv=11179
+[ 79609.4s 20:29:16] [walk] 98s iters=40000 cur=95 best=95 harv=11179
+[ 79851.6s 20:33:18] [lns] 220s iters=20000 cur=101 best=95 pool=4554 hot=73928 harv=11179 peelgain=3178
+[ 80016.9s 20:36:04] [lns] 386s iters=40000 cur=100 best=95 pool=4637 hot=149025 harv=11179 peelgain=5179
+[ 80098.7s 20:37:25] [walk] 47s iters=20000 cur=95 best=95 harv=11179
+[ 80145.9s 20:38:13] [walk] 94s iters=40000 cur=95 best=95 harv=11179
+[ 80361.0s 20:41:48] [lns] 190s iters=20000 cur=101 best=95 pool=4469 hot=74734 harv=11179 peelgain=2469
+[ 80535.6s 20:44:42] [lns] 364s iters=40000 cur=99 best=95 pool=4551 hot=148161 harv=11179 peelgain=5034
+[ 80633.9s 20:46:20] [walk] 42s iters=20000 cur=95 best=95 harv=11179
+[ 80679.5s 20:47:06] [walk] 88s iters=40000 cur=95 best=95 harv=11179
+[ 80899.8s 20:50:46] [lns] 188s iters=20000 cur=101 best=95 pool=4528 hot=74384 harv=11179 peelgain=2645
+[ 81058.0s 20:53:25] [lns] 346s iters=40000 cur=100 best=95 pool=4675 hot=150286 harv=11179 peelgain=4509
+[ 81131.6s 20:54:38]   stalled 2400s at 95 gates -- new root
+[ 81131.6s 20:54:38] --- restart 22 from naive#2623 (148g d3) (rng seed 2623) ---
+[ 81187.3s 20:55:34] [walk] 56s iters=20000 cur=96 best=96 harv=11179
+[ 81239.1s 20:56:26] [walk] 108s iters=40000 cur=95 best=95 harv=11179
+[ 81500.4s 21:00:47] [lns] 249s iters=20000 cur=100 best=95 pool=4509 hot=72208 harv=11179 peelgain=3902
+[ 81720.9s 21:04:28] [walk] 49s iters=20000 cur=94 best=94 harv=11179
+[ 81768.2s 21:05:15] [walk] 97s iters=40000 cur=94 best=94 harv=11179
+[ 82008.0s 21:09:15] [lns] 216s iters=20000 cur=99 best=92 pool=4175 hot=71479 harv=11179 peelgain=3445
+[ 82185.5s 21:12:12] [lns] 394s iters=40000 cur=99 best=92 pool=4265 hot=145007 harv=11179 peelgain=5882
+[ 82262.6s 21:13:29] [walk] 51s iters=20000 cur=92 best=92 harv=11179
+[ 82310.9s 21:14:18] [walk] 99s iters=40000 cur=92 best=92 harv=11179
+[ 82587.1s 21:18:54] [lns] 255s iters=20000 cur=97 best=92 pool=4118 hot=72632 harv=11179 peelgain=4395
+[ 82797.5s 21:22:24] [walk] 46s iters=20000 cur=92 best=92 harv=11179
+[ 82849.6s 21:23:16] [walk] 98s iters=40000 cur=92 best=92 harv=11179
+[ 83137.6s 21:28:04] [lns] 266s iters=20000 cur=99 best=92 pool=4421 hot=70450 harv=11179 peelgain=4371
+[ 83337.9s 21:31:25] [walk] 46s iters=20000 cur=92 best=92 harv=11179
+[ 83385.1s 21:32:12] [walk] 93s iters=40000 cur=92 best=92 harv=11179
+[ 83661.8s 21:36:48] [lns] 250s iters=20000 cur=95 best=92 pool=4222 hot=68986 harv=11179 peelgain=4864
+[ 83878.6s 21:40:25] [walk] 47s iters=20000 cur=92 best=92 harv=11179
+[ 83922.6s 21:41:09] [walk] 91s iters=40000 cur=92 best=92 harv=11179
+[ 84204.2s 21:45:51] [lns] 252s iters=20000 cur=97 best=92 pool=4236 hot=70741 harv=11179 peelgain=4694
+[ 84419.0s 21:49:26] [walk] 47s iters=20000 cur=92 best=92 harv=11179
+[ 84464.7s 21:50:11] [walk] 93s iters=40000 cur=91 best=91 harv=11179
+[ 84764.3s 21:55:11] [lns] 272s iters=20000 cur=97 best=91 pool=4110 hot=68907 harv=11179 peelgain=5430
+[ 84958.9s 21:58:25] [walk] 47s iters=20000 cur=91 best=91 harv=11179
+[ 85003.0s 21:59:10] [walk] 91s iters=40000 cur=91 best=91 harv=11179
+[ 85279.2s 22:03:46] [lns] 247s iters=20000 cur=97 best=91 pool=4153 hot=72509 harv=11179 peelgain=4497
+[ 85496.7s 22:07:23] [walk] 44s iters=20000 cur=91 best=91 harv=11179
+[ 85545.4s 22:08:12] [walk] 93s iters=40000 cur=91 best=91 harv=11179
+[ 85848.2s 22:13:15] [lns] 276s iters=20000 cur=95 best=91 pool=4040 hot=67688 harv=11179 peelgain=5188
+[ 86036.1s 22:16:23] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[ 86079.1s 22:17:06] [walk] 87s iters=40000 cur=90 best=90 harv=11179
+[ 86378.1s 22:22:05] [lns] 266s iters=20000 cur=99 best=90 pool=4143 hot=70777 harv=11179 peelgain=4570
+[ 86576.3s 22:25:23] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[ 86616.3s 22:26:03] [walk] 84s iters=40000 cur=90 best=90 harv=11179
+[ 86879.4s 22:30:26] [lns] 227s iters=20000 cur=96 best=90 pool=4010 hot=71603 harv=11179 peelgain=3913
+[ 87112.6s 22:34:19] [walk] 40s iters=20000 cur=90 best=90 harv=11179
+[ 87155.4s 22:35:02] [walk] 83s iters=40000 cur=90 best=90 harv=11179
+[ 87459.6s 22:40:06] [lns] 267s iters=20000 cur=97 best=90 pool=4103 hot=68146 harv=11179 peelgain=5152
+[ 87655.5s 22:43:22] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[ 87698.0s 22:44:05] [walk] 85s iters=40000 cur=90 best=90 harv=11179
+[ 88031.9s 22:49:38] [lns] 299s iters=20000 cur=99 best=90 pool=4229 hot=68943 harv=11179 peelgain=5666
+[ 88195.6s 22:52:22] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[ 88235.7s 22:53:02] [walk] 83s iters=40000 cur=90 best=90 harv=11179
+[ 88492.6s 22:57:19] [lns] 220s iters=20000 cur=96 best=90 pool=4025 hot=71963 harv=11179 peelgain=3918
+[ 88692.7s 23:00:39]   restart budget reached (best 90@8) -- new root
+[ 88692.7s 23:00:39] --- restart 23 from naive#2752 (140g d3) (rng seed 2752) ---
+[ 88741.0s 23:01:28] [walk] 48s iters=20000 cur=92 best=92 harv=11179
+[ 88784.5s 23:02:11] [walk] 92s iters=40000 cur=90 best=90 harv=11179
+[ 89067.7s 23:06:54] [lns] 255s iters=20000 cur=98 best=90 pool=4080 hot=71825 harv=11179 peelgain=4843
+[ 89272.9s 23:10:20] [walk] 40s iters=20000 cur=90 best=90 harv=11179
+[ 89312.8s 23:10:59] [walk] 80s iters=40000 cur=90 best=90 harv=11179
+[ 89350.8s 23:11:37] [walk] 118s iters=60000 cur=90 best=90 harv=11179
+[ 89560.1s 23:15:07] [lns] 207s iters=20000 cur=96 best=90 pool=3973 hot=72673 harv=11179 peelgain=3418
+[ 89810.8s 23:19:17] [walk] 38s iters=20000 cur=90 best=90 harv=11179
+[ 89845.9s 23:19:52] [walk] 73s iters=40000 cur=90 best=90 harv=11179
+[ 89883.6s 23:20:30] [walk] 111s iters=60000 cur=90 best=90 harv=11179
+[ 90146.7s 23:24:53] [lns] 254s iters=20000 cur=95 best=90 pool=4006 hot=69608 harv=11179 peelgain=5257
+[ 90350.1s 23:28:17] [walk] 37s iters=20000 cur=90 best=90 harv=11179
+[ 90389.7s 23:28:56] [walk] 77s iters=40000 cur=90 best=90 harv=11179
+[ 90429.4s 23:29:36] [walk] 116s iters=60000 cur=90 best=90 harv=11179
+[ 90693.0s 23:34:00] [lns] 260s iters=20000 cur=94 best=90 pool=4066 hot=71171 harv=11179 peelgain=5085
+[ 90892.6s 23:37:19] [walk] 40s iters=20000 cur=90 best=90 harv=11179
+[ 90929.2s 23:37:56] [walk] 76s iters=40000 cur=90 best=90 harv=11179
+[ 90969.0s 23:38:36] [walk] 116s iters=60000 cur=90 best=90 harv=11179
+[ 91204.5s 23:42:31] [lns] 232s iters=20000 cur=96 best=90 pool=3965 hot=71219 harv=11179 peelgain=4337
+[ 91393.0s 23:45:40]   stalled 2400s at 90 gates -- new root
+[ 91393.0s 23:45:40] --- restart 24 from naive#2863 (143g d3) (rng seed 2863) ---
+[ 91444.5s 23:46:31] [walk] 51s iters=20000 cur=94 best=94 harv=11179
+[ 91492.4s 23:47:19] [walk] 99s iters=40000 cur=93 best=93 harv=11179
+[ 91749.8s 23:51:36] [lns] 237s iters=20000 cur=95 best=93 pool=4348 hot=70741 harv=11179 peelgain=4535
+[ 91981.7s 23:55:28] [walk] 49s iters=20000 cur=93 best=93 harv=11179
+[ 92025.9s 23:56:13] [walk] 93s iters=40000 cur=92 best=92 harv=11179
+[ 92291.6s 00:00:38] [lns] 238s iters=20000 cur=96 best=92 pool=4272 hot=72850 harv=11179 peelgain=4324
+[ 92515.1s 00:04:22] [walk] 42s iters=20000 cur=92 best=92 harv=11179
+[ 92560.0s 00:05:07] [walk] 87s iters=40000 cur=91 best=91 harv=11179
+[ 92833.7s 00:09:40] [lns] 241s iters=20000 cur=96 best=91 pool=4249 hot=69907 harv=11179 peelgain=4552
+[ 93056.9s 00:13:24] [walk] 44s iters=20000 cur=91 best=91 harv=11179
+[ 93097.5s 00:14:04] [walk] 84s iters=40000 cur=91 best=91 harv=11179
+[ 93364.1s 00:18:31] [lns] 231s iters=20000 cur=96 best=91 pool=4083 hot=72706 harv=11179 peelgain=4362
+[ 93598.1s 00:22:25] [walk] 45s iters=20000 cur=91 best=91 harv=11179
+[ 93639.8s 00:23:06] [walk] 86s iters=40000 cur=91 best=91 harv=11179
+[ 93917.7s 00:27:44] [lns] 244s iters=20000 cur=95 best=91 pool=4125 hot=71725 harv=11179 peelgain=4418
+[ 94135.6s 00:31:22] [walk] 42s iters=20000 cur=91 best=91 harv=11179
+[ 94180.1s 00:32:07] [walk] 87s iters=40000 cur=91 best=91 harv=11179
+[ 94463.4s 00:36:50] [lns] 250s iters=20000 cur=96 best=91 pool=4195 hot=71405 harv=11179 peelgain=4413
+[ 94679.0s 00:40:26] [walk] 45s iters=20000 cur=91 best=91 harv=11179
+[ 94718.2s 00:41:05] [walk] 85s iters=40000 cur=91 best=91 harv=11179
+[ 94996.7s 00:45:43] [lns] 243s iters=20000 cur=97 best=91 pool=4180 hot=71341 harv=11179 peelgain=4420
+[ 95173.6s 00:48:40]   stalled 2400s at 91 gates -- new root
+[ 95173.6s 00:48:40] --- restart 25 from naive#2978 (145g d3) (rng seed 2978) ---
+[ 95226.8s 00:49:33] [walk] 53s iters=20000 cur=95 best=95 harv=11179
+[ 95273.0s 00:50:20] [walk] 99s iters=40000 cur=93 best=93 harv=11179
+[ 95487.6s 00:53:54] [lns] 194s iters=20000 cur=99 best=93 pool=4373 hot=74344 harv=11179 peelgain=3081
+[ 95661.9s 00:56:49] [lns] 368s iters=40000 cur=98 best=93 pool=4479 hot=146767 harv=11179 peelgain=5749
+[ 95760.4s 00:58:27] [walk] 47s iters=20000 cur=92 best=92 harv=11179
+[ 95802.8s 00:59:09] [walk] 89s iters=40000 cur=91 best=91 harv=11179
+[ 96084.6s 01:03:51] [lns] 251s iters=20000 cur=98 best=90 pool=4132 hot=69343 harv=11179 peelgain=4832
+[ 96294.6s 01:07:21] [walk] 41s iters=20000 cur=90 best=90 harv=11179
+[ 96338.3s 01:08:05] [walk] 85s iters=40000 cur=90 best=90 harv=11179
+[ 96640.7s 01:13:07] [lns] 267s iters=20000 cur=96 best=90 pool=4081 hot=70234 harv=11179 peelgain=4559
+[ 96835.7s 01:16:22] [walk] 42s iters=20000 cur=90 best=90 harv=11179
+[ 96879.2s 01:17:06] [walk] 85s iters=40000 cur=90 best=90 harv=11179
+[ 97252.2s 01:23:19] [lns] 338s iters=20000 cur=98 best=90 pool=4222 hot=69023 harv=11179 peelgain=5086
+[ 97381.5s 01:25:28] [walk] 48s iters=20000 cur=90 best=90 harv=11179
+[ 97432.2s 01:26:19] [walk] 98s iters=40000 cur=90 best=90 harv=11179
+[ 97861.5s 01:33:28] [lns] 408s iters=20000 cur=99 best=90 pool=4267 hot=67635 harv=11179 peelgain=6604
+[ 97920.7s 01:34:27] [walk] 47s iters=20000 cur=90 best=90 harv=11179
+[ 97967.6s 01:35:14] [walk] 94s iters=40000 cur=90 best=90 harv=11179
+[ 98335.6s 01:41:22] [lns] 342s iters=20000 cur=95 best=90 pool=4161 hot=69462 harv=11179 peelgain=6003
+[ 98414.0s 01:42:41]   stalled 2400s at 90 gates -- new root
+[ 98414.0s 01:42:41] --- restart 26 from naive#3091 (143g d3) (rng seed 3091) ---
+[ 98478.5s 01:43:45] [walk] 64s iters=20000 cur=94 best=94 harv=11179
+[ 98532.4s 01:44:39] [walk] 118s iters=40000 cur=90 best=90 harv=11179
+[ 98786.0s 01:48:53] [lns] 252s iters=20000 cur=97 best=90 pool=4068 hot=71401 harv=11179 peelgain=3676
+[ 99001.7s 01:52:28] [walk] 48s iters=20000 cur=89 best=89 harv=11179
+[ 99050.6s 01:53:17] [walk] 96s iters=40000 cur=89 best=89 harv=11179
+[ 99348.9s 01:58:16] [lns] 275s iters=20000 cur=96 best=89 pool=3886 hot=71916 harv=11179 peelgain=4297
+[ 99540.0s 02:01:27] [walk] 46s iters=20000 cur=89 best=89 harv=11179
+[ 99582.4s 02:02:09] [walk] 88s iters=40000 cur=89 best=89 harv=11179
+[ 99955.9s 02:08:22] [lns] 342s iters=20000 cur=96 best=89 pool=4060 hot=69378 harv=11179 peelgain=5972
+[100078.4s 02:10:25] [walk] 44s iters=20000 cur=89 best=89 harv=11179
+[100123.3s 02:11:10] [walk] 89s iters=40000 cur=89 best=89 harv=11179
+[100380.5s 02:15:27] [lns] 226s iters=20000 cur=95 best=89 pool=3875 hot=72071 harv=11179 peelgain=3284
+[100622.1s 02:19:29] [walk] 48s iters=20000 cur=89 best=89 harv=11179
+[100668.0s 02:20:15] [walk] 94s iters=40000 cur=89 best=89 harv=11179
+[100991.5s 02:25:38] [lns] 297s iters=20000 cur=96 best=89 pool=3950 hot=66731 harv=11179 peelgain=4521
+[101161.9s 02:28:29] [walk] 47s iters=20000 cur=89 best=89 harv=11179
+[101205.1s 02:29:12] [walk] 91s iters=40000 cur=89 best=89 harv=11179
+[101531.0s 02:34:38] [lns] 296s iters=20000 cur=96 best=89 pool=4024 hot=70685 harv=11179 peelgain=4999
+[101654.6s 02:36:41]   stalled 2400s at 89 gates -- new root
+[101654.6s 02:36:41] --- restart 27 from naive#3204 (144g d3) (rng seed 3204) ---
+[101713.0s 02:37:40] [walk] 58s iters=20000 cur=93 best=93 harv=11179
+[101763.4s 02:38:30] [walk] 109s iters=40000 cur=91 best=91 harv=11179
+[102104.0s 02:44:11] [lns] 329s iters=20000 cur=97 best=91 pool=4215 hot=68574 harv=11179 peelgain=5824
+[102244.2s 02:46:31] [walk] 50s iters=20000 cur=91 best=91 harv=11179
+[102294.7s 02:47:21] [walk] 100s iters=40000 cur=91 best=91 harv=11179
+[102592.6s 02:52:19] [lns] 278s iters=20000 cur=98 best=91 pool=4158 hot=71607 harv=11179 peelgain=4593
+[102785.7s 02:55:32] [walk] 51s iters=20000 cur=91 best=91 harv=11179
+[102836.2s 02:56:23] [walk] 101s iters=40000 cur=91 best=91 harv=11179
+[103133.7s 03:01:20] [lns] 279s iters=20000 cur=94 best=91 pool=4131 hot=70917 harv=11179 peelgain=4776
+[103323.8s 03:04:30] [walk] 49s iters=20000 cur=90 best=90 harv=11179
+[103367.0s 03:05:14] [walk] 92s iters=40000 cur=90 best=90 harv=11179
+[103616.6s 03:09:23] [lns] 222s iters=20000 cur=96 best=90 pool=3942 hot=71821 harv=11179 peelgain=3221
+[103782.0s 03:12:09] [lns] 387s iters=40000 cur=97 best=90 pool=4020 hot=144810 harv=11179 peelgain=5051
+[103859.2s 03:13:26] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[103904.7s 03:14:11] [walk] 90s iters=40000 cur=90 best=90 harv=11179
+[104238.4s 03:19:45] [lns] 303s iters=20000 cur=95 best=90 pool=4067 hot=71689 harv=11179 peelgain=5305
+[104403.3s 03:22:30] [walk] 48s iters=20000 cur=90 best=90 harv=11179
+[104451.7s 03:23:18] [walk] 97s iters=40000 cur=90 best=90 harv=11179
+[104756.1s 03:28:23] [lns] 281s iters=20000 cur=97 best=90 pool=4000 hot=70828 harv=11179 peelgain=4932
+[104943.2s 03:31:30] [walk] 48s iters=20000 cur=90 best=90 harv=11179
+[104994.7s 03:32:21] [walk] 100s iters=40000 cur=90 best=90 harv=11179
+[105347.8s 03:38:14] [lns] 333s iters=20000 cur=99 best=90 pool=4040 hot=68437 harv=11179 peelgain=5638
+[105483.7s 03:40:30] [walk] 48s iters=20000 cur=90 best=90 harv=11179
+[105531.4s 03:41:18] [walk] 96s iters=40000 cur=90 best=90 harv=11179
+[105875.2s 03:47:02] [lns] 320s iters=20000 cur=95 best=90 pool=4035 hot=69424 harv=11179 peelgain=5773
+[105975.4s 03:48:42]   stalled 2400s at 90 gates -- new root
+[105975.4s 03:48:42] --- restart 28 from naive#3321 (146g d3) (rng seed 3321) ---
+[106031.9s 03:49:39] [walk] 57s iters=20000 cur=93 best=93 harv=11179
+[106083.1s 03:50:30] [walk] 108s iters=40000 cur=91 best=91 harv=11179
+[106349.1s 03:54:56] [lns] 254s iters=20000 cur=97 best=91 pool=4258 hot=72237 harv=11179 peelgain=3789
+[106558.6s 03:58:25] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[106603.1s 03:59:10] [walk] 88s iters=40000 cur=90 best=90 harv=11179
+[106974.5s 04:05:21] [lns] 339s iters=20000 cur=95 best=90 pool=4261 hot=68383 harv=11179 peelgain=6119
+[107099.2s 04:07:26] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[107141.8s 04:08:08] [walk] 86s iters=40000 cur=90 best=90 harv=11179
+[107446.4s 04:13:13] [lns] 271s iters=20000 cur=96 best=90 pool=4091 hot=71841 harv=11179 peelgain=4387
+[107639.2s 04:16:26] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[107680.3s 04:17:07] [walk] 85s iters=40000 cur=90 best=90 harv=11179
+[108007.2s 04:22:34] [lns] 291s iters=20000 cur=96 best=90 pool=4046 hot=70893 harv=11179 peelgain=5017
+[108180.2s 04:25:27] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[108227.1s 04:26:14] [walk] 91s iters=40000 cur=90 best=90 harv=11179
+[108536.9s 04:31:23] [lns] 281s iters=20000 cur=96 best=90 pool=4100 hot=69446 harv=11179 peelgain=4876
+[108723.4s 04:34:30] [walk] 48s iters=20000 cur=90 best=90 harv=11179
+[108774.5s 04:35:21] [walk] 99s iters=40000 cur=90 best=90 harv=11179
+[109048.1s 04:39:55] [lns] 252s iters=20000 cur=97 best=90 pool=4035 hot=72338 harv=11179 peelgain=4054
+[109215.9s 04:42:43]   stalled 2400s at 90 gates -- new root
+[109215.9s 04:42:43] --- restart 29 from naive#3434 (145g d3) (rng seed 3434) ---
+[109271.9s 04:43:39] [walk] 56s iters=20000 cur=92 best=92 harv=11179
+[109318.1s 04:44:25] [walk] 102s iters=40000 cur=91 best=91 harv=11179
+[109619.2s 04:49:26] [lns] 283s iters=20000 cur=97 best=91 pool=4081 hot=72328 harv=11179 peelgain=4781
+[109805.5s 04:52:32] [walk] 49s iters=20000 cur=91 best=91 harv=11179
+[109851.4s 04:53:18] [walk] 95s iters=40000 cur=90 best=90 harv=11179
+[110115.7s 04:57:42] [lns] 240s iters=20000 cur=98 best=90 pool=4045 hot=72215 harv=11179 peelgain=3831
+[110339.0s 05:01:26] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[110384.6s 05:02:11] [walk] 88s iters=40000 cur=90 best=90 harv=11179
+[110770.0s 05:08:37] [lns] 354s iters=20000 cur=95 best=90 pool=4164 hot=69142 harv=11179 peelgain=6524
+[110881.1s 05:10:28] [walk] 45s iters=20000 cur=90 best=90 harv=11179
+[110925.9s 05:11:13] [walk] 90s iters=40000 cur=90 best=90 harv=11179
+[111218.6s 05:16:05] [lns] 262s iters=20000 cur=97 best=90 pool=4045 hot=72297 harv=11179 peelgain=4151
+[111421.8s 05:19:28] [walk] 45s iters=20000 cur=90 best=90 harv=11179
+[111469.5s 05:20:16] [walk] 93s iters=40000 cur=90 best=90 harv=11179
+[111780.0s 05:25:27] [lns] 284s iters=20000 cur=97 best=90 pool=4162 hot=70820 harv=11179 peelgain=4771
+[111961.5s 05:28:28] [walk] 45s iters=20000 cur=90 best=90 harv=11179
+[112009.3s 05:29:16] [walk] 93s iters=40000 cur=90 best=90 harv=11179
+[112296.2s 05:34:03] [lns] 260s iters=20000 cur=97 best=90 pool=4067 hot=70394 harv=11179 peelgain=3840
+[112505.1s 05:37:32] [walk] 49s iters=20000 cur=90 best=90 harv=11179
+[112550.6s 05:38:17] [walk] 94s iters=40000 cur=90 best=90 harv=11179
+[112875.8s 05:43:42] [lns] 299s iters=20000 cur=94 best=90 pool=4050 hot=68760 harv=11179 peelgain=5095
+[112996.6s 05:45:43]   stalled 2400s at 90 gates -- new root
+[112996.6s 05:45:43] --- restart 30 from naive#3549 (145g d3) (rng seed 3549) ---
+[113055.5s 05:46:42] [walk] 59s iters=20000 cur=96 best=96 harv=11179
+[113106.8s 05:47:33] [walk] 110s iters=40000 cur=93 best=93 harv=11179
+[113387.5s 05:52:14] [lns] 271s iters=20000 cur=100 best=93 pool=4369 hot=70913 harv=11179 peelgain=4216
+[113587.1s 05:55:34] [walk] 50s iters=20000 cur=91 best=91 harv=11179
+[113633.4s 05:56:20] [walk] 97s iters=40000 cur=91 best=91 harv=11179
+[113918.6s 06:01:05] [lns] 262s iters=20000 cur=100 best=91 pool=4146 hot=72452 harv=11179 peelgain=3858
+[114124.8s 06:04:31] [walk] 48s iters=20000 cur=91 best=91 harv=11179
+[114174.9s 06:05:21] [walk] 98s iters=40000 cur=91 best=91 harv=11179
+[114402.7s 06:09:09] [lns] 206s iters=20000 cur=98 best=90 pool=4095 hot=73033 harv=11179 peelgain=2581
+[114599.7s 06:12:26] [lns] 403s iters=40000 cur=99 best=90 pool=4251 hot=145802 harv=11179 peelgain=4846
+[114659.8s 06:13:26] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[114705.7s 06:14:12] [walk] 89s iters=40000 cur=90 best=90 harv=11179
+[115095.8s 06:20:42] [lns] 359s iters=20000 cur=95 best=90 pool=4195 hot=68633 harv=11179 peelgain=6351
+[115200.2s 06:22:27] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[115240.9s 06:23:07] [walk] 84s iters=40000 cur=90 best=90 harv=11179
+[115589.6s 06:28:56] [lns] 313s iters=20000 cur=96 best=90 pool=4167 hot=68159 harv=11179 peelgain=5335
+[115741.6s 06:31:28] [walk] 45s iters=20000 cur=90 best=90 harv=11179
+[115789.5s 06:32:16] [walk] 93s iters=40000 cur=90 best=90 harv=11179
+[116188.1s 06:38:55] [lns] 371s iters=20000 cur=97 best=90 pool=4176 hot=66906 harv=11179 peelgain=6468
+[116284.4s 06:40:31] [walk] 47s iters=20000 cur=90 best=90 harv=11179
+[116329.1s 06:41:16] [walk] 92s iters=40000 cur=90 best=90 harv=11179
+[116703.5s 06:47:30] [lns] 346s iters=20000 cur=95 best=90 pool=4064 hot=66750 harv=11179 peelgain=6212
+[116777.1s 06:48:44]   stalled 2400s at 90 gates -- new root
+[116777.1s 06:48:44] --- restart 31 from naive#3664 (148g d3) (rng seed 3664) ---
+[116837.1s 06:49:44] [walk] 60s iters=20000 cur=93 best=93 harv=11179
+[116889.2s 06:50:36] [walk] 112s iters=40000 cur=92 best=92 harv=11179
+[117128.1s 06:54:35] [lns] 231s iters=20000 cur=96 best=92 pool=4112 hot=72185 harv=11179 peelgain=3565
+[117368.3s 06:58:35] [walk] 51s iters=20000 cur=91 best=91 harv=11179
+[117416.0s 06:59:23] [walk] 99s iters=40000 cur=91 best=91 harv=11179
+[117769.0s 07:05:16] [lns] 332s iters=20000 cur=96 best=91 pool=4064 hot=69209 harv=11179 peelgain=6073
+[117900.0s 07:07:27] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[117944.8s 07:08:11] [walk] 87s iters=40000 cur=90 best=90 harv=11179
+[118247.7s 07:13:14] [lns] 270s iters=20000 cur=96 best=90 pool=4050 hot=71157 harv=11179 peelgain=4500
+[118440.9s 07:16:28] [walk] 44s iters=20000 cur=90 best=90 harv=11179
+[118487.8s 07:17:14] [walk] 90s iters=40000 cur=90 best=90 harv=11179
+[118859.9s 07:23:26] [lns] 342s iters=20000 cur=95 best=90 pool=3946 hot=70599 harv=11179 peelgain=6163
+[118983.8s 07:25:30] [walk] 46s iters=20000 cur=90 best=90 harv=11179
+[119024.4s 07:26:11] [walk] 87s iters=40000 cur=89 best=89 harv=11179
+[119310.2s 07:30:57] [lns] 253s iters=20000 cur=93 best=89 pool=3891 hot=70320 harv=11179 peelgain=4224
+[119520.4s 07:34:27] [walk] 43s iters=20000 cur=89 best=89 harv=11179
+[119565.2s 07:35:12] [walk] 88s iters=40000 cur=89 best=89 harv=11179
+[119888.5s 07:40:35] [lns] 291s iters=20000 cur=96 best=89 pool=3899 hot=70021 harv=11179 peelgain=5096
+[120060.8s 07:43:27] [walk] 43s iters=20000 cur=89 best=89 harv=11179
+[120100.9s 07:44:07] [walk] 83s iters=40000 cur=89 best=89 harv=11179
+[120399.9s 07:49:07] [lns] 262s iters=20000 cur=97 best=89 pool=3892 hot=71887 harv=11179 peelgain=4316
+[120598.0s 07:52:25] [walk] 40s iters=20000 cur=89 best=89 harv=11179
+[120641.0s 07:53:08] [walk] 83s iters=40000 cur=89 best=89 harv=11179
+[120975.7s 07:58:42] [lns] 298s iters=20000 cur=96 best=89 pool=3913 hot=69226 harv=11179 peelgain=5324
+[121137.5s 08:01:24] [walk] 40s iters=20000 cur=89 best=89 harv=11179
+[121180.5s 08:02:07] [walk] 83s iters=40000 cur=89 best=89 harv=11179
+[121487.0s 08:07:14] [lns] 269s iters=20000 cur=96 best=89 pool=3872 hot=69321 harv=11179 peelgain=4701
+[121637.8s 08:09:44]   stalled 2400s at 89 gates -- new root
+[121637.8s 08:09:44] --- restart 32 from naive#3783 (145g d3) (rng seed 3783) ---
+[121699.0s 08:10:46] [walk] 61s iters=20000 cur=94 best=94 harv=11179
+[121748.3s 08:11:35] [walk] 111s iters=40000 cur=91 best=91 harv=11179
+[122050.3s 08:16:37] [lns] 292s iters=20000 cur=99 best=91 pool=4184 hot=70903 harv=11179 peelgain=4862
+[122227.1s 08:19:34] [walk] 49s iters=20000 cur=91 best=91 harv=11179
+[122275.9s 08:20:23] [walk] 98s iters=40000 cur=91 best=91 harv=11179
+[122546.2s 08:24:53] [lns] 248s iters=20000 cur=98 best=91 pool=4010 hot=71643 harv=11179 peelgain=3678
+[122767.8s 08:28:34] [walk] 50s iters=20000 cur=90 best=90 harv=11179
+[122813.0s 08:29:20] [walk] 95s iters=40000 cur=90 best=90 harv=11179
+[123154.1s 08:35:01] [lns] 316s iters=20000 cur=97 best=90 pool=4128 hot=70195 harv=11179 peelgain=5393
+[123299.9s 08:37:26] [walk] 42s iters=20000 cur=90 best=90 harv=11179
+[123344.9s 08:38:11] [walk] 87s iters=40000 cur=90 best=90 harv=11179
+[123679.7s 08:43:46] [lns] 302s iters=20000 cur=98 best=90 pool=4130 hot=69813 harv=11179 peelgain=5391
+[123844.7s 08:46:31] [walk] 47s iters=20000 cur=89 best=89 harv=11179
+[123886.8s 08:47:13] [walk] 89s iters=40000 cur=89 best=89 harv=11179
+[124258.5s 08:53:25] [lns] 340s iters=20000 cur=97 best=89 pool=4023 hot=68707 harv=11179 peelgain=6053
+[124380.1s 08:55:27] [walk] 42s iters=20000 cur=89 best=89 harv=11179
+[124422.5s 08:56:09] [walk] 84s iters=40000 cur=89 best=89 harv=11179
+[124812.9s 09:02:40] [lns] 355s iters=20000 cur=98 best=89 pool=4118 hot=67098 harv=11179 peelgain=6025
+[124923.1s 09:04:30] [walk] 45s iters=20000 cur=89 best=89 harv=11179
+[124964.9s 09:05:12] [walk] 87s iters=40000 cur=89 best=89 harv=11179
+[125380.1s 09:12:07] [lns] 382s iters=20000 cur=99 best=89 pool=4112 hot=65818 harv=11179 peelgain=6909
+[125459.6s 09:13:26] [walk] 41s iters=20000 cur=89 best=89 harv=11179
+[125504.3s 09:14:11] [walk] 86s iters=40000 cur=89 best=89 harv=11179
+[125889.3s 09:20:36] [lns] 351s iters=20000 cur=95 best=89 pool=3975 hot=68535 harv=11179 peelgain=6153
+[126000.9s 09:22:28] [walk] 42s iters=20000 cur=89 best=89 harv=11179
+[126040.0s 09:23:07] [walk] 82s iters=40000 cur=89 best=89 harv=11179
+[126380.0s 09:28:47] [lns] 302s iters=20000 cur=95 best=89 pool=3939 hot=68879 harv=11179 peelgain=5341
+[126498.5s 09:30:45]   stalled 2400s at 89 gates -- new root
+[126498.5s 09:30:45] --- restart 33 from naive#3902 (143g d3) (rng seed 3902) ---
+[126556.0s 09:31:43] [walk] 58s iters=20000 cur=94 best=94 harv=11179
+[126607.6s 09:32:34] [walk] 109s iters=40000 cur=91 best=91 harv=11179
+[126917.1s 09:37:44] [lns] 299s iters=20000 cur=98 best=91 pool=4278 hot=71370 harv=11179 peelgain=4113
+[127089.6s 09:40:36] [walk] 51s iters=20000 cur=91 best=91 harv=11179
+[127137.4s 09:41:24] [walk] 99s iters=40000 cur=90 best=90 harv=11179
+[127430.2s 09:46:17] [lns] 272s iters=20000 cur=97 best=90 pool=4061 hot=71849 harv=11179 peelgain=4104
+[127622.1s 09:49:29] [walk] 43s iters=20000 cur=90 best=90 harv=11179
+[127667.8s 09:50:14] [walk] 89s iters=40000 cur=90 best=90 harv=11179
+[128010.3s 09:55:57] [lns] 312s iters=20000 cur=97 best=90 pool=4021 hot=71213 harv=11179 peelgain=4065
+[128204.8s 09:59:11] [walk] 86s iters=20000 cur=90 best=90 harv=11179
+[128639.3s 10:06:26] [lns] 401s iters=20000 cur=97 best=90 pool=4124 hot=69658 harv=11179 peelgain=4498
+[128706.3s 10:07:33] [walk] 47s iters=20000 cur=90 best=90 harv=11179
+[128755.8s 10:08:22] [walk] 97s iters=40000 cur=90 best=90 harv=11179
+[129042.7s 10:13:09] [lns] 264s iters=20000 cur=99 best=90 pool=4083 hot=70662 harv=11179 peelgain=3867
+[129243.6s 10:16:30] [walk] 45s iters=20000 cur=90 best=90 harv=11179
+[129291.8s 10:17:18] [walk] 93s iters=40000 cur=90 best=90 harv=11179
+[129666.6s 10:23:33] [lns] 348s iters=20000 cur=97 best=90 pool=4148 hot=69538 harv=11179 peelgain=5244
+[129739.1s 10:24:46]   stalled 2400s at 90 gates -- new root
+[129739.1s 10:24:46] --- restart 34 from naive#4015 (145g d3) (rng seed 4015) ---
+[129808.1s 10:25:55] [walk] 69s iters=20000 cur=94 best=94 harv=11179
+[130138.3s 10:31:25] [lns] 279s iters=20000 cur=99 best=92 pool=4165 hot=70775 harv=11179 peelgain=3740
+[130347.2s 10:34:54] [walk] 68s iters=20000 cur=92 best=92 harv=11179
+[130756.8s 10:41:43] [lns] 358s iters=20000 cur=97 best=91 pool=4225 hot=69632 harv=11179 peelgain=5511
+[130873.9s 10:43:40] [walk] 55s iters=20000 cur=91 best=91 harv=11179
+[130921.4s 10:44:28] [walk] 102s iters=40000 cur=90 best=90 harv=11179
+[131316.3s 10:51:03] [lns] 377s iters=20000 cur=94 best=89 pool=3952 hot=67425 harv=11179 peelgain=6351
+[131415.7s 10:52:42] [walk] 56s iters=20000 cur=88 best=88 harv=11843
+[131458.9s 10:53:26] [walk] 100s iters=40000 cur=88 best=88 harv=13234
+[131827.0s 10:59:34] [lns] 348s iters=20000 cur=94 best=88 pool=3797 hot=68406 harv=13867 peelgain=5436
+[131941.4s 11:01:28] [walk] 42s iters=20000 cur=88 best=88 harv=15075
+[131986.9s 11:02:14] [walk] 87s iters=40000 cur=88 best=88 harv=16258
+[132389.2s 11:08:56] [lns] 370s iters=20000 cur=96 best=88 pool=3857 hot=67360 harv=17094 peelgain=5352
+[132501.9s 11:10:49] [walk] 62s iters=20000 cur=88 best=88 harv=18101
+[132875.8s 11:17:02] [lns] 316s iters=20000 cur=95 best=88 pool=3835 hot=68674 harv=19015 peelgain=4860
+[133025.9s 11:19:33] [walk] 46s iters=20000 cur=88 best=88 harv=19938
+[133090.5s 11:20:37] [walk] 111s iters=40000 cur=88 best=88 harv=20725
+[133380.6s 11:25:27] [lns] 281s iters=20000 cur=95 best=88 pool=3851 hot=71228 harv=20859 peelgain=4184
+[133566.5s 11:28:33] [walk] 47s iters=20000 cur=88 best=88 harv=21572
+[133621.3s 11:29:28] [walk] 101s iters=40000 cur=88 best=88 harv=22226
+[134016.8s 11:36:03] [lns] 377s iters=20000 cur=95 best=88 pool=3797 hot=69709 harv=22489 peelgain=5049
+[134059.8s 11:36:46]   stalled 2400s at 88 gates -- new root
+[134059.8s 11:36:46] --- restart 35 from naive#4132 (144g d3) (rng seed 4132) ---
+[134127.4s 11:37:54] [walk] 68s iters=20000 cur=94 best=94 harv=22489
+[134474.9s 11:43:42] [lns] 295s iters=20000 cur=99 best=93 pool=4319 hot=72948 harv=22489 peelgain=2703
+[134670.7s 11:46:57] [walk] 71s iters=20000 cur=93 best=93 harv=22489
+[135022.4s 11:52:49] [lns] 302s iters=20000 cur=98 best=93 pool=4451 hot=71185 harv=22489 peelgain=4082
+[135211.0s 11:55:58] [walk] 71s iters=20000 cur=92 best=92 harv=22489
+[135652.2s 12:03:19] [lns] 392s iters=20000 cur=99 best=90 pool=4243 hot=70129 harv=22489 peelgain=5291
+[135735.3s 12:04:42] [walk] 55s iters=20000 cur=90 best=90 harv=22489
+[136219.2s 12:12:46] [lns] 419s iters=20000 cur=97 best=90 pool=4206 hot=70340 harv=22489 peelgain=5654
+[136278.7s 12:13:45] [walk] 58s iters=20000 cur=90 best=90 harv=22489
+[136327.5s 12:14:34] [walk] 107s iters=40000 cur=90 best=90 harv=22489
+[136803.6s 12:22:30] [walk] 43s iters=20000 cur=90 best=90 harv=22489
+[136851.7s 12:23:18] [walk] 91s iters=40000 cur=90 best=90 harv=22489
+[137157.1s 12:28:24] [lns] 277s iters=20000 cur=97 best=90 pool=4194 hot=71504 harv=22489 peelgain=4203
+[137350.4s 12:31:37] [walk] 50s iters=20000 cur=90 best=90 harv=22489
+[137410.4s 12:32:37] [walk] 110s iters=40000 cur=90 best=90 harv=22489
+[137681.1s 12:37:08] [lns] 261s iters=20000 cur=97 best=90 pool=4094 hot=72348 harv=22489 peelgain=3802
+[137840.5s 12:39:47]   stalled 2400s at 90 gates -- new root
+[137840.5s 12:39:47] --- restart 36 from naive#4247 (142g d3) (rng seed 4247) ---
+[137902.4s 12:40:49] [walk] 62s iters=20000 cur=94 best=94 harv=22489
+[137958.8s 12:41:45] [walk] 118s iters=40000 cur=93 best=93 harv=22489
+[138218.3s 12:46:05] [lns] 258s iters=20000 cur=98 best=93 pool=4283 hot=71060 harv=22489 peelgain=3768
+[138429.3s 12:49:36] [walk] 49s iters=20000 cur=92 best=92 harv=22489
+[138478.1s 12:50:25] [walk] 98s iters=40000 cur=92 best=92 harv=22489
+[138766.9s 12:55:13] [lns] 266s iters=20000 cur=96 best=91 pool=4053 hot=71149 harv=22489 peelgain=4229
+[138969.4s 12:58:36] [walk] 49s iters=20000 cur=91 best=91 harv=22489
+[139020.2s 12:59:27] [walk] 100s iters=40000 cur=90 best=90 harv=22489
+[139363.4s 13:05:10] [lns] 323s iters=20000 cur=96 best=90 pool=3990 hot=68780 harv=22489 peelgain=5949
+[139503.9s 13:07:31] [walk] 43s iters=20000 cur=90 best=90 harv=22489
+[139551.7s 13:08:18] [walk] 91s iters=40000 cur=90 best=90 harv=22489
+[139913.2s 13:14:20] [lns] 332s iters=20000 cur=93 best=90 pool=3922 hot=67641 harv=22489 peelgain=6395
+[140047.3s 13:16:34] [walk] 47s iters=20000 cur=90 best=90 harv=22489
+[140094.6s 13:17:21] [walk] 94s iters=40000 cur=90 best=90 harv=22489
+[140458.1s 13:23:25] [lns] 337s iters=20000 cur=94 best=90 pool=4059 hot=68819 harv=22489 peelgain=6026
+[140600.3s 13:25:47] [walk] 59s iters=20000 cur=90 best=90 harv=22489
+[140659.5s 13:26:46] [walk] 119s iters=40000 cur=90 best=90 harv=22489
+[141025.4s 13:32:52] [lns] 364s iters=20000 cur=96 best=90 pool=3994 hot=67869 harv=22489 peelgain=5578
+[141130.5s 13:34:37] [walk] 50s iters=20000 cur=90 best=90 harv=22489
+[141175.8s 13:35:22] [walk] 95s iters=40000 cur=90 best=90 harv=22489
+[141565.3s 13:41:52] [lns] 364s iters=20000 cur=94 best=90 pool=3930 hot=66020 harv=22489 peelgain=5629
+[141682.7s 13:43:49] [walk] 61s iters=20000 cur=90 best=90 harv=22489
+[141737.3s 13:44:44] [walk] 116s iters=40000 cur=90 best=90 harv=22489
+[142138.6s 13:51:25] [lns] 397s iters=20000 cur=97 best=90 pool=3977 hot=70254 harv=22489 peelgain=4804
+[142161.3s 13:51:48]   stalled 2400s at 90 gates -- new root
+[142161.3s 13:51:48] --- restart 37 from naive#4364 (144g d3) (rng seed 4364) ---
+[142229.3s 13:52:56] [walk] 68s iters=20000 cur=96 best=96 harv=22489
+[142609.9s 13:59:17] [lns] 329s iters=20000 cur=97 best=95 pool=4630 hot=70432 harv=22489 peelgain=4199
+[142787.0s 14:02:14] [walk] 85s iters=20000 cur=90 best=90 harv=22489
+[143216.0s 14:09:23] [lns] 394s iters=20000 cur=98 best=90 pool=4105 hot=69958 harv=22489 peelgain=4757
+[143303.7s 14:10:50] [walk] 62s iters=20000 cur=90 best=90 harv=22489
+[143351.0s 14:11:38] [walk] 109s iters=40000 cur=90 best=90 harv=22489
+[143740.0s 14:18:07] [lns] 378s iters=20000 cur=96 best=90 pool=4091 hot=69402 harv=22489 peelgain=5551
+[143847.4s 14:19:54] [walk] 66s iters=20000 cur=90 best=90 harv=22489
+[144319.5s 14:27:46] [lns] 418s iters=20000 cur=96 best=90 pool=3983 hot=66785 harv=22489 peelgain=5661
+[144366.9s 14:28:34] [walk] 45s iters=20000 cur=90 best=90 harv=22489
+[144435.1s 14:29:42] [walk] 113s iters=40000 cur=90 best=90 harv=22489
+[144808.1s 14:35:55] [lns] 366s iters=20000 cur=97 best=90 pool=4087 hot=68777 harv=22489 peelgain=5389
+[144917.1s 14:37:44] [walk] 55s iters=20000 cur=90 best=90 harv=22489
+[145400.5s 14:45:47] [lns] 419s iters=20000 cur=99 best=90 pool=3986 hot=68076 harv=22489 peelgain=4216
+[145455.2s 14:46:42] [walk] 53s iters=20000 cur=90 best=90 harv=22489
+[145502.9s 14:47:30] [walk] 101s iters=40000 cur=90 best=90 harv=22489
+[145928.8s 14:54:35] [lns] 407s iters=20000 cur=94 best=90 pool=3949 hot=66076 harv=22489 peelgain=5164
+[145987.4s 14:55:34] [walk] 45s iters=20000 cur=90 best=90 harv=22489
+[146031.5s 14:56:18] [walk] 89s iters=40000 cur=90 best=90 harv=22489
+[146376.4s 15:02:03] [lns] 314s iters=20000 cur=96 best=90 pool=4069 hot=69247 harv=22489 peelgain=4957
+[146482.2s 15:03:49]   stalled 2400s at 90 gates -- new root
+[146482.2s 15:03:49] --- restart 38 from naive#4481 (142g d3) (rng seed 4481) ---
+[146541.7s 15:04:48] [walk] 59s iters=20000 cur=93 best=93 harv=22489
+[146592.7s 15:05:39] [walk] 110s iters=40000 cur=90 best=90 harv=22489
+[146809.7s 15:09:16] [lns] 207s iters=20000 cur=95 best=90 pool=3983 hot=71750 harv=22489 peelgain=2828
+[146989.1s 15:12:16] [lns] 387s iters=40000 cur=95 best=90 pool=4032 hot=143937 harv=22489 peelgain=5103
+[147075.5s 15:13:42] [walk] 53s iters=20000 cur=90 best=90 harv=22489
+[147124.6s 15:14:31] [walk] 102s iters=40000 cur=89 best=89 harv=22489
+[147425.3s 15:19:32] [lns] 283s iters=20000 cur=98 best=89 pool=4022 hot=69835 harv=22489 peelgain=4008
+[147624.5s 15:22:51] [walk] 62s iters=20000 cur=89 best=89 harv=22489
+[147670.4s 15:23:37] [walk] 108s iters=40000 cur=89 best=89 harv=22489
+[148057.4s 15:30:04] [lns] 375s iters=20000 cur=96 best=89 pool=3958 hot=69537 harv=22489 peelgain=4677
+[148166.5s 15:31:53] [walk] 64s iters=20000 cur=89 best=89 harv=22489
+[148213.0s 15:32:40] [walk] 111s iters=40000 cur=89 best=89 harv=22489
+[     0.0s 15:35:00] hunt worker start: root=constructor:naive engines=alt repel=False seed=201 restart=7200s stall=2400s
+[     0.0s 15:35:00] --- restart 1 from naive#201 (142g d3) (rng seed 201) ---
+[     0.0s 15:35:00]   NEW BEST 135 gates depth 3 VERIFIED  -> c_naive_best.json
+[     0.0s 15:35:00]   NEW BEST 134 gates depth 4 VERIFIED it=4 -> c_naive_best.json
+[     0.0s 15:35:00]   NEW BEST 130 gates depth 4 VERIFIED it=5 -> c_naive_best.json
+[     0.1s 15:35:00]   NEW BEST 129 gates depth 5 VERIFIED it=9 -> c_naive_best.json
+[     0.1s 15:35:00]   NEW BEST 128 gates depth 5 VERIFIED it=21 -> c_naive_best.json
+[     0.2s 15:35:00]   NEW BEST 127 gates depth 5 VERIFIED it=31 -> c_naive_best.json
+[     0.2s 15:35:00]   NEW BEST 126 gates depth 5 VERIFIED it=33 -> c_naive_best.json
+[     0.2s 15:35:00]   NEW BEST 125 gates depth 5 VERIFIED it=39 -> c_naive_best.json
+[     0.4s 15:35:00]   NEW BEST 124 gates depth 6 VERIFIED it=56 -> c_naive_best.json
+[     0.4s 15:35:00]   NEW BEST 123 gates depth 6 VERIFIED it=66 -> c_naive_best.json
+[     0.4s 15:35:00]   NEW BEST 121 gates depth 6 VERIFIED it=67 -> c_naive_best.json
+[     0.4s 15:35:00]   NEW BEST 120 gates depth 6 VERIFIED it=70 -> c_naive_best.json
+[     0.5s 15:35:00]   NEW BEST 118 gates depth 6 VERIFIED it=71 -> c_naive_best.json
+[     0.6s 15:35:00]   NEW BEST 117 gates depth 6 VERIFIED it=97 -> c_naive_best.json
+[     0.6s 15:35:00]   NEW BEST 116 gates depth 6 VERIFIED it=101 -> c_naive_best.json
+[     0.7s 15:35:00]   NEW BEST 115 gates depth 6 VERIFIED it=126 -> c_naive_best.json
+[     0.8s 15:35:00]   NEW BEST 114 gates depth 6 VERIFIED it=129 -> c_naive_best.json
+[     0.9s 15:35:01]   NEW BEST 113 gates depth 6 VERIFIED it=141 -> c_naive_best.json
+[     1.4s 15:35:01]   NEW BEST 111 gates depth 8 VERIFIED it=215 -> c_naive_best.json
+[     1.5s 15:35:01]   NEW BEST 110 gates depth 8 VERIFIED it=236 -> c_naive_best.json
+[     1.6s 15:35:01]   NEW BEST 109 gates depth 8 VERIFIED it=250 -> c_naive_best.json
+[     1.6s 15:35:01]   NEW BEST 109 gates depth 7 VERIFIED depth-tiebreak it=255 -> c_naive_best.json
+[     1.8s 15:35:01]   NEW BEST 108 gates depth 7 VERIFIED it=275 -> c_naive_best.json
+[     1.8s 15:35:01]   NEW BEST 107 gates depth 8 VERIFIED it=281 -> c_naive_best.json
+[     2.2s 15:35:02]   NEW BEST 106 gates depth 10 VERIFIED it=336 -> c_naive_best.json
+[     2.6s 15:35:02]   NEW BEST 105 gates depth 10 VERIFIED it=374 -> c_naive_best.json
+[     3.1s 15:35:03]   NEW BEST 104 gates depth 11 VERIFIED it=451 -> c_naive_best.json
+[     3.4s 15:35:03]   NEW BEST 103 gates depth 8 VERIFIED it=503 -> c_naive_best.json
+[     3.5s 15:35:03]   NEW BEST 103 gates depth 7 VERIFIED depth-tiebreak it=520 -> c_naive_best.json
+[     3.7s 15:35:03]   NEW BEST 102 gates depth 7 VERIFIED it=563 -> c_naive_best.json
+[     4.8s 15:35:04]   NEW BEST 102 gates depth 6 VERIFIED depth-tiebreak it=754 -> c_naive_best.json
+[     5.9s 15:35:06]   NEW BEST 101 gates depth 7 VERIFIED it=981 -> c_naive_best.json
+[     6.4s 15:35:06]   NEW BEST 101 gates depth 6 VERIFIED depth-tiebreak it=1061 -> c_naive_best.json
+[     9.3s 15:35:09]   NEW BEST 100 gates depth 7 VERIFIED it=1677 -> c_naive_best.json
+[    11.8s 15:35:11]   NEW BEST 99 gates depth 8 VERIFIED it=2238 -> c_naive_best.json
+[    12.2s 15:35:12]   NEW BEST 99 gates depth 7 VERIFIED depth-tiebreak it=2321 -> c_naive_best.json
+[    13.5s 15:35:13]   NEW BEST 98 gates depth 8 VERIFIED it=2601 -> c_naive_best.json
+[    13.7s 15:35:13]   NEW BEST 98 gates depth 7 VERIFIED depth-tiebreak it=2635 -> c_naive_best.json
+[    19.8s 15:35:20]   NEW BEST 98 gates depth 6 VERIFIED depth-tiebreak it=3921 -> c_naive_best.json
+[    26.0s 15:35:26]   NEW BEST 97 gates depth 11 VERIFIED it=5877 -> c_naive_best.json
+[    26.0s 15:35:26]   NEW BEST 97 gates depth 8 VERIFIED depth-tiebreak it=5891 -> c_naive_best.json
+[    26.1s 15:35:26]   NEW BEST 97 gates depth 6 VERIFIED depth-tiebreak it=5894 -> c_naive_best.json
+[    26.6s 15:35:26]   NEW BEST 96 gates depth 6 VERIFIED it=5986 -> c_naive_best.json
+[    26.7s 15:35:26]   NEW BEST 95 gates depth 6 VERIFIED it=5991 -> c_naive_best.json
+[    53.3s 15:35:53]   NEW BEST 94 gates depth 8 VERIFIED it=13088 -> c_naive_best.json
+[    53.5s 15:35:53]   NEW BEST 94 gates depth 7 VERIFIED depth-tiebreak it=13164 -> c_naive_best.json
+[    53.5s 15:35:53]   NEW BEST 94 gates depth 6 VERIFIED depth-tiebreak it=14106 -> c_naive_best.json
+[    72.3s 15:36:12] [walk] 72s iters=20000 cur=94 best=94 harv=0
+[    79.8s 15:36:19]   NEW BEST 93 gates depth 8 VERIFIED it=22479 -> c_naive_best.json
+[    80.2s 15:36:20]   NEW BEST 93 gates depth 7 VERIFIED depth-tiebreak it=22599 -> c_naive_best.json
+[    80.2s 15:36:20]   NEW BEST 93 gates depth 6 VERIFIED depth-tiebreak it=22600 -> c_naive_best.json
+[   435.2s 15:42:15] [lns] 315s iters=20000 cur=99 best=93 pool=4393 hot=71195 harv=0 peelgain=4496
+[   582.5s 15:44:42]   NEW BEST 92 gates depth 9 VERIFIED it=16447 -> c_naive_best.json
+[   582.6s 15:44:42]   NEW BEST 92 gates depth 8 VERIFIED depth-tiebreak it=16482 -> c_naive_best.json
+[   590.7s 15:44:50]   NEW BEST 92 gates depth 7 VERIFIED depth-tiebreak it=19384 -> c_naive_best.json
+[   592.5s 15:44:52] [walk] 52s iters=20000 cur=92 best=92 harv=0
+[   610.8s 15:45:10]   NEW BEST 92 gates depth 6 VERIFIED depth-tiebreak it=27875 -> c_naive_best.json
+[   622.8s 15:45:22]   NEW BEST 91 gates depth 7 VERIFIED it=32302 -> c_naive_best.json
+[   623.1s 15:45:23]   NEW BEST 91 gates depth 6 VERIFIED depth-tiebreak it=32413 -> c_naive_best.json
+[   634.9s 15:45:35]   NEW BEST 90 gates depth 10 VERIFIED it=36799 -> c_naive_best.json
+[   635.6s 15:45:35]   NEW BEST 90 gates depth 8 VERIFIED depth-tiebreak it=37074 -> c_naive_best.json
+[   636.2s 15:45:36]   NEW BEST 90 gates depth 7 VERIFIED depth-tiebreak it=37318 -> c_naive_best.json
+[   636.5s 15:45:36]   NEW BEST 90 gates depth 6 VERIFIED depth-tiebreak it=37446 -> c_naive_best.json
+[   639.9s 15:45:40] [walk] 100s iters=40000 cur=90 best=90 harv=0
+[  1008.7s 15:51:48] [lns] 349s iters=20000 cur=97 best=90 pool=4163 hot=69200 harv=0 peelgain=5704
+[  1122.8s 15:53:42] [walk] 43s iters=20000 cur=90 best=90 harv=0
+[  1165.6s 15:54:25] [walk] 85s iters=40000 cur=90 best=90 harv=0
+[  1414.8s 15:58:34] [lns] 215s iters=20000 cur=97 best=90 pool=4099 hot=73319 harv=0 peelgain=3492
+[  1588.2s 16:01:28] [lns] 388s iters=40000 cur=99 best=90 pool=4226 hot=147143 harv=0 peelgain=5957
+[  1655.5s 16:02:35] [walk] 35s iters=20000 cur=90 best=90 harv=0
+[  1698.8s 16:03:18] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[  1739.4s 16:03:59] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[  1975.7s 16:07:55] [lns] 235s iters=20000 cur=99 best=90 pool=4043 hot=70411 harv=0 peelgain=3823
+[  2200.2s 16:11:40] [walk] 40s iters=20000 cur=90 best=90 harv=0
+[  2237.2s 16:12:17] [walk] 77s iters=40000 cur=90 best=90 harv=0
+[  2277.0s 16:12:57] [walk] 117s iters=60000 cur=90 best=90 harv=0
+[  2557.8s 16:17:37] [lns] 277s iters=20000 cur=98 best=90 pool=4126 hot=70965 harv=0 peelgain=5231
+[  2738.9s 16:20:39] [walk] 39s iters=20000 cur=90 best=90 harv=0
+[  2779.6s 16:21:19] [walk] 79s iters=40000 cur=90 best=90 harv=0
+[  2819.6s 16:21:59] [walk] 119s iters=60000 cur=90 best=90 harv=0
+[  3067.7s 16:26:07] [lns] 247s iters=20000 cur=95 best=90 pool=4009 hot=70034 harv=0 peelgain=5033
+[  3240.5s 16:29:00]   stalled 2400s at 90 gates -- new root
+[  3240.5s 16:29:00] --- restart 2 from naive#314 (145g d3) (rng seed 314) ---
+[  3287.9s 16:29:48] [walk] 47s iters=20000 cur=96 best=96 harv=0
+[  3328.2s 16:30:28] [walk] 88s iters=40000 cur=93 best=93 harv=0
+[  3596.0s 16:34:56] [lns] 235s iters=20000 cur=98 best=91 pool=4397 hot=68254 harv=0 peelgain=5189
+[  3811.5s 16:38:31] [walk] 31s iters=20000 cur=91 best=91 harv=0
+[  3841.5s 16:39:01] [walk] 61s iters=40000 cur=91 best=91 harv=0
+[  3871.3s 16:39:31] [walk] 91s iters=60000 cur=90 best=90 harv=0
+[  3899.3s 16:39:59] [walk] 119s iters=80000 cur=90 best=90 harv=0
+[  4110.5s 16:43:30] [lns] 210s iters=20000 cur=98 best=90 pool=4257 hot=69957 harv=0 peelgain=5447
+[  4287.1s 16:46:27] [lns] 387s iters=40000 cur=97 best=90 pool=4486 hot=140851 harv=0 peelgain=9956
+[  4348.2s 16:47:28] [walk] 28s iters=20000 cur=90 best=90 harv=0
+[  4376.1s 16:47:56] [walk] 55s iters=40000 cur=90 best=90 harv=0
+[  4404.4s 16:48:24] [walk] 84s iters=60000 cur=90 best=90 harv=0
+[  4435.0s 16:48:55] [walk] 114s iters=80000 cur=90 best=90 harv=0
+[  4612.2s 16:51:52] [lns] 172s iters=20000 cur=97 best=90 pool=4055 hot=68372 harv=0 peelgain=4369
+[  4757.6s 16:54:17] [lns] 317s iters=40000 cur=96 best=90 pool=4145 hot=140469 harv=0 peelgain=7929
+[  4886.6s 16:56:26] [walk] 26s iters=20000 cur=90 best=90 harv=0
+[  4912.1s 16:56:52] [walk] 51s iters=40000 cur=90 best=90 harv=0
+[  4938.4s 16:57:18] [walk] 78s iters=60000 cur=90 best=90 harv=0
+[  4964.1s 16:57:44] [walk] 103s iters=80000 cur=90 best=90 harv=0
+[  5209.3s 17:01:49] [lns] 229s iters=20000 cur=97 best=90 pool=4253 hot=66637 harv=0 peelgain=6732
+[  5426.3s 17:05:26] [walk] 26s iters=20000 cur=90 best=90 harv=0
+[  5451.6s 17:05:51] [walk] 51s iters=40000 cur=90 best=90 harv=0
+[  5477.1s 17:06:17] [walk] 76s iters=60000 cur=90 best=90 harv=0
+[  5502.5s 17:06:42] [walk] 102s iters=80000 cur=90 best=90 harv=0
+[  5710.2s 17:10:10] [lns] 189s iters=20000 cur=94 best=90 pool=4098 hot=66603 harv=0 peelgain=5787
+[  5880.7s 17:13:00] [lns] 360s iters=40000 cur=94 best=90 pool=4257 hot=136082 harv=0 peelgain=10828
+[  5967.4s 17:14:27] [walk] 27s iters=20000 cur=90 best=90 harv=0
+[  5992.9s 17:14:53] [walk] 52s iters=40000 cur=90 best=90 harv=0
+[  6018.8s 17:15:18] [walk] 78s iters=60000 cur=90 best=90 harv=0
+[  6047.5s 17:15:47] [walk] 107s iters=80000 cur=90 best=90 harv=0
+[  6254.7s 17:19:14] [lns] 194s iters=20000 cur=95 best=90 pool=4178 hot=69435 harv=0 peelgain=5808
+[  6400.1s 17:21:40] [lns] 339s iters=40000 cur=97 best=90 pool=4292 hot=141257 harv=0 peelgain=9857
+[  6481.0s 17:23:01]   stalled 2400s at 90 gates -- new root
+[  6481.0s 17:23:01] --- restart 3 from naive#427 (145g d3) (rng seed 427) ---
+[  6518.0s 17:23:38] [walk] 37s iters=20000 cur=93 best=93 harv=0
+[  6547.0s 17:24:07] [walk] 66s iters=40000 cur=92 best=92 harv=0
+[  6575.6s 17:24:35] [walk] 95s iters=60000 cur=91 best=91 harv=0
+[  6784.7s 17:28:04] [lns] 184s iters=20000 cur=100 best=91 pool=4341 hot=71913 harv=0 peelgain=5500
+[  6966.7s 17:31:06] [lns] 366s iters=40000 cur=97 best=91 pool=4604 hot=141924 harv=0 peelgain=11009
+[  7049.1s 17:32:29] [walk] 28s iters=20000 cur=91 best=91 harv=0
+[  7077.6s 17:32:57] [walk] 57s iters=40000 cur=91 best=91 harv=0
+[  7107.3s 17:33:27] [walk] 86s iters=60000 cur=91 best=91 harv=0
+[  7138.4s 17:33:58] [walk] 117s iters=80000 cur=91 best=91 harv=0
+[  7335.7s 17:37:15] [lns] 195s iters=20000 cur=96 best=91 pool=4140 hot=69826 harv=0 peelgain=5022
+[  7542.1s 17:40:42] [lns] 401s iters=40000 cur=97 best=91 pool=4254 hot=141599 harv=0 peelgain=9745
+[  7594.4s 17:41:34] [walk] 33s iters=20000 cur=91 best=91 harv=0
+[  7626.0s 17:42:06] [walk] 65s iters=40000 cur=91 best=91 harv=0
+[  7657.0s 17:42:37] [walk] 96s iters=60000 cur=91 best=91 harv=0
+[  7872.3s 17:46:12] [lns] 191s iters=20000 cur=96 best=91 pool=4241 hot=71273 harv=0 peelgain=5216
+[  8022.9s 17:48:43] [lns] 342s iters=40000 cur=100 best=91 pool=4432 hot=144772 harv=0 peelgain=8551
+[  8129.8s 17:50:29] [walk] 29s iters=20000 cur=91 best=91 harv=0
+[  8163.5s 17:51:03] [walk] 62s iters=40000 cur=90 best=90 harv=0
+[  8196.2s 17:51:36] [walk] 95s iters=60000 cur=90 best=90 harv=0
+[  8369.1s 17:54:29] [lns] 148s iters=20000 cur=97 best=90 pool=3988 hot=70503 harv=0 peelgain=3462
+[  8514.7s 17:56:54] [lns] 293s iters=40000 cur=97 best=90 pool=4099 hot=141671 harv=0 peelgain=6875
+[  8678.3s 17:59:38] [walk] 37s iters=20000 cur=90 best=90 harv=0
+[  8710.9s 18:00:11] [walk] 70s iters=40000 cur=90 best=90 harv=0
+[  8743.9s 18:00:44] [walk] 103s iters=60000 cur=90 best=90 harv=0
+[  8940.5s 18:04:00] [lns] 179s iters=20000 cur=96 best=90 pool=4044 hot=70579 harv=0 peelgain=4492
+[  9122.5s 18:07:02] [lns] 361s iters=40000 cur=98 best=90 pool=4208 hot=141711 harv=0 peelgain=8154
+[  9213.4s 18:08:33] [walk] 32s iters=20000 cur=90 best=90 harv=0
+[  9238.7s 18:08:58]   NEW BEST 89 gates depth 9 VERIFIED it=35499 -> c_naive_best.json
+[  9239.5s 18:08:59]   NEW BEST 89 gates depth 8 VERIFIED depth-tiebreak it=35915 -> c_naive_best.json
+[  9243.6s 18:09:03] [walk] 62s iters=40000 cur=89 best=89 harv=0
+[  9248.0s 18:09:08]   NEW BEST 88 gates depth 10 VERIFIED it=42674 -> c_naive_best.json
+[  9248.2s 18:09:08]   NEW BEST 88 gates depth 9 VERIFIED depth-tiebreak it=42858 -> c_naive_best.json
+[  9249.8s 18:09:09]   NEW BEST 88 gates depth 8 VERIFIED depth-tiebreak it=43884 -> c_naive_best.json
+[  9274.1s 18:09:34] [walk] 93s iters=60000 cur=88 best=88 harv=1121
+[  9536.6s 18:13:56] [lns] 235s iters=20000 cur=95 best=88 pool=3943 hot=66479 harv=2027 peelgain=5626
+[  9699.0s 18:16:39] [lns] 398s iters=40000 cur=96 best=88 pool=4128 hot=135238 harv=2027 peelgain=9673
+[  9750.0s 18:17:30] [walk] 29s iters=20000 cur=88 best=88 harv=3074
+[  9778.4s 18:17:58] [walk] 57s iters=40000 cur=88 best=88 harv=3885
+[  9807.6s 18:18:27] [walk] 86s iters=60000 cur=88 best=88 harv=4674
+[  9836.8s 18:18:56] [walk] 115s iters=80000 cur=88 best=88 harv=5397
+[ 10046.3s 18:22:26] [lns] 205s iters=20000 cur=96 best=88 pool=3932 hot=70723 harv=5476 peelgain=4904
+[ 10246.1s 18:25:46] [lns] 405s iters=40000 cur=97 best=88 pool=4065 hot=138779 harv=5478 peelgain=9856
+[ 10292.0s 18:26:32] [walk] 31s iters=20000 cur=88 best=88 harv=6100
+[ 10320.1s 18:27:00] [walk] 59s iters=40000 cur=88 best=88 harv=6634
+[ 10348.0s 18:27:28] [walk] 87s iters=60000 cur=88 best=88 harv=7116
+[ 10376.4s 18:27:56] [walk] 115s iters=80000 cur=88 best=88 harv=7524
+[ 10542.8s 18:30:42] [lns] 161s iters=20000 cur=97 best=88 pool=3918 hot=70715 harv=7605 peelgain=3990
+[ 10680.7s 18:33:00] [lns] 299s iters=40000 cur=97 best=88 pool=4012 hot=141155 harv=7606 peelgain=7036
+[ 10829.4s 18:35:29] [walk] 28s iters=20000 cur=88 best=88 harv=8028
+[ 10858.0s 18:35:58] [walk] 56s iters=40000 cur=88 best=88 harv=8357
+[ 10885.8s 18:36:25] [walk] 84s iters=60000 cur=88 best=88 harv=8633
+[ 10916.6s 18:36:56] [walk] 115s iters=80000 cur=88 best=88 harv=8871
+[ 11129.7s 18:40:29] [lns] 208s iters=20000 cur=97 best=88 pool=3911 hot=67203 harv=8906 peelgain=5116
+[ 11338.7s 18:43:58] [lns] 417s iters=40000 cur=97 best=88 pool=4098 hot=133967 harv=8906 peelgain=10338
+[ 11369.9s 18:44:30] [walk] 28s iters=20000 cur=88 best=88 harv=9112
+[ 11398.0s 18:44:58] [walk] 56s iters=40000 cur=88 best=88 harv=9310
+[ 11425.4s 18:45:25] [walk] 84s iters=60000 cur=88 best=88 harv=9488
+[ 11452.7s 18:45:52] [walk] 111s iters=80000 cur=88 best=88 harv=9659
+[ 11657.4s 18:49:17] [lns] 196s iters=20000 cur=98 best=88 pool=3915 hot=69633 harv=9711 peelgain=6042
+[ 11833.5s 18:52:13] [lns] 372s iters=40000 cur=97 best=88 pool=4018 hot=140981 harv=9711 peelgain=11188
+[ 11881.7s 18:53:01]   stalled 2400s at 88 gates -- new root
+[ 11881.7s 18:53:01] --- restart 4 from naive#548 (144g d3) (rng seed 548) ---
+[ 11918.2s 18:53:38] [walk] 37s iters=20000 cur=93 best=93 harv=9711
+[ 11953.3s 18:54:13] [walk] 72s iters=40000 cur=92 best=92 harv=9711
+[ 11983.0s 18:54:43] [walk] 101s iters=60000 cur=90 best=90 harv=9711
+[ 12188.6s 18:58:08] [lns] 187s iters=20000 cur=97 best=89 pool=3997 hot=70723 harv=9711 peelgain=5570
+[ 12351.1s 19:00:51] [lns] 349s iters=40000 cur=95 best=89 pool=4133 hot=141753 harv=9711 peelgain=10076
+[ 12447.3s 19:02:27] [walk] 26s iters=20000 cur=89 best=89 harv=9711
+[ 12473.9s 19:02:54] [walk] 52s iters=40000 cur=89 best=89 harv=9711
+[ 12498.5s 19:03:18] [walk] 77s iters=60000 cur=89 best=89 harv=9711
+[ 12524.9s 19:03:45] [walk] 103s iters=80000 cur=89 best=89 harv=9711
+[ 12709.2s 19:06:49] [lns] 167s iters=20000 cur=98 best=89 pool=3990 hot=70182 harv=9711 peelgain=5084
+[ 12838.2s 19:08:58] [lns] 296s iters=40000 cur=96 best=89 pool=4153 hot=142832 harv=9711 peelgain=8475
+[ 12947.5s 19:10:47] [lns] 406s iters=60000 cur=97 best=89 pool=4221 hot=200000 harv=9711 peelgain=11028
+[ 12986.1s 19:11:26] [walk] 24s iters=20000 cur=89 best=89 harv=9711
+[ 13009.5s 19:11:49] [walk] 48s iters=40000 cur=89 best=89 harv=9711
+[ 13033.0s 19:12:13] [walk] 71s iters=60000 cur=89 best=89 harv=9711
+[ 13057.4s 19:12:37] [walk] 96s iters=80000 cur=89 best=89 harv=9711
+[ 13279.4s 19:16:19] [lns] 198s iters=20000 cur=96 best=89 pool=4032 hot=70180 harv=9711 peelgain=6265
+[ 13456.8s 19:19:16] [lns] 375s iters=40000 cur=96 best=89 pool=4155 hot=140138 harv=9711 peelgain=11695
+[ 13525.8s 19:20:25] [walk] 24s iters=20000 cur=89 best=89 harv=9711
+[ 13552.6s 19:20:52] [walk] 51s iters=40000 cur=89 best=89 harv=9711
+[ 13576.8s 19:21:16] [walk] 75s iters=60000 cur=89 best=89 harv=9711
+[ 13601.0s 19:21:41] [walk] 99s iters=80000 cur=89 best=89 harv=9711
+[ 13758.8s 19:24:18] [lns] 137s iters=20000 cur=96 best=89 pool=3902 hot=72976 harv=9711 peelgain=3793
+[ 13900.0s 19:26:40] [lns] 278s iters=40000 cur=98 best=89 pool=4039 hot=146118 harv=9711 peelgain=7468
+[ 14026.9s 19:28:47] [lns] 405s iters=60000 cur=96 best=89 pool=4144 hot=200000 harv=9711 peelgain=10889
+[ 14066.5s 19:29:26] [walk] 25s iters=20000 cur=89 best=89 harv=9711
+[ 14090.4s 19:29:50] [walk] 48s iters=40000 cur=89 best=89 harv=9711
+[ 14114.8s 19:30:14] [walk] 73s iters=60000 cur=89 best=89 harv=9711
+[ 14138.5s 19:30:38] [walk] 97s iters=80000 cur=89 best=89 harv=9711
+[ 14348.9s 19:34:09] [lns] 187s iters=20000 cur=96 best=89 pool=4030 hot=69464 harv=9711 peelgain=5839
+[ 14508.2s 19:36:48] [lns] 346s iters=40000 cur=98 best=89 pool=4162 hot=139766 harv=9711 peelgain=10555
+[ 14582.0s 19:38:02]   stalled 2400s at 89 gates -- new root
+[ 14582.0s 19:38:02] --- restart 5 from naive#659 (143g d3) (rng seed 659) ---
+[ 14618.3s 19:38:38] [walk] 36s iters=20000 cur=94 best=94 harv=9711
+[ 14652.2s 19:39:12] [walk] 70s iters=40000 cur=93 best=93 harv=9711
+[ 14684.0s 19:39:44] [walk] 102s iters=60000 cur=93 best=93 harv=9711
+[ 14864.0s 19:42:44] [lns] 162s iters=20000 cur=99 best=92 pool=4338 hot=71522 harv=9711 peelgain=4635
+[ 14981.1s 19:44:41] [lns] 279s iters=40000 cur=98 best=92 pool=4441 hot=144649 harv=9711 peelgain=7461
+[ 15097.8s 19:46:38] [lns] 396s iters=60000 cur=98 best=92 pool=4493 hot=200000 harv=9711 peelgain=10305
+[ 15148.8s 19:47:28] [walk] 27s iters=20000 cur=91 best=91 harv=9711
+[ 15175.9s 19:47:56] [walk] 54s iters=40000 cur=91 best=91 harv=9711
+[ 15203.0s 19:48:23] [walk] 81s iters=60000 cur=91 best=91 harv=9711
+[ 15229.6s 19:48:49] [walk] 108s iters=80000 cur=91 best=91 harv=9711
+[ 15389.1s 19:51:29] [lns] 147s iters=20000 cur=97 best=91 pool=4138 hot=71611 harv=9711 peelgain=4388
+[ 15526.4s 19:53:46] [lns] 284s iters=40000 cur=97 best=91 pool=4270 hot=143114 harv=9711 peelgain=8394
+[ 15658.3s 19:55:58] [lns] 416s iters=60000 cur=98 best=91 pool=4361 hot=200000 harv=9711 peelgain=12020
+[ 15688.7s 19:56:28] [walk] 27s iters=20000 cur=91 best=91 harv=9711
+[ 15715.4s 19:56:55] [walk] 53s iters=40000 cur=91 best=91 harv=9711
+[ 15742.7s 19:57:22] [walk] 81s iters=60000 cur=91 best=91 harv=9711
+[ 15770.5s 19:57:50] [walk] 108s iters=80000 cur=91 best=91 harv=9711
+[ 15920.6s 20:00:20] [lns] 139s iters=20000 cur=98 best=91 pool=4107 hot=71378 harv=9711 peelgain=4012
+[ 16035.7s 20:02:15] [lns] 254s iters=40000 cur=98 best=91 pool=4176 hot=144525 harv=9711 peelgain=6986
+[ 16148.1s 20:04:08] [lns] 366s iters=60000 cur=98 best=91 pool=4253 hot=200000 harv=9711 peelgain=9851
+[ 16228.4s 20:05:28] [walk] 26s iters=20000 cur=91 best=91 harv=9711
+[ 16255.2s 20:05:55] [walk] 53s iters=40000 cur=91 best=91 harv=9711
+[ 16281.6s 20:06:21] [walk] 79s iters=60000 cur=91 best=91 harv=9711
+[ 16308.5s 20:06:48] [walk] 106s iters=80000 cur=91 best=91 harv=9711
+[ 16456.3s 20:09:16] [lns] 134s iters=20000 cur=99 best=91 pool=4145 hot=72343 harv=9711 peelgain=3515
+[ 16607.5s 20:11:47] [lns] 285s iters=40000 cur=98 best=91 pool=4248 hot=144748 harv=9711 peelgain=7323
+[ 16769.4s 20:14:29] [walk] 27s iters=20000 cur=91 best=91 harv=9711
+[ 16797.1s 20:14:57] [walk] 55s iters=40000 cur=91 best=91 harv=9711
+[ 16822.9s 20:15:23] [walk] 81s iters=60000 cur=91 best=91 harv=9711
+[ 16849.0s 20:15:49] [walk] 107s iters=80000 cur=91 best=91 harv=9711
+[ 17029.3s 20:18:49] [lns] 167s iters=20000 cur=96 best=91 pool=4164 hot=71823 harv=9711 peelgain=5155
+[ 17162.8s 20:21:02] [lns] 301s iters=40000 cur=98 best=91 pool=4328 hot=145317 harv=9711 peelgain=8428
+[ 17329.2s 20:23:49] [walk] 47s iters=20000 cur=90 best=90 harv=9711
+[ 17369.7s 20:24:29] [walk] 87s iters=40000 cur=90 best=90 harv=9711
+[ 17622.1s 20:28:42] [lns] 220s iters=20000 cur=98 best=90 pool=3974 hot=73565 harv=9711 peelgain=2472
+[ 17864.2s 20:32:44] [walk] 42s iters=20000 cur=90 best=90 harv=9711
+[ 17904.6s 20:33:24] [walk] 82s iters=40000 cur=90 best=90 harv=9711
+[ 18282.9s 20:39:43] [lns] 341s iters=20000 cur=99 best=90 pool=4017 hot=72589 harv=9711 peelgain=4469
+[ 18407.5s 20:41:47] [walk] 45s iters=20000 cur=90 best=90 harv=9711

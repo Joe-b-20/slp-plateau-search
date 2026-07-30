@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this method or these circuits, please cite this repository."
-title: "slp-plateau-search: value-set SLP search with plateau and hub moves (record XOR circuits for AES MixColumns)"
+title: "slp-plateau-search: value-set SLP search with plateau walking and destroy-rebuild moves (small XOR circuits for AES MixColumns)"
 authors:
   - family-names: Bachir
     given-names: Joe
-version: "2.0.1"
-date-released: 2026-07-27
+version: "3.0.0"
+date-released: 2026-07-29
 repository-code: "https://github.com/Joe-b-20/slp-plateau-search"
 doi: 10.5281/zenodo.21402996
 identifiers:

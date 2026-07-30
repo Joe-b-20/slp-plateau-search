@@ -3,40 +3,47 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21402996.svg)](https://doi.org/10.5281/zenodo.21402996)
 [![verify](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml/badge.svg)](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml)
 
-The search method and evidence behind the record 2-input XOR circuits for AES
-MixColumns: **97 gates at depth 3, 92 at depth 4, 89 at depth 5, and 88 at
-depth 7**.
+The search method and evidence behind this project's small 2-input XOR circuits
+for AES MixColumns. Seven verified circuits, two frontiers:
+
+- **combined verified frontier: 97 @ 3, 92 @ 4, 88 @ 5**;
+- **own-lineage frontier, no imported material in the chain: 97 @ 3, 92 @ 4,
+  89 @ 5, 88 @ 6**.
+
+**87 was not found**, and nothing here is claimed optimal.
 
 - **97 @ 3, 92 @ 4 and 89 @ 5** each improve the published depth–count Pareto
   frontier at their depth (99 @ 3, Shi–Feng–Xu ToSC 2023; 97 @ 4 and 94 @ 5,
   Osvik–Canright ePrint 2024/1076).
-- **88 @ 7** takes this project's own record from 89 to 88 and reaches the
-  published gate-count floor from a different direction: it **matches the
-  published 88 (Jean, ePrint 2026/1481; depth 7 is our measurement of our
-  transcription — the paper states no depth) with an independent circuit**
-  — the two share 61 of their 88 masks — rather than beating it.
+- **88 is not our count.** It is the published best-known count, held by Jean
+  (ePrint 2026/1481, posted 2026-07-23), and **Jean has priority**. Our **88 @ 7**
+  reaches it from a different direction — it **matches** that circuit with an
+  independent one, the two sharing 61 of their 88 masks — rather than beating it.
+  (Depth 7 is our measurement of our transcription; the paper states no depth.)
+- What is new here is **depth at 88 gates**. **88 @ depth 6** is a fourth distinct
+  88-gate family found **from scratch**; it dominates Jean's 88 @ 7 (equal count,
+  one level shallower — and that depth 7 is *forced*: the shallowest schedule
+  Jean's own mask set admits is still 7) and improves on the published depth-6
+  point of 92 gates (Maximov) by four gates. **88 @ depth 5** goes two levels shallower still and improves
+  on the published 94 @ 5 by six gates — but **its seed chain passes through
+  Jean's published circuit**, so it is reported as derived work, as is the
+  **88 @ depth 8** (a third distinct family, dominated by our own 88 @ 7).
 - Also published at unconstrained depth: 89 at unstated depth (Sun–Yang–Li,
-  ePrint 2025/1493). Neither of those points dominates the depth-5 89, so the
-  depth-3, -4 and -5 circuits all remain on the frontier — see the artifact
-  repository's `PRIOR_ART.md`, including its Corrections section.
-- A fifth verified circuit, **88 @ depth 8**, is a third distinct 88-gate family
-  found by the same engine. It is dominated by the 88 @ depth 7 and its seed
-  chain passes through Jean's published circuit, so it is documented as a
-  distinct construction in [`evidence/RESULTS.md`](evidence/RESULTS.md) rather
-  than claimed as a record.
+  ePrint 2025/1493). Neither published point dominates the depth-5 89, so the
+  depth-3, -4 and -5 own-lineage circuits all remain on the frontier — see the
+  artifact repository's `PRIOR_ART.md`, including its Corrections section.
 
-**87 was not found**, and nothing here is claimed optimal.
+![The published depth–count Pareto frontier for AES MixColumns vs this work: 97 at depth 3, 92 at depth 4, 89 at depth 5, an 88 at depth 6 found from scratch, a derived 88 at depth 5, the 88 at depth 7 that ties the published record with an independent circuit, and the derived, dominated 88 at depth 8](docs/frontier.svg)
 
-![The published depth–count Pareto frontier for AES MixColumns vs this work, including the 88 @ depth 7 that ties the published record with an independent circuit and the derived, dominated 88 @ depth 8](docs/frontier.svg)
-
-All five verified circuits are in `evidence/circuits/`, hash-pinned in
-`evidence/circuits/spectrum.json`; all five also live in the artifact
+All seven verified circuits are in `evidence/circuits/`, hash-pinned in
+`evidence/circuits/spectrum.json`; all seven also live in the artifact
 repository —
 **[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)**
 — as static, machine-checkable files with self-contained verifiers. This
 repository is the other half: the **method** (a value-set
-shortest-linear-program search with plateau and hub moves — see
-[`METHODS.md`](METHODS.md)),
+shortest-linear-program search with plateau walking and destroy-rebuild moves —
+see [`METHODS.md`](METHODS.md); the remove-2-add-1 "hub" move that named this
+repository is retained but **measured dead at the frontier**, METHODS.md §8),
 the **pipeline** that ran it, and the **evidence** of the runs that produced
 the records, archived untouched with their exact code and logs.
 
@@ -71,9 +78,12 @@ cd pipeline && python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-
 ```
 
 [`reproduce/README.md`](reproduce/README.md) says what does and does not
-reproduce. The 88 @ depth 8 has no reproduction command, for the provenance
-reason above. The lineage and the exact worker, seed, iteration and wall-clock
-of every record are in [`evidence/RESULTS.md`](evidence/RESULTS.md); the runs
+reproduce. Three circuits have no single reproduction command: the **88 @ depth 8**
+and the **88 @ depth 5**, for the provenance reason above (neither should be
+handed out as a recipe), and the **88 @ depth 6**, which came out of a multi-day
+16-process fleet on restart 18 of one worker — what it took is archived, not
+promised. The lineage and the exact worker, seed, iteration and wall-clock of
+every record are in [`evidence/RESULTS.md`](evidence/RESULTS.md); the runs
 themselves are archived under `evidence/campaign87_run_*/` with their code.
 
 Verify any circuit against MixColumns rebuilt from GF(2⁸) — pass a path to a
@@ -83,7 +93,8 @@ an optional depth bound:
 
 ```text
 python3 verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
-python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth7.json 7
+python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth6.json 6
+python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth6.json 5   # INVALID: the depth is tight
 python3 verify_circuit.py reproduce/out_97.json 3   # after running reproduce/reproduce.py
 ```
 
@@ -93,21 +104,25 @@ python3 verify_circuit.py reproduce/out_97.json 3   # after running reproduce/re
 |---|---|
 | [`METHODS.md`](METHODS.md) | the method: value-set representation, moves, engines, kernel, pipeline, exact neighbourhood certificates, symmetry, provenance |
 | `reproduce/` | single-command reproductions: the from-scratch depth-3 record (97 gates, single core) and a single-worker re-run of the 88 @ depth 7 (`hunt_88.py`), plus opt-in legacy demonstrations of the moves with per-method seed provenance |
-| `pipeline/` | the record hunter: coordinator (`ladder_parallel.py`), workers, engines, the record-producing configurations — including the `--workers hunt87` set that puts an uncapped worker on each of the three known 88-gate families — and the code-evolution history across the record runs |
-| `evidence/` | `RESULTS.md` (the records + full lineage), `circuits/` (all five verified circuits, SHA-256 in `spectrum.json`), and the record-producing run archives, untouched: logs, statuses, every verified best, and the exact `code/` that produced each |
+| `pipeline/` | the record hunter: coordinator (`ladder_parallel.py`), workers, engines, the record-producing configurations — including the `--workers hunt87` set that puts an uncapped worker on each of the three 88-gate family anchors it ships (**two of those three anchors stand on Jean's published circuit**, so anything those workers produce is derived work — see `pipeline/README.md` and `pipeline/seeds/README.md`) — and the code-evolution history across the record runs |
+| `evidence/` | `RESULTS.md` (the records + full lineage), `circuits/` (all seven verified circuits, SHA-256 in `spectrum.json`), and the record-producing run archives, untouched: logs, statuses, every verified best, and the exact `code/` that produced each |
 | `evidence/campaign87_run_2026-07-26_got_88at7/` | the run that found the 88 @ depth 7: `PROVENANCE.md`, the record and its ρ²-symmetric 94 seed, every worker's log and best, the diverse-88 portfolio, and the exact `code/` |
 | `evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` | the run that found the 88 @ depth 8: same shape, plus the third-family representatives and census references; its `PROVENANCE.md` opens with the derived lineage |
+| `evidence/campaign87_run_2026-07-28_got_88at6_fromscratch/` | the run that found the 88 @ depth 6 **from scratch**: `PROVENANCE.md` (leading with the root, which reads nothing, then the contamination vectors checked in the archived code), the record, the worker's untouched log, the exact `code/` including the root constructors, and `certificates/` — its exhaustively empty k ≤ 3 shell |
+| `evidence/campaign87_run_2026-07-29_got_88at5_derived/` | the run that found the 88 @ depth 5: same shape; its `PROVENANCE.md` **opens with the derived lineage** through Jean's published 88, the seed is archived beside the record, and `certificates/` holds its k = 2 shell |
 | `evidence/campaign87_certificates/` | `CERTIFICATES.md` and the machine-checked verdict summaries behind it: exhaustive k ≤ 3 shells for 47 canonical 88s, the population sweeps, the windowed-SAT runs (evidence, not proof), and the two exactly ρ²-symmetric 90-gate circuits |
 | `evidence/campaign87_imported_prior_art/` | the published circuits, transcribed, oracle-verified and credited — **never ours**: Jean's 88 @ depth 7 (ePrint 2026/1481) and Sun–Yang–Li's 89 (ePrint 2025/1493) |
 | `verify_circuit.py` | standalone GF(2⁸) oracle: `python3 verify_circuit.py <circuit.json> [max_depth]` |
 
-## The lineage, from scratch to 88 @ depth 7
+## The two own-lineage chains
 
-![Lineage from the from-scratch 97-gate depth-3 circuit down to the 89 @ depth 5 record and on to the 88 @ depth 7](docs/lineage.svg)
+![Two lineages: the from-scratch 97-gate depth-3 circuit laddered down to the 89 @ depth 5 record and on to the 88 @ depth 7, and a second, independent chain from a random 139-gate construction to the 88 @ depth 6](docs/lineage.svg)
 
-Full lineage tables for every record — each step with the run-time and
-wall-clock at which it appeared, and the derived chain of the 88 @ depth 8
-spelled out — are in [`evidence/RESULTS.md`](evidence/RESULTS.md).
+Both chains above are this project's own, and the lower one starts from nothing
+but a random construction. Full lineage tables for every record — each step with
+the run-time and wall-clock at which it appeared, and the derived chains of the
+88 @ depth 8 and the 88 @ depth 5 spelled out link by link — are in
+[`evidence/RESULTS.md`](evidence/RESULTS.md).
 
 ## Verification chain
 
@@ -129,9 +144,10 @@ encoding's fixed slot order. Nothing here bounds an 87-gate circuit away.
 
 ## License / citation
 
-MIT. Release **v2.0.0** (2026-07-27) adds the two 88-gate circuits, the rebuilt
-engine and the campaign-87 certificate archive to the 97/92/89 records of the
-previous releases. If you use the method or the circuits, please cite this
+MIT. Release **v3.0.0** (2026-07-29) adds two more 88-gate circuits — the 88 @
+depth 6 found from scratch and the derived 88 @ depth 5 — with their run archives
+and shell certificates, to the 97/92/89/88@7/88@8 of v2. If you use the method or
+the circuits, please cite this
 repository and the artifact repository (see `CITATION.cff`). The accompanying
 note is published with the artifacts:
 [`paper/mixcolumns_note.pdf`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits/blob/main/paper/mixcolumns_note.pdf),

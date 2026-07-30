@@ -1,0 +1,178 @@
+[     0.0s 20:50:38] orbit worker start: label=o1 tlim=900s modes=['mixed', 'sym']
+[     0.0s 20:50:38] --- cycle 0: seed=sym90_a.json mode=mixed rng=2101000 ---
+[     0.0s 21:03:00] orbit worker start: label=o1 tlim=900s modes=['mixed', 'sym']
+[     0.0s 21:03:00] --- cycle 0: seed=sym90_a.json mode=mixed rng=2101000 ---
+[     0.0s 21:10:33] orbit worker start: label=o1 tlim=900s modes=['mixed', 'sym']
+[     0.0s 21:10:33] --- cycle 0: seed=sym90_a.json mode=mixed rng=2101000 ---
+[   900.0s 21:25:33] --- cycle 1: seed=sym90_b.json mode=sym rng=2101001 ---
+[  1800.1s 21:40:33] --- cycle 2: seed=div_23_g91_d7_j126.json mode=mixed rng=2101002 ---
+[  2700.2s 21:55:33] --- cycle 3: seed=sym90_a.json mode=sym rng=2101003 ---
+[  3600.2s 22:10:33] --- cycle 4: seed=sym90_b.json mode=mixed rng=2101004 ---
+[     0.0s 22:22:29] orbit worker start: label=o1 tlim=900s modes=['mixed', 'sym']
+[     0.0s 22:22:29] --- cycle 0: seed=sym90_a.json mode=mixed rng=2101000 ---
+[   900.0s 22:37:29] --- cycle 1: seed=sym90_b.json mode=sym rng=2101001 ---
+[  1800.1s 22:52:30] --- cycle 2: seed=div_23_g91_d7_j126.json mode=mixed rng=2101002 ---
+[  2700.2s 23:07:30] --- cycle 3: seed=sym90_a.json mode=sym rng=2101003 ---
+[  3600.3s 23:22:30] --- cycle 4: seed=sym90_b.json mode=mixed rng=2101004 ---
+[  4500.3s 23:37:30] --- cycle 5: seed=div_22_g91_d5_j115.json mode=sym rng=2101005 ---
+[  5400.4s 23:52:30] --- cycle 6: seed=sym90_a.json mode=mixed rng=2101006 ---
+[  6300.5s 00:07:30] --- cycle 7: seed=sym90_b.json mode=sym rng=2101007 ---
+[  7200.5s 00:22:30] --- cycle 8: seed=div_11_g89_d6_j118.json mode=mixed rng=2101008 ---
+[  8100.6s 00:37:30] --- cycle 9: seed=sym90_a.json mode=sym rng=2101009 ---
+[  9000.7s 00:52:30] --- cycle 10: seed=sym90_b.json mode=mixed rng=2101010 ---
+[  9900.8s 01:07:30] --- cycle 11: seed=div_23_g91_d7_j126.json mode=sym rng=2101011 ---
+[ 10800.9s 01:22:30] --- cycle 12: seed=sym90_a.json mode=mixed rng=2101012 ---
+[ 11700.9s 01:37:30] --- cycle 13: seed=sym90_b.json mode=sym rng=2101013 ---
+[ 12601.0s 01:52:30] --- cycle 14: seed=div_05_g89_d8_j107.json mode=mixed rng=2101014 ---
+[ 13501.1s 02:07:31] --- cycle 15: seed=sym90_a.json mode=sym rng=2101015 ---
+[ 14401.2s 02:22:31] --- cycle 16: seed=sym90_b.json mode=mixed rng=2101016 ---
+[ 15301.2s 02:37:31] --- cycle 17: seed=div_01_g89_d9_j107.json mode=sym rng=2101017 ---
+[ 16201.3s 02:52:31] --- cycle 18: seed=sym90_a.json mode=mixed rng=2101018 ---
+[ 17101.4s 03:07:31] --- cycle 19: seed=sym90_b.json mode=sym rng=2101019 ---
+[ 18001.4s 03:22:31] --- cycle 20: seed=div_08_g89_d9_j107.json mode=mixed rng=2101020 ---
+[ 18901.6s 03:37:31] --- cycle 21: seed=sym90_a.json mode=sym rng=2101021 ---
+[ 19801.6s 03:52:31] --- cycle 22: seed=sym90_b.json mode=mixed rng=2101022 ---
+[ 20701.7s 04:07:31] --- cycle 23: seed=div_19_g89_d7_j118.json mode=sym rng=2101023 ---
+[ 21601.8s 04:22:31] --- cycle 24: seed=sym90_a.json mode=mixed rng=2101024 ---
+[ 22501.9s 04:37:31] --- cycle 25: seed=sym90_b.json mode=sym rng=2101025 ---
+[ 23401.9s 04:52:31] --- cycle 26: seed=div_04_g89_d10_j107.json mode=mixed rng=2101026 ---
+[ 24302.0s 05:07:31] --- cycle 27: seed=sym90_a.json mode=sym rng=2101027 ---
+[ 25202.1s 05:22:32] --- cycle 28: seed=sym90_b.json mode=mixed rng=2101028 ---
+[ 26102.2s 05:37:32] --- cycle 29: seed=div_20_g89_d6_j118.json mode=sym rng=2101029 ---
+[ 27002.3s 05:52:32] --- cycle 30: seed=sym90_a.json mode=mixed rng=2101030 ---
+[ 27902.3s 06:07:32] --- cycle 31: seed=sym90_b.json mode=sym rng=2101031 ---
+[ 28802.4s 06:22:32] --- cycle 32: seed=div_18_g89_d8_j118.json mode=mixed rng=2101032 ---
+[ 29702.5s 06:37:32] --- cycle 33: seed=sym90_a.json mode=sym rng=2101033 ---
+[ 30602.6s 06:52:32] --- cycle 34: seed=sym90_b.json mode=mixed rng=2101034 ---
+[ 31502.6s 07:07:32] --- cycle 35: seed=div_04_g89_d10_j107.json mode=sym rng=2101035 ---
+[ 32402.7s 07:22:32] --- cycle 36: seed=sym90_a.json mode=mixed rng=2101036 ---
+[ 33302.8s 07:37:32] --- cycle 37: seed=sym90_b.json mode=sym rng=2101037 ---
+[ 34202.9s 07:52:32] --- cycle 38: seed=div_18_g89_d8_j118.json mode=mixed rng=2101038 ---
+[ 35103.0s 08:07:32] --- cycle 39: seed=sym90_a.json mode=sym rng=2101039 ---
+[ 36003.0s 08:22:32] --- cycle 40: seed=sym90_b.json mode=mixed rng=2101040 ---
+[ 36903.1s 08:37:33] --- cycle 41: seed=div_05_g89_d8_j107.json mode=sym rng=2101041 ---
+[ 37803.2s 08:52:33] --- cycle 42: seed=sym90_a.json mode=mixed rng=2101042 ---
+[ 38703.3s 09:07:33] --- cycle 43: seed=sym90_b.json mode=sym rng=2101043 ---
+[ 39603.3s 09:22:33] --- cycle 44: seed=div_17_g89_d10_j118.json mode=mixed rng=2101044 ---
+[ 40503.5s 09:37:33] --- cycle 45: seed=sym90_a.json mode=sym rng=2101045 ---
+[ 41403.5s 09:52:33] --- cycle 46: seed=sym90_b.json mode=mixed rng=2101046 ---
+[ 42303.6s 10:07:33] --- cycle 47: seed=div_01_g89_d9_j107.json mode=sym rng=2101047 ---
+[ 43203.7s 10:22:33] --- cycle 48: seed=sym90_a.json mode=mixed rng=2101048 ---
+[ 44103.8s 10:37:33] --- cycle 49: seed=sym90_b.json mode=sym rng=2101049 ---
+[ 45003.8s 10:52:33] --- cycle 50: seed=div_16_g89_d7_j118.json mode=mixed rng=2101050 ---
+[ 45904.0s 11:07:33] --- cycle 51: seed=sym90_a.json mode=sym rng=2101051 ---
+[ 46804.0s 11:22:33] --- cycle 52: seed=sym90_b.json mode=mixed rng=2101052 ---
+[ 47704.1s 11:37:34] --- cycle 53: seed=div_20_g89_d6_j118.json mode=sym rng=2101053 ---
+[ 48604.2s 11:52:34] --- cycle 54: seed=sym90_a.json mode=mixed rng=2101054 ---
+[ 49504.3s 12:07:34] --- cycle 55: seed=sym90_b.json mode=sym rng=2101055 ---
+[ 50404.4s 12:22:34] --- cycle 56: seed=div_06_g89_d10_j107.json mode=mixed rng=2101056 ---
+[ 51304.5s 12:37:34] --- cycle 57: seed=sym90_a.json mode=sym rng=2101057 ---
+[ 52204.6s 12:52:34] --- cycle 58: seed=sym90_b.json mode=mixed rng=2101058 ---
+[ 53104.6s 13:07:34] --- cycle 59: seed=div_02_g89_d8_j107.json mode=sym rng=2101059 ---
+[ 54004.8s 13:22:34] --- cycle 60: seed=sym90_a.json mode=mixed rng=2101060 ---
+[ 54904.9s 13:37:34] --- cycle 61: seed=sym90_b.json mode=sym rng=2101061 ---
+[ 55805.0s 13:52:34] --- cycle 62: seed=div_21_g90_d7_j127.json mode=mixed rng=2101062 ---
+[ 56705.1s 14:07:35] --- cycle 63: seed=sym90_a.json mode=sym rng=2101063 ---
+[ 57605.2s 14:22:35] --- cycle 64: seed=sym90_b.json mode=mixed rng=2101064 ---
+[ 58505.3s 14:37:35] --- cycle 65: seed=div_22_g91_d5_j115.json mode=sym rng=2101065 ---
+[ 59405.3s 14:52:35] --- cycle 66: seed=sym90_a.json mode=mixed rng=2101066 ---
+[ 60305.4s 15:07:35] --- cycle 67: seed=sym90_b.json mode=sym rng=2101067 ---
+[ 61202.6s 15:22:32] --- cycle 68: seed=div_14_g89_d8_j118.json mode=mixed rng=2101068 ---
+[ 62102.7s 15:37:32] --- cycle 69: seed=sym90_a.json mode=sym rng=2101069 ---
+[ 63002.8s 15:52:32] --- cycle 70: seed=sym90_b.json mode=mixed rng=2101070 ---
+[ 63902.8s 16:07:32] --- cycle 71: seed=div_05_g89_d8_j107.json mode=sym rng=2101071 ---
+[ 64803.0s 16:22:32] --- cycle 72: seed=sym90_a.json mode=mixed rng=2101072 ---
+[ 65703.1s 16:37:33] --- cycle 73: seed=sym90_b.json mode=sym rng=2101073 ---
+[ 66603.1s 16:52:33] --- cycle 74: seed=div_05_g89_d8_j107.json mode=mixed rng=2101074 ---
+[ 67503.2s 17:07:33] --- cycle 75: seed=sym90_a.json mode=sym rng=2101075 ---
+[ 68403.3s 17:22:33] --- cycle 76: seed=sym90_b.json mode=mixed rng=2101076 ---
+[ 69303.4s 17:37:33] --- cycle 77: seed=div_02_g89_d8_j107.json mode=sym rng=2101077 ---
+[ 70203.5s 17:52:33] --- cycle 78: seed=sym90_a.json mode=mixed rng=2101078 ---
+[ 71103.6s 18:07:33] --- cycle 79: seed=sym90_b.json mode=sym rng=2101079 ---
+[ 72003.7s 18:22:33] --- cycle 80: seed=div_12_g89_d7_j118.json mode=mixed rng=2101080 ---
+[ 72903.8s 18:37:33] --- cycle 81: seed=sym90_a.json mode=sym rng=2101081 ---
+[ 73803.9s 18:52:33] --- cycle 82: seed=sym90_b.json mode=mixed rng=2101082 ---
+[ 74704.0s 19:07:33] --- cycle 83: seed=div_18_g89_d8_j118.json mode=sym rng=2101083 ---
+[ 75604.1s 19:22:34] --- cycle 84: seed=sym90_a.json mode=mixed rng=2101084 ---
+[ 76504.2s 19:37:34] --- cycle 85: seed=sym90_b.json mode=sym rng=2101085 ---
+[ 77404.3s 19:52:34] --- cycle 86: seed=div_06_g89_d10_j107.json mode=mixed rng=2101086 ---
+[ 78304.4s 20:07:34] --- cycle 87: seed=sym90_a.json mode=sym rng=2101087 ---
+[ 79204.5s 20:22:34] --- cycle 88: seed=sym90_b.json mode=mixed rng=2101088 ---
+[ 80104.6s 20:37:34] --- cycle 89: seed=div_19_g89_d7_j118.json mode=sym rng=2101089 ---
+[ 81004.7s 20:52:34] --- cycle 90: seed=sym90_a.json mode=mixed rng=2101090 ---
+[ 81904.8s 21:07:34] --- cycle 91: seed=sym90_b.json mode=sym rng=2101091 ---
+[ 82804.9s 21:22:34] --- cycle 92: seed=div_11_g89_d6_j118.json mode=mixed rng=2101092 ---
+[ 83705.0s 21:37:34] --- cycle 93: seed=sym90_a.json mode=sym rng=2101093 ---
+[ 84605.1s 21:52:35] --- cycle 94: seed=sym90_b.json mode=mixed rng=2101094 ---
+[ 85505.2s 22:07:35] --- cycle 95: seed=div_18_g89_d8_j118.json mode=sym rng=2101095 ---
+[ 86405.3s 22:22:35] --- cycle 96: seed=sym90_a.json mode=mixed rng=2101096 ---
+[ 87305.4s 22:37:35] --- cycle 97: seed=sym90_b.json mode=sym rng=2101097 ---
+[ 88205.4s 22:52:35] --- cycle 98: seed=div_09_g89_d9_j107.json mode=mixed rng=2101098 ---
+[ 89105.6s 23:07:35] --- cycle 99: seed=sym90_a.json mode=sym rng=2101099 ---
+[ 90005.7s 23:22:35] --- cycle 100: seed=sym90_b.json mode=mixed rng=2101100 ---
+[ 90905.8s 23:37:35] --- cycle 101: seed=div_05_g89_d8_j107.json mode=sym rng=2101101 ---
+[ 91805.9s 23:52:35] --- cycle 102: seed=sym90_a.json mode=mixed rng=2101102 ---
+[ 92706.0s 00:07:35] --- cycle 103: seed=sym90_b.json mode=sym rng=2101103 ---
+[ 93606.0s 00:22:35] --- cycle 104: seed=div_21_g90_d7_j127.json mode=mixed rng=2101104 ---
+[ 94506.2s 00:37:36] --- cycle 105: seed=sym90_a.json mode=sym rng=2101105 ---
+[ 95406.3s 00:52:36] --- cycle 106: seed=sym90_b.json mode=mixed rng=2101106 ---
+[ 96306.4s 01:07:36] --- cycle 107: seed=div_18_g89_d8_j118.json mode=sym rng=2101107 ---
+[ 97206.5s 01:22:36] --- cycle 108: seed=sym90_a.json mode=mixed rng=2101108 ---
+[ 98106.6s 01:37:36] --- cycle 109: seed=sym90_b.json mode=sym rng=2101109 ---
+[ 99006.7s 01:52:36] --- cycle 110: seed=div_17_g89_d10_j118.json mode=mixed rng=2101110 ---
+[ 99906.9s 02:07:36] --- cycle 111: seed=sym90_a.json mode=sym rng=2101111 ---
+[100807.0s 02:22:36] --- cycle 112: seed=sym90_b.json mode=mixed rng=2101112 ---
+[101707.1s 02:37:37] --- cycle 113: seed=div_14_g89_d8_j118.json mode=sym rng=2101113 ---
+[102607.3s 02:52:37] --- cycle 114: seed=sym90_a.json mode=mixed rng=2101114 ---
+[103507.4s 03:07:37] --- cycle 115: seed=sym90_b.json mode=sym rng=2101115 ---
+[104407.5s 03:22:37] --- cycle 116: seed=div_14_g89_d8_j118.json mode=mixed rng=2101116 ---
+[105307.6s 03:37:37] --- cycle 117: seed=sym90_a.json mode=sym rng=2101117 ---
+[106207.7s 03:52:37] --- cycle 118: seed=sym90_b.json mode=mixed rng=2101118 ---
+[107107.8s 04:07:37] --- cycle 119: seed=div_16_g89_d7_j118.json mode=sym rng=2101119 ---
+[108008.0s 04:22:37] --- cycle 120: seed=sym90_a.json mode=mixed rng=2101120 ---
+[108908.1s 04:37:38] --- cycle 121: seed=sym90_b.json mode=sym rng=2101121 ---
+[109808.2s 04:52:38] --- cycle 122: seed=div_18_g89_d8_j118.json mode=mixed rng=2101122 ---
+[110705.4s 05:07:35] --- cycle 123: seed=sym90_a.json mode=sym rng=2101123 ---
+[111605.5s 05:22:35] --- cycle 124: seed=sym90_b.json mode=mixed rng=2101124 ---
+[112505.6s 05:37:35] --- cycle 125: seed=div_09_g89_d9_j107.json mode=sym rng=2101125 ---
+[113405.8s 05:52:35] --- cycle 126: seed=sym90_a.json mode=mixed rng=2101126 ---
+[114305.9s 06:07:35] --- cycle 127: seed=sym90_b.json mode=sym rng=2101127 ---
+[115206.0s 06:22:35] --- cycle 128: seed=div_09_g89_d9_j107.json mode=mixed rng=2101128 ---
+[116106.2s 06:37:36] --- cycle 129: seed=sym90_a.json mode=sym rng=2101129 ---
+[117006.2s 06:52:36] --- cycle 130: seed=sym90_b.json mode=mixed rng=2101130 ---
+[117906.3s 07:07:36] --- cycle 131: seed=div_16_g89_d7_j118.json mode=sym rng=2101131 ---
+[118806.5s 07:22:36] --- cycle 132: seed=sym90_a.json mode=mixed rng=2101132 ---
+[119706.6s 07:37:36] --- cycle 133: seed=sym90_b.json mode=sym rng=2101133 ---
+[120606.7s 07:52:36] --- cycle 134: seed=div_05_g89_d8_j107.json mode=mixed rng=2101134 ---
+[121506.9s 08:07:36] --- cycle 135: seed=sym90_a.json mode=sym rng=2101135 ---
+[122407.1s 08:22:37] --- cycle 136: seed=sym90_b.json mode=mixed rng=2101136 ---
+[123307.2s 08:37:37] --- cycle 137: seed=div_04_g89_d10_j107.json mode=sym rng=2101137 ---
+[124207.3s 08:52:37] --- cycle 138: seed=sym90_a.json mode=mixed rng=2101138 ---
+[125107.4s 09:07:37] --- cycle 139: seed=sym90_b.json mode=sym rng=2101139 ---
+[126007.5s 09:22:37] --- cycle 140: seed=div_13_g89_d9_j118.json mode=mixed rng=2101140 ---
+[126907.7s 09:37:37] --- cycle 141: seed=sym90_a.json mode=sym rng=2101141 ---
+[127807.8s 09:52:37] --- cycle 142: seed=sym90_b.json mode=mixed rng=2101142 ---
+[128707.9s 10:07:37] --- cycle 143: seed=div_09_g89_d9_j107.json mode=sym rng=2101143 ---
+[129608.1s 10:22:38] --- cycle 144: seed=sym90_a.json mode=mixed rng=2101144 ---
+[130508.3s 10:37:38] --- cycle 145: seed=sym90_b.json mode=sym rng=2101145 ---
+[131408.4s 10:52:38] --- cycle 146: seed=div_08_g89_d9_j107.json mode=mixed rng=2101146 ---
+[132308.6s 11:07:38] --- cycle 147: seed=sym90_a.json mode=sym rng=2101147 ---
+[133208.7s 11:22:38] --- cycle 148: seed=sym90_b.json mode=mixed rng=2101148 ---
+[134109.0s 11:37:38] --- cycle 149: seed=div_20_g89_d6_j118.json mode=sym rng=2101149 ---
+[135009.2s 11:52:39] --- cycle 150: seed=sym90_a.json mode=mixed rng=2101150 ---
+[135909.3s 12:07:39] --- cycle 151: seed=sym90_b.json mode=sym rng=2101151 ---
+[136809.4s 12:22:39] --- cycle 152: seed=div_04_g89_d10_j107.json mode=mixed rng=2101152 ---
+[137709.7s 12:37:39] --- cycle 153: seed=sym90_a.json mode=sym rng=2101153 ---
+[138609.8s 12:52:39] --- cycle 154: seed=sym90_b.json mode=mixed rng=2101154 ---
+[139509.9s 13:07:39] --- cycle 155: seed=div_08_g89_d9_j107.json mode=sym rng=2101155 ---
+[140410.1s 13:22:39] --- cycle 156: seed=sym90_a.json mode=mixed rng=2101156 ---
+[141310.2s 13:37:40] --- cycle 157: seed=sym90_b.json mode=sym rng=2101157 ---
+[142210.3s 13:52:40] --- cycle 158: seed=div_21_g90_d7_j127.json mode=mixed rng=2101158 ---
+[143110.4s 14:07:40] --- cycle 159: seed=sym90_a.json mode=sym rng=2101159 ---
+[144010.5s 14:22:40] --- cycle 160: seed=sym90_b.json mode=mixed rng=2101160 ---
+[144910.8s 14:37:40] --- cycle 161: seed=div_17_g89_d10_j118.json mode=sym rng=2101161 ---
+[145811.1s 14:52:41] --- cycle 162: seed=sym90_a.json mode=mixed rng=2101162 ---
+[146711.2s 15:07:41] --- cycle 163: seed=sym90_b.json mode=sym rng=2101163 ---
+[147611.3s 15:22:41] --- cycle 164: seed=div_19_g89_d7_j118.json mode=mixed rng=2101164 ---
+[147612.1s 15:22:42] orbit_search raised RuntimeError('value-set not realizable') -- next cycle
+[147614.3s 15:22:44] --- cycle 165: seed=sym90_a.json mode=sym rng=2101165 ---

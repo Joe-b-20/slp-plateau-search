@@ -19,6 +19,18 @@
  },
  {
   "gates": 88,
+  "depth": 5,
+  "file": "circuits/mixcolumns_88gates_depth5.json",
+  "sha256": "9bd2019d7d033defa79d165ab3b68a20879b3142a97c16d691835397ff7b58e3"
+ },
+ {
+  "gates": 88,
+  "depth": 6,
+  "file": "circuits/mixcolumns_88gates_depth6.json",
+  "sha256": "799440d7578809b4cbb62988537bcac8e51351648b380eb20a7e40dc5c1b4f96"
+ },
+ {
+  "gates": 88,
   "depth": 7,
   "file": "circuits/mixcolumns_88gates_depth7.json",
   "sha256": "d87f6ed982518d93387ed07abbe3b6fb96e76b96a45e9e3136ed2d271f924c20"
