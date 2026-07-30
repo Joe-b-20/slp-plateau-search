@@ -24,7 +24,7 @@ The engine name "alt" is not an engine but a worker mode: it alternates a short
 best. The walk sprays across the plateau (hundreds of iterations per second,
 harvesting as it goes) and the lns then punches down from wherever the walk
 ended up; this alternation is what the campaign's best-performing hunt workers
-ran, and it is how all four 88-gate circuits were reached.
+ran, and it is how all five 88-gate circuits were reached.
 
 Usage (the coordinator calls this):
   python3 worker.py <label> <engine|alt> <depth|none> <scratch|seedfile> <out_dir> <seeds_csv>

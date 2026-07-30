@@ -20,6 +20,12 @@
  {
   "gates": 88,
   "depth": 5,
+  "file": "circuits/mixcolumns_88gates_depth5_fromscratch.json",
+  "sha256": "8ab87fc7ff3bc6a1a5b0e517d386ff06ba35235457752af31bbbfffdb8b4252c"
+ },
+ {
+  "gates": 88,
+  "depth": 5,
   "file": "circuits/mixcolumns_88gates_depth5.json",
   "sha256": "9bd2019d7d033defa79d165ab3b68a20879b3142a97c16d691835397ff7b58e3"
  },

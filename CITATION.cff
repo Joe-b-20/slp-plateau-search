@@ -4,8 +4,8 @@ title: "slp-plateau-search: value-set SLP search with plateau walking and destro
 authors:
   - family-names: Bachir
     given-names: Joe
-version: "3.0.0"
-date-released: 2026-07-29
+version: "3.1.0"
+date-released: 2026-07-30
 repository-code: "https://github.com/Joe-b-20/slp-plateau-search"
 doi: 10.5281/zenodo.21402996
 identifiers:
@@ -14,7 +14,7 @@ identifiers:
     description: "Concept DOI for all versions; resolves to the latest release."
   - type: doi
     value: 10.5281/zenodo.21696094
-    description: "Version DOI for v3.0.0."
+    description: "Version DOI of the earlier v3.0.0 release (historical; cite the concept DOI above for this version, whose own version DOI is minted when the v3.1.0 release is published)."
   - type: doi
     value: 10.5281/zenodo.21402997
     description: "Version DOI of the earlier v1.0.0 release (historical; cite the concept DOI above for this version)."

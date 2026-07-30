@@ -1,0 +1,26 @@
+scanned 37305 lines in 63s
+distinct 88-gate target-covering states: 37305
+ASAP min-depth histogram: [(5, 135), (6, 5829), (7, 13315), (8, 4955), (9, 6637), (10, 5571), (11, 863)]
+other: {}
+
+distinct states with ASAP depth <= 5: 135
+   line 35285  is_record=True
+   line 35286  is_record=False
+   line 35380  is_record=False
+   line 35398  is_record=False
+   line 35399  is_record=False
+   line 35400  is_record=False
+   line 35411  is_record=False
+   line 35412  is_record=False
+   line 35413  is_record=False
+   line 35414  is_record=False
+   line 35460  is_record=False
+   line 35480  is_record=False
+   line 35481  is_record=False
+   line 35482  is_record=False
+   line 35483  is_record=False
+   line 35590  is_record=False
+   line 35591  is_record=False
+   line 35592  is_record=False
+   line 35593  is_record=False
+   line 35605  is_record=False

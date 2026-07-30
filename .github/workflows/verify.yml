@@ -12,11 +12,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      # Eight records. NOTE: two of them sit at the same (gates, depth) point --
+      # the from-scratch 88 @ depth 5 and the derived one -- so every check here
+      # is keyed on the FILE, never on the (gates, depth) pair.
       - name: Verify the record circuits with the standalone oracle
         run: |
           python verify_circuit.py evidence/circuits/mixcolumns_97gates_depth3.json 3
           python verify_circuit.py evidence/circuits/mixcolumns_92gates_depth4.json 4
           python verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
+          python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 5
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json 5
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth6.json 6
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth7.json 7
@@ -33,6 +37,7 @@ jobs:
           fail_at evidence/circuits/mixcolumns_97gates_depth3.json 2
           fail_at evidence/circuits/mixcolumns_92gates_depth4.json 3
           fail_at evidence/circuits/mixcolumns_89gates_depth5.json 4
+          fail_at evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 4
           fail_at evidence/circuits/mixcolumns_88gates_depth5.json 4
           fail_at evidence/circuits/mixcolumns_88gates_depth6.json 5
           fail_at evidence/circuits/mixcolumns_88gates_depth7.json 6

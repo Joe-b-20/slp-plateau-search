@@ -804,7 +804,7 @@ def _repair(S2, rng, avail=None, forbid=()):
     EVERY possible single-mask repair (campaign: repair-move); the v1 engine
     sampled random candidates and gave up after `tries`, which is why its 88
     plateau looked frozen -- exact repair made it move (~7x plateau mobility,
-    and it is how all four 88s were reached).  `forbid` holds the masks just
+    and it is how all five 88s were reached).  `forbid` holds the masks just
     removed: re-adding one is a no-op ping-pong.  Among valid repairs, prefer
     the one that trims smallest, tie-broken by low weight then reuse."""
     if avail is None:

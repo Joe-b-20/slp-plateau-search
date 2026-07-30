@@ -1,0 +1,6 @@
+circuit FOUND_88gates_depth5_fromscratch.json  masks=88 periphery=56  k=3 budget=2  shard 2/3
+progress 2000 255s {'irreducible': 2000}
+progress 4000 522s {'irreducible': 4000}
+progress 6000 665s {'irreducible': 6000}
+progress 8000 872s {'irreducible': 8000}
+DONE windows=9240 hits=0 954s stats={'irreducible': 9240}

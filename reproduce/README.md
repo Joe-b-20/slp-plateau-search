@@ -1,9 +1,10 @@
 # reproduce — one command per record, with its measured time
 
-Everything here is dependency-free Python 3 (stdlib only). Four of the seven
+Everything here is dependency-free Python 3 (stdlib only). Four of the eight
 verified circuits have a reproduction command: two run from this folder, two are
-pipeline runs, and all four are in one table. The other three — the 88 @ depth 6,
-the 88 @ depth 5 and the 88 @ depth 8 — have none, for the reasons below.
+pipeline runs, and all four are in one table. The other four — the from-scratch
+88 @ depth 5, the 88 @ depth 6, the derived 88 @ depth 5 and the 88 @ depth 8 —
+have none, for the reasons below.
 
 Every search is stochastic. Times below are **what a run actually took**, dated
 and labelled — a measurement, never a promise.
@@ -123,28 +124,36 @@ configuration. Our 88 @ depth 7 **matches** the published 88-gate record
 (Jean, ePrint 2026/1481) **with an independent circuit** — 61 of 88 masks in
 common — it does not beat it.
 
-## The three circuits with no command here, and why
+## The four circuits with no command here, and why
 
-- The **88 @ depth 8** (a third distinct family) and the **88 @ depth 5** (the
-  shallowest 88 here) both have seed chains that pass through Jean's published
+- The **88 @ depth 8** (a third distinct family) and the **derived 88 @ depth 5**
+  both have seed chains that pass through Jean's published
   circuit, so both are reported as derived work and neither is offered as a
   recipe. Their run archives are
   `../evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` and
   `../evidence/campaign87_run_2026-07-29_got_88at5_derived/`, each with the exact
   code, the seed and the untouched logs; the 88 @ 8's seed also ships as
   `../pipeline/seeds/seed_88_at_depth8_thirdfamily.json`.
-- The **88 @ depth 6** is clean — found from scratch — but it came out of restart
-  18 of one worker of a multi-day 16-process fleet, 18.96 h in, and no single
+- The **88 @ depth 6** and the **from-scratch 88 @ depth 5** are clean — both
+  found from scratch — but each came out of one restart of one worker of a
+  multi-day 16-process fleet (restart 18, 18.96 h in; and session 5 restart 16,
+  19.22 h in), and no single
   command reproduces that. What is archived instead is everything needed to
-  re-run the *step*: the root is `constructors.build("naive", 2163)` in
-  `../evidence/campaign87_run_2026-07-28_got_88at6_fromscratch/code/`, which
-  re-derives the logged 139-gate depth-3 root exactly, and the worker log records
-  every chunk from there to 88 gates.
+  re-run the *step*: the roots are `constructors.build("naive", 2163)` and
+  `constructors.build("naive", 1958)`, both in
+  `../evidence/campaign87_run_2026-07-28_got_88at6_fromscratch/code/` (the later
+  run's archive hash-pins that same code rather than duplicating it), which
+  re-derive the logged 139-gate and 146-gate depth-3 roots exactly, and the
+  worker logs record every chunk from there to 88 gates. The from-scratch
+  88 @ depth 5 is the frontier's depth-5 point; it is **not** a gate-count
+  record, since 88 is Jean's published count and Jean has priority.
 
 To continue the hunt for 87 from the three 88-gate family anchors the pipeline
 ships, use its shipped set: `python3 ladder_parallel.py --mode fixed` (i.e.
 `--workers hunt87`), minding the provenance note in `../pipeline/README.md`. The
-fourth family's anchor is `../evidence/circuits/mixcolumns_88gates_depth6.json`.
+two from-scratch families' anchors are
+`../evidence/circuits/mixcolumns_88gates_depth6.json` and
+`../evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json`.
 
 ## Legacy demonstrations (opt-in)
 
@@ -178,7 +187,7 @@ current engine.
 
 The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign.
 That rebuild is why the 89 @ depth 5 now comes back in seconds and why any of
-the four 88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
+the five 88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
 each change with its measured effect.
 
 `mixcolumns_core.py` in this folder is a **byte-identical copy** of

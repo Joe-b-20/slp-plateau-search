@@ -18,7 +18,8 @@ python3 ladder_parallel.py [--mode cascade|fixed] [--workers hunt87|sub89]
                            [--stop-gates N] [--stop-depth D]
 
 # hunt 87 from the three 88-gate family anchors this set ships (the shipped
-# configuration; the fourth family of METHODS.md S11 is not one of them):
+# configuration; the two from-scratch families of METHODS.md S11 are not
+# among them):
 python3 ladder_parallel.py --mode fixed
 
 # replicate the earlier records:
@@ -49,8 +50,9 @@ disk. Every run self-archives the exact code that produced it into its own
   from-scratch 97 @ depth 3). Expect hours.
 - **`--mode fixed --workers hunt87`** — the current hunt for 87: one uncapped
   `alt` worker on each of the three 88-gate family anchors it ships (ours 88@7,
-  the third-family 88@8, and Jean's published 88@7 — the fourth family, our 88@6,
-  postdates this set and is not among them), plus a depth-6-capped `lns`
+  the third-family 88@8, and Jean's published 88@7 — the two from-scratch
+  families, our 88@6 and our frontier 88@5, postdate this set and are not among
+  them), plus a depth-6-capped `lns`
   worker on our 89@depth5. The family workers run with `reseed=False`: an
   equal-size shallower circuit counts as Pareto-better, so a single reseed pass
   would collapse all three onto one circuit and destroy the diversity that is

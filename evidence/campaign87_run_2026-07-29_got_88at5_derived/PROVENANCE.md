@@ -9,6 +9,30 @@ Our engine found it, but **its seed chain passes through Jean's published 88**
 Jean is credited at every step. It is also **not** a gate-count record: 88 is
 the published best-known count and Jean has priority.
 
+**Superseded at its Pareto point on 2026-07-30, and retained anyway.** An 88 @
+depth 5 found **from scratch** (`../campaign87_run_2026-07-30_got_88at5_fromscratch/`)
+now establishes the (88, depth 5) point, and this repository's frontier no longer
+depends on Jean's circuit anywhere. This archive is kept unchanged: a documented
+derived result is worth more than a deleted one, and it is the record both of how
+the project first reached depth 5 at 88 gates and of the seed-rotation bug that
+made the route derived. The two circuits are far apart — plain Jaccard 0.313
+(weighted 0.064, on the campaign's calibrated metric, which is computed outside
+this repository).
+
+**Exactly what changed in this file on 2026-07-30**, so the diff holds no
+surprises. Besides this note: (i) the family table gained a row for the
+from-scratch 88 @ depth 5 (42 shared, J 0.313) and a following sentence pointing
+out that the circuit which now holds the (88, 5) point is among the most distant
+88s from this one; (ii) in the sentence under that table, the clause "**and the
+shallowest 88 this project holds**" was **deleted**, not rephrased — it became
+false the moment a second circuit reached depth 5 — and "not a fifth family" was
+reworded to "not a family of its own", which says the same thing without an
+ordinal that the new circuit would have made ambiguous. Nothing else in the file
+was touched, no run material (log, status, bests, `code/`) was touched at all,
+and **no claim this file made is withdrawn**: it is still 88 gates at depth 5,
+still verified, still six gates below the published depth-5 point, still the
+record-89 basin reached at 88 gates, and still derived work.
+
 The chain, every link checked by mask identity (`J→prev` is the Jaccard to the
 previous stage; re-measured 2026-07-29):
 
@@ -61,11 +85,14 @@ family):
 | Jean's 88 (family 2) | 62 | 0.544 | 0.366 |
 | Sun–Yang–Li's 89 | 61 | 0.526 | 0.345 |
 | our 88 @ d6 (family 4) | 42 | 0.313 | 0.098 |
+| our from-scratch 88 @ d5 | 42 | 0.313 | 0.098 |
 
 At 0.735 to the record 89 @ depth 5 it sits **above** the same-family threshold,
-and closer to that 89 than to any 88. The honest description is therefore: **the
-record-89 basin reached at 88 gates, and the shallowest 88 this project holds** —
-not a fifth family.
+and closer to that 89 than to any 88. The honest description is therefore **the
+record-89 basin reached at 88 gates**, not a family of its own. Note the last
+row: the circuit that now holds the (88, depth 5) point is one of the *most*
+distant 88s from this one — the two reach the same Pareto point from opposite
+ends of the plateau.
 
 ## The run
 

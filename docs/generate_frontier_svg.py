@@ -10,16 +10,23 @@ Data sources (no number here is invented):
     depth: the 7 and the 9 are both this repo's measurements of its own
     transcriptions, and are marked as such symmetrically.
   - this project's circuits: ../evidence/circuits/spectrum.json
-    (97@3, 92@4, 89@5, 88@5, 88@6, 88@7, 88@8), all oracle-verified.
-  - two frontiers are drawn, because the honest statement needs both:
-      own lineage (solid blue)  97@3, 92@4, 89@5, 88@6
-      combined      (dotted)   97@3, 92@4, 88@5
-    The difference is the 88@5, whose seed chain passes through Jean's published
-    circuit (derived work, hollow marker), as does the dominated 88@8's.
+    (97@3, 92@4, 89@5, 88@5 twice, 88@6, 88@7, 88@8), all oracle-verified.
+  - ONE frontier is drawn now (v3.1). Until 2026-07-30 the (88, 5) point was held
+    only by a circuit whose seed chain runs through Jean's published work, so the
+    figure carried a solid own-lineage line and a dotted combined one. A
+    from-scratch 88@5 (root constructors.build("naive", 1958)) now holds that
+    point, so the two lines collapse into one:
+      verified frontier (solid blue)  97@3, 92@4, 88@5, entirely own lineage.
+    That is a statement about OUR provenance, not about Jean's result: 88 is his
+    published count, he has priority, and nothing here beats it. What changed is
+    that this project no longer depends on his circuit to reach depth 5.
+  - TWO circuits sit at (88, 5): the from-scratch one (filled blue, the frontier
+    point) and the derived one (hollow ring drawn concentrically around it,
+    retained and still disclosed as derived work), as is the dominated 88@8.
+  - our own 89@5 and 88@6 are verified own-lineage circuits that the from-scratch
+    88@5 now dominates: filled blue dots, off the frontier line.
   - our 88@7 ties Jean's published 88@7 with a different circuit (61/88 shared
-    masks) -- it does not beat it. 88 is Jean's count and Jean has priority; what
-    is ours is the depth at which 88 gates is reached: the from-scratch 88@6
-    dominates both Jean's 88@7 and Maximov's 92@6.
+    masks) -- it does not beat it.
   - the three "superseded" crosses (98@3, 91@6, 89@10) are this project's own
     earlier results, carried over unchanged from the v1 figure.
 
@@ -46,19 +53,22 @@ PUBLISHED = [(3, 99, "99 SFX23", 9, -8, "start"),
 # published but dominated by 88@7, so not a frontier point (depth is our own
 # measurement of our transcription -- the paper states none)
 PUBLISHED_OFF = [(9, 89, "89 SYL25", 9, -9, "start")]
-# this project, verified (spectrum.json). OURS is the own-lineage frontier; the
-# 88@6 is its deepest-cutting point and was found from scratch.
-# label offsets are chosen so no count label is crossed by the solid own-lineage
-# line or by the dotted combined line (both leave (3,97) and (4,92))
+# this project, verified (spectrum.json). OURS is THE frontier -- one line, all
+# own lineage; its depth-5 point was found from scratch.
+# label offsets are chosen so no count label is crossed by the frontier line
 OURS = [(3, 97, "97", 11, -8, "start"),
         (4, 92, "92", -10, 4, "end"),
-        (5, 89, "89", 8, -8, "start"),
-        (6, 88, "88 @ 6 from scratch", 10, 20, "start")]
+        (5, 88, "88 @ 5 from scratch", -12, 20, "end")]
+FRONTIER = [(3, 97), (4, 92), (5, 88)]
+# ours, own lineage, verified, but dominated by the frontier point above
+OURS_DOMINATED = [(5, 89, "89", 8, -8, "start"),
+                  (6, 88, "88 @ 6 from scratch", 10, 20, "start")]
 TIE = (7, 88)                                # ours == published count and depth
-# ours, but the seed chain runs through Jean's published 88 (METHODS.md S9)
-OURS_DERIVED = [(5, 88, "88 @ 5 derived", -10, 4, "end"),
-                (8, 88, "88 @ 8 derived, dominated", 10, 20, "start")]
-COMBINED = [(3, 97), (4, 92), (5, 88)]       # frontier including derived work
+# ours, but the seed chain runs through Jean's published 88 (METHODS.md S9).
+# The depth-5 entry is drawn as a ring AROUND the frontier dot: same Pareto
+# point, two different circuits, one of them derived.
+OURS_DERIVED_RING = (5, 88)
+OURS_DERIVED = [(8, 88, "88 @ 8 derived, dominated", 10, 20, "start")]
 SUPERSEDED = [(3, 98), (6, 91), (10, 89)]
 
 
@@ -112,18 +122,25 @@ def main():
          '2024), 92 at depth 6 (Maximov) and 88 at depth 7 (Jean, ePrint '
          '2026/1481; that paper states no depth either, so the 7 is likewise '
          'this repository\'s own measurement of its transcription). This work '
-         'draws two frontiers. The own-lineage frontier (solid blue) runs 97 at '
-         'depth 3, 92 at depth 4, 89 at depth 5 and 88 at depth 6, the last '
-         'found from scratch; it dominates both Jean\'s 88 at depth 7 and '
-         'Maximov\'s 92 at depth 6. The combined frontier (dotted blue) runs 97 '
-         'at depth 3, 92 at depth 4 and 88 at depth 5, the depth-5 point being '
-         'derived work whose seed chain passes through Jean\'s published circuit '
-         'and which is therefore drawn as a hollow blue marker. The depth-7 '
+         'draws a single frontier (solid blue): 97 gates at depth 3, 92 at '
+         'depth 4 and 88 at depth 5, every point of it this project\'s own '
+         'lineage with no imported material. The depth-5 point is an 88-gate '
+         'circuit found from scratch, from a randomized XOR tree over the 32 raw '
+         'inputs; it dominates Jean\'s 88 at depth 7 and Maximov\'s 92 at '
+         'depth 6 and improves on the published 94 at depth 5 by six gates. It '
+         'is not a gate-count record: 88 is Jean\'s published count and Jean has '
+         'priority, and what changed is only that this project no longer needs '
+         'his circuit to reach depth 5. A hollow blue ring is drawn around that '
+         'same depth-5 point for a second, derived 88-gate circuit whose seed '
+         'chain passes through Jean\'s published work, retained and still '
+         'labelled derived. Filled blue dots off the line mark this project\'s '
+         'own 89 at depth 5 and 88 at depth 6, both verified, both dominated by '
+         'the depth-5 point; the 88 at depth 6 was also found from scratch and '
+         'is a different family. The depth-7 '
          'point is drawn as a half-grey half-blue marker because our 88 there '
          'ties the published 88 with an independent circuit (61 of 88 masks '
-         'shared) rather than beating it: 88 is the published count and Jean has '
-         'priority. A second hollow blue marker shows our 88 at depth 8, also '
-         'derived and dominated by our own 88 at depth 7. A hollow grey '
+         'shared) rather than beating it. A hollow blue marker shows our 88 at '
+         'depth 8, derived and dominated by our own 88 at depth 7. A hollow grey '
          'marker shows the published Sun-Yang-Li 89 (ePrint 2025/1493), off '
          'the frontier; that paper states no depth, so it is placed at depth 9, '
          'this repository\'s own measurement of its transcription. Crosses mark '
@@ -161,16 +178,29 @@ def main():
     for d, g in SUPERSEDED:
         cross(e, x(d), y(g))
 
-    # this work: the combined frontier first, so the own-lineage line sits on top
-    pts = " ".join(f"{x(d):.1f},{y(g):.1f}" for d, g in COMBINED)
-    e.append(f'<polyline points="{pts}" fill="none" stroke="{BLUE}" stroke-width="2" '
-             f'stroke-dasharray="2,3"/>')
-    pts = " ".join(f"{x(d):.1f},{y(g):.1f}" for d, g, *_ in OURS)
+    # this work: our own verified points that the frontier dominates, then the
+    # frontier line, then the frontier dots on top
+    for d, g, txt, dx, dy, anch in OURS_DOMINATED:
+        dot(e, x(d), y(g), 6, BLUE)
+        label(e, x(d), y(g), dx, dy, txt, BLUE, anch,
+              size=(12 if len(txt) > 3 else None), weight=(len(txt) <= 3))
+
+    pts = " ".join(f"{x(d):.1f},{y(g):.1f}" for d, g in FRONTIER)
     e.append(f'<polyline points="{pts}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+
+    # the derived circuit sits on the SAME Pareto point as the frontier's
+    # depth-5 one: a ring around it. fill="none" so the frontier line, which
+    # terminates at this point, is not occluded by it.
+    rd, rg = OURS_DERIVED_RING
+    e.append(f'<circle cx="{x(rd):.1f}" cy="{y(rg):.1f}" r="10" fill="none" '
+             f'stroke="{BLUE}" stroke-width="2"/>')
+
     for d, g, txt, dx, dy, anch in OURS:
         dot(e, x(d), y(g), 6, BLUE)
         label(e, x(d), y(g), dx, dy, txt, BLUE, anch,
               size=(12 if len(txt) > 3 else None), weight=(len(txt) <= 3))
+    e.append(f'<text x="{XL+10}" y="322" font-size="11" fill="{BLUE}">'
+             f'depth 5: from scratch (filled) + derived (ring)</text>')
 
     # the tie: same count, same depth, different circuit
     half_dot(e, x(TIE[0]), y(TIE[1]))
@@ -185,8 +215,8 @@ def main():
     # legend
     lx, tx = 407, 432
     rows = [("dashline", "published frontier"),
-            ("blueline", "this work, own lineage"),
-            ("dotline", "this work, combined"),
+            ("blueline", "this work, verified frontier"),
+            ("bluedot", "ours, own lineage, dominated"),
             ("half", "88 @ 7: ours ties published"),
             ("hollowblue", "ours, derived from published"),
             ("hollowgrey", "published, off-frontier"),
@@ -200,9 +230,8 @@ def main():
         elif kind == "blueline":
             e.append(f'<line x1="{lx-17}" y1="{ly-4}" x2="{lx+17}" y2="{ly-4}" stroke="{BLUE}" stroke-width="2.5"/>')
             dot(e, lx, ly - 4, 6, BLUE)
-        elif kind == "dotline":
-            e.append(f'<line x1="{lx-17}" y1="{ly-4}" x2="{lx+17}" y2="{ly-4}" stroke="{BLUE}" '
-                     f'stroke-width="2" stroke-dasharray="2,3"/>')
+        elif kind == "bluedot":
+            dot(e, lx, ly - 4, 6, BLUE)
         elif kind == "half":
             half_dot(e, lx, ly - 4)
         elif kind == "hollowblue":

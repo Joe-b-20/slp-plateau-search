@@ -13,6 +13,29 @@ depth 7 (equal count, one level shallower — depth 7 being our own measurement 
 our transcription, since that note states no depth) and improves on the published
 depth-6 point of 92 gates (Maximov) by four gates.
 
+**Standing after 2026-07-30.** The same worker later found an 88 @ **depth 5**
+from scratch (`../campaign87_run_2026-07-30_got_88at5_fromscratch/`), which
+dominates this circuit and takes the depth-5 frontier point. This one keeps its
+own standing: it is a **different family** — plain Jaccard 0.323 between them,
+and weighted Jaccard 0.1025 (that weighted metric is calibrated and computed in
+the raw campaign tree; neither its implementation nor its corpus is in this
+repository, so treat the plain figure as the checkable one) — and it remains the
+**first 88 this project found from scratch**. Its certificates and its basin
+survey stand unchanged.
+
+**Commentary edited 2026-07-30; run material untouched.** Four changes, all
+below, all additive except where noted: (i) the cross-pollination argument
+gained a dated **"(c) Strengthened 2026-07-30"** sub-argument — the original
+two-part form is kept above it verbatim and is still the form that stands on
+archived material alone; (ii) "A fourth distinct family" gained a table row for
+the from-scratch 88 @ depth 5 and its rotated maximum was **recomputed** from
+0.351/0.362 to **0.375 (0.167)**, with the superseded figures and their scopes
+recorded rather than deleted; (iii) "Depth obstruction" was rewritten from two
+patterns to **three**, adding that circuit's eleven critical rows; (iv) one
+`../RESULTS.md` cross-reference moved §8 → §9 after that file was renumbered.
+No log, status, best or `code/` file was touched — all remain byte-identical to
+what the run produced — and no claim this file made has been withdrawn.
+
 ## Read this first: the lineage contains no seeded circuit at all
 
 | step | circuit | how | when (run-time / wall) |
@@ -49,16 +72,30 @@ in exactly the same state; what differed was its root.)
    onward) open on a `naive#<seed>` root, restart 18 on `naive#2163`, which
    re-derives to exactly the logged 139 gates at depth 3 by the command above.
    A search whose root reads nothing cannot inherit anything through its root.
-1. **Cross-pollination — two independent parts.** `supervisor.py` as run is *not*
-   archived (see "What is NOT in this archive"), so this is stated as the
-   two-part argument it is rather than as one check. (a) In the archived
-   `code/hunt_worker.py`, the engine knob dicts are given only `harvest_path`;
-   the string `pop_glob` **does not appear anywhere in that file**, so the
-   `_Harvester` this worker built had `glob_pat=None` and its `merge_into` was
-   never called. (b) Independently of the code: in `code/engines.py`, `engine_lns`
-   logs `[lns] cross-pollinated N masks (pool=…)` for every merge that brings in
+1. **Cross-pollination could not have fired anywhere in this fleet.** (a) In the
+   archived `code/hunt_worker.py`, the engine knob dicts are given only
+   `harvest_path`; the string `pop_glob` **does not appear anywhere in that
+   file**, so the `_Harvester` this worker built had `glob_pat=None` and its
+   `merge_into` was never called. (b) Independently of the code: in
+   `code/engines.py`, `engine_lns` logs
+   `[lns] cross-pollinated N masks (pool=…)` for every merge that brings in
    new material, and `runs_hunt/c_naive.log` contains **zero** such lines over
    its whole life. Code and log agree, from two directions.
+   **(c) Strengthened 2026-07-30.** This argument originally had to be stated in
+   two parts because `supervisor.py` as run is not archived here (see "What is
+   NOT in this archive"). Re-checked against the fleet tree, the vector is closed
+   by construction and the supervisor does not matter: `_Harvester.merge_into`
+   has exactly one call site, inside `engine_lns`, guarded by `if harv.glob_pat`;
+   `glob_pat` is `k.get("pop_glob")`; and `pop_glob` has exactly one writer in the
+   whole fleet tree, `worker.py:wire_harvest` — which `hunt_worker.py` never calls
+   (it imports only `WorkerCtx` and `pareto_better` from `worker`) and which
+   `supervisor.py` never reaches, because it launches only `hunt_worker.py`,
+   `orbit_runner.py`, `explorer.py` and `detector.py`, never `worker.py`. **No
+   worker in this fleet had cross-pollination on, whatever any configuration
+   said.** (The earlier wave-2 and wave-3 fleets ran a *different*
+   `hunt_worker.py` that set `pop_glob` directly, and there cross-pollination
+   genuinely was live and is logged — see `../RESULTS.md` §4 and §5. The two files
+   share a name and nothing else on this point.)
 2. The worker ran with `repel=False` (first line of `runs_hunt/c_naive.log`), so
    `repel_masks.json` — which contains masks of the three older families — was
    never loaded.
@@ -85,26 +122,35 @@ J ≥ 0.7 for "same family"):
 | Jean's 88 (ePrint 2026/1481) | 42 / 88 | **0.313** | **0.098** |
 | our 88 @ d7 (family 1) | 43 | **0.323** | **0.109** |
 | our 88 @ d8 (family 3) | 42 | **0.313** | **0.098** |
-| our 88 @ d5 | 42 | **0.313** | **0.098** |
+| our **derived** 88 @ d5 | 42 | **0.313** | **0.098** |
+| our **from-scratch** 88 @ d5 (added 2026-07-30) | 43 | **0.323** | **0.109** |
 | our record 89 @ d5 | 44 | 0.331 | 0.119 |
 | Sun–Yang–Li's 89 (ePrint 2025/1493) | 41 | 0.301 | 0.087 |
 
 The periphery column is the one that matters: every valid circuit contains the
 same 32 target masks, so full Jaccard has a floor near 0.22 for two 88s that
 share nothing else. On the 56 masks this circuit actually chose it agrees with
-the other three families on about a tenth — outside the obligatory targets it
+the other families on about a tenth — outside the obligatory targets it
 shares almost nothing with anything previously known. It is not a relabelling
 either: over all four byte rotations ρ^k of every circuit **in the table above**,
-the largest Jaccard reached is **0.351**, and **0.141** on the periphery (both ρ²
-of our 89 @ d5).
+the largest Jaccard reached is **0.375**, and **0.167** on the periphery, at ρ¹
+of the from-scratch 88 @ d5.
 
-**Scope of that maximum.** The table above is the six circuits this repository
-holds or has transcribed; it deliberately does not include the project's
-**superseded 89 @ depth 10**, which is retired here but still shipped by the
-artifact repository. `../RESULTS.md` §6 quotes the maximum over that wider
-seven-circuit set, where it is **0.362 (0.153)** — attained by the 89 @ depth 10
-unrotated. Both numbers are correct for their own comparison set; the difference
-is scope, not a disagreement.
+**Recomputed 2026-07-30.** Before the from-scratch 88 @ depth 5 existed this
+maximum was **0.351 (0.141)**, at ρ² of our 89 @ d5, over the six circuits then
+in the table; `../RESULTS.md` §6 quoted **0.362 (0.153)** over the wider set that
+also includes the project's superseded **89 @ depth 10** (retired here, still
+shipped by the artifact repository). The new circuit exceeds both, and it is in
+both sets, so the two scopes now agree on one figure: **0.375 (0.167)**. The
+older numbers are not withdrawn — they were correct for their comparison sets on
+the day they were written, and neither was ever the maximum over a set that
+contained this circuit.
+
+**A coincidence worth naming, because it will be met twice.** 0.375 (0.167) is
+*also* exactly this circuit's Jaccard to its own ρ² image — both pairings happen
+to share 48 masks, 16 of them off-target. That figure is a measure of how far
+this circuit is from being ρ²-symmetric, not a similarity to anything else. The
+two readings of 0.375 are unrelated.
 
 ## The run
 
@@ -138,13 +184,15 @@ them realizable at depth 6** and none deeper than 7; all 8 993 proven k=2
 irreducible, plus 1 200 further states beyond the harvest. Those sweep logs stay
 in the raw campaign archive (`campaign_87/hunt87_basin4/`).
 
-## Depth obstruction
+## Depth obstruction (third pattern added 2026-07-30)
 
 The masks whose minimum build depth equals the circuit depth are, for this
 circuit, output rows **1, 11, 17 and 25** — four weight-7 targets. The old
 88-plateau's wall is elsewhere: our 88 @ depth 7 is held at depth 7 by rows
-**3 and 27** only. Two structurally different ways to hit a depth wall at 88
-gates (`../RESULTS.md` §8, reproducible with `pipeline/engines.py:relax`).
+**3 and 27** only, and the from-scratch 88 @ depth 5 found two days later by rows
+**1, 7, 12, 13, 17, 18, 21, 25, 27, 28 and 31**. Three structurally different ways
+to hit a depth wall at 88 gates (`../RESULTS.md` §9, reproducible with
+`pipeline/engines.py:relax`).
 
 ## What is in this archive
 

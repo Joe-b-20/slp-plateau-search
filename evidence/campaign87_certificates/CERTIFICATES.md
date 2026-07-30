@@ -1,5 +1,15 @@
 # Machine-checked certificates — campaign 87
 
+**Edited 2026-07-30 (commentary only).** One paragraph in §7 was updated: the
+statement that the best-certified shell and the Jean-independent shell are
+disjoint was scoped to *this folder*, and a dated paragraph was appended noting
+that two from-scratch circuits — the 88 @ depth 6 and the 88 @ depth 5 — now
+have exhaustively empty k ≤ 3 shells *and* lineages independent of Jean's, with
+their verdict logs in their own run archives. Nothing else changed: no verdict
+log, no count, no `code/` file in this folder was touched, and no claim made
+here has been withdrawn. The gap is narrower, not closed — our 88 @ depth 7
+still has no exhaustive shell at any radius.
+
 Every result below is a **negative** result: a decision procedure was run to
 completion (or a SAT solver returned UNSAT) over a precisely defined
 neighbourhood of a verified circuit, and nothing smaller was found. No 87-gate
@@ -128,8 +138,18 @@ that neighbourhood**, not about the 88-gate plateau as a whole — and the one
 circuit here that is independent of Jean's lineage, **the project's own 88@7,
 is precisely the least-certified**: it is *not* among the 47, its exhaustive
 k ≤ 3 sweep was never run, and all it has is 9 exact k=4 windows (§3) and 8 SAT
-cone windows (§6). The best-certified shell and the independent shell are
-disjoint, and that gap is the honest shape of the negative result.
+cone windows (§6). Within *this folder* the best-certified shell and the
+independent shell are disjoint, and that gap is the honest shape of the negative
+result.
+
+**The gap has since narrowed, outside this folder.** Two circuits found from
+scratch — the 88 @ depth 6 and the 88 @ depth 5 — now have exhaustively empty
+k ≤ 3 shells *and* lineages independent of Jean's. Their sweeps used the same
+decider as everything here and their verdict logs live with their run archives,
+in `../campaign87_run_2026-07-28_got_88at6_fromscratch/certificates/` and
+`../campaign87_run_2026-07-30_got_88at5_fromscratch/certificates/`; see
+`../RESULTS.md` §9. The gap is not closed: our 88 @ depth 7 still has no
+exhaustive shell at any radius.
 
 Population coverage at k=2: **105 801 of the ≈ 139 878 known 88-gate states**
 (51 899 of families 1–2 + all 53 902 of family 3).

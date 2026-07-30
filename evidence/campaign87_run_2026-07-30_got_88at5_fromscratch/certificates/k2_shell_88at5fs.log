@@ -1,0 +1,2 @@
+circuit FOUND_88gates_depth5_fromscratch.json  masks=88 periphery=56  k=2 budget=1  shard 0/1
+DONE windows=1540 hits=0 6s stats={'irreducible': 1540}

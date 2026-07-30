@@ -1,7 +1,7 @@
 """Unit tests for the method's core invariants.
 
 Covers: the MixColumns specification, the oracle (accept good circuits,
-reject broken ones), the seven record circuits at their stated depths and their
+reject broken ones), the eight record circuits at their stated depths and their
 failure one level tighter, the value-set machinery (realizability, depth-aware
 reconstruction, trimming),
 the rebuilt kernels of the merged engine (level-BFS `relax`, incremental
@@ -31,17 +31,23 @@ import engines                   # noqa: E402
 CIRCUIT_DIR = ROOT / "evidence" / "circuits"
 CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 
-# The record list, exactly as CI verifies it: 97@3, 92@4, 89@5 and four 88s at
-# depths 5, 6, 7 and 8. Each is verified at its stated depth AND asserted to fail
-# at depth-1, so the depths are tight rather than merely claimed.
+# The record list, exactly as CI verifies it: 97@3, 92@4, 89@5 and five 88s -- two
+# at depth 5 and one each at depths 6, 7 and 8. Each is verified at its stated
+# depth AND asserted to fail at depth-1, so the depths are tight rather than
+# merely claimed.
 # 88 is Jean's published count (ePrint 2026/1481) and Jean has priority: 88@7
-# matches it with a different circuit, 88@6 is a fourth distinct family found from
-# scratch, and 88@5 and 88@8 have seed chains that pass through Jean's circuit
-# (derived work).
+# matches it with a different circuit, 88@6 and the from-scratch 88@5 were found
+# from scratch and are distinct families, and the derived 88@5 and the 88@8 have
+# seed chains that pass through Jean's circuit (derived work).
+#
+# CAREFUL: two records share the (gates, depth) pair (88, 5). Nothing in this
+# module -- including the generated test-method names below -- may key on that
+# pair; the file name is the identity.
 RECORDS = {
     "mixcolumns_97gates_depth3.json": (97, 3),
     "mixcolumns_92gates_depth4.json": (92, 4),
     "mixcolumns_89gates_depth5.json": (89, 5),
+    "mixcolumns_88gates_depth5_fromscratch.json": (88, 5),
     "mixcolumns_88gates_depth5.json": (88, 5),
     "mixcolumns_88gates_depth6.json": (88, 6),
     "mixcolumns_88gates_depth7.json": (88, 7),
@@ -49,6 +55,7 @@ RECORDS = {
 }
 
 RECORD_89 = CIRCUIT_DIR / "mixcolumns_89gates_depth5.json"
+RECORD_88_5_FS = CIRCUIT_DIR / "mixcolumns_88gates_depth5_fromscratch.json"
 RECORD_88_5 = CIRCUIT_DIR / "mixcolumns_88gates_depth5.json"
 RECORD_88_6 = CIRCUIT_DIR / "mixcolumns_88gates_depth6.json"
 RECORD_88_7 = CIRCUIT_DIR / "mixcolumns_88gates_depth7.json"
@@ -165,17 +172,34 @@ class SpecInvariants(unittest.TestCase):
 
 
 class RecordCircuits(unittest.TestCase):
-    """One generated test per record; the seven are attached below."""
+    """One generated test per record; the eight are attached below."""
 
-    def test_directory_holds_exactly_the_seven_records(self):
-        self.assertEqual(len(CIRCUITS), 7)
+    def test_directory_holds_exactly_the_eight_records(self):
+        self.assertEqual(len(CIRCUITS), 8)
         self.assertEqual({p.name for p in CIRCUITS}, set(RECORDS))
+
+    def test_two_distinct_circuits_share_the_gates_depth_point(self):
+        """(88, 5) is held by two different value sets -- the from-scratch
+        circuit and the derived one. They must be genuinely different, and the
+        generated tests below must not have collapsed onto one another."""
+        a = set(circuit_masks(RECORD_88_5_FS))
+        b = set(circuit_masks(RECORD_88_5))
+        self.assertEqual(len(a), 88)
+        self.assertEqual(len(b), 88)
+        self.assertNotEqual(a, b)
+        self.assertLess(len(a & b) / len(a | b), 0.7)   # not even the same family
+        at_88_5 = [n for n, gd in RECORDS.items() if gd == (88, 5)]
+        self.assertEqual(len(at_88_5), 2)
+        for name in at_88_5:
+            self.assertTrue(hasattr(RecordCircuits, "test_record_" + name[:-5]),
+                            "generated test missing for " + name)
 
     def test_spectrum_manifest_matches_the_files_on_disk(self):
         """spectrum.json is the published manifest of the record set: it must
-        list exactly these seven circuits, with their gate counts, depths and
+        list exactly these eight circuits, with their gate counts, depths and
         the sha256 of the file as it actually stands."""
         spectrum = json.loads((CIRCUIT_DIR / "spectrum.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(spectrum), len(RECORDS))
         listed = {}
         for entry in spectrum:
             path = ROOT / "evidence" / entry["file"]
@@ -200,11 +224,16 @@ class RecordCircuits(unittest.TestCase):
 
 
 def _attach_record_tests():
+    """One test per record FILE. The method name is derived from the file name,
+    not from (gates, depth): two records share the point (88, 5), and keying on
+    the pair would silently drop one of them."""
     for name, (gate_count, depth) in sorted(RECORDS.items()):
         def test(self, name=name, gate_count=gate_count, depth=depth):
             self._check_record(name, gate_count, depth)
         test.__doc__ = "%d gates at depth %d verifies (%s)" % (gate_count, depth, name)
-        setattr(RecordCircuits, "test_%dgates_at_depth%d" % (gate_count, depth), test)
+        attr = "test_record_" + name[:-5]
+        assert not hasattr(RecordCircuits, attr), "duplicate test name: " + attr
+        setattr(RecordCircuits, attr, test)
 
 
 _attach_record_tests()
@@ -242,7 +271,8 @@ class ValueSetInvariants(unittest.TestCase):
             self.assertTrue(v["ok"], f"{path.name}: {v}")
 
     def test_trim_keeps_realizability_and_never_grows(self):
-        for path in (RECORD_89, RECORD_88_5, RECORD_88_6, RECORD_88_7, RECORD_88_8):
+        for path in (RECORD_89, RECORD_88_5_FS, RECORD_88_5, RECORD_88_6,
+                     RECORD_88_7, RECORD_88_8):
             masks = circuit_masks(path)
             trimmed = engines.trim_masks(set(masks))
             self.assertTrue(engines.realizable(trimmed), path.name)
@@ -498,7 +528,7 @@ class VerifierCLI(unittest.TestCase):
                           r.stdout)
 
     def test_every_record_fails_one_level_tighter(self):
-        """Through the CLI, for all seven: the stated depth is the true depth, so
+        """Through the CLI, for all eight: the stated depth is the true depth, so
         the same circuit must be rejected at depth-1 with exit code 1."""
         for name, (_gate_count, depth) in sorted(RECORDS.items()):
             r = self._run(CIRCUIT_DIR / name, depth - 1)
