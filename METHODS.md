@@ -516,6 +516,141 @@ strong evidence, not a completeness proof, and the fixed slot order is the
 dominant remaining gap for the three families it covers. Undecided windows are
 undecided, not UNSAT.
 
+### 10a. The control, and what the certificates do not establish (added 2026-07-30)
+
+A negative result is worth what its control is worth. Everything above runs a
+complete decision procedure over the k ≤ 3 shell of a verified 88 and reports
+"irreducible". The obvious question — what does that same procedure say about a
+circuit we *know* is improvable? — had not been asked in this repository. It has
+now been, in the raw campaign archive under `campaign_87/cert_audit/` (audit
+run 2026-07-30; that folder is not part of this repository, and every number
+below is restated here in full so nothing depends on it). Every row above 88
+gates is **provably suboptimal**, because an 88-gate circuit exists and is in
+this repository; the last row is Jean's 88 itself, the very circuit §10's first
+theorem is about, included so the two can be read side by side.
+
+| circuit | gates | depth | k = 2 windows | reducible | k = 3 windows | reducible | smaller circuit known to exist |
+|---|---|---|---|---|---|---|---|
+| `cascade_d3_best.json` | 97 | 3 | **2,080, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−9) |
+| `paralle_d4_best.json` | 94 | 4 | **1,891, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−6) |
+| `paralle_d5_best.json` | 92 | 5 | **1,770, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−4) |
+| `cascade_d10_best.json` | 91 | 5 | **1,711, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−3) |
+| `paralle_d11_best.json` | 90 | 5 | **1,653, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−2) |
+| `IMPORTED_89_sunyangli.json` | 89 | 9 | **1,596, exhaustive** | **0** | 1,200 sampled | **0** |  88 (−1) |
+| `IMPORTED_88.json` | 88 | 7 | **1,540, exhaustive** | **0** | 1,200 sampled | **0** |  — best known |
+
+Every `reducible` cell is **0**. Not one window of any of these circuits admits
+a one-gate improvement at k ≤ 3 — including the 97-gate circuit, which is nine
+gates from the best known. Total: **12 241 exhaustive k = 2 decisions and 8 400
+sampled k = 3 decisions, zero reducible.** (Raw: `cert_audit/control.json`,
+`control_k2.json`. The k = 3 columns are uniform samples of the 27 720–43 680
+window space; the 88s' k = 3 spaces were already swept exhaustively, above.)
+
+**The instrument does not distinguish them.** A 97-gate circuit — nine gates
+above the best known — has an exhaustively empty k = 2 shell and an empty k = 3
+sample, exactly as an 88 does.
+
+**Why, measured.** For each of the 74 distinct verified circuits in the corpus
+(88–97 gates, `cert_audit/seedlist.txt`), the smallest window that could carry
+it to a strictly smaller *verified* circuit in the same corpus is
+min |S \ T| over all verified T with |T| < |S|:
+
+| smallest window k that could carry the circuit to a smaller verified circuit | circuits (of 45) |
+|---|---|
+| k = 3 (inside the certified radius) | 1 |
+| 8 ≤ k ≤ 20 | 8 |
+| 21 ≤ k ≤ 40 | 11 |
+| 41 ≤ k ≤ 48 | 25 |
+
+Minimum **3**, median **42**, maximum **48**; **44 of the 45 need k ≥ 8**. Only
+45 of the 74 circuits are measurable here — the 29 at 88 gates have no smaller
+verified circuit in the corpus to measure against.
+
+So the certified radius k ≤ 3 is smaller than **44 of the 45 measured
+transitions** — by a factor of ~2.7 against the closest of them and ~14 against
+the median. Exactly one circuit in the corpus sits inside it.
+
+**What this changes, and what it does not.** Nothing above is withdrawn and no
+number is corrected. "Any 87 differs from Jean's 88 by ≥ 4 masks" is a proved
+statement about a completely enumerated neighbourhood, produced by a decider
+whose branches have now also been validated (§10b); it remains the strongest
+exact statement here. What the control removes is a *reading* the numbers
+invite: **an empty k ≤ 3 shell is not evidence about whether an 87 exists.** By
+this instrument a circuit that is optimal and a circuit that is nine gates too
+big are indistinguishable. The certificates bound where an 87 cannot be, inside
+a radius far smaller than the distance at which an improvement has ever been
+observed. Read them as rigidity statements about small neighbourhoods, which is
+what they are, and not as evidence about 87.
+
+### 10b. Validating the decider's untested branches (added 2026-07-30)
+
+The completeness proof for budget 2 splits into three cases — 1a, 1b and 2a in
+`exact_window.py`'s docstring. The validation cited above (12/12 agreement with
+`solve2_brute` at budget 2) is genuine but contained **zero YES instances**, so
+cases 1b and 2a were never exercised on a positive. Nor could ordinary sweeping
+reach them: on this project's circuits a random k = 3 window essentially never
+has a YES, which is the whole point of §10a.
+
+`cert_audit/plant_probe.py` therefore uses **planted** windows whose ground
+truth does not depend on the decider: remove two non-target masks from a
+verified circuit, and re-adding exactly those two restores it. Over **74
+distinct verified circuits and 4 200 planted YES windows**:
+
+- `solve_window(..., budget = 2)` returned win/free on **4 200 / 4 200**;
+  every returned witness was rebuilt and accepted by the ground-truth oracle;
+- planted witnesses by the case that must handle them: **3 705 1a-shaped,
+  462 1b-shaped, 33 2a-shaped**;
+- with case 1a deleted, **462 / 462** 1b-shaped witnesses were still found by
+  case 1b; with cases 1a *and* 1b deleted, **33 / 33** 2a-shaped witnesses were
+  still found by case 2a;
+- in all **495** of those, the branch's own enumeration was checked to generate
+  and accept that exact pair, not merely to answer YES by another route.
+
+Separately (`cert_audit/case_hunt.py`), cases 1b and 2a were run to completion
+on ordinary windows and **every pair either branch accepts** was put to the
+oracle; all rebuilt to valid circuits of the expected size, no rejections.
+
+**No completeness bug was found**, so the ≈ 165 M irreducible verdicts stand.
+Two notes for whoever edits that module next: cases 1b and 2a are near-dead code
+in production (88 % of planted witnesses are 1a-shaped, and case 2a's accepted
+set is empty on almost every ordinary window), which is exactly why the gap went
+unnoticed; and the `u_left` bookkeeping in 1b/2a is correct only because both
+branches guarantee `w1 ∉ D0` — relaxing those filters would silently break the
+target count.
+
+### 10c. How much the windowed-SAT UNSAT depends on slot order (added 2026-07-30)
+
+The caveat above was stated but never measured. `cert_audit/slot_order_test.py`
+measures it on windows whose ground truth is SAT, so every UNSAT observed is a
+false negative. Two families: **A**, k = r = 3 on a verified 91-gate circuit
+(re-adding the removed masks is a witness); **B**, k = 3 and r = 2 — the
+configuration actually run — on a 91-gate circuit planted from a verified 90 so
+that the 90 is a witness. Each window re-encoded under the seed's own order,
+8 random *valid topological* build orders of the identical mask set, and
+8 uniform random permutations:
+
+| family | windows | seed order | valid build orders | arbitrary permutations |
+|---|---|---|---|---|
+| A (k = r = 3) | 8 | 8/8 SAT | **64/64 SAT** | **64/64 UNSAT** |
+| B (k = 3, r = 2) | 8 | 8/8 SAT | **64/64 SAT** | 59/64 UNSAT, 5 SAT |
+
+The encoding **does** manufacture UNSAT on provably satisfiable windows —
+123 of 128 arbitrary orderings — so the caveat is load-bearing and must never be
+dropped. But across **128 / 128 legitimate alternative build orders of the same
+circuit** the verdict did not move, and the seed's gate order is a member of
+that class. The residual risk the test does not exclude is that a true
+completion needs a derivation shape no build order of the seed can express.
+
+The depth-capped encoder (`agents/frontier-d6sat/work/d6sat.py`) claims to have
+no slot-order caveat at all, and that checks out: it builds its given list from
+`sorted(K)` and puts every free slot after every given, so the CNF is a function
+of the *set* K, the budget and the cap. Encoding the same window from repeated
+random orderings of K produced a **byte-identical clause list every time** (6/6
+windows), and planted windows came back SAT 6/6. Its own two limits stand as
+documented — givens keep the depth they achieve inside K, and only self-closed
+kept sets can be encoded, which on a tight 91-gate circuit means the window
+class is "a mask and its whole descendant cone", not "any k masks".
+
 ## 11. Symmetry and the family structure of the 88 plateau
 
 **The symmetry.** Byte rotation ρ (order 4) commutes with MixColumns, so it acts

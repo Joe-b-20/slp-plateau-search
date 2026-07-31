@@ -10,6 +10,14 @@ log, no count, no `code/` file in this folder was touched, and no claim made
 here has been withdrawn. The gap is narrower, not closed — our 88 @ depth 7
 still has no exhaustive shell at any radius.
 
+**Edited again 2026-07-30 (commentary only): §7a added.** It reports the control
+that was missing — the same decider returns "irreducible" on circuits known to
+be nine gates too big — and the audit of the two parts of the machinery that had
+never been tested on a positive instance (the exact decider's cases 1b/2a, and
+the windowed-SAT slot order). No verdict log, count or `code/` file was touched
+and nothing here is withdrawn; the exact certificates all stand. **Read §7a
+before quoting any number in this file.**
+
 Every result below is a **negative** result: a decision procedure was run to
 completion (or a SAT solver returned UNSAT) over a precisely defined
 neighbourhood of a verified circuit, and nothing smaller was found. No 87-gate
@@ -214,6 +222,58 @@ Same toolchain as §6, unchanged, on the 88@8 anchor + the 8 portfolio reps.
 - With sb=pf the survivors are no longer the low-nB windows — raw window size is
   the limit now. The dominant remaining gap for **all three families** is the
   fixed slot order in the encoding.
+
+---
+
+## 7a. The control, and the audit of the machinery (added 2026-07-30)
+
+**Commentary only — no verdict log, count or `code/` file in this folder was
+touched, and no claim made above is withdrawn.** What is added is the control
+that was missing, and the validation of the two parts of the machinery that had
+never been tested on a positive instance. Scripts and raw results:
+`campaign_87/cert_audit/` in the campaign archive; write-up in `../../METHODS.md`
+§§10a–10c.
+
+**1. The same decider says "irreducible" about circuits that are nine gates too
+big.** Every certificate above is an exhaustive k ≤ 3 sweep returning zero
+reducible windows. Run identically on 97-, 94-, 92-, 91-, 90-, 89- and 88-gate
+circuits — every one provably improvable, because an 88 exists in this
+repository — the verdict is the same for all of them. A 97-gate circuit has an
+exhaustively empty k = 2 shell. The reason is measurable: over the 74 distinct
+verified circuits in that corpus, the smallest window that could carry one to a
+strictly smaller *verified* circuit is **median 42 masks, min 3, max 48, with
+44 of the 45 measurable circuits needing k ≥ 8**. The certified radius k ≤ 3 is
+smaller than 44 of those 45 transitions — by a factor of ~2.7 against the
+closest and ~14 against the median.
+
+So: the theorems in this folder are exactly what they say — **rigidity
+statements about small, completely enumerated neighbourhoods** — and they are
+**not** evidence about whether an 87 exists. By this instrument an optimal
+circuit and a nine-gates-too-big circuit are indistinguishable. That distinction
+is the one thing a reader of "≈ 165 M exact window decisions, zero reducible
+windows" should carry away.
+
+**2. The exact decider's completeness proof is now branch-validated.** The
+"25/25 and 12/12 against an independent brute force" quoted at the top of this
+file is real, but the 12/12 comparison contained **zero YES instances**, so two
+of the budget-2 proof's three cases had never run on a positive. Over **4 200
+planted YES windows on 74 verified circuits** (windows whose ground truth is
+independent of the decider), `solve_window(budget = 2)` answered correctly
+**4 200/4 200**, every witness oracle-verified; with case 1a deleted, **462/462**
+1b-shaped witnesses were still recovered by case 1b, and with cases 1a and 1b
+deleted, **33/33** 2a-shaped witnesses were still recovered by case 2a. **No
+completeness bug was found.** The exact certificates above stand.
+
+**3. The windowed-SAT slot-order caveat is load-bearing, and now quantified.**
+On windows whose ground truth is SAT, the `sat_window`-family encoding returned
+UNSAT under **123 of 128 arbitrary mask orderings** — so the caveat printed
+throughout this file is not decorative. Under **128/128 legitimate alternative
+build orders of the same circuit**, however, the verdict did not move, and the
+seed's own gate order belongs to that class. The residual risk the test does not
+exclude is a completion whose derivation shape no build order of the seed can
+express. The depth-capped encoder's claim to be slot-order-free checks out: its
+CNF is byte-identical under every reordering of the kept set, and planted
+windows return SAT.
 
 ---
 

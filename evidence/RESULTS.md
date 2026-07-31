@@ -809,6 +809,47 @@ The scope, stated exactly:
 - Nothing above bounds 87 away globally. Every exact result is merely
   consistent with 88 being locally rigid.
 
+**The control, added 2026-07-30.** The bullets above are all true and none is
+withdrawn, but until now this repository never showed what the same verdict
+looks like on a circuit that is *known* to be improvable. A dedicated audit run
+(2026-07-30, raw results in the campaign archive under `campaign_87/cert_audit/`)
+ran the identical decider over the identical exhaustive k = 2 shell and a k = 3
+sweep on 97-, 94-, 92-, 91-, 90-, 89- and 88-gate circuits — every row above 88
+gates provably suboptimal, because an 88 exists and is in this repository, with
+Jean's 88 itself as the last row — and **the verdict is the same for all of
+them**: a 97-gate circuit, nine gates above the best known,
+has an exhaustively empty k = 2 shell and an empty k = 3 sample exactly as an 88
+does. The reason is measurable: over the 74 distinct verified circuits in that
+corpus, the smallest window that could carry one to a strictly smaller *verified*
+circuit is **median 42 masks, minimum 3, maximum 48; 44 of the 45 measurable
+circuits need k ≥ 8**. The certified radius k ≤ 3 is smaller than 44 of those
+45 transitions — by a factor of ~2.7 against the closest and ~14 against the
+median. Stated plainly: **the
+empty shells are not evidence about whether an 87 exists** — they say where an 87
+cannot be, inside a neighbourhood smaller than all but one of the improvements
+this project has actually observed, and by this instrument an optimal circuit
+and a nine-gates-too-big circuit look identical. The theorems are unaffected;
+the inference from them to "87 is unlikely" is not supported. Full table and
+method: `METHODS.md` §10a.
+
+**The decider's own untested branches, added 2026-07-30.** The "12/12 agreement
+with an independent brute force" cited above is real but contained **zero YES
+instances**, so two of the budget-2 completeness proof's three cases had never
+run on a positive. They have now: over **4 200 planted YES windows on 74 verified
+circuits**, `solve_window(budget = 2)` answered correctly **4 200/4 200** with
+every witness oracle-verified; with case 1a deleted, **462/462** 1b-shaped
+witnesses were still recovered by case 1b, and with cases 1a and 1b deleted,
+**33/33** 2a-shaped witnesses were still recovered by case 2a. **No completeness
+bug was found**, so the ≈ 165 M irreducible verdicts stand. `METHODS.md` §10b.
+
+**Slot-order sensitivity, now measured (2026-07-30).** On windows whose ground
+truth is SAT, `sat_window.py`'s encoding returned UNSAT under **123 of 128
+arbitrary mask orderings** — the caveat is load-bearing, not decorative — but
+under **128/128 legitimate alternative build orders of the same circuit** the
+verdict did not move, and the seed's own gate order is a member of that class.
+The depth-capped encoder's claim to be slot-order-free checks out: its CNF is
+byte-identical under every reordering of the kept set. `METHODS.md` §10c.
+
 Also certificate-bearing, and archived in the same folder: two exactly
 ρ²-symmetric **90-gate** circuits (depths 9 and 7, Jaccard 0.463 apart),
 machine-certified locally optimal in orbit space under all remove-1-orbit and
