@@ -6,12 +6,12 @@
 The search method and evidence behind this project's small 2-input XOR circuits
 for AES MixColumns. Eight verified circuits, one frontier:
 
-- **verified frontier: 97 @ 3, 92 @ 4, 88 @ 5 — one line, entirely this project's
+- **verified frontier: 97 @ 3, 91 @ 4, 88 @ 5 — one line, entirely this project's
   own lineage, with no imported material.**
 
 **87 was not found**, and nothing here is claimed optimal.
 
-- **97 @ 3 and 92 @ 4** improve the published depth–count Pareto frontier at
+- **97 @ 3 and 91 @ 4** improve the published depth–count Pareto frontier at
   their depth (99 @ 3, Shi–Feng–Xu ToSC 2023; 97 @ 4, Osvik–Canright ePrint
   2024/1076), and the depth-5 point improves the published 94 @ 5 (Osvik–Canright)
   by six gates. Our own **89 @ 5** improved it by five and is now superseded there
@@ -41,7 +41,7 @@ for AES MixColumns. Eight verified circuits, one frontier:
   above — see the artifact repository's `PRIOR_ART.md`, including its Corrections
   section.
 
-![The published depth–count Pareto frontier for AES MixColumns vs this work: 97 at depth 3, 92 at depth 4 and an 88 at depth 5 found from scratch, which is the depth-5 point; a derived 88 at the same depth-5 point, an 89 at depth 5, an 88 at depth 6 also found from scratch, the 88 at depth 7 that ties the published record with an independent circuit, and the derived 88 at depth 8, all dominated](docs/frontier.svg)
+![The published depth–count Pareto frontier for AES MixColumns vs this work: 97 at depth 3, 91 at depth 4 and an 88 at depth 5 found from scratch, which is the depth-5 point; a derived 88 at the same depth-5 point, an 89 at depth 5, an 88 at depth 6 also found from scratch, the 88 at depth 7 that ties the published record with an independent circuit, and the derived 88 at depth 8, all dominated](docs/frontier.svg)
 
 All eight verified circuits are in `evidence/circuits/`, hash-pinned in
 `evidence/circuits/spectrum.json`; all eight also live, **gate-for-gate

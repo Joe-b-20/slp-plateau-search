@@ -6,10 +6,10 @@
   "sha256": "d7289a99cad19573d5e76cd834b8c10809967bdebaecc021ff70457ed79a170f"
  },
  {
-  "gates": 92,
+  "gates": 91,
   "depth": 4,
-  "file": "circuits/mixcolumns_92gates_depth4.json",
-  "sha256": "3615c132cae7e4fb05beff2a1e8b55db04b5251f44629220e467b06185be0c99"
+  "file": "circuits/mixcolumns_91gates_depth4.json",
+  "sha256": "8c89ca8cc38850e46919c94d8a91d1093b87bcdf36073a44093e8a2eff3285ac"
  },
  {
   "gates": 89,

@@ -1,10 +1,10 @@
-# Verified results and their lineage — 97@depth3, 92@depth4, 89@depth5, 88@depth5 (×2), 88@depth6/7/8
+# Verified results and their lineage — 97@depth3, 91@depth4, 89@depth5, 88@depth5 (×2), 88@depth6/7/8
 
-Eight verified AES-MixColumns 2-input-XOR circuits, at gate counts 97, 92, 89 and
+Eight verified AES-MixColumns 2-input-XOR circuits, at gate counts 97, 91, 89 and
 88 (five times: twice at depth 5, and once each at depths 6, 7 and 8). One
 frontier comes out of them:
 
-> **Verified frontier: 97 @ 3, 92 @ 4, 88 @ 5 — one line, entirely this
+> **Verified frontier: 97 @ 3, 91 @ 4, 88 @ 5 — one line, entirely this
 > project's own lineage, with no imported material.**
 
 **87 was not found**, and none of the eight is claimed optimal (SLP minimization
@@ -56,7 +56,7 @@ the true depth, the same run one level tighter must fail:
 
 ```
 mixcolumns_97gates_depth3.json 3              gates=97 depth=3 outputs_built=32/32 VALID
-mixcolumns_92gates_depth4.json 4              gates=92 depth=4 outputs_built=32/32 VALID
+mixcolumns_91gates_depth4.json 4              gates=91 depth=4 outputs_built=32/32 VALID
 mixcolumns_89gates_depth5.json 5              gates=89 depth=5 outputs_built=32/32 VALID
 mixcolumns_88gates_depth5_fromscratch.json 5  gates=88 depth=5 outputs_built=32/32 VALID
 mixcolumns_88gates_depth5.json 5              gates=88 depth=5 outputs_built=32/32 VALID
@@ -95,16 +95,46 @@ nothing in this repository keys a record on the (gates, depth) pair.
 
 ---
 
-## 2. 92 gates @ depth 4 — from scratch, down the depth ladder
+## 2. 91 gates @ depth 4 — from scratch, down the depth ladder
 
-- **What:** 92-gate depth-4 circuit. Beats the published depth-4 point (97 gates:
-  Osvik–Canright, ePrint 2024/1076, Appendix G) by five gates.
+- **What:** 91-gate depth-4 circuit. Beats the published depth-4 point (97 gates:
+  Osvik–Canright, ePrint 2024/1076, Appendix G) by **six** gates. It supersedes
+  this project's own 92 @ depth 4, which held the point until 2026-08-01 and
+  whose lineage is kept below.
+- **Not optimal, and not claimed to be.** The exactness results behind the 91 are
+  relative to a fixed mask vocabulary, and **90 @ depth 4 is undecided, not
+  refuted**. Nothing here says "optimal at depth 4".
+- **How:** the **cascade6 run** (2026-08-01), a second from-scratch cascade with
+  the same ladder discipline as the 2026-07-14 one below. Every root in that run
+  is `constructors.build(name, seed)` or the `anneal3` engine — a pure function of
+  an integer — and no circuit file, harvest, archive, repel mask or population
+  from any other run entered that directory; cross-pollination was off.
+- **Circuit:** `circuits/mixcolumns_91gates_depth4.json` (sha256 `8c89ca8cc38850e4…`).
+  Source of record: the cascade6 run's `d4_best.json`, `found_utc`
+  **2026-08-01T00:37:38Z**.
+- **Lineage:** the cascade6 run's own from-scratch root, same shape as the ladder
+  in the table below. It is the same from-scratch cascade family as the 92 it
+  supersedes, so the "97 @ 3 and 91 @ 4 are from scratch" provenance statement
+  needs no new argument.
+- **Two further verified 91 @ depth 4 circuits exist**, in independent lineages
+  (mask-Jaccard 0.433 and 0.358 against this one); they are not shipped here. The
+  depth-4 census also holds 15,912 distinct verified-realizable 91-gate mask sets,
+  all with 91 *live* gates — this is not a 90 with a dead gate.
+
+### 2b. The superseded 92 @ depth 4 — kept as lineage
+
+Until 2026-08-01 the depth-4 point was held by a 92-gate depth-4 circuit, which
+beat the same published 97 by five gates. It is no longer a frontier point and is
+no longer shipped in `circuits/`; its claim stands as it was made, and its lineage
+is retained here because the depth ladder that produced it is the same ladder that
+later produced the 91.
+
 - **How:** the `lns` engine (destroy-and-rebuild). In the **from-scratch cascade
   run** (2026-07-14, the run with the Pareto tie-break + reseeding), the depth-8
   worker `d8` — searching with slack under its loose cap — landed on a circuit that
   is only depth 4; the Pareto tie-break kept it and reseeding copied it to the
   depth-4 rung. The whole chain is rooted in that run's own from-scratch 97.
-- **Circuit:** `circuits/mixcolumns_92gates_depth4.json` (sha256 `3615c132cae7e4fb…`).
+- **Was at:** `circuits/mixcolumns_92gates_depth4.json` (sha256 `3615c132cae7e4fb…`).
   Source of record: `cascade_run_2026-07-14_from_scratch_newlogic/d4_best.json`
   (found by `d8`, held by `d4` via reseeding).
 - **Code that produced it:** `cascade_run_2026-07-14_from_scratch_newlogic/code/`.
@@ -873,7 +903,7 @@ another 91 of ours, so it inherits the same status.
   depth–count frontier is 99@3 (Shi–Feng–Xu, ToSC 2023), 97@4 and 94@5
   (Osvik–Canright, ePrint 2024/1076), 92@6 (Maximov), and 88@7 (Jean, ePrint
   2026/1481), with 89 at unstated depth from Sun–Yang–Li (ePrint 2025/1493).
-  Against that: **97@3 and 92@4 improve the frontier** at their depths and remain
+  Against that: **97@3 and 91@4 improve the frontier** at their depths and remain
   on it; **89@5 improved the published depth-5 point by five gates** and is now
   superseded there by our own 88@5; **88@7 ties the published gate-count floor
   with an independent circuit** rather than lowering it; **88@5 (from scratch),

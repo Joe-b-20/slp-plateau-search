@@ -10,13 +10,13 @@ Data sources (no number here is invented):
     depth: the 7 and the 9 are both this repo's measurements of its own
     transcriptions, and are marked as such symmetrically.
   - this project's circuits: ../evidence/circuits/spectrum.json
-    (97@3, 92@4, 89@5, 88@5 twice, 88@6, 88@7, 88@8), all oracle-verified.
+    (97@3, 91@4, 89@5, 88@5 twice, 88@6, 88@7, 88@8), all oracle-verified.
   - ONE frontier is drawn now (v3.1). Until 2026-07-30 the (88, 5) point was held
     only by a circuit whose seed chain runs through Jean's published work, so the
     figure carried a solid own-lineage line and a dotted combined one. A
     from-scratch 88@5 (root constructors.build("naive", 1958)) now holds that
     point, so the two lines collapse into one:
-      verified frontier (solid blue)  97@3, 92@4, 88@5, entirely own lineage.
+      verified frontier (solid blue)  97@3, 91@4, 88@5, entirely own lineage.
     That is a statement about OUR provenance, not about Jean's result: 88 is his
     published count, he has priority, and nothing here beats it. What changed is
     that this project no longer depends on his circuit to reach depth 5.
@@ -57,9 +57,9 @@ PUBLISHED_OFF = [(9, 89, "89 SYL25", 9, -9, "start")]
 # own lineage; its depth-5 point was found from scratch.
 # label offsets are chosen so no count label is crossed by the frontier line
 OURS = [(3, 97, "97", 11, -8, "start"),
-        (4, 92, "92", -10, 4, "end"),
+        (4, 91, "91", -10, 4, "end"),
         (5, 88, "88 @ 5 from scratch", -12, 20, "end")]
-FRONTIER = [(3, 97), (4, 92), (5, 88)]
+FRONTIER = [(3, 97), (4, 91), (5, 88)]
 # ours, own lineage, verified, but dominated by the frontier point above
 OURS_DOMINATED = [(5, 89, "89", 8, -8, "start"),
                   (6, 88, "88 @ 6 from scratch", 10, 20, "start")]
@@ -122,7 +122,7 @@ def main():
          '2024), 92 at depth 6 (Maximov) and 88 at depth 7 (Jean, ePrint '
          '2026/1481; that paper states no depth either, so the 7 is likewise '
          'this repository\'s own measurement of its transcription). This work '
-         'draws a single frontier (solid blue): 97 gates at depth 3, 92 at '
+         'draws a single frontier (solid blue): 97 gates at depth 3, 91 at '
          'depth 4 and 88 at depth 5, every point of it this project\'s own '
          'lineage with no imported material. The depth-5 point is an 88-gate '
          'circuit found from scratch, from a randomized XOR tree over the 32 raw '

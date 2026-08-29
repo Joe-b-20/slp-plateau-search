@@ -31,7 +31,7 @@ import engines                   # noqa: E402
 CIRCUIT_DIR = ROOT / "evidence" / "circuits"
 CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 
-# The record list, exactly as CI verifies it: 97@3, 92@4, 89@5 and five 88s -- two
+# The record list, exactly as CI verifies it: 97@3, 91@4, 89@5 and five 88s -- two
 # at depth 5 and one each at depths 6, 7 and 8. Each is verified at its stated
 # depth AND asserted to fail at depth-1, so the depths are tight rather than
 # merely claimed.
@@ -45,7 +45,7 @@ CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 # pair; the file name is the identity.
 RECORDS = {
     "mixcolumns_97gates_depth3.json": (97, 3),
-    "mixcolumns_92gates_depth4.json": (92, 4),
+    "mixcolumns_91gates_depth4.json": (91, 4),
     "mixcolumns_89gates_depth5.json": (89, 5),
     "mixcolumns_88gates_depth5_fromscratch.json": (88, 5),
     "mixcolumns_88gates_depth5.json": (88, 5),

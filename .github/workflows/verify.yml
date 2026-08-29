@@ -18,7 +18,7 @@ jobs:
       - name: Verify the record circuits with the standalone oracle
         run: |
           python verify_circuit.py evidence/circuits/mixcolumns_97gates_depth3.json 3
-          python verify_circuit.py evidence/circuits/mixcolumns_92gates_depth4.json 4
+          python verify_circuit.py evidence/circuits/mixcolumns_91gates_depth4.json 4
           python verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 5
           python verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json 5
@@ -35,7 +35,7 @@ jobs:
             echo "ok: $1 correctly rejected at depth $2"
           }
           fail_at evidence/circuits/mixcolumns_97gates_depth3.json 2
-          fail_at evidence/circuits/mixcolumns_92gates_depth4.json 3
+          fail_at evidence/circuits/mixcolumns_91gates_depth4.json 3
           fail_at evidence/circuits/mixcolumns_89gates_depth5.json 4
           fail_at evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 4
           fail_at evidence/circuits/mixcolumns_88gates_depth5.json 4
