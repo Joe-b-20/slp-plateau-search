@@ -1,0 +1,8 @@
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_88gates_depth5.json", "n": 88, "q": 32, "outputs_built": 32, "valid": true, "B": 56, "expected_B": 56, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json", "n": 88, "q": 32, "outputs_built": 32, "valid": true, "B": 56, "expected_B": 56, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_88gates_depth6.json", "n": 88, "q": 32, "outputs_built": 32, "valid": true, "B": 56, "expected_B": 56, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_88gates_depth7.json", "n": 88, "q": 32, "outputs_built": 32, "valid": true, "B": 56, "expected_B": 56, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_88gates_depth8_thirdfamily.json", "n": 88, "q": 32, "outputs_built": 32, "valid": true, "B": 56, "expected_B": 56, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_89gates_depth5.json", "n": 89, "q": 32, "outputs_built": 32, "valid": true, "B": 57, "expected_B": 57, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_92gates_depth4.json", "n": 92, "q": 32, "outputs_built": 32, "valid": true, "B": 60, "expected_B": 60, "clean": true, "ok": true}
+{"file": "/home/joebachir20/xor_ui/slp-plateau-search/evidence/circuits/mixcolumns_97gates_depth3.json", "n": 97, "q": 32, "outputs_built": 32, "valid": true, "B": 65, "expected_B": 65, "clean": true, "ok": true}

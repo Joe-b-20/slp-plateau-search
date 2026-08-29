@@ -1,0 +1,20 @@
+# The wrap-up layer is the distillation, not the corpus. What is kept out:
+#
+#   corpus88_index.jsonl   457 MB index of the 1,575,516 distinct verified
+#                          88-gate mask sets. Regenerable with tools/corpus88.py
+#                          from the local corpus; available on request.
+#   work/, day2/work/      scratch and smoke-test output of the wrap-up passes
+#                          themselves. No result depends on any of it.
+#   day2/runs/**/*.log     live output of jobs that were still running when this
+#   day2/runs/**/*.jsonl   layer was written. The launcher code and RUNS.md stay
+#   day2/e_upstream/c4_*   tracked; the in-flight banks do not, and would be a
+#                          mid-run snapshot if they were.
+#
+# Anything over ~1 MB belongs here rather than in the repository.
+
+corpus88_index.jsonl
+work/
+day2/work/
+day2/runs/**/*.log
+day2/runs/**/*.jsonl
+day2/e_upstream/c4_corpus_sample.*

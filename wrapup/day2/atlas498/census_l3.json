@@ -1,0 +1,5161 @@
+{
+ "n": 17283,
+ "miss": 0,
+ "hist": {
+  "57": 3,
+  "58": 2,
+  "59": 5,
+  "60": 4,
+  "61": 15,
+  "62": 11,
+  "63": 20,
+  "64": 61,
+  "65": 185,
+  "66": 264,
+  "67": 137,
+  "68": 215,
+  "69": 1104,
+  "70": 2649,
+  "71": 2779,
+  "72": 1335,
+  "73": 1817,
+  "74": 4036,
+  "75": 2536,
+  "76": 40,
+  "77": 37,
+  "78": 26,
+  "79": 2
+ },
+ "low": [
+  {
+   "i": 15,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/atlas/corner/out/hunt.88gates_depth5_fromscratch_88_a0_s2_d1.FINAL.88.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 35,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/runpod/synced/found/sat_boost/floor_PLX4_d5_d6_d7_fs_88gates.json",
+   "l3": 64,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 38,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/runpod/synced/found/sat_boost/floor_FCN2_n85_tier1_L13_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 23
+  },
+  {
+   "i": 40,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000039_pair_0f02fd_ctrl88_K88_20260812_043851.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 41,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000132_pair_b2f12e_ctrl88_K88_20260812_012711.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 42,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000171_pair_c7597c_ctrl88_K88_20260812_013058.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 43,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000190_pair_333599_ctrl88_K88_20260811_201702.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 45,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000229_pair_8199f0_ctrl88_K88_20260812_035122.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 47,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000219_pair_a7921b_ctrl88_K88_20260812_041527.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 50,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000144_rho_7b86ee_ctrl88_K88_20260811_205709.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 54,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000024_pair_6a5de3_ctrl88_K88_20260811_200844.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 55,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W0_000083_pair_205ff5_ctrl88_K88_20260812_031727.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 25
+  },
+  {
+   "i": 56,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000025_pair_8acc84_ctrl88_K88_20260812_065325.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 57,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000365_pair_2acc15_ctrl88_K88_20260811_223745.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 58,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000326_pair_68efa7_ctrl88_K88_20260812_031534.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 60,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000229_pair_946366_ctrl88_K88_20260812_071745.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 61,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_001577_pair_0e66eb_ctrl88_K88_20260812_012107.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 62,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000141_pair_fbb34f_ctrl88_K88_20260812_071442.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 63,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000395_pair_702f40_ctrl88_K88_20260812_012434.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 65,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000177_pair_27ab94_ctrl88_K88_20260812_011855.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 68,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000057_pair_4a0206_ctrl88_K88_20260811_183334.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 69,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000384_pair_5495d1_ctrl88_K88_20260812_063644.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 71,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_001427_rho_c7f611_ctrl88_K88_20260811_223010.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 72,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000120_rho_0b11c3_ctrl88_K88_20260812_065909.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 74,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000983_pair_0fb241_ctrl88_K88_20260812_030105.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 77,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000109_rho_55c0e6_ctrl88_K88_20260812_013401.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 78,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W0_000508_pair_b516e8_ctrl88_K88_20260811_223058.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 81,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000152_pair_b58270_ctrl88_K88_20260812_021859.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 82,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000747_pair_7d4522_ctrl88_K88_20260812_071626.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 85,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000968_pair_bd1a5c_ctrl88_K88_20260811_223821.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 86,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000286_pair_91052a_ctrl88_K88_20260812_013510.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 91,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000905_pair_98292c_ctrl88_K88_20260812_035154.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 93,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000131_pair_e0958f_ctrl88_K88_20260812_022952.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 97,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000566_pair_2dff88_ctrl88_K88_20260812_005721.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 98,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W0_000499_pair_0ea562_ctrl88_K88_20260812_013537.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 99,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000013_pair_1dbc93_ctrl88_K88_20260811_212403.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 100,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000080_pair_c8af80_ctrl88_K88_20260811_205859.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 101,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W0_000137_pair_72a0cd_ctrl88_K88_20260811_223217.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 102,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000044_pair_5312fa_ctrl88_K88_20260812_042848.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 103,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_001175_pair_154b91_ctrl88_K88_20260812_052935.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 105,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000629_pair_83df49_ctrl88_K88_20260812_041004.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 107,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000242_pair_513aee_ctrl88_K88_20260812_024401.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 112,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000051_pair_f4c644_ctrl88_K88_20260812_071125.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 114,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000630_pair_4ffc43_ctrl88_K88_20260812_013123.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 116,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W2_000179_pair_4898fd_ctrl88_K88_20260811_230720.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 117,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000081_pair_8f4a11_ctrl88_K88_20260811_223139.json",
+   "l3": 64,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 120,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W0_000254_pair_2d1c2e_ctrl88_K88_20260811_183120.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 121,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W4_000281_pair_6097e5_ctrl88_K88_20260811_222750.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 124,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000036_pair_d002dc_ctrl88_K88_20260811_182449.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 126,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000310_pair_4b45d4_ctrl88_K88_20260812_072046.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 127,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W1_000421_pair_967a11_ctrl88_K88_20260812_042603.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 129,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000122_pair_4f6405_ctrl88_K88_20260812_035636.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 133,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/skeleton_pools/runs/88gates_rung_W3_000780_pair_03d810_ctrl88_K88_20260812_052926.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 136,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/transpose/results/_rt/TT_mixcolumns_88gates_depth5_fromscratch.json.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 139,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/band_hunt/scratch/found/v1_n8_88gates_depth5.json",
+   "l3": 64,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 146,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave6_2026-08-11/xor_encoding/found/ceil_suffix_n14_r0_88gates_old-kissat_88gates_depth5.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16065,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR2_fs_1_183_m01_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16066,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m00_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16069,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m13_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16071,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m14_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16072,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m02_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16073,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m18_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16074,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m19_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16075,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m09_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16077,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m06_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16079,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_RGN_alg_0_7c71757d879437b7_K88_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16080,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m04_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16081,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m11_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16083,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m14_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16085,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m09_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16087,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m01_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16091,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m12_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16093,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR2_fs_1_183_m03_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16094,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m19_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16095,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m09_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16096,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m06_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16101,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m02_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16102,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m05_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16104,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m08_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16105,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m07_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16107,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m02_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16110,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m11_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16111,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m00_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16112,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/fs1member_GENR2_fs_1_183_m00_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16116,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m16_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16118,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m05_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16120,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m08_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16122,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m17_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16123,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m12_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16124,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m11_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16125,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m10_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16126,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m04_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16127,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m07_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16129,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m06_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16132,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m02_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16133,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m14_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16136,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m12_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16138,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m15_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16139,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_PF_VAL2_own125_K88_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16140,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m12_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16142,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m03_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16143,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m13_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16147,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m18_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16150,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m08_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16151,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/RC2FLOOR_RC2VAL_own125_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16152,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m08_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16153,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m03_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16156,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m05_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16163,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m04_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16164,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m07_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16169,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m15_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16171,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m10_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16176,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m04_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16177,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m15_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16179,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m03_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16180,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m10_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16181,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m18_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16182,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m09_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16184,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m18_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16186,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m19_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16187,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_RGN_alg_1_02a2dc29b016e2f1_K88_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16189,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR3_fs_1_183_m17_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16192,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_own125_m17_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16193,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m01_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16194,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m13_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16195,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GEN_p250_m16_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16197,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/alphabet_ladder/found/sol_GENR_alg_1_m05_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16200,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/thinker_c/satrung/found/sol_ctrl_K88_Bfs27_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16202,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/thinker_c/satrung/found/sol_ctrl_K88_AfsALL_88gates.json",
+   "l3": 66,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16204,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/thinker_c/satrung/found/sol_ctrl_K88_Afs19_88gates.json",
+   "l3": 62,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16206,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/executor/lane3_freecloser/found/sol_fcB_ctrl_K88_88gates.json",
+   "l3": 64,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16207,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h5953859c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16208,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf7c79bd8_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16209,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h7947dd56_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16212,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h0355c21a_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16213,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h9ef042e1_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16214,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC87_ctrl88_A_fs19_88gates.json",
+   "l3": 64,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16215,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h934213_heb1282_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16217,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hb4d4203e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16218,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h9ef042_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16219,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h01b4d113_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16221,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h8e2a68af_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16222,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h69fa1713_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16223,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h96ed79b6_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16224,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1c0b4051_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16225,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h312afced_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16226,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hdc9343eb_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16227,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hec0773e2_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16228,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hae5f655f_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16229,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h934213_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16230,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h934213_h942d7e_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16232,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h435c2a92_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16236,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1f6f99_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16237,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h19f849cd_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16238,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h6d7fb951_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16239,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hbfb34d96_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16240,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16241,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h3c6b544b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16242,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h5174a946_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16245,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC_ctrl88_B_fs27_88gates.json",
+   "l3": 64,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16252,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h66ef0a_h515e8c_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16253,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he3d50749_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16254,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h515e8c_h942d7e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16255,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_heb1282_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16256,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h75db7745_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16258,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h26070f82_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16259,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h2dbe5e_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16260,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha9336c1a_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16262,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc514df38_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16264,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1968c22c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16266,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h942d7e_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16268,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h3d493a15_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16270,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC_ctrl88_AfsALLb_88gates.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16271,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h05c0ae2e_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16278,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hedc7814c_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16280,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h19e37361_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16281,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1f6f99_heb1282_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16282,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc6cbcbfb_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16283,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h515e8c_heb1282_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16284,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h9f24c5e5_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16286,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h66ef0a_heb1282_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16287,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h83e97fd7_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16289,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h8ba9611c_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16290,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h69682707_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16294,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hdefd04f2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16296,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h515e8c_hdc9343_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16297,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h469bc363_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16298,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hce929ba3_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16299,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h2222480e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16300,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h17ede003_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16301,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h54c7829d_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16304,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hb08d0b02_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16308,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h2e9af50c_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16310,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_he39526a2_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16311,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h46a32d67_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16314,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha7ed012f_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16315,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h60424079_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16317,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h48badc9b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16318,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h942d7e7d_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16319,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h46e32fca_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16320,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h934213_h2dbe5e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16321,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h10e1c45a_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16323,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h595e9ae5_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16324,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h8486151e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16325,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hb869a90a_88gates.json",
+   "l3": 64,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16326,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf280d781_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16328,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hb02954cd_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16329,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hbc231998_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16330,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h7e73ab70_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16332,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h14baa90c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16333,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h2f05a4c5_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16334,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h942d7e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16335,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h942d7e_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16336,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1b1f304c_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16338,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1f6f997f_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16339,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h0a3cb86e_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16340,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h5dd74ded_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16341,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_hdc9343_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16346,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc00a8858_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16347,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hde0ae643_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16349,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h4448dc28_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16350,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h406d9e4c_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16352,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h76ea72f2_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16354,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h9782e71b_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16355,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h390e29c8_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16358,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h82bf394d_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16360,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc1818ef2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16361,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h4a734974_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16363,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf683964b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16364,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h465bfa1e_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16367,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h22053d_h934213_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16372,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_heb1282_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16373,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h920320b1_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16374,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h33b6c2ce_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16375,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h65cd2886_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16376,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h934213_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16377,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h757645af_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16378,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hee5c1c29_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16379,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_he53922f4_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16380,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h44523d6e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16381,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h20c877bc_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16382,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha70c7868_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16383,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC_ctrl88_AfsALL_88gates.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16384,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he8b8b86e_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16385,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1bc9c6d0_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16386,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h028af419_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16387,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_heb1282c0_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16388,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h3ff402fb_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16389,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1ef2e42a_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16390,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h04b7c0f1_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16391,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FCR_ctrl88_cls0g_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16392,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h06cf317c_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16393,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h818cfd9b_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16394,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h7232aa45_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16396,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_88gates_depth8_thirdfamily_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16397,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h22053d47_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16401,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h958b0f41_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16402,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h48113075_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16403,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h058785d4_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16404,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h515e8c_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16405,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h0bf2b7d4_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16407,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h46624e09_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16408,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_heef29e90_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16409,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h4d018ad7_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16411,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_XV_nofree_K88_B_fs27_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16412,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_CTL89_SIGMA7_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16413,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h10d5348c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16414,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc3cfd111_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16415,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he6c3c721_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16417,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h66ef0a_h2dbe5e_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16419,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h25b7e413_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16420,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h736f41e3_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16421,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h34609846_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16423,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hbd53517b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16425,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h91965688_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16426,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hb4782e14_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16430,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hd656d250_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16431,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h515e8c18_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16432,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h515c0e25_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16433,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FCR_ctrl88_cls0_t16_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16434,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h7165a806_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16436,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h3a38a39f_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16437,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hd310310a_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16440,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1f6f99_h942d7e_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16441,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_he8288c81_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16443,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he2c356bc_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16447,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h06dcb540_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16448,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FCS_ctrl88_SIGMA7_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16449,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h296ed237_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16451,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hbe03bf82_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16453,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_hf68396_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16454,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hdb11c9ef_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16455,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h7f7a3440_88gates.json",
+   "l3": 64,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16456,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h2dbe5e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16457,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h9e16411c_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16458,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hdbc8824f_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16460,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h54e832c5_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16462,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hd67cedc8_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16466,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h66f4fc61_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16470,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf3df7b1a_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16471,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_hf68396_h942d7e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16473,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hb77cd43a_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16475,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h1d9f7691_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16476,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_hf68396_h2dbe5e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16477,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC_ctrl88_A_fs19_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16478,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he8c5c97e_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16480,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hc01a8446_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16481,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h66ef0a_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16483,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hc2a3c334_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16484,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1f6f99_h515e8c_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16485,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h66ef0a_h1f6f99_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16488,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h19180531_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16489,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hd33cc09f_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16490,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h2feb8315_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16491,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h22053d_h515e8c_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16493,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h515e8c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16495,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h4ee56d1b_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16496,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h64e0915c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16497,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h1f6f99_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16499,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hf5d42474_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16505,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_ha99f378f_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16506,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h798181cf_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16508,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h2188ebd3_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16509,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_ha8b6204f_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16513,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h42d9e47d_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16514,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h1ccd97_h22053d_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16518,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h660785b3_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16519,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha2c1e68e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16520,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h772539d8_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16521,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hd5ed984e_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16522,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h838c28f5_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16523,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h13a258e4_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16524,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h9ef042_h22053d_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16525,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_FC87_ctrl88_B_fs27_88gates.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16526,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h0a4a27de_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16527,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h6801782c_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16528,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h0605d823_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16529,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h934213bb_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16532,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h8960ba0f_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16535,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h47d7dd3a_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16537,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h22053d_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16538,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha369c7a4_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16539,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h4fbc579b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16542,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h899cfb33_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16543,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_ha4639645_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16544,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h94f8b96b_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16545,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h4b4f9dd6_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16546,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h4d58c146_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16547,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h66ef0a_h942d7e_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16550,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h9f4575ba_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16551,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h55ed649b_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16554,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h2dbe5e_hdc9343_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16555,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_he1ef43e2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16556,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf1d85c0a_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16557,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h90bb7537_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 24
+  },
+  {
+   "i": 16558,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h22053d_hf68396_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16560,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hc16013a0_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16563,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h934213_hf68396_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16564,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hf18ddb02_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16565,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_heb1282_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16571,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_h616a0415_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16573,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_hb1c68cc8_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16574,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hf8ae8896_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16575,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_h934213_hdc9343_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16576,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/sol_XV_nofree_K88_A_fs19_88gates.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16577,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_h68c91b20_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16578,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_TRI_S7_hf68396_h1f6f99_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 16581,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA7_hceec2186_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16582,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/simple/execute/found/union_PAIR_SIGMA5_ha2dbca72_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16584,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/cand_floor_PL2_E_88gates_depth5_fromscratch_r2__r__3_5_12_r2_20260809_000443_88g.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16587,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r2__hand97_r0_20260810_103316.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16592,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/cand_floor_PL2_E_88gates_depth5_fromscratch_r3__r__3_9_15_r2_20260810_102616_88g.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16596,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r1__E_88gates_depth7_r0_20260810_102522.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16603,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/cand_floor_PL2_E_88gates_depth5_r0__E_88gates_depth5_fromscratch_r1_20260810_102642_88g.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16606,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/cand_floor_PL2_E_88gates_depth5_fromscratch_r1__r__5_6_12_r3_20260810_103305_88g.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16608,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r2__r__3_5_12_r3_20260810_053212.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16612,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r3__r__6_12_15_r1_20260810_103347.json",
+   "l3": 64,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16619,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r2__r__6_12_15_r0_20260810_103330.json",
+   "l3": 64,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16645,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PL2_E_88gates_depth5_fromscratch_r3__hand97_r1_20260810_103337.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16647,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/cand_floor_PL2_E_88gates_depth5_fromscratch_r0__r__5_6_12_r2_20260810_102709_88g.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16650,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/reassoc/runs/88gates_floor_PLX3_d7_d8_fs_20260809_001957.json",
+   "l3": 64,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 16658,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_066884_tau_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 26
+  },
+  {
+   "i": 16660,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_CPLANT_001_alg_0_fs_1_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16661,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_094725_alg_1_alg_2_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16663,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_008402_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 16667,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_067703_alg_1_d_2_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16668,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_000392_alg_2_d_0_88gates.json",
+   "l3": 59,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16676,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_CPLANT_007_fs_0_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16678,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_108505_d_3_alg_1_88gates.json",
+   "l3": 65,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16681,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_100744_d_3_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16686,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_017035_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16690,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_079458_tau_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 24
+  },
+  {
+   "i": 16692,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_113973_alg_1_d_3_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16693,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_060101_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16695,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_DECAY89_0041_alg_2_d_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16698,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_003102_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16700,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_018202_d_0_alg_2_88gates.json",
+   "l3": 57,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16703,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_091078_d_3_fs_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 16706,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_037988_alg_0_d_0_88gates.json",
+   "l3": 64,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16708,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_079490_alg_2_d_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16711,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_084730_alg_1_fs_1_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 28
+  },
+  {
+   "i": 16715,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_053168_d_0_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16716,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_005038_alg_2_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16717,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_010145_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16719,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_048466_d_3_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16723,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_004648_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16729,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_047585_d_3_alg_0_88gates.json",
+   "l3": 62,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16731,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_CPLANT_005_d_0_alg_3_88gates.json",
+   "l3": 63,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16732,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_125021_alg_0_fs_1_88gates.json",
+   "l3": 63,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16737,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_115088_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16738,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_000810_alg_1_fs_1_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16749,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_095455_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 13,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16750,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_063850_fs_1_d_0_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 28
+  },
+  {
+   "i": 16754,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_072741_alg_1_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16757,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_026979_d_3_alg_1_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16763,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_090739_d_0_alg_1_88gates.json",
+   "l3": 64,
+   "depth": 11,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 16766,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_082378_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16767,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_DECAY89_0391_fs_1_d_0_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 35,
+   "Astar": 27
+  },
+  {
+   "i": 16768,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_071715_d_1_alg_0_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 25
+  },
+  {
+   "i": 16769,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_099423_alg_0_alg_1_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 25
+  },
+  {
+   "i": 16773,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_001909_d_3_alg_2_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 16775,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_095723_alg_1_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16784,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_035873_alg_1_fs_1_88gates.json",
+   "l3": 62,
+   "depth": 14,
+   "n": 88,
+   "kappa": 35,
+   "Astar": 28
+  },
+  {
+   "i": 16786,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_068695_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 16790,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_008424_d_0_alg_2_88gates.json",
+   "l3": 59,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16794,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_CPLANT_004_alg_1_alg_0_88gates.json",
+   "l3": 62,
+   "depth": 11,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 16800,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_077650_d_1_fs_1_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 29
+  },
+  {
+   "i": 16806,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_022981_alg_2_alg_0_88gates.json",
+   "l3": 63,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16809,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_099099_ws_huge_alg_2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 16813,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_013409_fs_1_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 35,
+   "Astar": 28
+  },
+  {
+   "i": 16815,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_066923_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 13,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16816,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_124178_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16818,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_037327_alg_1_d_2_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16824,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_117587_alg_0_ws_huge_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16828,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_019467_d_0_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16829,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_030254_alg_2_alg_0_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16830,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_045788_d_0_alg_2_88gates.json",
+   "l3": 59,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16832,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_018857_d_3_d_2_88gates.json",
+   "l3": 62,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 16838,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_042554_alg_2_d_0_88gates.json",
+   "l3": 60,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16840,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_074403_d_0_alg_2_88gates.json",
+   "l3": 60,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16842,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_000109_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16844,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_001430_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16849,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_025023_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16850,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_112521_d_2_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16853,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_000401_alg_0_alg_1_88gates.json",
+   "l3": 64,
+   "depth": 11,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 16854,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_036431_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16856,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_084597_ws_huge_alg_3_88gates.json",
+   "l3": 63,
+   "depth": 8,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 24
+  },
+  {
+   "i": 16863,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_005521_alg_1_alg_3_88gates.json",
+   "l3": 61,
+   "depth": 13,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 29
+  },
+  {
+   "i": 16864,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_001741_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 28
+  },
+  {
+   "i": 16867,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_109945_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 16868,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_034630_d_2_ws_huge_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 16875,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_044000_alg_1_d_3_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16880,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_091855_ws_huge_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16881,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_076129_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16883,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_SELFTEST_E2E_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 27
+  },
+  {
+   "i": 16885,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_049452_ws_huge_d_3_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 16890,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_078730_tau_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 24
+  },
+  {
+   "i": 16896,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_110340_d_0_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16898,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_037349_alg_2_alg_3_88gates.json",
+   "l3": 64,
+   "depth": 13,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 26
+  },
+  {
+   "i": 16900,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_C89P_377_alg_3_alg_1_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 28
+  },
+  {
+   "i": 16901,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_096047_ws_huge_alg_1_88gates.json",
+   "l3": 63,
+   "depth": 9,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16904,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_001387_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16912,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_102052_tau_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 24
+  },
+  {
+   "i": 16916,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_011187_fs_1_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 27
+  },
+  {
+   "i": 16923,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_079212_d_3_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16930,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_030956_ws_huge_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 16933,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_104642_alg_0_alg_2_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16934,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P003917_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16942,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_054758_alg_0_alg_3_88gates.json",
+   "l3": 64,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16943,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_044986_alg_2_d_3_88gates.json",
+   "l3": 61,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 16944,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_034221_alg_1_d_3_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16952,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_106091_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16958,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_033633_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16964,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P015899_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16966,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_027151_alg_2_d_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16967,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_055331_d_0_alg_2_88gates.json",
+   "l3": 59,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16968,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_035066_d_0_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16977,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_048803_d_0_alg_2_88gates.json",
+   "l3": 59,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16979,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_060481_alg_2_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16980,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_083043_alg_1_alg_0_88gates.json",
+   "l3": 62,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 16981,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_091360_d_0_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 16985,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_095404_ws_huge_d_3_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 16987,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_056857_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 16989,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_047627_alg_2_d_0_88gates.json",
+   "l3": 57,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 16992,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_018221_alg_0_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 17000,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_072135_ws_huge_d_2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 17003,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_030305_ws_huge_d_3_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 17009,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_114465_alg_2_d_0_88gates.json",
+   "l3": 60,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 17014,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_051920_ws_huge_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 17018,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_024563_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17020,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P014976_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17021,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_C89P_013_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17024,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_041526_d_0_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 17028,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_009581_d_0_alg_2_88gates.json",
+   "l3": 57,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 17029,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_026706_alg_0_alg_2_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 25
+  },
+  {
+   "i": 17036,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_036517_alg_0_d_0_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17040,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_007805_ws_huge_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 17042,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P015945_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 25
+  },
+  {
+   "i": 17045,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_116165_alg_0_alg_1_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 25
+  },
+  {
+   "i": 17046,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_102991_alg_0_d_1_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 24
+  },
+  {
+   "i": 17049,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_112133_alg_0_ws_huge_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 17050,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_026673_d_0_d_1_88gates.json",
+   "l3": 58,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 17051,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_095644_ws_huge_alg_3_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 25
+  },
+  {
+   "i": 17057,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_118558_alg_0_ws_huge_88gates.json",
+   "l3": 61,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 27
+  },
+  {
+   "i": 17059,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_077334_d_0_alg_0_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 17061,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_080003_alg_2_d_0_88gates.json",
+   "l3": 60,
+   "depth": 13,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 17062,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_081167_d_3_alg_3_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 17063,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_050943_ws_huge_d_3_88gates.json",
+   "l3": 62,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 25
+  },
+  {
+   "i": 17066,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_002062_alg_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 17078,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_002395_alg_0_alg_2_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 17079,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_021584_alg_2_fs_1_88gates.json",
+   "l3": 65,
+   "depth": 10,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 25
+  },
+  {
+   "i": 17080,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_025189_ws_huge_d_2_88gates.json",
+   "l3": 65,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 17082,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_089319_d_3_d_2_88gates.json",
+   "l3": 61,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 24
+  },
+  {
+   "i": 17083,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_000466_alg_0_fs_1_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 27
+  },
+  {
+   "i": 17086,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_114497_d_2_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 17101,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_001455_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 17105,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_051704_alg_1_alg_2_88gates.json",
+   "l3": 61,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 28
+  },
+  {
+   "i": 17114,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_045592_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 28
+  },
+  {
+   "i": 17118,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_058755_alg_3_alg_2_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 24
+  },
+  {
+   "i": 17120,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_074043_alg_1_d_3_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17127,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_112510_alg_2_alg_0_88gates.json",
+   "l3": 63,
+   "depth": 9,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 25
+  },
+  {
+   "i": 17131,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_129081_ws_huge_d_2_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 17139,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_025230_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17141,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P003580_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 28
+  },
+  {
+   "i": 17142,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_059956_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17145,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_095201_d_3_alg_2_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 17147,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_021459_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17156,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_026100_alg_2_d_3_88gates.json",
+   "l3": 64,
+   "depth": 13,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 28
+  },
+  {
+   "i": 17157,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_093902_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 17159,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_130076_alg_0_d_0_88gates.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 25
+  },
+  {
+   "i": 17160,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_078253_alg_2_alg_0_88gates.json",
+   "l3": 65,
+   "depth": 8,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 27
+  },
+  {
+   "i": 17162,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_003447_tau_d_3_88gates.json",
+   "l3": 66,
+   "depth": 8,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17166,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_019514_d_3_ws_huge_88gates.json",
+   "l3": 62,
+   "depth": 9,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 25
+  },
+  {
+   "i": 17171,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_015024_alg_3_alg_1_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 17174,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_117475_ws_huge_d_2_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 27
+  },
+  {
+   "i": 17179,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_063222_d_3_alg_1_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 34,
+   "Astar": 26
+  },
+  {
+   "i": 17181,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_114692_alg_1_ws_huge_88gates.json",
+   "l3": 62,
+   "depth": 8,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 25
+  },
+  {
+   "i": 17184,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_000152_alg_2_ws_huge_88gates.json",
+   "l3": 62,
+   "depth": 9,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 26
+  },
+  {
+   "i": 17189,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_114095_alg_1_d_3_88gates.json",
+   "l3": 65,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17190,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_001704_d_0_d_1_88gates.json",
+   "l3": 58,
+   "depth": 12,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 29
+  },
+  {
+   "i": 17191,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_000610_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 11,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 28
+  },
+  {
+   "i": 17193,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_DECAY89_0034_alg_1_alg_0_88gates.json",
+   "l3": 64,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 25
+  },
+  {
+   "i": 17212,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_001424_d_3_fs_1_88gates.json",
+   "l3": 65,
+   "depth": 11,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 17214,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_046353_alg_2_alg_1_88gates.json",
+   "l3": 63,
+   "depth": 10,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 27
+  },
+  {
+   "i": 17215,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_002413_alg_0_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 11,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 25
+  },
+  {
+   "i": 17218,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_007612_alg_1_ws_huge_88gates.json",
+   "l3": 66,
+   "depth": 9,
+   "n": 88,
+   "kappa": 33,
+   "Astar": 26
+  },
+  {
+   "i": 17223,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_XCHK88_P006900_88gates.json",
+   "l3": 66,
+   "depth": 10,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 26
+  },
+  {
+   "i": 17225,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w0_133223_alg_0_fs_1_88gates.json",
+   "l3": 63,
+   "depth": 7,
+   "n": 88,
+   "kappa": 29,
+   "Astar": 27
+  },
+  {
+   "i": 17227,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_017902_d_3_alg_1_88gates.json",
+   "l3": 66,
+   "depth": 12,
+   "n": 88,
+   "kappa": 32,
+   "Astar": 26
+  },
+  {
+   "i": 17228,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w1_047674_alg_2_alg_1_88gates.json",
+   "l3": 61,
+   "depth": 12,
+   "n": 88,
+   "kappa": 31,
+   "Astar": 27
+  },
+  {
+   "i": 17230,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/union_sat/found/sol_GEN89_w2_004437_alg_2_fs_1_88gates.json",
+   "l3": 62,
+   "depth": 10,
+   "n": 88,
+   "kappa": 30,
+   "Astar": 28
+  },
+  {
+   "i": 17234,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205535Z.json",
+   "l3": 63,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17236,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205536Z.json",
+   "l3": 63,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17238,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205538Z.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17240,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/FAILED_EXPORT_88gates_mutant_cluster_stock_b88_d00_improve_20260808T165533.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17242,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205543Z.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17244,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205544Z.json",
+   "l3": 63,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17245,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205537Z.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17247,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205540Z.json",
+   "l3": 66,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17248,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205548Z.json",
+   "l3": 65,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17249,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205534Z.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17252,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205531Z.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17255,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/mutant_cluster/quarantine_misplaced/BREAKTHROUGH_88gates_mutant_cluster_stock_b88_d00_improve_20260808T205539Z.json",
+   "l3": 64,
+   "depth": 7,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17256,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/burn/council/impl_1/found/cand_anchorcheck_88gates.json",
+   "l3": 64,
+   "depth": 8,
+   "n": 88,
+   "kappa": 28,
+   "Astar": 24
+  },
+  {
+   "i": 17259,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/fence_sat/found/byesf_88d5fs_5_2-2-1-1_88gates_depth6.json",
+   "l3": 66,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17260,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/fence_sat/found/byes_88d5fs_5_88gates_depth5.json",
+   "l3": 63,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17262,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/fence_sat/found/byesf_88d5fs_7_2-3_88gates_depth5.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17265,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/fence_sat/found/byesf_88d5fs_5_3-2-1_88gates_depth5.json",
+   "l3": 66,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17266,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/fence_sat/found/byes_88d5fs_7_88gates_depth5.json",
+   "l3": 65,
+   "depth": 5,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  },
+  {
+   "i": 17267,
+   "path": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/wave5_2026-08-04/lp_closure/results/abc_output_88gates.json",
+   "l3": 65,
+   "depth": 6,
+   "n": 88,
+   "kappa": 27,
+   "Astar": 23
+  }
+ ]
+}

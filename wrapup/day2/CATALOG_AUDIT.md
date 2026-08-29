@@ -1,0 +1,338 @@
+# CATALOG AUDIT — adversarial referee pass over `wrapup/METHOD_CATALOG.md`
+
+Auditor: T1d (day-2 autonomous session). Date: **2026-08-29**.
+Subject: `wrapup/METHOD_CATALOG.md`, 6,395 lines, 309 entries, 14 families,
+written 2026-08-29 10:14 by one agent from the ten slice reports in
+`wrapup/reports/`, minimally cross-checked.
+
+**Method.** Every verdict below was re-derived from a **primary source** — the
+actual code file, the actual log / ledger / results JSON — never from the slice
+report the catalog was written from. Where the code was the question, the code
+was opened and grepped for AES-MixColumns hardcoding (`0x11B`, `xtime`,
+`[2,3,1,1]`, 32-bit width assumptions, hardcoded target tables, sector tables),
+not taken on the entry's word.
+
+Read-only everywhere except `wrapup/day2/` (this file) and the corrections
+applied to `METHOD_CATALOG.md` itself, listed in §6 and logged in the catalog's
+own changelog block. No live directory was touched, no process disturbed, no
+solver run. The k=14 fleet (4 × `mono.py 14`, 16 × `cube16.py` + supervisor) was
+confirmed alive and unchanged at ~90 % CPU each before, during and after.
+
+---
+
+## §1 — Headline
+
+The catalog's **self-bookkeeping is exact** — every count claim it makes about
+itself checks out to the digit — and most entries reproduce against their
+primary logs. Its failures cluster in three places, and all three matter more
+than the entry-level nitpicks:
+
+1. **Paths that do not resolve.** 105 of 331 path-like citations were
+   unresolvable from the repo root, including **19 of ~50 in the phase-2
+   starter kit** — the single table the document exists to be read from.
+   Two systematic causes, both mechanical, both now fixed (§6).
+2. **A schema field missing from 42 % of entries.** 130 of 309 entries carry
+   **no Generality label at all**, in a document whose stated purpose is to say
+   what ports to another circuit. Three of them are starter-kit items.
+3. **Numbers that live only in prose.** The most serious defects found are all
+   the same shape: a figure that appears in the entry, in the slice report and
+   in a `STATUS.md`, but **contradicts or outruns the log it claims to
+   summarise** — F8's 5.4×, F8's "V6 54/54", F9's 13,215 s, G4's "3 significant
+   figures".
+
+Against that: the entries carrying the project's load-bearing results — I2, I7,
+I12, I30, G2, H22, H26, J33, E7 — verify essentially exactly, several of them to
+every digit across a dozen figures.
+
+---
+
+## §2 — Sample verification: 62 entries against primary sources
+
+**Tally: 37 PASS · 24 FAIL · 1 UNVERIFIABLE.**
+
+Sample composition: **all 38 rows of the phase-2 starter kit** were audited
+(they name ~50 methods; the 38 rows resolve to 44 distinct entries here),
+plus every entry carrying a large performance claim, plus at least one per
+family. `kit#n` in the finding column marks the starter-kit row an entry serves.
+
+A `FAIL` means one of: a measured number that does not reproduce from the
+primary source, a Generality label the code contradicts, a phase-2 verdict the
+primary source inverts, or a mandatory schema field missing. It does **not**
+mean the method is bad — several FAILs are excellent methods with one wrong
+line.
+
+| # | id | family | method | verdict | finding |
+|---|---|---|---|---|---|
+| 1 | **A1** | A | spec-oracle | PASS | kit#1. `verify_circuit.py` rebuilds MC from GF(2^8) (`xtime`, `coef=[2,3,1,1]`, self-check `wts.count(5)==20 and wts.count(7)==12`); CI runs all 8 records and asserts each FAILS one level tighter; records repo returns rc 0 / `ALL CIRCUITS VERIFIED` 11/11. MIXED correct. Nits: 128 LOC not 129; no top-level `verified` key in `bounds.json`; "campaign-wide zero false claims" is not in the cited source (it audits 8 circuits). |
+| 2 | **A2** | A | cleanroom-adversarial-verifier | PASS | kit#7. `RANDOM_TRIALS=100000` at src:19; 716 lines; 11/11 circuits `issues` empty; **14/14 adversarial `passed:true`**, names matching one-for-one. Stdlib only — genuinely never calls `verify.py`. `INV_MATRIX` already present, so the one-constant port is literal. Overstatement: "the adversarial suite is fully CIRCUIT-GENERIC" — 5 of 14 cases are built from MC-specific matrices. |
+| 3 | **A10** | A | validated primitive kernel suite (B1–B5) | **FAIL** | kit#4. **Generality label wrong and names the wrong file.** Catalog: "CIRCUIT-GENERIC except the target set in `kernel.load_circuit`". `load_circuit` is a JSON loader with no targets; the 32 MC targets are rebuilt **inside the C kernel** — `csrc/slp_kernel.c:34,38,47` (`TARGETS[32]`, `xtime_` with `0x11B`, `coef[4]={2,3,1,1}`). Whole kernel is uint32/32-input width-locked. Second: "B3 — 850,784 states brute-force cross-checked" — 850,784 is the number **indexed**; the brute-force check was 6+6 queries plus 300 sampled ids. Third: the B5 validation log's own last line is `=== B5 gauge canonicaliser: FAIL ===`, omitted. |
+| 4 | **B1** | B | anneal3 | PASS | kit#9. `engine_anneal3` at `pipeline/engines.py:968`; 97@3 from scratch (d3.log seed 18 @ 235.3 s); 81.1 s / 23.5 s annealing / 60–156 s; never below 97 in 16 seeds; 21 core-hours; CP-SAT only 101 with dual frozen at 32. Defect: the entry contrasts the root copy (MIXED) with beat88's (MC-HARDCODED) — they are the same code, copied verbatim; the root carries the identical weight-5/7 branch (`engines.py:975`). |
+| 5 | **B2** | B | naive-random-xor-tree root | PASS | kit#9. `naive#2163` -> 139@3 -> 88@6 at t=68,238.7 s (18.96 h); `naive#1958` -> 146@3 -> ... -> 88@6 at 69,192.7 s then 88@5 at 69,198.8 s. Yields naive 8.6 / anneal3 10.2 / paar 20.5 / bp 39.9 CPU-h per 88 all present. "8 of 56 periphery, unrelated roots mean 7.88" confirmed. CIRCUIT-GENERIC-apart-from-input-count is right. |
+| 6 | **B4** | B | randomized Boyar–Peralta (clean-room) | PASS | kit#13. BP-only best **94** (`restart 352, 375s`), per-worker 95–101, symmetric 108/106, naive baseline 124@5, clean-room best 93. 14 logged BP workers exact. Two defects: "restarts of order 10^2–10^3" — no log reaches 10^3 (max winning index 352); and "a single `TGT[32]` array is the only problem-specific content" is false both ways — `atlas/tower/bp.c` has **no** TGT (reads the instance from stdin, so it is fully generic), while `fleet10/.../bp5.c:292` bakes rho-symmetry (`rotl(u,8*r)`) beyond the target list. |
+| 7 | **C1** | C | walk | PASS | kit#11. `engine_walk` at `pipeline/engines.py:875`. `0/324,815` free remove-1 probes confirmed; walk 736 vs lns 22 vs anneal3 0 NEW BESTs; the 5.3 s depth-11->7 collapse confirmed in the record log. MIXED right. Policy defect: the headline `480–640 it/s` is repriced in a primary the catalog cites elsewhere (`engine-walk.md:230-239`: 451/660/546 across three seeds, "narrower than the seed-to-seed spread") with **no `CONFLICT` flag**. |
+| 8 | **C2** | C | LNS | PASS | `engine_lns` at `engines.py:571`; 1,204 LOC exact. 89@5 at t=0.3 s of first chunk (both runs); mean effective radius **0.24** masks; **84–85 %** of accepted moves are literal no-ops; Walk:LNS-strict:LNS-shipped = 10,124:153:4 per 300 s; `3..6 -> [5633,0,0]`; 1.2 %->100 % feasible, ~34x. All exact. |
+| 9 | **C3** | C | merged-engine wave-1 bundle | **FAIL** | **Generality label wrong.** All seven A/B rows correct to the digit, but the entry is labelled bare `CIRCUIT-GENERIC` with no port clause while the merged artefact is MC-bound at the top of the file: `agents/merged-engine/work/engines.py:28-31` (`import mixcolumns_core as core; T = core.TARGETS; TSET = core.TARGET_SET`), `work/mixcolumns_core.py:21,36,53-54` (`0x11B`, `coef=[2,3,1,1]`, asserts 20 weight-5 / 12 weight-7). The engine leans on it at `:256`. **Internally inconsistent: C1 and C2 label this same file MIXED.** Also the "Net" sentence mixes campaign_87 wave-1 rows with beat88-era C-kernel figures. |
+| 10 | **C15** | C | demand-flow neutral-neighbourhood pricing | **FAIL** | **Schema violation: no Generality, no Cost, no Logs field.** Measurements are the cleanest in its batch (prefix cliff at 45/46; 148->8 / 133->6 / 162->7 / 92->12 with 0 improving and 0 neutral; beam 24 over 240 windows, `best_found` histogram `{88:240}`; the instrument does find 10 and 15 improving moves where the rollout is wrong). But the tool chain is not portable: `dfcal.py:29` `from bi_mask_probe import TARGETS`; `bi_mask_probe.py:36-61` defines `xtime`/`gf_mul` and the AES targets. Correct label MIXED. |
+| 11 | **C16** | C | rho^2-symmetric orbit search | PASS | kit#15. Hardest entry in its batch and it holds, including "two of five 88s" traced through both provenance chains (88@7 seeded from `symlns_94gates_seed44.json`; 88@8 from `BEST_90gates_depth9_rho2symmetric.json` via `union_A88.json`). Generality unusually honest — MIXED with the method-vs-instance distinction spelled out, confirmed by `work/orbit_engine.py:22,27,29,33`. Jaccard 0.463 is the correctly-cited re-measured value (`FACTS.md:58`), not `REPORT.md`'s 0.47. |
+| 12 | **C24** | C | depth-capped lane recipe (91@4) | PASS | Mine. Code (`beat88/methods/m3_census/code/{descent,anneal3,roots,replay}.py`) and exports present. The 15,650 pod2 figure is independently corroborated by `CONFLICTS_RESOLVED.md` B7's own re-tally (15,684 across four manifests, 15,650 in `pod_salvage/pod2`). Generality MIXED honest. |
+| 13 | **D1** | D | cascade depth ladder | PASS | kit#10. `ladder_parallel.py` is **459 LOC** exact; `--mode cascade` real (`argparse choices` at :435, `run_cascade()` at :455). Coordinator log: 92@4 at **9610.5 s = 2.67 h**; TRIGGER chain d3 97 -> d4 96 -> d5 95 -> d6 94 -> d7 93 -> d8 92. Per-rung harvest table exact. "CIRCUIT-GENERIC orchestration over a MIXED engine set" is the honest phrasing — the file does not import `mixcolumns_core`. |
+| 14 | **D2** | D | Pareto tie-break | PASS | kit#10. The load-bearing causal claim is confirmed **directly in the rung's own log**, not inferred: `d8.log:4` `NEW BEST 92 gates depth 4 VERIFIED depth-tiebreak it=13083`. Gate-count-only rule stops at 88@8–11. Cost "free" accurate. |
+| 15 | **D3** | D | alt worker mode | PASS | kit#10. `cycle = ("walk","lns") if engine == "alt"` at `worker.py:149`; chunk 600/300 s are the shipped defaults; `reproduce/hunt_88.py` 198 LOC exact; all five archived iteration numbers reproduce. Imprecision: "found 88 @ depth 7 at t = 1,973 s" — the log gives 88@**11** at 1973.3 s and 88@7 at 1978.6 s. |
+| 16 | **D7** | D | plateau harvesting | **FAIL** | kit#12. **The headline decomposition does not add up.** Catalog: "≈139,878 distinct known 88-gate states (84,989 families 1–2 + 53,902 family 3)". Both components verify individually; **84,989 + 53,902 = 138,891**, off by **987**. 139,878 is a real but *different, earlier* measurement (`SYNTHESIS.md:154`, "three-old-anchor harvest, late July, historical"), and `SYNTHESIS.md:45-47` reprices it as counting orbit points of a few components **~100x over**. Neither is flagged `CONFLICT`. Everything else sound: `_Harvester` at `engines.py:353` is genuinely CIRCUIT-GENERIC (read end to end; only filter is `wt(m)>1`), 57x/72x compression exact. |
+| 17 | **E1** | E | exact window decider | PASS | kit#17. ~165 M is the totals table (113k + 16.8M + 64.1M + 84.0M). k=2/k=3 shells confirmed from the certificate JSONs themselves (1,540 = C(56,2); 1,596 = C(57,2)). Validation chain 25/25, 12/12, 4,200/4,200, 462/462, 33/33 all present. MIXED exact as described. Nits: "2.9–5.0 states/s" understates the observed top (to 5.96); "stdlib-only" is inaccurate (it imports `mixcolumns_core`). **See §5: the ~165 M total is itself now ruled a stale under-count.** |
+| 18 | **E2** | E | exact k=4 decider | PASS | kit#17. 1,257 = 1,202 + 55; 122 NOs = 71 + 51; CPython and PyPy logs result-identical incl. case histogram `{'A':894,'B1b':18}`; 32,685 / 367,290 = C(56,4) confirmed; 53,126 = 32,685+20,432+9. MIXED-as-E1 right (imports only `exact_window`). |
+| 19 | **E7** | E | window-cut compressibility d(S) (laneCUT) | PASS | kit#16. Contested counts handled correctly: primary carries both errata struck in place (14,564->18,564; 387,395->386,922) and the catalog reproduces the corrected values without citing the struck ones. 6,848 and 26,498 reproduce; 88@8 follow-on 2,220,037 CLOSED confirmed. MIXED right (`cut.py:20-22,34`). |
+| 20 | **E8** | E | population window sweep | PASS | kit#16. Strongest-evidenced entry in the audit. Recomputed from raw JSONL: `sweep_A_fullpop.jsonl` exactly 17,283 rows, all VALID88, zero `d2.tested != 1540`, zero non-zero compressible, path set **set-equal to `popfull.txt`**; `shared_helpers` = `{0:17277, 1:4, 3:2}` — exactly the claimed six rows. 32 tier-B ledger rows summing to **15,099,957** to the digit. Costs 18.71 CPU-h / 3.90 CPU-s per circuit / 1,224 CPU-h all match. |
+| 21 | **E14** | E | exhaustive small-SLP decision | PASS | kit#18. `=== 18355 circuits, 1686s`, `GNone 55970 / k1 54561 / k2 1409`, `G3 0 G2 0`, `ORACLE-VALID BELOW 88: 0`. The 100 UNDECIDED closed row-by-row (43+44+13, all `G:"None"`). 8,000-planting attack and 0/3,000 false positives in the lane's own LEDGER. Caveat: 3 of the 6 files named under CIRCUIT-GENERIC are 32/88-bound (`completeD.py:38,79,184`); no port cost priced. |
+| 22 | **F8** | F | GF(2)-explicit XOR-native SAT encoding | **FAIL** | kit#32. **The headline is computed from quarantined, superseded data.** "19.7 k clauses vs 106.7 k (5.4x)": 19,666 appears **only** in `runs/relaxed_encoder_SUPERSEDED/`, i.e. runs made with the `_exactly_two` bug the entry itself quarantines. The current post-fix encoder at n=12 gives **26,428 (+384 xor rows)** -> **4.04x, not 5.4x**. I re-confirmed both numbers myself from `ceilingB.jsonl` / `ceilingA.jsonl`. Second: **"V6 54/54" is unbacked** — the only validation log shows `[FAIL] V6 ... agree=0 (UNSAT=0 SAT=0) disagree=0` / `VALIDATION FAILED`; I re-confirmed this too. Third: CIRCUIT-GENERIC is wrong for the cited file set (`bench.py:55,313`, `hunt.py:65-69` hardcode five MC circuits) -> MIXED. Verified OK: 64 solves, median **9.3x**, ceiling n=12->14. |
+| 23 | **F9** | F | depth-capped exact oracle (dslp) | **FAIL** | kit#31. **The Cost line does not reproduce from its own stated source.** Catalog: "91 exact decisions, 5 timeouts, 13,215 s". The cited `dcache.jsonl` today holds **97 rows: 81 exact + 7 infeasible_depth + 9 timeouts, wall 157,413 s** — a 12x wall discrepancy; no prefix of the file reproduces 91/5/13,215. RESULT.md hedges "Tally at write-up"; the catalog drops the hedge. Also "2–7x faster on every capoff row" — true range **1.96x–7.45x**, two of ten rows outside the band. Also "single copy now in fleet8" is false (`fleet4/laneDEPTH/code/dslp.py` still exists and differs). CIRCUIT-GENERIC **is** correct here — zero MC constants in either copy. |
+| 24 | **F12** | F | resumable cube-and-conquer | **FAIL** | kit#33. **The phase-2 verdict inverts what the primary concluded.** Catalog: "the partition choice is the load-bearing decision; cube on semantics, not gate 0". fleet11's own RESULT.md: *"The 59x-131x multiplier is **not the partition's fault, it is the process granularity** — one solver per cube throws away every clause the previous cube learned"*, and grouping recovers 2.3x on the **identical** gate-0 partition. Every figure otherwise confirmed (85x, 2.3x, 528/0 disagreements, 56/56, the march_cu "measured multiplier ~= 1"). CIRCUIT-GENERIC correct. Path nits: `qsolve.py` has no `--shard` (it has `--split2`); the march_cu code is missing from the Code list. |
+| 25 | **F17** | F | exact alphabet-floor MaxSAT | **FAIL** | kit#25. "floor = 91 at depth <= 4 over 5 independent vocabularies (91, 91, **92**, 117, 155, 189, 195, 227 masks)" — the 92-mask vocabulary `C92` has floor **92, not 91**; it is the one alphabet in the table that does not give 91. The list also drops `A_plus_88d5` (138 masks) and double-counts 189. Everything else confirmed: 1.3 s at 227, 23.4 s at 300, timeouts at 400/554/600/688, decide form did not return in 764 s so >=400x is real and conservative. Generality wording exactly right. |
+| 26 | **F27** | F | vocabulary-free IN/OUT + PB | **FAIL** | **Generality label wrong.** Labelled CIRCUIT-GENERIC "IN is derived from the target set by theorem", but the flagship model hardcodes MC: `code/novocab.py:50 from mixcolumns_core import TARGETS, INPUTS`, `:53 NOT32 = 0xFFFFFFFF`, `range(32)` at three sites; **15 of 24 files** under `code/` import `mixcolumns_core`. Should be MIXED (the tiny-exact control genuinely is generic, which is why it works). All figures verified: `|IN|=1648`, 176,474 vars / 53,762 constraints in 9 s, 14/14 exact optima, dual bound 88, `92 <= L_cf <= 102`. Nit: "UNKNOWN at 40,45,50,55,60 (>659 s)" — only budget 60 ran 659 s; the rest are >264 s. |
+| 27 | **G1** | G | exact small-SLP oracle (slp_opt.py) | PASS | kit#8. File and self-test present; CIRCUIT-GENERIC confirmed (no MC constants, no 32-bit assumptions). Two nits: the self-test **2,406/2,406** is recorded only in the lane notebook with **no run log on disk**; and the "three lineages" twist cites a from-scratch checker **`chk.py` that does not exist anywhere in the repo**. |
+| 28 | **G2** | G | exact canonical-set DFS (qsearch) | PASS | kit#34. Cleanest entry in its batch. k<=9 refuted in **2.2 s** vs 1,200 s; k=11 **698,949,645 nodes in 959.3 s**; cost(rho-orbit quad) = 12. Controls 121/121, 300/300, 2000/2000, and **25/25 planted positives confirmed in the raw ledger row**, not just prose. Generality honest; note the compile-time caps `MAXDIM 14`, `MAXT 8`, `MAXLEV 24` bound "small dim" concretely. |
+| 29 | **G4** | G | parallel DFS over derivation DAGs | **FAIL** | kit#34. "Independently cross-validated on a second machine — three rungs **agree to 3 significant figures**." Three rungs is right; agreement is to **two** sig figs at best (7.389e6 vs 7.44e6/7.51e6; 2.2020e8 vs 2.1367e8, **~3.1 % apart**). The primary claims only "differ by the usual parallel-dedup jitter" — the "3 significant figures" gloss is the catalog's own addition and is false. Everything else verified (V1 504/145,752/0, V2 632/0, B=16 7-of-8, 4.31e7 nodes/s). Attribution caveat: the 40-row kissat comparison and the 398/398, 373/373 pruning medians are **dfs_spike** (the single-threaded ancestor) measurements presented under the parallel engine. |
+| 30 | **G10** | G | free-gate-reduction exact re-add | PASS | kit#24. `exact_readd = 88 - |remaining|` in **41/41**, total 88, never 87/89; k=9 refuted by 56/56 cubes at 3,980 solver-s; ~4 s @ k=6, ~400 s @ k=8. `satx.py:36` takes `dim=DIM` as a **parameter**, so CIRCUIT-GENERIC is defensible; only the harness `kern.py:11-22` is MC-bound. Minor scope overstatement: "all 8 rho-orbits of all five 88s **plus the relaxed sets**" — 5x8 = 40 and only one relaxed set is inside the 41; the other three are explicitly not pinned and one has total >= 89. |
+| 31 | **G18** | G | output-subset exact pricing | **FAIL** | kit#23. **A conditional bound presented as exact.** The entry writes "`U(1)=152` exact ...; `U(2)=114`" as parallel facts. The primary says the opposite: *"`U(2) <= 114` is certain, and `U(2) = 114` holds **unless** one of those 7 classes beats its cancellation-free value"* — 222 of the 496 pairs carry only an upper-bound cost. Second: "Cost: 87 oracle decisions" is a stale earlier tally; the coverage table gives 127 oracle decisions overall (which is what the 127/127 controls count). Third: "timeouts up to 5,489 s **each**" misdescribes four distinct timeouts (1201/5328/5489/2400 s). `U(1)=152` (32/32 rows), 127/127 round-trips, 15/15 planted all exact. |
+| 32 | **G19** | G | Venn isomorphism class reduction | PASS | kit#23. All four class counts verbatim in the primary: 496 pairs -> 13 classes; 4,960 triples -> 121; 35,960 quadruples -> 1,264; 8 rho-orbits -> 2. **319/319** certificates machine-verified, "Zero certificate failures"; "8 oracle runs away, not 410". CIRCUIT-GENERIC holds — `classes.py` operates on arbitrary mask lists; port cost is one line. |
+| 33 | **H19** | H | free-supply derivation + vacuity guard | **FAIL** | kit#28. **Generality under-declared and one now-refuted "all".** Labelled CIRCUIT-GENERIC with no port cost, but all three cited paths run on the MC sector algebra: `freesupply.py:42-43` imports `sector_value_lines, SECTOR_TARGETS`; `f4model.py:30-31,84` builds its targets from them; `derive.py:44-45` imports `PARENT, QLINES, TAPS`. **H26 in the same catalog declares exactly this object load-bearing and non-portable.** Should be MIXED with H26's port item. Second: "offered *all* 24 one-gate shared-plane values" was refuted — the true one-gate family is **64**, not 24 (`referee/REFEREE.md:56`); the floor survives, the "all 24" does not, and H19 carries no cross-reference. Third: the `max_cost=2` figures live in `fleet12/laneKNOBS/derive_out/`, which the Code field omits. Every number otherwise exact. |
+| 34 | **H20** | H | merged-derive | PASS | kit#29. `results/derive_merged_Q27.json` matches field-for-field (`lines [2,3,7]`, `status exact`, `min_gates 9`, `wall 572.2`, `derived_rank 1`, `agrees_with_config true`), and the "never told it exists" claim is real in code. Two defects: the Code line reads `code/derive.py --derive Q27` but `derive.py` has **no argparse at all** — the flag is on `generate.py:422-423`; and **H20 carries no Generality label**, in the family the catalog itself calls MC block algebra, while `derive_merged` runs on `laws.architecture()`, `TAPS`, `plane_of` and the 8-line ring frame. |
+| 35 | **H22** | H | replay bound / conservation | PASS | kit#30. Best-sourced entry in its batch. `U4(no D37) = 11 EXACT, k=6..10 UNSAT / k=11 SAT, 17,199 s`; the referee re-solve exact to the decimal (`ref_M347_noD37.out:8` -> `min_gates 11, exhaustive true, seconds 23673.195`). fleet8 rows 5,263.48 + 5,855.86 = 11,119 s = 3.09 core-h ("~3.1"). CIRCUIT-GENERIC defensible **because** the entry states the proviso. Same `--derive` invocation error as H20; and one parenthetical splices two different referee runs (3,944 s belongs to the 48-value solve, not the 64-value one). |
+| 36 | **H26** | H | unified generator | PASS | kit#26. Checked hardest and it survives. Regression 9/9 all `hit:true` + VALID; warm walls 0.19–0.54 s; cold 4916.05 / 611.72 / 167.37. The 20 (gates, min-depth) pairs reproduce **exactly** when the grid is min-reduced per gate count. Ledger 1,948 rows / 1,028 solves to the row. **Every line citation in the Generality block is exact** (`theory.py:30 AES = 0x11B`, `W = 0x7` at 200, `SECTOR_TARGETS` at 254-257), and the (p,q) claim is confirmed by the code. Two defects inside that block: "L0, L2, L3 and L4 all transfer verbatim" is false as code (`plane_is_shared` and `supplier_of` both compute through `workset()` = L1, which the next bullet concedes is MC-specific; L4 also hardcodes MC block-name tables); and the ladder spectrum is filed "RECORD-PROVENANCED (external, not derivable)" while `cells.py:174-181` states the opposite (*"no record circuit is involved at any point"*), contradicting itself two sentences later. |
+| 37 | **H27** | H | law derivation (laws.py) | **FAIL** | kit#27. **The Generality line is self-contradictory.** "L0/L2/L3/L4/L5 field-generic, L1 MC-specific" cannot hold: L3 (`plane_is_shared`) and L4 (`supplier_of`) are *computed by calling* `workset()` — the L1 the same sentence concedes is MC-specific; L4 also hardcodes MC block/interface name tables. Correct: L0/L2/L5 generic, **L1/L3/L4 MC-derived**. Second: "with no `if name == \"W3\"` anywhere" is **literally false** — `plan.py:279: if not share and name == "W3":`. The primary is careful where the catalog is not: it says "no `if name == W3` anywhere **in the model**", and `laws.py:49-50` names that branch as the deliberate `--no-share` control. Dropping three words turns a true claim into a false one. Third: H27 has **no `Code:` field**. Measured block is clean (10/10 `L5_supply` agreement, model price 88). |
+| 38 | **H29** | H | block-merge relaxation | **FAIL** | kit#37. **Generality under-declared.** Every measured number verifies exactly (19 boundaries x 0, 131 no-solver, 349/349 replay + strict-generality, the 7-simultaneous dissolution at still-88, `MB273` exact 9, 11,879 s / 11,766 + 31,681 s / 6,674 s — I confirmed the 19 decided rows by counting the table). But it is labelled CIRCUIT-GENERIC while `mergemodel.py:66,63,94` wires in the MC ring frame's 8-line / 18-block decomposition **and a record cell** (`CURRENCY = ... # = 22 at the 88@7 cell`). Correct label MIXED — which H33 in the same file already says for the same object. |
+| 39 | **H34** | H | derive-menu-from-witness | **FAIL** | **Generality label wrong; otherwise real, not vapour** — I had it reproduced live. `derive_menu.py` is an 85-line working script; run under `nice -n 19` it prints `{0: ['0x2','0x4','0x7','0xb']}` = the claimed `C_0`, and the record's own 88@7 menu is `[]`, so the menu is genuinely not read off the record. "Never wired into the generator" confirmed by grep. But `derive_menu.py:26-28` hardcodes `BLOCK_LINES` for the ten MC blocks and runs on the 8-line ring frame — and the entry's whole phase-2 pitch is "a new circuit has no record to read menus off", which is exactly as true of `BLOCK_LINES`. |
+| 40 | **I2** | I | certified LP dual bound (N_depth3 >= 80) | PASS | Mine. Every figure matches `THEOREM.md` exactly: 23,450 nonzero duals / 23,405 cuts / 72,830 rows / `u.b = 47.597998` / 29.19 without cuts / C8 worth +1.05 / bracket 80 <= N_depth3 <= 97 / the 97@3 maps in at cost exactly 65 / only E in {19,20} reach 48, both at exactly 48.0. Critically, the catalog **correctly reports the certified 80 and not the solver's 82** — `THEOREM.md:152` gives a HiGHS root dual of 49.478 (=> >= 82) but files it explicitly as "a log, not a certificate". Only the code path prefix is wrong (see the wave-path defect). |
+| 41 | **I5** | I | column-zeroing bound (Theorem A) -> L >= 51 | PASS | kit#36. `K` list, weight histogram `{2:15,3:15,4:2}`, bound `(32-13)+32 = 51`, and `sum(C(32,k), k=1..12) = 462,411,532` checked exactly. `M^T = 49` confirmed twice. Generality label correct in the lane's own words. Two defects: the entry has **no `Code:` field** (names `verify_bound.py` bare); and "retargeting is a **one-line change**" is not supported — `verify_bound.py:86-88` are unconditional tripwires asserting the MC weight profile, `:22-24` hardcode MC certificates, and the script only *checks* a given `K`, so a new bound needs the 4.6e8-subset enumeration re-run. |
+| 42 | **I7** | I | adaptive gate elimination -> L >= 56 (refereed) | PASS | kit#36. All seven code files exist. Cert-5 depth-4 exhausted **twice** (unpruned 9.43e10 nodes, pruned 4.75e9), "eleven of twelve die at depth 4" with `minE = 4` and 15 witnesses, chain `1+18+32+5 = 56`. Determinism across reboot node-for-node confirmed. `mine.c` takes targets on the command line, so the label is defensible. **Defect is in the starter kit, not the entry**: kit row 36 prices `L >= 56` at a "one-line target change" — materially false; retargeting needs a new keep-set certificate search, a new symmetry group satisfying Theorem N's covering hypothesis, and a fresh 9.43e10-node depth-4 exhaustion at pod scale. |
+| 43 | **I12** | I | laminar price certificate -> L_cf >= 92 | PASS | kit#35. I ran the verifier once (permitted): `nice -n 19 ... verify_cert.py` -> `CHECK 1 ok`, `CHECK 2 ok: numerator = 910019782  B = 91.0019782`, `=> L_cfree(M) >= 92`, **wall 0.18 s** — so "~2 s" is conservative and true. `B_p = 114262347/1250000 = 91.4098776` checked by division. Every LP figure lands. Two defects: the entry writes "`B > 91.9738 = 87 + 2.delta_7`" three lines after listing `delta_7 = 2.5044082` — that sum is **92.0088164**; 91.9738 comes from the superseded `pbar` table. And the Code list omits the actual Tier-1 verifier `u6_spec87/verify_cert.py`, which is **not** stdlib-only: `:19-21` hardcodes an absolute path into this box's repo, so the "solver-free 2 s check" aborts on any other machine. |
+| 44 | **I30** | I | anatomy theorem | **FAIL** | **The starred asymmetry drops its own load-bearing caveat.** All numbers verify (n=88: 19,490 pairs / 7,362 weight-7 / 8,562 any-target, with the 8,562->7,362 correction recorded; n=87: 475 admissible pairs, 63+346+66, all with a weight-7 row). But `DOSSIER.md:651` states A11 **with** a caveat the catalog deletes: *"These two numerals are computed under `pbar`; the referee did not publish an n=88 recount under the banked table ... a successor restating A11 should re-run the n=88 branch under the banked table."* The catalog restates A11 as "**the same computation**" at n=88 versus "475/475 = 100 % **under the banked table**" at n=87 — two different price tables presented as one computation. For the fact the file calls "the first gate-count-asymmetric fact", the one open conditionality on it is exactly what must travel. |
+| 45 | **J1** | J | min-depth schedule (level-BFS/ASAP) | PASS | kit#14. Entry body is correct and cites three real paths (`pipeline/engines.py:relax`, `fleet2/laneG_generator/code/build.py:54`, `fleet8/unified/code/assemble.py:91`). Every deployment figure lands (2 of 38,711 reschedule shallower; 1,820,576 JSON files; the forced-depth trio verbatim in the provenance files). Minor over-claim on "zero adaptation needed" — `engines.py:99` and `assemble.py:94` both hardcode 32 inputs. **The defect is in the starter kit, not the entry**: kit row 14 cites a bare `assemble.py:min_depth_schedule` next to `pipeline/engines.py`, reading as `pipeline/assemble.py`, which does not exist. |
+| 46 | **J6** | J | exact Aut + equivariance proof | **FAIL** | kit#3. **The cited code does not contain the WL route.** Every figure verifies (`|Aut| = 4` in 0.1 s; centraliser >= 255x bigger with zero of 254 scalar maps a coordinate permutation; 4,580 windows zero mismatches; 300/300 mismatches for `rot 1`/`rot 4`; 105,801 x 4 = 423,204). But route (b) is cited to `e14_plateau87/{sym,edgesym,splice,splice2}.py` and **none of them contains 1-WL or the DFS** — the real code is `e14_plateau87/auto.py` (`# 1-WL colour refinement`) and `auto2.py` (the plane-wise 24^8 DFS). Second: `sym.py:20-21` and `edgesym.py:7` hardcode a path **outside this repo** (`~/xor_ui/aes_mc_records/circuits/`), so they are not reproducible from a clone. Route (a) is correctly cited. |
+| 47 | **J13** | J | plane-locality measurement | **UNVERIFIABLE** | Mine. The entry has **no `Code:` and no `Logs:` field at all**, and its headline "exactly 12,946 of 2^32 masks are plane-local" is not locatable in any primary source — repo-wide search over `.md`/`.json`/`.py` returns only `beat88/understanding/v1_vocab_theory/data/harvest.json`'s `"bad_p": 12946`, an unrelated vocabulary-harvest statistic (it sits beside `bad_O` in a `stats` dict about accepted/dup/violating circuits). The derived claim checks arithmetically (2^32 / 12,946 = 331,720 ~ "330,000x") but arithmetic on an unsourced number is not verification. |
+| 48 | **J33** | J | walls-as-a-dataset | PASS | Mine. Checked ~15 figures against `u2_walls/NOTEBOOK.md` and **every one is exact**: 90,110 rows -> 89,744 unique orbits / 0 label disagreements; 1,076 cuttable (89:1,063 / 90:8 / 91:5 / 88:0); 1,143 distinct cuts with 1,140 aligned at k=0; J>=0.90 collapse to **13** clusters (largest 686, 295; two basins 92 %) vs 850 for the matched rigid null; 1,121/1,121 factoring in both orderings in **6.1 s**; added mask 49 raw / 29 up to rho with 47.8 % + 44.4 % = 92.2 %; 299/300; 0/22,247 screening 48 %; AUC 0.823 -> 0.662, `sh_out_neutral` dies at 0.555, `sh_fixed_masks` survives at 0.660; 307,694 gates; 1.99 vs 0.41; 138x at 0.02 % vs 2.76 %. The one unlocated claim is the meta-statement "the only unrefereed lane", which is not in the notebook. |
+| 49 | **J40** | J | exact move census | **FAIL** | kit#22. Two defects. **Generality wrong**: labelled CIRCUIT-GENERIC while `move_census.py:15-16` does `import mixcolumns_core as core; TSET = core.TARGET_SET` and `:23` reads it directly; the anchor list at `:52` is seven fixed MC circuits. This is the *same* coupling E1 carries, and **E1 is labelled MIXED** — the catalog is internally inconsistent. Second: "orbit partitions keep **74–98 %** of moves local" — the primary JSON's minimum orbit `local_frac` is **0.7143**, so the true range is 71.4–97.7 %; the lane's own table prints `0.714` two lines above the sentence saying 74 %, so the error was copied upstream. |
+| 50 | **K1** | K | B = 56 tripwire | **FAIL** | kit#2, TOP PRIORITY. Every measured number is exact — I had them recomputed from `sweep_A_fullpop.jsonl`: 17,283 VALID88; `B` present on 16,377, **all 56**, all `B_theorem_ok:true`; `helpers.bases=56` and `d2.seeds=1540` on 17,283/17,283; no `ALARM_B_*.json` anywhere; and the detector **fails correctly** — `count_B` returns **57** on the two 89-gate controls and 56 on the 88s. **Defect: kit row 2 prices the port at "one constant".** Running it on another circuit needs >= 4 edits across 2 files (`sweep.py:48,102,528`, `cut.py:22` which `Circ.isout` depends on, plus `cut.py:34`'s `range(32)`), and it cannot run at all until A1 is ported first. Also the quoted body of `count_B` is at line **310**, not the cited 296 (296 is the def). |
+| 51 | **K2** | K | Lemma R / Theorem T2 corpus tripwire | **FAIL** | kit#5. Every measured number exact (1,200/9,100/7.6/0/0; 667/11,944/17.9/**66** on 26 circuits; the five smallest hits built and oracled 89->88 VALID x3, 90->88 VALID, 90->89 VALID; T2 on 150 88s / 13,200 gates / 281 s / 0 violations; the single n=89 violation at gate 80 with `D={32,67}`; `0/4,564`). **Defect: kit row 5 prices the port at "none".** The theorems are generic; the code is not — all five cited scripts do `from frame import Frame`, and `frame.py:22,32,42` is `(a^0x11B)&0xFF`, `coef=[2,3,1,1]`, `TARGET = target_masks()`, with 32-signal assumptions throughout; each script also hard-filters `if f.n != 88`. Port cost is a new target generator plus four `n != 88` guards. |
+| 52 | **K3** | K | streaming k=2 shell detector | **FAIL** | **Generality wrong and the throughput figure is contradicted by the lane's own ledger.** 197,072 confirmed exactly (148,893 + 48,179, all `verdict:"irreducible_k2"`, zero non-empty; no `BREAKTHROUGH_87*` file exists). But labelled CIRCUIT-GENERIC while `detector.py:39,43` imports `mixcolumns_core` and takes `TARGET_SET`, and the 1,540 window count is itself `C(56,2)` — an 88-gate MC constant. By the catalog's own convention (K1 self-labels MC-HARDCODED for the identical situation) this is MIXED. Second: "1.9 s/state CPython, 0.65 s under PyPy" is contradicted by the banked ledger — mean/median per-state is 1.152/1.205 s and 1.277/1.269 s over all 197,072 rows, and `tri_hunt` ran under PyPy, so its PyPy states cost ~2x the quoted figure. |
+| 53 | **L1** | L | positive-control methodology | PASS | kit#6. 12,241 recomputed exactly from `SUMMARY.json` `control_rows_raw` over the 7 circuits (2080+1891+1770+1711+1653+1596+1540); 8,400 = 7 x 1,200 confirmed from `control.log` (note `SUMMARY.json` carries stale zeros for four circuits — the log is the correct primary). 4,200 / 462 / 33 present. The vocabulary-ladder and fence-SAT corroborations verbatim. LR = 1.00 vs a 0.495 null (4.7x richer) confirmed. |
+| 54 | **L2** | L | certificate control audit (the repricing) | PASS | kit#6. Strongest-sourced entry in its batch. Depth list `97@3, 94@4, 92@5, 91@5, 90@5, 89@9, 88@7` matches `SUMMARY.json` col 3 exactly. Distance stats verbatim: "45 circuits ... min 3, **median 42**, max 48. Certified radius is 3 — smaller than 44 of 45". Part 3 recomputed from the raw field: random permutations UNSAT **64+59 = 123 of 128**; valid build orders SAT **64+64 = 128/128**; `order_dependent: 0`. |
+| 55 | **L3** | L | shape-matched random control | **FAIL** | kit#19. **The scope of "0/400" is overstated and the run's own PARTIAL status is dropped.** The count 0/400 is exact, but "0/400 at every MixColumns shape with `n <= 3`" is contradicted by the primary log: `matched.py` enumerated **8** distinct shapes at dim <= 9 and reported only **5** — the three dim-9 shapes, all n <= 3, never ran; `matched.log` ends with **no final summary line** (the process was killed). The lane is honest and the catalog is not: the ledger row carries `"status": "PARTIAL - process stopped to respect the concurrency cap"`. Correct claim: "0/400 at every shape of dim <= 8". CIRCUIT-GENERIC is defensible here. |
+| 56 | **L4** | L | partial-budget worthlessness calibration | **FAIL** | kit#20. Numbers exact against the ledger row (`instance_1_wall_seconds: 6.1`; `instance_2_nodes_without_sat_yet: 1583819419`; `fraction_of_tree_searched: 0.00825` = 0.82 %; E10's 90-second k=12 probes retro-voided at 0.02 % of the level). **But the entry has no `Code:` field and no `Generality:` field at all**, breaking the catalog's own template and leaving no path to the instrument. The code exists (`e11_quad10/code/planted10.py`) and is genuinely CIRCUIT-GENERIC — no MixColumns anywhere in it. Only the cross-reference table names the file; the entry does not. |
+| 57 | **L12** | L | plan-space sizing | PASS | kit#21. `real_universe 11209` at c=1, `42603` at c=6, `tier3c_reference_universe: 87897`; ledger timestamps 20:40:39 -> 20:40:42 confirm "seconds, no solver"; independently corroborated at `e6_cancelplan/logs/c1_c1.log:1` (`"W": 11209`). Caveat only: `plansize.py:30` imports `mixcolumns_core.TARGETS`, so CIRCUIT-GENERIC describes the technique, not the file. |
+| 58 | **L13** | L | cost-curve pricing | PASS | kit#21. Verbatim: "10-17.5x per-level growth, R01 k=15..21 totals 7.7e10 - 3.7e12 pod-seconds (~2,400 - 117,000 pod-years)". `pricing.py` computes exactly this (`:88` prints pod-years; `:75` the 17.5x extrapolation). Proof-side repricings verified. Minor: two of them live in laneC and are not in the entry's Code field. |
+| 59 | **L14** | L | constraint-ratio law | PASS | kit#20. The whole table reproduced: 0.5 -> 0/15; 0.6 -> 26/104, 605 s; 0.7 -> 110/139, 126 s; 0.8 -> 178/180, 22 s; 0.9 -> 176/176, 6.5 s; 1.0 -> 39/39, 4.1 s; "~70x spread at fixed n". The caveat is verbatim and correctly carried: *"a MORE constrained window is LESS likely to hide an 87, so the speed and the 87-hunt point in opposite directions."* Nits: the catalog's extension ("every instrument that got faster in wave 6") is broader than the source, which scopes it to this track; and the entry carries no Code field. |
+| 60 | **L19** | L | fact-vs-mutable code audit | PASS | kit#38. Every figure exact: ABSOLUTE FACT **47**, MUTABLE load-bearing **116**, MUTABLE inert **81** (= 244), defects **22**, 5 at severity 1; 68 rows claimed ABSOLUTE FACT, 22 downgraded, 46 upheld; the §6.4 successor list counted mechanically at **17 rows**. D2 headline verbatim (`UNSAT_levels == []` on all ten blocks; instrument-proved floor **70** against a claimed 88; "if `U1` is 5 the model prices 87"), and both closed by laneHINTS at **3.90 core-hours**. `TEMPLATE.md` and `AUDIT.md` both present at the stated sizes. |
+| 61 | **M1** | M | cluster-currency hand reasoning | **FAIL** | **The 88 is real; "from scratch" is not.** I had the verifier re-run on `assembly_stage5.json`: `gates=88 depth=5 outputs_built=32/32 problems=0 / VALID`. Trajectory `106 -> 97 -> 91 -> 90 -> 88` verbatim. But the entry claims *"it reconstructed the optimum from scratch by reasoning"*, and the lane's own ledger records `## 3j. ARCH: the record's tap-world DECODED (RECORD_TAPWORLD.txt)` and then assigns `C012 mine RECORD_TAPWORLD.txt`. Mtimes confirm the order: `RECORD_TAPWORLD.txt` 15:27 -> `C012_corner90.json` 15:46 -> `C012_composed88.json` 16:03, and `RESULT.md:46` itself says the 90 used "the record's C0/C1 corner mechanisms". The 106->97 rungs predate the decode; **91->90->88 do not**. "No solver in the loop" is true; "from scratch" is not. It is a genuine method, not narrative — only the independence claim fails. |
+| 62 | **N1** | N | swappable-parts catalogue | PASS | kit#38. Scoreboard exact: CLOSED 6, MEASURED 4, OPEN 11, FRONTIER 1, INTRACTABLE 2, "OPEN needs new machinery" 1, total **25** axes — and only 24 `### Axis` headings exist because axis 20 is the file's own deliberate double-count, so the catalog is faithful. Three guards verbatim; the honest paragraph the catalog elides matches the source exactly. Qualifies as a method: a fixed per-axis schema that transfers independently of content. |
+
+
+### What the 24 failures are made of
+
+| failure mode | count | entries |
+|---|---:|---|
+| **Generality label contradicted by the code** | 9 | A10, C3, C15, F8, F27, H19, H27, H29, H34, J40, K3 (11 label defects across 9 primary-cause FAILs) |
+| **A number that lives only in prose** | 6 | F8 (5.4× from quarantined data; "V6 54/54" against a `[FAIL]` log), F9 (13,215 s vs 157,413 s), G4 ("3 significant figures"), D7 (139,878 ≠ 84,989+53,902), J40 (74 % vs 71.4 %), F17 (C92 floor 92 not 91) |
+| **Scope overstated / caveat dropped** | 5 | I30 (deletes the dossier's own `pbar` caveat), L3 (drops a `PARTIAL` status), M1 ("from scratch" contradicted by its own ledger), G18 (a conditional bound written as exact), K1/K2 (port cost "one constant"/"none") |
+| **Schema field missing** | 3 | C15 (no Generality, Cost or Logs), L4 (no Code, no Generality), H20/H27/I5 (no Generality / no Code) |
+| **Phase-2 verdict inverted by the primary** | 1 | F12 (the primary blames process granularity, not the partition choice) |
+
+The single most common root cause, stated best by the batch-2 referee: **the
+Generality label was assigned from the entry's own description of the method
+rather than from the file.** In every one of the nine cases the algorithm is
+portable and the shipped artefact is not. C16 is the entry that gets this right
+and says so explicitly — *"MIXED — the method is CIRCUIT-GENERIC"* — and it is
+the template the others should adopt.
+
+---
+
+## §3 — The nine thin entries of Appendix A: all nine resolved
+
+**Result: 9 writeable, 0 non-methods.** Every one had more primary evidence than
+Appendix A credited it with — though for two of them what the evidence shows is
+that the headline is unreproducible (H45) or false (M3). Full entries have been
+written into the catalog; the fates are:
+
+| # | Appendix A item | fate | why |
+|---|---|---|---|
+| 1 | **F30** symmetry-quotient SAT | **WRITEABLE as a zero-result entry** — "instrument built, never run" | The code is complete and its semantics fully recoverable (156 lines, sound encoding, the "gate counts are multiples of 4" consequence is a real derived fact, so `k = 22` is exactly the 88 question). No run, no output, no log — the lane's own audit already says *"UNRECOVERABLE — whether `satquot.py` was ever run"*. Derived cost: the k=22 CNF is 40,403 vars / 204,377 clauses / 704 XOR rows — hours, not days — and `pycryptosat` is not installed on this box. fleet9 independently **asked for exactly this search**: an instrument and a written request for it sat in the same repo and were never joined up. |
+| 2 | **J30** enabler / midpoint theory | **WRITEABLE — Appendix A understates it badly** | The premise "no code path, no cost, no logs" is wrong. The theory has a measured universal law over 8 circuits (**74/74** off-line gates inside a tap triple, zero violations), an exhaustive E1 enumeration (**18** canonical y-orbit enabler classes), a derived identity explaining the previously-unexplained ternary repair planes, and a class optimum of **91** against records at 88. Its own verification scripts are lost — but a **follow-up lane ran its §8 discriminating test the same day** (`atlas/thinktank/phase2_e3.py`, 20,719 B, surviving, with an 869-line data product) and recorded the correction: *"the discriminating test has been run and does not discriminate in the hoped-for direction."* |
+| 3 | **M3** hand-reduction algebra / parity-hub law | **WRITEABLE as FOUND-NOTHING + REFUTED-PREDICTION** | Not a non-method: it made a falsifiable prediction the campaign itself pre-registered a falsifier for, and the prediction **broke**. 21 no-tool agents across two waves, **0 candidates**. Its hub census over the six record 88s is **correct and machine-confirmed**. Its corpus-wide extrapolation is **false**: refuted by exhibition in wave 6 (two oracle-VALID 88s carrying Σ5/Σ7, no solver needed) and by census on 2026-08-29 — **P7 appears in 1,429,688 of 1,925,065** 88-gate mask sets, the exact opposite of "the corpus-wide blind spot", and 5,450 circuits carry ≥3 hubs against "a class with zero members". Its decisive experiment was never built. |
+| 4 | **I25** class-rank localization + edge-counting | **WRITEABLE as a NEGATIVE / ceiling method** | Real evidence: an exact theorem with its proof, a 10-row measured table on named records, and the author's own "would not fund" verdict, corroborated in two independent cap tables. Caps: class-rank **32** (proved, 8 classes × 4), edge-counting **33** (refuted *by the records themselves*, which evaluate to 31–33). Honest caveat that must travel: **the table is unreproducible as written** — `fanout.py`, named in its own reproduction section, does not exist anywhere in the repo, so the load-bearing `\|U\|` column has no surviving implementation. |
+| 5 | **I23** cap-table analysis | **WRITEABLE — and one of the strongest entries in the catalog** | The "no Code/Cost/Logs" flag is a category error: a survey method's artefact *is* the table, and it exists at two absolute paths with per-row citations and an explicit self-grading as ANALYSIS. **Nine** families in fleet1's table, **twelve** in e17's later one. Two live defects belong in the entry: fleet7 asked for its `102 − 2.1875·κ` ceiling to be added and it never was; and the one surviving row (`L_cf ≥ 92`) has since been given its own ceiling of **83**. It does **not** carry 91.4098776 — I had that checked directly. |
+| 6 | **H45** sector tightness theorem | **WRITEABLE with an explicit reproducibility warning — the weakest of the nine** | Enough for a full entry: exact statement, precise instance-construction recipe, the `w_k` table the 48 queries were built from, a surviving exhaustive oracle, a corollary, and two σ=6 sub-results independently corroborated by a second lane. But **the 48/48 headline has zero surviving primary artefacts** — no driver, no instances, no logs, no cost; the lane says outright its scratchpad was wiped. It is also **not a theorem**: it is 48 machine checks, and 8 of the 48 (89@5's sectors) have no published `w_k`, so the queries cannot be fully reconstructed. ⚠ Must not be confused with the *unrelated* 48/48 in `fleet5/laneGLUE` (that is J41). |
+| 7 | **Three `beat88/analysis` descriptor rows** | **WRITEABLE as ONE entry, not three** | All three have primary code and all three were folded into one shipped, tested instrument — B4 = `beat88/methods/shared/descriptors.py`, and the fold is real in code (`:5-14` names all three scratch sources; validation log 2,009 states / 8 circuits / 200 states × 3 rotations, **MISMATCHES 0**). (a) and (b) were reproduced end-to-end from raw data. Two caveats belong in the entry: (c)'s "**25 of 29 exactly 16**" has **no surviving artefact** (repo-wide grep for out-degree output returns zero) and its band table silently omits the 94-gate row; and B4's own "18–26 across families" is contradicted by the same corpus, whose true cross-family minimum is **11**. |
+| 8 | **N3** dated corrections ledger | **WRITEABLE** | Primary artefacts across two repos, self-derived counts (**5** dated entries in `PRIOR_ART.md`, **3** in `PAPER.md`, **6** appended `Updated <date>:` sentences in `bounds.json`; **56** `C-nn` entries in the successor `wrapup/CORRECTIONS.md`), a verifiable keep-and-mark discipline, and a genuine measured outcome (one false statement caught and recorded in place). Two things the entry must say that the source report did not: **the rule is enforced by nothing** — no CI, no script, no template, verified against the workflow and the only test file — and the "10,300 words" is three documents, not one (`PRIOR_ART.md` alone is 4,873). |
+| 9 | **B14** `L_cf` reuse-greedy + CP-SAT | **WRITEABLE, but reframed as a method with a superseded result** | The bound is dead; the method is not. Greedy alone goes **129 → 113 → 110** in ~90 s **with no solver at all** — the only solver-free `L_cf` constructor in the repo — and every intermediate is closure-checked, so it never has to trust the solver for the upper end. The 103 is a **one-gate regression**: the 102-gate incumbent predates it by **eight days**, and I had it re-verified from the JSON alone (102 gates, 32/32 targets, **0 cancelling gates**). `fleet6/laneTOOL2/RESULT.md` is still uncorrected at **eight** line numbers (152, 741-742, 747, 750-751, 758-759, 792, 829, 831). Two further defects found in the primaries and in no existing report: `z1_lcf.py:164` comments a hard `mdl.Add(obj >= 92)` as "a HINT ONLY", and `ledger.jsonl:85` attributes a **solver** result to `"method": "reuse_greedy"` (the honest greedy-only figure is 110). |
+
+---
+
+## §4 — The count claims (all verified, all exact)
+
+Checked by parsing the file itself, not by trusting the tables.
+
+| claim | catalog says | measured | verdict |
+|---|---|---|---|
+| total entries (body `###` headings) | 309 | **309** | ✅ |
+| rows in the §(b) FULL INDEX table | 309 | **309** | ✅ |
+| families | 14 | **14** | ✅ |
+| per-family counts (A 11 · B 14 · C 27 · D 18 · E 19 · F 31 · G 19 · H 51 · I 33 · J 41 · K 5 · L 30 · M 4 · N 6) | as tabled | **all 14 match exactly** | ✅ |
+| index ↔ body agreement | — | 0 orphans either way, 0 duplicates, **no numbering gaps in any family** | ✅ |
+| entries with an explicit `Incarnations` line | 20 | **20** | ✅ |
+
+**One real defect in the header prose.** Line 8 claims *"**11 numeric conflicts**
+between reports are flagged inline with `CONFLICT` and collected in Appendix B."*
+Only **6 of Appendix B's 11** carry an inline `CONFLICT` marker (B14→#1, I16→#2,
+H26/H28→#3, J3→#4, J31→#5, E1→#6). Appendix B **#7 (92@4), #8 (cube coverage),
+#9 (laneCUT counts), #10 (population sizes) and #11 (B37) have no inline flag at
+all**, and one inline flag — E13's "243 = 3⁵" — is a conflict that is *not* in
+Appendix B. So the count is coincidentally right and the correspondence is wrong.
+
+**A second, smaller one.** §"How to read an entry" line 21 says *"which of the
+**13** groups below"* while the document has 14 families and says so nine lines
+later.
+
+---
+
+## §5 — Cross-check against `CONFLICTS_RESOLVED.md` (6 checked: 2 PASS, 4 FAIL)
+
+`CONFLICTS_RESOLVED.md` was written at **10:47**, the catalog at **10:14** — so
+the catalog could not have carried the resolutions, and the question is only
+which of its Appendix B items are now stale. Four of six are.
+
+| # | item | catalog carries | resolved position | verdict |
+|---|---|---|---|---|
+| 1 | **App. B #9 / E7** laneCUT window counts | the corrected **18,564** and **386,922**, errata named in place | same, plus the seed-base convention (386,978 incl. 56 seed bases) | **PASS** — the catalog carries the resolved numbers |
+| 2 | **App. B #1 / B14** `L_cf(M)` upper bound | *"Best current statement: `92 ≤ L_cf(M) ≤ 102`, both ends solid"* | identical; 103 is a one-gate regression, not a first | **PASS** |
+| 3 | **App. B #2 / I16+I17** residual-LP integrality gap | *"Both stand in their own reports … **Unresolved.**"*; index row I16 still reads "proven gap ≥ 5 ⇒ caps at 83" | **resolved**: gap ≥ 5 is a *misattribution* — 5 = `\|counted\| − Φ(A*)` = the record circuit's clean-layer suboptimality, not an LP–IP gap. Φ(A*) = 34 measured exactly with a firing positive control. The **83.000 ceiling stands and is strengthened**; Lane C's `phi_equals_counted` is falsified on 3 of 5 canonical 88s | **FAIL — stale** |
+| 4 | **App. B #6 / E1** exact-window decider | *"no document reconciles them explicitly"* | **false** — `beat88/analysis/code/exact-window-code.md` §4.5 reconciles them in the same paragraph as the defect. Both claims correct, disjoint inputs; the `C(56,k)` window-count identity is the control proving the archived sweeps were target-free | **FAIL — refuted assertion** |
+| 5 | **App. B #10** "known 88s" population sizes | a 14-figure list, none of them the corpus headline | **superseded by `wrapup/CORPUS88.md`**: **1,575,516** distinct verified 88-gate mask sets (28,796 with a banked build order, 92 at depth 5), a floor, honest range 1.6 M – 4.4 M. Four independent controls on it came out exact | **FAIL — stale** |
+| 6 | **App. B #11 / H47** `B37` price 3 vs published 89 | *"The published figure **has not been corrected**."* | **false**, and I re-confirmed it myself: corrected at `fleet8/unified/REACHABILITY.md:236` (*"Line 111 … is stale: the true uncapped price is 88"*) and `fleet12/LIBRARY.md:310` (*"`rec_88at7` **88** (was published 89 …)"*). Only the data row `REACHABILITY.md:111` is still stale | **FAIL — refuted assertion** |
+
+**Also newly stale, outside the six:** the "**≈165 M** exact window decisions"
+figure, which the catalog repeats in four places including starter-kit row 17.
+`CONFLICTS_RESOLVED.md` Part D rules it a **stale under-count** — the k=2 half
+alone re-tallies to **215,412,120** from three append-only ledgers — and directs
+that the k=2 figure be quoted alone until residue R2 closes.
+
+---
+## §6 — Defects found, and the fixes applied
+
+All fixes are **additive or corrective in place**. No entry was moved, merged,
+renumbered or deleted; the catalog remains **309 methods in 14 families** (index
+and body re-verified after every edit). A `CHANGELOG` block at the very end of
+`METHOD_CATALOG.md` records each edit with date and audit reference.
+
+### D1 — Paths that do not resolve *(systematic; fixed)*
+
+**79 real path citations were unresolvable from the repo root, including 19 of
+~50 in the phase-2 starter kit.** Three mechanical causes:
+
+| cause | scale | fix |
+|---|---|---|
+| the date suffix dropped from the wave directories — `wave5/` and `wave6/` for `campaign_87/wave5_2026-08-04/` and `campaign_87/wave6_2026-08-11/` | 27 lines in **23 entries** (B11, B12, B13, C21, C22, D13, E15, E17, F5, F7, F8, F16, F18, F19, F21, F22, G4, I1, I2, I24, J7, L1 + the kit) | rewritten with the dated names; all sampled repairs verified to resolve |
+| bare `eNN_*/` for `experiments/eNN_*/` — **almost all of them in the starter-kit table itself** | 13 kit paths | `experiments/` prefix restored |
+| bare `agents/`, `hunt87/`, `d3_exact/` for `campaign_87/…` | 6 entries | prefix restored |
+
+**Result: 79 → 30 unresolvable.** The residue is legitimate relative
+continuations within one entry (`exports/…` after `beat88/methods/m3_census/`,
+`code/laws.py` after `fleet8/unified/`) plus the `aes_mc_records` paths, now
+explicitly marked as a **separate repo** in starter-kit row 7 — A1/A2/A3/A4 cite
+`audit/`, `tests/`, `scripts/` paths that live in `~/xor_ui/aes_mc_records`, not
+here, which the catalog never said.
+
+Two specific path defects worth naming separately: starter-kit row 14 cites a
+bare `assemble.py:min_depth_schedule` beside `pipeline/engines.py`, reading as
+`pipeline/assemble.py` — **which does not exist** (the function is at
+`fleet8/unified/code/assemble.py:91`); and **J6** cites the WL/`Aut` route to
+four files (`sym`, `edgesym`, `splice`, `splice2`) **none of which contains it**
+(the real code is `auto.py` / `auto2.py`).
+
+### D2 — A schema field missing from 42 % of entries *(measured; flagged, not fixed)*
+
+**130 of 309 entries carry no `Generality` line at all**, and 12 carry no
+`Phase-2` line — in a document whose §"How to read an entry" says every entry
+keeps the schema, and whose stated purpose is to say what ports to another
+circuit. Three are starter-kit methods: **H20, L4, L14**. The distribution among
+the 179 that *do* carry one is 131 CIRCUIT-GENERIC / 24 MIXED / 19 MC-HARDCODED.
+
+**This was not fixed** — filling 130 entries needs the same code-opening pass
+this audit ran for 62 — but it is now a standing caveat in the catalog header,
+with the sharpest available reason to take it seriously: **of the eleven audited
+entries where a label was present and checkable, nine were wrong**, always in the
+same direction (generic label, MixColumns-bound file). The missing 130 should be
+assumed **unknown**, never assumed generic.
+
+### D3 — Numbers that live only in prose *(the most serious class; each fixed in place)*
+
+Every one of these appears in the entry, in the slice report and usually in a
+`STATUS.md`, and **contradicts or outruns the log it claims to summarise**:
+
+| entry | catalog says | primary source says |
+|---|---|---|
+| **F8** | CNF **5.4×** smaller (19.7 k vs 106.7 k) | 19,666 exists **only** in `runs/relaxed_encoder_SUPERSEDED/` — runs made with the `_exactly_two` bug the entry itself quarantines. Post-fix encoder: **26,428 (+384 xor) → 4.04×**. *(I re-confirmed both figures myself.)* |
+| **F8** | control "**V6 54/54**" | `runs/validate2.log:32,34`: `[FAIL] V6 … agree=0 (UNSAT=0 SAT=0) disagree=0` / `VALIDATION FAILED`. 54/54 is in no log. *(Re-confirmed myself.)* |
+| **F9** | 91 decisions, 5 timeouts, **13,215 s** | `dcache.jsonl` today: **97 rows, 81 exact / 7 infeasible / 9 timeouts, 157,413 s** — 12× the wall, and no prefix of the file reproduces the entry's tally. RESULT.md hedges "at write-up"; the catalog dropped the hedge. |
+| **G4** | pod cross-validation agrees "to **3 significant figures**" | Two at best: 2.2020e8 vs 2.1367e8 is **3.1 % apart**. The primary claims only "the usual parallel-dedup jitter"; the gloss is the catalog's own. |
+| **D7** | ≈139,878 = 84,989 + 53,902 | **84,989 + 53,902 = 138,891**, off by 987. 139,878 is a different, earlier measurement its own source files as "historical" — and reprices as a **~100× over-count**. |
+| **F17** | 5 vocabularies all floor **91** | `C92` floors at **92**; it is the one alphabet in the table that does not give 91. |
+| **J40** | orbit partitions keep **74–98 %** local | true range **71.4–97.7 %**; the lane's own table prints `0.714` two lines above the sentence. |
+| **J13** | "exactly **12,946** of 2³² masks are plane-local" | **not locatable in any primary source.** Entry has no Code and no Logs field. The only repo-wide hit is an unrelated `"bad_p": 12946` in a vocabulary-harvest stats dict. |
+
+### D4 — Scope overstated / caveat dropped *(fixed in place)*
+
+- **I30** (starred, "the first gate-count-asymmetric fact") **deletes its own
+  dossier's caveat** that the n=88 and n=87 numerals come from **two different
+  price tables**, and that a successor restating it must re-run the n=88 branch
+  under the banked table. For the spine of the lower-bound dossier, that is the
+  one thing that had to travel.
+- **M1** claims the reasoning fleet rebuilt the 88 **"from scratch"**. The 88 is
+  real (I had the oracle re-run: `gates=88 depth=5 … VALID`), but the lane's own
+  ledger records `RECORD_TAPWORLD.txt` — a full decode of the record — banked
+  **before** the 91→90→88 rungs, and mtimes confirm the order.
+- **L3** drops a `"status": "PARTIAL - process stopped"` from its own ledger: the
+  0/400 is exact but covers dim ≤ **8**, not "every shape with n ≤ 3".
+- **G18** writes a conditional bound (`U(2) ≤ 114`, exact only under a stated law)
+  as an exact one.
+- **K1 / K2** (starter-kit rows 2 and 5, both free tripwires) price the port at
+  "one constant" and "**none**". The theorems are generic; the harnesses are not —
+  K1 needs ≥4 edits in 2 files **and cannot run until A1 is ported first**.
+
+### D5 — Appendix B overtaken by `CONFLICTS_RESOLVED.md` *(fixed; see §5)*
+
+Four of six cross-checked items carried stale or **refuted** text — twice the
+appendix asserted something (`"no document reconciles them explicitly"`, `"the
+published figure has not been corrected"`) that is simply false, and I confirmed
+the second one independently. All four corrected in place, plus the mandatory
+timestamp on the k=14 coverage figure and the `CORPUS88.md` headline.
+
+### D6 — Bookkeeping *(fixed)*
+
+"which of the **13** groups below" against 14 families; and the header's claim
+that all 11 numeric conflicts are flagged inline, when only **6** are (and one
+inline flag marks a conflict that is not in Appendix B at all).
+
+---
+
+## §7 — What was applied to `METHOD_CATALOG.md`
+
+| # | edit | scale |
+|---|---|---|
+| 1 | path repair (three systematic causes) | **51 lines**; unresolvable 79 → 30 |
+| 2 | `AUDIT (2026-08-29)` lines added to entries | **41 entries** |
+| 3 | starter-kit rows repriced or repathed | **8 rows** (2, 4, 5, 7, 14, 17, 32, 36) |
+| 4 | header: "13 groups" → 14; conflict-flag claim corrected; standing audit caveat added | 3 edits |
+| 5 | Appendix B: header warning + items #2, #6, #8, #10, #11 | 6 edits |
+| 6 | Appendix A: all nine skeletons replaced by full schema-conformant entries (§A·1–A·9), with `COMPLETED` pointers from the nine body entries | ~40 KB added |
+| 7 | `CHANGELOG` block appended at the very end | 1 block |
+
+**Post-edit integrity re-verified:** 309 body entries · 309 index rows · no
+duplicates · no numbering gaps · all 14 per-family counts unchanged · every new
+Appendix A path confirmed to resolve.
+
+**Ops.** Read-only outside `wrapup/day2/` and the catalog. The k=14 fleet
+(4 × `mono.py 14` at 3d+, 16 × `cube16.py` + supervisor at 2d15h+) was checked
+before, during and after and never dropped below ~90 % CPU per worker; the load
+spike during the parallel verification was grep I/O, not CPU contention. No
+solver was run except one permitted 0.18 s stdlib certificate check (I12) and one
+85-line menu derivation (H34), both `nice -n 19`.

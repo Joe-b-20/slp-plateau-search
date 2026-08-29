@@ -1,0 +1,32 @@
+target=aes_mixcolumns q=32 inputs=32 rank=32 rows_sha256=d55413a3508e1453
+target rebuilt: from GF(2^8)/0x11B column ['0x2', '0x3', '0x1', '0x1']
+theorem: B = n - 32 on any valid, irreducible circuit; B != n - 32 yields an (n-1) by deletion
+
+-- calibration (positive + negative controls) ----------------------------
+   NEGATIVE control (must stay silent): mixcolumns_88gates_depth5.json
+  mixcolumns_88gates_depth5.json                   n=88   q=32 B=56   expect n-q=56   valid clean
+     -> PASS
+   POSITIVE control (must fire): base + consumer-less non-output gate
+  tmp3mt7uyt0.json                                 n=89   q=32 B=56   expect n-q=57   valid TRIPPED
+      cause: 1 consumer-less non-output gate(s) -> delete
+      => an (88)-gate circuit is available by deletion
+     -> PASS
+   POSITIVE control (must fire): base + duplicated gate mask
+  tmp_jyh76hi.json                                 n=89   q=32 B=56   expect n-q=57   valid TRIPPED
+      cause: 1 duplicated mask(s) -> delete the later one; 1 consumer-less non-output gate(s) -> delete
+      => an (88)-gate circuit is available by deletion
+     -> PASS
+   CALIBRATION: PASS
+
+-- circuits --------------------------------------------------------------
+  mixcolumns_88gates_depth5.json                   n=88   q=32 B=56   expect n-q=56   valid clean
+  mixcolumns_88gates_depth5_fromscratch.json       n=88   q=32 B=56   expect n-q=56   valid clean
+  mixcolumns_88gates_depth6.json                   n=88   q=32 B=56   expect n-q=56   valid clean
+  mixcolumns_88gates_depth7.json                   n=88   q=32 B=56   expect n-q=56   valid clean
+  mixcolumns_88gates_depth8_thirdfamily.json       n=88   q=32 B=56   expect n-q=56   valid clean
+  mixcolumns_89gates_depth5.json                   n=89   q=32 B=57   expect n-q=57   valid clean
+  mixcolumns_92gates_depth4.json                   n=92   q=32 B=60   expect n-q=60   valid clean
+  mixcolumns_97gates_depth3.json                   n=97   q=32 B=65   expect n-q=65   valid clean
+   8/8 valid and clean (B == n - 32)
+
+VERDICT: ALL CLEAN

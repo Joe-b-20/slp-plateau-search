@@ -1,0 +1,13 @@
+AES MixColumns rebuilt from GF(2^8): weight profile 20x5 + 12x7  [OK]
+outputSignals derived: 32/32 targets located (min 80, max 122)
+structural (2-input XOR, parents strictly earlier): OK
+gateCount declared 91 == actual 91
+depth declared 4 == measured 4
+outputs correct: 32/32
+live gates (reverse-reachable from outputs): 91/91
+distinct gate masks: 91/91
+
+sha256_circuit_json    = 883da457b3224916664f85ec12c1b940cab96c6632586a334709f375cb8cbf3d
+sha256_canonical_gates = 9cf029f08ebc36848c94b2d9c8bbd51f2695737a9af4c976fb7c7f016ef283a7
+
+ALL CHECKS PASS.
