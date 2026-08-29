@@ -1,174 +1,181 @@
-# slp-plateau-search
+# MixColumns in as few XOR gates as possible
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21402996.svg)](https://doi.org/10.5281/zenodo.21402996)
-[![verify](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml/badge.svg)](https://github.com/Joe-b-20/slp-plateau-search/actions/workflows/verify.yml)
+AES MixColumns is a 32×32 matrix over GF(2) (FIPS-197). This repo is a search
+for the smallest circuit that computes it using only 2-input XOR gates.
 
-The search method and evidence behind this project's small 2-input XOR circuits
-for AES MixColumns. Eight verified circuits, one frontier:
+**Result: 56 ≤ minimum ≤ 88.** The record is 88 gates. We never found an 87.
+The search concluded in August 2026.
 
-- **verified frontier: 97 @ 3, 91 @ 4, 88 @ 5 — one line, entirely this project's
-  own lineage, with no imported material.**
+Check any circuit in this repo yourself:
 
-**87 was not found**, and nothing here is claimed optimal.
-
-- **97 @ 3 and 91 @ 4** improve the published depth–count Pareto frontier at
-  their depth (99 @ 3, Shi–Feng–Xu ToSC 2023; 97 @ 4, Osvik–Canright ePrint
-  2024/1076), and the depth-5 point improves the published 94 @ 5 (Osvik–Canright)
-  by six gates. Our own **89 @ 5** improved it by five and is now superseded there
-  by the 88 @ 5 below.
-- **88 is not our count.** It is the published best-known count, held by Jean
-  (ePrint 2026/1481, posted 2026-07-23), and **Jean has priority**. Our **88 @ 7**
-  reaches it from a different direction — it **matches** that circuit with an
-  independent one, the two sharing 61 of their 88 masks — rather than beating it.
-  (Depth 7 is our measurement of our transcription; the paper states no depth.)
-- What is new here is **depth at 88 gates, reached from scratch**. Until
-  2026-07-30 the depth-5 point was held only by a circuit whose seed chain ran
-  through Jean's published work. It is now held by **88 @ depth 5 found from
-  scratch** — root `constructors.build("naive", 1958)`, a randomized XOR tree over
-  the 32 raw inputs, with a producing engine that reads nothing from disk. **This
-  removes this project's dependence on that circuit at the depth-5 point; it does
-  not beat it.** The collapse of the two frontiers into one is about our
-  provenance, not about his result. That circuit dominates Jean's 88 @ 7 (equal
-  count, two levels shallower — and that depth 7 is *forced*: the shallowest
-  schedule Jean's own mask set admits is still 7), improves on the published
-  94 @ 5 by six gates, and dominates our own **88 @ 6** (also from scratch, a
-  different family, and still the first 88 this project found that way),
-  **88 @ 7**, **88 @ 8** and **89 @ 5**. The **derived 88 @ depth 5** and the
-  **derived 88 @ depth 8** are retained, not deleted, and keep their
-  first-sentence derived disclosure.
-- Also published at unconstrained depth: 89 at unstated depth (Sun–Yang–Li,
-  ePrint 2025/1493). Neither published point dominates any point of the frontier
-  above — see the artifact repository's `PRIOR_ART.md`, including its Corrections
-  section.
-
-![The published depth–count Pareto frontier for AES MixColumns vs this work: 97 at depth 3, 91 at depth 4 and an 88 at depth 5 found from scratch, which is the depth-5 point; a derived 88 at the same depth-5 point, an 89 at depth 5, an 88 at depth 6 also found from scratch, the 88 at depth 7 that ties the published record with an independent circuit, and the derived 88 at depth 8, all dominated](docs/frontier.svg)
-
-All eight verified circuits are in `evidence/circuits/`, hash-pinned in
-`evidence/circuits/spectrum.json`; all eight also live, **gate-for-gate
-identical**, in the artifact repository —
-**[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)**
-— as static, machine-checkable files with self-contained verifiers. That
-repository ships eleven circuits in all: these eight, plus three superseded
-earlier results of this project (98 @ 3, 91 @ 6, 89 @ 10) kept there for the
-archival record and not carried here. This
-repository is the other half: the **method** (a value-set
-shortest-linear-program search with plateau walking and destroy-rebuild moves —
-see [`METHODS.md`](METHODS.md); the remove-2-add-1 "hub" move that named this
-repository is retained but **measured dead at the frontier**, METHODS.md §8),
-the **pipeline** that ran it, and the **evidence** of the runs that produced
-the records, archived untouched with their exact code and logs.
-
-Everything is dependency-free Python 3 (stdlib only).
-
-## Quickstart
-
-Reproduce the records (all searches are stochastic — times are what the
-archived and re-validation runs took, not guarantees):
-
-```text
-# 97 gates @ depth 3 -- from scratch, single core, single file. Took 60-156 s
-# across our runs (RNG seed 6), 81 s re-validated 2026-07-27; it restarts on
-# further seeds until it hits 97 or its 15 min budget:
-cd reproduce && python3 reproduce.py
-
-# 88 gates @ depth 7 -- one worker of the shipped pipeline on the record's own
-# ρ²-symmetric 94-gate seed, stopping itself at 88 @ depth <= 7. 19.4 min
-# re-validated 2026-07-27 with the shipped stop rule; 32.9 min in the
-# archived run:
-cd reproduce && python3 hunt_88.py
-
-# 89 gates @ depth 5 -- the two-worker sub-89 configuration, warm-started from
-# this project's 89@depth6 and 90@depth5 circuits. 592 s (~10 min) in the
-# archived run on the v1 engine; the shipped v2 engine re-found it 0.3 s into
-# its first chunk, the command returning in 19-22 s (re-validated 2026-07-27):
-cd pipeline && python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5
-
-# 92 gates @ depth 4 -- the from-scratch cascade ladder (the archived run
-# reached 92@4 after ~2.7 h; expect hours):
-cd pipeline && python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4
+```
+python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json
 ```
 
-[`reproduce/README.md`](reproduce/README.md) says what does and does not
-reproduce. Four circuits have no single reproduction command: the **88 @ depth 8**
-and the **derived 88 @ depth 5**, for the provenance reason above (neither should
-be handed out as a recipe), and the two from-scratch circuits — the **88 @ depth
-6** and the **88 @ depth 5** — which came out of a multi-day 16-process fleet, on
-restart 18 and on session 5 restart 16 of the same worker. Their roots are exactly
-reproducible (`constructors.build("naive", 2163)` and `…, 1958)`); their descents
-are not, and what those took is archived, not promised. The lineage and the exact
-worker, seed, iteration and wall-clock of
-every record are in [`evidence/RESULTS.md`](evidence/RESULTS.md); the runs
-themselves are archived under `evidence/campaign87_run_*/` with their code.
+It prints gate count, depth, how many of the 32 outputs are built, and a verdict.
+It rebuilds MixColumns from the field arithmetic, so it trusts nothing else here.
 
-Verify any circuit against MixColumns rebuilt from GF(2⁸) — pass a path to a
-circuit JSON (`{"gates": [[a,b], ...]}` index pairs, signals 0..31 = inputs,
-gate k → signal 32+k; run with no arguments for all accepted encodings), plus
-an optional depth bound:
+## What we did and what we found
 
-```text
-python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 5
-python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 4   # INVALID: the depth is tight
-python3 verify_circuit.py evidence/circuits/mixcolumns_89gates_depth5.json 5
-python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth6.json 6
-python3 verify_circuit.py reproduce/out_97.json 3   # after running reproduce/reproduce.py
-```
+**The record is 88 gates.** We published five distinct 88-gate circuits, at
+depths 5, 5, 6, 7 and 8. J. Jean found an 88 independently, by a different method, and
+holds further unpublished ones.
 
-## Layout
+**Fewest gates at each depth limit: 97 at depth 3, 91 at depth 4, 88 at depth 5.**
+All verified. The 91 at depth 4 exists in three independent lineages.
 
-| path | what it is |
-|---|---|
-| [`METHODS.md`](METHODS.md) | the method: value-set representation, moves, engines, kernel, pipeline, exact neighbourhood certificates, symmetry, provenance |
-| `reproduce/` | single-command reproductions: the from-scratch depth-3 record (97 gates, single core) and a single-worker re-run of the 88 @ depth 7 (`hunt_88.py`), plus opt-in legacy demonstrations of the moves with per-method seed provenance |
-| `pipeline/` | the record hunter: coordinator (`ladder_parallel.py`), workers, engines, the record-producing configurations — including the `--workers hunt87` set that puts an uncapped worker on each of the three 88-gate family anchors it ships (**two of those three anchors stand on Jean's published circuit**, so anything those workers produce is derived work — see `pipeline/README.md` and `pipeline/seeds/README.md`) — and the code-evolution history across the record runs |
-| `evidence/` | `RESULTS.md` (the records + full lineage), `circuits/` (all eight verified circuits, SHA-256 in `spectrum.json`), and the record-producing run archives, untouched: logs, statuses, every verified best, and the exact `code/` that produced each. **What "untouched" covers** is that run material — the logs, statuses, bests and `code/` are never edited or regenerated, and each stays byte-identical to what the run produced. An archive's own `PROVENANCE.md` is its commentary, not run data, and is maintained: a later result can add a **dated** supersession note, strengthen an argument, repair a `RESULTS.md` cross-reference, or correct a sentence that has since become false. Every such change is recorded in a dated note at the top of the file it touches, and no claim is withdrawn without saying so |
-| `evidence/campaign87_run_2026-07-26_got_88at7/` | the run that found the 88 @ depth 7: `PROVENANCE.md`, the record and its ρ²-symmetric 94 seed, every worker's log and best, the diverse-88 portfolio, and the exact `code/` |
-| `evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/` | the run that found the 88 @ depth 8: same shape, plus the third-family representatives and census references; its `PROVENANCE.md` opens with the derived lineage |
-| `evidence/campaign87_run_2026-07-28_got_88at6_fromscratch/` | the run that found the 88 @ depth 6 **from scratch**: `PROVENANCE.md` (leading with the root, which reads nothing, then the contamination vectors checked in the archived code), the record, the worker's untouched log, the exact `code/` including the root constructors, and `certificates/` — its exhaustively empty k ≤ 3 shell |
-| `evidence/campaign87_run_2026-07-29_got_88at5_derived/` | the run that found the **derived** 88 @ depth 5: same shape; its `PROVENANCE.md` **opens with the derived lineage** through Jean's published 88, the seed is archived beside the record, and `certificates/` holds its k = 2 shell. Superseded at its Pareto point by the row below, and kept |
-| `evidence/campaign87_run_2026-07-30_got_88at5_fromscratch/` | the run that found the **frontier** 88 @ depth 5 **from scratch**: `PROVENANCE.md` (the root, the five closed contamination vectors, and four corroborations a sceptic can check — including that the published 88 @ depth 6 log is a *byte-exact prefix* of this one), the record, the worker's untouched log, `certificates/` (exhaustively empty k ≤ 3 shell + the 135-member depth-5 pocket), and a `code/` that **hash-pins** rather than duplicates: its five source files are byte-identical to the 88 @ depth 6 archive's |
-| `evidence/campaign87_certificates/` | `CERTIFICATES.md` and the machine-checked verdict summaries behind it: exhaustive k ≤ 3 shells for 47 canonical 88s, the population sweeps, the windowed-SAT runs (evidence, not proof), and the two exactly ρ²-symmetric 90-gate circuits |
-| `evidence/campaign87_imported_prior_art/` | the published circuits, transcribed, oracle-verified and credited — **never ours**: Jean's 88 @ depth 7 (ePrint 2026/1481) and Sun–Yang–Li's 89 (ePrint 2025/1493) |
-| `verify_circuit.py` | standalone GF(2⁸) oracle: `python3 verify_circuit.py <circuit.json> [max_depth]` |
+**Lower bound: 56 gates.** Refereed, unconditional, with a certificate. A
+separate certificate shows every depth-3 circuit needs at least 80 gates.
 
-## The three own-lineage chains
+**The SAT test.** Take the two largest intermediate levels of a circuit and ask
+whether they can be built together with *k* gates. At k = 9, 10, 11, 12 and 13
+the answer is proven no. k = 14 decides the question: a solution there would be
+an 87. That case is running. As of 2026-08-29, 87 of its 528 independent pieces
+are proven impossible, none possible, 441 still open. This is a coverage
+bracket, not a result. The test also assumes the circuit splits into the same
+blocks, which an 87 need not do.
 
-![Three lineages: the from-scratch 97-gate depth-3 circuit laddered down to the 89 @ depth 5 and on to the 88 @ depth 7; a second, independent chain from a random 139-gate construction to the 88 @ depth 6; and a third, also independent, from a random 146-gate construction to the frontier 88 @ depth 5](docs/lineage.svg)
+**The census.** We hold 1,575,516 distinct verified 88-gate solutions. 28,796 of
+them carry a build order and are directly runnable; 92 of those are at depth 5.
+Every one passes a cheap check that would have handed us an 87 for free if it
+failed: on the 28,796 with a build order, exactly 56 middle gates have a
+consumer — the value forced on any 88 that cannot be shrunk by deleting a gate.
+On all 1,575,516, no mask appears twice. Zero alarms in either half. The check
+is one-way. Failing it gives an 87; passing it does not prove the circuit is
+minimal.
 
-All three chains above are this project's own, and the lower two start from
-nothing but a random construction — the third of them is the frontier's depth-5
-point. Full lineage tables for every record — each step with the run-time and
-wall-clock at which it appeared, and the derived chains of the 88 @ depth 8 and
-the derived 88 @ depth 5 spelled out link by link — are in
-[`evidence/RESULTS.md`](evidence/RESULTS.md).
+**The negative space is large and empty.** All 139,878 harvested 88s are proven
+irreducible when any two gates are swapped for one — 215,412,120 exact
+decisions, zero reducible. Thirteen neighbourhoods around known 88s are closed
+by exhaustion: 378,189 states, nothing below 88 gates in any of them. On the
+depth-5 record, all 35,960 ways of dropping four output rows and rebuilding them
+cheaper are refuted.
 
-## Verification chain
+**And the honest caveat.** Our own control audit prices those negatives at
+roughly nothing. The same test returns "irreducible" for 97-, 92-, 90- and
+89-gate circuits alike. The measured distance from a circuit to a better one is
+a median of 42 masks, against a search radius of 3 or 4. **A negative at radius 4
+carries essentially no information about whether an 87 exists.**
 
-Nothing in this repository asks to be trusted. Every claimed circuit is a
-JSON gate list; `verify_circuit.py` rebuilds the AES MixColumns specification
-from the GF(2⁸) definition (FIPS 197, polynomial `0x11b`, column `[2,3,1,1]`)
-and replays the circuit against it. The engines themselves never claim a
-count — every candidate passes the oracle before it is saved or logged
-(verify-before-claim), and the run archives in `evidence/` let you re-check
-every intermediate best ever recorded.
+**Calibration.** One from-scratch attempt with none of this project's knowledge
+reached 93 gates. This project's methods reach 88.
 
-The same discipline applies to provenance: circuits from the literature are
-kept apart from ours, credited by author and ePrint number, and a result whose
-seed chain runs through published work says so in its first sentence. Negative
-results are graded the same way — the exact window enumerations in
-`evidence/campaign87_certificates/` are proofs for exactly the radius they
-cover, while the windowed-SAT UNSATs are evidence only, holding relative to the
-encoding's fixed slot order. Nothing here bounds an 87-gate circuit away.
+## Opinion
 
-## License / citation
+This section is opinion, not proof.
 
-MIT. Release **v3.1.0** (2026-07-30) adds an eighth circuit — an **88 @ depth 5
-found from scratch**, with its run archive and its exhaustively empty k ≤ 3 shell
-— which collapses the two frontiers of v3.0.0 into one that carries no imported
-material. v3.0.0 (2026-07-29) added the 88 @ depth 6 found from scratch and the
-derived 88 @ depth 5 to the 97/92/89/88@7/88@8 of v2. If you use the method or
-the circuits, please cite this
-repository and the artifact repository (see `CITATION.cff`). The accompanying
-note is published with the artifacts:
-[`paper/mixcolumns_note.pdf`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits/blob/main/paper/mixcolumns_note.pdf),
-archived under DOI
-[10.5281/zenodo.21299092](https://doi.org/10.5281/zenodo.21299092).
+We think 88 is optimal.
+
+Four things push us that way. Jean reached 88 by a completely different method
+and stopped there too. A free, always-on detector for one-gate improvements has
+now run over 1.5 million distinct 88s and never fired once. Every relaxation we
+could price came back at 88: 749,150 exactly-solved block floors with 88 as the
+best anywhere, and a class-pricing bound covering 1.41×10²⁶ configurations, none
+below 87. Loosening one block's budget buys a gate somewhere and gives one back
+somewhere else, every time we measured it. And thirteen neighbourhoods of known
+88s are closed by exhaustion with 88 as the floor in every one.
+
+Against that: the same structural regularities hold for our 97-, 92- and 89-gate
+circuits, so they may be facts about this problem rather than about 88. And the
+width of the 88 plateau is not evidence either way — we tested that on small
+instances with a certified optimum, and having many distinct optimal solutions
+does not mean the optimum is too high.
+
+An 87 would have to look unlike anything we hold. Outside the shared vocabulary
+of every known 88. Its two largest levels not merging below 14 gates, which the
+live test may still decide. Almost certainly not shallow: the depth-3 floor is
+already 80 and still climbing. And if its cancelling apparatus is as small as
+the arithmetic allows — two cancelling gates against 85 clean ones — then one of
+the twelve heaviest output rows must be produced by a cancelling gate. Our
+circuits have between 9 and 28 cancelling gates. Nothing on disk is that shape.
+
+## If you want to find an 87 (or prove 88 optimal)
+
+**The one live price.** The k = 14 case above costs 650–1,100 core-hours by the
+cheapest route we measured: one complete solver on one core, which does not
+parallelise. The case also splits into 528 independent pieces (87 already done),
+but we measured the split to cost several times more total work than the single
+solver. A solution is an 87. No solution closes that class and leaves the
+general question open.
+
+**Already refuted — do not repeat.**
+
+- Local search around known 88s out to radius 4. Exhausted, empty, and by our
+  own audit worth close to nothing.
+- Dropping up to four output rows and rebuilding them cheaper. Refuted.
+- Free-move neighbourhoods of thirteen known 88s. Closed. Nothing below 88.
+- One family of proof certificates is capped at exactly 91.41. It cannot reach
+  the next step. Do not fund it.
+- The cancellation-free route: proved between 92 and 102, and the exchange-rate
+  arguments built on it die below where the real circuits sit.
+- Searches restricted to symmetric circuits: about 12 gates worse.
+- Searches over five or more planes: unbuildable, not merely unused. Zero of
+  7,755 offered masks were ever selected.
+
+**Best open leads, cheapest first.**
+
+1. One SAT run at 11 gates on a single block. It closes the last loose gate in a
+   bound covering 1.41×10²⁶ configurations, raising it from 87 to 88. Roughly 40
+   core-hours; the levels below it are already done.
+2. 28 search windows at budget 87 that were queued, prioritised, and never ran
+   before compute stopped. This is the only certificate class here with no
+   ordering caveat, and a solution would be a record. Resume is one command.
+3. 498 verified 88-gate solutions from an independent algebraic frame that
+   nobody ever analysed. They sit three steps further into the region where the
+   theory places an 87 than any circuit we studied. Minutes to extract; the
+   anchored search after that is unpriced.
+4. Three unfinished routes to "every 87-gate circuit has depth 4 or more". One
+   of them climbed the depth-3 floor from 32 to 63 in 17 minutes on one core,
+   every rung proven, and was abandoned while still improving. Reaching 88 would
+   be a publishable theorem.
+5. Re-certify one inherited constant as a proof of infeasibility rather than a
+   solver's best guess. One run. It is the only borrowed number that currently
+   changes a conclusion, and several conclusions die if it fails.
+6. The two-cancelling-gate region described above. Fully specified, never
+   searched, and no instrument exists that aims at it. Cost unknown.
+
+Our full method catalogue, corpora and certificates are available on request.
+
+## Available on request
+
+This repo ships the record circuits and their certificates. A much larger body
+of working material is kept locally and is available on request.
+
+- **1,575,516 distinct verified 88-gate solutions.** 28,796 carry a build order
+  and run directly, 92 of those at depth 5; the rest are mask sets whose build
+  order would need re-deriving. Two further large classes are counted but not
+  deduplicated, so the true figure is between 1.6 and 4.4 million.
+- **8 record circuits** (97 at depth 3, 91 at depth 4, 89 at depth 5, and five
+  88s at depths 5, 5, 6, 7, 8) with a SHA-256 manifest, plus 11 fully packaged
+  circuits with Verilog and testbenches.
+- **A 93-gate circuit from an independent from-scratch effort** with no access
+  to this project's methods — our calibration for how hard the last five gates
+  are.
+- **The lower bound `≥ 56`** with its certificate, and a certified depth-3 bound
+  of 80 gates re-checkable in seconds.
+- **A cancellation-free bound `≥ 92`**, derived twice independently, with 19
+  exact certificates.
+- **Proofs that the two largest levels cannot merge at 9, 10, 11, 12 or 13
+  gates**, cross-checked at the cheap end by a second, independent encoding over
+  an exhaustive 528-piece partition with a working positive control. The 14-gate
+  case is packaged as a single 4.2 MB CNF and is open.
+- **215,412,120 exact window decisions**, zero reducible, covering all 139,878
+  harvested 88s.
+- **378,189 fully enumerated neighbourhood states** across thirteen closed
+  components, minimum 88 gates throughout.
+- **749,150 exactly-solved block floors** (best anywhere: 88), 47,948 solved
+  8-dimensional sector instances with replayable witnesses, and a class-pricing
+  bound over 1.41×10²⁶ configurations.
+- **Five theorems with checked proofs**, including the one-gate-improvement
+  detector and a list of 14 properties forced on any 87-gate minimum circuit.
+- **~160 append-only result ledgers**, ~770 write-ups, and ~9,800 raw run logs.
+
+No circuit smaller than 88 gates was ever found. Everything above is checkable
+with the verifier in this repo.
+
+To ask for any of it, open an issue.
+
+---
+
+`METHODS.md` is the original long-form method write-up, kept as historical
+detail.
