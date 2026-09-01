@@ -1,0 +1,115 @@
+### DEMO RE-RUN 2026-09-01T13:29:28-04:00
+
+$ python3 tools/make_planted.py circuits/mixcolumns_88gates_depth6.json circuits
+planted_dup.json  : 89 gates (duplicate of gate 20, given a consumer)
+planted_dead.txt  : 89 gates (last one has no consumer)
+
+=== (a) NEGATIVE CONTROL: the five published 88s + the foreign-lineage 88 -- must stay SILENT ===
+$ python3 tripwire.py --quiet circuits/mixcolumns_88gates_depth*.json circuits/foreign_88gates_depth7_eprint_2026-1481.json
+target: AES MixColumns (forward), rebuilt from GF(2^8) mod 0x11B -- 32 outputs, 32 inputs
+rule:   B = gates - outputs = n - 32 on any valid, irreducible circuit;
+        any other value hands you an (n-1)-gate circuit by deletion.
+note:   this tool does NOT check that the circuit is correct.
+
+  mixcolumns_88gates_depth5.json                       n=88   B=56   expect=56   silent
+  mixcolumns_88gates_depth5_fromscratch.json           n=88   B=56   expect=56   silent
+  mixcolumns_88gates_depth6.json                       n=88   B=56   expect=56   silent
+  mixcolumns_88gates_depth7.json                       n=88   B=56   expect=56   silent
+  mixcolumns_88gates_depth8.json                       n=88   B=56   expect=56   silent
+  foreign_88gates_depth7_eprint_2026-1481.json         n=88   B=56   expect=56   silent
+========================================================================
+6 file(s) examined, none has a deletable gate.
+  exit status: 0  (0 = every file silent)
+
+=== (b) POSITIVE CONTROL 1: planted duplicate value -- must FIRE ===
+$ python3 tripwire.py circuits/planted_dup.json
+target: AES MixColumns (forward), rebuilt from GF(2^8) mod 0x11B -- 32 outputs, 32 inputs
+rule:   B = gates - outputs = n - 32 on any valid, irreducible circuit;
+        any other value hands you an (n-1)-gate circuit by deletion.
+note:   this tool does NOT check that the circuit is correct.
+
+========================================================================
+planted_dup.json
+------------------------------------------------------------------------
+  89 gates over 32 inputs; the target map has 32 outputs.
+  32 of those 32 target values appear somewhere in the circuit.
+
+  duplicate values : 1
+  dead gates       : 0
+  working values B : 57   (expected 57 = 89 gates - 32 outputs)
+
+  RESULT: *** A GATE CAN BE DELETED. ***
+          You are holding a 88-gate circuit for this map.
+
+  1 duplicated value(s): two gates compute the same thing.
+  Delete the later gate and point whatever read it at the earlier one.
+     gate 20 and gate 21 both compute 0x02020002
+
+========================================================================
+1 of 1 file(s) have a deletable gate: planted_dup.json
+  exit status: 1  (1 = fired, the pass condition here)
+
+=== (b) POSITIVE CONTROL 2: planted dead gate, plain-text format -- must FIRE ===
+$ python3 tripwire.py circuits/planted_dead.txt
+target: AES MixColumns (forward), rebuilt from GF(2^8) mod 0x11B -- 32 outputs, 32 inputs
+rule:   B = gates - outputs = n - 32 on any valid, irreducible circuit;
+        any other value hands you an (n-1)-gate circuit by deletion.
+note:   this tool does NOT check that the circuit is correct.
+
+========================================================================
+planted_dead.txt
+------------------------------------------------------------------------
+  89 gates over 32 inputs; the target map has 32 outputs.
+  32 of those 32 target values appear somewhere in the circuit.
+
+  duplicate values : 0
+  dead gates       : 1
+  working values B : 56   (expected 57 = 89 gates - 32 outputs)
+
+  RESULT: *** A GATE CAN BE DELETED. ***
+          You are holding a 88-gate circuit for this map.
+
+  1 dead gate(s): computed, not a target, and nothing reads them.
+  Delete them outright.
+     gate(s): 88
+
+========================================================================
+1 of 1 file(s) have a deletable gate: planted_dead.txt
+  exit status: 1  (1 = fired)
+
+=== BUILT-IN SELF-TEST against a real record circuit ===
+$ python3 tripwire.py --selftest circuits/mixcolumns_88gates_depth5_fromscratch.json
+target: AES MixColumns (forward), rebuilt from GF(2^8) mod 0x11B -- 32 outputs, 32 inputs
+rule:   B = gates - outputs = n - 32 on any valid, irreducible circuit;
+        any other value hands you an (n-1)-gate circuit by deletion.
+note:   this tool does NOT check that the circuit is correct.
+
+========================================================================
+SELF-TEST
+------------------------------------------------------------------------
+  1. the clean circuit as given            -> silent  (must be silent)
+  2. same circuit + one duplicated gate    -> FIRED  (must fire)
+  3. same circuit + one gate nobody reads  -> FIRED  (must fire)
+
+  SELF-TEST: PASS
+
+========================================================================
+mixcolumns_88gates_depth5_fromscratch.json
+------------------------------------------------------------------------
+  88 gates over 32 inputs; the target map has 32 outputs.
+  32 of those 32 target values appear somewhere in the circuit.
+
+  duplicate values : 0
+  dead gates       : 0
+  working values B : 56   (expected 56 = 88 gates - 32 outputs)
+
+  RESULT: nothing to delete.
+          No gate computes a value another gate already has,
+          nothing is computed and then ignored, and B is exactly
+          what an irreducible circuit's B has to be. This test
+          has no objection to the circuit. It has not shown the
+          circuit is minimal -- that is a different and much
+          harder question.
+========================================================================
+1 file(s) examined, none has a deletable gate.
+  exit status: 0  (0 = all three controls behaved)

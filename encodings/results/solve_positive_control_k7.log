@@ -1,0 +1,3 @@
+s SATISFIABLE
+c model written to positive_control/k7_SUB_U4tgts.model
+c solver cadical195  status SAT  seconds 1.19

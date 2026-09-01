@@ -1,0 +1,1344 @@
+{
+ "k": 13,
+ "instance_checks": {
+  "file": "instance_joint_W3U4.json",
+  "file_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "canonical_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 8,
+  "depth": null,
+  "canonical_sha256_matches_pin": true
+ },
+ "repo_cross_check": {
+  "available": true,
+  "identity_module": "inst16.py",
+  "upstream_assertions": {
+   "preflight_file": "joint_W3U4_preflight.json",
+   "preflight_sha256": "d4916aef84137088c45e4c09627d4ac00d82420eec94fa9a033f3a822250cf68",
+   "instance_canon_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+   "instance_canon_sha256_matches_pin": true,
+   "key_of_instance": "f04dcb3ecf180a30204434a0bd32453e7635e8b6",
+   "key_matches_recorded": true,
+   "recorded_key": "f04dcb3ecf180a30204434a0bd32453e7635e8b6",
+   "recorded_key_matches": true,
+   "preflight_OK": true,
+   "dim_16": true,
+   "lines_2347": true,
+   "n_inputs_33": true,
+   "n_targets_8": true,
+   "depth_None": true,
+   "split_total_to_beat": 15,
+   "decisive_k": 14,
+   "local_copy_byte_identical": true,
+   "local_copy_parses_equal": true
+  },
+  "note": "re-ran the upstream programme's OWN instance-assertion module, read-only, at generation time; absolute paths reduced to file names for publication, all digests, keys and booleans unchanged",
+  "instance_identical_to_upstream": true
+ },
+ "normalised": {
+  "r": 16,
+  "m": 33,
+  "n_unrealised_targets": 8,
+  "in_vals": [
+   8,
+   4,
+   12,
+   2,
+   10,
+   5,
+   3,
+   15,
+   128,
+   64,
+   192,
+   160,
+   80,
+   48,
+   240,
+   2048,
+   1024,
+   1028,
+   3072,
+   514,
+   2560,
+   2562,
+   1280,
+   1285,
+   3840,
+   32768,
+   49152,
+   8192,
+   40960,
+   24576,
+   12288,
+   12291,
+   61440
+  ],
+  "tgt_vals": [
+   1236,
+   1509,
+   1718,
+   1943,
+   19716,
+   24069,
+   27398,
+   30983
+  ]
+ },
+ "build_cnf_args": {
+  "r": 16,
+  "k": 13,
+  "symmetry": true,
+  "worker_tuple_shape": "(r, in_vals, tgt_vals, k, cube_idx=None, 'cadical195', True)"
+ },
+ "nv": 21020,
+ "nclauses": 253580,
+ "clause_order_sha256": "a8cc628ba66b433653ec944ebd57a14d6a5404293cf802eac2849b8ce2a2238b",
+ "deterministic_rebuild": true,
+ "dimacs": {
+  "path": "k13_joint_W3U4.cnf",
+  "sha256": "ca5a2a1716fbd011733be24672c4c70c87c54d7400992bf5c9f8f12e553f9c3d",
+  "bytes": 3784879
+ },
+ "var_blocks": [
+  {
+   "name": "V",
+   "first": 1,
+   "last": 208,
+   "count": 208,
+   "shape": [
+    13,
+    16
+   ],
+   "meaning": "V[i][b] = bit b of the GF(2)^r value carried by gate i (i = 0..k-1, b = 0..r-1); variable = i*r + b + 1"
+  },
+  {
+   "name": "Z[0]",
+   "first": 209,
+   "last": 736,
+   "count": 528,
+   "shape": [
+    528
+   ],
+   "meaning": "one-hot: gate 0 reads the pair (p,q) with key q(q-1)/2+p over the m+0 signals available to it"
+  },
+  {
+   "name": "Z[1]",
+   "first": 737,
+   "last": 1297,
+   "count": 561,
+   "shape": [
+    561
+   ],
+   "meaning": "one-hot: gate 1 reads the pair (p,q) with key q(q-1)/2+p over the m+1 signals available to it"
+  },
+  {
+   "name": "Z[2]",
+   "first": 1298,
+   "last": 1892,
+   "count": 595,
+   "shape": [
+    595
+   ],
+   "meaning": "one-hot: gate 2 reads the pair (p,q) with key q(q-1)/2+p over the m+2 signals available to it"
+  },
+  {
+   "name": "Z[3]",
+   "first": 1893,
+   "last": 2522,
+   "count": 630,
+   "shape": [
+    630
+   ],
+   "meaning": "one-hot: gate 3 reads the pair (p,q) with key q(q-1)/2+p over the m+3 signals available to it"
+  },
+  {
+   "name": "Z[4]",
+   "first": 2523,
+   "last": 3188,
+   "count": 666,
+   "shape": [
+    666
+   ],
+   "meaning": "one-hot: gate 4 reads the pair (p,q) with key q(q-1)/2+p over the m+4 signals available to it"
+  },
+  {
+   "name": "Z[5]",
+   "first": 3189,
+   "last": 3891,
+   "count": 703,
+   "shape": [
+    703
+   ],
+   "meaning": "one-hot: gate 5 reads the pair (p,q) with key q(q-1)/2+p over the m+5 signals available to it"
+  },
+  {
+   "name": "Z[6]",
+   "first": 3892,
+   "last": 4632,
+   "count": 741,
+   "shape": [
+    741
+   ],
+   "meaning": "one-hot: gate 6 reads the pair (p,q) with key q(q-1)/2+p over the m+6 signals available to it"
+  },
+  {
+   "name": "Z[7]",
+   "first": 4633,
+   "last": 5412,
+   "count": 780,
+   "shape": [
+    780
+   ],
+   "meaning": "one-hot: gate 7 reads the pair (p,q) with key q(q-1)/2+p over the m+7 signals available to it"
+  },
+  {
+   "name": "Z[8]",
+   "first": 5413,
+   "last": 6232,
+   "count": 820,
+   "shape": [
+    820
+   ],
+   "meaning": "one-hot: gate 8 reads the pair (p,q) with key q(q-1)/2+p over the m+8 signals available to it"
+  },
+  {
+   "name": "Z[9]",
+   "first": 6233,
+   "last": 7093,
+   "count": 861,
+   "shape": [
+    861
+   ],
+   "meaning": "one-hot: gate 9 reads the pair (p,q) with key q(q-1)/2+p over the m+9 signals available to it"
+  },
+  {
+   "name": "Z[10]",
+   "first": 7094,
+   "last": 7996,
+   "count": 903,
+   "shape": [
+    903
+   ],
+   "meaning": "one-hot: gate 10 reads the pair (p,q) with key q(q-1)/2+p over the m+10 signals available to it"
+  },
+  {
+   "name": "Z[11]",
+   "first": 7997,
+   "last": 8942,
+   "count": 946,
+   "shape": [
+    946
+   ],
+   "meaning": "one-hot: gate 11 reads the pair (p,q) with key q(q-1)/2+p over the m+11 signals available to it"
+  },
+  {
+   "name": "Z[12]",
+   "first": 8943,
+   "last": 9932,
+   "count": 990,
+   "shape": [
+    990
+   ],
+   "meaning": "one-hot: gate 12 reads the pair (p,q) with key q(q-1)/2+p over the m+12 signals available to it"
+  },
+  {
+   "name": "S[0]",
+   "first": 9933,
+   "last": 10460,
+   "count": 528,
+   "shape": [
+    528
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[0]"
+  },
+  {
+   "name": "S[1]",
+   "first": 10461,
+   "last": 11021,
+   "count": 561,
+   "shape": [
+    561
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[1]"
+  },
+  {
+   "name": "dif[1,0]",
+   "first": 11022,
+   "last": 11037,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 1's value differs from gate 0's"
+  },
+  {
+   "name": "S[2]",
+   "first": 11038,
+   "last": 11632,
+   "count": 595,
+   "shape": [
+    595
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[2]"
+  },
+  {
+   "name": "dif[2,0]",
+   "first": 11633,
+   "last": 11648,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 2's value differs from gate 0's"
+  },
+  {
+   "name": "dif[2,1]",
+   "first": 11649,
+   "last": 11664,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 2's value differs from gate 1's"
+  },
+  {
+   "name": "S[3]",
+   "first": 11665,
+   "last": 12294,
+   "count": 630,
+   "shape": [
+    630
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[3]"
+  },
+  {
+   "name": "dif[3,0]",
+   "first": 12295,
+   "last": 12310,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 3's value differs from gate 0's"
+  },
+  {
+   "name": "dif[3,1]",
+   "first": 12311,
+   "last": 12326,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 3's value differs from gate 1's"
+  },
+  {
+   "name": "dif[3,2]",
+   "first": 12327,
+   "last": 12342,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 3's value differs from gate 2's"
+  },
+  {
+   "name": "S[4]",
+   "first": 12343,
+   "last": 13008,
+   "count": 666,
+   "shape": [
+    666
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[4]"
+  },
+  {
+   "name": "dif[4,0]",
+   "first": 13009,
+   "last": 13024,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 4's value differs from gate 0's"
+  },
+  {
+   "name": "dif[4,1]",
+   "first": 13025,
+   "last": 13040,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 4's value differs from gate 1's"
+  },
+  {
+   "name": "dif[4,2]",
+   "first": 13041,
+   "last": 13056,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 4's value differs from gate 2's"
+  },
+  {
+   "name": "dif[4,3]",
+   "first": 13057,
+   "last": 13072,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 4's value differs from gate 3's"
+  },
+  {
+   "name": "S[5]",
+   "first": 13073,
+   "last": 13775,
+   "count": 703,
+   "shape": [
+    703
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[5]"
+  },
+  {
+   "name": "dif[5,0]",
+   "first": 13776,
+   "last": 13791,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 5's value differs from gate 0's"
+  },
+  {
+   "name": "dif[5,1]",
+   "first": 13792,
+   "last": 13807,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 5's value differs from gate 1's"
+  },
+  {
+   "name": "dif[5,2]",
+   "first": 13808,
+   "last": 13823,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 5's value differs from gate 2's"
+  },
+  {
+   "name": "dif[5,3]",
+   "first": 13824,
+   "last": 13839,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 5's value differs from gate 3's"
+  },
+  {
+   "name": "dif[5,4]",
+   "first": 13840,
+   "last": 13855,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 5's value differs from gate 4's"
+  },
+  {
+   "name": "S[6]",
+   "first": 13856,
+   "last": 14596,
+   "count": 741,
+   "shape": [
+    741
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[6]"
+  },
+  {
+   "name": "dif[6,0]",
+   "first": 14597,
+   "last": 14612,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 0's"
+  },
+  {
+   "name": "dif[6,1]",
+   "first": 14613,
+   "last": 14628,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 1's"
+  },
+  {
+   "name": "dif[6,2]",
+   "first": 14629,
+   "last": 14644,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 2's"
+  },
+  {
+   "name": "dif[6,3]",
+   "first": 14645,
+   "last": 14660,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 3's"
+  },
+  {
+   "name": "dif[6,4]",
+   "first": 14661,
+   "last": 14676,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 4's"
+  },
+  {
+   "name": "dif[6,5]",
+   "first": 14677,
+   "last": 14692,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 6's value differs from gate 5's"
+  },
+  {
+   "name": "S[7]",
+   "first": 14693,
+   "last": 15472,
+   "count": 780,
+   "shape": [
+    780
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[7]"
+  },
+  {
+   "name": "dif[7,0]",
+   "first": 15473,
+   "last": 15488,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 0's"
+  },
+  {
+   "name": "dif[7,1]",
+   "first": 15489,
+   "last": 15504,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 1's"
+  },
+  {
+   "name": "dif[7,2]",
+   "first": 15505,
+   "last": 15520,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 2's"
+  },
+  {
+   "name": "dif[7,3]",
+   "first": 15521,
+   "last": 15536,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 3's"
+  },
+  {
+   "name": "dif[7,4]",
+   "first": 15537,
+   "last": 15552,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 4's"
+  },
+  {
+   "name": "dif[7,5]",
+   "first": 15553,
+   "last": 15568,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 5's"
+  },
+  {
+   "name": "dif[7,6]",
+   "first": 15569,
+   "last": 15584,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 7's value differs from gate 6's"
+  },
+  {
+   "name": "S[8]",
+   "first": 15585,
+   "last": 16404,
+   "count": 820,
+   "shape": [
+    820
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[8]"
+  },
+  {
+   "name": "dif[8,0]",
+   "first": 16405,
+   "last": 16420,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 0's"
+  },
+  {
+   "name": "dif[8,1]",
+   "first": 16421,
+   "last": 16436,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 1's"
+  },
+  {
+   "name": "dif[8,2]",
+   "first": 16437,
+   "last": 16452,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 2's"
+  },
+  {
+   "name": "dif[8,3]",
+   "first": 16453,
+   "last": 16468,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 3's"
+  },
+  {
+   "name": "dif[8,4]",
+   "first": 16469,
+   "last": 16484,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 4's"
+  },
+  {
+   "name": "dif[8,5]",
+   "first": 16485,
+   "last": 16500,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 5's"
+  },
+  {
+   "name": "dif[8,6]",
+   "first": 16501,
+   "last": 16516,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 6's"
+  },
+  {
+   "name": "dif[8,7]",
+   "first": 16517,
+   "last": 16532,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 8's value differs from gate 7's"
+  },
+  {
+   "name": "S[9]",
+   "first": 16533,
+   "last": 17393,
+   "count": 861,
+   "shape": [
+    861
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[9]"
+  },
+  {
+   "name": "dif[9,0]",
+   "first": 17394,
+   "last": 17409,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 0's"
+  },
+  {
+   "name": "dif[9,1]",
+   "first": 17410,
+   "last": 17425,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 1's"
+  },
+  {
+   "name": "dif[9,2]",
+   "first": 17426,
+   "last": 17441,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 2's"
+  },
+  {
+   "name": "dif[9,3]",
+   "first": 17442,
+   "last": 17457,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 3's"
+  },
+  {
+   "name": "dif[9,4]",
+   "first": 17458,
+   "last": 17473,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 4's"
+  },
+  {
+   "name": "dif[9,5]",
+   "first": 17474,
+   "last": 17489,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 5's"
+  },
+  {
+   "name": "dif[9,6]",
+   "first": 17490,
+   "last": 17505,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 6's"
+  },
+  {
+   "name": "dif[9,7]",
+   "first": 17506,
+   "last": 17521,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 7's"
+  },
+  {
+   "name": "dif[9,8]",
+   "first": 17522,
+   "last": 17537,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 9's value differs from gate 8's"
+  },
+  {
+   "name": "S[10]",
+   "first": 17538,
+   "last": 18440,
+   "count": 903,
+   "shape": [
+    903
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[10]"
+  },
+  {
+   "name": "dif[10,0]",
+   "first": 18441,
+   "last": 18456,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 0's"
+  },
+  {
+   "name": "dif[10,1]",
+   "first": 18457,
+   "last": 18472,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 1's"
+  },
+  {
+   "name": "dif[10,2]",
+   "first": 18473,
+   "last": 18488,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 2's"
+  },
+  {
+   "name": "dif[10,3]",
+   "first": 18489,
+   "last": 18504,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 3's"
+  },
+  {
+   "name": "dif[10,4]",
+   "first": 18505,
+   "last": 18520,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 4's"
+  },
+  {
+   "name": "dif[10,5]",
+   "first": 18521,
+   "last": 18536,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 5's"
+  },
+  {
+   "name": "dif[10,6]",
+   "first": 18537,
+   "last": 18552,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 6's"
+  },
+  {
+   "name": "dif[10,7]",
+   "first": 18553,
+   "last": 18568,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 7's"
+  },
+  {
+   "name": "dif[10,8]",
+   "first": 18569,
+   "last": 18584,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 8's"
+  },
+  {
+   "name": "dif[10,9]",
+   "first": 18585,
+   "last": 18600,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 10's value differs from gate 9's"
+  },
+  {
+   "name": "S[11]",
+   "first": 18601,
+   "last": 19546,
+   "count": 946,
+   "shape": [
+    946
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[11]"
+  },
+  {
+   "name": "dif[11,0]",
+   "first": 19547,
+   "last": 19562,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 0's"
+  },
+  {
+   "name": "dif[11,1]",
+   "first": 19563,
+   "last": 19578,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 1's"
+  },
+  {
+   "name": "dif[11,2]",
+   "first": 19579,
+   "last": 19594,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 2's"
+  },
+  {
+   "name": "dif[11,3]",
+   "first": 19595,
+   "last": 19610,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 3's"
+  },
+  {
+   "name": "dif[11,4]",
+   "first": 19611,
+   "last": 19626,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 4's"
+  },
+  {
+   "name": "dif[11,5]",
+   "first": 19627,
+   "last": 19642,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 5's"
+  },
+  {
+   "name": "dif[11,6]",
+   "first": 19643,
+   "last": 19658,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 6's"
+  },
+  {
+   "name": "dif[11,7]",
+   "first": 19659,
+   "last": 19674,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 7's"
+  },
+  {
+   "name": "dif[11,8]",
+   "first": 19675,
+   "last": 19690,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 8's"
+  },
+  {
+   "name": "dif[11,9]",
+   "first": 19691,
+   "last": 19706,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 9's"
+  },
+  {
+   "name": "dif[11,10]",
+   "first": 19707,
+   "last": 19722,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 11's value differs from gate 10's"
+  },
+  {
+   "name": "S[12]",
+   "first": 19723,
+   "last": 20712,
+   "count": 990,
+   "shape": [
+    990
+   ],
+   "meaning": "sequential at-most-one prefix vars for Z[12]"
+  },
+  {
+   "name": "dif[12,0]",
+   "first": 20713,
+   "last": 20728,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 0's"
+  },
+  {
+   "name": "dif[12,1]",
+   "first": 20729,
+   "last": 20744,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 1's"
+  },
+  {
+   "name": "dif[12,2]",
+   "first": 20745,
+   "last": 20760,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 2's"
+  },
+  {
+   "name": "dif[12,3]",
+   "first": 20761,
+   "last": 20776,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 3's"
+  },
+  {
+   "name": "dif[12,4]",
+   "first": 20777,
+   "last": 20792,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 4's"
+  },
+  {
+   "name": "dif[12,5]",
+   "first": 20793,
+   "last": 20808,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 5's"
+  },
+  {
+   "name": "dif[12,6]",
+   "first": 20809,
+   "last": 20824,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 6's"
+  },
+  {
+   "name": "dif[12,7]",
+   "first": 20825,
+   "last": 20840,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 7's"
+  },
+  {
+   "name": "dif[12,8]",
+   "first": 20841,
+   "last": 20856,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 8's"
+  },
+  {
+   "name": "dif[12,9]",
+   "first": 20857,
+   "last": 20872,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 9's"
+  },
+  {
+   "name": "dif[12,10]",
+   "first": 20873,
+   "last": 20888,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 10's"
+  },
+  {
+   "name": "dif[12,11]",
+   "first": 20889,
+   "last": 20904,
+   "count": 16,
+   "shape": [
+    16
+   ],
+   "meaning": "(N1) witness bits: gate 12's value differs from gate 11's"
+  },
+  {
+   "name": "uses[1]",
+   "first": 20905,
+   "last": 20905,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 1 reads at least one signal produced after gate 1-1"
+  },
+  {
+   "name": "uses[2]",
+   "first": 20906,
+   "last": 20906,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 2 reads at least one signal produced after gate 2-1"
+  },
+  {
+   "name": "uses[3]",
+   "first": 20907,
+   "last": 20907,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 3 reads at least one signal produced after gate 3-1"
+  },
+  {
+   "name": "uses[4]",
+   "first": 20908,
+   "last": 20908,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 4 reads at least one signal produced after gate 4-1"
+  },
+  {
+   "name": "uses[5]",
+   "first": 20909,
+   "last": 20909,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 5 reads at least one signal produced after gate 5-1"
+  },
+  {
+   "name": "uses[6]",
+   "first": 20910,
+   "last": 20910,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 6 reads at least one signal produced after gate 6-1"
+  },
+  {
+   "name": "uses[7]",
+   "first": 20911,
+   "last": 20911,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 7 reads at least one signal produced after gate 7-1"
+  },
+  {
+   "name": "uses[8]",
+   "first": 20912,
+   "last": 20912,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 8 reads at least one signal produced after gate 8-1"
+  },
+  {
+   "name": "uses[9]",
+   "first": 20913,
+   "last": 20913,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 9 reads at least one signal produced after gate 9-1"
+  },
+  {
+   "name": "uses[10]",
+   "first": 20914,
+   "last": 20914,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 10 reads at least one signal produced after gate 10-1"
+  },
+  {
+   "name": "uses[11]",
+   "first": 20915,
+   "last": 20915,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 11 reads at least one signal produced after gate 11-1"
+  },
+  {
+   "name": "uses[12]",
+   "first": 20916,
+   "last": 20916,
+   "count": 1,
+   "shape": null,
+   "meaning": "(N3) gate 12 reads at least one signal produced after gate 12-1"
+  },
+  {
+   "name": "W[0]",
+   "first": 20917,
+   "last": 20929,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[0][i] -> gate i carries target 0"
+  },
+  {
+   "name": "W[1]",
+   "first": 20930,
+   "last": 20942,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[1][i] -> gate i carries target 1"
+  },
+  {
+   "name": "W[2]",
+   "first": 20943,
+   "last": 20955,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[2][i] -> gate i carries target 2"
+  },
+  {
+   "name": "W[3]",
+   "first": 20956,
+   "last": 20968,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[3][i] -> gate i carries target 3"
+  },
+  {
+   "name": "W[4]",
+   "first": 20969,
+   "last": 20981,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[4][i] -> gate i carries target 4"
+  },
+  {
+   "name": "W[5]",
+   "first": 20982,
+   "last": 20994,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[5][i] -> gate i carries target 5"
+  },
+  {
+   "name": "W[6]",
+   "first": 20995,
+   "last": 21007,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[6][i] -> gate i carries target 6"
+  },
+  {
+   "name": "W[7]",
+   "first": 21008,
+   "last": 21020,
+   "count": 13,
+   "shape": [
+    13
+   ],
+   "meaning": "W[7][i] -> gate i carries target 7"
+  }
+ ],
+ "cube_hint": {
+  "gate0_onehot_first": 209,
+  "gate0_onehot_last": 736,
+  "n_gate0_cubes": 528
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "instance": {
+  "file": "instance_joint_W3U4.json",
+  "file_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "canonical_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 8,
+  "depth": null,
+  "canonical_sha256_matches_pin": true,
+  "instance_key": "f04dcb3ecf180a30204434a0bd32453e7635e8b6"
+ },
+ "rank_r": 16,
+ "free_signals_m": 33,
+ "targets_unrealised": 8,
+ "lower_bound_L2": 9,
+ "greedy_upper_bound": 16,
+ "greedy_verify_slp": true,
+ "greedy_why": "ok"
+}

@@ -1,0 +1,13 @@
+{
+ "cnf": "k9_joint_W3U4.cnf",
+ "cnf_sha256": "3158d26e99da2de87f23520b4db4caae1200d990489d8a730582a67cd476a61d",
+ "header_nv": 12848,
+ "header_nclauses": 145670,
+ "parsed_nclauses": 145670,
+ "max_var_used": 12848,
+ "header_matches_body": true,
+ "solver": "cadical195",
+ "clauses_from": "the DIMACS FILE, not an encoder",
+ "wall_seconds": 0.98,
+ "status": "UNSAT"
+}

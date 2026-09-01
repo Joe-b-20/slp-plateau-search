@@ -1,0 +1,38 @@
+### RE-RUN 2026-09-01T13:30:39-04:00
+
+=== (1) verify the 89-gate circuit against the MixColumns spec ===
+$ python3 tools/verify_circuit.py S89_out_of_vocabulary_89gates.json
+gates=89 depth=10 outputs_built=32/32 problems=0
+VERDICT: VALID MixColumns circuit
+  exit status: 0  (0 = VALID)
+
+=== (2) is it inside the 1,778-value corpus vocabulary? ===
+$ python3 tools/oov_check.py vocab.json S89_out_of_vocabulary_89gates.json
+vocabulary            : 1778 distinct non-target masks
+circuit               : 89 gates, 89 distinct masks
+  of which targets    : 32 / 32
+  non-target masks    : 57
+  IN  the vocabulary  : 51
+  OUT of the vocabulary: 6
+    0x00000088  (decimal 136, Hamming weight 2)
+    0x00000098  (decimal 152, Hamming weight 3)
+    0x0080048c  (decimal 8389772, Hamming weight 5)
+    0x10009898  (decimal 268474520, Hamming weight 7)
+    0x8488888c  (decimal 2223540364, Hamming weight 9)
+    0x8c88888c  (decimal 2357758092, Hamming weight 10)
+
+VERDICT: OUT OF VOCABULARY. 6 mask(s) in this circuit occur in no
+         entry of the 1,778-value corpus vocabulary.
+  exit status: 0  (0 = at least one out-of-vocabulary mask)
+
+=== (3) negative control: a PUBLISHED 88 is entirely inside the vocabulary ===
+$ python3 tools/oov_check.py vocab.json ../tripwire_demo/circuits/mixcolumns_88gates_depth5.json
+vocabulary            : 1778 distinct non-target masks
+circuit               : 88 gates, 88 distinct masks
+  of which targets    : 32 / 32
+  non-target masks    : 56
+  IN  the vocabulary  : 56
+  OUT of the vocabulary: 0
+
+VERDICT: entirely inside the corpus vocabulary.
+  exit status: 1  (1 = wholly in-vocabulary, as expected)

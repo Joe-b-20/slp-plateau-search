@@ -1,0 +1,8 @@
+{
+ "_note": "Paths, relative to CORPUS_ROOT, of the five bulk source banks the full-corpus producer streams. Fill these in for your own tree; the locations in the tree that produced the certificate are not published.",
+ "oracle_worklist": "<path>/pop88_worklist.jsonl",
+ "deep_hunt": "<path>/population88_new.jsonl",
+ "layer89_descent": "<path>/found88.jsonl",
+ "merged_engine": "<path>/*.pop.jsonl",
+ "nrpa": "<path>/sub92.jsonl"
+}

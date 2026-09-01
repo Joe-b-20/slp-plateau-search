@@ -1,0 +1,13 @@
+{
+ "cnf": "k6_SUB_U4tgts.cnf",
+ "cnf_sha256": "a390d799c265713fbc04cd1db7e5b6811c0d9d98d283f45493ab57ec6e6551f8",
+ "header_nv": 7731,
+ "header_nclauses": 83110,
+ "parsed_nclauses": 83110,
+ "max_var_used": 7731,
+ "header_matches_body": true,
+ "solver": "cadical195",
+ "clauses_from": "the DIMACS FILE, not an encoder",
+ "wall_seconds": 0.58,
+ "status": "UNSAT"
+}

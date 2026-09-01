@@ -1,0 +1,35 @@
+{
+ "model_file": "k7_SUB_U4tgts_CORRUPT.model",
+ "k": 7,
+ "instance": {
+  "file": "instance_SUB_U4tgts.json",
+  "file_sha256": "a5c3b69aaded6fc6f68b71bed276e742a75cfbfc2130aaea766697cb47cbcbb6",
+  "canonical_sha256": "e66e50143ca7085d320e0f3deb539a706189fae6f108aa2239a5ab74f3a2222b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 4,
+  "depth": null
+ },
+ "model_check": {
+  "vars_in_model": 9330,
+  "nv": 9330,
+  "unassigned_vars": 0,
+  "unsatisfied_clause_indices": [
+   3887,
+   33761,
+   44548,
+   60214,
+   79386,
+   97551
+  ],
+  "clauses_checked": 102115
+ },
+ "model_satisfies_cnf": false,
+ "VERDICT": "MODEL DOES NOT SATISFY THE FORMULA"
+}

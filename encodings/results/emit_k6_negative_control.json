@@ -1,0 +1,28 @@
+{
+ "out": "k6_SUB_U4tgts.cnf",
+ "k": 6,
+ "symmetry": true,
+ "nv": 7731,
+ "nclauses": 83110,
+ "r": 16,
+ "m": 33,
+ "n_targets": 4,
+ "clause_order_sha256": "1f186fc0e5797c96d24e8a1b6d022b5c9952fcaa7634b7a000cbaf456be21157",
+ "file_sha256": "a390d799c265713fbc04cd1db7e5b6811c0d9d98d283f45493ab57ec6e6551f8",
+ "instance": {
+  "file": "instance_SUB_U4tgts.json",
+  "file_sha256": "a5c3b69aaded6fc6f68b71bed276e742a75cfbfc2130aaea766697cb47cbcbb6",
+  "canonical_sha256": "e66e50143ca7085d320e0f3deb539a706189fae6f108aa2239a5ab74f3a2222b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 4,
+  "depth": null
+ },
+ "deterministic": true
+}

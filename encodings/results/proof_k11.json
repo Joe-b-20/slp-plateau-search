@@ -1,0 +1,17 @@
+{
+ "cnf": "k11_joint_W3U4.cnf",
+ "cnf_sha256": "942436d281bef50bd75277c6728b51d02f44a9b7e327d6b84a740f8d71c51c02",
+ "nv": 16730,
+ "nclauses": 195823,
+ "solver": "cadical195",
+ "clauses_from": "the DIMACS FILE, not an encoder",
+ "proof_format": "DRAT (text, with deletion lines)",
+ "wall_seconds": 110.39,
+ "status": "UNSAT",
+ "proof_file": "k11_joint_W3U4.drat",
+ "proof_lines": 1283970,
+ "proof_bytes": 845830878,
+ "proof_sha256": "888b38c3ac43e9bb57a1b00238c9b168889b11587e0bf59a30a0191f176c039b",
+ "ends_in_empty_clause": true,
+ "VERDICT": "DRAT PROOF WRITTEN"
+}

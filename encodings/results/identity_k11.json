@@ -1,0 +1,35 @@
+{
+ "cnf": "k11_joint_W3U4.cnf",
+ "cnf_sha256": "942436d281bef50bd75277c6728b51d02f44a9b7e327d6b84a740f8d71c51c02",
+ "header_nv": 16730,
+ "header_nclauses": 195823,
+ "parsed_nclauses": 195823,
+ "encoder_nv": 16730,
+ "encoder_nclauses": 195823,
+ "header_matches_body": true,
+ "max_var_used": 16730,
+ "roundtrip_identical": true,
+ "clause_order_sha256_file": "9e462613f6b9f911e822390387239edffce4c3f1e5f68d8a0a7cb02fd3ad691b",
+ "clause_order_sha256_encoder": "9e462613f6b9f911e822390387239edffce4c3f1e5f68d8a0a7cb02fd3ad691b",
+ "instance_checks": {
+  "file": "instance_joint_W3U4.json",
+  "file_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "canonical_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 8,
+  "depth": null,
+  "canonical_sha256_matches_pin": true,
+  "instance_key": "f04dcb3ecf180a30204434a0bd32453e7635e8b6"
+ },
+ "k": 11,
+ "symmetry": true,
+ "digests_match": true,
+ "VERDICT": "IDENTICAL"
+}

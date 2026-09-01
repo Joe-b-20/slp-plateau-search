@@ -1,0 +1,17 @@
+{
+ "cnf": "k6_SUB_U4tgts.cnf",
+ "cnf_sha256": "a390d799c265713fbc04cd1db7e5b6811c0d9d98d283f45493ab57ec6e6551f8",
+ "nv": 7731,
+ "nclauses": 83110,
+ "solver": "cadical195",
+ "clauses_from": "the DIMACS FILE, not an encoder",
+ "proof_format": "DRAT (text, with deletion lines)",
+ "wall_seconds": 0.98,
+ "status": "UNSAT",
+ "proof_file": "k6_SUB_U4tgts.drat",
+ "proof_lines": 52505,
+ "proof_bytes": 7848148,
+ "proof_sha256": "ecbd46f55434a2070ce41108310d1d24653fbc65ee2ac1027b8c336aa57166e8",
+ "ends_in_empty_clause": true,
+ "VERDICT": "DRAT PROOF WRITTEN"
+}

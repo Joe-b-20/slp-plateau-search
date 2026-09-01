@@ -1,0 +1,60 @@
+{
+  "purpose": "Credibility control for the lower-bound machinery in ../gte56/. Each instance is a small GF(2) matrix whose minimum XOR-SLP size was PROVED EXACTLY by an unrelated method (an iterated SAT decision procedure, with the level below the optimum recorded UNSAT). Running the bound machinery on them must never produce a bound above the optimum -- and where the machinery's own preconditions fail, the suite shows that it WOULD overclaim, which is why those preconditions are checked and not assumed.",
+  "instances": [
+    {
+      "name": "L1_clean_iso",
+      "role": "positive",
+      "matrix": "instances/L1_clean_iso.txt",
+      "n_columns": 8,
+      "n_targets": 4,
+      "known_optimum": 12,
+      "optimum_status": "PROVED EXACT",
+      "proof": {
+        "method": "iterated SAT (CaDiCaL) over an SLP encoding; the first satisfiable gate count is the optimum because the level below it is UNSAT",
+        "ladder": "k=7 UNSAT (0.46 s), k=8 UNSAT (2.00 s), k=9 UNSAT (16.55 s), k=10 UNSAT (255.15 s), k=11 UNSAT (4235.96 s), k=12 SAT (1.19 s)",
+        "total_cost": "4511 s single core",
+        "hardening": "re-run with ALL normalisation and symmetry-breaking clauses stripped from the encoding, so the UNSAT side does not depend on them; the bare run reached lower_bound_proven = 11 in 72000 s before its wall-clock limit, consistent with the full run",
+        "witness": "an explicit 12-gate SLP, replayed and verified"
+      },
+      "provenance": "sector-landmark exact table; the 8 inputs are independent, so the instance IS a 4x8 GF(2) matrix once re-expressed in its own input basis"
+    },
+    {
+      "name": "L5_tap_pairQ3",
+      "role": "positive",
+      "matrix": "instances/L5_tap_pairQ3.txt",
+      "n_columns": 7,
+      "n_targets": 4,
+      "known_optimum": 10,
+      "optimum_status": "PROVED EXACT",
+      "proof": {
+        "method": "iterated SAT over the same encoding",
+        "ladder": "G=4 UNSAT, G=5 UNSAT, G=6 UNSAT, G=7 UNSAT, G=8 UNSAT, G=9 UNSAT, G=10 SAT",
+        "total_cost": "minutes single core",
+        "witness": "an explicit 10-gate SLP, replayed and verified"
+      },
+      "provenance": "same landmark table; 7 independent inputs, so a 4x7 GF(2) matrix"
+    },
+    {
+      "name": "tap_P__Q1_2_4_a",
+      "role": "precondition_negative_control",
+      "matrix": "instances/tap_P__Q1_2_4_a.txt",
+      "n_columns": 8,
+      "n_targets": 4,
+      "known_optimum": 10,
+      "optimum_status": "PROVED EXACT",
+      "proof": {
+        "method": "iterated SAT over the same encoding; result banked as status=exact, verified=true",
+        "ladder": "not itemised in the banked row; the solver reports exhaustive proof of optimality",
+        "total_cost": "42.45 s single core"
+      },
+      "provenance": "one row of a 3,124-instance exact table (0 timeouts) produced by the same solver; 8 independent inputs, but ONE OF THEM IS UNUSED",
+      "why_it_is_here": "Column 4 of this matrix is entirely zero: the instance hands the circuit a free input that no target needs. Theorem N charges >= 1 gate for every column outside the keep-set, which is Lemma 1 applied to a LIVE column; a zero column costs nothing to zero. So the precondition 'columns nonzero and pairwise distinct' is load-bearing, and this instance proves it: ignore the precondition and the machinery returns 11 against a true optimum of 10. The suite therefore requires the raw instance to be REJECTED by the precondition gate, demonstrates the overclaim it would produce, and then reruns the machinery on the reduced matrix (zero column dropped, which cannot change the optimum) where it must be sound.",
+      "expected_raw_overclaim": 11
+    }
+  ],
+  "solver_controls": {
+    "brute_force_agreement": "the SAT oracle used for these optima was cross-checked against a deliberately naive breadth-first enumeration sharing no code with it, on random instances of dimension <= 5 with optimum <= 6, required to agree EXACTLY including on the negative (UNSAT) side",
+    "second_independent_solver": "a separate CNF implementation of the same decision problem agreed 10/10 on an unrelated block set",
+    "caught_a_real_bug": "this class of control is not decorative: an earlier searcher in the same programme failed a 120-instance brute-force control 8/120 and was fixed"
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "intervals": 15,
+ "covered_contiguous_prefix": 1575516,
+ "gaps": [],
+ "overlaps": [],
+ "rows_in_corpus_index": 1575516,
+ "coverage_pct_of_index": 100.0,
+ "deletions_tested": 88228896,
+ "local_filter_pass": 35323820,
+ "local_filter_pass_pct": 40.04,
+ "realisable_87_mask_sets": 0,
+ "n_FIRING_lines": 0,
+ "sets_not_32_targets": 0,
+ "sets_local_allfail": 0,
+ "deletions_per_set": 56.0
+}
+
+OK: the certified intervals tile [0, 1575516) with no gap and no overlap.

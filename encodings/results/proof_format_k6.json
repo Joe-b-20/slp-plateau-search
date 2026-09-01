@@ -1,0 +1,17 @@
+{
+ "proof": "k6_SUB_U4tgts.drat",
+ "proof_sha256": "ecbd46f55434a2070ce41108310d1d24653fbc65ee2ac1027b8c336aa57166e8",
+ "proof_bytes": 7848148,
+ "lines": 52505,
+ "added_lemmas": 18711,
+ "deletions": 33794,
+ "max_variable_in_proof": 7731,
+ "cnf": "k6_SUB_U4tgts.cnf",
+ "cnf_nv": 7731,
+ "variables_within_cnf": true,
+ "ends_in_empty_clause": true,
+ "empty_clause_line": 52505,
+ "malformed_lines": [],
+ "NOTE": "well-formedness only -- this does NOT verify the refutation",
+ "VERDICT": "WELL-FORMED DRAT"
+}

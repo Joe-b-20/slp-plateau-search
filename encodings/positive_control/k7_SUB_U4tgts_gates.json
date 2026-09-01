@@ -1,0 +1,38 @@
+{
+ "gates": [
+  [
+   8,
+   17
+  ],
+  [
+   13,
+   19
+  ],
+  [
+   11,
+   23
+  ],
+  [
+   12,
+   33
+  ],
+  [
+   33,
+   34
+  ],
+  [
+   9,
+   35
+  ],
+  [
+   34,
+   35
+  ]
+ ],
+ "n_inputs": 33,
+ "n_gates": 7,
+ "k": 7,
+ "instance_canonical_sha256": "e66e50143ca7085d320e0f3deb539a706189fae6f108aa2239a5ab74f3a2222b",
+ "verify_slp": true,
+ "note": "block-level straight-line program: signal i < 33 is a free input signal of the block, signal 33+j is gate j.  This is a program for ONE block, not yet a 32-in/32-out MixColumns circuit."
+}

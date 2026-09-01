@@ -1,0 +1,10 @@
+{"shard":"A","start":0,"count":178000,"done":20000,"tested":1120000,"local_pass":478835,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":7.3,"sets_per_sec":2725.0}
+{"shard":"A","start":0,"count":178000,"done":40000,"tested":2240000,"local_pass":953832,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":34.2,"sets_per_sec":1170.4}
+{"shard":"A","start":0,"count":178000,"done":60000,"tested":3360000,"local_pass":1401475,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":59.1,"sets_per_sec":1015.8}
+{"shard":"A","start":0,"count":178000,"done":80000,"tested":4480000,"local_pass":1812124,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":61.3,"sets_per_sec":1304.3}
+{"shard":"A","start":0,"count":178000,"done":100000,"tested":5600000,"local_pass":2222077,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":65.9,"sets_per_sec":1517.6}
+{"shard":"A","start":0,"count":178000,"done":120000,"tested":6720000,"local_pass":2651897,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":68.1,"sets_per_sec":1762.4}
+{"shard":"A","start":0,"count":178000,"done":140000,"tested":7840000,"local_pass":3093619,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":71.0,"sets_per_sec":1971.0}
+{"shard":"A","start":0,"count":178000,"done":160000,"tested":8960000,"local_pass":3535177,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":76.9,"sets_per_sec":2081.3}
+{"shard":"A","start":0,"count":178000,"done":178000,"tested":9968000,"local_pass":3938755,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":80.4,"sets_per_sec":2213.6}
+{"DONE":1,"shard":"A","start":0,"count":178000,"done":178000,"tested":9968000,"local_pass":3938755,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":80.4}

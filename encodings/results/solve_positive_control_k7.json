@@ -1,0 +1,14 @@
+{
+ "cnf": "k7_SUB_U4tgts.cnf",
+ "cnf_sha256": "327a924732694e48492c07e91739cdac864638d71387795f949fa11a9f9e3173",
+ "header_nv": 9330,
+ "header_nclauses": 102115,
+ "parsed_nclauses": 102115,
+ "max_var_used": 9330,
+ "header_matches_body": true,
+ "solver": "cadical195",
+ "clauses_from": "the DIMACS FILE, not an encoder",
+ "wall_seconds": 1.19,
+ "status": "SAT",
+ "model_file": "k7_SUB_U4tgts.model"
+}

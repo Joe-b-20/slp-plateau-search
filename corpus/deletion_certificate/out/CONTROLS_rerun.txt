@@ -1,0 +1,18 @@
+# delcert control transcripts -- RE-RUN 2026-09-01T13:55:36-04:00
+# build: gcc -O2 -Wall -o tools/delcert tools/delcert.c
+
+$ nice -n 19 tools/delcert --bin fixtures/ctrl_neg498.bin --targets targets.txt --k 88 --tag ctrl498 --every 0
+{"DONE":1,"shard":"ctrl498","start":0,"count":498,"done":498,"tested":27888,"local_pass":10833,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":0.0}
+wall 0.03 s
+
+$ nice -n 19 tools/delcert --bin fixtures/ctrl_pos89.bin --targets targets.txt --k 89 --tag ctrlpos89 --every 0
+{"DONE":1,"shard":"ctrlpos89","start":0,"count":498,"done":498,"tested":28386,"local_pass":10812,"realisable":498,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":0.0}
+wall 0.04 s
+
+$ nice -n 19 tools/delcert --bin fixtures/ctrl_pos90.bin --targets targets.txt --k 90 --tag ctrlpos90 --every 0
+{"DONE":1,"shard":"ctrlpos90","start":0,"count":498,"done":498,"tested":28884,"local_pass":11218,"realisable":996,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":0.0}
+wall 0.04 s
+
+$ nice -n 19 tools/delcert --bin ../sample/corpus88_sample.bin --targets targets.txt --k 88 --tag sample --every 0
+{"DONE":1,"shard":"sample","start":0,"count":520,"done":520,"tested":29120,"local_pass":11875,"realisable":0,"sets_not_32_targets":0,"sets_local_allfail":0,"secs":0.0}
+wall 0.03 s

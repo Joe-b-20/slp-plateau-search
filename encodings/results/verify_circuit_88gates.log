@@ -1,0 +1,13 @@
+{
+ "cmd": "/usr/bin/python3 verify_circuit.py positive_control/mixcolumns_88gates_depth7.json 7",
+ "returncode": 0,
+ "stdout_tail": [
+  "gates=88 depth=7 outputs_built=32/32 problems=0",
+  "depth<= 7: OK",
+  "VERDICT: VALID MixColumns circuit"
+ ],
+ "stderr_tail": [],
+ "VALID": true,
+ "circuit": "mixcolumns_88gates_depth7.json",
+ "gates": 88
+}

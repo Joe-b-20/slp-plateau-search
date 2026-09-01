@@ -1,0 +1,43 @@
+MixColumns target masks rebuilt from GF(2^8) mod 0x11B: 32 masks, weight profile 20x5 + 12x7  [OK]
+
+checked 520 rows: 520 distinct mask sets, each 88 distinct masks with all 32 targets
+failures: 0
+
+stratum composition
+  nrpa                    100
+  merged_engine            60
+  census                   59
+  oracle_worklist          50
+  deep_hunt                50
+  atlas_corner             40
+  atlas_corner_jean        40
+  oracle_misc              30
+  basin_lateral            20
+  layer89_descent          20
+  campaign_misc            20
+  fleet_late               10
+  atlas_misc                6
+  published_record          5
+  experiment_readd          5
+  fleet_mid                 2
+  experiment_plateau        2
+  fleet_early               1
+  TOTAL                   520
+
+the five published record 88s are present:
+  mixcolumns_88gates_depth5
+  mixcolumns_88gates_depth5_fromscratch
+  mixcolumns_88gates_depth6
+  mixcolumns_88gates_depth7
+  mixcolumns_88gates_depth8
+
+file hashes
+  db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus88_sample.jsonl
+  3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus88_sample.bin
+
+recorded in SAMPLE.sha256:
+  db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus88_sample.jsonl
+  3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus88_sample.bin
+  acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a  corpus88_index.jsonl  (the FULL index, not shipped; 478728370 bytes)
+
+VERDICT: ALL ROWS PASS

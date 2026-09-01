@@ -1,0 +1,11 @@
+### RE-RUN 2026-09-01T13:30:49-04:00
+
+$ python3 verify_circuit.py cleanroom_93gates.json
+gates=93 depth=7 outputs_built=32/32 problems=0
+VERDICT: VALID MixColumns circuit
+  exit status: 0  (0 = VALID)
+
+$ sha256sum cleanroom_93gates.json
+3dafca432a60b0f6818df6a02232318fb399116b6b97c5082689afd3b4072367  cleanroom_93gates.json
+$ md5sum cleanroom_93gates.json   # RESULT.md records 6bb8a324ed9ab61eb6e094d94e4324bf
+6bb8a324ed9ab61eb6e094d94e4324bf  cleanroom_93gates.json

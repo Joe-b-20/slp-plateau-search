@@ -1,0 +1,56 @@
+MIP: 72830 rows x 29180 cols, nnz 259914, level 1 (uncapped)
+Running HiGHS 1.2.0 [date: 2021-07-09, git hash: n/a]
+Copyright (c) 2022 ERGO-Code under MIT licence terms
+Presolving model
+72830 rows, 29180 cols, 259914 nonzeros
+69738 rows, 29180 cols, 246118 nonzeros
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   69738 rows
+   29180 cols (29180 binary, 0 integer, 0 implied int., 0 continuous)
+   246118 nonzeros
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+     Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+         0       0         0   0.00%   0               inf                  inf        0      0      0         0     7.0s
+ R       0       0         0   0.00%   47.59824561     148               67.84%        0      0      0     14874   135.6s
+         0       0         0   0.00%   47.97730668     148               67.58%     1009      3      0     16017   234.5s
+         0       0         0   0.00%   48.14230503     148               67.47%     2036      6      0     16570   333.8s
+         0       0         0   0.00%   48.40493722     148               67.29%     2205     11      0     18006   577.5s
+         0       0         0   0.00%   48.59434559     148               67.17%     2213     15      0     18937   799.3s
+         0       0         0   0.00%   48.6255317      148               67.14%     2234     18     77     19412   974.9s
+         0       0         0   0.00%   48.75609355     148               67.06%     2254     21     77     19944  1108.9s
+         0       0         0   0.00%   48.85118809     148               66.99%     2291     24     77     20574 25075.1s
+         0       0         0   0.00%   48.85118809     148               66.99%     2298     27     77     20574 60391.9s
+
+Solving report
+  Status            Time limit reached
+  Primal bound      148
+  Dual bound        49
+  Gap               66.89%
+  Solution status   feasible
+                    148 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            60391.94 (total)
+                    4.09 (presolve)
+                    0.00 (postsolve)
+  Nodes             0
+  LP iterations     20574 (total)
+                    0 (strong br.)
+                    5700 (separation)
+                    0 (heuristics)
+{
+ "model": "depth3_strong_highs_mip",
+ "level": 1,
+ "status": 1,
+ "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+ "wall_monotonic": 1369.951837534958,
+ "primal": 148.0,
+ "mip_dual_bound": 49.0,
+ "mip_gap": 0.668918918918919,
+ "N_depth3_lower_bound": 81
+}

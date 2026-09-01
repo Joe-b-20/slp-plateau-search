@@ -1,0 +1,86 @@
+{
+ "distinct_written": 1575516,
+ "rows_admitted_per_source": {
+  "atlas_corner": 504,
+  "basin_lateral": 99,
+  "census": 17283,
+  "oracle_worklist": 33010,
+  "deep_hunt": 54889,
+  "layer89_descent": 3254,
+  "merged_engine": 433563,
+  "nrpa": 1400343,
+  "evidence_records": 91,
+  "fleet_late": 361,
+  "fleet_early": 10,
+  "atlas_misc": 36,
+  "fleet_mid": 13,
+  "oracle_misc": 19610,
+  "experiment_hand_reconstruction": 3,
+  "experiment_sat": 1,
+  "experiment_fresh": 5,
+  "experiment_campaign3": 3,
+  "experiment_plateau": 16,
+  "experiment_pure": 1,
+  "experiment_regions": 2,
+  "experiment_readd": 39,
+  "campaign_misc": 22853,
+  "published_record": 5
+ },
+ "secs": 1457.9,
+ "stage_stats": {
+  "atlas_corner": {
+   "rows": 7075,
+   "valid88_rows": 504,
+   "secs": 12.8
+  },
+  "basin_lateral": {
+   "basin_88at6.jsonl": {
+    "hit3_rows": 57,
+    "admitted": 57,
+    "unrealisable": 0
+   },
+   "basin_88at5fs.jsonl": {
+    "hit3_rows": 42,
+    "admitted": 42,
+    "unrealisable": 0
+   }
+  },
+  "census": {
+   "rows": 17283,
+   "admitted": 17283
+  },
+  "oracle_worklist": {
+   "rows": 33010,
+   "admitted": 33010,
+   "secs": 11.3
+  },
+  "deep_hunt": {
+   "rows": 54889,
+   "admitted": 54889,
+   "secs": 10.0
+  },
+  "layer89_descent": {
+   "rows": 3254,
+   "admitted": 3254,
+   "secs": 4.6
+  },
+  "merged_engine": {
+   "files": 15,
+   "rows": 690850,
+   "admitted": 433563,
+   "secs": 195.3
+  },
+  "nrpa": {
+   "rows": 1441779,
+   "admitted": 1400343,
+   "secs": 358.6
+  },
+  "walk": {
+   "json_seen": 525347,
+   "json_parsed": 243616,
+   "valid88_files": 43049,
+   "secs": 846.9
+  }
+ },
+ "_note": "Source labels are lineage labels, not filesystem paths; the paths of the private source banks have been removed. Counts are unmodified. \"rows_admitted_per_source\" counts rows admitted including duplicates already seen; the distinct total is \"distinct_written\"."
+}

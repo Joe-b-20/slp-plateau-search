@@ -1,0 +1,17 @@
+{
+ "proof": "k10_joint_W3U4.drat",
+ "proof_sha256": "e6b0692b6a0248093e80d4014531096089f889d47c7d5b74fec17475396c914c",
+ "proof_bytes": 135064503,
+ "lines": 355058,
+ "added_lemmas": 148849,
+ "deletions": 206209,
+ "max_variable_in_proof": 14739,
+ "cnf": "k10_joint_W3U4.cnf",
+ "cnf_nv": 14739,
+ "variables_within_cnf": true,
+ "ends_in_empty_clause": true,
+ "empty_clause_line": 355058,
+ "malformed_lines": [],
+ "NOTE": "well-formedness only -- this does NOT verify the refutation",
+ "VERDICT": "WELL-FORMED DRAT"
+}

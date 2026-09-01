@@ -1,0 +1,35 @@
+{
+ "cnf": "k13_joint_W3U4.cnf",
+ "cnf_sha256": "a767d77ccb02a96662b01e01fbc624024d40d6563ef7f2ed06925971418770c1",
+ "header_nv": 21020,
+ "header_nclauses": 253580,
+ "parsed_nclauses": 253580,
+ "encoder_nv": 21020,
+ "encoder_nclauses": 253580,
+ "header_matches_body": true,
+ "max_var_used": 21020,
+ "roundtrip_identical": true,
+ "clause_order_sha256_file": "783669839408e324d363aa56128446d0c82488fbe3a502d9c10026077c89fccd",
+ "clause_order_sha256_encoder": "783669839408e324d363aa56128446d0c82488fbe3a502d9c10026077c89fccd",
+ "instance_checks": {
+  "file": "instance_joint_W3U4.json",
+  "file_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "canonical_sha256": "d00504cbb8f19dc494d9edd93ee724d7075e262e82d76626e01d3f2f39de2d5b",
+  "dim": 16,
+  "lines": [
+   2,
+   3,
+   4,
+   7
+  ],
+  "n_inputs": 33,
+  "n_targets": 8,
+  "depth": null,
+  "canonical_sha256_matches_pin": true,
+  "instance_key": "f04dcb3ecf180a30204434a0bd32453e7635e8b6"
+ },
+ "k": 13,
+ "symmetry": true,
+ "digests_match": true,
+ "VERDICT": "IDENTICAL"
+}
