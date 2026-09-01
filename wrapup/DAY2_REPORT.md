@@ -64,8 +64,10 @@ still alive, no SAT hit, no STOP.
   rewrites, the 92→91@4 fix, the new 91@4 circuit, all tests run. The staging
   agent may still be finishing when you read this — see wrapup/day2/STAGING.md
   for its record. **Nothing pushed; main untouched in both repos.** Approving
-  tomorrow = merge + push + send the Jean email (wrapup/drafts/jean_email.md,
-  which needs the current k=14 cube count refreshed before sending).
+  tomorrow = merge + push + send the Jean email (kept as a local working draft
+  only — `wrapup/drafts/` is deliberately not part of the public set, since it
+  holds correspondence with a named third party; the draft needs the current
+  k=14 cube count refreshed before sending).
 
 ## Operational findings
 

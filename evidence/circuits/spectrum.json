@@ -12,6 +12,12 @@
   "sha256": "8c89ca8cc38850e46919c94d8a91d1093b87bcdf36073a44093e8a2eff3285ac"
  },
  {
+  "gates": 92,
+  "depth": 4,
+  "file": "circuits/mixcolumns_92gates_depth4.json",
+  "sha256": "3615c132cae7e4fb05beff2a1e8b55db04b5251f44629220e467b06185be0c99"
+ },
+ {
   "gates": 89,
   "depth": 5,
   "file": "circuits/mixcolumns_89gates_depth5.json",

@@ -1,7 +1,7 @@
 """Unit tests for the method's core invariants.
 
 Covers: the MixColumns specification, the oracle (accept good circuits,
-reject broken ones), the eight record circuits at their stated depths and their
+reject broken ones), the nine shipped record circuits at their stated depths and their
 failure one level tighter, the value-set machinery (realizability, depth-aware
 reconstruction, trimming),
 the rebuilt kernels of the merged engine (level-BFS `relax`, incremental
@@ -31,10 +31,13 @@ import engines                   # noqa: E402
 CIRCUIT_DIR = ROOT / "evidence" / "circuits"
 CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 
-# The record list, exactly as CI verifies it: 97@3, 91@4, 89@5 and five 88s -- two
-# at depth 5 and one each at depths 6, 7 and 8. Each is verified at its stated
-# depth AND asserted to fail at depth-1, so the depths are tight rather than
-# merely claimed.
+# The record list, exactly as CI verifies it: 97@3, 91@4, 92@4, 89@5 and five 88s
+# -- two at depth 5 and one each at depths 6, 7 and 8. Each is verified at its
+# stated depth AND asserted to fail at depth-1, so the depths are tight rather
+# than merely claimed.
+# The 92@4 is superseded at its depth by the 91@4 and is NOT a frontier point; it
+# is kept beside the 91 under the records convention (superseded and retained,
+# not withdrawn) and is verified here like every other shipped circuit.
 # 88 is Jean's published count (ePrint 2026/1481) and Jean has priority: 88@7
 # matches it with a different circuit, 88@6 and the from-scratch 88@5 were found
 # from scratch and are distinct families, and the derived 88@5 and the 88@8 have
@@ -46,6 +49,7 @@ CIRCUITS = sorted(CIRCUIT_DIR.glob("mixcolumns_*.json"))
 RECORDS = {
     "mixcolumns_97gates_depth3.json": (97, 3),
     "mixcolumns_91gates_depth4.json": (91, 4),
+    "mixcolumns_92gates_depth4.json": (92, 4),   # superseded by the 91, retained
     "mixcolumns_89gates_depth5.json": (89, 5),
     "mixcolumns_88gates_depth5_fromscratch.json": (88, 5),
     "mixcolumns_88gates_depth5.json": (88, 5),
@@ -172,10 +176,10 @@ class SpecInvariants(unittest.TestCase):
 
 
 class RecordCircuits(unittest.TestCase):
-    """One generated test per record; the eight are attached below."""
+    """One generated test per record; the nine are attached below."""
 
-    def test_directory_holds_exactly_the_eight_records(self):
-        self.assertEqual(len(CIRCUITS), 8)
+    def test_directory_holds_exactly_the_nine_records(self):
+        self.assertEqual(len(CIRCUITS), 9)
         self.assertEqual({p.name for p in CIRCUITS}, set(RECORDS))
 
     def test_two_distinct_circuits_share_the_gates_depth_point(self):
@@ -196,7 +200,7 @@ class RecordCircuits(unittest.TestCase):
 
     def test_spectrum_manifest_matches_the_files_on_disk(self):
         """spectrum.json is the published manifest of the record set: it must
-        list exactly these eight circuits, with their gate counts, depths and
+        list exactly these nine circuits, with their gate counts, depths and
         the sha256 of the file as it actually stands."""
         spectrum = json.loads((CIRCUIT_DIR / "spectrum.json").read_text(encoding="utf-8"))
         self.assertEqual(len(spectrum), len(RECORDS))
@@ -528,7 +532,7 @@ class VerifierCLI(unittest.TestCase):
                           r.stdout)
 
     def test_every_record_fails_one_level_tighter(self):
-        """Through the CLI, for all eight: the stated depth is the true depth, so
+        """Through the CLI, for all nine: the stated depth is the true depth, so
         the same circuit must be rejected at depth-1 with exit code 1."""
         for name, (_gate_count, depth) in sorted(RECORDS.items()):
             r = self._run(CIRCUIT_DIR / name, depth - 1)
