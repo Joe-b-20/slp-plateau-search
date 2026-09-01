@@ -5,7 +5,8 @@
 Our engine found it, but **its seed chain passes through Jean's published 88**
 (ePrint 2026/1481), so it is **not** an independent construction. It is a
 "derived from published work" result in the sense of
-[`METHODS.md`](../../METHODS.md) §9 — ours to report, never ours to claim, and
+[`DEFINITIONS.md`](../../DEFINITIONS.md) ("lineage, and foreign lineage") —
+ours to report, never ours to claim, and
 Jean is credited at every step. It is also **not** a gate-count record: 88 is
 the published best-known count and Jean has priority.
 

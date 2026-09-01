@@ -1,7 +1,0 @@
-11:35:21 ==============================================================================
-11:35:21 seed89: seed=S89_41_00000098.json |M|=89 pin=0x00000098 nodd=3 nlane=3 realizable=True target=88 budget=45s
-11:35:21 question: does an out-of-vocabulary 88 exist one step below the 89? (structural question about the RECORD level; not a sub-record search)
-11:36:07 FLOOR 89  v_alive=True  rounds=1  wall=50s  hits=0
-11:36:14 ==============================================================================
-11:36:14 seed89: seed=S89_41_00000098.json |M|=89 pin=0x00000098 nodd=3 nlane=3 realizable=True target=88 budget=10000s
-11:36:14 question: does an out-of-vocabulary 88 exist one step below the 89? (structural question about the RECORD level; not a sub-record search)

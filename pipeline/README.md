@@ -18,8 +18,7 @@ python3 ladder_parallel.py [--mode cascade|fixed] [--workers hunt87|sub89]
                            [--stop-gates N] [--stop-depth D]
 
 # hunt 87 from the three 88-gate family anchors this set ships (the shipped
-# configuration; the two from-scratch families of METHODS.md S11 are not
-# among them):
+# configuration; two further from-scratch families are not among them):
 python3 ladder_parallel.py --mode fixed
 
 # replicate the earlier records:
@@ -108,7 +107,7 @@ So the records could not have come from one run: the first run's code could
 not even *accept* an 89@depth5 while holding 89@depth6, and the third run's
 seeds are outputs of the earlier runs. The evolution — old acceptance rule →
 Pareto tie-break + reseeding → same code re-aimed at the frontier — is itself
-part of the method story (see `../METHODS.md`).
+part of the method story.
 
 ### 4. The 88-gate campaign (v2, the engine you are running)
 
@@ -117,8 +116,7 @@ and rebuilt `lns` and `walk` around what survived measurement. The curated run
 archives are `../evidence/campaign87_*`; the raw campaign archive is not part of
 this repository.
 
-The changes, each with its measured effect, are tabulated in
-[`../METHODS.md`](../METHODS.md) §5 (the kernel) and §6 (the engines): level-BFS
+The changes, each with its measured effect: level-BFS
 `relax` with realizability-only `feasible_at` when uncapped, worklist closure
 with incremental removal queries, the improve-only-on-change fix, victim
 repooling, the `coneinj`/`biginj` destroy mix, peel-before-accept, exact complete

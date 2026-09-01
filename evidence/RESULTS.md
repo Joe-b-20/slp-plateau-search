@@ -222,7 +222,7 @@ check, 92 gates / 92 live / 0 dead).
   circuit**: the two share 61 of 88 masks (Jaccard 0.530). It does **not** beat
   it. Jean's circuit, transcribed and oracle-verified, is archived and credited
   in `campaign87_imported_prior_art/`.
-- **How:** the engine rebuilt during campaign 87 (`../METHODS.md` §5–§6). Worker
+- **How:** the engine rebuilt during campaign 87 (`../pipeline/engines.py`). Worker
   `w10_sym94` of a 10-worker hunt, `alt` mode (alternating walk and LNS
   chunks), rng 1010, walk drift, seeded with an exactly ρ²-symmetric 94 @
   depth 5. From that seed: 94 → 90@d5 at t = 2.2 s (it = 723), 90 → 89@d8 at
@@ -293,7 +293,8 @@ check, 92 gates / 92 live / 0 dead).
 - **Read this first — provenance:** this circuit was found by our engine, but
   **its seed chain passes through Jean's published 88** (ePrint 2026/1481), so
   it is **not** an independent construction; it is a "derived from published
-  work" result in the sense of [`METHODS.md`](../METHODS.md) §9. The seed was
+  work" result in the sense of [`DEFINITIONS.md`](../DEFINITIONS.md)
+  ("lineage, and foreign lineage"). The seed was
   an exactly ρ²-symmetric 90 @ depth 9 built as a **union** of two symmetrized
   circuits, and one of the two came from Jean's circuit:
 
@@ -713,7 +714,8 @@ basin survey stand unchanged.
 - **Read this first — provenance:** our engine found this circuit, but **its seed
   chain passes through Jean's published 88** (ePrint 2026/1481), so it is **not**
   an independent construction: it is a "derived from published work" result in the
-  sense of [`METHODS.md`](../METHODS.md) §9, and the sibling of the 88 @ depth 8
+  sense of [`DEFINITIONS.md`](../DEFINITIONS.md) ("lineage, and foreign
+  lineage"), and the sibling of the 88 @ depth 8
   in §5 — same seed, same root cause. The chain, every link checked by mask
   identity:
 
@@ -869,7 +871,7 @@ cannot be, inside a neighbourhood smaller than all but one of the improvements
 this project has actually observed, and by this instrument an optimal circuit
 and a nine-gates-too-big circuit look identical. The theorems are unaffected;
 the inference from them to "87 is unlikely" is not supported. Full table and
-method: `METHODS.md` §10a.
+method: [`corpus/calibration/CONTROL_AUDIT.md`](../corpus/calibration/CONTROL_AUDIT.md).
 
 **The decider's own untested branches, added 2026-07-30.** The "12/12 agreement
 with an independent brute force" cited above is real but contained **zero YES
@@ -879,7 +881,7 @@ circuits**, `solve_window(budget = 2)` answered correctly **4 200/4 200** with
 every witness oracle-verified; with case 1a deleted, **462/462** 1b-shaped
 witnesses were still recovered by case 1b, and with cases 1a and 1b deleted,
 **33/33** 2a-shaped witnesses were still recovered by case 2a. **No completeness
-bug was found**, so the ≈ 165 M irreducible verdicts stand. `METHODS.md` §10b.
+bug was found**, so the ≈ 165 M irreducible verdicts stand.
 
 **Slot-order sensitivity, now measured (2026-07-30).** On windows whose ground
 truth is SAT, `sat_window.py`'s encoding returned UNSAT under **123 of 128
@@ -887,7 +889,7 @@ arbitrary mask orderings** — the caveat is load-bearing, not decorative — bu
 under **128/128 legitimate alternative build orders of the same circuit** the
 verdict did not move, and the seed's own gate order is a member of that class.
 The depth-capped encoder's claim to be slot-order-free checks out: its CNF is
-byte-identical under every reordering of the kept set. `METHODS.md` §10c.
+byte-identical under every reordering of the kept set.
 
 Also certificate-bearing, and archived in the same folder: two exactly
 ρ²-symmetric **90-gate** circuits (depths 9 and 7, Jaccard 0.463 apart),
