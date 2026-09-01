@@ -7,3 +7,8 @@ reproduce/out_*.json
 .pytest_cache/
 campaign_87/
 .claude/
+
+# build artifacts of the reproduction packs
+bounds/gte56/mine
+corpus/deletion_certificate/tools/delcert
+encodings/proofs/*.drat
