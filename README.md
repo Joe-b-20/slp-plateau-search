@@ -1,179 +1,136 @@
-# MixColumns in as few XOR gates as possible
+# slp-plateau-search
 
-AES MixColumns is a 32×32 matrix over GF(2) (FIPS-197). This repo is a search
-for the smallest circuit that computes it using only 2-input XOR gates.
+The search for the fewest 2-input XOR gates computing AES MixColumns, and the
+evidence it produced. The circuits themselves are published in
+[aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits);
+this repo holds the proofs, the negative results, the instruments, and the
+open problems. If you just want to try to beat 88, start there — come here
+when you want to know what has already been tried and what is actually proven.
 
-**Result: 56 ≤ minimum ≤ 88.** The record is 88 gates. We never found an 87.
-The search concluded in August 2026.
+**Where it stands: `56 ≤ minimum ≤ 88`. No 87 was found. 88 is not proven
+optimal.**
 
-Check any circuit in this repo yourself:
+## The evidence ladder
 
-```
-python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json
-```
+Every claim this project makes, each in exactly one row:
 
-It prints gate count, depth, how many of the 32 outputs are built, and a verdict.
-It rebuilds MixColumns from the field arithmetic, so it trusts nothing else here.
+| claim | status |
+|---|---|
+| any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
+| any depth-3 circuit needs ≥ 81 gates | **proved** — `bounds/` |
+| cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
+| the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** (the verifier is a proof — see the circuits repo) |
+| no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; scope: an 87 with *different* structure is not excluded |
+| no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct known 88s, 0 realisable |
+| no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive within that radius** — and near information-free globally (see calibration) |
+| ~200 relaxations of the known 88s' structure all price back to exactly 88 | **exhaustive within each stated class** |
+| the known 88s' shared vocabulary is *not* forced | **verified counterexample** — an 89 exists using a value no known 88 uses |
+| a from-scratch attempt with none of this knowledge reaches 93 | **measurement** |
+| 88 is optimal | **believed** — see Opinion |
 
-## What we did and what we found
+## What is NOT claimed
 
-**The record is 88 gates.** We published five distinct 88-gate circuits, at
-depths 5, 5, 6, 7 and 8. J. Jean found an 88 independently, by a different method, and
-holds further unpublished ones.
+Optimality is not proven; the 56–88 gap is real and 32 wide. The exhaustive
+local negatives above are weak evidence about whether an 87 exists globally —
+our own control audit showed the same tests return "nothing better nearby"
+for 89–97-gate circuits too, and genuinely different solutions sit ~42 gate
+changes apart while the searches reach 3–4. The 1.58M-circuit corpus is one
+search lineage and statistically biased toward it; 1,575,516 were collected
+and pass set-level checks, while the full structural test ran on the 28,796
+that carry complete build recipes — different quantities, kept distinct on
+purpose.
 
-**Fewest gates at each depth limit: 97 at depth 3, 91 at depth 4, 88 at depth 5.**
-All verified. The 91 at depth 4 exists in three independent lineages.
+Terms with precise meanings (mask, block structure, irreducible, B,
+cancellation-free, vocabulary, radius) are defined with runnable checks in
+[`DEFINITIONS.md`](DEFINITIONS.md).
 
-**Lower bound: 56 gates.** Refereed, unconditional, with a certificate. A
-separate certificate shows every depth-3 circuit needs at least 80 gates.
+## Instruments you can run on your own circuit
 
-**The SAT test.** Take the two largest intermediate levels of a circuit and ask
-whether they can be built together with *k* gates. At k = 9, 10, 11, 12, 13 —
-and, decided 2026-09-01 after ~99 core-hours of solving — **14**, the answer is
-proven no. A solution at 14 would have been an 87; there is none. So the merged
-block costs exactly 15, merging the two largest levels saves nothing, and no 87
-exists that is built the way every known 88 is built. The test assumes the
-circuit splits into the same blocks, which an 87 need not do — that is the one
-door this result leaves open.
+- [`tools/tripwire.py`](tools/tripwire.py) — stdlib, seconds: finds duplicate
+  values and dead gates (either one = a free smaller circuit), and reports the
+  count B that must equal gates−32 in any irreducible solution. If you hold an
+  88 from any source: B ≠ 56 means you are holding an 87 after one deletion.
+  (Sound in that direction only; the tool documents the counterexample to the
+  converse.)
+- `verify_circuit.py` — the oracle; rebuilds MixColumns from FIPS-197, proof
+  by the 32 unit inputs.
+- [`scripts/overlap.py`](scripts/overlap.py) — shared-value count between two
+  circuits (the independence statistic).
 
-**The census.** We hold 1,575,516 distinct verified 88-gate solutions. 28,796 of
-them carry a build order and are directly runnable; 92 of those are at depth 5.
-Every one passes a cheap check that would have handed us an 87 for free if it
-failed: on the 28,796 with a build order, exactly 56 middle gates have a
-consumer — the value forced on any 88 that cannot be shrunk by deleting a gate.
-On all 1,575,516, no mask appears twice. Zero alarms in either half. The check
-is one-way. Failing it gives an 87; passing it does not prove the circuit is
-minimal.
+## The bounds, as arguments
 
-**The negative space is large and empty.** All 139,878 harvested 88s are proven
-irreducible when any two gates are swapped for one — 215,412,120 exact
-decisions, zero reducible. Thirteen neighbourhoods around known 88s are closed
-by exhaustion: 378,189 states, nothing below 88 gates in any of them. On the
-depth-5 record, all 35,960 ways of dropping four output rows and rebuilding them
-cheaper are refuted.
+Each with its statement, a ≤ 1-page writeup of the technique, the certificate,
+and a checker that runs on any 32×32 matrix — validated against small
+instances with known optima (`bounds/README.md`):
 
-**And the honest caveat.** Our own control audit prices those negatives at
-roughly nothing. The same test returns "irreducible" for 97-, 92-, 90- and
-89-gate circuits alike. The measured distance from a circuit to a better one is
-a median of 42 masks, against a search radius of 3 or 4. **A negative at radius 4
-carries essentially no information about whether an 87 exists.**
+- **≥ 56, unconditional** — a counting argument over reachable value sets.
+- **≥ 81 at depth 3** — exhaustive frontier enumeration per level; this bound
+  improves with compute and was still climbing when stopped.
+- **≥ 92 cancellation-free** — derived twice independently; with the shipped
+  102-gate cancellation-free circuit: `92 ≤ optimum_cf ≤ 102`.
 
-**Calibration.** One from-scratch attempt with none of this project's knowledge
-reached 93 gates. This project's methods reach 88.
+## The block-structure theorem
+
+Every known 88 organizes its intermediate values into the same block layout.
+Statement: building the merged pair of its two largest blocks takes exactly
+15 gates — 9 through 14 are UNSAT (the 14-level: ~99 core-hours, single
+solver, instance hash pinned; 9–11 re-proved under a second independent
+encoding, 528/528 subcases each, with a positive control that produced and
+verified a real solution at a satisfiable setting). Consequence: an 87, if it
+exists, is built differently from every 88 anyone has found. Encodings,
+instances, and the control are in `encodings/`.
+
+## Calibration — why we distrust our own negatives
+
+Two results in this repo exist to limit what the others may claim. The
+control audit: the local-search negatives cannot distinguish an optimal 88
+from a non-optimal 89–97, so they carry almost no information about 87's
+existence. The from-scratch baseline: with none of this project's accumulated
+structure, honest effort reaches 93 — the last five gates are where all the
+difficulty lives. Both are first-class results here, not appendix caveats.
+
+## Hypotheses that died
+
+The strongest structural regularity — all 1.58M known 88s draw their values
+from one shared 1,778-value vocabulary — is **not** a law: a verified 89
+exists using a value outside it, so leaving the vocabulary costs at most one
+gate. Several other conjectured invariants fell the same way; each is a row
+in [`negatives.jsonl`](negatives.jsonl) with what it does *not* imply.
 
 ## Opinion
 
-This section is opinion, not proof.
+*Belief, not proof.* We think 88 is optimal: two unrelated search programs
+(ours and Jean's AI-based one) stopped at exactly 88; the deletion tripwire
+stayed silent over 1.58 million circuits; every relaxation priced back to 88.
+Named tension: the second and third of those lean on local negatives — the
+very kind the calibration section weakens. The first does not, which is why
+independent convergence is the evidence we weight most. If an 87 exists it
+must differ from every certified 88 by ≥ 4 values, share no known 88's block
+structure, and (likely) have depth ≥ 4.
 
-We think 88 is optimal.
+## Already tried / still open
 
-Four things push us that way. Jean reached 88 by a completely different method
-and stopped there too. A free, always-on detector for one-gate improvements has
-now run over 1.5 million distinct 88s and never fired once. Every relaxation we
-could price came back at 88: 749,150 exactly-solved block floors with 88 as the
-best anywhere, and a class-pricing bound covering 1.41×10²⁶ configurations, none
-below 87. Loosening one block's budget buys a gate somewhere and gives one back
-somewhere else, every time we measured it. And thirteen neighbourhoods of known
-88s are closed by exhaustion with 88 as the floor in every one.
+- [`NEGATIVES.md`](NEGATIVES.md) + [`negatives.jsonl`](negatives.jsonl) —
+  everything already refuted, machine-readable: scope, strength
+  (theorem / exhaustive / searched), artifact, repro command where one
+  exists, and what each result does NOT imply. Read before spending compute.
+- [`leads.md`](leads.md) — the open attacks, ranked by payoff/cost, priced in
+  core-hours, with a startable command where the inputs are public. Cheapest
+  decisive items: a single ~40 core-hour SAT solve; a possible 90 @ depth 4
+  one solve away; any foreign-lineage 88 through the tripwire (seconds).
 
-Against that: the same structural regularities hold for our 97-, 92- and 89-gate
-circuits, so they may be facts about this problem rather than about 88. And the
-width of the 88 plateau is not evidence either way — we tested that on small
-instances with a certified optimum, and having many distinct optimal solutions
-does not mean the optimum is too high.
+## Reproduce / inventory
 
-An 87 would have to look unlike anything we hold. Outside the shared vocabulary
-of every known 88. Not splitting into the block structure every known 88 shares
-— the merged-levels route through that structure is now proven empty. Almost
-certainly not shallow: the depth-3 floor is
-already 80 and still climbing. And if its cancelling apparatus is as small as
-the arithmetic allows — two cancelling gates against 85 clean ones — then one of
-the twelve heaviest output rows must be produced by a cancelling gate. Our
-circuits have between 9 and 28 cancelling gates. Nothing on disk is that shape.
+[`REPRODUCE.md`](REPRODUCE.md) is the manifest: every claim above, the command
+that checks it, the line of output that means it passed, and what it cost.
+Tiered — **A** seconds (the oracle, the tripwire, the three bound checkers, the
+corpus certificates over the shipped sample), **B** minutes (the SAT ladder at
+k = 9/10/11 with its positive control and DRAT emission, the `>= 56`
+exhaustion, the validation suite), **C** banked and documented rather than
+re-run, each with its cost and its artifact. [`INVENTORY.md`](INVENTORY.md) lists
+what exists beyond this repo — corpora, certificates, instances, logs — with
+exact counts, sizes, and hashes; samples ship here, and the pieces genuinely
+too large to host (the 1.58M-circuit index is 457 MB) are stated as such with
+how to request them.
 
-## If you want to find an 87 (or prove 88 optimal)
-
-**The last live case is now closed.** The k = 14 SAT test finished on
-2026-09-01: UNSAT, in ~99 core-hours by a single solver on one core. The class
-it covered — any 87 sharing the known 88s' block structure — is empty. What
-remains open is only what the test never covered: an 87 with a different block
-structure. One optional confirmation is priced and not run: re-deciding k = 14
-under our second, independent SAT encoding (roughly 10× the cost of its k = 13
-run).
-
-**Already refuted — do not repeat.**
-
-- Local search around known 88s out to radius 4. Exhausted, empty, and by our
-  own audit worth close to nothing.
-- Dropping up to four output rows and rebuilding them cheaper. Refuted.
-- Free-move neighbourhoods of thirteen known 88s. Closed. Nothing below 88.
-- One family of proof certificates is capped at exactly 91.41. It cannot reach
-  the next step. Do not fund it.
-- The cancellation-free route: proved between 92 and 102, and the exchange-rate
-  arguments built on it die below where the real circuits sit.
-- Searches restricted to symmetric circuits: about 12 gates worse.
-- Searches over five or more planes: unbuildable, not merely unused. Zero of
-  7,755 offered masks were ever selected.
-
-**Best open leads, cheapest first.**
-
-1. One SAT run at 11 gates on a single block. It closes the last loose gate in a
-   bound covering 1.41×10²⁶ configurations, raising it from 87 to 88. Roughly 40
-   core-hours; the levels below it are already done.
-2. 28 search windows at budget 87 that were queued, prioritised, and never ran
-   before compute stopped. This is the only certificate class here with no
-   ordering caveat, and a solution would be a record. Resume is one command.
-3. 498 verified 88-gate solutions from an independent algebraic frame that
-   nobody ever analysed. They sit three steps further into the region where the
-   theory places an 87 than any circuit we studied. Minutes to extract; the
-   anchored search after that is unpriced.
-4. Three unfinished routes to "every 87-gate circuit has depth 4 or more". One
-   of them climbed the depth-3 floor from 32 to 63 in 17 minutes on one core,
-   every rung proven, and was abandoned while still improving. Reaching 88 would
-   be a publishable theorem.
-5. Re-certify one inherited constant as a proof of infeasibility rather than a
-   solver's best guess. One run. It is the only borrowed number that currently
-   changes a conclusion, and several conclusions die if it fails.
-6. The two-cancelling-gate region described above. Fully specified, never
-   searched, and no instrument exists that aims at it. Cost unknown.
-
-Our full method catalogue, corpora and certificates are available on request.
-
-## Available on request
-
-This repo ships the record circuits and their certificates. A much larger body
-of working material is kept locally and is available on request.
-
-- **1,575,516 distinct verified 88-gate solutions.** 28,796 carry a build order
-  and run directly, 92 of those at depth 5; the rest are mask sets whose build
-  order would need re-deriving. Two further large classes are counted but not
-  deduplicated, so the true figure is between 1.6 and 4.4 million.
-- **8 record circuits** (97 at depth 3, 91 at depth 4, 89 at depth 5, and five
-  88s at depths 5, 5, 6, 7, 8) with a SHA-256 manifest, plus 11 fully packaged
-  circuits with Verilog and testbenches.
-- **A 93-gate circuit from an independent from-scratch effort** with no access
-  to this project's methods — our calibration for how hard the last five gates
-  are.
-- **The lower bound `≥ 56`** with its certificate, and a certified depth-3 bound
-  of 80 gates re-checkable in seconds.
-- **A cancellation-free bound `≥ 92`**, derived twice independently, with 19
-  exact certificates.
-- **Proofs that the two largest levels cannot merge at 9, 10, 11, 12 or 13
-  gates**, cross-checked at the cheap end by a second, independent encoding over
-  an exhaustive 528-piece partition with a working positive control. The 14-gate
-  case is packaged as a single 4.2 MB CNF and is open.
-- **215,412,120 exact window decisions**, zero reducible, covering all 139,878
-  harvested 88s.
-- **378,189 fully enumerated neighbourhood states** across thirteen closed
-  components, minimum 88 gates throughout.
-- **749,150 exactly-solved block floors** (best anywhere: 88), 47,948 solved
-  8-dimensional sector instances with replayable witnesses, and a class-pricing
-  bound over 1.41×10²⁶ configurations.
-- **Five theorems with checked proofs**, including the one-gate-improvement
-  detector and a list of 14 properties forced on any 87-gate minimum circuit.
-- **~160 append-only result ledgers**, ~770 write-ups, and ~9,800 raw run logs.
-
-No circuit smaller than 88 gates was ever found. Everything above is checkable
-with the verifier in this repo.
-
-To ask for any of it, open an issue.
+MIT. Cite via `CITATION.cff`.

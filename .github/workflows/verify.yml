@@ -48,5 +48,44 @@ jobs:
           fail_at evidence/circuits/mixcolumns_88gates_depth8_thirdfamily.json 7
       - name: Unit tests (core invariants)
         run: python -m unittest discover -s tests -v
+      # REPRODUCE.md tier A, the parts that need nothing but the standard
+      # library. Each command's expected output is quoted in REPRODUCE.md.
+      - name: Lower-bound certificates (>= 56, >= 80 at depth 3, >= 92 cancellation-free)
+        run: |
+          set -e
+          cd bounds
+          python3 gte56/check_gte56.py
+          python3 depth3_gte81/certify.py --check depth3_gte81/cert_depth3.json
+          python3 depth3_gte81/control_primal.py
+          python3 depth3_gte81/control_cuts.py
+          python3 depth3_gte81/control_lp.py
+          python3 cf_gte92/check_cf_cert.py --aes-crosscheck
+          python3 cf_gte92/check_cf_cert.py --cert cf_gte92/cert_cf92_sharper.json
+          python3 cf_gte92/check_cancellation_free.py cf_gte92/cf_102gates_depth5.json --require-cancellation-free
+      - name: The tripwire must stay silent on the records and fire on a planted defect
+        run: |
+          set -e
+          cd corpus/tripwire_demo
+          python3 ../../tools/tripwire.py --selftest circuits/mixcolumns_88gates_depth5_fromscratch.json
+          python3 ../../tools/tripwire.py --quiet circuits/mixcolumns_88gates_depth*.json \
+                  circuits/foreign_88gates_depth7_eprint_2026-1481.json
+      - name: Corpus sample, vocabulary counterexample, and the deletion certificate
+        run: |
+          set -e
+          (cd corpus/sample && python3 tools/check_sample.py)
+          (cd corpus/vocabulary && python3 tools/verify_circuit.py S89_out_of_vocabulary_89gates.json)
+          (cd corpus/vocabulary && python3 tools/oov_check.py vocab.json S89_out_of_vocabulary_89gates.json)
+          (cd corpus/calibration && python3 verify_circuit.py cleanroom_93gates.json)
+          cd corpus/deletion_certificate
+          gcc -O2 -Wall -o tools/delcert tools/delcert.c
+          tools/delcert --bin fixtures/ctrl_pos89.bin --targets targets.txt --k 89 --tag ctrlpos89 --every 0 | grep '"realisable":498'
+          tools/delcert --bin fixtures/ctrl_neg498.bin --targets targets.txt --k 88 --tag ctrl498 --every 0 | grep '"realisable":0,'
+          tools/delcert --bin ../sample/corpus88_sample.bin --targets targets.txt --k 88 --tag sample --every 0 | grep '"realisable":0,'
+          python3 tools/aggregate.py
+      - name: The independence statistic (61 of 88 shared with the prior-art 88)
+        run: |
+          python3 scripts/overlap.py \
+            evidence/circuits/mixcolumns_88gates_depth7.json \
+            evidence/campaign87_imported_prior_art/jean_88gates_depth7_eprint_2026-1481.json | grep 'shared      61'
       - name: Compile check
         run: python -m compileall -q reproduce pipeline verify_circuit.py
