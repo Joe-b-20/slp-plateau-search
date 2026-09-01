@@ -5,10 +5,15 @@ matrix (32 bits in, 32 bits out) using only 2-input XOR gates. The search phase 
 **over**. The best circuit anyone here built is **88 gates**; the best proof anyone here
 has is that **at least 56 gates are needed**, so the answer L(M) sits somewhere in
 `56 <= L(M) <= 88`. **No 87-gate circuit was ever found** — every claim to the contrary in
-this tree is a deliberate tripwire fake. One test is still running: `fleet11/laneCUBE`
-is solving a SAT instance (`k = 14`) whose "yes" answer would be an 87; it is a bracket,
-not a refutation, and its coverage figure moves daily. Everything below is raw campaign
-material kept at its original path. **The distilled layer is `wrapup/` — start there.**
+this tree is a deliberate tripwire fake. The last open test — `fleet11/laneCUBE`, the SAT
+instance (`k = 14`) whose "yes" answer would have been an 87 — **was decided UNSAT on
+2026-09-01** (one monolithic kissat-4.0.4 solve, ≈ 99 core-hours;
+`fleet11/laneCUBE/RESULT.md` §7.1). So **no 87 exists that shares the block structure of
+every known 88** — which is *not* a proof that no 87 exists; an 87 outside that block
+decomposition is untouched, and `56 <= L(M) <= 88` is unchanged. Three further solvers are
+still grinding the same instance as engine-level confirmations. Everything below is raw
+campaign material kept at its original path. **The distilled layer is `wrapup/` — start
+there.**
 
 ---
 
@@ -23,7 +28,7 @@ material kept at its original path. **The distilled layer is `wrapup/` — start
 | `wrapup/KEEP_DELETE.md` + `wrapup/DELETION_LOG.md` | what was cleaned up, what must never be touched (34 do-not-touch entries) |
 | `wrapup/CORRECTIONS.md` | the **stale-number register** — 56 figures in this tree that are wrong or superseded. Check a number here before quoting it |
 | `wrapup/FROZEN_AND_FRAGILE.md` | files that break something if moved |
-| `fleet11/laneCUBE/RESULT.md` + `CHECK_SOLVER.sh` (repo root) | the **live k = 14 test** and the one-command status check |
+| `fleet11/laneCUBE/RESULT.md` + `CHECK_SOLVER.sh` (repo root) | the **k = 14 test — verdict UNSAT, 2026-09-01** (§7.1) and the one-command status check; confirmation solvers still running |
 | `wrapup/reports/` | the ten long slice reports everything above was distilled from |
 
 **The oracle.** `verify_circuit.py` at the root is the only thing that makes a claim true
@@ -53,7 +58,7 @@ Flags: **LIVE** = processes running · **FROZEN-DEP** = something live imports i
 | `fleet8/` | **the generator** — one tool that emits verified 88 and 91–116 circuits from derived structure | Aug 24 | 3.1 M | `unified/RESULT.md` (stale in places), `unified/REACHABILITY.md` | TOOLING / FROZEN-DEP |
 | `fleet9/` | how big and what shape the 88 class is; two independent enumerators | Aug 24 | 3.3 M | `laneENUM/RESULT.md` | ARCHIVE |
 | `fleet10/` | clean-room from-scratch calibration: self-contained search reached 93 gates VALID vs the record 88 — the measured value of project knowledge | Aug 24 | 832 K | `fleet10/RESULT.md` (written post-hoc Aug 29) | ARCHIVE |
-| `fleet11/` | **the k = 14 joint SAT test.** 20+ processes running; entire directory frozen | Aug 26 – now | 880 K | `laneCUBE/RESULT.md` | **LIVE** |
+| `fleet11/` | **the k = 14 joint SAT test — verdict in: UNSAT, 2026-09-01** (`laneCUBE/RESULT.md` §7.1). Confirmation solvers still running; entire directory frozen | Aug 26 – now | 880 K | `laneCUBE/RESULT.md` | **LIVE** |
 | `fleet12/` | the audit-and-mutate campaign: ~200 mutations, all returned 88; 244-row audit | Aug 27 | 5.5 M | `laneALGO/ALGORITHM.md`, `laneAUDIT/AUDIT.md` | ARCHIVE (`laneHALO` FROZEN-DEP) |
 | `evidence/` | the published archive: 8 record circuits, 7 untouched run archives, the certificate corpus, imported prior art | Jul 13 – 30 | 4.9 M | `RESULTS.md`, `CERTIFICATES.md` | ARCHIVE |
 | `pipeline/` | the v2 record-hunting engine that found every record here, incl. all five 88s | Jul | 2.3 M | `pipeline/README.md` | TOOLING |
@@ -71,7 +76,7 @@ Flags: **LIVE** = processes running · **FROZEN-DEP** = something live imports i
 |---|---|
 | `verify_circuit.py` | **the oracle.** Every claim in the project is defined as "this printed VALID" |
 | `README.md`, `METHODS.md` | the public-facing description. Both still state the depth-4 record as 92; three verified 91 @ depth 4 circuits exist here (`wrapup/CORRECTIONS.md` #7) |
-| `CHECK_SOLVER.sh` | one-command status of the live `laneCUBE` k = 14 run |
+| `CHECK_SOLVER.sh` | one-command status of the `laneCUBE` k = 14 run (verdict UNSAT 2026-09-01; confirmation engines still live) |
 | `CITATION.cff`, `LICENSE` | DOI metadata; MIT |
 | `FLEET_PLAN.md`, `SESSION_PROMPT.md` | operating instructions for the fleet campaigns |
 | `side_work.md` + `side_work_REVIEW.md` | an external structural analysis and this project's adversarial review of it — the review is among the most useful method documents here |
@@ -90,7 +95,7 @@ Flags: **LIVE** = processes running · **FROZEN-DEP** = something live imports i
 | Aug 18 (+ Aug 21/22, Aug 28) | `experiments` e1–e9, solo probes, `sat_package` | Five-agent experiment campaign under strict house rules. Headline: the refereed depth frontier **97 @ 3 / 91 @ 4 / 88 @ 5**; also the output-subset cost curve and exact re-add costs. |
 | Aug 19 – 22 | `fleet1`–`fleet4` | Built the region-pricing model and its floors; closed the flagship-cell 87 door by refereed theorem; found the one missing modelling rule and used it to build a **VALID 88 from theory with no circuit search**; added a depth-capped exact oracle. |
 | Aug 22 – 24 | `fleet5`–`fleet8` | Closed three whole parameter axes as free (line-set glue, currency menus over 1.4e26 configurations, 19 of 21 block boundaries); proved Theorem U1 (removing the bound's last assumption is equivalent to the original problem); shipped the unified generator. |
-| Aug 24 – 27 | `fleet9`–`fleet12` | Measured the 88 plateau's shape (the record is a depth record disguised as a gate record); an independent clean-room effort reached only 93; started the live k = 14 test; ran ~200 audited one-at-a-time mutations, **every one returned exactly 88**. |
+| Aug 24 – 27 | `fleet9`–`fleet12` | Measured the 88 plateau's shape (the record is a depth record disguised as a gate record); an independent clean-room effort reached only 93; started the k = 14 test (**decided UNSAT 2026-09-01**); ran ~200 audited one-at-a-time mutations, **every one returned exactly 88**. |
 | Aug 18 – 29 | `experiments` e10–e17 | Subset pricing, hand-reconstruction of the record 88 by reasoning alone, free-move orbit closure, the **B = 56 tripwire theorem** swept clean over all 17,283 distinct 88s, and the **Anatomy Theorem** + lower-bound dossier. Every campaign ends: no 87, `56 <= L(M) <= 88` untouched. |
 | Aug 29 | wrap-up | Ten slice reports written, then distilled into `wrapup/`; Tier-1 scratch deleted; this index written. |
 
@@ -99,3 +104,6 @@ Flags: **LIVE** = processes running · **FROZEN-DEP** = something live imports i
 *Written 2026-08-29 from the ten slice reports in `wrapup/reports/` and the
 distilled files in `wrapup/`. Sizes are pre-cleanup. No number here is new: if a
 figure matters, check it against `wrapup/CORRECTIONS.md` first.*
+
+*Updated 2026-09-01: the `k = 14` joint SAT test is decided **UNSAT** —
+`fleet11/laneCUBE/RESULT.md` §7.1. Nothing else in this index changed.*

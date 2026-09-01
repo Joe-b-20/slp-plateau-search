@@ -451,14 +451,39 @@ project's engines schedule — on these mask sets it is a theorem. The best fan-
 anywhere in the banked material is **6, and it costs 4 gates** (`S92_36_00204004`, 92
 gates), which is the only price this class has.
 
-*Scope, honestly:* this closes the question **for the six record 88s and the 33
-e_upstream floors — 39 mask sets, exactly**. It does not decide fan-out ≥ 8 over all
-1.93 M corpus 88s. A stratified sample of 150 further corpus 88s from three banks is
-running under the identical exact model (`c4_corpus_sample.py`,
-`c4_corpus_sample.json`); read that file for the widened histogram.
+#### C4 — widened to the corpus (R2, completed 2026-08-30)
+
+The same exact model over a **stratified sample of corpus 88s** — every *k*th valid-88 row
+of three mask-bearing banks — so the verdict is not an artifact of six hand-picked
+circuits. `wrapup/day2/e_upstream/c4_corpus_sample.py`, one `nice -n 19` thread, wall-capped
+and banking after every set; it stopped at **103 of the 150 sampled sets** (50 `nrpa_sub92`,
+50 `beat88_worklist`, 3 `population88_new`).
+
+| | |
+|---|---|
+| corpus 88s solved | **103** |
+| exact max fan-out histogram | **3 ×15 · 4 ×80 · 5 ×8** |
+| **max over the sample** | **5** |
+| sets reaching fan-out ≥ 8 | **0** |
+| sweeps exhaustive | **102 / 103** (one set had a solve hit the 120 s cap, so its 4 is a lower bound on its own maximum) |
+| their `max potential` | 6 ×7 · 7 ×13 · **8 ×39 · 9 ×33 · 10 ×11** |
+
+That last row is the point. **83 of the 103 sampled corpus 88s have a signal with
+potential ≥ 8 — several with potential 10 — and not one of them can realise more than 5.**
+Combined with the 39 record/floor sets, the exact answer over **142 mask sets** is:
+
+> **max fan-out 3–6, never 8, and the gap to `potential` is not close.** Acyclicity, not
+> the mask alphabet, is what caps fan-out: the candidate consumers of a heavily-shared
+> signal must mostly be built *before* it.
+
+*Scope, honestly:* 142 mask sets is not 1.93 M, and one of the 142 is a lower bound rather
+than an exact value. This does not prove fan-out ≥ 8 is impossible at 88; it does show the
+ceiling is robust across four independent sources and is **not** an artifact of how the
+project's engines happen to schedule.
 *What is now certain:* pinning a mask was always the wrong instrument for this class, and
-no synthesis run should ever be spent on it. Cost of the answer: **~5 minutes of one
-nice-19 core**, versus the ~50 core-hours a pinned campaign would have burned.
+no synthesis run should ever be spent on it. Cost of the whole answer: **~5 minutes** for
+the exact 39, plus one wall-capped background job for the widening — versus the ~50
+core-hours a pinned campaign would have burned.
 
 ### C5 — the column-parity hubs `T_j` absent from every record 88
 
@@ -511,7 +536,7 @@ would have priced the class at ≤ 2 even without the re-census.)
 | C1 `\|odd\| ≥ 4` | **open lead** | unknown | `deep.py` with `nodd ≥ 4`; 153 pins × 1,200 s ≈ **51 core-h** + 33 core-h refine |
 | C2 the 388 weight-2 masks | **partly priced; list is wrong** | 2 masks at **0**, 40 masks at **≤ 2**, ~344 open | re-point `e_w2novel/probe.py` at the roots, not the record 88s (≈ 97 core-h as written) |
 | C3 weight ≥ 12 | **CLOSED** | **0 gates** (254 circuits) | — nothing; strike from the list |
-| C4 fan-out ≥ 8 | **CLOSED, exactly** | **unreachable at 88** on all 39 mask sets tested; best anywhere is fan-out 6 at 92 gates | — nothing; the CP-SAT answer took ~5 min and is exact over all build orders |
+| C4 fan-out ≥ 8 | **CLOSED, exactly** | **unreachable at 88** on all **142** mask sets tested (6 record 88s + 33 floors + 103 sampled corpus 88s); best anywhere is fan-out 6, at 92 gates | — nothing; exact over all build orders, ~5 min for the core 39 |
 | C5 the hubs `T_j` | **CLOSED** | **0 gates** (all 8 occur) | — nothing; and fix `T_4` → `T_5` in the notebook |
 
 **Three of the five classes are now closed at a cost of about ten minutes of one core**,
@@ -581,20 +606,39 @@ Note what is *not* on this list: nothing here is an 87 hunt. #1 asks for an **88
 value is structural — it would be the first evidence that the plateau extends past the
 dictionary, or the first real evidence that it does not.
 
-### Status of #1 and #2 as of 2026-08-29 12:00
+### Status of #1 and #2 — both closed 2026-08-30
 
-* **#2 is done.** Answer: **NO** — see C4 above. Exact, exhaustive over all build orders
-  on 39 mask sets, ~5 minutes. `e_oddlane3`'s fan-out ceiling is structural, not a
-  scheduling artifact.
-* **#1 is RUNNING.** `wrapup/day2/e_upstream/seed89.py` (a patched **copy** of `deep.py`;
-  the originals in this directory are untouched), launched 11:36 local, PID 1372715,
-  budget 10,000 s wall ≈ 1.2 core-hours at the measured ~43 % of a core. Registered in
-  `wrapup/day2/runs/RUNS.md` §R1 with kill instructions. Live log
-  `wrapup/day2/e_upstream/seed89.log`, ledger `seed89_ledger.jsonl`; any ≤ 88-mask state
-  is written to disk the instant it appears, as `HIT88_00000098_*.json` plus a decoded
-  oracle-format circuit. **Read the ledger's final `ev:"done"` row for the verdict.**
-  Reminder for whoever reads it: a floor of 89 there is an upper bound from search, not a
-  proof that 88 is unreachable with this pin.
+**#2 — DONE. Answer: NO.** See C4 above: exact and exhaustive over all build orders on 39
+mask sets (~5 min), then widened to 103 sampled corpus 88s. 142 mask sets, max fan-out
+3–6, never 8, despite 83 of the corpus sample having a signal with potential ≥ 8.
+`e_oddlane3`'s fan-out ceiling is structural, not a scheduling artifact.
+
+**#1 — RUN, CLOSED, NO 88 REACHED. The question stays open.**
+`wrapup/day2/e_upstream/seed89.py` (a patched **copy** of `deep.py`; the originals in this
+directory were never modified), PID 1372715, launched 2026-08-29 11:36, pin `0x98`, seed
+`S89_41_00000098.json`, engine target 88.
+
+| | |
+|---|---|
+| improvements below the 89 seed | **0** |
+| `HIT88_*` files banked | **0** |
+| floor | **89**, pin alive |
+| effort actually spent | **3,967 s monotonic / 1,581 s CPU ≈ 0.44 core-hours** of the ~1.2 budgeted |
+| how it ended | terminated at the authorised deadline, without writing its own closing row; the ledger's last row is `ev:"closed_by_operator"`, explicitly marked operator-written |
+
+**This is a partial negative and an upper bound from search — not a proof that 88 is
+unreachable with this pin, and emphatically not a statement about 87.** Roughly a third of
+the intended budget was spent, from one seed, with one engine schedule. The 89 → 88 gap has
+now had 0.44 core-hours of dedicated attention where it previously had zero; that is a
+start, not an answer. `seed89.py` is stateless — re-launch it with a fresh budget to
+resume, and the honest next step is still *"~20 core-hours to do all 20 non-appendix
+floors"*, not "one more hour on this one".
+
+*Why the budget did not expire on its own:* the host was suspended. Machine uptime advanced
+~1.6 h while the wall clock advanced ~29 h, and `time.monotonic()` does not tick while
+suspended. A monotonic deadline is the right choice for interruptibility but is **not** a
+wall-clock guarantee on a laptop-class box. Full record, with kill instructions and the
+operational lesson, in `wrapup/day2/runs/RUNS.md` §R1.
 
 ## 9. Corrections this write-up makes to other documents
 

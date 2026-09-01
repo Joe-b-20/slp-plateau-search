@@ -14,6 +14,11 @@ Scope: 11 Appendix B conflicts + 14 MANIFEST §9 count families + 10 load-bearin
 **Tally: 22 resolved · 4 both-right-different-objects · 3 partially resolved
 (named residue below) · 0 fully unresolved.**
 
+**POSTSCRIPT 2026-09-01: k=14 decided UNSAT — see `fleet11/laneCUBE/RESULT.md`
+§7.1.** The tallies in §B8 (and the rows citing it, §C4 and the summary tables)
+are left exactly as measured on 2026-08-29; they are a correct record of an
+unfinished sweep, not the status of the level.
+
 ---
 
 # ⚠ READ FIRST — what could NOT be fully closed, and what it would take
@@ -376,6 +381,11 @@ The lane's own pre-registration binds the reading: `"partial_coverage":
 > UNDECIDED; this is a coverage bracket, not a refutation. The run is live."*
 > Any figure quoted must carry that timestamp. Do not write "51/528" or "73/528"
 > without one.
+
+**POSTSCRIPT 2026-09-01: k=14 decided UNSAT — see `fleet11/laneCUBE/RESULT.md`
+§7.1** (one monolithic kissat-4.0.4 solve, 356,321.63 core-s). The cube-coverage
+figures above remain a correct record of the unfinished sweep, but they are no
+longer the status of the level and must not be quoted as it.
 
 ---
 

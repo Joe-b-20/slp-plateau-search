@@ -117,11 +117,12 @@ not opinion:
   masks from those circuits and rebuilding cheaper is exhaustively impossible.
 - It cannot resynthesise 4 output rows cheaply. For the depth-5 88, all 35,960
   four-row drop sets were refuted at one gate fewer.
-- Its top two levels are not small — if it is built the way every known 88 is.
-  For the merged block in our standard decomposition, 9, 10, 11, 12 and 13
-  gates are all proven UNSAT, so that block needs at least 14. The 14 case is
-  open and running. An 87 that does not split into these blocks escapes this
-  test entirely; none of our circuits is such an exception.
+- It is not built the way every known 88 is built. For the merged block in our
+  standard decomposition, 9 through 14 gates are all proven UNSAT (the 14 case
+  decided 2026-09-01, ~99 core-hours), so that block costs exactly 15 and
+  merging the two largest levels saves nothing. An 87 that does not split into
+  these blocks escapes this test entirely; none of our circuits is such an
+  exception.
 
 Read together, an 87 would have to be structurally unlike every 88 we have ever
 seen, not a local repair of one. **That is the opinion. It is not evidence that
@@ -135,10 +136,10 @@ Four directions, one line each. Methods, code and run archives are in
 [`slp-plateau-search`](https://github.com/Joe-b-20/slp-plateau-search); this
 repository is circuits only.
 
-- **The one open SAT instance.** A single CNF, satisfiable exactly when an
-  87-gate MixColumns circuit with our block decomposition exists at the first
-  undecided level. A solution is an 87. No solution closes that class only.
-  Its status is unknown. This is the sharpest open question we have.
+- **The block-structure route is closed.** The SAT instance that asked whether
+  an 87 with our block decomposition exists returned UNSAT (2026-09-01). What
+  no test covers: an 87 with a different block structure. That is now the
+  sharpest open question.
 - **Lift the lower bound.** 56 comes from one counting certificate at depth 4.
   Nothing rules out a much better bound by the same route; we know of no
   published attempt to try.

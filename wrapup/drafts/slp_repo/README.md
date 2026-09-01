@@ -28,12 +28,13 @@ All verified. The 91 at depth 4 exists in three independent lineages.
 separate certificate shows every depth-3 circuit needs at least 80 gates.
 
 **The SAT test.** Take the two largest intermediate levels of a circuit and ask
-whether they can be built together with *k* gates. At k = 9, 10, 11, 12 and 13
-the answer is proven no. k = 14 decides the question: a solution there would be
-an 87. That case is running. As of 2026-08-29, 87 of its 528 independent pieces
-are proven impossible, none possible, 441 still open. This is a coverage
-bracket, not a result. The test also assumes the circuit splits into the same
-blocks, which an 87 need not do.
+whether they can be built together with *k* gates. At k = 9, 10, 11, 12, 13 —
+and, decided 2026-09-01 after ~99 core-hours of solving — **14**, the answer is
+proven no. A solution at 14 would have been an 87; there is none. So the merged
+block costs exactly 15, merging the two largest levels saves nothing, and no 87
+exists that is built the way every known 88 is built. The test assumes the
+circuit splits into the same blocks, which an 87 need not do — that is the one
+door this result leaves open.
 
 **The census.** We hold 1,575,516 distinct verified 88-gate solutions. 28,796 of
 them carry a build order and are directly runnable; 92 of those are at depth 5.
@@ -82,8 +83,9 @@ instances with a certified optimum, and having many distinct optimal solutions
 does not mean the optimum is too high.
 
 An 87 would have to look unlike anything we hold. Outside the shared vocabulary
-of every known 88. Its two largest levels not merging below 14 gates, which the
-live test may still decide. Almost certainly not shallow: the depth-3 floor is
+of every known 88. Not splitting into the block structure every known 88 shares
+— the merged-levels route through that structure is now proven empty. Almost
+certainly not shallow: the depth-3 floor is
 already 80 and still climbing. And if its cancelling apparatus is as small as
 the arithmetic allows — two cancelling gates against 85 clean ones — then one of
 the twelve heaviest output rows must be produced by a cancelling gate. Our
@@ -91,12 +93,13 @@ circuits have between 9 and 28 cancelling gates. Nothing on disk is that shape.
 
 ## If you want to find an 87 (or prove 88 optimal)
 
-**The one live price.** The k = 14 case above costs 650–1,100 core-hours by the
-cheapest route we measured: one complete solver on one core, which does not
-parallelise. The case also splits into 528 independent pieces (87 already done),
-but we measured the split to cost several times more total work than the single
-solver. A solution is an 87. No solution closes that class and leaves the
-general question open.
+**The last live case is now closed.** The k = 14 SAT test finished on
+2026-09-01: UNSAT, in ~99 core-hours by a single solver on one core. The class
+it covered — any 87 sharing the known 88s' block structure — is empty. What
+remains open is only what the test never covered: an 87 with a different block
+structure. One optional confirmation is priced and not run: re-deciding k = 14
+under our second, independent SAT encoding (roughly 10× the cost of its k = 13
+run).
 
 **Already refuted — do not repeat.**
 

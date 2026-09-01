@@ -188,5 +188,21 @@
    "0xc0408080"
   ]
  },
- "verdict": "PASS"
+ "verdict": "PASS",
+ "control_C_lam2_planted": {
+  "planted": "A = TARGETS (|A|=32), Y = {}, obj = 64 (the known G(2) optimum)",
+  "rho_fixed": true,
+  "satisfies_lex_cut_python": true,
+  "gauged_status": "OPTIMAL",
+  "gauged_seconds": 0.6,
+  "ungauged_status": "OPTIMAL",
+  "ungauged_seconds": 0.3
+ },
+ "control_C_lam2_search_form": {
+  "run": "--lam 2 --bounds 64 --gauge",
+  "status": "UNKNOWN",
+  "seconds": 23123.8,
+  "note": "never found the trivial solution in the compute the host suspend left it; superseded by the planted form above"
+ },
+ "final_verdict": "PASS (A arithmetic + B planted lam=3 + C planted lam=2)"
 }

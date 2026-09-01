@@ -10,6 +10,11 @@ extrapolated, summed across reports, or reconciled. Where reports overlap or
 disagree the entries are kept side by side and marked
 **DEDUP PENDING — see corpus88 job**.
 
+**UPDATE 2026-09-01.** The one open machine decision in this inventory is closed:
+the joint `W3|U4` level **k = 14 is UNSAT** (`fleet11/laneCUBE/RESULT.md` §7.1).
+Rows touched: §0 joint-level rows, §2.3, CONFLICT #3 (now closed), and the
+certificate summary near the end. No other count in this file changes.
+
 Source abbreviations (all under `wrapup/reports/`):
 `atlas` = `atlas_misc.md` · `beat88` = `beat88.md` · `c87` = `campaign_87.md` ·
 `exp-e` = `experiments_early.md` · `exp-l` = `experiments_late.md` ·
@@ -30,10 +35,10 @@ All repo-relative paths are under
 | earlier lower bound (superseded) | `54 <= L(MixColumns)`, refereed-grade, 1-second verifier | `beat88` §3.3 — `beat88/understanding/u3_lowerbound/RESULT.md` + `verify_bound.py` |
 | **Depth frontier** | **97 @ 3 / 91 @ 4 / 88 @ 5**, refereed | `exp-e` §1 (`experiments/e4_depth/RESULT.md`, 366 lines, "the refereed depth frontier 97@3 / 91@4 / 88@5") |
 | depth-4 point, published vs held | public repos still state **92 @ 4**; the project holds **91 @ 4 in three independent lineages** | `root` (README.md, `evidence/RESULTS.md`, `docs/frontier.svg`, CI workflow all say 92); `rec` §3A; `f1-4` L11; third lineage `experiments/e4_depth/out/resched/atlas_compiled_m1_91gates_depth4.json` (`exp-e` §3) — **CONFLICT #4 below** |
-| **Joint-level UNSATs** | merged dim-16 `W3 ∪ U4` block: **k = 9,10,11,12,13 all UNSAT** ⇒ merged block needs **>= 14** gates; with the replay bound merged ∈ {14,15} | `f5-8` §3 — `fleet8/unified/results/joint_levels.jsonl`, 5 rows, `cat` |
+| **Joint-level UNSATs** | merged dim-16 `W3 ∪ U4` block: **k = 9,10,11,12,13,14 all UNSAT** ⇒ **merged = 15 exactly** = the split total, so merging buys nothing (`k <= 13` from `f5-8`; **`k = 14` decided 2026-09-01**, below) | `f5-8` §3 — `fleet8/unified/results/joint_levels.jsonl`, 5 rows, `cat`; `fleet11/laneCUBE/RESULT.md` §7.1 |
 | — independent cross-check | k = 9/10/11 re-proved by an independent CNF encoding, **528/528 cubes UNSAT at each level, 0 disagreements**, positive control fired (SAT at cube 144, verified witness) | `f9-12` §3 — `fleet11/laneCUBE/cubes/joint_W3U4_k{9,10,11}.jsonl`, `SUB_U4tgts_k{6,7}.jsonl` |
-| — **k = 14 still running** | a bracket, not a refutation. Coverage figures disagree across sources: **51/528** (at laneCUBE write-up), **73/528** (`rec` tally), **87/528** (`f9-12` tally, 2026-08-29) | `f9-12` §3, `rec` §3A — **CONFLICT #3 below** |
-| — the open instance, packaged | 1 CNF: SAT ⟺ an 87-gate MixColumns exists; status unknown | `exp-e` §3 — `experiments/sat_package/k14_joint_W3U4.cnf` (4.2 M) |
+| — **k = 14 DECIDED UNSAT (2026-09-01)** | one monolithic solve, kissat-4.0.4, **356,321.63 core-seconds ≈ 99 core-hours** — a complete decision of the level. **No 87 exists that shares the block structure of every known 88.** ⚠ Not a proof that no 87 exists: an 87 outside this block decomposition is untouched. The partial cube sweep (90/528 decided, all UNSAT, 0 SAT) is consistent but **is not the basis of the verdict**; the old coverage figures 51/528 · 73/528 · 87/528 are superseded — **CONFLICT #3 below is closed** | `fleet11/laneCUBE/RESULT.md` §7.1; log `fleet11/laneCUBE/logs/mono_14_kissat404.log` |
+| — the packaged instance | 1 CNF: SAT ⟺ an 87-gate MixColumns exists **in that block class**; **status: UNSAT, decided 2026-09-01** | `exp-e` §3 — `experiments/sat_package/k14_joint_W3U4.cnf` (4.2 M); verdict `fleet11/laneCUBE/RESULT.md` §7.1 |
 | **Biggest sweep — window decisions** | **≈165 M exact window decisions** campaign-wide, zero timeouts, zero reducible | `c87` §3.3 (`campaign_87/FACTS.md` §6a + the per-class ledgers); restated `root` §3 (`CERTIFICATES.md` §4 table) |
 | **Biggest sweep — population** | **17,283 / 17,283** distinct 88 mask-multisets swept, **zero alarms** (e15 run A, complete 2026-08-28) | `exp-l` §3.3 — `wc -l experiments/e15_campaign3/sweep_A_fullpop.jsonl` → 17283 |
 | **Biggest sweep — d(S)=1 windows** | **15,099,957** windows, 0 compressible, 0 shared helpers | `exp-l` §3.3 — `wc -l experiments/e15_campaign3/sweep_ledger.jsonl` → 32 (rows), totals inside |
@@ -183,16 +188,17 @@ Grouped by **what each class certifies**, in the reports' own words.
 | depth-capped block decisions | exact min gates under a depth cap | **91 exact + 5 timeouts**, 13,215 s | `fleet4/laneDEPTH/results/dcache.jsonl` (97 rows) | `f1-4` §3.2 |
 | exhaustive currency curves | gates-vs-depth per menu, solver-free (`None` = provably impossible) | **80** over 19 cells | `fleet4/laneDEPTH/code/currency.py` | `f1-4` §3.2 |
 
-### 2.3 Joint-level SAT ladder (the k=14 frontier)
+### 2.3 Joint-level SAT ladder (the k=14 frontier — **closed 2026-09-01**)
 
 | certificate | exact statement certified | count | where | source |
 |---|---|---|---|---|
-| joint `W3\|U4` level ledger | the merged dim-16 `W3 ∪ U4` block needs **>= 14** gates; with the replay bound merged ∈ {14,15} | **5 rows** (k = 9,10,11,12,13 UNSAT) | `fleet8/unified/results/joint_levels.jsonl` | `f5-8` §3 |
+| joint `W3\|U4` level ledger | the merged dim-16 `W3 ∪ U4` block needs **>= 14** gates; with the replay bound merged ∈ {14,15} — **bracket collapsed to 15 by the k = 14 verdict below** | **5 rows** (k = 9,10,11,12,13 UNSAT) | `fleet8/unified/results/joint_levels.jsonl` | `f5-8` §3 |
 | k=9/10/11 full cube sweeps (independent CNF encoding) | complete: **all 528 cubes UNSAT** at each level, cross-checked against fleet8's encoding, 0 disagreements | 3 levels × 528 | `fleet11/laneCUBE/cubes/joint_W3U4_k{9,10,11}.jsonl` | `f9-12` §3 |
-| **k=14 cube refutations (partial, LIVE)** | each row: "no 14-gate normal-form SLP for the merged `W3\|U4` dim-16 block exists **with gate 0 reading input pair j**". The level is UNSAT only when all 528 are | **87 of 528** (`f9-12`, 2026-08-29); **73/528** (`rec`); **51** at laneCUBE write-up — **CONFLICT #3** | `fleet11/laneCUBE/cubes/joint_W3U4_k14.jsonl` | `f9-12` §3, `rec` §3A |
+| **k=14 — DECIDED UNSAT, 2026-09-01** | the whole level: **no 14-gate normal-form SLP for the merged `W3\|U4` dim-16 block exists**. One monolithic solve (kissat-4.0.4, 356,321.63 core-s ≈ 99 core-h) is a complete decision — the same path that decided k = 11 and k = 12 | 1 verdict row; 3 further mono engines were still running as confirmations | `fleet11/laneCUBE/logs/mono_14_kissat404.log`; verdict `fleet11/laneCUBE/RESULT.md` §7.1 | laneCUBE §7.1 |
+| k=14 cube refutations (partial sweep, superseded) | each row: "no 14-gate SLP … **with gate 0 reading input pair j**". The sweep was never completed and is **not** the basis of the verdict; it is consistent with it | **90 of 528** decided, all UNSAT, 0 SAT, at the time the verdict was banked. Earlier samples 51/528 · 73/528 · 87/528 are the same monotone run — **CONFLICT #3, now closed** | `fleet11/laneCUBE/cubes/joint_W3U4_k14.jsonl` | `f9-12` §3, `rec` §3A |
 | k=15 cube rows | same, under a 60 s budget — **reported as nothing**, since a budget refutes nothing | 23 UNSAT / 168 timeout | `fleet11/laneCUBE/cubes/joint_W3U4_k15.jsonl` | `f9-12` §3 |
 | positive/negative control sweeps | sub-instance `SUB_U4tgts`: k=6 all 528 UNSAT (agrees with monolithic); **k=7 SAT at cube 144 with verified witness** — i.e. the test can fail | 736 rows | `fleet11/laneCUBE/cubes/SUB_U4tgts_k{6,7}.jsonl`, `found/HIT_SUB_U4tgts_k7.json` | `f9-12` §3 |
-| the packaged open instance | SAT ⟺ an 87-gate MixColumns exists; **status unknown** | 1 CNF (4.2 M) | `experiments/sat_package/k14_joint_W3U4.cnf` | `exp-e` §3 |
+| the packaged instance | SAT ⟺ an 87-gate MixColumns exists **in that block class**; **status: UNSAT, decided 2026-09-01** | 1 CNF (4.2 M) | `experiments/sat_package/k14_joint_W3U4.cnf`; verdict `fleet11/laneCUBE/RESULT.md` §7.1 | `exp-e` §3 |
 | SAT-competition ladder CNFs | the joint `W3\|U4` block costs > k, for k = 9..13 | 5 CNFs + README table | `experiments/sat_package/ladder/*.cnf` | `exp-e` §3 |
 | **57 newly-proved gate levels** | for each: "block B has no program at k gates", at a level **never tested before in this repository's history** — 18 at `f4_88_D4`, 18 at `rec_88at7`, 18 at `f4_88_noQ27`, 2 independent re-proofs of `U1` k=4/5, 1 at `f4_basis` | **57** | `fleet12/laneHINTS/results.jsonl` (43 rows), `cache/*.jsonl`, `laneHINTS/RESULT.md` §5 | `f9-12` §3 |
 | halo-widened UNSAT levels | e.g. `U4` at k=6 UNSAT in 104 s **at dim 16 with all 41 free values available** — a genuinely wider refutation | within 118 rows | `fleet12/laneHALO/results.jsonl`, `cache/` | `f9-12` §3 |
@@ -426,7 +432,7 @@ Not "results" but the largest classes on disk, listed so the request line is hon
 | CNF dumps | — | 5.53 GB | `campaign_87/` | — | `c87` summary |
 | `.bin` pools (incl. `pool/layer89.bin`) | — | 1.51 GB | `campaign_87/` | — | `c87` summary |
 | atlas instance files (regenerable) | — | 967 MB | `atlas/` | `du -sh` | `atlas` summary |
-| **SAT-competition benchmark package** | 6 CNFs (ladder k=9..13 + the open k=14) 18 M, + 4 demo CNFs/models 5.9 M, + `README.md` + `SUBMISSION_NOTES.md` | 24 M | `experiments/sat_package/` | `ls` | `exp-e` §3 |
+| **SAT-competition benchmark package** | 6 CNFs (ladder k=9..13 + k=14 — the latter **decided UNSAT 2026-09-01**, ≈ 99 core-hours, so it is now a hard *solved* benchmark rather than an open one) 18 M, + 4 demo CNFs/models 5.9 M, + `README.md` + `SUBMISSION_NOTES.md` | 24 M | `experiments/sat_package/` | `ls` | `exp-e` §3 |
 | E3a dim-8 SAT instances | 5,705 | 23 M | `experiments/e3a_exploit/inst/` | `ls` | `exp-e` §3 |
 | fleet1–4 solver instances | laneG 1,453 · laneCB 795 · laneA 358 · laneB 82 · laneF4 38 | — | per-lane `inst/` | the loop in `f1-4` §3.4 | `f1-4` §3.4 |
 | fleet5–8 instance files | **237** | 968 KB | per-lane `inst/` | the loop in `f5-8` §3 | `f5-8` §3 |
@@ -458,9 +464,12 @@ Recorded, not resolved. A separate agent is computing the deduplicated 88 corpus
    `rec`'s own verdict: "almost certainly different counting bases… **do not quote
    either number in a rewrite without re-deriving what set it counts**"
    (confidence SMELL, high-value). **DEDUP PENDING.**
-3. **k=14 cube coverage.** 51/528 (laneCUBE write-up) vs 73/528 (`rec` tally) vs
-   87/528 (`f9-12` tally, 2026-08-29). The lane is LIVE; the number moves. Quote
-   with a date or not at all.
+3. ~~**k=14 cube coverage.**~~ **CLOSED 2026-09-01.** The three figures (51/528,
+   73/528, 87/528) were never a disagreement — one monotone live run sampled at
+   three times — and they are now **moot**: `k = 14` was decided **UNSAT** by a
+   single monolithic kissat-4.0.4 solve (`fleet11/laneCUBE/RESULT.md` §7.1). The
+   cube sweep stopped at 90/528, all UNSAT, and is not the basis of the verdict.
+   **Do not quote any partial coverage figure as the status of this level.**
 4. **Depth-4 frontier point.** Published: **92 @ 4** (`README.md`,
    `evidence/RESULTS.md`, `docs/frontier.svg`, CI workflow, `bounds.json`).
    Held: **91 @ 4**, three independent lineages (`campaign_87/cascade6/
@@ -544,7 +553,11 @@ certificates. A much larger body of working material was produced during the
   cross-checked at k = 9/10/11 by a second, independent CNF encoding over a
   machine-checked exhaustive 528-cube partition with a fired positive control.
   The k = 14 level — whose satisfiability is equivalent to the existence of an
-  87-gate circuit — is packaged as a single 4.2 MB CNF and is **open**.
+  87-gate circuit **in that block class** — is packaged as a single 4.2 MB CNF
+  and was **decided UNSAT on 2026-09-01** (kissat-4.0.4, ≈ 99 core-hours;
+  `fleet11/laneCUBE/RESULT.md` §7.1), completing the ladder k = 9..14 and pinning
+  the merged block at exactly 15. It is **not** a proof that no 87 exists — an 87
+  outside this block decomposition is not excluded.
 - **57 gate levels proved UNSAT that had never been tested before**, plus
   ~29,125 order-free window UNSAT certificates (the only certificate class in
   the project with no slot-order caveat) and 82,786 down-step window UNSATs.

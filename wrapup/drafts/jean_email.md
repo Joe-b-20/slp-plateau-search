@@ -16,10 +16,13 @@ repositories are now current:
 - https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits — the records, circuits, verifier
 
 The short answer: no 87. Our search is over, and we finish on the bracket
-56 <= L(MixColumns) <= 88. One computation is still live: two of the blocks an 87
-would need can be built jointly in 15 gates, and we have proved 9, 10, 11, 12 and
-13 impossible (the first three under a second, independent encoding). Whether 14
-is possible is the open instance — 87 of its 528 cubes closed UNSAT so far, none SAT.
+56 <= L(MixColumns) <= 88. The last live computation has since finished: for the
+two largest blocks an 87 would need, building them jointly in 9, 10, 11, 12, 13
+— and now 14 — gates is proven impossible (UNSAT, the 14-case decided 2026-09-01
+after ~99 core-hours; 9-11 also hold under a second, independent encoding). The
+merged block costs exactly 15, so no 87 exists that shares the block structure
+of every 88 we have ever seen. An 87 with a different structure remains
+unexcluded — which is precisely why your circuits interest us.
 
 Since your intuition is that 88 is the lower bound, here is our evidence for it,
 strongest first. It is structural, and none of it is a proof.
