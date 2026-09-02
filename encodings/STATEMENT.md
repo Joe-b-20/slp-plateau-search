@@ -136,7 +136,7 @@ programme. Times are wall-clock seconds on the stated number of cores.
 | 11 | **UNSAT** | 218.45 s | 785.29 s | **119.49 s** ✔ |
 | 12 | **UNSAT** | 5 761.73 s | 5 202.15 s | not re-run (≈ 1.6 h) |
 | 13 | **UNSAT** | — | 105 083.40 s ≈ **233.5 core-hours** | not re-run (≈ 29 h × 8) |
-| 14 | **UNSAT** | **356 321.63 s ≈ 99.0 core-hours** (kissat 4.0.4) | — | not re-run (≈ 4 days) |
+| 14 | **UNSAT** | **356 321.63 s ≈ 99.0 core-hours** (kissat 4.0.4); independently confirmed by CaDiCaL 3.0.0, 468 159.51 s ≈ 130 core-hours, same hash-pinned instance | — | not re-run (≈ 4 days) |
 
 The three cheap levels were re-solved for this pack, **from the shipped DIMACS
 files**, with an off-the-shelf solver and no access to the programme's own
