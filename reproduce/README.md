@@ -29,7 +29,7 @@ and labelled — a measurement, never a promise.
 |---|---|---|
 | **97 @ depth 3, from scratch** — *frontier* | `python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, one core, re-run 2026-09-02 (RNG seed 6, its first seed, both times); **81 s** on 2026-07-27; 60–156 s across earlier runs |
 | **91 @ depth 4** — *frontier* | *none here yet* — but a **2-second** from-scratch construction exists outside this repository, and it is the fastest reproduction of any record this project has: [see below](#a-91--depth-4-in-two-seconds) | **2 s** measured 2026-09-02, cold cache, one core, by exact construction (not the historical finder). The search that actually found the shipped circuit cost 54.4 min of one core, inside a ~74 process-hour run |
-| **88 @ depth 5, from scratch** — *frontier* | `python3 hunt_88at5.py` | archived: **64 min** of one core from its root. Re-run 2026-09-02 — see [The from-scratch 88 @ depth 5](#the-from-scratch-88--depth-5) |
+| **88 @ depth 5, from scratch** — *frontier* | `python3 hunt_88at5.py` | archived: **64 min** of one core from its root. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** (archived: 3 072 s) but **did not reach 88 in 164 min** — the last gate is one lucky walk chunk. Stochastic; see [The from-scratch 88 @ depth 5](#the-from-scratch-88--depth-5) |
 | **88 @ depth 6, from scratch** | `python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root. Not re-measured here — same script, same code, a different root integer |
 | **88 @ depth 7**, from our ρ²-symmetric 94 | `python3 hunt_88.py` | **19.4 min** with the shipped stop rule, re-validated 2026-07-27 (a second re-run reached 88 gates at 31.0 min but stopped at depth 8 under an earlier gate-count-only rule); the archived run took 32.9 min. Stochastic — see [The 88 @ depth 7](#the-88--depth-7) |
 | **89 @ depth 5** *(superseded by the 88 @ depth 5, kept)*, from this project's 89@6 + 90@5 circuits | `cd ../pipeline && python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5` | **20 s** end to end, re-run 2026-09-02 (the worker verified 89 @ depth 5 inside its first chunk, at t = 17.5 s of the coordinator's first status poll); **19 s and 22 s** on 2026-07-27; the archived run took 592 s (~10 min), with the v1 engine (see below) |
@@ -308,21 +308,22 @@ the distinction is the whole cost story:
 | from *this* root (the record's), archived | 88 @ depth 6 at **64.1 min**, 88 @ depth 5 **6.1 s later** |
 | from an arbitrary fresh root (`--rng` anything else) | a lottery, and an expensive one. The fleet's own accounting, which is not published here, prices this constructor at **~8.6 CPU-hours per 88** and finds ~3.5 % of from-scratch descents reach 88 at all. That landing at *depth 5* is a further sub-event **is** checkable here: the shipped `c_naive.log` records three independent arrivals at 88 gates over that worker's five sessions (depths 8/7/6, then 10/9/8, then 6/**5**), and exactly one of the three reached depth 5 |
 
-**What a re-run did here, and the packaging bug it caught.** Re-run
-**2026-09-02**, one core, `nice -n 19`, on a loaded 20-core box. The root
-re-derived at 146 gates / depth 3, and the descent was **far ahead of the
-archived one** for the first ten minutes:
+**What re-runs did here, and the packaging bug they caught.** Two re-runs on
+**2026-09-02**, one core each, `nice -n 19`, on a loaded 20-core box. Both
+re-derived the root at 146 gates / depth 3, and both ran the same descent — the
+early chunks are deterministic given the seed, so their timings agree to within a
+few seconds — and both were **far ahead of the archived run**:
 
-| | this re-run | archived, same root |
-|---|---|---|
-| 93 @ 5 | 23 s | — |
-| 91 | 39 s | 385 s |
-| 90 | 70 s | 1 185 s |
-| 89 | 559 s | 3 072 s |
-| **88 @ 6 → 88 @ 5** | **did not arrive** | 3 843 s / 3 849 s |
+| | run 1 | run 2 (root held) | archived, same root |
+|---|---|---|---|
+| 93 @ 5 | 23 s | 22 s | — |
+| 91 @ 5 | 46 s | 46 s | 385 s |
+| 90 @ 5 | 70 s | 74 s | 1 185 s |
+| 89 @ 5 | 559 s | 558 s | 3 072 s |
+| **88 @ 6 → 88 @ 5** | root lost at 54 min | **not in 164 min** | 3 843 s / 3 849 s |
 
-Then it sat at 89 for 45 minutes and the archived worker's own **stall rule fired
-at t = 3 240 s (54 min)** — `stalled 2400s at 89 gates -- new root` — dropping the
+Run 1 then sat at 89 and the archived worker's own **stall rule fired at
+t = 3 240 s (54 min)** — `stalled 2400s at 89 gates -- new root` — dropping the
 record's root **ten minutes before the time the archived descent had needed to
 reach 88 from it**.
 
@@ -335,11 +336,24 @@ the same improvements over 3 072 s instead of 559 s.
 
 `hunt_88at5.py` therefore now **holds the root for the whole budget**, pushing
 both rotation timers past the deadline; `--rotate-roots` restores the archived
-behaviour. A re-run under the fix was launched and is still going at the time of
-writing — the honest status of this row is *the script is fixed and the descent
-reproduces down to 89 gates in a tenth of the archived time; the last gate is a
-lucky walk chunk and had not landed yet*. Read the table above as the
-measurement it is.
+behaviour.
+
+**The re-run under the fix, in full.** Launched 10:20:14, one core, `nice -n 19`,
+`--minutes 165`. The fix worked — the log opens `restart=10500s stall=10500s`,
+and there is **no** `new root` or `stalled` line anywhere in its 259 chunks
+(121 walk, 68 LNS): the record's root was held for the entire run. It reached
+**89 @ depth 5 at t = 558 s** and then **stayed at 89 for the remaining 154
+minutes**, ending at t = 9 837 s (164 min) without an 88.
+
+So the honest result for this row is: **the descent reproduces, the last gate did
+not.** Down to 89 gates this re-run was 3–5× faster than the archived one; the
+step from 89 to 88 is a single lucky walk chunk, and in 164 minutes on this
+machine it did not come, against the archived run's 64 minutes from the same
+root. That is not a failure of the packaging — the root, the seed, the code and
+the first chunk are all reproduced — it is the stochasticity this page keeps
+warning about, and it is why the script ships a 180-minute default and why
+nothing here promises a time. A second attempt is a different RNG draw of the
+same walk; the archived arrival is one sample, and so is this miss.
 
 **Provenance.** The root reads nothing off disk — the `constructor:` branch of
 the worker's root selector has no file-reading path at all. Cross-pollination was

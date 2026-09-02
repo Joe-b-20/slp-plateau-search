@@ -469,7 +469,7 @@ here is aspirational**.
 |---|---|---|
 | **97 @ 3** — *frontier*, from scratch | `cd reproduce && python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, measured 2026-09-02 (RNG seed 6, its first seed, both times); 81 s on 2026-07-27; 60–156 s across earlier runs |
 | **91 @ 4** — *frontier*, from scratch | **none here yet.** The cascade fleet that found it is a separate codebase, published in neither repository — but the fastest route is not that search: an exact **construction** in the project's unpublished tree emits an independent 91 @ 4 from GF(2⁸) alone. `reproduce/README.md` gives the command, the provenance tests and the packaging blocker | **2 s** measured 2026-09-02, one core, cold cache — the fastest reproduction of any record here. The historical search cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
-| **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Re-run 2026-09-02 — see `reproduce/README.md` |
+| **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** against the archived 3 072 s, and **did not reach 88 within 164 min** — the last gate is a single lucky walk chunk. Read the archived 64 min as one sample, not a promise; `reproduce/README.md` has both runs in full |
 | **88 @ 6**, from scratch | `cd reproduce && python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root `naive#2163`. Same script and same archived worker as the row above; not re-measured on 2026-09-02 |
 | **88 @ 7**, matching the published count with an independent circuit | `cd reproduce && python3 hunt_88.py` | **19.4 min** measured 2026-07-27 under the shipped stop rule; archived 32.9 min |
 | **88 @ 5, derived** | **none, by choice** — its seed chain runs through published work, so it is reported as derived and not offered as a recipe | archive: `evidence/campaign87_run_2026-07-29_got_88at5_derived/`, with the code, the seed and the untouched logs |
@@ -485,7 +485,13 @@ chunk boundaries are wall-clock, so a machine of a different speed parts company
 with the archived trajectory from the second chunk on, and what comes back is
 another point in the same basin rather than the record circuit. That is the
 honest thing a re-run establishes: the shipped engine, seed and knobs are the
-ones that produced the record, and they still get there.
+ones that produced the record, and they run.
+
+**Sometimes they miss, and the tier says so.** The 88 @ 5's own re-runs on
+2026-09-02 reproduced its descent to 89 gates five times faster than the archived
+run and then did not find the last gate inside 164 minutes, where the archive
+took 64. Nothing was adjusted to hide that: it is what a stochastic search does,
+and a tier that only ever reported its wins would not be worth running.
 
 **A row's command need not be the tool that historically found the circuit.**
 Where a faster honest route exists, it is the one offered, labelled as a
