@@ -321,6 +321,61 @@ too that the cheapest way to kill this branch is lead 6, not a search.
 
 ---
 
+## 12. Ship the two-second 91 @ depth 4
+
+**Requires the corpus.** This is the one entry here that is **packaging, not
+search**: winning it proves nothing new about MixColumns. It is on the list
+because it closes the only hole in [`REPRODUCE.md`](REPRODUCE.md) Tier R, that
+hole is in a *frontier* point, and the fix turns out to be the cheapest
+reproduction this project has of anything.
+
+**Open.** Two of the three frontier points can be reproduced from nothing with
+one command each — `reproduce/reproduce.py` for the 97 @ 3 (57 s),
+`reproduce/hunt_88at5.py` for the 88 @ 5 (archived 64 min). The 91 @ 4 cannot,
+and not for any scientific reason: neither the fleet that found it nor the
+generator that can construct it is published.
+
+**How to start — and do not package the search.** The obvious move is to archive
+the cascade worker that found the shipped circuit and aim a script at its root
+(`constructors.build("naive", 40426)`, chunk seed 40426, depth cap 4, `alt` mode,
+cascade handoff off; **54.4 min** of one core). That would work, and it is the
+wrong thing to ship, because a much faster route exists.
+
+The **exact ladder construction** emits an independent, oracle-verified
+91 @ depth 4 in **2 seconds** on one core from a cold solve cache — no search
+over circuits at all, and no circuit of any provenance as input. Measured
+2026-09-02; the emitted circuit shares 53 of 91 masks with the shipped one
+(Jaccard 0.411), so it is a second witness rather than a copy.
+
+Its provenance was tested, not assumed: an audit hook over every `open` shows
+**no record circuit is read**, and re-running it in a copied tree with the one
+record-derived table (the F1 currency menus) **replaced by garbage** emits a
+**byte-identical** gate list — the menus are loaded at import and never consulted
+on this path.
+
+So the packaging job is: lift the ladder path out of the generator, keep its
+theory-generated price spectrum, drop the inert menu import, and ship it.
+
+**Cost.** No compute — the run is two seconds. The work is a dozen modules to
+lift and one contract decision to make: the tool needs `numpy` and a SAT solver,
+and `reproduce/` currently promises dependency-free stdlib Python. Either the
+promise gets a stated exception for this one command, or the ladder path gets a
+stdlib solver for its eight 8-dimensional sector instances. The tool's own open
+audit findings should be closed in the same pass.
+
+**What it does not settle.** Nothing about MixColumns — this buys reproducibility,
+not knowledge. Note also what it is *not*: a blind search finding 91 by luck. It
+is a construction whose *model class* prices out at exactly 91 — which is a
+statement about that class, **not** a lower bound on MixColumns, and not a claim
+that 90 @ 4 is impossible. 90 @ 4 remains undecided; see lead 7. A
+blind cap-4 descent to 91 was measured at **3.9 core-hours** in a different lane,
+and 9 of 9 restarts from this project's own 92 @ 4 ended at 92 — so do not offer
+the pipeline's existing `--mode cascade --stop-gates 92 --stop-depth 4`
+retargeted at 91. It reaches 92, and its stop test latches shut once the cascade
+drops below 91 gates at any depth.
+
+---
+
 ## Two things this page will not say
 
 **That the unsearched region is empty.** It is unsearched *and* unpopulated,

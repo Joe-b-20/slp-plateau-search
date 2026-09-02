@@ -987,9 +987,10 @@ def main(run=None):
     print("=" * 72)
     print("Every out_<method>.json is independently checkable:")
     print("  python3 ../verify_circuit.py out_97.json 3")
-    print("The 92@depth4, 89@depth5 and 88@depth7 records reproduce with the")
-    print("pipeline, not this file -- see README.md for the commands and what")
-    print("each of them measured.")
+    print("The other reproducible records are not in this file: the 88@depth5")
+    print("and 88@depth6 (from scratch) are hunt_88at5.py, the 88@depth7 is")
+    print("hunt_88.py, and the 92@depth4 and 89@depth5 are pipeline runs -- see")
+    print("README.md for the commands and what each of them measured.")
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ Every claim this project makes, each in exactly one row:
 | any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
 | any depth-3 circuit needs ≥ 81 gates | **proved** — `bounds/` |
 | cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
-| the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits**, reproducible from scratch — `reproduce/` |
+| the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — and the 97 @ 3 and the 88 @ 5 are re-searchable from scratch, one command each, no seed circuit: `reproduce/`. The 91 @ 4 has no command here yet; it can be *constructed* from GF(2⁸) in two seconds by a generator not yet published, measured and priced in `reproduce/` |
 | no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT, independently confirmed by two solver engines, with a positive control; an 87 with *different* structure is not excluded |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct known 88s, 0 realisable |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
@@ -137,8 +137,11 @@ Tiered — **A** seconds (the oracle, the tripwire, the three bound checkers, th
 corpus certificates over the shipped sample), **B** minutes (the SAT ladder at
 k = 9/10/11 with its positive control and DRAT emission, the `≥ 56`
 exhaustion, the validation suite), **R** the records themselves —
-[`reproduce/`](reproduce/) rebuilds them from scratch, one command per record
-with its measured time — and **C** banked and documented rather than re-run,
+[`reproduce/`](reproduce/) rebuilds them from scratch — one command per record
+with its measured time, for six of the nine verified circuits, using the fastest
+honest method rather than necessarily the one that historically found it; the
+other three say plainly why they have none — and **C** banked and documented
+rather than re-run,
 each with its cost and its artifact. [`INVENTORY.md`](INVENTORY.md) lists
 what exists beyond this repo — corpora, certificates, instances, logs — with
 exact counts, sizes, and hashes; samples ship here, and the pieces genuinely

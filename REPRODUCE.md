@@ -4,16 +4,21 @@ Every claim in the [evidence ladder](README.md#the-evidence-ladder), with the
 command that checks it, the line of output that means it passed, and what it
 cost. Nothing below is illustrative: every command was typed from the root of
 this repository and every time is a real measurement, either from the
-reproduction pack the command lives in or from this repository's own assembly
-run on 2026-09-01.
+reproduction pack the command lives in, from this repository's own assembly
+run on 2026-09-01, or — for Tier R — from the re-runs of 2026-09-02.
 
-**Three tiers.**
+**Four tiers.**
 
 | tier | budget | what it is |
 |---|---|---|
 | **[A](#tier-a--seconds)** | seconds | the oracle, the tripwire, the three bound checkers, the corpus certificates over the shipped sample. Python 3 standard library only. **Start here.** |
 | **[B](#tier-b--minutes)** | minutes | the SAT ladder at k = 9, 10, 11 with its positive control and DRAT emission; the Python-vs-C agreement control; the self-contained `>= 56` exhaustion; the bound-machinery validation suite. Needs a C compiler and, for the SAT rows, `python-sat`. |
+| **[R](#tier-r--the-records-rebuilt)** | a minute to hours | **the records, rebuilt** — not verified from a file, *produced again from nothing*, by the fastest honest method the project has for each. Six of the nine verified circuits have a command; three do not, and the table says why for each. Python 3 standard library only. |
 | **[C](#tier-c--documented-not-re-run)** | hours to core-weeks | banked. k = 12/13/14, the `>= 81` solver run, the full-corpus deletion run, the prune-free exhaustion, the radius sweeps. Each row names its cost, its artifact, and why re-running it here would add nothing. |
+
+Tier A's record row checks that the shipped circuits *are* what they claim.
+Tier R is the different and larger claim: that the machinery which produces them
+runs, on one core, from GF(2⁸) and nothing else, and gets there again.
 
 **Environment for the measured times.** Linux, Python 3.12, one core,
 `nice -n 19`, on a 20-core machine carrying an unrelated load throughout. Wall
@@ -441,6 +446,66 @@ This one runs in the **records repository**, not here.
 
 ---
 
+## Tier R — the records, rebuilt
+
+The asset this project has that a circuit file does not carry: **the machinery
+that produces the records**, packaged so it can be run again from nothing. Each
+row offers the *fastest honest* route to its circuit — which is usually, but not
+always, the tool that historically found it; where it differs, the row says so.
+Every command below is stdlib-only Python 3 and verifies
+its own output against MixColumns rebuilt from GF(2⁸) before it reports
+anything. The four `reproduce/` commands each run on **one core**; the two
+`pipeline/` rows are coordinators that launch worker processes — two for the
+89 @ 5, one per depth rung for the 92 @ 4 cascade. All of them are documented in
+[`reproduce/`](reproduce/), whose README
+carries the full method notes, the provenance argument for each, and the times
+from every earlier re-run.
+
+One row per verified circuit. Where there is no command the row says so and
+prices the archived run instead — **no row here is illustrative and no command
+here is aspirational**.
+
+| circuit | command | cost |
+|---|---|---|
+| **97 @ 3** — *frontier*, from scratch | `cd reproduce && python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, measured 2026-09-02 (RNG seed 6, its first seed, both times); 81 s on 2026-07-27; 60–156 s across earlier runs |
+| **91 @ 4** — *frontier*, from scratch | **none here yet.** The cascade fleet that found it is a separate codebase, published in neither repository — but the fastest route is not that search: an exact **construction** in the project's unpublished tree emits an independent 91 @ 4 from GF(2⁸) alone. `reproduce/README.md` gives the command, the provenance tests and the packaging blocker | **2 s** measured 2026-09-02, one core, cold cache — the fastest reproduction of any record here. The historical search cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
+| **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Re-run 2026-09-02 — see `reproduce/README.md` |
+| **88 @ 6**, from scratch | `cd reproduce && python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root `naive#2163`. Same script and same archived worker as the row above; not re-measured on 2026-09-02 |
+| **88 @ 7**, matching the published count with an independent circuit | `cd reproduce && python3 hunt_88.py` | **19.4 min** measured 2026-07-27 under the shipped stop rule; archived 32.9 min |
+| **88 @ 5, derived** | **none, by choice** — its seed chain runs through published work, so it is reported as derived and not offered as a recipe | archive: `evidence/campaign87_run_2026-07-29_got_88at5_derived/`, with the code, the seed and the untouched logs |
+| **88 @ 8**, third family | **none, by choice** — same reason | archive: `evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/`; the seed also ships as `pipeline/seeds/seed_88_at_depth8_thirdfamily.json` |
+| **89 @ 5** — *superseded by the 88 @ 5, kept* | `cd pipeline && python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5` | **20 s** measured 2026-09-02 (verified at the coordinator's first status poll, t = 17.5 s); 19 s and 22 s on 2026-07-27; archived 592 s on the v1 engine |
+| **92 @ 4** — *superseded by the 91 @ 4, kept*, from scratch | `cd pipeline && python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4` | archived: **9 610 s (2.67 h)**. Not re-measured. Do **not** retarget it at 91 — it reaches 92, and its stop condition latches shut once the cascade goes below 91 gates at any depth |
+
+**What Tier R does not claim.** Every one of these is a stochastic search. The
+times are what a run took, not what a run will take; a re-run can be faster,
+much slower, or miss inside its budget. The two `hunt_*` scripts start from the
+record run's own root and RNG, so each reproduces its first chunk exactly — but
+chunk boundaries are wall-clock, so a machine of a different speed parts company
+with the archived trajectory from the second chunk on, and what comes back is
+another point in the same basin rather than the record circuit. That is the
+honest thing a re-run establishes: the shipped engine, seed and knobs are the
+ones that produced the record, and they still get there.
+
+**A row's command need not be the tool that historically found the circuit.**
+Where a faster honest route exists, it is the one offered, labelled as a
+different method. "From scratch" means one thing throughout: **no record circuit
+and no record-derived data as input — targets from GF(2⁸) and FIPS-197 only.**
+
+**Two of the three frontier points reproduce from nothing with a command in this
+repository** — the 97 @ 3 computes its targets from GF(2⁸); the 88 @ 5's root is
+a randomized XOR tree that is a pure function of the integer 1958. The 91 @ 4 is
+the gap, and it is a packaging gap rather than a scientific one: it can be
+*constructed* from GF(2⁸) in two seconds by a generator this project has and has
+not published. That the route clears the from-scratch bar was tested rather than
+assumed — an audit hook shows no record circuit is opened, and replacing the one
+record-derived table it loads with garbage leaves the emitted circuit
+byte-identical. What blocks publication is the tool's `numpy` and SAT-solver
+dependencies against this folder's stdlib-only contract, not its provenance. It
+is filed in [`leads.md`](leads.md).
+
+---
+
 ## Tier C — documented, not re-run
 
 Every row here was paid for once. Each names what it cost, where the evidence
@@ -584,7 +649,7 @@ Every row of the README's evidence ladder, and where it is checked:
 | any circuit needs >= 56 | **A** (certificate) + **B9** (exhaustion, 166 s) + **C6** (prune-free, cited) |
 | any depth-3 circuit needs >= 81 | **A** (certified 80 + three controls) + **C4** (the step to 81, a solver run) |
 | cancellation-free >= 92, best known 102 | **A** (both derivations, the witness, the negative control) |
-| the records 97/91/88 | **A** (oracle + depth tightness) + **B11** (all 13, adversarial suite) |
+| the records 97/91/88 | **A** (oracle + depth tightness) + **B11** (all 13, adversarial suite) + **[R](#tier-r--the-records-rebuilt)** (produced again from nothing, by the fastest honest method for each: 6 of 9 circuits have a command, 3 do not and say why) |
 | no 87 shares the block structure of the known 88s | **B1–B7** (k = 9,10,11 + positive control + DRAT) + **C1–C3** (k = 12,13,14) |
 | no 87 one deletion away from any known 88 | **A** (controls, sample, banked re-derivation) + **B8** (Python/C agreement) + **C5** (the full run) |
 | no 87 within <= 4 gates of a known 88 | **C7** — and read the calibration caveat with it |
