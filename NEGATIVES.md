@@ -68,7 +68,7 @@ in this file was checked to exist at build time.
 | 22 | Nine named lower-bound proof families are provably incapable of reaching 88 for this matrix, each with an exact computed ceiling: 46.2, 51, 26, 36-40,... | `theorem` | Each ceiling is proved for its own family; together they cover every unconditional technique tried here. |
 | 23 | The linear-programming certificate family that produced the 56 bound cannot be pushed past 91.41 for this matrix; its optimum is 91.409884, below both... | `theorem` | The certificate LP family, exactly. |
 | 24 | This project audited its own negative results and found most of them near information-free about the question they were run to answer. | `searched` | The audit covers the local-search negatives above: bounded-radius irreducibility, the move-class walls, the or... |
-
+| 25 | An 88-gate circuit you already have cannot be made shallower by rescheduling it. The wiring of an 88 is forced by its mask set, and every circuit ship... | `exhaustive` | Exhaustive and exact where it counts. (i) The ASAP least-fixpoint schedule - the shallowest schedule ANY circu... |
 ## The rows in full
 
 ### 1. lb-56
@@ -438,3 +438,23 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 **Artifact.** `fleet7/laneCONSOLIDATE/STATE_OF_THE_PROBLEM.md`, `wrapup/CORRECTIONS.md`, `wrapup/CASE_FOR_88.md`
 
 **What it does NOT imply.** It does not withdraw the computations - they ran, and their counts are correct. It withdraws the INFERENCE. Specific casualties: a structural backbone picture that turned out to be falsified; a rigidity headline that reported 1 escape where two sweeps find 99; a file count published as a population size where 135 files held 21 distinct circuits; a corpus called exhaustive that is 14% complete; and a list of published negatives whose controls never fired. Anyone mining this repository for 'X was ruled out' must read that list first.
+
+### 25. depth-not-reschedulable
+
+**Claim.** An 88-gate circuit you already have cannot be made shallower by rescheduling it. The wiring of an 88 is forced by its mask set, and every circuit shipped here already sits at the shallowest depth its own mask set admits - so depth is a property of the value set, not of the build order. Size-preserving moves that DO change the value set did not get there either: no transposed 88 ever came out shallower than its seed, and the 88 at depth 6's entire depth-<=6 plateau component contains no depth-5 circuit.
+
+**Strength.** **exhaustive** - every case in a stated finite population was decided
+
+**Scope.** Exhaustive and exact where it counts. (i) The ASAP least-fixpoint schedule - the shallowest schedule ANY circuit on a given mask set admits - computed for all 9 shipped circuits: measured depth equals ASAP depth in 9 of 9. (ii) The 88 at depth 6's depth-<=6 equal-size plateau component under remove-1 plus every valid single-mask repair, enumerated to closure: 5,427 states, frontier 0, all at depth 6, zero at depth 5. (iii) The wiring-forcedness measurement behind (i): 1,320/1,320 sampled gate slots had exactly one legal parent pair, census forced fraction 0.9986. The transposition result is a SEARCH, not exhaustive: 400 double-transposition round-trips from each of the 88s at depths 6, 7 and 8, reaching 727 distinct 88s, none shallower than its seed.
+
+**Cost.** About one second for the ASAP check over all 9 circuits, stdlib only. 251 s on one nice -19 core for the 5,427-state plateau closure; a few minutes for the 1,200 transposition round-trips.
+
+**Reproduce.**
+
+```
+python3 corpus/depth_forced/asap_depth.py
+```
+
+**Artifact.** `corpus/depth_forced/DEPTH_FORCED.md`, `corpus/depth_forced/asap_depth.py`, `wrapup/day2/conversion_check.md`, `wrapup/day2/STEWARD.md`
+
+**What it does NOT imply.** It says NOTHING about whether more depth-5 pockets exist to be found directly - almost certainly they do. 92 of the 28,796 corpus 88s carrying a build order are already at depth 5 (0.32%), and only two of those pockets have been enumerated to closure (27 and 135 states). This row does not bound how many depth-5 88s there are, does not claim the known pockets are the only ones, and says nothing about whether a depth-4 88 exists. It rules out exactly one shortcut: taking an 88 you already have and rescheduling, transposing or depth-preservingly walking it to a lower depth. Finding a shallow 88 by searching for one directly is untouched by this row - it is how both depth-5 records were actually made.

@@ -454,16 +454,18 @@ row offers the *fastest honest* route to its circuit — which is usually, but n
 always, the tool that historically found it; where it differs, the row says so.
 Every command below is stdlib-only Python 3 and verifies
 its own output against MixColumns rebuilt from GF(2⁸) before it reports
-anything. The four `reproduce/` commands each run on **one core**; the two
+anything. The five `reproduce/` commands each run on **one core**; the two
 `pipeline/` rows are coordinators that launch worker processes — two for the
 89 @ 5, one per depth rung for the 92 @ 4 cascade. All of them are documented in
 [`reproduce/`](reproduce/), whose README
 carries the full method notes, the provenance argument for each, and the times
 from every earlier re-run.
 
-One row per verified circuit. Where there is no command the row says so and
-prices the archived run instead — **no row here is illustrative and no command
-here is aspirational**.
+One row per verified circuit, plus one row for a *route* rather than a circuit —
+the cheapest way to reach 88 gates from nothing, whose output was superseded and
+never archived. Where there is no command the row says so and prices the
+archived run instead — **no row here is illustrative and no command here is
+aspirational**.
 
 | circuit | command | cost |
 |---|---|---|
@@ -471,6 +473,7 @@ here is aspirational**.
 | **91 @ 4** — *frontier*, from scratch | **none here yet.** The cascade fleet that found it is a separate codebase, published in neither repository — but the fastest route is not that search: an exact **construction** in the project's unpublished tree emits an independent 91 @ 4 from GF(2⁸) alone. `reproduce/README.md` gives the command, the provenance tests and the packaging blocker | **2 s** measured 2026-09-02, one core, cold cache — the fastest reproduction of any record here. The historical search cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
 | **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** against the archived 3 072 s, and **did not reach 88 within 164 min** — the last gate is a single lucky walk chunk. Read the archived 64 min as one sample, not a promise; `reproduce/README.md` has both runs in full |
 | **88 @ 6**, from scratch | `cd reproduce && python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root `naive#2163`. Same script and same archived worker as the row above; not re-measured on 2026-09-02 |
+| **an 88 at any depth, from scratch** — the cheapest route to 88 gates from nothing; a *route*, not a shipped circuit | `cd reproduce && python3 hunt_88at5.py --rng 2050 --target-depth 0` | archived: **9.7 min** of one core from its root `naive#2050` (142 gates @ depth 3) to a verified **88 @ depth 8** — the fastest descent to 88 anywhere in the producing worker's log, and 3.8× faster than the 88 @ 6's root. **One measured run of a stochastic search**, and the only one: not re-measured on 2026-09-02. The circuit it produced was superseded within the same run and never archived, so what this row reproduces is the claim *an 88 from scratch*, not an artifact you can diff. Same script and archived worker as the two rows above, a different root integer |
 | **88 @ 7**, matching the published count with an independent circuit | `cd reproduce && python3 hunt_88.py` | **19.4 min** measured 2026-07-27 under the shipped stop rule; archived 32.9 min |
 | **88 @ 5, derived** | **none, by choice** — its seed chain runs through published work, so it is reported as derived and not offered as a recipe | archive: `evidence/campaign87_run_2026-07-29_got_88at5_derived/`, with the code, the seed and the untouched logs |
 | **88 @ 8**, third family | **none, by choice** — same reason | archive: `evidence/campaign87_run_2026-07-27_got_88at8_thirdfamily/`; the seed also ships as `pipeline/seeds/seed_88_at_depth8_thirdfamily.json` |

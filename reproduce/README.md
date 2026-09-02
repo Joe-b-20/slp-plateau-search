@@ -2,7 +2,10 @@
 
 Everything here is dependency-free Python 3 (stdlib only). **Six of the nine
 verified circuits have a reproduction command** — four run from this folder, two
-are pipeline runs — and the table below carries all six. Three have none: the
+are pipeline runs — and the table below carries all six, plus one row for a
+*route* rather than a circuit: the cheapest way to reach 88 gates from nothing
+([9.7 min](#the-cheapest-88-from-nothing)), whose output was superseded and
+never archived. Three circuits have none: the
 **91 @ depth 4**, for which two from-scratch routes exist and neither is
 published yet — one of them a **2-second** construction
 ([why](#the-91--depth-4--no-command-here-and-what-produced-it-instead)) — and the
@@ -31,6 +34,7 @@ and labelled — a measurement, never a promise.
 | **91 @ depth 4** — *frontier* | *none here yet* — but a **2-second** from-scratch construction exists outside this repository, and it is the fastest reproduction of any record this project has: [see below](#a-91--depth-4-in-two-seconds) | **2 s** measured 2026-09-02, cold cache, one core, by exact construction (not the historical finder). The search that actually found the shipped circuit cost 54.4 min of one core, inside a ~74 process-hour run |
 | **88 @ depth 5, from scratch** — *frontier* | `python3 hunt_88at5.py` | archived: **64 min** of one core from its root. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** (archived: 3 072 s) but **did not reach 88 in 164 min** — the last gate is one lucky walk chunk. Stochastic; see [The from-scratch 88 @ depth 5](#the-from-scratch-88--depth-5) |
 | **88 @ depth 6, from scratch** | `python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root. Not re-measured here — same script, same code, a different root integer |
+| **an 88 at any depth, from scratch** — the cheapest 88 from nothing | `python3 hunt_88at5.py --rng 2050 --target-depth 0` | archived: **9.7 min** of one core from its root to a verified **88 @ depth 8**. One run of a stochastic search, not re-measured here. Reproduces the *claim*, not a shipped circuit — see [The cheapest 88 from nothing](#the-cheapest-88-from-nothing) |
 | **88 @ depth 7**, from our ρ²-symmetric 94 | `python3 hunt_88.py` | **19.4 min** with the shipped stop rule, re-validated 2026-07-27 (a second re-run reached 88 gates at 31.0 min but stopped at depth 8 under an earlier gate-count-only rule); the archived run took 32.9 min. Stochastic — see [The 88 @ depth 7](#the-88--depth-7) |
 | **89 @ depth 5** *(superseded by the 88 @ depth 5, kept)*, from this project's 89@6 + 90@5 circuits | `cd ../pipeline && python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5` | **20 s** end to end, re-run 2026-09-02 (the worker verified 89 @ depth 5 inside its first chunk, at t = 17.5 s of the coordinator's first status poll); **19 s and 22 s** on 2026-07-27; the archived run took 592 s (~10 min), with the v1 engine (see below) |
 | **92 @ depth 4, from scratch** *(superseded by the 91 @ depth 4, kept)* | `cd ../pipeline && python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4` | hours: the archived run reached it at t = 9 610 s (2.67 h). Not re-measured here. **Do not retarget this command at 91** — [why](#the-91--depth-4--no-command-here-and-what-produced-it-instead) |
@@ -372,6 +376,61 @@ one, mask for mask. It is a re-derivation, not a discovery, it needs a SAT solve
 and a census file this repository does not carry, and packaging it would publish
 a recipe for re-emitting derived work. That is the same line this folder already
 declines to cross for the 88 @ 8.
+
+## The cheapest 88 from nothing
+
+```
+python3 hunt_88at5.py --rng 2050 --target-depth 0
+```
+
+If the question is *"how cheaply can this project reach 88 gates from nothing?"*
+— not at any particular depth, just 88 — the answer is **9.7 minutes of one
+core**, and it is the same script with a different root integer.
+
+The producing worker's log holds 58 restarts across five sessions. **Four of
+them reached 88 gates.** Differencing each restart's opening line against its
+first verified ≤ 88 gives the real price of each, and all four roots re-derive
+exactly from their integer:
+
+| root | root size | to the first 88 | first 88 | best in that restart | command |
+|---|---|---:|---|---|---|
+| **`naive#2050`** | 142 g @ d3 | **9.7 min** | 88 @ 8 | 88 @ 8 | `--rng 2050 --target-depth 0` |
+| `naive#2163` | 139 g @ d3 | 37.1 min | 88 @ 7 | **88 @ 6** | `--rng 2163 --target-depth 6` |
+| `naive#427` | 145 g @ d3 | 46.1 min | 88 @ 10 | 88 @ 8 | `--rng 427 --target-depth 0` |
+| `naive#1958` | 146 g @ d3 | 64.1 min | 88 @ 6 | **88 @ 5** | *(the default)* |
+
+`naive#2050`'s restart opens at `t = 62 769.0 s` and reports
+`NEW BEST 88 gates depth 8 VERIFIED` at `t = 63 353.7 s` — **584.7 s**. Quote
+the **root integer**, not the restart number: restart numbers repeat across the
+log's sessions, but each of these four root integers appears exactly once in the
+whole file, so `naive#2050` names the descent unambiguously. The log is
+`../evidence/campaign87_run_2026-07-30_got_88at5_fromscratch/runs_hunt/c_naive.log`.
+
+**What this row is not.** It is **one measured run of a stochastic search**, and
+unlike the 97 @ 3 and the 89 @ 5 it has not been re-run here — the 9.7 minutes
+is an archived sample, not a re-validated time, and it is quoted with the same
+caveat every other number on this page carries. The 88 it produced was
+superseded inside the same run and **never archived as a circuit file**, so what
+the command reproduces is the *claim* "an 88 from scratch", not an artifact you
+can diff against a shipped file. What comes back is a verified 88 of that
+descent's own basin.
+
+**And it is a re-run of a known winning restart, not the price of a blind
+draw.** Those are very different numbers. The fleet's own accounting, which is
+not published here, prices this constructor at **~8.6 CPU-hours per 88**, with
+only **~3.5 %** of from-scratch descents reaching 88 at all. Four of 58 logged
+restarts is the same story from the shipped side. Pick a root integer that is
+not one of these four and the honest expectation is hours, or nothing.
+
+**Depth 8 is where it stops, and it cannot be converted.** A natural next
+thought is to take this cheap 88 and reschedule it down to the record's depth 5.
+That does not work, and the repository carries the measurement rather than the
+assertion: the wiring of an 88 is forced by its mask set, and every shipped
+circuit already sits at the shallowest depth its own mask set admits — so there
+is nothing to reschedule. See
+[`../corpus/depth_forced/`](../corpus/depth_forced/DEPTH_FORCED.md), which
+re-checks all nine circuits in 0.02 s. For an 88 **at depth 5** the route is the
+default `hunt_88at5.py` above, and it costs what it costs.
 
 ## 89 @ depth 5 — seconds, not minutes, with the v2 engine
 

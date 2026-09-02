@@ -1,6 +1,6 @@
 # Corpus-scale results — reproduction pack
 
-Six self-contained sections. Each has a `RUN.md` carrying the exact command to
+Seven self-contained sections. Each has a `RUN.md` carrying the exact command to
 run from that directory, the real pasted output, the time it took when it was
 last re-run, and — where the full-scale version does not fit in a coffee break —
 the historical cost of the full run and its banked result.
@@ -19,6 +19,7 @@ circuit uses **88** gates. The refereed bracket is `56 ≤ L(M) ≤ 88`.
 | [`vocabulary/`](vocabulary/RUN.md) | the 1,778-value corpus mask vocabulary, and a verified 89-gate circuit that speaks six words outside it | 0.15 s |
 | [`calibration/`](calibration/CALIBRATION.md) | what a from-scratch clean-room search reaches (93), and the audit that prices the project's own negatives at LR ≈ 1.00 | 0.05 s |
 | [`records_check/`](records_check/RUN.md) | verify every record circuit against a from-first-principles MixColumns implementation | 21 s |
+| [`depth_forced/`](depth_forced/DEPTH_FORCED.md) | depth is a property of the **value set**: every shipped circuit already sits at the shallowest depth its own mask set admits, so no 88 can be rescheduled shallower | 0.02 s |
 
 ## Suggested order
 
@@ -34,6 +35,9 @@ circuit uses **88** gates. The refereed bracket is `56 ≤ L(M) ≤ 88`.
    corpus* and not to *the problem*.
 6. **`calibration/`** — how hard the problem is from cold, and which of this
    project's negatives its own audit has already discounted.
+7. **`depth_forced/`** — 0.02 s, and it closes a shortcut most readers will
+   think of: no, you cannot take a cheap 88 and reschedule it down to the record
+   depth.
 
 ## Requirements
 

@@ -10,7 +10,7 @@ count next to it.
 |---|---:|---:|---|
 | lower-bound certificates + checkers (`bounds/`) | 38 files | 788 KB | the matrix is `bounds/matrix.txt`, sha256 `9c337107cba5b0b434fc580ccb1d0323ac51ce17a5fe99da91b97aa8fbc7b620` |
 | SAT encodings, instances, controls, proofs (`encodings/`) | 82 files | 28 MB | `encodings/SHA256SUMS`, 41 entries, `sha256sum -c` |
-| corpus-scale results and samples (`corpus/`) | 54 files | 1.7 MB | per-section `RUN.md` + `SAMPLE.sha256` |
+| corpus-scale results and samples (`corpus/`) | 56 files | 1.7 MB | per-section `RUN.md` + `SAMPLE.sha256` |
 | record and working circuits (`evidence/`) | 598 files | 4.7 MB | `evidence/circuits/spectrum.json` |
 | search pipeline and reproduction harness | 20 files | 248 KB | — |
 | instruments (`tools/tripwire.py`, `scripts/overlap.py`) | 2 files | 40 KB | standard library, Python 3.6+ |
@@ -22,7 +22,7 @@ Named data files a reader may want to pin:
 db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus/sample/corpus88_sample.jsonl   640,943 B
 3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus/sample/corpus88_sample.bin     183,040 B
 169a1ee5283d1462265b6341099af24646155c3699cf43bbcd1dc36f29144a1b  corpus/vocabulary/vocab.json          18,937 B
-81d4e35743288fc668e2a17a16e7e73e80aec1b66302d7493fb84fe488a9dada  negatives.jsonl                       24 rows
+69639f9be8864aa9142ff49775881dbaa33ac8119cb68bf2e9296a9164161e0a  negatives.jsonl                       25 rows
 ```
 
 The six SAT ladder CNFs (k = 9…14) ship in full — 19 MB, 2.0 to 4.3 MB each —
