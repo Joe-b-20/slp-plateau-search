@@ -7,7 +7,7 @@ measured, and the exact command. One screen; the HOW docs carry the detail.
 | method | what it does | where | how it works |
 |---|---|---|---|
 | search engine | finds smaller or shallower circuits: destroy-and-rebuild, plateau walk, depth-3 annealer, run as parallel workers under one coordinator | [`pipeline/`](pipeline/) | [`pipeline/HOW.md`](pipeline/HOW.md) |
-| record reproductions | one command per record: the depth-3 annealer from nothing, and harnesses that re-run one archived worker from its exact root | [`reproduce/`](reproduce/) | [`reproduce/HOW.md`](reproduce/HOW.md) |
+| record reproductions | one command per record: the depth-3 annealer from nothing, an exact construction for the 91 @ depth 4, and harnesses that re-run one archived worker from its exact root | [`reproduce/`](reproduce/) | [`reproduce/HOW.md`](reproduce/HOW.md) |
 | `>= 56` lower bound | counts gates from three independent sources, with one term decided by an exhaustive depth-limited search over extra masks | [`bounds/gte56/`](bounds/gte56/) | [`bounds/gte56/HOW.md`](bounds/gte56/HOW.md) |
 | depth-3 lower bound | turns the forced shape of a depth-3 circuit into a linear program and proves a bound from one exact rational dual vector | [`bounds/depth3_gte81/`](bounds/depth3_gte81/) | [`bounds/depth3_gte81/HOW.md`](bounds/depth3_gte81/HOW.md) |
 | cancellation-free bound | prices each target's cheapest gate hierarchy under a per-gate budget; solver-free to check | [`bounds/cf_gte92/`](bounds/cf_gte92/) | [`bounds/cf_gte92/HOW.md`](bounds/cf_gte92/HOW.md) |

@@ -1,19 +1,23 @@
 # How the reproductions work
 
 `README.md` next to this file is the manifest: one command per record, what each
-one measured, and which records honestly have no command here. This file
+one measured, and which records have no command here. This file
 explains the *mechanisms* behind those commands — enough to modify them rather
 than only run them.
 
-Three pieces of code live here, and they are different kinds of thing:
+Four pieces of code live here, and they are different kinds of thing:
 
 | file | what it is | searches here? |
 |---|---|---|
 | `reproduce.py` | a self-contained annealer for depth-3 circuits, plus three small demonstrations of the reduction moves on superseded circuits | yes, all of it |
+| `construct_91at4.py` | an exact construction for the 91 @ depth 4: it prices the ladder model, solves its eight sector blocks exactly under a depth cap, and assembles | no — it searches over no circuits at all |
 | `hunt_88at5.py` | a harness that re-runs one archived search worker from the exact integer root that produced the from-scratch 88 | no — it launches the archived worker |
 | `hunt_88.py` | a harness that aims one `../pipeline/worker.py` process at one seed circuit | no — it launches the pipeline worker |
 
-All three are stdlib-only Python 3, single-core, and check their own output with
+`construct_91at4.py` is the one script here that is not stdlib-only: it needs
+`numpy` and `python-sat` for the exact block solves, and its `construct91/`
+subfolder holds the generator modules it vendors. The other three are
+stdlib-only Python 3. All four are single-core and check their own output with
 `mixcolumns_core.verify()` (a byte-identical copy of the pipeline's) before
 reporting anything. Every output file is re-checkable afterwards with the
 standalone oracle `../verify_circuit.py`, which shares no code with any of them.
@@ -217,6 +221,22 @@ gate count alone hands back an 88 at depth 8–11.
 archived run took 32.9 min. A single worker is a fair re-run of the archived
 worker — every improvement on it came out of its own chunks — but it does not
 reproduce the other nine workers' share of the luck.
+
+## 3b. `construct_91at4.py` — the 91 @ depth 4, constructed
+
+No search. The ladder model reads the 32 MixColumns targets off GF(2⁸) and the
+trace-dual basis, splits them into eight sector blocks, and prices one
+configuration — eight currency shapes and three diagonal menus, a literal in the
+driver — at 91 gates. Each block is then handed to an exact minimum-gate solver
+**with the depth cap as a constraint**, so a block that cannot meet the cap
+fails loudly rather than emitting a deeper circuit; the eight solves come back
+at 7 gates each and take about a second in total from an empty cache. The
+resulting value set is scheduled at its minimum depth, dead gates are stripped,
+and the emitted file is checked twice — in process against targets rebuilt from
+the field, then by `../verify_circuit.py` as a subprocess.
+
+The model's optimum is exactly 91. That is a statement about that model class,
+not a lower bound: nothing here says a 90 @ depth 4 is impossible.
 
 ## 4. Checking any of it independently
 
