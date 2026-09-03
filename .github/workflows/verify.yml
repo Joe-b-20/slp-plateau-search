@@ -104,11 +104,12 @@ jobs:
           (cd bounds && sha256sum -c matrix.sha256)
       # No tracked file may carry an absolute path from the machine that
       # produced it.  164 evidence files did; they were normalized 2026-09-03.
+      # (this file is excluded because the guard's own pattern lives in it)
       - name: No absolute local paths in tracked files
         run: |
-          if git grep -nI '/home/' -- . ; then
-            echo "ERROR: a tracked file carries an absolute /home/ path"; exit 1
+          if git grep -nI -e /home/ -- . ':(exclude).github/workflows/verify.yml' ; then
+            echo "ERROR: a tracked file carries an absolute local path"; exit 1
           fi
-          echo "ok: no absolute /home/ paths in tracked files"
+          echo "ok: no absolute local paths in tracked files"
       - name: Compile check
         run: python -m compileall -q reproduce pipeline verify_circuit.py
