@@ -13,12 +13,15 @@ run on 2026-09-01, or — for Tier R — from the re-runs of 2026-09-02.
 |---|---|---|
 | **[A](#tier-a--seconds)** | seconds | the oracle, the tripwire, the three bound checkers, the corpus certificates over the shipped sample. Python 3 standard library only. **Start here.** |
 | **[B](#tier-b--minutes)** | minutes | the SAT ladder at k = 9, 10, 11 with its positive control and DRAT emission; the Python-vs-C agreement control; the self-contained `>= 56` exhaustion; the bound-machinery validation suite. Needs a C compiler and, for the SAT rows, `python-sat`. |
-| **[R](#tier-r--the-records-rebuilt)** | a minute to hours | **the records, rebuilt** — not verified from a file, *produced again from nothing*, by the fastest honest method the project has for each. Six of the nine verified circuits have a command; three do not, and the table says why for each. Python 3 standard library only. |
+| **[R](#tier-r--the-records-rebuilt)** | a minute to hours | **the records, rebuilt** — not verified from a file, but *produced again* by the fastest honest method the project has for each. Six of the nine verified circuits have a command; three do not, and the table says why for each. **"From nothing" is a per-row property, not a property of the tier**: the 97 @ 3, the 88 @ 5, the 88 @ 6 and the 88-at-any-depth rows start from an integer seed and read no circuit; the 89 @ 5 and 92 @ 4 rows start from a shipped seed circuit and reproduce a *depth reduction*. Each row says which it is. Python 3 standard library only. |
 | **[C](#tier-c--documented-not-re-run)** | hours to core-weeks | banked. k = 12/13/14, the `>= 81` solver run, the full-corpus deletion run, the prune-free exhaustion, the radius sweeps. Each row names its cost, its artifact, and why re-running it here would add nothing. |
 
 Tier A's record row checks that the shipped circuits *are* what they claim.
 Tier R is the different and larger claim: that the machinery which produces them
-runs, on one core, from GF(2⁸) and nothing else, and gets there again.
+runs, on one core, and gets there again. Read each Tier R row's starting point
+before quoting it — four rows start from an integer and nothing else, two start
+from a shipped seed circuit, and the difference is exactly what "from scratch"
+does and does not mean here.
 
 **Environment for the measured times.** Linux, Python 3.12, one core,
 `nice -n 19`, on a 20-core machine carrying an unrelated load throughout. Wall
@@ -30,6 +33,15 @@ command twice, both numbers are given.
 **Nothing here needs the network.** No downloads, no solver service, no
 account. `python-sat` (Tier B, SAT rows only) and a C compiler (Tier B) are the
 only things that are not already in a stock Python 3.
+
+**One repository, with one exception.** Everything in Tiers A, B, R and C runs
+inside *this* repository — all nine verified circuits ship here under
+`evidence/circuits/`. The companion repository
+[`aes-mixcolumns-xor-circuits`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)
+is where the circuits are *published* (with their own metadata and prior-art
+audit); the only row on this page that needs it is **[B11](#tier-b--minutes)**,
+its `verify_all.py`, and that row says so. You do not need it to check anything
+else here, and you do not need the network to check anything here.
 
 ---
 
@@ -160,6 +172,7 @@ mandatory:
 | expected | `RESULT: *** A GATE CAN BE DELETED. ***`, `gate 20 and gate 21 both compute 0x02020002`, **exit 1** |
 | measured | **0.1 s** |
 | note | in this control `B` reads its *expected* 57 and the tripwire fires anyway, on the duplicate check. `B != n - q => a deletable gate` is sound; **its converse is false**, and this is the demonstration. |
+| note | `make_planted.py` **writes into the tracked directory** `corpus/tripwire_demo/circuits/` (`planted_dup.json`, `planted_dead.json`). It is deterministic, so it rewrites those two files byte-identically and leaves `git status` clean — but it is the one command in Tier A that writes inside the repository, so run it knowing that. Pass a different output directory as its second argument to avoid it entirely. |
 
 `tools/tripwire.py` and `corpus/tripwire_demo/tripwire.py` are the same file,
 byte for byte. Run either on your own circuit.
@@ -230,6 +243,7 @@ The sample the certificate ran over, re-checked from nothing but this pack:
 | control | `cd corpus/vocabulary && python3 tools/oov_check.py vocab.json ../tripwire_demo/circuits/mixcolumns_88gates_depth5.json` |
 | expected | `IN  the vocabulary  : 56` / `OUT of the vocabulary: 0` / `VERDICT: entirely inside the corpus vocabulary.` |
 | measured | **0.05 s** |
+| **exit code, read this before scripting** | `oov_check.py` exits **0 when it finds an out-of-vocabulary mask** and **1 when it finds none** — the exit code reports *the finding*, not success. So the row above exits 0 and this passing control exits **1**. Script it on the printed `VERDICT:` line, not on `$?`. |
 | historical | the re-census the vocabulary came from: 1,925,065 rows, 107,803,640 gate slots (banked in `recensus_stats.json`) |
 
 ### Ladder row 10 — *a from-scratch attempt reaches 93* (**measurement**)
@@ -267,8 +281,8 @@ somebody could have edited proves nothing.
 | | |
 |---|---|
 | command | `cd encodings && for k in 9 10 11 12 13 14; do python3 code/check_cnf.py cnf/k${k}_joint_W3U4.cnf --k $k --json results/identity_k${k}.json; done` |
-| expected | six lines `IDENTICAL … roundtrip=True digests=True` |
-| measured | **3.6 s** for all six |
+| expected | six JSON reports, each containing `"VERDICT": "IDENTICAL"`, `"roundtrip_identical": true`, `"digests_match": true`. **`check_cnf.py` prints JSON, not a summary line** — the one-line-per-level rendering `IDENTICAL … roundtrip=True digests=True` is what `run_all.sh` step 1 formats from those JSON files. Either form is the same fact; check the JSON if you ran the command above. |
+| measured | **3.6 s** for all six (3.45 s on an independent 2026-09-03 run) |
 
 `roundtrip=True` means the file, parsed back, is literal-for-literal and in
 order the clause list a fresh `build_cnf(...)` produces.
@@ -279,8 +293,8 @@ that a program for the instance exists at all.
 | | |
 |---|---|
 | command | `cd encodings && python3 code/instance_facts.py` |
-| expected | `"lower_bound_L2": 9`, `"greedy_upper_bound": 16`, `"greedy_verify_slp": true` |
-| measured | **1.2 s** |
+| expected | JSON on stdout containing `"lower_bound_L2": 9`, `"greedy_upper_bound": 16`, `"greedy_verify_slp": true` |
+| measured | **1.2 s** (4.4 s on an independent 2026-09-03 run on a loaded box) |
 
 **B3. The three cheap levels, re-solved from the shipped files.**
 
@@ -322,8 +336,8 @@ optimum is 7.
 | measured | **1.19 s** |
 | | |
 | command | `cd encodings && python3 code/decode_model.py positive_control/k7_SUB_U4tgts.model --k 7 --instance positive_control/instance_SUB_U4tgts.json --no-pin` |
-| expected | `model_check: 9330/9330 vars assigned, 102115 clauses checked, 0 unsatisfied` / `verify_slp: ok` / `VERDICT: VALID 7-gate program for the block` |
-| measured | seconds |
+| expected | JSON containing `"model_check": {"vars_assigned": 9330, "vars_total": 9330, "clauses_checked": 102115, "unsatisfied": 0}`, `"verify_slp": "ok"`, `"VERDICT": "VALID 7-gate program for the block"`. **As with B1, `decode_model.py` prints JSON**; the sentence form `model_check: 9330/9330 vars assigned, 102115 clauses checked, 0 unsatisfied` is `run_all.sh`'s rendering of exactly those fields. |
+| measured | **0.18 s** |
 | | |
 | cross-check | the decoded gates are **gate-for-gate identical** to `positive_control/expected_witness.json`, banked from a completely different route (a 528-way split on gate 0's input pair, hit at cube 144) |
 | | |
@@ -349,7 +363,7 @@ refutation is a certificate a checker replays without trusting the solver.
 |---|---|
 | command | `cd encodings && sh run_proofs.sh` |
 | expected | four proofs emitted and validated: `WELL-FORMED DRAT … ends in empty clause=True` for k = 6, 9, 10, 11 |
-| measured | **0.98 + 1.45 + 15.96 + 110.39 s ≈ 129 s** of proof logging (roughly 1.5× the plain solve) |
+| measured | **376.8 s end to end** for the whole script. Of that, **0.98 + 1.45 + 15.96 + 110.39 s ≈ 129 s** is the proof *logging* (roughly 1.5× the plain solve); the remaining ≈ 248 s is the `xz -9` pass the script also runs over ~1 GB of emitted DRAT. Earlier editions of this row and the script's own header priced only the logging half — corrected 2026-09-03 against a measured end-to-end run. |
 
 Three of the four `.drat.xz` files ship (k = 6, 9, 10). **k = 11's does not** —
 40 MB compressed, larger than the rest of this repository put together, and
@@ -371,9 +385,9 @@ drat-trim cnf/k9_joint_W3U4.cnf proofs/k9_joint_W3U4.drat     # expect: s VERIFI
 | | |
 |---|---|
 | command | `cd encodings && sha256sum -c SHA256SUMS` |
-| expected | 41 lines of `OK`, no failures |
+| expected | **44 lines of `OK`, no failures.** The manifest is regenerated by `sh code/make_checksums.sh` and CI now re-runs `sha256sum -c` on every push, so it cannot silently drift from the pack again. (It did once: three prose files were edited after the manifest was last generated, and this row read `41` while the command printed three `FAILED`. Fixed 2026-09-03.) |
 | measured | **under a second** |
-| note | `SHA256SUMS` deliberately excludes `results/` and the files `run_all.sh` derives, which a reader who re-runs the pack will overwrite. It is regenerated by `sh code/make_checksums.sh`. |
+| note | `SHA256SUMS` deliberately excludes `results/` and the files `run_all.sh` derives, which a reader who re-runs the pack will overwrite. One of those is `positive_control/k6_SUB_U4tgts.cnf`, which [B4](#b4)'s negative leg uses: it is *regenerated* by `run_all.sh` step 6 from the pinned instance, so it is excluded on purpose rather than missed. It is regenerated by `sh code/make_checksums.sh`, and CI re-runs `sha256sum -c` so the manifest cannot drift again. |
 
 Everything above except the DRAT step is what `sh run_all.sh` does in one go.
 It never starts k = 12, 13 or 14.
@@ -470,7 +484,7 @@ aspirational**.
 | circuit | command | cost |
 |---|---|---|
 | **97 @ 3** — *frontier*, from scratch | `cd reproduce && python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, measured 2026-09-02 (RNG seed 6, its first seed, both times); 81 s on 2026-07-27; 60–156 s across earlier runs |
-| **91 @ 4** — *frontier*, from scratch | **none here yet.** The cascade fleet that found it is a separate codebase, published in neither repository — but the fastest route is not that search: an exact **construction** in the project's unpublished tree emits an independent 91 @ 4 from GF(2⁸) alone. `reproduce/README.md` gives the command, the provenance tests and the packaging blocker | **2 s** measured 2026-09-02, one core, cold cache — the fastest reproduction of any record here. The historical search cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
+| **91 @ 4** — *frontier*, from scratch | **none here yet.** The multi-process cascade search that found it is a separate codebase, published in neither repository — but the fastest route is not that search: an exact **construction** in the project's unpublished tree emits an independent 91 @ 4 from GF(2⁸) alone. `reproduce/README.md` gives the command, the provenance tests and the packaging blocker | **2 s** measured 2026-09-02, one core, cold cache — the fastest reproduction of any record here. The historical search cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
 | **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** against the archived 3 072 s, and **did not reach 88 within 164 min** — the last gate is a single lucky walk chunk. Read the archived 64 min as one sample, not a promise; `reproduce/README.md` has both runs in full |
 | **88 @ 6**, from scratch | `cd reproduce && python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root `naive#2163`. Same script and same archived worker as the row above; not re-measured on 2026-09-02 |
 | **an 88 at any depth, from scratch** — the cheapest route to 88 gates from nothing; a *route*, not a shipped circuit | `cd reproduce && python3 hunt_88at5.py --rng 2050 --target-depth 0` | archived: **9.7 min** of one core from its root `naive#2050` (142 gates @ depth 3) to a verified **88 @ depth 8** — the fastest descent to 88 anywhere in the producing worker's log, and 3.8× faster than the 88 @ 6's root. **One measured run of a stochastic search**, and the only one: not re-measured on 2026-09-02. The circuit it produced was superseded within the same run and never archived, so what this row reproduces is the claim *an 88 from scratch*, not an artifact you can diff. Same script and archived worker as the two rows above, a different root integer |
@@ -527,7 +541,7 @@ sits, and why re-running it inside a session would add nothing.
 |---|---|---|---|---|
 | **k = 12** | UNSAT | **5,761.73 core-s** (1 core, encoding A); **5,202.15 s** on 8 cores (encoding B) | `encodings/logs/BANKED_LOGS.md` §L2, §L3; CNF `encodings/cnf/k12_joint_W3U4.cnf`, identity-checked in [B1](#tier-b--minutes) | ~1.6 core-hours, twice over; the CNF ships and anyone with the budget can repeat it |
 | **k = 13** | UNSAT | **105,083.40 s on 8 cores ≈ 233.5 core-hours** (encoding B) | `encodings/logs/BANKED_LOGS.md` §L3; CNF ships | 233 core-hours |
-| **k = 14** | UNSAT | **356,321.63 core-s ≈ 99.0 core-hours**, one process, kissat 4.0.4 (encoding A) | `encodings/logs/BANKED_LOGS.md` §L1; CNF `encodings/cnf/k14_joint_W3U4.cnf` ships | 99 core-hours. **This is the decisive level** and it was decided by a single complete solver running the whole formula — not by a partial cube sweep. |
+| **k = 14** | UNSAT | **356,321.63 core-s ≈ 99.0 core-hours**, one process, kissat 4.0.4 (encoding A); independently confirmed by CaDiCaL 3.0.0 on the same file, **468,159.51 core-s ≈ 130 core-hours** | the two terminal lines ship verbatim: `encodings/logs/mono_14_kissat404.log`, `encodings/logs/mono_14_cadical300.log`; narrated in `encodings/logs/BANKED_LOGS.md` §L1; CNF `encodings/cnf/k14_joint_W3U4.cnf` ships | 229 core-hours between the two. **This is the decisive level**, and each verdict came from a complete solver running the whole formula in one process — not from a partial cube sweep. **Two engines, one encoding**: that rules out an engine bug, not an encoding bug, and there is no DRAT proof at this level. |
 
 k = 13 and k = 14 together are over 330 core-hours. **None of the three carries
 a DRAT proof**, so the decisive level of this theorem rests on complete solvers
@@ -546,7 +560,7 @@ would mean an 87-gate MixColumns circuit exists in that block class.
 | what | HiGHS branch-and-cut on the full depth-3 model, 72,830 rows × 29,180 columns |
 | cost | **60,391.94 s ≈ 16.8 h**, single-threaded, `nice -n 19` |
 | artifact | `bounds/depth3_gte81/mip3_result_L1.json`, `bounds/depth3_gte81/mip3_L1_run.log` — both shipped and readable |
-| result | `Status: Time limit reached`, `Dual bound 49`, gap **66.99 %** → `N_depth3 >= 81` |
+| result | `Status: Time limit reached`, `Dual bound 49`, `Gap 66.89%` → `N_depth3 >= 81`. (The branch-and-cut progress rows in the same log print `66.99%` against the last displayed bound 48.85; **66.89 % is the terminal gap**, and it is what `mip3_result_L1.json` records as `mip_gap: 0.668918918918919`.) |
 | to repeat | `cd bounds && python3 depth3_gte81/mip3.py` (needs `highspy`; expect hours; set your own limit) |
 | why not re-run | **it never closed.** The run hit its own time limit with two thirds of the gap open, so re-running it inside a session was not possible and would not have added information. The 81 is HiGHS's *dual* bound, which is valid at any point in branch-and-cut — that part is sound — but the primal 148 is an incumbent, not an optimum, and must never be quoted as one. |
 

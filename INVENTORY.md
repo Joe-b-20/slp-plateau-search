@@ -1,19 +1,32 @@
 # INVENTORY
 
 What exists, how big it is, and how to get the parts that are too large to
-host. Nothing here is offered as "available on request" without a size and a
-count next to it.
+host. Nothing here is offered as "available on request" without **either** a
+measured size **or** a measured count next to it. Six rows of the request table
+carry one and not the other; each says so in words rather than leaving a blank,
+because the missing half was never separately measured and inventing it would
+be worse than admitting it.
 
 ## What ships in this repository
 
+Counts and sizes below are **content bytes of tracked files**, generated from
+`git ls-files` on 2026-09-03. Every tracked file is in exactly one row and the
+rows sum to the total, so nothing is unaccounted for. (On-disk usage is larger:
+block allocation rounds every small file up.)
+
 | class | count | size | identity |
 |---|---:|---:|---|
-| lower-bound certificates + checkers (`bounds/`) | 38 files | 788 KB | the matrix is `bounds/matrix.txt`, sha256 `9c337107cba5b0b434fc580ccb1d0323ac51ce17a5fe99da91b97aa8fbc7b620` |
-| SAT encodings, instances, controls, proofs (`encodings/`) | 82 files | 28 MB | `encodings/SHA256SUMS`, 41 entries, `sha256sum -c` |
-| corpus-scale results and samples (`corpus/`) | 56 files | 1.7 MB | per-section `RUN.md` + `SAMPLE.sha256` |
-| record and working circuits (`evidence/`) | 598 files | 4.7 MB | `evidence/circuits/spectrum.json` |
-| search pipeline and reproduction harness | 20 files | 248 KB | — |
-| instruments (`tools/tripwire.py`, `scripts/overlap.py`) | 2 files | 40 KB | standard library, Python 3.6+ |
+| lower-bound certificates + checkers (`bounds/`) | 42 files | 715 KB | the matrix is `bounds/matrix.txt`, sha256 `9c337107cba5b0b434fc580ccb1d0323ac51ce17a5fe99da91b97aa8fbc7b620`, pinned by `bounds/matrix.sha256` |
+| SAT encodings, instances, controls, proofs (`encodings/`) | 85 files | 27.3 MB | `encodings/SHA256SUMS`, **44 entries**, `sha256sum -c` — re-run by CI |
+| corpus-scale results and samples (`corpus/`) | 59 files | 1.5 MB | per-section `RUN.md` + `corpus/sample/SAMPLE.sha256` |
+| record and working circuits (`evidence/`) | 598 files | 2.8 MB | `evidence/circuits/spectrum.json` |
+| search pipeline and reproduction harness (`pipeline/`, `reproduce/`) | 23 files | 256 KB | provenance per seed file in `pipeline/seeds/README.md` |
+| instruments (`tools/`, `scripts/`) | 4 files | 34 KB | standard library, Python 3.6+; 2 programs + their 2 HOW docs |
+| figures and their generators (`docs/`) | 4 files | 44 KB | both SVGs regenerate byte-identically from the two scripts beside them |
+| unit tests (`tests/`) | 1 file | 23 KB | 35 tests; run by CI |
+| CI workflow (`.github/`) | 1 file | 6 KB | `verify.yml` |
+| root documents (README, REPRODUCE, NEGATIVES, DEFINITIONS, INVENTORY, METHODS_INDEX, leads, negatives.jsonl, LICENSE, CITATION.cff, verify_circuit.py, .gitignore) | 12 files | 170 KB | `negatives.jsonl` sha256 below |
+| **total tracked** | **829 files** | **32.8 MB** | |
 
 Named data files a reader may want to pin:
 
@@ -22,7 +35,7 @@ Named data files a reader may want to pin:
 db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus/sample/corpus88_sample.jsonl   640,943 B
 3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus/sample/corpus88_sample.bin     183,040 B
 169a1ee5283d1462265b6341099af24646155c3699cf43bbcd1dc36f29144a1b  corpus/vocabulary/vocab.json          18,937 B
-69639f9be8864aa9142ff49775881dbaa33ac8119cb68bf2e9296a9164161e0a  negatives.jsonl                       25 rows
+a6171f30c1b02fe98dc30cd142e2b4d57566a135a1844d5e6911dbf63334b833  negatives.jsonl                       25 rows (7 shipped, 18 not)
 ```
 
 The six SAT ladder CNFs (k = 9…14) ship in full — 19 MB, 2.0 to 4.3 MB each —
@@ -49,10 +62,19 @@ stratum, no RNG, no seed) and every result in
 `SAMPLE.sha256` pins the full index it was drawn from, so the draw is
 auditable by anyone who obtains that index.
 
-Two further counts, kept deliberately distinct because they count different
-things: **1,575,516** mask sets were collected and pass set-level checks;
-**28,796** of them carry complete build recipes and were put through the full
-structural test. Neither number is the other.
+**Three counts, kept deliberately distinct because they count different
+things.** Quoting any of them as another is the single easiest mistake to make
+about this corpus:
+
+| number | what it counts | which checks it supports |
+|---:|---|---|
+| **1,575,516** | distinct 88-gate **value sets** (mask sets), canonicalised — the corpus index above | set-level checks only: mask distinctness and the 32 targets, and the 88,228,896-deletion certificate, both of which need nothing but the value set |
+| **28,796** | of those, the ones carrying a **complete build recipe** (a gate-by-gate build order) | everything the value sets support, **plus** every structural test that needs the wiring — including `B`, which cannot be computed from a value set at all |
+| **17,283** | **circuit files on disk** at the census, the file-level population the tripwire was swept over (the count `leads.md` #1 quotes) | the complete tripwire screen, file by file |
+
+No one of these is another, and none of them is a count of *circuits proved
+distinct as circuits* — 1,575,516 counts value sets, and many circuits can
+share one.
 
 ## The re-census the vocabulary came from
 
@@ -77,17 +99,17 @@ individual files and filtered extracts are easy to send, whole classes are not.
 |---|---:|---:|
 | oracle-checkable exported circuit records | **1,549,319** (1,530,095 of them 88-gate, including 167 at depth 5) | 1.8 GB of manifests |
 | the same, as individual circuit files | 1,251,130 files | 1.1 GB apparent, 6.7 GB on disk |
-| distinct gauge orbits over the known 88 population | **33,010** | — |
+| distinct gauge orbits over the known 88 population | **33,010** | *size not separately measured* (orbit representatives, held inside the larger ledger archives below) |
 | search-engine telemetry (each row a bit-exact replay tuple) | 127 archives | **31.4 GB** |
 | population harvest, compressed ~150:1, nothing pruned | 1,083 segments | 337 MB (≈50 GB raw) |
 | population harvest dumps, uncompressed | 130 files | 13.71 GB |
 | ledgers, labels, worklists, window banks | 566 files | 3.48 GB |
-| CNF dumps from the search campaign | — | 5.53 GB |
-| packed state pools (`.bin`) | — | 1.51 GB |
-| regenerable solver instance files | — | 967 MB |
+| CNF dumps from the search campaign | *not separately counted* | **5.53 GB** |
+| packed state pools (`.bin`) | *not separately counted* | **1.51 GB** |
+| regenerable solver instance files | *not separately counted*; regenerable from the shipped encoder, so the count is not the useful number | **967 MB** |
 | raw run logs | **~9,793** files | **~3.8 GB** (3.4 GB of it one campaign's logs, ~1.7 GB byte-identical duplicate pairs) |
-| append-only result ledgers, several hash-chained | **161** | — |
-| write-ups: per-lane results, referee reports, a 244-row audit with 22 registered defects, a full paper draft, a 12-item retraction ledger | **774** | — |
+| append-only result ledgers, several hash-chained | **161** | *size not separately measured*; counted inside the 3.48 GB ledger row above |
+| write-ups: per-run results, review reports, a 244-row audit with 22 registered defects, a full paper draft, a 12-item retraction ledger | **774** | *size not separately measured*; Markdown, a few MB in total |
 
 Certificate classes behind the rows of `NEGATIVES.md`, held in the same place:
 ≈**165 million** exact window decisions (zero timeouts, zero reducible);

@@ -13,7 +13,7 @@ circuit uses **88** gates. The refereed bracket is `56 ≤ L(M) ≤ 88`.
 
 | section | what it is | re-runs in |
 |---|---|---|
-| [`deletion_certificate/`](deletion_certificate/RUN.md) | **the headline result.** 88,228,896 single-gate deletions over all 1,575,516 distinct verified 88s — 0 realisable | < 1 s (controls + sample), 15 s (Python agreement) |
+| [`deletion_certificate/`](deletion_certificate/RUN.md) | **the headline result.** 88,228,896 single-gate deletions over all 1,575,516 distinct verified 88-gate **value sets** — 0 realisable | < 1 s (controls + sample), 15 s (Python agreement) |
 | [`sample/`](sample/RUN.md) | a documented 520-set sample of the corpus, drawn across every lineage, all five published 88s included | 0.04 s |
 | [`tripwire_demo/`](tripwire_demo/RUN.md) | the `B = 56` instrument: point it at a stranger's circuit, learn in seconds whether a gate is deletable | < 1 s |
 | [`vocabulary/`](vocabulary/RUN.md) | the 1,778-value corpus mask vocabulary, and a verified 89-gate circuit that speaks six words outside it | 0.15 s |
@@ -52,7 +52,7 @@ C tool. No SAT solver, no network, nothing to install.
 ## Two things this pack will not claim
 
 **It does not claim 88 is optimal.** The deletion certificate is exhaustive over
-1,575,516 known 88s. It says nothing about 87-gate circuits unrelated to any of
+1,575,516 known 88-gate value sets. It says nothing about 87-gate circuits unrelated to any of
 them, and `deletion_certificate/CERT.md` §7 states that scope explicitly.
 
 **It does not offer neighbourhood emptiness as evidence of optimality.** The
