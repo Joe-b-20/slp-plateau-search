@@ -14,19 +14,42 @@ end-to-start around one solver call in one process on one core.
 
 ## L1 — k = 14, the decisive level (verdict UNSAT)
 
-Source: the monolithic solver portfolio's kissat-4.0.4 member, one process, one
-core, on the same formula as `cnf/k14_joint_W3U4.cnf`.
+Source: the monolithic solver portfolio, one process and one core per solver, on
+the same formula as `cnf/k14_joint_W3U4.cnf`.
+
+**The two terminal lines ship in this directory, verbatim:**
+`mono_14_kissat404.log` and `mono_14_cadical300.log`. They are the raw
+append-only terminal records, copied byte-for-byte from the campaign's log
+directory — no edit at all, including the internal run label `"lane": "CUBE"`
+(the campaign's name for the monolithic-solver route; it carries no
+mathematical content and is kept only so the shipped files are byte-identical
+to the originals). The trailing `MONO TERMINAL LINE` marker is the writer's
+end-of-run sentinel.
 
 ```json
-{"kind": "mono_level", "k": 14, "status": "UNSAT", "core_seconds": 356321.63, "cores": 1, "solver": "kissat404"}
+{"kind": "mono_level", "lane": "CUBE", "k": 14, "status": "UNSAT", "core_seconds": 356321.63, "cores": 1, "solver": "kissat404"}
+{"kind": "mono_level", "lane": "CUBE", "k": 14, "status": "UNSAT", "core_seconds": 468159.51, "cores": 1, "solver": "cadical300"}
 ```
 
-356 321.63 core-seconds ≈ **99.0 core-hours**. Decided 2026-09-01.
+kissat 4.0.4: 356 321.63 core-seconds ≈ **99.0 core-hours**. Decided 2026-09-01.
+CaDiCaL 3.0.0: 468 159.51 core-seconds ≈ **130.0 core-hours**. Landed
+2026-09-01, independently, on the same hash-pinned instance.
 
-Three further complete solvers (CaDiCaL 1.9.5, CaDiCaL 3.0.0, Glucose 4.2) were
-still running the identical formula when this pack was assembled; each is an
-independent engine-level confirmation if and when it lands, and none is needed
-for the verdict — one complete solver returning UNSAT decides the level.
+Two independent complete solver engines therefore returned UNSAT on the same
+formula. Only one is needed for the verdict — one complete solver returning
+UNSAT decides the level — so the second is redundancy against an engine bug,
+not against an encoding bug: **both solved the same CNF, so a wrong encoding
+would still be UNSAT for free.** What is still open is a cross-*encoding*
+reproduction at k = 14 (levels 9–13 have one; see §L3) and a DRAT refutation at
+k = 14 (none exists; the pack ships refutations only for k = 9 and k = 10, plus the k = 6 control).
+
+*History of this entry.* When the pack was first assembled this section read:
+“Three further complete solvers (CaDiCaL 1.9.5, CaDiCaL 3.0.0, Glucose 4.2)
+were still running the identical formula … each is an independent engine-level
+confirmation **if and when it lands**.” One of the three landed — CaDiCaL 3.0.0,
+2026-09-01, the line above. CaDiCaL 1.9.5 and Glucose 4.2 were still running
+when the campaign ended and are recorded here as never having landed. Section
+updated 2026-09-03.
 
 ## L2 — k = 11 and k = 12, monolithic
 

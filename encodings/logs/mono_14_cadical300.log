@@ -1,0 +1,2 @@
+{"kind": "mono_level", "lane": "CUBE", "k": 14, "status": "UNSAT", "core_seconds": 468159.51, "cores": 1, "solver": "cadical300"}
+MONO TERMINAL LINE

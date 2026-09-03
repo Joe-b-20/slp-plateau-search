@@ -142,6 +142,9 @@ of the four is faster than fetching the file:
 sh run_proofs.sh        # emit all four, validate each, compress
 ```
 
+Budget **≈ 377 s end to end** on one core: ≈ 129 s of proof logging, and the
+rest is `xz -9` over the ~1 GB of DRAT it just wrote.
+
 DRAT output is not bit-reproducible across solver versions or builds — a
 different CaDiCaL will emit a different, equally valid refutation. Reproduce the
 *verdict* and the `s VERIFIED`, not the digest.

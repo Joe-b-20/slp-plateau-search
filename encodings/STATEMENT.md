@@ -140,7 +140,7 @@ programme. Times are wall-clock seconds on the stated number of cores.
 | 11 | **UNSAT** | 218.45 s | 785.29 s | **119.49 s** ✔ |
 | 12 | **UNSAT** | 5 761.73 s | 5 202.15 s | not re-run (≈ 1.6 h) |
 | 13 | **UNSAT** | — | 105 083.40 s ≈ **233.5 core-hours** | not re-run (≈ 29 h × 8) |
-| 14 | **UNSAT** | **356 321.63 s ≈ 99.0 core-hours** (kissat 4.0.4); independently confirmed by CaDiCaL 3.0.0, 468 159.51 s ≈ 130 core-hours, same hash-pinned instance | — | not re-run (≈ 4 days) |
+| 14 | **UNSAT** | **356 321.63 s ≈ 99.0 core-hours** (kissat 4.0.4); independently confirmed by CaDiCaL 3.0.0, 468 159.51 s ≈ 130 core-hours, same hash-pinned instance — both terminal lines ship as `logs/mono_14_kissat404.log` and `logs/mono_14_cadical300.log` | — | not re-run (≈ 4 days) |
 
 The three cheap levels were re-solved for this pack, **from the shipped DIMACS
 files**, with an off-the-shelf solver and no access to the programme's own
@@ -154,6 +154,20 @@ whole formula in one process — not by a partial cube sweep. A separate cube
 sweep on the same level had reached 90 of 528 cubes, all UNSAT, and was reported
 as UNDECIDED throughout; it is consistent with the verdict and contributes
 nothing to it.
+
+**Provenance of the k = 14 confirmation, precisely.** Two files in `logs/` are
+the whole artifact: `mono_14_kissat404.log` (148 B) and
+`mono_14_cadical300.log` (149 B), copied byte-for-byte from the campaign's
+append-only log directory with no edit whatever — including the internal run
+label `"lane": "CUBE"`, which names the monolithic-solver route and carries no
+mathematical content, and the writer's `MONO TERMINAL LINE` end-of-run
+sentinel. kissat 4.0.4 decided the level on 2026-09-01; CaDiCaL 3.0.0 landed
+its own UNSAT on the *same hash-pinned CNF* later the same day. Read that for
+exactly what it is: **two independent solver engines, one encoding.** It rules
+out a bug in one engine. It does not rule out a bug in the encoding — both
+solved the identical file, and a wrong encoding is UNSAT for free. There is no
+DRAT refutation at k = 14. A third engine, or a reproduction under encoding B
+(which currently reaches only k = 13), remains open; it is `leads.md` #2.
 
 **Growth, for anyone pricing a follow-up.** Level to level the cost multiplies
 by roughly 20–26×. That is why the ladder stops here: k = 15 is not a
@@ -196,12 +210,17 @@ Two solvers agreeing is still two solvers being trusted. A **DRAT proof** remove
 that trust: an independent checker replays the refutation against the CNF and
 needs to know nothing about the solver that wrote it.
 
-This pack ships DRAT refutations for every level it can afford to prove —
-**k = 9, k = 10, k = 11**, and the control's negative leg **k = 6** — in
-`proofs/`, each with its sha256. All four were emitted from the shipped DIMACS
-files (under four minutes of one core in total) and structurally validated:
-every line parses, no variable falls outside the CNF, and each file ends in the
-empty clause.
+This pack ships DRAT refutations for **k = 9**, **k = 10**, and the control's
+negative leg **k = 6**, in `proofs/`, each with its sha256. **k = 11's
+refutation is not shipped** — 40 MB compressed, four times the rest of this
+repository — but it is cheaper to make than to fetch: regenerate it with
+`sh run_proofs.sh` (110 s of single-core proof logging from the same shipped
+CNF), and its digests are published in `proofs/README.md` alongside the three
+that ship. All four were emitted from the shipped DIMACS files (proof logging
+only, under four minutes of one core in total; `run_proofs.sh` end to end,
+including its `xz -9` pass, measures ≈ 377 s) and structurally validated: every
+line parses, no variable falls outside the CNF, and each file ends in the empty
+clause.
 
 **They were emitted here and not checked here** — no DRAT checker is installed
 on the machine that assembled the pack. Checking is one command
@@ -285,11 +304,12 @@ SHA256SUMS              sha256 over the shipped artifacts
 
 instance/               the instance, byte-for-byte, hash-pinned
 cnf/                    the ladder k = 9 … 14 as DIMACS, with variable maps
-proofs/                 DRAT refutations for k = 6, 9, 10, 11 — start at its README.md
+proofs/                 DRAT refutations for k = 6, 9, 10 (k = 11 regenerable) — start at its README.md
 positive_control/       the SAT control — start at its README.md
 code/                   encoder, solver runner, identity checker, decoder, oracle
 results/                every measurement made while assembling this pack
-logs/                   excerpts of the banked logs for the levels not re-run
+logs/                   banked logs for the levels not re-run, incl. the two
+                        verbatim k = 14 terminal lines (kissat 4.0.4, CaDiCaL 3.0.0)
 ```
 
 Read in that order. If you only read two things, read the theorem in §3 and the

@@ -5,8 +5,11 @@
 #   sh run_proofs.sh
 #
 # Separate from run_all.sh because it is heavier: proof logging roughly doubles
-# solve time and the four proofs total about 1 GB uncompressed.  Budget under
-# four minutes of one core and 1 GB of free disk.
+# solve time and the four proofs total about 1 GB uncompressed.  Budget about
+# SEVEN minutes of one core and 1 GB of free disk: ~129 s is the proof logging
+# itself, and the rest is the `xz -9` pass over that 1 GB.  Measured end to end
+# at 376.8 s.  (An earlier header said "under four minutes", which priced only
+# the logging half.)
 #
 # It does NOT check the proofs.  Checking is drat-trim's job and is one command
 # away -- see proofs/README.md.

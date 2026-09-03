@@ -30,8 +30,13 @@ The list is ranked by payoff over cost, not by importance.
 
 **Open.** Every circuit in this project's corpus came out of one family of
 search engines. The tripwire — the free check that turns any duplicated or
-unread gate into a smaller circuit — has been silent on all 17,283 local
-circuits it has seen. It has never been run on a circuit somebody else's search
+unread gate into a smaller circuit — has never fired. On any population: the
+**17,283** circuit files on disk at the census (the complete screen, file by
+file), the **28,796** circuits carrying a full build order (the complete screen
+including `B`), and the **1,575,516** distinct value sets in the corpus index
+(the value-set checks only — `B` is a property of the wiring and cannot be
+computed from a value set). Three populations, three different tests, all
+silent; `INVENTORY.md` keeps them apart. It has never been run on a circuit somebody else's search
 produced, apart from the one published 88 that is public.
 
 **Why it is worth doing.** A hit **is** an 87, immediately, by deleting one
@@ -65,22 +70,31 @@ gate count, so a silent tripwire on a collection of 88s is not evidence that no
 **Open.** The strongest structural result here is that a particular 16-bit
 sub-block of the known 88s cannot be built in 14 gates. `SAT` on the shipped
 instance means an 87-gate MixColumns circuit exists in that class; `UNSAT`
-means it does not. It has been decided once, by one solver, on one encoding.
-Nobody has reproduced it.
+means it does not. It was **decided by kissat 4.0.4 and independently confirmed
+by CaDiCaL 3.0.0 on the same hash-pinned instance** — two engines, both terminal
+lines shipped as `encodings/logs/mono_14_kissat404.log` and
+`encodings/logs/mono_14_cadical300.log`. That is engine-level redundancy and
+nothing more. **There is no DRAT proof at k = 14**, and both engines read the
+*same CNF*, so a **third engine or a cross-encoding reproduction remains open** —
+that is what this lead is.
 
-**Why it is worth doing.** A single unreproduced UNSAT is the most fragile kind
-of evidence there is: a wrong encoding is UNSAT for free. An independent
-decision either promotes this from "one solver said so" to a fact, or finds the
-bug.
+**Why it is worth doing.** Two engines on one file rules out an engine bug; it
+does not rule out an encoding bug, and a wrong encoding is UNSAT for free. The
+second encoding in this programme currently reaches only k = 13
+(`encodings/logs/BANKED_LOGS.md` §L3), so the decisive level has never been
+decided twice *independently of the encoding*. A cross-encoding decision either
+promotes this from "our formula says so" to a fact about the mathematics, or
+finds the bug. A DRAT refutation would settle it outright.
 
 **Cost.** The original solve took 356,321 core-seconds — about 99 core-hours —
-with kissat 4.0.4. A second encoding of the same question is priced at roughly
-ten times the cost of the size below it, which is hundreds of core-hours. This
-is expensive; it is listed high because the *artifact* is one 4.3 MB file and
-needs nothing else.
+with kissat 4.0.4; CaDiCaL 3.0.0's confirmation took 468,160 core-seconds ≈ 130
+core-hours. A third engine on the shipped file is priced in that range. A second
+*encoding* of the same question is priced at roughly ten times the cost of the
+size below it, which is hundreds of core-hours. This is expensive; it is listed
+high because the *artifact* is one 4.3 MB file and needs nothing else.
 
 ```
-<your-solver> experiments/sat_package/k14_joint_W3U4.cnf
+<your-solver> encodings/cnf/k14_joint_W3U4.cnf
 ```
 
 **What it does not settle.** Even a confirmed UNSAT is class-conditional: an 87

@@ -208,14 +208,17 @@ decomposition does not over-charge, and this route to an 87 is closed.
 | 11 | 16 730 | 195 823 | 218.5 s | UNSAT, 72.8 s |
 | 12 | 18 823 | 223 717 | 5 762 core-s | not re-run |
 | 13 | 21 020 | 253 580 | ≈ 233 core-hours | not re-run |
-| 14 | 23 323 | 285 480 | ≈ **99 core-hours** on one process, and independently confirmed by a second solver engine at ≈ 130 core-hours on the same hash-pinned file | not re-run |
+| 14 | 23 323 | 285 480 | ≈ **99 core-hours** on one process (kissat 4.0.4), independently confirmed by a second engine (CaDiCaL 3.0.0) at ≈ 130 core-hours on the same hash-pinned file; both terminal lines ship in `logs/` | not re-run |
 
 Cost grows 20–26× per level, which is why 14 is the end of the ladder rather
 than a waypoint. DRAT proofs ship for the control at `k = 6` and for `k = 9`
 and `k = 10` (the `k = 11` proof is 846 MB uncompressed and is regenerated in
 110 s rather than shipped). **`k = 12, 13, 14` carry no proof**, so the decisive
-level rests on complete solvers being correct — named as the honest boundary,
-and the most valuable thing anyone could add.
+level rests on complete solvers being correct — two of them, on one encoding.
+Two engines rule out an engine bug, not an encoding bug. A third engine, a
+cross-encoding reproduction (encoding B reaches only k = 13), or a DRAT
+refutation at k = 14 is named as the honest boundary, and the most valuable
+thing anyone could add.
 
 ## 10. Run it
 
