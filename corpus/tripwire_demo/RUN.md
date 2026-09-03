@@ -63,10 +63,16 @@ optional. Both are the published depth-6 record 88 with one gate added.
 ### Build them
 
 ```
-$ nice -n 19 python3 tools/make_planted.py circuits/mixcolumns_88gates_depth6.json circuits
+$ nice -n 19 python3 tools/make_planted.py circuits/mixcolumns_88gates_depth6.json
+outdir: /tmp/planted_xxxxxxxx
 planted_dup.json  : 89 gates (duplicate of gate 20, given a consumer)
 planted_dead.txt  : 89 gates (last one has no consumer)
 ```
+
+With no output directory named, the two controls go to a fresh temporary
+directory whose path is printed, and nothing inside the repository is written.
+The copies committed under `circuits/` are what the runs below use; naming
+`circuits` as a second argument regenerates them in place.
 
 ### Positive control 1 — a planted duplicate value
 

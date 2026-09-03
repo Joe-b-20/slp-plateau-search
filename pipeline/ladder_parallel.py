@@ -193,17 +193,31 @@ ANNEAL_KNOBS = dict(anneal_iters=150000, ils_rounds=2500, sa_T0=2.0, sa_T1=0.05)
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Optional stop bounds, set from the command line in main(). The coordinator
-# stops cleanly once a verified global best satisfies every given bound.
+# stops cleanly once ANY worker holds a verified best satisfying every bound.
+#
+# It tests every worker's best rather than only the Pareto-global one. The
+# global best is a single (gates, depth) pair chosen by `pareto_better`, which
+# prefers fewer gates at any depth, so a run that reaches, say, 90 gates at
+# depth 6 replaces a 91 at depth 4 in that slot; testing only the global best
+# then leaves `--stop-gates 91 --stop-depth 4` unsatisfiable for the rest of
+# the run even though a worker is holding exactly the circuit asked for.
 STOP_GATES = None
 STOP_DEPTH = None
 
 
-def target_reached(state):
-    if state["gb"] is None or (STOP_GATES is None and STOP_DEPTH is None):
-        return False
-    g, d = state["gb"]
+def _within_bounds(g, d):
     return (STOP_GATES is None or g <= STOP_GATES) and \
            (STOP_DEPTH is None or d <= STOP_DEPTH)
+
+
+def target_reached(state):
+    if STOP_GATES is None and STOP_DEPTH is None:
+        return False
+    for g, d in state.get("hits", ()):
+        if _within_bounds(g, d):
+            state["hit"] = (g, d)
+            return True
+    return False
 
 
 def pareto_better(g2, d2, g1, d1):
@@ -249,6 +263,7 @@ def do_reseed(meta, procs, out_dir, log, state):
     """Update best_overall.json and offer each live worker the best circuit that
     is feasible at its depth cap (and Pareto-beats its own best)."""
     bests = gather_bests(meta)
+    state["hits"] = [(g, d) for g, d, _ in bests.values()]
     if not bests:
         return
     gb_lbl = min(bests, key=lambda l: (bests[l][0], bests[l][1]))
@@ -346,14 +361,15 @@ def run_fixed():
         meta[lbl] = {"cap": w["depth"], "reseed": w.get("reseed", True),
                      "status_path": os.path.join(out_dir, "%s_status.json" % lbl),
                      "best_path": os.path.join(out_dir, "%s_best.json" % lbl)}
-    state = {"gb": None, "offer": {}}
+    state = {"gb": None, "offer": {}, "hits": []}
     try:
         while True:
             time.sleep(POLL_S)
             log("status: " + status_row(meta, procs))
             do_reseed(meta, procs, out_dir, log, state)
             if target_reached(state):
-                log("STOP TARGET reached: %d gates @ depth %d -> shutting down" % state["gb"])
+                log("STOP TARGET reached: %d gates @ depth %d -> shutting down"
+                    % state["hit"])
                 break
     except KeyboardInterrupt:
         log("Ctrl-C: stopping all workers")
@@ -380,14 +396,15 @@ def run_cascade():
                  "best_path": os.path.join(out_dir, "%s_best.json" % lbl)}
     started_at[lbl] = time.time(); baseline[lbl] = DEPTH3_BASELINE
     frontier_idx = 0; final_launched = False
-    state = {"gb": None, "offer": {}}
+    state = {"gb": None, "offer": {}, "hits": []}
     try:
         while True:
             time.sleep(POLL_S)
             log("status: " + status_row(meta, procs))
             do_reseed(meta, procs, out_dir, log, state)
             if target_reached(state):
-                log("STOP TARGET reached: %d gates @ depth %d -> shutting down" % state["gb"])
+                log("STOP TARGET reached: %d gates @ depth %d -> shutting down"
+                    % state["hit"])
                 break
             if final_launched:
                 continue

@@ -19,13 +19,21 @@ added; both are one gate larger than they need to be, by construction.
                      the plain-text `a b` input format rather than JSON, so the
                      demo also exercises the second reader.
 
-usage: make_planted.py <depth6_circuit.json> <outdir>
+usage: make_planted.py <depth6_circuit.json> [outdir]
+
+With no <outdir> the two controls are written to a fresh temporary directory,
+whose path is printed, so the script never writes inside the repository. The
+shipped copies in `circuits/` are what a run reproduces; regenerate them in
+place only on purpose, by naming `circuits` explicitly.
 """
 import json
 import os
 import sys
+import tempfile
 
-src, outdir = sys.argv[1], sys.argv[2]
+src = sys.argv[1]
+outdir = sys.argv[2] if len(sys.argv) > 2 else tempfile.mkdtemp(prefix="planted_")
+print("outdir: %s" % outdir)
 d = json.load(open(src))
 g = [list(x) for x in (d["gates"] if isinstance(d, dict) else d)]
 
