@@ -336,7 +336,7 @@ optimum is 7.
 | measured | **1.19 s** |
 | | |
 | command | `cd encodings && python3 code/decode_model.py positive_control/k7_SUB_U4tgts.model --k 7 --instance positive_control/instance_SUB_U4tgts.json --no-pin` |
-| expected | JSON containing `"model_check": {"vars_assigned": 9330, "vars_total": 9330, "clauses_checked": 102115, "unsatisfied": 0}`, `"verify_slp": "ok"`, `"VERDICT": "VALID 7-gate program for the block"`. **As with B1, `decode_model.py` prints JSON**; the sentence form `model_check: 9330/9330 vars assigned, 102115 clauses checked, 0 unsatisfied` is `run_all.sh`'s rendering of exactly those fields. |
+| expected | JSON containing `"model_check": {"vars_in_model": 9330, "nv": 9330, "unassigned_vars": 0, "clauses_checked": 102115, "unsatisfied_clause_indices": []}`, `"verify_slp": {"ok": true, "why": "ok", …}`, `"VERDICT": "VALID 7-gate program for the block"`. **As with B1, `decode_model.py` prints JSON**; the sentence form `model_check: 9330/9330 vars assigned, 102115 clauses checked, 0 unsatisfied` is `run_all.sh`'s rendering of exactly those fields. |
 | measured | **0.18 s** |
 | | |
 | cross-check | the decoded gates are **gate-for-gate identical** to `positive_control/expected_witness.json`, banked from a completely different route (a 528-way split on gate 0's input pair, hit at cube 144) |
