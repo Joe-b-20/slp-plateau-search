@@ -120,7 +120,9 @@ in the header comment of `mine.c` (and *only* there):
 | `-o` | a child skips a candidate smaller than the extra just chosen if that candidate was already addable in the parent | that branch is a reordering of one explored elsewhere; worth up to `d!` |
 
 `-s shard -n nshards` splits the *root* branches only, which is how the
-historical run was distributed across 114 shards.
+historical run was distributed across 114 shards. `-w` is a debugging aid: on a
+find it prints the witness extras alongside the verdict. It changes nothing
+about the search and no result here depends on it.
 
 The searcher is deliberately ignorant: it takes `k`, a comma-separated target
 list and a depth on the command line, prints one line to stdout, and knows

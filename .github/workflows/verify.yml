@@ -50,7 +50,13 @@ jobs:
         run: python -m unittest discover -s tests -v
       # REPRODUCE.md tier A, the parts that need nothing but the standard
       # library. Each command's expected output is quoted in REPRODUCE.md.
-      - name: Lower-bound certificates (>= 56, >= 80 at depth 3, >= 92 cancellation-free)
+      # The depth-3 pack is named depth3_gte81 but what CI checks -- and what
+      # a certificate can prove from a file -- is >= 80.  The step to >= 81 is
+      # a HiGHS dual bound from a 16.8 h run that hit its time limit at a
+      # 66.89 % gap: sound, documented in REPRODUCE.md C4, NOT re-checkable
+      # here.  README, bounds/README.md and bounds/depth3_gte81/STATEMENT.md
+      # all state the two parts separately.  Do not merge them.
+      - name: Lower-bound certificates (>= 56; >= 80 certified at depth 3; >= 92 cancellation-free)
         run: |
           set -e
           cd bounds
@@ -87,5 +93,22 @@ jobs:
           python3 scripts/overlap.py \
             evidence/circuits/mixcolumns_88gates_depth7.json \
             evidence/campaign87_imported_prior_art/jean_88gates_depth7_eprint_2026-1481.json | grep 'shared      61'
+      # BL-3 / S1: the pack's own advertised integrity check must pass in a
+      # clean checkout.  It drifted once because prose files were edited after
+      # code/make_checksums.sh last ran; running it here stops that recurring.
+      - name: Shipped manifests verify
+        run: |
+          set -e
+          (cd encodings && sha256sum -c SHA256SUMS)
+          (cd corpus/sample && sha256sum -c SAMPLE.sha256)
+          (cd bounds && sha256sum -c matrix.sha256)
+      # No tracked file may carry an absolute path from the machine that
+      # produced it.  164 evidence files did; they were normalized 2026-09-03.
+      - name: No absolute local paths in tracked files
+        run: |
+          if git grep -nI '/home/' -- . ; then
+            echo "ERROR: a tracked file carries an absolute /home/ path"; exit 1
+          fi
+          echo "ok: no absolute /home/ paths in tracked files"
       - name: Compile check
         run: python -m compileall -q reproduce pipeline verify_circuit.py

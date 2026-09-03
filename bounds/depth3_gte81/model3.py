@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Shared candidate-set construction for the COMPLETE depth-3 model.
 
-Re-derived independently of (but agreeing with) wave-5
-metareview/optimality/depth3_exact.py.
+Re-derived independently of, and agreeing with, this project's earlier,
+unpublished exact depth-3 model.  The two constructions were written from the
+structure theorem below without reference to each other and produce the same
+candidate sets; that agreement is the reason this file exists.
 
 Structure theorem (depth <= 3, minimal circuit):
   * every target has weight 5 or 7 > 4 = 2^2, so every target sits at level

@@ -130,7 +130,16 @@ Solving report
   Status            Time limit reached
   Dual bound        49
   Timing            60391.94 (total)
+  Gap               66.89%
 ```
+
+**Two gap figures appear in that log and both are real.** The branch-and-cut
+progress rows print `66.99%`, computed against the last *displayed* bound
+`48.85118809`; the solving report's own final `Gap` is **66.89 %**, computed
+against the reported dual bound `49` — `(148 − 49) / 148 = 66.89 %`, which is
+also the `mip_gap: 0.668918918918919` recorded in `mip3_result_L1.json`.
+**66.89 % is the run's terminal gap** and is the figure quoted everywhere in
+this repository.
 
 To reproduce it (needs `highspy`; expect hours, single-threaded, and set your
 own time limit):
@@ -142,11 +151,11 @@ python3 depth3_gte81/mip3.py
 | | |
 |---|---|
 | **measured wall time** | **not re-run.** The historical run took 60,391.94 s (≈16.8 h) and still hit its time limit, so re-running it inside a session was not possible and would not have added information. |
-| historical cost | 60,391.94 s of HiGHS time, single-threaded, `nice -n 19`, terminated by its own time limit with a 66.99 % gap remaining |
+| historical cost | 60,391.94 s of HiGHS time, single-threaded, `nice -n 19`, terminated by its own time limit with a **66.89 %** gap remaining |
 
 **Two things to read carefully in that run.**
 
-1. **It never closed.** Status is *Time limit reached*, gap 66.99 %. The `81` is
+1. **It never closed.** Status is *Time limit reached*, terminal gap 66.89 %. The `81` is
    HiGHS's **dual bound** (49), which is a valid lower bound at any point during
    branch-and-cut — that part is sound — but the run proves nothing more than 81
    and did not converge. The primal value 148 is just an incumbent, not the

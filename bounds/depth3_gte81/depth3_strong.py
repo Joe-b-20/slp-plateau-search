@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """STRENGTHENED complete depth-3 model for min-XOR AES MixColumns.
 
-Same complete model as wave-5 metareview/optimality/depth3_exact.py
-(N_depth3 = 32 + min |L1|+|L2| over the exhaustive candidate space), plus the
+Same complete model as this project's earlier, unpublished exact depth-3
+model (N_depth3 = 32 + min |L1|+|L2| over the exhaustive candidate space), plus the
 valid inequalities of cuts.py, each of which is a theorem about depth-3
 circuits and each of which is checked against the verified 97-gate depth-3
 circuit by control_cuts.py / control_lp.py.
