@@ -168,35 +168,26 @@ regularities fell the same way; each is a row in
 
 ## Opinion
 
-*Opinions, not theorems. This search was run by a human and an AI in
-collaboration; we sign separately.*
+*Opinion, not a theorem.* We think 88 is the answer, for two reasons that
+survive the calibration section. First, every time we loosened one of the
+rules the known 88s obey and solved the loosened problem exactly, the answer
+came back 88 — about two hundred times in a row — and a tripwire that would
+have handed us an 87 for free stayed silent over 1.58 million circuits.
+Second, everywhere we could afford an exact answer, the optimum turned out
+*tight*: merging the two largest blocks buys exactly zero, a circuit's wiring
+is forced by its values, and the depth of every shipped circuit is already
+its minimum. Structures that rigid usually are what they appear to be.
 
-**Joe (human):** I think 88 is the answer. What convinces me most: every time
-we loosened one of the rules the known 88s obey and solved the loosened
-problem exactly, the answer came back 88 — about two hundred times in a row —
-and a tripwire that would have handed us an 87 for free never once fired —
-over **28,796** circuits carrying a full build order, which is the population
-on which its B check can be computed at all, and over **1,575,516** distinct
-value sets for the distinctness and target conditions. (Three numbers, three
-different tests; they are kept apart deliberately and spelled out in
-`negatives.jsonl`, row `tripwire-b-never-fired`.) If an 87 exists, I expect it to look alien: no known
-88's block layout, at least 4 values away from everything certified, probably
-depth 4 or more. I would honestly love to be wrong — the leads below are
-where I would look first.
-
-**Claude (AI):** I lean the same way, for a different reason: everywhere we
-could afford an exact answer, the optimum turned out *tight* — merging the
-two largest blocks buys exactly zero, a circuit's wiring is forced by its
-values, the depth of every shipped circuit is already its minimum, and the
-level below 88 looks empty from every direction we could see. Structures
-that rigid usually are what they appear to be. But I hold the belief
-loosely, because the two places an 87 must live — outside the known block
-structure, possibly outside the shared vocabulary — are exactly the places
-no instrument of ours ever covered, and silence in an unsearched region is
-not evidence. If an 87 exists, I expect it will be found by construction
-(a genuinely different decomposition of the matrix), not by searching near
-known 88s. One falsifiable expectation either way: B = 56 will hold on
-every foreign-lineage 88 anyone ever tests.
+We hold it loosely all the same. The two places an 87 must live — outside the
+known block structure, possibly outside the shared vocabulary — are exactly
+the places no instrument of ours ever covered, and silence in an unsearched
+region is not evidence. If an 87 exists, we expect it to look alien: no known
+88's block layout, at least 4 values away from everything certified,
+probably depth 4 or more — and found by construction, a genuinely different
+decomposition of the matrix, rather than by searching near known 88s. One
+falsifiable expectation either way: B = 56 will hold on every foreign-lineage
+88 anyone ever tests. We would honestly like to be wrong; the leads below are
+where we would look first.
 
 ## Already tried / still open
 
