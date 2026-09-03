@@ -81,10 +81,11 @@ Every known 88 organizes its intermediate values into the same block layout.
 Statement: building the merged pair of its two largest blocks takes exactly
 15 gates — 9 through 14 are UNSAT. The 14-level was decided by one solver in
 ~99 core-hours and independently confirmed by a second solver engine
-(~130 core-hours) on the same hash-pinned instance; levels 9–11 also hold
-under a second, independent encoding (528/528 subcases each), and the
-encoding's positive control produces and verifies a real circuit at a
-satisfiable setting — proof it can say yes. Consequence: an 87, if it exists,
+(~130 core-hours) on the same hash-pinned instance. Two further cross-checks:
+levels 9–13 also hold under a second, independent SAT encoding, and levels
+9–11 were additionally re-decided as 528 independent sub-cases each (all
+UNSAT, zero disagreements). The encoding's positive control produces and
+verifies a real circuit at a satisfiable setting — proof it can say yes. Consequence: an 87, if it exists,
 is built differently from every 88 anyone has found. That says where an 87
 cannot be; it is not evidence that one exists elsewhere. Encodings,
 instances, DRAT proofs for the cheap levels, and the control are in
