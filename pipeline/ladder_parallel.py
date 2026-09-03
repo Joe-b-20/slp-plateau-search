@@ -75,8 +75,8 @@ WORKER_SETS = {
     # 2026/1481), and f2's 88@8 seed is itself derived from that circuit (its
     # rho^2-symmetric 90 seed was built partly by symmetrizing Jean's 88).
     # Anything those two workers produce is DERIVED FROM PUBLISHED WORK and
-    # must be reported that way (../METHODS.md, seeds/README.md). Only f1 and
-    # d6 run on circuits of our own lineage.
+    # must be reported that way (../METHODS_INDEX.md, "Provenance classes";
+    # seeds/README.md). Only f1 and d6 run on circuits of our own lineage.
     "hunt87": [
         dict(label="f1_ours88_d7", engine="alt", depth=None, reseed=False,
              start="seeds/seed_88_at_depth7_ours.json"),

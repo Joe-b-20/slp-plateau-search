@@ -64,7 +64,7 @@ FRONTIER = [(3, 97), (4, 91), (5, 88)]
 OURS_DOMINATED = [(5, 89, "89", 8, -8, "start"),
                   (6, 88, "88 @ 6 from scratch", 10, 20, "start")]
 TIE = (7, 88)                                # ours == published count and depth
-# ours, but the seed chain runs through Jean's published 88 (METHODS.md S9).
+# ours, but the seed chain runs through Jean's published 88 (METHODS_INDEX.md, "Provenance classes").
 # The depth-5 entry is drawn as a ring AROUND the frontier dot: same Pareto
 # point, two different circuits, one of them derived.
 OURS_DERIVED_RING = (5, 88)

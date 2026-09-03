@@ -5,6 +5,10 @@ because campaign 87 used them (as search seeds, as certificate subjects, and as
 the comparison baseline), and because several of this project's own results must
 be described relative to them. They are always to be credited to their authors.
 
+**Licence scope.** The repository's root MIT `LICENSE` covers this project's own
+code, documents and results. It is **not** asserted over these two circuits;
+they remain their authors' work. The `LICENSE` file says so explicitly.
+
 | file | gates @ depth | author / source | how it got here |
 |---|---|---|---|
 | `jean_88gates_depth7_eprint_2026-1481.json` | **88 @ 7\*** | **Jean, ePrint 2026/1481**, Algorithm 1 (88-XOR AES MixColumns), posted 2026-07-23 | transcribed from the paper, input bits relabelled to this repo's convention, then oracle-verified; \*the paper states no depth — depth 7 is what this repo's oracle measures for the transcribed circuit, exactly as for the 89 below |

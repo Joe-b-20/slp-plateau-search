@@ -94,11 +94,22 @@ failed, `2` if a file could not be read or parsed.
 
 Six known 88-gate circuits, including a published one of foreign lineage, all
 report `n=88 B=56 expect=56` and stay silent, in 0.3 s total. Both planted files
-fire in 0.1 s each. Over the project's whole population of 1 575 516 distinct
-88-gate value sets the screen stayed silent — which is the negative result it
-exists to produce, and which is exactly why an 88 from a *new* lineage is worth
-running through it: it costs seconds and it is the cheapest possible attempt at
-an 87.
+fire in 0.1 s each.
+
+**At corpus scale, three different populations were screened, and the three
+numbers are not interchangeable.** `B` is a property of the *wiring*, so it can
+only be computed where a build order exists; the other two tests need only the
+value set.
+
+| population | size | which test ran | result |
+|---|---:|---|---|
+| circuits carrying a full build order | **28,796** | the **complete** screen: dead gates, duplicate values, **and `B`** | silent on all |
+| distinct 88-gate value sets in the corpus index | **1,575,516** | value-set checks only — mask distinctness and the 32 targets. **`B` cannot be computed from a value set** | silent on all |
+| local circuit files on disk at census time | **17,283** | the complete screen, as a file-level census (this is the count `leads.md` #1 quotes) | silent on all |
+
+That silence is the negative result this instrument exists to produce, and it
+is exactly why an 88 from a *new* lineage is worth running through it: it costs
+seconds and it is the cheapest possible attempt at an 87.
 
 ## 5. Run it
 

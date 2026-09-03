@@ -151,11 +151,22 @@ Three things worth reading off this table:
 ```
 db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus88_sample.jsonl
 3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus88_sample.bin
-acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a  corpus88_index.jsonl  (the FULL index, not shipped; 478728370 bytes)
+# The FULL index this sample was drawn from -- NOT shipped, 478728370 bytes.
+# Commented out so `sha256sum -c SAMPLE.sha256` passes clean on what does ship;
+# uncomment the line below if you obtain the index, to audit the draw.
+# acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a  corpus88_index.jsonl
 ```
 
-The third line pins the exact full index this sample was drawn from, so the
-draw can be audited by anyone who obtains it.
+```
+cd corpus/sample && sha256sum -c SAMPLE.sha256
+# corpus88_sample.jsonl: OK
+# corpus88_sample.bin: OK
+```
+
+The commented third hash pins the exact full index this sample was drawn from,
+so the draw can be audited by anyone who obtains it. It is a comment rather
+than a live entry because `sha256sum -c` cannot open a file that does not ship,
+and a manifest that always reports a failure teaches a reader to ignore it.
 
 ---
 

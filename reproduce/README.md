@@ -245,7 +245,7 @@ Read the second row for exactly what it is: a **timeout, not a verdict**. It doe
 not prove no 88 is reachable without the menus; it shows the menus are doing
 real work on that path, 30 s against >900 s. That is the opposite of what the
 ladder did — where the same substitution changed nothing at all, byte for byte —
-and it is why the ladder counts as from scratch and `f4` does not. (A separate finding of the lane F4 referee points
+and it is why the ladder counts as from scratch and `f4` does not. (A separate review of the `f4` configuration points
 the same way: one of that configuration's structural constants is numerically
 identical to a record's and load-bearing — swap it and the model prices 89, not
 88.) The ladder model cannot reach 88 at all; its optimum is exactly 91. So for
@@ -313,7 +313,7 @@ the distinction is the whole cost story:
 | | |
 |---|---|
 | from *this* root (the record's), archived | 88 @ depth 6 at **64.1 min**, 88 @ depth 5 **6.1 s later** |
-| from an arbitrary fresh root (`--rng` anything else) | a lottery, and an expensive one. The fleet's own accounting, which is not published here, prices this constructor at **~8.6 CPU-hours per 88** and finds ~3.5 % of from-scratch descents reach 88 at all. That landing at *depth 5* is a further sub-event **is** checkable here: the shipped `c_naive.log` records three independent arrivals at 88 gates over that worker's five sessions (depths 8/7/6, then 10/9/8, then 6/**5**), and exactly one of the three reached depth 5 |
+| from an arbitrary fresh root (`--rng` anything else) | a lottery, and an expensive one. The distributed run's own accounting, which is not published here, prices this constructor at **~8.6 CPU-hours per 88** and finds ~3.5 % of from-scratch descents reach 88 at all. That landing at *depth 5* is a further sub-event **is** checkable here: the shipped `c_naive.log` records three independent arrivals at 88 gates over that worker's five sessions (depths 8/7/6, then 10/9/8, then 6/**5**), and exactly one of the three reached depth 5 |
 
 **What re-runs did here, and the packaging bug they caught.** Two re-runs on
 **2026-09-02**, one core each, `nice -n 19`, on a loaded 20-core box. Both
@@ -543,8 +543,8 @@ common — it does not beat it.
 **What changed on 2026-09-02.** This section used to name four circuits. The two
 from-scratch 88s — the **88 @ depth 6** and the **from-scratch 88 @ depth 5** —
 were listed here because each came out of one restart of one worker of a
-multi-day 16-process fleet (restart 18, 18.96 h in; and session 5 restart 16,
-19.22 h in), and no single command reproduced *the fleet*. That was the wrong
+multi-day 16-process distributed run (restart 18, 18.96 h in; and session 5
+restart 16, 19.22 h in), and no single command reproduced *that whole run*. That was the wrong
 thing to ask for. Re-running the **step** is what a reader wants, the archives
 already hold everything it needs — the roots
 `constructors.build("naive", 2163)` and `constructors.build("naive", 1958)`
@@ -594,8 +594,9 @@ current engine.
 
 The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign.
 That rebuild is why the 89 @ depth 5 now comes back in seconds and why any of
-the five 88s exist at all; `hunt_88.py` here aims it, and `../METHODS.md` §5–§6 documents
-each change with its measured effect.
+the five 88s exist at all; `hunt_88.py` here aims it. [`METHODS_INDEX.md`](../METHODS_INDEX.md) indexes
+every shipped method, and each method's own `HOW.md` documents what it does and
+what it measured.
 
 `hunt_88at5.py` aims a **third** copy: the `engines.py` archived with the
 from-scratch 88s, which is `../pipeline/engines.py` plus three additions

@@ -63,8 +63,8 @@ RUNS = {0: "parallel ladder run (2026-07-13)",
         1: "sub-89 run (2026-07-14)",
         2: "structure-algebra (2026-07-26)",
         3: "merged-engine hunt (2026-07-26)",
-        4: "87-hunt fleet, worker c_naive, restart 18 (2026-07-28) &#8212; 37 min, no seed circuit",
-        5: "87-hunt fleet, worker c_naive, session 5 restart 16 (2026-07-30) &#8212; 64 min, no seed circuit"}
+        4: "distributed search, worker c_naive, restart 18 (2026-07-28) &#8212; 37 min, no seed circuit",
+        5: "distributed search, worker c_naive, session 5 restart 16 (2026-07-30) &#8212; 64 min, no seed circuit"}
 FILL = {"start": "#ffffff", "step": "#eef2f7", "record": "#1f6feb", "sym": "#fcefd0"}
 TEXT = {"start": "#222222", "step": "#222222", "record": "#ffffff", "sym": "#222222"}
 
@@ -103,8 +103,8 @@ def main():
          '82 of 94 masks shared with it), used as the seed from which the '
          'merged-engine worker w10_sym94 found the 88-gate depth-7 circuit on '
          '2026-07-26. The middle chain is independent of the top one and of all '
-         'published work: on 2026-07-28 a from-scratch worker of the 87-hunt '
-         'fleet built a randomized 139-gate depth-3 circuit as its root and '
+         'published work: on 2026-07-28 a from-scratch worker of the distributed '
+         'search built a randomized 139-gate depth-3 circuit as its root and '
          'reduced it through 95, 92, 90 and 89 to 88 gates at depth 7 and then, '
          'half a second later, depth 6. The bottom chain is independent again '
          'and is the frontier point: on 2026-07-30 the same worker, from a '

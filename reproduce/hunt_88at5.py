@@ -64,7 +64,8 @@ KEEP_ROOT    = True    # hold the record's root for the whole budget.
                        # worker rotates roots: --restart-s 5400 abandons a root
                        # after 90 min, and --stall-s 2400 abandons it after 40
                        # min with no local improvement.  Those are right for a
-                       # 16-worker fleet mining many roots for days, and WRONG
+                       # 16-worker distributed run mining many roots for days,
+                       # and WRONG
                        # for this script, whose entire job is to re-run ONE
                        # restart.  Measured here 2026-09-02: on an idle fast
                        # core the walk takes this root to 89 gates in 559 s and
@@ -87,7 +88,7 @@ KEEP_RUN_DIR = False   # True = keep the run folder (log, status, and the
 # END CONFIG  --  implementation below
 # ==========================================================================
 
-import argparse, json, os, shutil, subprocess, sys, time
+import argparse, json, os, shutil, signal, subprocess, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -100,7 +101,19 @@ import mixcolumns_core as core        # byte-identical to the pipeline's copy
 LABEL = "c_naive"                     # the record worker's own label
 
 
+def _sigterm(_signum, _frame):
+    """Turn SIGTERM into the same graceful stop Ctrl-C already gets.
+
+    Without this, `timeout 60 python3 hunt_88at5.py` kills the process outright:
+    nothing is printed, no summary is written, and the spawned worker can be
+    left running.  Raising KeyboardInterrupt hands control to the existing
+    handler, whose `finally` writes the worker's stop file and waits for it.
+    """
+    raise KeyboardInterrupt
+
+
 def main():
+    signal.signal(signal.SIGTERM, _sigterm)
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1],
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--minutes", type=float, default=MINUTES,
@@ -191,6 +204,11 @@ def main():
                 hit = (time.time() - t0, g, d)
                 break
     except KeyboardInterrupt:
+        # Raised by Ctrl-C, and -- because of the SIGTERM handler installed in
+        # main() -- also by `timeout N python3 hunt_88at5.py` and by `kill`.
+        # Either way the `finally` below stops the worker gracefully and the
+        # summary still prints, instead of the process dying with no output
+        # and leaving the worker behind.
         print("  interrupted", flush=True)
     finally:
         open(stop_path, "w").close()          # the worker's own graceful stop

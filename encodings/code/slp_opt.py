@@ -99,7 +99,7 @@ producing 0 requires XORing two *distinct signals holding equal values*, whose
 cost depends on a modelling convention (is "a XOR a" a legal gate?).  Rather than
 guess, the oracle raises an error.
 
-Author: atlas session 2026-08-16.
+Written for this project, 2026-08-16.
 """
 
 from __future__ import annotations

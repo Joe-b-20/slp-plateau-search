@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1354 546" font-family="Helvetica,Arial,sans-serif" font-size="14" role="img" aria-labelledby="ltitle ldesc">
 <title id="ltitle">The three own-lineage chains: to the 88-gate depth-7 circuit, to the 88-gate depth-6 circuit found from scratch, and to the 88-gate depth-5 circuit found from scratch that holds the frontier</title>
-<desc id="ldesc">Three left-to-right chains of boxes, each box a verified circuit labelled gates-at-depth. The top chain runs from scratch to 97 at depth 3, then down the 2026-07-13 parallel ladder (96, 95, 94, 93, 92, 92) to 89 at depth 6, then 89 at depth 5 in the 2026-07-14 sub-89 run by a single reroute, then an uphill step to an exactly rho-squared-symmetric 94 at depth 5 (five gates worse than the 89, 82 of 94 masks shared with it), used as the seed from which the merged-engine worker w10_sym94 found the 88-gate depth-7 circuit on 2026-07-26. The middle chain is independent of the top one and of all published work: on 2026-07-28 a from-scratch worker of the 87-hunt fleet built a randomized 139-gate depth-3 circuit as its root and reduced it through 95, 92, 90 and 89 to 88 gates at depth 7 and then, half a second later, depth 6. The bottom chain is independent again and is the frontier point: on 2026-07-30 the same worker, from a different root in a later session, built a randomized 146-gate depth-3 circuit and reduced it through 93, 91, 90 and 89 to 88 gates at depth 6 and then, six seconds later, depth 5. The 97, the 89 at depth 5, the 88 at depth 7, the 88 at depth 6 and the 88 at depth 5 are highlighted as this project's headline circuits.</desc>
+<desc id="ldesc">Three left-to-right chains of boxes, each box a verified circuit labelled gates-at-depth. The top chain runs from scratch to 97 at depth 3, then down the 2026-07-13 parallel ladder (96, 95, 94, 93, 92, 92) to 89 at depth 6, then 89 at depth 5 in the 2026-07-14 sub-89 run by a single reroute, then an uphill step to an exactly rho-squared-symmetric 94 at depth 5 (five gates worse than the 89, 82 of 94 masks shared with it), used as the seed from which the merged-engine worker w10_sym94 found the 88-gate depth-7 circuit on 2026-07-26. The middle chain is independent of the top one and of all published work: on 2026-07-28 a from-scratch worker of the distributed search built a randomized 139-gate depth-3 circuit as its root and reduced it through 95, 92, 90 and 89 to 88 gates at depth 7 and then, half a second later, depth 6. The bottom chain is independent again and is the frontier point: on 2026-07-30 the same worker, from a different root in a later session, built a randomized 146-gate depth-3 circuit and reduced it through 93, 91, 90 and 89 to 88 gates at depth 6 and then, six seconds later, depth 5. The 97, the 89 at depth 5, the 88 at depth 7, the 88 at depth 6 and the 88 at depth 5 are highlighted as this project's headline circuits.</desc>
 <rect width="1354" height="546" fill="white"/>
 <line x1="20" y1="42" x2="970" y2="42" stroke="#aaaaaa"/>
 <line x1="20" y1="42" x2="20" y2="48" stroke="#aaaaaa"/>
@@ -78,7 +78,7 @@
 <line x1="20" y1="162" x2="538" y2="162" stroke="#aaaaaa"/>
 <line x1="20" y1="162" x2="20" y2="168" stroke="#aaaaaa"/>
 <line x1="538" y1="162" x2="538" y2="168" stroke="#aaaaaa"/>
-<text x="279" y="140" text-anchor="middle" fill="#666666" font-size="12">87-hunt fleet, worker c_naive, restart 18 (2026-07-28) &#8212; 37 min, no seed circuit</text>
+<text x="279" y="140" text-anchor="middle" fill="#666666" font-size="12">distributed search, worker c_naive, restart 18 (2026-07-28) &#8212; 37 min, no seed circuit</text>
 <rect x="20" y="176" width="86" height="40" rx="7" fill="#ffffff" stroke="#8899aa"/>
 <text x="63" y="201" text-anchor="middle" fill="#222222" font-weight="bold">scratch</text>
 <line x1="106" y1="196" x2="122" y2="196" stroke="#556677" stroke-width="1.6"/>
@@ -104,7 +104,7 @@
 <line x1="20" y1="282" x2="538" y2="282" stroke="#aaaaaa"/>
 <line x1="20" y1="282" x2="20" y2="288" stroke="#aaaaaa"/>
 <line x1="538" y1="282" x2="538" y2="288" stroke="#aaaaaa"/>
-<text x="279" y="260" text-anchor="middle" fill="#666666" font-size="12">87-hunt fleet, worker c_naive, session 5 restart 16 (2026-07-30) &#8212; 64 min, no seed circuit</text>
+<text x="279" y="260" text-anchor="middle" fill="#666666" font-size="12">distributed search, worker c_naive, session 5 restart 16 (2026-07-30) &#8212; 64 min, no seed circuit</text>
 <rect x="20" y="296" width="86" height="40" rx="7" fill="#ffffff" stroke="#8899aa"/>
 <text x="63" y="321" text-anchor="middle" fill="#222222" font-weight="bold">scratch</text>
 <line x1="106" y1="316" x2="122" y2="316" stroke="#556677" stroke-width="1.6"/>

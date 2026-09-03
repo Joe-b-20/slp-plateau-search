@@ -19,3 +19,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+SCOPE NOTE — imported prior-art circuits
+
+The MIT licence above covers this repository's own code, documents and
+results. It is NOT asserted over the two circuits transcribed here from other
+people's published papers:
+
+  evidence/campaign87_imported_prior_art/jean_88gates_depth7_eprint_2026-1481.json
+      J. Jean, ePrint 2026/1481, Algorithm 1
+  evidence/campaign87_imported_prior_art/sunyangli_89gates_eprint_2025-1493.json
+      Sun-Yang-Li, ePrint 2025/1493, Table 4
+
+Those remain their authors' work and are always to be credited to them; see
+evidence/campaign87_imported_prior_art/PROVENANCE.md.

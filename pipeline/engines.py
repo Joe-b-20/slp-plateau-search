@@ -365,8 +365,8 @@ class _Harvester:
     harvests into this worker's rebuild pool (cross-pollination).  That is off
     in the shipped configuration: it mixes the mask provenance of every worker
     in the run, and a circuit built from a pool containing imported masks is
-    "derived from published work", not our own (see ../METHODS.md on
-    provenance).  Turn it on deliberately, for workers seeded from our own
+    "derived from published work", not our own (the three provenance classes
+    are defined in METHODS_INDEX.md, "Provenance classes").  Turn it on deliberately, for workers seeded from our own
     circuits only.
     """
     LIMIT = 300000                       # bound the in-memory dedupe set

@@ -28,3 +28,22 @@ calibration), each with a `RUN.md` giving its command and real output.
 What to run first, if you want one thing: `python3 tools/tripwire.py YOURCIRCUIT.json`
 on any 88-gate MixColumns circuit from any source. Seconds, and a fire would be
 an 87.
+
+<a id="provenance-classes"></a>
+## Provenance classes
+
+Every circuit this project reports is labelled with exactly one of three
+classes. The label is per file, it is inherited (anything a search worker
+produces takes the status of its seed), and it is the authority for every
+priority claim made anywhere in this repository:
+
+| class | meaning |
+|---|---|
+| **ours, own lineage** | found by this project's own code from this project's own roots, with **no imported material anywhere in the chain**. |
+| **imported** | somebody else's published circuit, transcribed here and credited. **Not this project's result.** The two imported circuits and their attribution are in [`evidence/campaign87_imported_prior_art/PROVENANCE.md`](evidence/campaign87_imported_prior_art/PROVENANCE.md). |
+| **derived from published work** | found by this project's code, but with a **lineage that passes through** somebody else's published circuit. Retained, reported, and never counted as independent. |
+
+The per-file application of the scheme, for the nine seed circuits the search
+harness ships, is the table in
+[`pipeline/seeds/README.md`](pipeline/seeds/README.md); the per-run application
+is each `PROVENANCE.md` under [`evidence/`](evidence/).

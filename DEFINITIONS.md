@@ -7,6 +7,10 @@ repositories and is not on this page, that is a bug — please report it.
 
 Terms are ordered so that each one only uses terms above it.
 
+**Every command on this page is written to be run from the root of this
+repository, unchanged, against files that ship here.** Where a command takes a
+`<placeholder>`, substitute your own file.
+
 ---
 
 ## straight-line program (SLP)
@@ -45,7 +49,7 @@ else.
 
 ```
 # print the mask of every gate in a circuit, and how two circuits' masks overlap
-python3 overlap.py circuits/mixcolumns_88gates_depth7.json <other.json> --list-shared
+python3 scripts/overlap.py evidence/circuits/mixcolumns_88gates_depth7.json <other.json> --list-shared
 ```
 
 ---
@@ -63,6 +67,7 @@ GF(2^8) field arithmetic by the verifier, never read from a file.
 ```
 python3 verify_circuit.py <circuit.json>
 # prints: gates=<n> depth=<d> outputs_built=32/32 ... VERDICT: VALID
+# e.g.  python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json
 ```
 
 ---
@@ -93,6 +98,8 @@ by the file that claims it.
 ```
 python3 verify_circuit.py <circuit.json> <max_depth>
 # exits non-zero if the measured depth exceeds max_depth
+# e.g.  python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json 5   # exit 0
+#       python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5.json 4   # exit 1
 ```
 
 **Why depth 3 is the minimum for MixColumns.** Twelve of the 32 output bits
@@ -109,8 +116,10 @@ The number of later gates that read a given signal. **Maximum fan-out** is the
 largest such number over all signals in the circuit; it is the metric a
 hardware integrator cares about, because a high-fan-out net needs buffering.
 
-Per-circuit fan-out histograms are in `circuits_metadata.csv`, computed from
-the gate lists.
+Fan-out is computed from the gate list alone, so any shipped circuit can be
+measured directly; the tripwire prints the per-signal user counts it derives on
+the way to `B`. The project's per-circuit fan-out histograms over the full
+corpus are held locally and are not shipped (`INVENTORY.md`).
 
 ---
 
@@ -138,8 +147,10 @@ and it should not be cited as one. Note also that the arrow only runs one way:
 `B = 56` does **not** mean no gate is deletable.
 
 ```
-python3 tripwire.py <circuit.json>          # reports B, its expected value,
-python3 tripwire.py --selftest <known.json> # duplicates and dead gates
+python3 tools/tripwire.py <circuit.json>          # reports B, its expected value,
+python3 tools/tripwire.py --selftest <known.json> # duplicates and dead gates
+# e.g.  python3 tools/tripwire.py evidence/circuits/mixcolumns_88gates_depth5.json
+#       -> n=88 B=56 expect=56 ... silent
 ```
 
 ---
@@ -210,7 +221,9 @@ It is an observation about a corpus, not a constraint on circuits. A verified
 tells us leaving the vocabulary costs at most one gate.
 
 ```
-python3 verify_circuit.py wrapup/day2/e_upstream/circuits/S89_41_00000098.json
+python3 verify_circuit.py corpus/vocabulary/S89_out_of_vocabulary_89gates.json
+# gates=89 depth=10 outputs_built=32/32 problems=0 -> VERDICT: VALID
+python3 corpus/vocabulary/tools/oov_check.py   # -> 6 out-of-vocabulary masks
 ```
 
 ---
@@ -230,8 +243,10 @@ distance between two genuinely different optima for this map is a **median of
 42**, and searches in this project reach 3 or 4.
 
 ```
-python3 overlap.py A.json B.json
+python3 scripts/overlap.py A.json B.json
 # "only in A" and "only in B" are the two one-sided distances
+# e.g.  python3 scripts/overlap.py evidence/circuits/mixcolumns_88gates_depth7.json \
+#           evidence/circuits/mixcolumns_88gates_depth5.json
 ```
 
 ---

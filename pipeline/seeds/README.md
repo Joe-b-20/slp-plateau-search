@@ -10,7 +10,7 @@ for f in seeds/*.json; do python3 ../verify_circuit.py "$f"; done
 ```
 
 **Provenance is per file, and the table below is the authority.** Three classes
-(`../../METHODS.md` §9): our own lineage; published work, imported and credited;
+([`METHODS_INDEX.md`, "Provenance classes"](../../METHODS_INDEX.md#provenance-classes)): our own lineage; published work, imported and credited;
 and our search output whose *lineage passes through* published work. Of the nine
 files, two are imported and three are derived. Anything a worker produces
 inherits the status of its seed.

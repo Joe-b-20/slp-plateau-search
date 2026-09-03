@@ -1,4 +1,4 @@
-# Harvest — parallel depth-ladder run (2026-07-13, ~21h)
+# Harvest â€” parallel depth-ladder run (2026-07-13, ~21h)
 
 Every rung's best circuit, re-verified independently against the GF(2^8)
 oracle at its own depth cap. This directory is archived UNTOUCHED as paper
