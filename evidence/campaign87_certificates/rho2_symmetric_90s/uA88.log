@@ -1,20 +1,20 @@
 [uA88 rng511] seed union_A88.json: 113 masks
 [uA88 rng511] symmetrized+peeled: 55 orbits, 94 gates
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 94 gates depth 5 (start)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_94g.json: 94 gates depth 5 (start)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 93 gates depth 6 (walk it=35)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_93g.json: 93 gates depth 6 (walk it=35)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 92 gates depth 6 (walk it=309)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_92g.json: 92 gates depth 6 (walk it=309)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 91 gates depth 6 (walk it=1204)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_91g.json: 91 gates depth 6 (walk it=1204)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_best.json: 94 gates depth 5 (start)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_94g.json: 94 gates depth 5 (start)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_best.json: 93 gates depth 6 (walk it=35)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_93g.json: 93 gates depth 6 (walk it=35)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_best.json: 92 gates depth 6 (walk it=309)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_92g.json: 92 gates depth 6 (walk it=309)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_best.json: 91 gates depth 6 (walk it=1204)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_91g.json: 91 gates depth 6 (walk it=1204)
 [uA88 rng511] [walk] 41s it=4000 acc=1876 cur=91 best=91 loose=0
 [uA88 rng511] [walk] done 150s it=14979 acc=6998 cur=91 best=91
 [uA88 rng511] [lns] done 75s it=1763 acc=1675 cur=91 best=91
 [uA88 rng511] [walk] 42s it=4000 acc=1916 cur=91 best=91 loose=0
 [uA88 rng511] [walk] 81s it=8000 acc=3776 cur=91 best=91 loose=0
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_best.json: 90 gates depth 9 (walk it=10336)
-[uA88 rng511] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/uA88_90g.json: 90 gates depth 9 (walk it=10336)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_best.json: 90 gates depth 9 (walk it=10336)
+[uA88 rng511] saved campaign_87/agents/orbit-ladder/work/uA88_90g.json: 90 gates depth 9 (walk it=10336)
 [uA88 rng511] [walk] done 150s it=15324 acc=7200 cur=90 best=90
 [uA88 rng511] [lns] done 75s it=1508 acc=1454 cur=91 best=90
 [uA88 rng511] [walk] 33s it=4000 acc=1891 cur=90 best=90 loose=0

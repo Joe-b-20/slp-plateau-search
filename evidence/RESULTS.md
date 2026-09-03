@@ -928,3 +928,16 @@ another 91 of ours, so it inherits the same status.
   either: it changes *whose lineage* reaches (88, depth 5), not what 88 is.
 - Every timestamp above is recoverable from the `coordinator.log` and per-worker
   `*.log` files in each run archive; every circuit from its `*_best.json`.
+- **Paths normalized for publication, 2026-09-03.** The archived logs, stdout
+  dumps and `"seed":` provenance strings under `evidence/` were written on the
+  machine that ran them and carried that machine's absolute paths. For
+  publication, and *only* the leading directory prefix, two rewrites were
+  applied across 164 files / 254 lines: the repository's own absolute prefix was
+  stripped, so `…/slp-plateau-search/campaign_87/agents/…` now reads
+  `campaign_87/agents/…` (repo-relative; `campaign_87/` is the campaign working
+  tree, not published — the convention `NEGATIVES.md` states applies), and the
+  prefix of the separate local run tree the 2026-07-13/14 ladder and cascade runs
+  executed in was replaced by `<archive>/`. **No other byte of any evidence file
+  was changed**: every number, timestamp, verdict, gate list, file basename and
+  ordering is exactly as recorded. The basename at the end of each path is what
+  identifies a seed, so the rewrite loses nothing a reader can use.

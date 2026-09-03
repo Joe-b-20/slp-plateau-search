@@ -1,13 +1,13 @@
 [symA rng101] seed symlns_94gates_seed44.json: 94 masks
 [symA rng101] symmetrized+peeled: 53 orbits, 94 gates
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 94 gates depth 5 (start)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_94g.json: 94 gates depth 5 (start)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 93 gates depth 6 (walk it=70)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_93g.json: 93 gates depth 6 (walk it=70)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 92 gates depth 7 (walk it=139)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_92g.json: 92 gates depth 7 (walk it=139)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_best.json: 91 gates depth 7 (walk it=197)
-[symA rng101] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/symA_91g.json: 91 gates depth 7 (walk it=197)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_best.json: 94 gates depth 5 (start)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_94g.json: 94 gates depth 5 (start)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_best.json: 93 gates depth 6 (walk it=70)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_93g.json: 93 gates depth 6 (walk it=70)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_best.json: 92 gates depth 7 (walk it=139)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_92g.json: 92 gates depth 7 (walk it=139)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_best.json: 91 gates depth 7 (walk it=197)
+[symA rng101] saved campaign_87/agents/orbit-ladder/work/symA_91g.json: 91 gates depth 7 (walk it=197)
 [symA rng101] [walk] 24s it=4000 acc=1873 cur=91 best=91 loose=0
 [symA rng101] [walk] 67s it=12000 acc=5576 cur=91 best=91 loose=0
 [symA rng101] [walk] done 150s it=27617 acc=12841 cur=91 best=91

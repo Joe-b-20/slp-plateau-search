@@ -1,9 +1,9 @@
 [u90A rng733] seed union_90A.json: 114 masks
 [u90A rng733] symmetrized+peeled: 53 orbits, 92 gates
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_best.json: 92 gates depth 7 (start)
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_92g.json: 92 gates depth 7 (start)
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_best.json: 91 gates depth 7 (walk it=83)
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_91g.json: 91 gates depth 7 (walk it=83)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_best.json: 92 gates depth 7 (start)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_92g.json: 92 gates depth 7 (start)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_best.json: 91 gates depth 7 (walk it=83)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_91g.json: 91 gates depth 7 (walk it=83)
 [u90A rng733] [walk] 36s it=4000 acc=1894 cur=91 best=91 loose=0
 [u90A rng733] [walk] done 150s it=17083 acc=8097 cur=91 best=91
 [u90A rng733] [lns] 75s it=2000 acc=1923 cur=93 best=91
@@ -16,8 +16,8 @@
 [u90A rng733] [walk] done 150s it=14715 acc=6967 cur=91 best=91
 [u90A rng733] [lns] 68s it=2000 acc=1937 cur=95 best=91
 [u90A rng733] [lns] done 75s it=2171 acc=2106 cur=95 best=91
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_best.json: 90 gates depth 7 (walk it=762)
-[u90A rng733] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/u90A_90g.json: 90 gates depth 7 (walk it=762)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_best.json: 90 gates depth 7 (walk it=762)
+[u90A rng733] saved campaign_87/agents/orbit-ladder/work/u90A_90g.json: 90 gates depth 7 (walk it=762)
 [u90A rng733] [walk] 94s it=12000 acc=5566 cur=90 best=90 loose=0
 [u90A rng733] [walk] 128s it=16000 acc=7419 cur=90 best=90 loose=0
 [u90A rng733] [walk] done 150s it=18823 acc=8713 cur=90 best=90

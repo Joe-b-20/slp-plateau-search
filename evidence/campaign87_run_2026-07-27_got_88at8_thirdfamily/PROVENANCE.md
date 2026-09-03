@@ -29,7 +29,7 @@ from `union_A88.json` at walk it = 10 336.
 **So the 88@8 is not an independent construction: its ancestry contains masks
 derived from Jean's published 88** (via symmetrisation, union, peeling and
 25 000+ orbit-walk moves). That is a "derived from published work" lineage in the
-sense of METHODS.md §9. The 88@7 in `../campaign87_run_2026-07-26_got_88at7/` is
+sense of `METHODS_INDEX.md`, "Provenance classes". The 88@7 in `../campaign87_run_2026-07-26_got_88at7/` is
 the one with a clean own-lineage claim.
 
 The union files and orbit-walk logs above are archived in

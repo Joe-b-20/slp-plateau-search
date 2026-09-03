@@ -141,7 +141,7 @@ Jean's 88 (1) + its 12 syl-move siblings (12) + the third-family anchor and its
 **What that population is, stated plainly.** All 47 lie in Jean's-lineage
 families: families 1–2 are Jean's circuit and its syl-move siblings, and the
 family-3 anchor's seed chain passes through Jean's circuit (§8, and
-`../../METHODS.md` §9). The theorem is therefore a **rigidity statement about
+[`METHODS_INDEX.md`, "Provenance classes"](../../METHODS_INDEX.md#provenance-classes)). The theorem is therefore a **rigidity statement about
 that neighbourhood**, not about the 88-gate plateau as a whole — and the one
 circuit here that is independent of Jean's lineage, **the project's own 88@7,
 is precisely the least-certified**: it is *not* among the 47, its exhaustive
@@ -231,8 +231,7 @@ Same toolchain as §6, unchanged, on the 88@8 anchor + the 8 portfolio reps.
 touched, and no claim made above is withdrawn.** What is added is the control
 that was missing, and the validation of the two parts of the machinery that had
 never been tested on a positive instance. Scripts and raw results:
-`campaign_87/cert_audit/` in the campaign archive; write-up in `../../METHODS.md`
-§§10a–10c.
+`campaign_87/cert_audit/` in the campaign archive; write-up in [`METHODS_INDEX.md`](../../METHODS_INDEX.md).
 
 **1. The same decider says "irreducible" about circuits that are nine gates too
 big.** Every certificate above is an exhaustive k ≤ 3 sweep returning zero

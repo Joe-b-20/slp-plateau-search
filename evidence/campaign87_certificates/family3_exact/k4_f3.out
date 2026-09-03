@@ -219,9 +219,9 @@ resume: 0 windows already decided {'win': 0, 'free': 0, 'irreducible': 0, 'nosol
  }
 }
 Traceback (most recent call last):
-  File "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/family3-exact/work/exact_driver3.py", line 222, in <module>
+  File "campaign_87/agents/family3-exact/work/exact_driver3.py", line 222, in <module>
     main()
-  File "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/family3-exact/work/exact_driver3.py", line 216, in main
+  File "campaign_87/agents/family3-exact/work/exact_driver3.py", line 216, in main
     with open(os.path.join(HERE, "results_k4", "summary_%d.json" % int(t0)),
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/family3-exact/work/results_k4/summary_1785157306.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'campaign_87/agents/family3-exact/work/results_k4/summary_1785157306.json'

@@ -4,7 +4,7 @@
 verbatim as archived from campaign 87. Their module docstrings carry the
 first-unlock case analysis that makes a `None` answer a proof rather than a
 failed search — that proof is the completeness argument cited in
-`../CERTIFICATES.md` and `../../../METHODS.md` §10.
+[`../CERTIFICATES.md`](../CERTIFICATES.md) and [`METHODS_INDEX.md`](../../../METHODS_INDEX.md).
 
 Every `exact_window/`, `exact_k4/`, `pop_decider/` and `family3_exact/` verdict
 log in the parent folder was produced by these two modules.

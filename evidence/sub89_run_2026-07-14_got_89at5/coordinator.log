@@ -1,4 +1,4 @@
-[     0.0s 14:16:39] FIXED-mode pipeline -> /home/joebachir20/replication_kit/method_reconstruction/pipeline/runs_parallel/20260714_141639
+[     0.0s 14:16:39] FIXED-mode pipeline -> <archive>/pipeline/runs_parallel/20260714_141639
 [     0.0s 14:16:39] workers: [('uncapped_sub89', 'lns', None), ('depth5_sub90', 'lns', 5)]
 [     0.0s 14:16:39] LAUNCH uncapped_sub89   engine=lns depth=none start=seed_89_at_depth6.json pid=1641591
 [     0.0s 14:16:39] LAUNCH depth5_sub90     engine=lns depth=5 start=seed_90_at_depth5.json pid=1641592

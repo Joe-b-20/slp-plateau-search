@@ -1,5 +1,5 @@
 {
- "seed": "/home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/hunt-deeper/BREAKTHROUGH_88gates_depth8_THIRDFAMILY.json",
+ "seed": "campaign_87/agents/hunt-deeper/BREAKTHROUGH_88gates_depth8_THIRDFAMILY.json",
  "k": 3,
  "budget": 2,
  "mode": "all",

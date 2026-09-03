@@ -1,4 +1,4 @@
-[     0.0s 15:00:32] CASCADE-mode pipeline -> /home/joebachir20/replication_kit/method_reconstruction/pipeline/runs_parallel/20260714_150032
+[     0.0s 15:00:32] CASCADE-mode pipeline -> <archive>/pipeline/runs_parallel/20260714_150032
 [     0.0s 15:00:32] LAUNCH d3               engine=anneal3 depth=3 start=scratch pid=1660888
 [    17.1s 15:00:49] status: d3=None/None(up)
 [    37.1s 15:01:09] status: d3=None/None(up)
@@ -1344,4 +1344,4 @@
 [ 23368.2s 21:30:00] d10              depth_cap=10  best=91 gates @ depth 5
 [ 23368.2s 21:30:00] d11              depth_cap=11  best=91 gates @ depth 5
 [ 23368.2s 21:30:00] BEST OVERALL: 91 gates @ depth 5  -> best_overall.json
-[ 23368.2s 21:30:00] all circuits + logs in: /home/joebachir20/replication_kit/method_reconstruction/pipeline/runs_parallel/20260714_150032
+[ 23368.2s 21:30:00] all circuits + logs in: <archive>/pipeline/runs_parallel/20260714_150032

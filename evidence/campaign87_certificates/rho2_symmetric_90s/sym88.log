@@ -1,11 +1,11 @@
 [sym88 rng202] seed IMPORTED_88.json: 88 masks
 [sym88 rng202] symmetrized+peeled: 53 orbits, 95 gates
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 95 gates depth 8 (start)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_95g.json: 95 gates depth 8 (start)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 94 gates depth 9 (walk it=42)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_94g.json: 94 gates depth 9 (walk it=42)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 93 gates depth 7 (walk it=1076)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_93g.json: 93 gates depth 7 (walk it=1076)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_best.json: 95 gates depth 8 (start)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_95g.json: 95 gates depth 8 (start)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_best.json: 94 gates depth 9 (walk it=42)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_94g.json: 94 gates depth 9 (walk it=42)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_best.json: 93 gates depth 7 (walk it=1076)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_93g.json: 93 gates depth 7 (walk it=1076)
 [sym88 rng202] [walk] 24s it=4000 acc=1784 cur=93 best=93 loose=0
 [sym88 rng202] [walk] 46s it=8000 acc=3615 cur=93 best=93 loose=0
 [sym88 rng202] [walk] 114s it=20000 acc=8987 cur=93 best=93 loose=0
@@ -27,8 +27,8 @@
 [sym88 rng202] [walk] 39s it=4000 acc=1886 cur=94 best=93 loose=0
 [sym88 rng202] [walk] done 150s it=15669 acc=7113 cur=93 best=93
 [sym88 rng202] [lns] done 75s it=1919 acc=1843 cur=95 best=93
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_best.json: 92 gates depth 7 (walk it=1359)
-[sym88 rng202] saved /home/joebachir20/xor_ui/slp-plateau-search/campaign_87/agents/orbit-ladder/work/sym88_92g.json: 92 gates depth 7 (walk it=1359)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_best.json: 92 gates depth 7 (walk it=1359)
+[sym88 rng202] saved campaign_87/agents/orbit-ladder/work/sym88_92g.json: 92 gates depth 7 (walk it=1359)
 [sym88 rng202] [walk] 51s it=4000 acc=1848 cur=92 best=92 loose=0
 [sym88 rng202] [walk] 148s it=12000 acc=5424 cur=92 best=92 loose=0
 [sym88 rng202] [walk] done 150s it=12175 acc=5504 cur=92 best=92

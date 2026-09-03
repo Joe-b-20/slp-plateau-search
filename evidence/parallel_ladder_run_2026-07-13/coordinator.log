@@ -1,4 +1,4 @@
-[     0.0s 13:58:29] PARALLEL LADDER -> /home/joebachir20/replication_kit/method_reconstruction/record_hunter/runs_parallel/20260713_135829
+[     0.0s 13:58:29] PARALLEL LADDER -> <archive>/record_hunter/runs_parallel/20260713_135829
 [     0.0s 13:58:29] depths=[3, 4, 5, 6, 7, 8, 9, 10, 11]  final_uncapped=True  max_wait=7200s  improve_by=1
 [     0.0s 13:58:29] LAUNCH d3       engine=anneal3 depth=3 start=scratch pid=1072331
 [    20.0s 13:58:49] status: d3=100/3(up)

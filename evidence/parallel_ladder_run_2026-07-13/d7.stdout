@@ -1,4 +1,4 @@
-[    0.0s 17:16:57] worker start: engine=lns depth=7 start=/home/joebachir20/replication_kit/method_reconstruction/record_hunter/runs_parallel/20260713_135829/seed_from_d6.json seeds=[1, 2, 3]
+[    0.0s 17:16:57] worker start: engine=lns depth=7 start=<archive>/record_hunter/runs_parallel/20260713_135829/seed_from_d6.json seeds=[1, 2, 3]
 [    0.2s 17:16:57]   NEW BEST 94 gates depth 4 VERIFIED  -> d7_best.json
 [  786.5s 17:30:03]   NEW BEST 93 gates depth 7 VERIFIED it=65098 -> d7_best.json
 [18789.2s 22:30:06]   NEW BEST 92 gates depth 6 VERIFIED it=1192778 -> d7_best.json
