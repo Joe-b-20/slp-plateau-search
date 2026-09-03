@@ -1,0 +1,30 @@
+# Methods index
+
+Every method this repository ships as runnable code, with a `HOW.md` explaining
+the mechanism — the idea in plain words, the algorithm as a diagram, what it
+measured, and the exact command. One screen; the HOW docs carry the detail.
+
+| method | what it does | where | how it works |
+|---|---|---|---|
+| search engine | finds smaller or shallower circuits: destroy-and-rebuild, plateau walk, depth-3 annealer, run as parallel workers under one coordinator | [`pipeline/`](pipeline/) | [`pipeline/HOW.md`](pipeline/HOW.md) |
+| record reproductions | one command per record: the depth-3 annealer from nothing, and harnesses that re-run one archived worker from its exact root | [`reproduce/`](reproduce/) | [`reproduce/HOW.md`](reproduce/HOW.md) |
+| `>= 56` lower bound | counts gates from three independent sources, with one term decided by an exhaustive depth-limited search over extra masks | [`bounds/gte56/`](bounds/gte56/) | [`bounds/gte56/HOW.md`](bounds/gte56/HOW.md) |
+| depth-3 lower bound | turns the forced shape of a depth-3 circuit into a linear program and proves a bound from one exact rational dual vector | [`bounds/depth3_gte81/`](bounds/depth3_gte81/) | [`bounds/depth3_gte81/HOW.md`](bounds/depth3_gte81/HOW.md) |
+| cancellation-free bound | prices each target's cheapest gate hierarchy under a per-gate budget; solver-free to check | [`bounds/cf_gte92/`](bounds/cf_gte92/) | [`bounds/cf_gte92/HOW.md`](bounds/cf_gte92/HOW.md) |
+| bound validation | runs the same bound machinery on small matrices with independently proved optima, including one instance designed to make it overclaim | [`bounds/validation/`](bounds/validation/) | [`bounds/validation/HOW.md`](bounds/validation/HOW.md) |
+| SAT encoding | asks a solver whether a `k`-gate program exists for one subproblem, with a normal form, a cube partition and a positive control | [`encodings/`](encodings/) | [`encodings/HOW.md`](encodings/HOW.md) |
+| deletion certificate | tests every single-gate deletion of every known 88-gate circuit for realisability with the wiring re-planned freely | [`corpus/deletion_certificate/`](corpus/deletion_certificate/) | [`corpus/deletion_certificate/HOW.md`](corpus/deletion_certificate/HOW.md) |
+| tripwire | replays any circuit and reports a dead gate, a duplicate value, or a middle-gate count that proves one of them exists | [`tools/tripwire.py`](tools/tripwire.py) | [`tools/HOW.md`](tools/HOW.md) |
+| overlap statistic | counts the intermediate values two circuits share — the same-family / independence measure | [`scripts/overlap.py`](scripts/overlap.py) | [`scripts/HOW.md`](scripts/HOW.md) |
+| corpus sample | the deterministic, stratified 520-record draw the shipped certificates run over, plus its checker | [`corpus/sample/`](corpus/sample/) | [`corpus/sample/HOW.md`](corpus/sample/HOW.md) |
+| depth check | computes the shallowest depth a circuit's value set admits and compares it with the circuit's own depth | [`corpus/depth_forced/`](corpus/depth_forced/) | [`corpus/depth_forced/HOW.md`](corpus/depth_forced/HOW.md) |
+
+Two more runnable pieces are single files documented where they are used rather
+than by a HOW doc of their own: `verify_circuit.py` at the root — the oracle,
+which rebuilds MixColumns from FIPS-197 and computes depth rather than trusting
+it — and the per-section checkers in `corpus/` (records, vocabulary,
+calibration), each with a `RUN.md` giving its command and real output.
+
+What to run first, if you want one thing: `python3 tools/tripwire.py YOURCIRCUIT.json`
+on any 88-gate MixColumns circuit from any source. Seconds, and a fire would be
+an 87.

@@ -57,6 +57,11 @@ distinct on purpose.
 - [`scripts/overlap.py`](scripts/overlap.py) — shared-value count between two
   circuits (the independence statistic).
 
+Every shipped method — search engines, bound checkers, the SAT encoding, the
+corpus instruments — has a HOW doc giving the idea, the algorithm as a diagram,
+what it measured, and its command:
+[`METHODS_INDEX.md`](METHODS_INDEX.md).
+
 ## The bounds, as arguments
 
 Each with its statement, a ≤ 1-page writeup of the technique, the certificate,
