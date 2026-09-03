@@ -50,10 +50,10 @@ realisable — ran over this.
 
 | | count | size | status |
 |---|---:|---:|---|
-| distinct 88-gate mask sets, canonicalised | **1,575,516** | 554 MB as raw masks (`88 × uint32` per record) | **too large to host** |
-| provenance index, one row per mask set | 1,575,516 | **478,728,370 B** (457 MB), sha256 `acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a` | **too large to host** |
+| distinct verified 88-gate **value sets** (mask sets), canonicalised | **1,575,516** | 554 MB as raw masks (`88 × uint32` per record) | **too large to host** |
+| provenance index, one row per value set | 1,575,516 | **478,728,370 B** (457 MB), sha256 `acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a` | **too large to host** |
 | canonical-form table | 1,575,516 | 158 MB | too large to host |
-| **the shipped sample** | **520** distinct mask sets, stratified across 18 lineages, all five published record 88s included | 824 KB | **in this repository**, `corpus/sample/` |
+| **the shipped sample** | **520** distinct value sets, stratified across 18 lineages, all five published record 88s included | 824 KB | **in this repository**, `corpus/sample/` |
 | the certificate's own output, banked | 15 shard intervals tiling `[0, 1575516)` | 12 KB | in this repository, `corpus/deletion_certificate/banked/` |
 
 The sample is drawn deterministically (evenly spaced indices inside each

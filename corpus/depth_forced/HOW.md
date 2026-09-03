@@ -63,7 +63,7 @@ population it covers is the shipped one.
 
 The measured/ASAP agreement also has a corollary the companion document leans
 on: since the wiring is recoverable from the value set and the depth is forced by
-it, a mask set is the honest identity of one of these circuits — which is the
+it, a mask set is the real identity of one of these circuits — which is the
 convention the rest of `corpus/` uses.
 
 ## 3. Run it

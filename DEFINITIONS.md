@@ -201,12 +201,17 @@ group of outputs they serve. The resulting shape — which groups exist, how man
 gates each needs, which gates are shared between groups — is a circuit's
 **block structure**.
 
-It is a property of a chosen decomposition, not an intrinsic invariant of the
-circuit: change the partition and you change the block structure. Statements of
-the form "no 87 shares the block structure of the known 88s" are therefore
-conditional on the partition, and the partition must be named alongside them.
-This project's block reasoning uses one particular partition that was never
-measured against the circuits it is applied to, which is a known open defect.
+It is a property of a chosen decomposition rather than an intrinsic invariant
+of the circuit: change the partition and you change the block structure.
+Statements of the form "no 87 shares the block structure of the known 88s" are
+therefore conditional on the decomposition, which is why every one of them in
+these repositories is scoped *under our block decomposition* and names it. The
+decomposition this project's block reasoning uses is a choice; whether every
+known 88 respects it was not verified, and the companion records repository
+ships a verified 91-gate depth-6 circuit whose gate 70 has line support
+`{2, 3, 4, 7}` and so fits no single block of it. That is a known open defect.
+The decisive level of the theorem stated over this decomposition also carries no
+DRAT proof.
 
 ---
 

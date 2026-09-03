@@ -33,7 +33,8 @@ search engines. The tripwire — the free check that turns any duplicated or
 unread gate into a smaller circuit — has never fired. On any population: the
 **17,283** circuit files on disk at the census (the complete screen, file by
 file), the **28,796** circuits carrying a full build order (the complete screen
-including `B`), and the **1,575,516** distinct value sets in the corpus index
+including `B`), and the **1,575,516** distinct verified 88-gate value sets in
+the corpus index
 (the value-set checks only — `B` is a property of the wiring and cannot be
 computed from a value set). Three populations, three different tests, all
 silent; `INVENTORY.md` keeps them apart. It has never been run on a circuit somebody else's search
@@ -98,9 +99,10 @@ high because the *artifact* is one 4.3 MB file and needs nothing else.
 ```
 
 **What it does not settle.** Even a confirmed UNSAT is class-conditional: an 87
-outside that decomposition is untouched. The decomposition it lives inside was
-never measured against the circuits it is applied to, and this repository
-contains a circuit with a gate no block in it can represent. That is a live
+outside that decomposition is untouched. The decomposition it lives inside is a
+choice of ours; whether every known 88 respects it was not verified, and the
+companion records repository ships a verified 91-gate depth-6 circuit whose
+gate 70 (line support `{2, 3, 4, 7}`) fits no single block of it. That is a live
 defect, and it is the reason this lead is about *reproducing* the result rather
 than extending it.
 
@@ -326,7 +328,7 @@ because no tool here can aim at it.
 
 **Cost.** Unknown. Building the instrument is the lead.
 
-**What it does not settle — and the honest pairing.** Measured across 498
+**What it does not settle, and what must travel with it.** Measured across 498
 circuits, the statistic this region requires to be 2 has a minimum of 18;
 nothing measured is within 16 of it. So: *for* the floor, the region is empty of
 88s in every population ever measured. *Against* the floor, it is also
@@ -335,58 +337,47 @@ too that the cheapest way to kill this branch is lead 6, not a search.
 
 ---
 
-## 12. Ship the two-second 91 @ depth 4
+## 12. Publish the cascade search that found the shipped 91 @ depth 4
 
-**Requires the corpus.** This is the one entry here that is **packaging, not
-search**: winning it proves nothing new about MixColumns. It is on the list
-because it closes the only hole in [`REPRODUCE.md`](REPRODUCE.md) Tier R, that
-hole is in a *frontier* point, and the fix turns out to be the cheapest
-reproduction this project has of anything.
+**Requires the corpus.** This is the one entry here that is **packaging rather
+than search**: winning it proves nothing new about MixColumns. Most of it is
+now done, and what is left is recorded so that nobody thinks the whole gap
+closed.
 
-**Open.** Two of the three frontier points can be reproduced from nothing with
-one command each — `reproduce/reproduce.py` for the 97 @ 3 (57 s),
-`reproduce/hunt_88at5.py` for the 88 @ 5 (archived 64 min). The 91 @ 4 cannot,
-and not for any scientific reason: neither the fleet that found it nor the
-generator that can construct it is published.
+**Closed on 2026-09-03.** All three frontier points now reproduce from nothing
+with one command each: `reproduce/reproduce.py` for the 97 @ 3 (57 s),
+`reproduce/construct_91at4.py` for the 91 @ 4 (3.9 s), and
+`reproduce/hunt_88at5.py` for the 88 @ 5 (archived 64 min). The 91 @ 4's command
+is the exact ladder construction, packaged with the ten generator modules it
+needs and one stated exception to `reproduce/`'s stdlib-only contract: it needs
+`numpy` and `python-sat`. It emits an independent, oracle-verified 91 @ depth 4
+sharing 53 of its 91 values with the shipped circuit, so it is a second witness
+rather than a copy, and its provenance was tested rather than assumed — under an
+audit hook the run reads no file in the repository but its own modules, and the
+module holding the record-read currency menus is not imported at all.
 
-**How to start — and do not package the search.** The obvious move is to archive
-the cascade worker that found the shipped circuit and aim a script at its root
-(`constructors.build("naive", 40426)`, chunk seed 40426, depth cap 4, `alt` mode,
-cascade handoff off; **54.4 min** of one core). That would work, and it is the
-wrong thing to ship, because a much faster route exists.
+**Still open.** The multi-process cascade *search* that historically produced
+the shipped file is unpublished. Archiving it means the worker plus its root
+(`constructors.build("naive", 40426)`, chunk seed 40426, depth cap 4, `alt`
+mode, cascade handoff off; **54.4 min** of one core, inside a ~74 process-hour
+run). It is worth less than the construction it would sit beside — it is slower
+by three orders of magnitude and stochastic — which is why it was not the thing
+packaged first.
 
-The **exact ladder construction** emits an independent, oracle-verified
-91 @ depth 4 in **2 seconds** on one core from a cold solve cache — no search
-over circuits at all, and no circuit of any provenance as input. Measured
-2026-09-02; the emitted circuit shares 53 of 91 masks with the shipped one
-(Jaccard 0.411), so it is a second witness rather than a copy.
+**Cost.** No compute. A worker, its config and its logs, lifted and documented.
 
-Its provenance was tested, not assumed: an audit hook over every `open` shows
-**no record circuit is read**, and re-running it in a copied tree with the one
-record-derived table (the F1 currency menus) **replaced by garbage** emits a
-**byte-identical** gate list — the menus are loaded at import and never consulted
-on this path.
-
-So the packaging job is: lift the ladder path out of the generator, keep its
-theory-generated price spectrum, drop the inert menu import, and ship it.
-
-**Cost.** No compute — the run is two seconds. The work is a dozen modules to
-lift and one contract decision to make: the tool needs `numpy` and a SAT solver,
-and `reproduce/` currently promises dependency-free stdlib Python. Either the
-promise gets a stated exception for this one command, or the ladder path gets a
-stdlib solver for its eight 8-dimensional sector instances. The tool's own open
-audit findings should be closed in the same pass.
-
-**What it does not settle.** Nothing about MixColumns — this buys reproducibility,
-not knowledge. Note also what it is *not*: a blind search finding 91 by luck. It
-is a construction whose *model class* prices out at exactly 91 — which is a
-statement about that class, **not** a lower bound on MixColumns, and not a claim
+**What it does not settle.** Nothing about MixColumns — this buys
+reproducibility rather than knowledge. Note also what the shipped construction
+is *not*: a blind search finding 91 by luck. It is a construction whose *model
+class* prices out at exactly 91 — which is a statement about that class, **not**
+a lower bound on MixColumns, and not a claim
 that 90 @ 4 is impossible. 90 @ 4 remains undecided; see lead 7. A
 blind cap-4 descent to 91 was measured at **3.9 core-hours** in a different lane,
 and 9 of 9 restarts from this project's own 92 @ 4 ended at 92 — so do not offer
 the pipeline's existing `--mode cascade --stop-gates 92 --stop-depth 4`
-retargeted at 91. It reaches 92, and its stop test latches shut once the cascade
-drops below 91 gates at any depth.
+retargeted at 91: on the archived evidence its depth-4 rung reaches 92 and no
+further. (The stop test itself was fixed on 2026-09-03 and no longer latches
+shut when a deeper rung goes below 91 gates.)
 
 ---
 

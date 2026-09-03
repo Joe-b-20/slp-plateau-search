@@ -231,7 +231,7 @@ be checking.
 **k = 12, 13 and 14 carry no proof.** k = 14's solve alone was ~99 core-hours,
 and its refutation would be very large. So the decisive level of the theorem
 currently rests on complete solvers being correct, not on a checked certificate.
-That is the honest boundary of this pack's evidence, and closing it is the most
+That is the boundary of this pack's evidence, and closing it is the most
 valuable thing anyone could add.
 
 ## 6. The positive control — the encoding can say yes
@@ -277,18 +277,26 @@ Read this before quoting the theorem.
 1. **It is not a lower bound on MixColumns.** It says the *merged block* costs
    15. It does not say the whole matrix costs 88, and it does not exclude an
    87-gate circuit that is not built this way.
-2. **Block structure is a property of a chosen partition, not of a circuit.**
-   Change the decomposition and the blocks change. "No 87 shares this block
-   structure" is conditional on this partition, and the partition is named
-   above so that the condition is checkable. Whether the known 88-gate circuits
-   themselves respect this partition is a separate question, and this pack does
-   not answer it.
-3. **It closes one class, not the problem.** The honest statement is: *no 87
+2. **Block structure is a property of a chosen decomposition rather than of a
+   circuit.** Change the decomposition and the blocks change. "No 87 shares
+   this block structure" is conditional on this one, which is why every
+   statement of the result in these repositories is scoped *under our block
+   decomposition*; the decomposition is named above so that the condition is
+   checkable. Whether every known 88-gate circuit respects it was not verified,
+   and this pack does not answer that question. Real circuits do put values
+   across these boundaries: the companion records repository ships a verified
+   91-gate depth-6 circuit whose gate 70 has line support `{2, 3, 4, 7}`, which
+   lies inside the merged block but inside neither W3 `{2, 3, 7}` nor U4
+   `{3, 4, 7}` alone.
+3. **It closes one class rather than the problem.** The statement it supports is: *no 87
    exists whose W3 and U4 blocks are built jointly in ≤ 14 gates.* An 87 could
    still exist that re-cuts the matrix somewhere else entirely.
 4. **The 88 record is not this programme's.** It was published independently;
    this programme reached 88 separately, from a different direction.
-5. **Nothing here is claimed optimal for MixColumns.** The true minimum remains
+5. **There is no DRAT refutation at k = 14.** The decisive level rests on two
+   complete solvers agreeing on one CNF; the pack ships proofs only for k = 9,
+   k = 10 and the k = 6 control (§5, §6).
+6. **Nothing here is claimed optimal for MixColumns.** The true minimum remains
    unknown.
 
 ## 8. Files

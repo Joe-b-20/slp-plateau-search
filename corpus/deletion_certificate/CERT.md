@@ -11,7 +11,7 @@
 > 0 realisable.**
 
 Equivalently: **no 87-gate MixColumns circuit is obtainable from any of
-1,575,516 distinct known 88-gate circuits by deleting one gate, even with
+1,575,516 distinct verified 88-gate value sets by deleting one gate, even with
 unrestricted rewiring of the surviving 87 masks.**
 
 This is strictly stronger than the `B = 56` tripwire (see `../tripwire_demo/`),
@@ -181,7 +181,7 @@ population (`../sample/`), over which the certificate re-runs in 0.1 s.
 
 **Closes.** The single-deletion route out of the known 88 plateau, over the
 entire corpus rather than five circuits or 498: **88,228,896 deletions over
-1,575,516 distinct verified 88s, 0 realisable.**
+1,575,516 distinct verified 88-gate value sets, 0 realisable.**
 
 **Does not close.** Two-mask deletion (`88 → 86` plus one new gate); any route
 that leaves the mask sets of known 88s; and of course the existence of an 87
@@ -196,5 +196,5 @@ across every corpus and lineage held: the local obstruction is genuinely weak
 and genuinely not what stops an 87.
 
 **What it is not.** This is a statement about the *known* 88s. It is not a lower
-bound. The honest bracket on the MixColumns XOR complexity remains
+bound. The bracket on the MixColumns XOR complexity remains
 `56 ≤ L(M) ≤ 88`.

@@ -96,7 +96,7 @@ mean nothing, and the file at the end of the path is the evidence.
 
 **Artifact (shipped).** `bounds/gte56/STATEMENT.md`, `bounds/gte56/cert56.json`, `bounds/gte56/check_gte56.py`, `bounds/gte56/mine.c`
 
-**What it does NOT imply.** It is 32 gates below the best circuit anyone has. The honest statement is 56 <= L(M) <= 88 and the gap is 32 gates. Nothing in this repository narrows it.
+**What it does NOT imply.** It is 32 gates below the best circuit anyone has. The statement it supports is 56 <= L(M) <= 88, and the gap is 32 gates. Nothing in this repository narrows it.
 
 ### 2. lb-92-cancellation-free
 
@@ -283,11 +283,11 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 ### 14. merged-block-15
 
-**Claim.** The two largest sub-blocks of every known 88, built jointly rather than separately, provably cost 15 gates - exactly what they cost apart. Merging them buys nothing, so no 87 exists that has the same block structure as the known 88s.
+**Claim.** Under our block decomposition, the two largest sub-blocks of every known 88, built jointly rather than separately, provably cost 15 gates - exactly what they cost apart. Merging them buys nothing, so no 87 exists that has the same block structure as the known 88s read through that decomposition.
 
 **Strength.** **exhaustive** - every case in a stated finite population was decided
 
-**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell.
+**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell. The decomposition is a choice of ours; whether every known 88 respects it was not verified, and there is no DRAT proof at k = 14 - the level rests on two complete solvers agreeing on one CNF.
 
 **Cost.** 356,321 core-seconds (about 99 core-hours) for the last size alone, kissat 4.0.4, one monolithic solve; about 30 hours of solver time for the ladder below it.
 
@@ -302,7 +302,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Artifact (shipped).** `encodings/cnf/k14_joint_W3U4.cnf`, `encodings/STATEMENT.md`, `encodings/logs/BANKED_LOGS.md`, `encodings/logs/mono_14_kissat404.log`, `encodings/logs/mono_14_cadical300.log`, `encodings/positive_control/mixcolumns_88gates_depth7.json`
 
-**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched. Worse, the block partition all of this reasoning lives inside was never measured on any circuit, and there is a circuit in this repository containing a gate no block in the decomposition can represent. Partial cube-coverage fractions from this lane must not be quoted.
+**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched. The decomposition all of this reasoning lives inside was chosen rather than measured off the circuits, whether every known 88 respects it was not verified, and the companion records repository ships a verified 91-gate depth-6 circuit whose gate 70 (line support {2,3,4,7}) fits no single block of it. There is no DRAT proof at k = 14. Partial cube-coverage fractions from this lane must not be quoted.
 
 ### 15. last-door-13
 

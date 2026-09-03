@@ -100,7 +100,7 @@ completely enumerated neighbourhoods — **not bounds**.
 > enumerated neighbourhoods — not bounds. By this instrument an optimal circuit
 > and a four-gates-too-big circuit are indistinguishable: derivation richness and
 > dead-gate count are identical to four significant figures at 88, 89, 90, 91 and
-> 92 gates. The honest bracket is `56 ≤ L(M) ≤ 88`.
+> 92 gates. The bracket is `56 ≤ L(M) ≤ 88`.
 
 ## Why it is in this pack
 

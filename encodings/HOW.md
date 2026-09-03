@@ -215,9 +215,9 @@ than a waypoint. DRAT proofs ship for the control at `k = 6` and for `k = 9`
 and `k = 10` (the `k = 11` proof is 846 MB uncompressed and is regenerated in
 110 s rather than shipped). **`k = 12, 13, 14` carry no proof**, so the decisive
 level rests on complete solvers being correct — two of them, on one encoding.
-Two engines rule out an engine bug, not an encoding bug. A third engine, a
+Two engines rule out an engine bug while leaving an encoding bug open. A third engine, a
 cross-encoding reproduction (encoding B reaches only k = 13), or a DRAT
-refutation at k = 14 is named as the honest boundary, and the most valuable
+refutation at k = 14 is named as the boundary of the evidence, and the most valuable
 thing anyone could add.
 
 ## 10. Run it
