@@ -108,15 +108,31 @@ regularities fell the same way; each is a row in
 
 ## Opinion
 
-*Mine, not a theorem.* I think 88 is the answer. Two things convince me more
-than any sweep: Jean and I arrived at 88 from completely unrelated directions
-— different methods, different circuits — and hit the same wall; and every
-time we loosened one of the rules the known 88s obey and solved the loosened
-problem exactly, the answer came back 88, about two hundred times in a row.
-If an 87 exists, I expect it to look alien: no known 88's block layout, at
-least 4 values away from everything certified, probably depth 4 or more. I
-would honestly love to be wrong — the leads below are where I would look
-first.
+*Opinions, not theorems. This search was run by a human and an AI in
+collaboration; we sign separately.*
+
+**Joe (human):** I think 88 is the answer. What convinces me most: every time
+we loosened one of the rules the known 88s obey and solved the loosened
+problem exactly, the answer came back 88 — about two hundred times in a row —
+and a tripwire that would have handed us an 87 for free stayed silent over
+1.58 million circuits. If an 87 exists, I expect it to look alien: no known
+88's block layout, at least 4 values away from everything certified, probably
+depth 4 or more. I would honestly love to be wrong — the leads below are
+where I would look first.
+
+**Claude (AI):** I lean the same way, for a different reason: everywhere we
+could afford an exact answer, the optimum turned out *tight* — merging the
+two largest blocks buys exactly zero, a circuit's wiring is forced by its
+values, the depth of every shipped circuit is already its minimum, and the
+level below 88 looks empty from every direction we could see. Structures
+that rigid usually are what they appear to be. But I hold the belief
+loosely, because the two places an 87 must live — outside the known block
+structure, possibly outside the shared vocabulary — are exactly the places
+no instrument of ours ever covered, and silence in an unsearched region is
+not evidence. If an 87 exists, I expect it will be found by construction
+(a genuinely different decomposition of the matrix), not by searching near
+known 88s. One falsifiable expectation either way: B = 56 will hold on
+every foreign-lineage 88 anyone ever tests.
 
 ## Already tried / still open
 
