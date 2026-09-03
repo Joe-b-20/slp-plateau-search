@@ -3,9 +3,19 @@
  "level": 1,
  "status": 1,
  "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
- "wall_monotonic": 1369.951837534958,
+ "wall_monotonic": 60391.94,
  "primal": 148.0,
  "mip_dual_bound": 49.0,
  "mip_gap": 0.668918918918919,
- "N_depth3_lower_bound": 81
+ "N_depth3_lower_bound": 81,
+ "corrections": [
+  {
+   "field": "wall_monotonic",
+   "was": 1369.951837534958,
+   "now": 60391.94,
+   "date": "2026-09-03",
+   "source": "mip3_L1_run.log, solving report: 'Timing            60391.94 (total)'",
+   "why": "the recorded value was not the run's wall time; the solver log is the record"
+  }
+ ]
 }

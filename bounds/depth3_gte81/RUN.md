@@ -109,11 +109,12 @@ cat depth3_gte81/mip3_L1_run.log
  "level": 1,
  "status": 1,
  "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
- "wall_monotonic": 1369.951837534958,
+ "wall_monotonic": 60391.94,
  "primal": 148.0,
  "mip_dual_bound": 49.0,
  "mip_gap": 0.668918918918919,
- "N_depth3_lower_bound": 81
+ "N_depth3_lower_bound": 81,
+ "corrections": [ ... one entry; see §2 below ... ]
 }
 ```
 
@@ -160,10 +161,14 @@ python3 depth3_gte81/mip3.py
    branch-and-cut — that part is sound — but the run proves nothing more than 81
    and did not converge. The primal value 148 is just an incumbent, not the
    optimum, and must not be quoted as one.
-2. **The result file's own timing field is inconsistent with its log.**
-   `wall_monotonic` reads 1369.95 s while HiGHS reports `Timing 60391.94 (total)`
-   and the process ran from 11:35 to 04:22. Trust the solver log; the JSON field
-   is wrong. It is left in the file unmodified rather than silently patched.
+2. **The result file's timing field was wrong and has been corrected.**
+   `wall_monotonic` read **1369.95 s**; the run's wall time is the
+   **60,391.94 s** HiGHS reports, and the process ran from 11:35 to 04:22.
+   The field was corrected to 60391.94 on 2026-09-03, and the original log
+   line it was corrected from — `  Timing            60391.94 (total)` in
+   `mip3_L1_run.log` — is recorded in the file's own `corrections` array
+   together with the superseded value. A wrong number left in a
+   machine-readable file is a trap for whoever parses it next.
 
 The first LP row of that log, `47.59824561`, is the same LP value the
 certificate in §1 pins exactly — an independent confirmation, through HiGHS's
