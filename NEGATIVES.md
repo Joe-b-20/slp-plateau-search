@@ -31,14 +31,27 @@ still carry almost no information about whether an 87-gate circuit exists,
 for reasons stated in the row. That assessment is this project's own, from
 its own audit of its own work - see the last row.
 
-## Artifact paths
+## Artifact paths — and the `shipped` flag
 
-Paths name files in the project's **working tree**, which is much larger than
-this repository and is not published wholesale; `INVENTORY.md` says what is
-held, how big it is, and how to ask for it. Where the evidence for a row does
-ship here, the row's repro command points at it. Directory names are historical
-and mean nothing; the file at the end of the path is the evidence. Every path
-in this file was checked to exist at build time.
+**Every row is marked shipped or not shipped, and the machine-readable
+`negatives.jsonl` carries the same mark as a boolean `shipped` field.** Honest
+beats pretty: most of this project's evidence is too large to host.
+
+- **`shipped: true`** (7 of 25 rows) — the artifact is a path *in this
+  repository*. Open it now. The row's `artifact` field lists those paths, and
+  every one of them was checked to be a tracked file at build time.
+- **`shipped: false`** (18 of 25 rows) — the artifact is held in the project's
+  working tree, which is much larger than this repository and is not published
+  wholesale. For these rows `artifact` is a **plain-English description** of
+  what is held, in the form `not-shipped: <what it is>; available on request
+  (INVENTORY.md)` — not a path, because a path you cannot open is worse than a
+  sentence you can read. `INVENTORY.md` says what is held, how big it is, and
+  how to ask for it.
+
+Below, each row's artifact line is prefixed **(shipped)** or **(not shipped)**.
+For the not-shipped rows the historical working-tree path is given after the
+description as an internal citation: directory names there are historical and
+mean nothing, and the file at the end of the path is the evidence.
 
 ## The table
 
@@ -81,7 +94,7 @@ in this file was checked to exist at build time.
 
 **Cost.** Pen and paper; refereed in-repo.
 
-**Artifact.** `atlas/thinktank/lower_bound.md`, `atlas/thinktank/referee_55.md`
+**Artifact (shipped).** `bounds/gte56/STATEMENT.md`, `bounds/gte56/cert56.json`, `bounds/gte56/check_gte56.py`, `bounds/gte56/mine.c`
 
 **What it does NOT imply.** It is 32 gates below the best circuit anyone has. The honest statement is 56 <= L(M) <= 88 and the gap is 32 gates. Nothing in this repository narrows it.
 
@@ -95,7 +108,7 @@ in this file was checked to exist at build time.
 
 **Cost.** Solver-free.
 
-**Artifact.** `beat88/understanding/CANON.md`, `beat88/understanding/v2_no_vocab/data/cf_incumbent.json`
+**Artifact (shipped).** `bounds/cf_gte92/STATEMENT.md`, `bounds/cf_gte92/cert_cf92.json`, `bounds/cf_gte92/cert_cf92_sharper.json`, `bounds/cf_gte92/cf_102gates_depth5.json`
 
 **What it does NOT imply.** It bounds nothing about circuits that DO cancel, and every record circuit here cancels. It only reframes the question as 'how much does cancellation buy?' - the records answer 'at least 4'; an 87 would answer 'at least 5'. It is not a lower bound on L(M).
 
@@ -109,7 +122,7 @@ in this file was checked to exist at build time.
 
 **Cost.** Not separately priced.
 
-**Artifact.** `campaign_87/wave6_2026-08-11/lower_bound/cert_depth3.json`, `campaign_87/wave6_2026-08-11/lower_bound/logs/mip3_L1.log`
+**Artifact (shipped).** `bounds/depth3_gte81/STATEMENT.md`, `bounds/depth3_gte81/cert_depth3.json`, `bounds/depth3_gte81/mip3_result_L1.json`, `bounds/depth3_gte81/mip3_L1_run.log`
 
 **What it does NOT imply.** 80 < 87, so this does NOT exclude a depth-3 87-gate circuit. The technique's own ceiling on this problem is estimated at 66-70, so strengthening it to 88 is a route that has been closed, not a route that is open.
 
@@ -129,7 +142,7 @@ in this file was checked to exist at build time.
 python3 tools/tripwire.py <your_circuit.json>
 ```
 
-**Artifact.** `wrapup/CORPUS88.md`, `experiments/e15_campaign3/tools/sweep.py`, `experiments/e15_campaign3/AUDIT.md`
+**Artifact (not shipped).** The sweep ledger recording the tripwire's verdict on each of the 28,796 circuits with a build order and each of the 1,575,516 distinct mask sets, plus the sweep driver that produced it; the instrument itself ships as tools/tripwire.py (with tools/HOW.md) and the 520-record stratified draw as corpus/sample/, so the check is runnable here on any circuit - only the population is not. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/CORPUS88.md`, `experiments/e15_campaign3/tools/sweep.py`, `experiments/e15_campaign3/AUDIT.md`
 
 **What it does NOT imply.** The arrow only runs one way. B != n-q gives you a deletion; a clean B does NOT mean no gate is deletable - two gates duplicating a non-target value both count as working, so B stays clean while a gate is still deletable (tripwire.py demonstrates exactly this case). And the identity holds at every n, so a silent tripwire on 88-gate circuits says nothing whatever about whether an 87 exists.
 
@@ -152,7 +165,7 @@ nice -n 19 tools/delcert --bin ../sample/corpus88_sample.bin --targets targets.t
 nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict from banked/
 ```
 
-**Artifact.** `wrapup/day2/deletion_cert/CERT.md`, `wrapup/day2/deletion_cert/RESULT.json`, `wrapup/day2/deletion_cert/tools/delcert.c`
+**Artifact (shipped).** `corpus/deletion_certificate/CERT.md`, `corpus/deletion_certificate/banked/RESULT.json`, `corpus/deletion_certificate/tools/delcert.c`, `corpus/sample/corpus88_sample.jsonl`
 
 **What it does NOT imply.** Radius 1. The measured distance from one of these circuits to a genuinely different optimum is a median of 42 values, and 44 of 45 measured cases need at least 8 changes. A radius-1 result is therefore about 1/42 of the way to the object it would have to exclude.
 
@@ -166,7 +179,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced; the ledgers carry per-window time.
 
-**Artifact.** `wrapup/CONFLICTS_RESOLVED.md`
+**Artifact (not shipped).** The two-gate window ledgers - 139,878 mask sets x 1,540 windows, logged in three disjoint shards with their reconciliation. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/CONFLICTS_RESOLVED.md`
 
 **What it does NOT imply.** This is the single clearest example of a negative that looks strong and is not. The same exact decider returns 'irreducible' about 97-, 94-, 92-, 91-, 90- and 89-gate circuits too, so its verdict discriminates 88 from 87 at a likelihood ratio of about 1.00. It is evidence that local search is exhausted, not evidence about L(M).
 
@@ -180,7 +193,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced.
 
-**Artifact.** `wrapup/CONFLICTS_RESOLVED.md`
+**Artifact (not shipped).** The three-gate window ledger - 200 circuits x 27,720 triples, every decision recorded. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/CONFLICTS_RESOLVED.md`
 
 **What it does NOT imply.** Same as radius 2, and the project's own guidance is not to fund more of it: negatives at radius <= 4 are worth close to nothing against a true distance of ~42.
 
@@ -194,7 +207,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced.
 
-**Artifact.** `wrapup/CONFLICTS_RESOLVED.md`
+**Artifact (not shipped).** The partial four-gate sweep ledgers for the three circuits, with their per-circuit coverage counts. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/CONFLICTS_RESOLVED.md`
 
 **What it does NOT imply.** Under 16% coverage on three circuits. This is listed so that nobody quotes it as exhaustive; it is not, and the older figures for it circulating in this repository are stale.
 
@@ -208,7 +221,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** The unfinished remainder is priced at ~1,200 CPU-hours; the harder variant stands at 17 of 17,283 circuits even attempted.
 
-**Artifact.** `wrapup/CONFLICTS_RESOLVED.md`
+**Artifact (not shipped).** The one-helper rewrite ledger - 15,099,957 windows over 22 circuits, decision-exact. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/CONFLICTS_RESOLVED.md`
 
 **What it does NOT imply.** 22 circuits, not the corpus. These window counts must never be added to the radius-2/3 counts - they overlap and are not one population. Two of the frames in this family are, by the project's own estimate, unclosable at any budget it had.
 
@@ -222,7 +235,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced.
 
-**Artifact.** `experiments/e5_readd/ledger.jsonl`, `experiments/e5_readd/ADDENDUM_20260829.md`
+**Artifact (not shipped).** The drop-and-readd experiment's append-only ledger and its dated addendum. Available on request — see `INVENTORY.md`. Working-tree citation: `experiments/e5_readd/ledger.jsonl`, `experiments/e5_readd/ADDENDUM_20260829.md`
 
 **What it does NOT imply.** 'Refuted' is banked only for the first circuit. On the second, the correct word is 'screened': 15 subsets cost 0 and 430 cost 1, which makes 'refuted at cost-1' vacuous or ill-posed for those. Four output rows out of 32 is also a small window.
 
@@ -236,7 +249,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced.
 
-**Artifact.** `experiments/e16_lastwish/laneFPOINT/RESULT.md`, `beat88/methods/shared/gauge.py`
+**Artifact (not shipped).** The neutral-orbit enumeration result and the gauge-equivalence module it ran on. Available on request — see `INVENTORY.md`. Working-tree citation: `experiments/e16_lastwish/laneFPOINT/RESULT.md`, `beat88/methods/shared/gauge.py`
 
 **What it does NOT imply.** Both move sets preserve gate count and start from known 88s, so an 87 not reachable from a known 88 by these moves is outside these objects BY CONSTRUCTION - the closure constrains it not at all. And 90.1% of the 88s on disk were measured to be far from every circuit studied this way. The two headline counts are also not measurements of the same thing and must not be compared.
 
@@ -250,7 +263,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** 1,686 s for the 3-gate half.
 
-**Artifact.** `experiments/e16_lastwish/lane536/RESULT.md`
+**Artifact (not shipped).** The two-consumer site-rebuild result write-up, including the correction that dissolved the anomaly which motivated it. Available on request — see `INVENTORY.md`. Working-tree citation: `experiments/e16_lastwish/lane536/RESULT.md`
 
 **What it does NOT imply.** The structural anomaly that motivated this whole lane turned out to be an artifact: the count that looked significant was one set of sites counted twice, and the headline was forced by an identity and could not have come out any other way. The computations above survive; the story around them does not, and a related anomaly from the same lane is closed as circular with a standing instruction not to cite it.
 
@@ -264,7 +277,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Cost.** Not separately priced.
 
-**Artifact.** `beat88/methods/m2_oracle/LEDGER.md`, `beat88/methods/m4_inverse/analysis/landscape.md`
+**Artifact (not shipped).** The move-class oracle's ledger and the inverse-move landscape analysis. Available on request — see `INVENTORY.md`. Working-tree citation: `beat88/methods/m2_oracle/LEDGER.md`, `beat88/methods/m4_inverse/analysis/landscape.md`
 
 **What it does NOT imply.** Every one of these is a bounded-radius negative around known 88s and inherits the same fence. Note also that this repository contains four files with '87gates' in the name; all four are deliberate tripwire fakes planted to test the alarm path, and none is a circuit.
 
@@ -287,7 +300,7 @@ The cheap end of the ladder re-runs here:
 cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 ```
 
-**Artifact.** `fleet8/unified/results/joint_levels.jsonl`, `experiments/sat_package/k14_joint_W3U4.cnf`
+**Artifact (shipped).** `encodings/cnf/k14_joint_W3U4.cnf`, `encodings/STATEMENT.md`, `encodings/logs/BANKED_LOGS.md`, `encodings/logs/mono_14_kissat404.log`, `encodings/logs/mono_14_cadical300.log`, `encodings/positive_control/mixcolumns_88gates_depth7.json`
 
 **What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched. Worse, the block partition all of this reasoning lives inside was never measured on any circuit, and there is a circuit in this repository containing a gate no block in the decomposition can represent. Partial cube-coverage fractions from this lane must not be quoted.
 
@@ -301,7 +314,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Cost.** 19,458 s for the deciding solve.
 
-**Artifact.** `fleet6/door/ADDENDUM_20260829.md`, `fleet6/door/logs/door.out`
+**Artifact (not shipped).** The last-door run's dated addendum and its raw solver output. Available on request — see `INVENTORY.md`. Working-tree citation: `fleet6/door/ADDENDUM_20260829.md`, `fleet6/door/logs/door.out`
 
 **What it does NOT imply.** Class-conditional. It forecloses one branch of one pricing argument. It says nothing about an 87 outside that class.
 
@@ -315,7 +328,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Cost.** About 33,000 s spent; the one open sub-problem is priced at a further ~150,000 s.
 
-**Artifact.** `fleet5/laneMENU/results/bound.json`, `fleet5/laneMENU/results/cellprice.json`, `fleet5/laneMERGE/results/FINAL_TALLY.txt`
+**Artifact (not shipped).** The menu-pricing bound and per-cell price files, plus the merge tally that combined them. Available on request — see `INVENTORY.md`. Working-tree citation: `fleet5/laneMENU/results/bound.json`, `fleet5/laneMENU/results/cellprice.json`, `fleet5/laneMERGE/results/FINAL_TALLY.txt`
 
 **What it does NOT imply.** The bound is 87, not 88 - it does not by itself exclude an 87, and closing the last gate is an OPEN lead, not a result. The pricing is also class-conditional: it prices 88 within a modelled class that is not proved to contain an 87, and the class's load-bearing wiring assumption was measured on 22 circuits with one exception and never proved.
 
@@ -329,7 +342,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Cost.** Not separately priced.
 
-**Artifact.** `campaign_87/wave5_2026-08-04/burn/union_sat`, `experiments/e3a_exploit/ledger.jsonl`
+**Artifact (not shipped).** The RC2 union-SAT burn directory and the exploit run's ledger. Available on request — see `INVENTORY.md`. Working-tree citation: `campaign_87/wave5_2026-08-04/burn/union_sat`, `experiments/e3a_exploit/ledger.jsonl`
 
 **What it does NOT imply.** Every one of these prices a restricted problem. The restriction is exactly the thing that would have to be wrong for an 87 to exist, so agreement among them is close to circular: the regularity is measured across 88-gate circuits, which is precisely the population that would look regular if an 87 lived elsewhere.
 
@@ -343,7 +356,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Cost.** Six comparable regions remain, priced at 2,000-5,500 s each.
 
-**Artifact.** `fleet9/laneENUM/results/v2_counts.jsonl`, `experiments/e7_push/ledger.jsonl`, `experiments/e7_push/ATLAS_NOTE.md`
+**Artifact (not shipped).** The block-cell enumeration counts and the push run's ledger and analysis note. Available on request — see `INVENTORY.md`. Working-tree citation: `fleet9/laneENUM/results/v2_counts.jsonl`, `experiments/e7_push/ledger.jsonl`, `experiments/e7_push/ATLAS_NOTE.md`
 
 **What it does NOT imply.** Cell-conditional. This lane also had to correct an earlier claim from a different lane: 3 of 23 of that lane's negatives were vacuous, their controls having never fired.
 
@@ -357,7 +370,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Cost.** About 5 minutes of one nice -19 core, against the ~50 core-hours a search campaign for the same question would have cost.
 
-**Artifact.** `experiments/e_upstream/RESULT.md`, `wrapup/day2/e_upstream/c4_fanout_cpsat.py`, `wrapup/day2/e_upstream/c4_fanout_cpsat.json`
+**Artifact (not shipped).** The fan-out CP-SAT model, its result file and the upstream run's write-up. Available on request — see `INVENTORY.md`. Working-tree citation: `experiments/e_upstream/RESULT.md`, `wrapup/day2/e_upstream/c4_fanout_cpsat.py`, `wrapup/day2/e_upstream/c4_fanout_cpsat.json`
 
 **What it does NOT imply.** 39 mask sets, not the corpus; the widening run had completed 1 of 150 at the time of writing. And this is a fact about 88-gate value sets whose instance does not differ at 87 - it constrains what an 87 could look like only if the 87 shares those value sets, which is the assumption at issue.
 
@@ -379,7 +392,7 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
         corpus/vocabulary/S89_out_of_vocabulary_89gates.json
 ```
 
-**Artifact.** `wrapup/day2/e_upstream/recensus.json`, `wrapup/day2/e_upstream/recensus.py`, `wrapup/day2/e_upstream/circuits/S89_41_00000098.json`
+**Artifact (shipped).** `corpus/vocabulary/vocab.json`, `corpus/vocabulary/recensus_stats.json`, `corpus/vocabulary/S89_out_of_vocabulary_89gates.json`, `corpus/vocabulary/tools/oov_check.py`
 
 **What it does NOT imply.** It lowers no bound on 87 by any fraction of a gate, and it is not evidence that an 87 exists: leaving the dictionary costs between 0 and 1 gate, and an 87 needs a gate BACK. No 88 outside the dictionary has ever been exhibited; the best this line ever reached was 89.
 
@@ -393,7 +406,7 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 
 **Cost.** One measurement. No solver time.
 
-**Artifact.** `wrapup/LEADS.md`
+**Artifact (not shipped).** The leads ledger entry closing this route, with the invariant it turned on. Available on request — see `INVENTORY.md`. Working-tree citation: `wrapup/LEADS.md`
 
 **What it does NOT imply.** Nothing beyond that route. The transferable lesson is the method: compute an upper bound on your prospective lower bound before building any machinery for it.
 
@@ -407,7 +420,7 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 
 **Cost.** Various; each is a small exact computation.
 
-**Artifact.** `fleet7/laneCONSOLIDATE/STATE_OF_THE_PROBLEM.md`, `experiments/e17_pure/DOSSIER.md`, `fleet2/laneP_proof/RESULT.md`
+**Artifact (not shipped).** The consolidated state-of-the-problem write-up and the pure-proof dossier behind these ceilings. Available on request — see `INVENTORY.md`. Working-tree citation: `fleet7/laneCONSOLIDATE/STATE_OF_THE_PROBLEM.md`, `experiments/e17_pure/DOSSIER.md`, `fleet2/laneP_proof/RESULT.md`
 
 **What it does NOT imply.** It does not say 88 is unprovable - it says these techniques cannot prove it. Every unconditional family here has a ceiling below 88 except one, and that one's ceiling is 83 on a circuit that exists.
 
@@ -421,7 +434,7 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 
 **Cost.** Not separately priced.
 
-**Artifact.** `experiments/e17_pure/DOSSIER.md`
+**Artifact (not shipped).** The pure-proof dossier section recording the certificate LP's cap. Available on request — see `INVENTORY.md`. Working-tree citation: `experiments/e17_pure/DOSSIER.md`
 
 **What it does NOT imply.** 91.41 is above 88, so the cap is not what kills the route - what kills it is that reaching the cap requires assumptions the family cannot certify. Do not read '91.41' as a lower bound of any kind.
 
@@ -435,7 +448,7 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 
 **Cost.** The audit itself is cheap; it is reading, not computing.
 
-**Artifact.** `fleet7/laneCONSOLIDATE/STATE_OF_THE_PROBLEM.md`, `wrapup/CORRECTIONS.md`, `wrapup/CASE_FOR_88.md`
+**Artifact (not shipped).** The consolidated state-of-the-problem write-up, the corrections ledger and the case write-up this repricing came out of. Available on request — see `INVENTORY.md`. Working-tree citation: `fleet7/laneCONSOLIDATE/STATE_OF_THE_PROBLEM.md`, `wrapup/CORRECTIONS.md`, `wrapup/CASE_FOR_88.md`
 
 **What it does NOT imply.** It does not withdraw the computations - they ran, and their counts are correct. It withdraws the INFERENCE. Specific casualties: a structural backbone picture that turned out to be falsified; a rigidity headline that reported 1 escape where two sweeps find 99; a file count published as a population size where 135 files held 21 distinct circuits; a corpus called exhaustive that is 14% complete; and a list of published negatives whose controls never fired. Anyone mining this repository for 'X was ruled out' must read that list first.
 
@@ -455,6 +468,6 @@ python3 corpus/vocabulary/tools/oov_check.py corpus/vocabulary/vocab.json \
 python3 corpus/depth_forced/asap_depth.py
 ```
 
-**Artifact.** `corpus/depth_forced/DEPTH_FORCED.md`, `corpus/depth_forced/asap_depth.py`, `wrapup/day2/conversion_check.md`, `wrapup/day2/STEWARD.md`
+**Artifact (shipped).** `corpus/depth_forced/DEPTH_FORCED.md`, `corpus/depth_forced/asap_depth.py`, `corpus/depth_forced/HOW.md`
 
 **What it does NOT imply.** It says NOTHING about whether more depth-5 pockets exist to be found directly - almost certainly they do. 92 of the 28,796 corpus 88s carrying a build order are already at depth 5 (0.32%), and only two of those pockets have been enumerated to closure (27 and 135 states). This row does not bound how many depth-5 88s there are, does not claim the known pockets are the only ones, and says nothing about whether a depth-4 88 exists. It rules out exactly one shortcut: taking an 88 you already have and rescheduling, transposing or depth-preservingly walking it to a lower depth. Finding a shallow 88 by searching for one directly is untouched by this row - it is how both depth-5 records were actually made.
