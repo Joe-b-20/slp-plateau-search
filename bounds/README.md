@@ -26,6 +26,12 @@ Read `cf_gte92/` first. It is the strongest thing here, and the only proved
 quantity in the whole programme that lies **above** the 88-gate record: every
 XOR circuit for MixColumns with at most 91 gates must contain a cancelling gate.
 
+Each directory also has a `HOW.md`: the counting argument's shape, what the
+searcher or the checker actually does, and the entry-point command —
+[`cf_gte92/HOW.md`](cf_gte92/HOW.md), [`gte56/HOW.md`](gte56/HOW.md),
+[`depth3_gte81/HOW.md`](depth3_gte81/HOW.md),
+[`validation/HOW.md`](validation/HOW.md).
+
 ## Where the bounds actually sit
 
     L(M)         56  <=  L(M)  <= 88          (88 = the best known circuit)

@@ -21,6 +21,11 @@ circuit uses **88** gates. The refereed bracket is `56 ≤ L(M) ≤ 88`.
 | [`records_check/`](records_check/RUN.md) | verify every record circuit against a from-first-principles MixColumns implementation | 21 s |
 | [`depth_forced/`](depth_forced/DEPTH_FORCED.md) | depth is a property of the **value set**: every shipped circuit already sits at the shallowest depth its own mask set admits, so no 88 can be rescheduled shallower | 0.02 s |
 
+The three instruments in the pack have a `HOW.md` explaining the mechanism with
+diagrams: [`deletion_certificate/HOW.md`](deletion_certificate/HOW.md),
+[`sample/HOW.md`](sample/HOW.md), [`depth_forced/HOW.md`](depth_forced/HOW.md),
+and the tripwire's is [`../tools/HOW.md`](../tools/HOW.md).
+
 ## Suggested order
 
 1. **`records_check/`** first. If the circuits are not what they claim to be,

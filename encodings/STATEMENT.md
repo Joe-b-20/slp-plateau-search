@@ -7,6 +7,10 @@ Everything on this page is either a definition, a number taken from a solver
 log that ships with this pack, or a run you can repeat from `RUN.md`. Nothing is
 asserted that a script here cannot re-derive.
 
+How the encoding itself works — the variable families, what each group of
+clauses says, the cube partition, and what is deliberately not encoded:
+[`HOW.md`](HOW.md).
+
 ---
 
 ## 1. The problem, in plain words

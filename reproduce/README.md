@@ -28,6 +28,9 @@ GF(2⁸) and FIPS-197 only*.
 Every search is stochastic. Times below are **what a run actually took**, dated
 and labelled — a measurement, never a promise.
 
+**How the two searches in this folder actually work** — the depth-3 model, the
+plateau descent, the harness: [`HOW.md`](HOW.md).
+
 | what it reproduces | command | measured |
 |---|---|---|
 | **97 @ depth 3, from scratch** — *frontier* | `python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, one core, re-run 2026-09-02 (RNG seed 6, its first seed, both times); **81 s** on 2026-07-27; 60–156 s across earlier runs |
