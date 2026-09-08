@@ -87,10 +87,11 @@ worth anyone's time.
 
 InvMixColumns is the natural next one, and the instruments already point at
 it: the verifier and the tripwire take any 32×32 matrix, and the matrix,
-the naive baseline and a first greedy circuit are done. The published record
-there is 92 gates, from a single paper, with no depth ever reported and no
-lower bound at all. I would start with the depth-restricted records, because
-the whole frontier is unclaimed and the first points cost hours, not months.
+the naive baseline and a first greedy circuit are done. The only printed
+count there is 92 gates, from a single paper, and 91 follows from an in-place
+MixColumns program by reversal; I have found no gate count at a stated depth
+and no lower bound. I would start with the depth-restricted records, because
+that frontier looks unclaimed and the first points cost hours, not months.
 Then the bounds, before any large search — this time with the calibration
 audit run first, so I know what a negative result is worth before I collect
 any.

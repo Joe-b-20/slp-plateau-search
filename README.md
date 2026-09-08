@@ -205,9 +205,12 @@ carry no core-hour figure, so 610 is a floor.
 exact-SLP encoding read a target list and nothing else, and are already pointed
 at AES **InvMixColumns**: matrix derived from FIPS-197 and GF(2⁸) under four
 passing controls, tripwire reading B = 56 on all five published forward 88s,
-day-0 baselines of a naive XOR tree at 440 gates and a greedy at 164 @ depth 9
-against a best published count of 92. No depth and no non-trivial lower bound
-is published for that matrix by anyone.
+day-0 baselines of a naive XOR tree at 440 gates and a greedy at 164 @ depth 9.
+The only printed count for that matrix is 92 (Xiang et al., ToSC 2020), and
+91 follows directly from Yuan et al.'s in-place 91 for MixColumns (ToSC 2024),
+since an in-place program inverts gate for gate; so the bar is 91. We have
+found no published gate count at a stated depth and no non-trivial lower
+bound for it.
 
 ## Opinion
 
