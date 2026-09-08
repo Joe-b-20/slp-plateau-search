@@ -75,9 +75,10 @@ My own view is in the Opinion section: the local arguments are used up, and
 if an 87 exists it will come from a different way of decomposing the matrix,
 not from anywhere near the circuits we have.
 
-Two things made stopping easier. The tripwire — a check that would have
-handed me an 87 for free if any known 88 had a wasted gate — stayed silent
-over 1.58 million value sets. And the calibration audit told me that most of
+Two things made stopping easier. The deletion check — which would have
+handed me an 87 for free if any known 88 had a removable gate — stayed
+silent over all 1.58 million value sets, and the tripwire stayed silent on
+every circuit with a full build order. And the calibration audit told me that most of
 my negative results, the ones I was proudest of, carry almost no information
 about whether an 87 exists. Knowing that, more of the same search was not
 worth anyone's time.
