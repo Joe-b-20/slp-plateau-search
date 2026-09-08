@@ -9,11 +9,13 @@ cd ..            # pipeline/
 for f in seeds/*.json; do python3 ../verify_circuit.py "$f"; done
 ```
 
-**Provenance is per file, and the table below is the authority.** Three classes
-([`METHODS_INDEX.md`, "Provenance classes"](../../METHODS_INDEX.md#provenance-classes)): our own lineage; published work, imported and credited;
-and our search output whose *lineage passes through* published work. Of the nine
-files, two are imported and three are derived. Anything a worker produces
-inherits the status of its seed.
+**Provenance is per file, and the table below is the authority.** There are
+three classes
+([`METHODS_INDEX.md`, "Provenance classes"](../../METHODS_INDEX.md#provenance-classes)):
+our own lineage; published work, imported and credited; and our search output
+whose *lineage passes through* published work. Of the nine files, two are
+imported and three are derived. Anything a worker produces inherits the status
+of its seed.
 
 | file | gates @ depth | provenance |
 |---|---|---|
@@ -24,14 +26,14 @@ inherits the status of its seed.
 | `seed_89_at_depth5.json` | 89 @ 5 | **ours, own lineage** — the project's depth-5 record circuit (lineage in `../../evidence/RESULTS.md`). |
 | `seed_89_at_depth6.json` | 89 @ 6 | **ours, own lineage** — the frontier circuit the historic sub-89 run started from. |
 | `seed_90_at_depth5.json` | 90 @ 5 | **ours, own lineage** — the depth-5 circuit the historic sub-89 run's capped worker started from. |
-| `seed_90_at_depth7_rho2sym_basin2.json` | 90 @ 7 | exactly ρ²-symmetric (basin 2); with basin 1 the best exactly symmetric circuits we know of (previous best symmetric: 94). **DERIVED — lineage passes through Jean's circuit** (basin 1 ∪ a 91 of our lineage). |
+| `seed_90_at_depth7_rho2sym_basin2.json` | 90 @ 7 | exactly ρ²-symmetric (basin 2); together with basin 1, the smallest exactly symmetric circuits known to us (previous best symmetric: 94). **DERIVED — lineage passes through Jean's circuit** (basin 1 ∪ a 91 of our lineage). |
 | `seed_90_at_depth9_rho2sym_basin1.json` | 90 @ 9 | exactly ρ²-symmetric (basin 1) = a 91 of our lineage ∪ a 92 symmetrized from Jean's 88. **DERIVED — lineage passes through Jean's circuit.** The basin whose descent produced the third-family 88@8. |
 
 Who uses them: the `hunt87` worker set starts from the three 88s and the 89@5,
 the `sub89` set from the 89@6 and the 90@5 (`../ladder_parallel.py`,
-`WORKER_SETS`). The two ρ²-symmetric 90s are not in a shipped set — they are
-the fastest-descending young basins we have (90 → 89@5 in ~15 min in the
-archived run) and are there to be pointed at.
+`WORKER_SETS`). The two ρ²-symmetric 90s are in no shipped set. They descend
+faster than any other seed here — 90 → 89 @ depth 5 in about 15 minutes in the
+archived run — and are provided as starting points to aim a worker at.
 
 Each file's `source` field names the exact path it came from: for the record
 circuits the curated copy in `../../evidence/circuits/`, otherwise the raw

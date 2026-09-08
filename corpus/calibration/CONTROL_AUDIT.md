@@ -1,8 +1,7 @@
 # The control audit: the project's own negatives price at LR ≈ 1.00
 
 **Document only. Nothing to re-run here** — this page states a result computed
-elsewhere and cites its artifacts, because it is the single most important piece
-of scope information in this pack.
+elsewhere and cites its artifacts.
 
 ---
 
@@ -56,7 +55,7 @@ states:
 
 Identical to four significant figures across 88–92.
 
-### The statistic
+### Why that is a likelihood ratio of 1.00
 
 An instrument that returns the same value on an optimal circuit and on a
 four-gates-too-big one has **likelihood ratio ≈ 1.00** about optimality: the
@@ -65,8 +64,8 @@ given it is improvable. **LR = 1.00.** The reading carries no information.
 
 The instruments themselves are not broken, and this was checked: a completeness
 control planted 4,200 YES windows across 74 circuits and the decider **missed
-zero**. It finds what is there. It is simply that at these radii there is
-nothing to find, at 97 gates as much as at 88.
+zero**. It finds what is there. At these radii there is nothing to find, at 97
+gates as much as at 88.
 
 The campaign's rigidity framing was also **inverted**. Against a proper null —
 random 88-mask subsets, at 0.495 options per gate — real 88s are **4.7× more
@@ -85,13 +84,15 @@ completely enumerated neighbourhoods — **not bounds**.
 
 * **Lower bounds.** `L(M) ≥ 56` is refereed. These are proofs, not evidence.
 * **Upper bounds.** Every verified circuit is a witness and stands on its own.
-* **The `B = 56` tripwire** (`../tripwire_demo/`) — a theorem with a decision
-  rule, not a rigidity statistic. It either hands you a smaller circuit or it
-  does not.
+* **The `B = 56` tripwire**
+  ([`../tripwire_demo/RUN.md`](../tripwire_demo/RUN.md)) — a theorem with a
+  decision rule, not a rigidity statistic. It either produces a smaller circuit
+  or it does not.
 * **The deletion certificate** in this pack. It is a statement about what the
   known 88s admit, exhaustive over its stated population, with a positive
   control that fires. It is not offered as evidence that 87 does not exist, and
-  `CERT.md` §7 says so.
+  [`../deletion_certificate/CERT.md`](../deletion_certificate/CERT.md) §7 says
+  so.
 
 ## The public-safe statement
 
@@ -102,12 +103,12 @@ completely enumerated neighbourhoods — **not bounds**.
 > dead-gate count are identical to four significant figures at 88, 89, 90, 91 and
 > 92 gates. The bracket is `56 ≤ L(M) ≤ 88`.
 
-## Why it is in this pack
+## Why the scale of a negative is not its strength
 
-Because the rest of this pack is negatives, and a reader is entitled to know
-which of them the project's own audit has already discounted. The scale of a
-negative and its informativeness are different quantities, and 88 million
-deletions is a fact about population size, not about optimality.
+The rest of this pack is negatives, and a reader is entitled to know which of
+them the project's own audit has already discounted. The size of a negative and
+its informativeness are different quantities: 88 million deletions is a fact
+about population size, not about optimality.
 
 ## Artifact citations
 

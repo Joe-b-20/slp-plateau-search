@@ -7,13 +7,13 @@ the certificate tool in `../deletion_certificate/` reads.
 
 ## 1. Why a sample exists
 
-The full population is 457 MB and is not shipped. The claim it supports —
+The full population is not shipped: 554 MB of raw values, with a 457 MB
+provenance index ([`../../INVENTORY.md`](../../INVENTORY.md)). The claim it supports —
 "0 realisable deletions" — is only meaningful if a reader can run the same tool
-over the same kind of data, so a 520-record sample ships instead, drawn to be
-**representative and auditable** rather than convenient: every distinct lineage
-in the population is present in proportion, and all five published 88-gate
-circuits are included, so the sample contains the sets a reader is most likely
-to want to check by hand.
+over the same kind of data, so a 520-record sample ships instead. It is drawn to
+be **representative and auditable**: every distinct lineage in the population is
+present in proportion, and all five published 88-gate circuits are included, so
+the sample contains the value sets a reader is most likely to check by hand.
 
 ## 2. The draw
 
@@ -30,8 +30,7 @@ flowchart TD
     H --> I["write one JSON line and one fixed-size binary record"]
 ```
 
-Three properties of that procedure are worth stating because they are what make
-the sample checkable:
+Three properties of that procedure are what make the sample checkable:
 
 - **No RNG.** Within a stratum of `N` records wanting `n`, the builder takes
   indices `int(j · N/n)` for `j = 0 … n-1` — evenly spaced through the stratum in
@@ -75,25 +74,10 @@ the binary equal the row's sorted masks. After the last row it asserts the
 binary holds no extra bytes. A failing row is counted rather than fatal, so one
 run reports every problem; exit status is nonzero if any row failed.
 
-Measured: **0.04 s** to check; 5.4 s and ~188 MB of memory to build from the
-full index.
+## 5. Running it
 
-## 5. Run it
-
-From `corpus/sample/`:
-
-```
-python3 tools/check_sample.py
-
-# then hand the same file to the certificate tool and its reference:
-cd ../deletion_certificate
-tools/delcert --bin ../sample/corpus88_sample.bin --targets targets.txt --k 88 --tag sample --every 0
-python3 tools/pycheck.py ../sample/corpus88_sample.bin 0 520
-```
-
-Rebuilding the sample needs the full population and its index, which are not
-shipped:
-
-```
-python3 tools/build_sample.py masks.bin canon.tsv corpus_index.jsonl [record_circuits_dir]
-```
+The checker's command, its real output and its measured cost are in
+[`RUN.md`](RUN.md), together with the rebuild command — rebuilding the sample
+needs the full population and its index, which are not shipped. Feeding the
+same `corpus88_sample.bin` to the certificate tool and to its Python reference
+is in [`../deletion_certificate/RUN.md`](../deletion_certificate/RUN.md).

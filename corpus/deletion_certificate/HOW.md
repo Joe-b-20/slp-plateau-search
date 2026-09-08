@@ -19,7 +19,7 @@ For each of the 56 **non-target** masks `m` in a set, ask:
 
 If yes for even one `m`, that set yields an 87-gate circuit by deletion. The
 certificate is that the answer was **no**, every time, for every non-target mask
-of every set in the population: 1 575 516 distinct mask sets × 56 = **88 228 896
+of every set in the population: 1 575 516 distinct value sets × 56 = **88 228 896
 deletions, 0 realisable.**
 
 "Realisable" is defined constructively, not by searching orderings: start with
@@ -72,19 +72,19 @@ small hash table for value lookup) and a reference in Python
 rather than read from a file). They are run over the same 520-set shipped sample
 and must report identical `tested`, `local_pass` and `realisable` counts.
 
-Note one deliberate asymmetry: the C tool reads its 32 target masks from
+One deliberate asymmetry: the C tool reads its 32 target masks from
 `targets.txt` and only checks that there are exactly 32 of them, so for the C
 tool the target set is *data*. The Python reference rebuilds them from the field
 spec. Agreement between the two is therefore also a check on that file.
 
 ## 4. Controls: the tool must be able to say yes
 
-A count of zero from a tool that can only return zero is worthless, so three
-fixture populations ship, each 498 records:
+A count of zero is evidence only if the tool can also return a nonzero count, so
+three fixture populations ship, each 498 records:
 
 | fixture | what it is | required outcome |
 |---|---|---|
-| `ctrl_neg498.bin` | 498 real 88-gate mask sets | 27 888 tested, 0 realisable |
+| `ctrl_neg498.bin` | 498 real 88-gate value sets | 27 888 tested, 0 realisable |
 | `ctrl_pos89.bin` | the same 498 sets, each with **one** extra mask planted that is the XOR of two of its own values | 28 386 tested, **498 firings** — one per record |
 | `ctrl_pos90.bin` | the same, with two extras planted | 28 884 tested, **996 firings** |
 
@@ -103,7 +103,7 @@ realisable set. If the positive fixtures do not fire, the tool is broken.
 `canon = sha256` of the comma-joined sorted hex masks, truncated to 16 hex
 digits — an order-free identity for a value set. Two circuits with the same
 `canon` compute the same values however they were built, which is why the
-population is counted in **distinct mask sets**, not circuits.
+population is counted in **distinct value sets**, not circuits.
 
 ## 6. From shards to one verdict
 
@@ -114,34 +114,11 @@ sums the counters, collects any firing, and — the part that matters — sorts 
 no overlap**. Coverage is thereby a checked property of the logs, not a claim.
 Exit status is nonzero if a gap or an overlap exists.
 
-## 7. Measured
+## 7. The command-line interface
 
-| step | cost |
-|---|---|
-| building the population from the source banks | 1 457.9 s (24.3 min) |
-| the full certificate, 88 228 896 deletions | 612.9 s CPU (10.2 min), ~2 571 sets/s per thread |
-| the three controls, re-run from the shipped fixtures | 0.03–0.05 s each |
-| the 520-set sample through the C tool, then through the Python reference | 0.05 s, then ~6 s |
-
-## 8. Run it
-
-From `corpus/deletion_certificate/`:
-
-```
-gcc -O2 -Wall -o tools/delcert tools/delcert.c
-
-# controls first: two that must fire, one that must not
-tools/delcert --bin fixtures/ctrl_pos89.bin --targets targets.txt --k 89 --tag pos89 --every 0
-tools/delcert --bin fixtures/ctrl_pos90.bin --targets targets.txt --k 90 --tag pos90 --every 0
-tools/delcert --bin fixtures/ctrl_neg498.bin --targets targets.txt --k 88 --tag neg498 --every 0
-
-# the shipped sample, both implementations
-tools/delcert --bin ../sample/corpus88_sample.bin --targets targets.txt --k 88 --tag sample --every 0
-python3 tools/pycheck.py ../sample/corpus88_sample.bin 0 520
-
-# re-aggregate the banked shard logs
-python3 tools/aggregate.py
-```
+The commands, their real output and their measured cost are in
+[`RUN.md`](RUN.md); the full-run cost is in [`CERT.md`](CERT.md) §5. This
+section documents only the interface.
 
 Flags: `--bin` and `--targets` are required; `--k` is the masks per record
 (default 88); `--start` / `--count` select an interval; `--every N` sets the
@@ -150,7 +127,7 @@ instead of writing to stdout; `--tag` labels the lines. Exit 2 means bad
 arguments or a target file that is not 32 masks; exit 3 means a record needed
 more derivation pairs per mask than the fixed table holds.
 
-Running the full population needs `masks.bin`, which is 457 MB of built
-population and is not shipped; `INVENTORY.md` at the repository root says how to
-request it. The 520-set sample and the three fixtures make every code path
+Running the full population needs `masks.bin`, which is 554 MB of built
+population and is not shipped; [`../../INVENTORY.md`](../../INVENTORY.md) says
+how to request it. The 520-set sample and the three fixtures make every code path
 runnable here in under a second.

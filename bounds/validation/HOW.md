@@ -1,19 +1,17 @@
 # How the validation suite works
 
-`STATEMENT.md` says why this directory exists and what it caught; `RUN.md` gives
-the command and the transcript. This file explains the mechanism: what is
-enumerated, how the exact optimum of a small instance is obtained, and what each
-assertion would catch.
+[`STATEMENT.md`](STATEMENT.md) says why this directory exists and what it caught;
+[`RUN.md`](RUN.md) gives the command and the transcript. This file explains the
+mechanism: what is enumerated, how the exact optimum of a small instance is
+obtained, and what each assertion would catch.
 
-## 1. The idea in plain words
+## 1. What is under test
 
-A lower-bound method is only worth reading if it **cannot return a number above
-the truth**. That is not something you can inspect; you have to try to break it.
-So the machinery of `../gte56/` — the same formula and the *same compiled
-binary*, not a reimplementation — is run on small matrices whose exact optimum
-was proved by a completely unrelated method (iterated SAT, with the level below
-the optimum recorded UNSAT), and every bound it produces is compared against
-that optimum.
+The machinery of [`../gte56/`](../gte56/) — the same formula and the *same
+compiled binary*, not a reimplementation — is run on small matrices whose exact
+optimum was proved by an unrelated method (iterated SAT, with the level below the
+optimum recorded UNSAT), and every bound it produces is compared against that
+optimum.
 
 Three instances ship, and one of them is designed to fail:
 
@@ -46,7 +44,7 @@ flowchart TD
     K -->|"negative control"| M["the bound must EXCEED the optimum, by the amount recorded"]
 ```
 
-Three mechanisms are worth naming precisely.
+Three mechanisms need naming precisely.
 
 **The exact optimum, from the same searcher.** For `d = 0, 1, 2, …` the suite
 invokes `mine` on the instance's full target list at depth `d` and returns the
@@ -69,49 +67,35 @@ threshold that covers gives the bound `m + threshold`, and it is the maximum
 because the family only grows as the threshold falls. The suite reports this at
 levels `m = 0, 1, 2`, and then repeats the `m = 1` computation with the table
 restricted to keep sets of size at most a cap, for every cap — which shows how
-much of the bound is bought by being allowed large keep sets.
+much of the bound depends on being allowed large keep sets.
 
-## 3. The negative control, and the thing it caught
+## 3. How the negative control is enforced
 
-`tap_P__Q1_2_4_a` has an entirely **zero column**. The formula charges at least
-one gate for every column outside the keep set, but that charge is only valid on
-a *live* column: a column that is all zeros costs nothing to zero. Skip that
-precondition and the machinery returns **11 against a true optimum of 10** —
-at every level, and at every keep-set cap of 6 or more. Drop the zero column and
-all bounds come back sound at 10.
+`tap_P__Q1_2_4_a` has an entirely **zero column**, and applying Theorem N to it
+without the precondition returns **11 against a true optimum of 10**;
+[`STATEMENT.md`](STATEMENT.md) gives the reason and what it caught.
 
-That is why `../gte56/check_gte56.py` tests columns for being nonzero and
-pairwise distinct *first*, and why this instance is in the suite: it makes the
-precondition visible rather than decorative. On MixColumns all 32 columns are
-nonzero and distinct, so `>= 56` is unaffected.
+The suite's role dispatch is what turns that into a test: a positive instance
+must pass its preconditions and produce only sound bounds; the control must
+**fail** its preconditions, must overclaim by the exact recorded amount, and must
+become sound once reduced. Exit status is 0 only if every one of those holds.
 
-The suite's role dispatch enforces the whole story: a positive instance must
-pass its preconditions and produce only sound bounds; the control must **fail**
-its preconditions, must overclaim by the exact recorded amount, and must become
-sound once reduced. Exit status is 0 only if every one of those holds.
+## 4. What it established
 
-## 4. What it established, measured
-
-- Whole suite: **170.5 s** and **156.2 s** on two runs (2026-09-01, one core,
-  `nice -n 19`), identical verdicts and identical node counts both times.
-  Almost all of it is one deep exhaustion (2.7e9 nodes); the other two
-  instances together take **0.4 s**.
 - **Agreement:** the searcher reproduced all three SAT optima exactly —
-  `4 + 8 = 12`, `4 + 6 = 10`, `4 + 6 = 10`.
+  `4 + 8 = 12`, `4 + 6 = 10`, `4 + 6 = 10`. The two instruments share no code.
 - **Soundness:** no bound above a known optimum on either clean instance, at any
   level or cap. On both, the level-1 bound is exactly *tight* — 12 against 12
-  and 10 against 10 — once the keep set is allowed to be large enough, which is
-  evidence that the formula is not merely safe but sharp on this kind of
-  instance.
-- **The slack table**, which is the honest limitation: on the 8-column instance
-  the level-1 bound is 10, 10, 11, 12, 12 at keep-set caps 3, 5, 6, 7, 8. Small
-  keep sets lose two gates. On MixColumns the certificate uses a keep set of 14
-  of 32 columns, i.e. it is deep in the region where the bound is not yet tight.
-- The SAT oracle that supplied the optima has its own recorded controls: exact
-  agreement against a naive brute-force enumeration on small random instances
-  (both the SAT and the UNSAT side), a second independent CNF implementation
-  agreeing 10/10 on an unrelated block set, and one real bug caught this way in
-  an earlier searcher (8 failures in 120 instances, since fixed).
+  and 10 against 10 — once the keep set is allowed to be large enough, so the
+  formula is not merely safe but sharp on this kind of instance.
+- **The limitation:** with the keep set capped small the bound loses up to two
+  gates (the cap-by-cap table is in [`STATEMENT.md`](STATEMENT.md)). On
+  MixColumns the certificate uses a keep set of 14 of 32 columns, so it is in
+  the region where the bound is not yet tight.
+- Almost all the run time is one deep exhaustion (2.7e9 nodes) on
+  `L1_clean_iso`; the other two instances together take **0.4 s**. Wall times,
+  node counts and the provenance of the reference optima are in
+  [`RUN.md`](RUN.md).
 
 ## 5. Run it
 
@@ -125,5 +109,6 @@ python3 validation/run_validation.py --instance L5_tap_pairQ3   # 0.2 s
 ```
 
 The short form exercises every code path except the deep exhaustion, which makes
-it the right smoke test after changing anything in `../gte56/`. Also accepted:
-`--mine PATH` and `--max-depth D`.
+it the smoke test to run after changing anything in [`../gte56/`](../gte56/).
+Also accepted: `--mine PATH` and `--max-depth D`. [`RUN.md`](RUN.md) gives the
+full expected transcript.

@@ -74,8 +74,8 @@ VERDICT: OUT OF VOCABULARY. 6 mask(s) in this circuit occur in no
 
 Six of its 57 non-target masks — including `0x00000098`, the value the circuit
 was pinned on — occur **nowhere** in 107,803,640 gate slots across 1,925,065
-circuits. Note their Hamming weights: 2, 3, 5, 7, 9, 10. These are not exotic
-in any structural sense. The corpus simply never produced them.
+circuits. Their Hamming weights are 2, 3, 5, 7, 9, 10. These are not exotic
+in any structural sense. The corpus never produced them.
 
 ---
 
@@ -106,9 +106,9 @@ VERDICT: entirely inside the corpus vocabulary.
 ## What this shows, and what it does not
 
 **Shows.** The 1,778-value vocabulary is a property of **the search**, not of
-**the problem**. A valid MixColumns circuit exists that speaks six words the
-corpus has never once used, and it was found without difficulty once something
-deliberately looked outside the alphabet. Any argument of the form "we have
+**the problem**. A valid MixColumns circuit exists that uses six values the
+corpus has never once produced, and it was found quickly once the search was
+aimed outside the alphabet. Any argument of the form "we have
 examined 1.9 million circuits and the structure is always X" is bounded by the
 alphabet those circuits were built from — and that alphabet is demonstrably not
 forced.

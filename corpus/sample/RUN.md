@@ -1,10 +1,10 @@
 # RUN — the corpus sample
 
-A shippable, documented sample of the 88-gate MixColumns mask corpus:
-**520 distinct verified 88-gate mask sets**, drawn across every lineage the
+A shippable, documented sample of the 88-gate MixColumns value-set corpus:
+**520 distinct verified 88-gate value sets**, drawn across every lineage the
 corpus holds, including all five published record 88s.
 
-The full corpus is 1,575,516 distinct mask sets — 554 MB as raw masks, with a
+The full corpus is 1,575,516 distinct value sets — 554 MB as raw masks, with a
 478 MB provenance index. Neither ships. This does, and every result in
 `../deletion_certificate/` re-runs over it unchanged.
 
@@ -127,18 +127,18 @@ over-represented relative to their corpus share.
 | `fleet_early` | 1 | early-wave distributed fleet runs |
 | **total** | **520** | |
 
-Three things worth reading off this table:
+Three things this table shows:
 
 * **The foreign lineage is in.** `atlas_corner_jean` is 40 sets descending from
   the one published 88 this project did not produce. Any claim of the form
   "every 88 we can find has property P" is worth much less if every 88 shares
   an ancestor; these do not.
-* **The published records are in.** All five are present, and — a fact worth
-  stating — all five were already in the corpus from the search banks before the
-  published files were read. The published circuits are not a separate
-  population; the search rediscovered them.
+* **The published records are in.** All five are present, and all five were
+  already in the corpus from the search banks before the published files were
+  read. The published circuits are not a separate population; the search
+  rediscovered them.
 * **`census` is 59, not the 60 requested.** One census pick collided with a
-  published record 88 (they are the same mask set), and the sample keeps one
+  published record 88 (they are the same value set), and the sample keeps one
   row per distinct `canon`. That collision is real corpus structure, not a
   build error.
 
@@ -184,6 +184,9 @@ agreement) before it is written, and the build asserts on any failure.
 ```
 $ nice -n 19 python3 tools/build_sample.py <masks.bin> <canon.tsv> <corpus_index.jsonl> <record_circuits_dir>
 ```
+
+The fourth argument is optional; without a record-circuits directory the
+published-record stratum cannot be identified.
 
 **Measured 2026-09-01: 5.4 s wall, 188 MB peak RSS.**
 

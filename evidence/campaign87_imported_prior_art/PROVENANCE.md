@@ -61,7 +61,7 @@ that every valid circuit must contain:
 | pair | shared masks | Jaccard | periphery-only J |
 |---|---|---|---|
 | **Jean 88 ↔ Sun–Yang–Li 89** *(baseline: two independent published works)* | **63** | **0.553** | 0.378 |
-| Jean 88 ↔ **our 88@6** *(from scratch — the headline v3 circuit)* | **42 / 88** | **0.313** | **0.098** |
+| Jean 88 ↔ **our 88@6** *(from scratch — the v3 release's main new circuit)* | **42 / 88** | **0.313** | **0.098** |
 | Jean 88 ↔ **our 88@5** *(**derived**: its seed chain passes through this very circuit)* | 62 | 0.544 | 0.366 |
 | Jean 88 ↔ **our 88@7** | 61 / 88 | 0.530 | 0.349 |
 | Jean 88 ↔ **our 88@8 (third family, derived)** | 55 | 0.455 | 0.258 |
@@ -72,10 +72,10 @@ that every valid circuit must contain:
 | Sun–Yang–Li 89 ↔ our 88@7 | 61 | 0.526 | 0.345 |
 | our 88@7 ↔ our 88@8 | 62 | 0.544 | 0.366 |
 
-**The two v3 rows read in opposite directions, and that is the point.** The
-88 @ depth 6 is the *least* similar circuit this project has ever produced to
-either published one — 42 shared masks, and only **10 of the 56** off-target
-masks it actually chose — which is what "from scratch" looks like when measured.
+**The two v3 rows read in opposite directions.** The 88 @ depth 6 is the *least*
+similar circuit this project has ever produced to either published one — 42
+shared masks, and only **10 of the 56** off-target masks it actually chose —
+which is what "from scratch" looks like when measured.
 The 88 @ depth 5's 62 / 0.544 is not evidence of independence in the other
 direction and is not offered as such: that circuit's seed chain *passes through
 Jean's 88* (`../campaign87_run_2026-07-29_got_88at5_derived/PROVENANCE.md`), so
@@ -86,8 +86,8 @@ everywhere it appears.
 indisputably independent published works — different authors, different
 methods, a year apart, neither derived from the other — and they share **63**
 masks (J = 0.553), *more* than our 88@7 shares with Jean's (61, J = 0.530). A
-~60-mask overlap is simply what two independently found circuits for this map
-look like at this size; it is the baseline, not a red flag. Our 88@7's
+~60-mask overlap is what two independently found circuits for this map look
+like at this size; it is the baseline, not a sign of dependence. Our 88@7's
 independence rests on its logged lineage
 (`../campaign87_run_2026-07-26_got_88at7/PROVENANCE.md`), and the overlap figure
 is consistent with it rather than merely tolerated by it.
@@ -103,14 +103,14 @@ nothing here goes below it. Our 88@8 is a third distinct family, but its
 `../campaign87_run_2026-07-27_got_88at8_thirdfamily/PROVENANCE.md`), so it is a
 derived, not independent, construction.
 
-## The measured depths are forced, not just observed
+## The measured depths are forced, not merely observed
 
 Both papers state a count and no depth, so the 7 and the 9 above are this
 repository's measurements of *its own* transcriptions. That is the weakest form
-of the claim, and it is worth stating the stronger one, because the 88 @ depth
-6's domination of Jean's point depends on it: **neither circuit can be
-rescheduled shallower.** Running `pipeline/engines.py:relax` over a transcribed
-mask set returns the ASAP (least-fixpoint) build depth of every mask — the
+of the claim. The stronger one also holds, and the 88 @ depth 6's domination of
+Jean's point depends on it: **neither circuit can be rescheduled shallower.**
+Running `pipeline/engines.py:relax` over a transcribed mask set returns the
+ASAP (least-fixpoint) build depth of every mask — the
 shallowest depth *any* circuit on that mask set can achieve, independent of the
 gate order in which it happens to be written down. On Jean's mask set three
 output masks come out at depth 7; on Sun–Yang–Li's, one comes out at depth 9.

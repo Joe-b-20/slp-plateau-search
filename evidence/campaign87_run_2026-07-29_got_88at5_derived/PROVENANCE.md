@@ -88,7 +88,7 @@ family):
 | our 88 @ d6 (family 4) | 42 | 0.313 | 0.098 |
 | our from-scratch 88 @ d5 | 42 | 0.313 | 0.098 |
 
-At 0.735 to the record 89 @ depth 5 it sits **above** the same-family threshold,
+At 0.735 to the record 89 @ depth 5 it is **above** the same-family threshold,
 and closer to that 89 than to any 88. The honest description is therefore **the
 record-89 basin reached at 88 gates**, not a family of its own. Note the last
 row: the circuit that now holds the (88, depth 5) point is one of the *most*

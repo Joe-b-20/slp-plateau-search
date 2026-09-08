@@ -1,8 +1,9 @@
 # RUN — verify the record circuits
 
-The trivial, load-bearing row. Every other result in this pack is a statement
-*about* circuits; this is the check that the circuits are what they claim to be.
-It takes twenty seconds and it is the first thing a sceptical reader should run.
+Every other result in this pack is a statement *about* circuits. This is the
+check that the circuits are what they claim to be: if it fails, nothing else in
+the pack means anything. It takes twenty seconds and it is the first thing a
+sceptical reader should run.
 
 The record circuits and their verifier live in the public records repository,
 not in this pack — this page records the command and its real output.
@@ -83,20 +84,17 @@ All requested verification paths passed.
 
 Optionally, `--with-verilog` also runs the Verilog netlists through Icarus.
 
-## Why this row matters
+## Which results in this pack depend on it
 
 Every circuit used anywhere in this pack is on that list or verified alongside
 it:
 
 * the **five published 88s** are the negative control for the tripwire
-  (`../tripwire_demo/`) and five of the 520 rows of the corpus sample
-  (`../sample/`);
+  ([`../tripwire_demo/RUN.md`](../tripwire_demo/RUN.md)) and five of the 520
+  rows of the corpus sample ([`../sample/RUN.md`](../sample/RUN.md));
 * the **97 and the 92** are among the seven circuits in the control audit
-  (`../calibration/CONTROL_AUDIT.md`) that the exact decider calls
-  "irreducible" while a verified 88 sits below them;
+  ([`../calibration/CONTROL_AUDIT.md`](../calibration/CONTROL_AUDIT.md)) that
+  the exact decider calls "irreducible" while a verified 88 exists below them;
 * the **89 at depth 10** is the same gate count as the out-of-vocabulary
-  circuit in `../vocabulary/`, which is verified separately by the same
-  verifier code.
-
-If this command fails, nothing else in the pack means anything. It has not
-failed.
+  circuit in [`../vocabulary/RUN.md`](../vocabulary/RUN.md), which is verified
+  separately by the same verifier code.

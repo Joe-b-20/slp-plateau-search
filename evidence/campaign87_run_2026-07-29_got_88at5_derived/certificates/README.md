@@ -9,7 +9,7 @@ the repo's own archived decider
 | `k2_shell_88at5.log` | k = 2, budget 1 | 1 540 = C(56,2) | **1 540 irreducible, 0 hits** | 5 s, 1 process |
 
 Budget 1 is exhaustive, so this is a proof for that radius: **any 87-gate circuit
-differs from this one by ≥ 3 masks.** It bounds nothing globally.
+differs from this one by ≥ 3 values.** It bounds nothing globally.
 
 **The k = 3 shell of this circuit was not swept** — unlike the 88 @ depth 6, whose
 k ≤ 3 shell is closed. Together with this project's 88 @ depth 7, which has no

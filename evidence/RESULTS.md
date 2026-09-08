@@ -13,6 +13,13 @@ One frontier comes out of them:
 **87 was not found**, and none of the nine is claimed optimal (SLP minimization
 is NP-hard).
 
+**Terminology.** A gate's *value* is the bit mask of which of the 32 circuit
+inputs it is the XOR of; the two words name the same object, and the archived
+logs, JSON keys and file names quoted below use *mask*. Value, vocabulary,
+irreducible, orbit, lineage and radius are defined in
+[`DEFINITIONS.md`](../DEFINITIONS.md), each with the command that decides it
+where one exists.
+
 **Provenance up front.** 88 is the published best-known gate count, held by Jean
 (ePrint 2026/1481, posted 2026-07-23) — **Jean has priority and nothing here
 beats it.** Of our five 88s: the from-scratch **88 @ depth 5** (§7) is the
@@ -31,11 +38,11 @@ depended on Jean's circuit. §7 collapses them into one. **This is a statement
 about our provenance, not about his result:** the count is still Jean's, the
 priority is still Jean's, and the change is that *we* no longer need his circuit
 to reach depth 5. "No imported material" means that no circuit file, no published
-mask set and no other worker's harvested mask entered that search process — the
+value set and no other worker's harvested value entered that search process — the
 root is a pure function of an integer seed and the producing engine reads nothing
 from disk. It does **not** claim method independence (the engines and knobs were
 tuned over a campaign that did read published circuits), disjointness (§7 shares
-42 of 88 masks with Jean's, 32 of them the forced targets), landscape
+42 of 88 values with Jean's, 32 of them the forced targets), landscape
 independence, optimality, any bound on 87, or bit-reproducibility of the descent.
 
 Each section below gives what the circuit is, where it is, the exact code that
@@ -73,9 +80,33 @@ mixcolumns_88gates_depth5.json 4              depth<= 4: VIOLATED   VERDICT: INV
 mixcolumns_88gates_depth6.json 5              depth<= 5: VIOLATED   VERDICT: INVALID
 ```
 
-Two circuits now sit at **(88 gates, depth 5)** — the from-scratch one of §7 and
+Two circuits reach **(88 gates, depth 5)**: the from-scratch one of §7 and
 the derived one of §8. They are different value sets (plain Jaccard 0.313), and
 nothing in this repository keys a record on the (gates, depth) pair.
+
+## The nine circuits, and where each stands
+
+Sections are ordered as the circuits were found, not by gate count. The *root*
+column says where the producing search started: at a fresh construction that
+reads nothing from disk (*from scratch*), at this project's own earlier output
+(*own lineage*), or at a seed chain that passes through published work
+(*derived*, never counted as independent — the three labels are fixed in
+[`METHODS_INDEX.md`](../METHODS_INDEX.md), "Provenance classes").
+
+| § | file in `circuits/` | gates | depth | root | standing |
+|---|---|---|---|---|---|
+| 1 | `mixcolumns_97gates_depth3.json` | 97 | 3 | from scratch | frontier point at depth 3 |
+| 2 | `mixcolumns_91gates_depth4.json` | 91 | 4 | from scratch | frontier point at depth 4 |
+| 2b | `mixcolumns_92gates_depth4.json` | 92 | 4 | from scratch | superseded at depth 4 by the 91, retained |
+| 3 | `mixcolumns_89gates_depth5.json` | 89 | 5 | own lineage | superseded at depth 5 by the 88 of §7 |
+| 4 | `mixcolumns_88gates_depth7.json` | 88 | 7 | own lineage | matches the published count with an independent circuit; dominated by §7 |
+| 5 | `mixcolumns_88gates_depth8_thirdfamily.json` | 88 | 8 | derived, through Jean's 88 | third distinct family; dominated by §4 |
+| 6 | `mixcolumns_88gates_depth6.json` | 88 | 6 | from scratch | fourth distinct family; dominated by §7 |
+| 7 | `mixcolumns_88gates_depth5_fromscratch.json` | 88 | 5 | from scratch | frontier point at depth 5 |
+| 8 | `mixcolumns_88gates_depth5.json` | 88 | 5 | derived, through Jean's 88 | superseded at its Pareto point by §7, retained |
+
+Section 9 states what the machine-checked certificates around the 88s do and do
+not establish.
 
 ---
 
@@ -106,7 +137,7 @@ nothing in this repository keys a record on the (gates, depth) pair.
   this project's own 92 @ depth 4, which held the point until 2026-08-01 and
   whose circuit and lineage are kept beside it below (§2b).
 - **Not optimal, and not claimed to be.** The exactness results behind the 91 are
-  relative to a fixed mask vocabulary, and **90 @ depth 4 is undecided, not
+  relative to a fixed value vocabulary, and **90 @ depth 4 is undecided, not
   refuted**. Nothing here says "optimal at depth 4".
 - **How:** the **cascade6 run** (2026-08-01), a second from-scratch cascade with
   the same ladder discipline as the 2026-07-14 one below. Every root in that run
@@ -121,8 +152,8 @@ nothing in this repository keys a record on the (gates, depth) pair.
   supersedes, so the "97 @ 3 and 91 @ 4 are from scratch" provenance statement
   needs no new argument.
 - **Two further verified 91 @ depth 4 circuits exist**, in independent lineages
-  (mask-Jaccard 0.433 and 0.358 against this one); they are not shipped here. The
-  depth-4 census also holds 15,912 distinct verified-realizable 91-gate mask sets,
+  (value Jaccard 0.433 and 0.358 against this one); they are not shipped here. The
+  depth-4 census also holds 15,912 distinct verified-realizable 91-gate value sets,
   all with 91 *live* gates — this is not a 90 with a dead gate.
 
 ### 2b. The superseded 92 @ depth 4 — superseded and retained
@@ -140,7 +171,7 @@ check, 92 gates / 92 live / 0 dead).
 
 - **How:** the `lns` engine (destroy-and-rebuild). In the **from-scratch cascade
   run** (2026-07-14, the run with the Pareto tie-break + reseeding), the depth-8
-  worker `d8` — searching with slack under its loose cap — landed on a circuit that
+  worker `d8` — searching with slack under its loose cap — reached a circuit that
   is only depth 4; the Pareto tie-break kept it and reseeding copied it to the
   depth-4 rung. The whole chain is rooted in that run's own from-scratch 97.
 - **Circuit:** `circuits/mixcolumns_92gates_depth4.json` (sha256 `3615c132cae7e4fb…`).
@@ -183,7 +214,7 @@ check, 92 gates / 92 live / 0 dead).
   circuit at **depth 5**. The log line is `NEW BEST 89 gates depth 5 VERIFIED
   depth-tiebreak` — it survived only because of the two fixes (Pareto tie-break:
   accept equal gates at lower depth; and the engines surfacing such candidates).
-  It shares 84/89 internal masks with its 89@depth6 parent — a genuine ~5-gate
+  It shares 84/89 internal values with its 89@depth6 parent — a genuine ~5-gate
   reroute that shed one depth level.
 - **Circuit:** `circuits/mixcolumns_89gates_depth5.json` (sha256 `209f74d5717112f8…`).
   Source of record: `sub89_run_2026-07-14_got_89at5/best_overall.json`
@@ -219,7 +250,7 @@ check, 92 gates / 92 live / 0 dead).
   project's own search, and the result that takes the project record from 89 to
   88. It **matches the published record** (Jean, ePrint 2026/1481, 88 gates;
   depth 7 is our measurement — the paper states no depth) **with an independent
-  circuit**: the two share 61 of 88 masks (Jaccard 0.530). It does **not** beat
+  circuit**: the two share 61 of 88 values (Jaccard 0.530). It does **not** beat
   it. Jean's circuit, transcribed and oracle-verified, is archived and credited
   in `campaign87_imported_prior_art/`.
 - **How:** the engine rebuilt during campaign 87 (`../pipeline/engines.py`). Worker
@@ -233,7 +264,7 @@ check, 92 gates / 92 live / 0 dead).
 - **Circuit:** `circuits/mixcolumns_88gates_depth7.json` (sha256
   `d87f6ed982518d93…`). Source of record:
   `campaign87_run_2026-07-26_got_88at7/BREAKTHROUGH_88gates_depth7.json`
-  (identical mask set to that run's `w10_sym94_best.json` and its
+  (identical value set to that run's `w10_sym94_best.json` and its
   `ALERT_w10_sym94_88gates.json`).
 - **Code that produced it:** `campaign87_run_2026-07-26_got_88at7/code/` — the
   merged `engines.py`, worker and launcher, with `CODE_PROVENANCE.md` and
@@ -247,7 +278,7 @@ check, 92 gates / 92 live / 0 dead).
   | root | **97 @ d3** | scratch (`anneal3`), no seed | 235 s / 07-13 14:02:25 |
   | ↓ | **89 @ d6** | 21 h ladder, rung d10 | 39 725 s (11.03 h) / 07-14 01:00:34 |
   | ↓ | **89 @ d5** | sub-89 run, one reroute (`uncapped_sub89`) | 592 s (0.16 h) / 07-14 14:26:31 |
-  | ↓ | **94 @ d5, exactly ρ²-symmetric** | ρ²-symmetrize + orbit-peel + orbit-LNS of the trimmed 89@d5 — 41 size-2 orbits + 12 fixed masks, sharing 82/94 masks with the 89@d5; it costs only +5 over the record | 07-26 ~20:33 wall (file mtime; that run's log carries no timestamps) |
+  | ↓ | **94 @ d5, exactly ρ²-symmetric** | ρ²-symmetrize + orbit-peel + orbit-LNS of the trimmed 89@d5 — 41 size-2 orbits + 12 fixed values, sharing 82/94 values with the 89@d5; it costs only +5 over the record | 07-26 ~20:33 wall (file mtime; that run's log carries no timestamps) |
   | ↓ | **88 @ d7** | `merged-engine` worker `w10_sym94`, walk drift, it = 45 614 (88-gate size, at depth 11) → 47 436 (depth-7 tie-break, 5.3 s later) | **1 973 s (32.9 min) / 07-26 22:08:19** |
 
   The seed circuit is archived beside the record as
@@ -257,7 +288,7 @@ check, 92 gates / 92 live / 0 dead).
 - **Why no imported material is in this chain** — both points are checkable in
   the archived worker log:
   1. cross-pollination between workers is an **LNS-only** knob (`pop_glob`);
-     `engine_walk` has no pool and only ever adds masks derived from its own
+     `engine_walk` has no pool and only ever adds values derived from its own
      value set's closure — and every improvement on this worker came from a
      walk chunk;
   2. the worker's 89@d7 (t = 204 s) predates its first cross-pollination event
@@ -274,16 +305,16 @@ check, 92 gates / 92 live / 0 dead).
   §6 and §7, **this fleet genuinely did cross-pollinate** — five of its workers
   were seeded on the imported circuit and its `hunt_worker.py` sets `pop_glob`
   directly — so the argument cannot lean on the knob being off, only on where
-  the merged masks could and could not go.
-- **How it sits relative to the other known circuits** (Jaccard on mask sets,
+  the merged values could and could not go.
+- **Its overlap with the other known circuits** (Jaccard on value sets,
   all re-measured): 0.530 to Jean's 88 (61 shared, symdiff 54), 0.526 to
   Sun–Yang–Li's 89 (ePrint 2025/1493), 0.539 to our own 89@d5. The threshold
   used throughout the campaign is J ≥ 0.7 for "same family".
 - **The baseline that 61/88 has to be read against:** Jean (ePrint 2026/1481)
   and Sun–Yang–Li (ePrint 2025/1493) are two indisputably independent published
-  works, and their circuits share **63 masks (J = 0.553) with each other** —
+  works, and their circuits share **63 values (J = 0.553) with each other** —
   *more* than ours shares with Jean's (61, J = 0.530). At this problem size a
-  ~60-mask overlap is what independence looks like; the independence claim here
+  ~60-value overlap is what independence looks like; the independence claim here
   rests on the logged lineage above, and the overlap figure agrees with it.
 
 ---
@@ -312,11 +343,11 @@ check, 92 gates / 92 live / 0 dead).
   `BEST_90gates_depth9_rho2symmetric.json` (sha256 `8642ae8702987dc4…`).
   The 88 @ depth 7 in §4 is the one with a clean own-lineage claim.
 - **What:** an 88-gate depth-8 circuit, verified, and a **third distinct
-  88-gate family**: Jaccard 0.455 to Jean's 88 (55 shared masks) and 0.544 to
+  88-gate family**: Jaccard 0.455 to Jean's 88 (55 shared values) and 0.544 to
   our own 88@d7 (62 shared) — both well below the 0.7 family threshold. It is
   **dominated by the 88 @ depth 7** (same size, greater depth), so it does not
-  improve the frontier; it is documented because a genuinely third construction
-  of the same size is the interesting object, not a new record.
+  improve the frontier; what it adds is a third construction at the same size,
+  not a record.
 - **How:** the `hunt-deeper` run, 12 workers. Record worker
   `d3_orb90a`, `alt` mode, rng 3303, knobs `'{}'` — family repulsion and drift
   mode **off** for this worker (other workers of the fleet used them). From the
@@ -325,7 +356,7 @@ check, 92 gates / 92 live / 0 dead).
   t = 7 452.8 s (124 min, it = 99 444)** at depth 10, depth-tiebroken to
   **depth 8 1.2 s later** (t = 7 454.0 s, it = 100 049). No 87 in the worker's
   remaining 2 h 11 min. Every improvement came from a **walk** chunk; the LNS
-  chunks did cross-pollinate sibling masks but never improved the best.
+  chunks did cross-pollinate sibling values but never improved the best.
 - **Circuit:** `circuits/mixcolumns_88gates_depth8_thirdfamily.json` (sha256
   `e692dfc6a5a3eaa1…`). Source of record:
   `campaign87_run_2026-07-27_got_88at8_thirdfamily/BREAKTHROUGH_88gates_depth8_THIRDFAMILY.json`.
@@ -364,18 +395,25 @@ basin survey stand unchanged.
   shallower) and **improves on the published depth-6 point of 92 gates (Maximov)
   by four gates**. That paper states no depth, so the 7 is this project's
   measurement of its own transcription — but it is **forced, not merely
-  observed**: the ASAP (least-fixpoint) schedule over Jean's own mask set, via
-  `pipeline/engines.py:relax`, is the shallowest schedule that mask set admits
-  and it still puts three of Jean's output masks at depth 7. Jean's circuit
+  observed**: the ASAP (least-fixpoint) schedule over Jean's own value set, via
+  `pipeline/engines.py:relax`, is the shallowest schedule that value set admits
+  and it still puts three of Jean's output values at depth 7. Jean's circuit
   cannot be rescheduled shallower, so the domination does not rest on any
   transcription or scheduling choice of ours.
-  It was also the **fourth
-  distinct 88-gate family** this project identified, at Jaccard 0.313 to Jean's
-  88, 0.323 to our 88 @ 7, 0.313 to our 88 @ 8, 0.313 to the derived 88 @ 5 and
-  0.323 to the from-scratch 88 @ 5 of §7 — and **0.098–0.109** on the periphery
-  alone, so outside
+- **The fourth distinct 88-gate family this project identified.** Plain Jaccard
+  on value sets, and **0.098–0.109** on the periphery in every case — outside
   the 32 obligatory targets it shares almost nothing with anything previously
-  known. Not a relabelling either: over all four byte rotations ρ^k of every
+  known:
+
+  | against | plain J |
+  |---|---|
+  | Jean's 88 | 0.313 |
+  | our 88 @ d7 | 0.323 |
+  | our 88 @ d8 | 0.313 |
+  | the derived 88 @ d5 | 0.313 |
+  | the from-scratch 88 @ d5 (§7) | 0.323 |
+
+  Not a relabelling either: over all four byte rotations ρ^k of every
   *other* 88- and 89-gate circuit this project holds or has transcribed, the
   largest Jaccard it reaches is **0.375 (0.167 on the periphery), at ρ¹ of the
   from-scratch 88 @ depth 5**. **Recomputed 2026-07-30, and the recomputation
@@ -386,12 +424,13 @@ basin survey stand unchanged.
   in `campaign87_run_2026-07-28_got_88at6_fromscratch/PROVENANCE.md` — at ρ² of
   our 89 @ depth 5. The new circuit is in *both* sets and exceeds both figures,
   so the two scopes now give the same answer. The older numbers were correct for
-  their sets when written and are not withdrawn. One warning for a reader
-  recomputing: **0.375 (0.167) also appears here as something else entirely** —
-  it is this circuit's Jaccard to its own ρ² image (both pairings happen to share
-  48 masks, 16 of them off-target), which measures how far it is from being
-  ρ²-symmetric (it is the least symmetric 88 here, 0.545 by mask count), not a
-  similarity to anything. The two readings are unrelated.
+  their sets when written and are not withdrawn.
+- **One warning for a reader recomputing: 0.375 (0.167) also appears here as
+  something else entirely.** It is this circuit's Jaccard to its own ρ² image
+  (both pairings happen to share 48 values, 16 of them off-target), which
+  measures how far it is from being ρ²-symmetric (it is the least symmetric 88
+  here, 0.545 by value count), not a similarity to anything. The two readings
+  are unrelated.
 - **Provenance: from scratch.** The search that reached it began at a freshly
   generated random construction — not at any earlier circuit of ours and not at
   any published one. This is the first 88 this project has found that way; the
@@ -462,32 +501,32 @@ basin survey stand unchanged.
      cross-pollination genuinely was live and is logged; the two files share a
      name and nothing else on this point.)
   2. the worker ran `repel=False` (first line of the log), so `repel_masks.json`
-     — which holds masks of the three older families — was never loaded;
+     — which holds the values of the three older families — was never loaded;
   3. every restart builds a fresh `LocalCtx` and sets `cur = seed_masks`. The
      worker had already reached an 88 @ depth 8 on restart 17 from a *different*
      root, and that circuit did not seed restart 18: nothing but the global Pareto
      bookkeeping crosses a restart boundary;
-  4. `engine_walk` has no pool at all and only adds masks derived from its own
+  4. `engine_walk` has no pool at all and only adds values derived from its own
      value set's closure; the 89 and both 88-gate states came from walk chunks. One
      LNS chunk of restart 18 did improve the best (92 → 90) — with `pop_glob`
-     unset, its rebuild pool holds only that worker's own masks, their pairwise
+     unset, its rebuild pool holds only that worker's own values, their pairwise
      sums and its own accumulated hot list, so that step imported nothing either.
 - **Its own shell is exhaustively empty:** all 1 540 k=2 windows and all 27 720
   k=3 windows, zero reducible (§9; verdict logs in the archive's
   `certificates/`). The basin around it is large and uniformly shallow: 8 993
   distinct 88-gate states at J > 0.7 to it, **4 420 of them realizable at depth
   6**, none deeper than 7, all proven k=2 irreducible.
-- **Negative result: nothing in this basin reaches depth 5.** The obvious
-  follow-up question — whether any of the 4 420 depth-6 states could be
+- **Negative result: nothing in this basin reaches depth 5.** The follow-up
+  question — whether any of the 4 420 depth-6 states could be
   rescheduled at depth 5, which would give a Jean-independent 88 @ depth 5 and
   supersede the derived one of §8 — is answered no by the evidence already in
   hand. The basin screen computed each member's ASAP (least-fixpoint) depth with
-  `pipeline/engines.py:relax`, i.e. the shallowest depth that mask set admits at
+  `pipeline/engines.py:relax`, i.e. the shallowest depth that value set admits at
   all, and the histogram over all 8 993 members is exactly **4 420 at depth 6 and
   4 573 at depth 7, with no bucket below 6** (re-derived independently 2026-07-29
   from the campaign's own 8 993-state pool). Depth 6 is therefore *minimal* for
   every member of this basin, not merely achieved. The complementary search for a
-  new mask set was run too: a depth-capped-5 SAT sweep over 27 windows carved out
+  new value set was run too: a depth-capped-5 SAT sweep over 27 windows carved out
   of this circuit returned **22 UNSAT and 0 SAT**, with 5 windows — all at the
   widest radius (r = 9) — left undecided by a 150 s timeout. So no 88 @ depth 5
   exists in this family's basin, and none was found near it; a Jean-independent
@@ -495,7 +534,7 @@ basin survey stand unchanged.
   in the raw campaign archive, `campaign_87/hunt87_basin4/`, which is not part of
   this repository; `results.json` there carries the totals.)
 
-  **This prediction held, and a day later it paid out.** On 2026-07-30 the same
+  **This prediction held.** On 2026-07-30 the same
   worker found an 88 @ depth 5 from scratch (§7) — and it is indeed *somewhere
   else*: not in this basin, not in this family, at weighted Jaccard 0.1025 to
   this circuit. The negative result was correctly scoped; nothing in it has to be
@@ -513,9 +552,8 @@ basin survey stand unchanged.
   circuit found from scratch — root `constructors.build("naive", 1958)` — rather
   than only by a circuit whose seed chain runs through Jean's published work
   (§8). **This removes this project's dependence on that circuit at the depth-5
-  point; it does not beat it.** That framing is the point of the section: the
-  collapse of this repository's two frontiers into one is about *our* provenance,
-  not about his result.
+  point; it does not beat it.** The collapse of this repository's two frontiers
+  into one is about *our* provenance, not about his result.
 
   Against the rest of the field it **dominates Jean's 88 @ depth 7** (equal
   count, two levels shallower — with the standing caveat that depth 7 is our own
@@ -527,8 +565,8 @@ basin survey stand unchanged.
   optimal.
 
   Independently recomputed from the raw JSON against a locally rebuilt GF(2⁸)
-  spec: 88 gates, depth 5, 32/32 outputs, **0 dead gates**, 0 duplicate masks, no
-  gate mask colliding with an input.
+  spec: 88 gates, depth 5, 32/32 outputs, **0 dead gates**, 0 duplicate values, no
+  gate value colliding with an input.
 - **Provenance: from scratch.** Same worker, same fleet and byte-identical code
   as the 88 @ depth 6 of §6 — a different session, a different root, a different
   basin. Worker **`c_naive`**, **session 5, restart 16** (quote the session: the
@@ -591,11 +629,11 @@ basin survey stand unchanged.
   2. `repel=False` on the session's first line, so `repel_masks.json` was never
      opened.
   3. Every restart builds a fresh `LocalCtx` and sets `cur = seed_masks` — here
-     *observably*, not just by code reading: restart 16 opens at `cur=93 best=93`,
+     *observably*, not only by code reading: restart 16 opens at `cur=93 best=93`,
      **worse** than restart 15's `best=92`. Nothing carried over.
   4. No `reseed_*.json`, no `ctx.adopt`, and `hunt_worker.py` does not import
      `archive` at all; the producing engine, `engine_walk`, has no pool and only
-     adds masks derived from its own value set's closure.
+     adds values derived from its own value set's closure.
 - **Four corroborations a sceptic can check** (all four are spelled out with
   commands in the archive's `PROVENANCE.md`):
   1. **The code predates the find and is already public** — byte-identical to
@@ -610,7 +648,7 @@ basin survey stand unchanged.
      11.94 h). The published log's *content* stops earlier still, its last line
      at 20:41:47, 14.11 h before the find. It is the one thing in this archive
      that could not have been arranged afterwards.
-  3. **The mask set is this worker's own** — line **35 285** of `c_naive`'s
+  3. **The value set is this worker's own** — line **35 285** of `c_naive`'s
      harvest file, appearing in **zero** of the fleet's other fifteen harvest
      files (sixteen in total, ≈ 1.1 GB, searched line-exact 2026-07-30). The
      absence half is *reported, not checkable here*: those harvest files are not
@@ -645,10 +683,10 @@ basin survey stand unchanged.
   not in this repository.
 - **Certificates: its k ≤ 3 shell is exhaustively empty.** All 1 540 k=2 windows
   and all 27 720 k=3 windows irreducible, zero hits, run with the repository's own
-  archived decider — so **any 87 differs from it by ≥ 4 masks** (§9). Together
+  archived decider — so **any 87 differs from it by ≥ 4 values** (§9). Together
   with the 88 @ depth 6, it is one of only two circuits here that have an
   exhaustive k ≤ 3 shell *and* a lineage independent of Jean's.
-- **A third distinct depth obstruction.** The masks whose minimum build depth
+- **A third distinct depth obstruction.** The values whose minimum build depth
   equals the circuit depth are output rows **1, 7, 12, 13, 17, 18, 21, 25, 27, 28
   and 31** — six weight-7 targets (1, 12, 17, 25, 27, 28) and five weight-5
   ones (7, 13, 18, 21, 31). That is a **third**
@@ -656,7 +694,7 @@ basin survey stand unchanged.
   for our 88 @ depth 7 and rows 1, 11, 17 and 25 for the 88 @ depth 6. Eleven
   simultaneously critical rows is what a circuit pushed to its own depth floor
   looks like. (Recomputable with `pipeline/engines.py:relax`.)
-- **How far it is from everything else.** Plain Jaccard on mask sets, and the
+- **How far it is from everything else.** Plain Jaccard on value sets, and the
   campaign's calibrated weighted Jaccard (periphery-only, neutral-corpus IDF
   weights) maximised over all four byte rotations ρ^k. **The plain columns
   recompute from the circuit JSONs in this repository; the weighted column does
@@ -684,8 +722,8 @@ basin survey stand unchanged.
   **410 222** distinct 88-gate states: across the 100 archived group
   representatives this circuit's largest weighted Jaccard is **0.293** (groups
   G05/F10), still under the 0.32 distinct floor. For scale, the group that
-  actually holds Jean's circuit sits at **0.0668** and the group holding this
-  project's derived 88s at **0.0626**. (The census, its 410 222 states, the 11
+  holding Jean's circuit is at **0.0668** and the group holding this project's
+  derived 88s at **0.0626**. (The census, its 410 222 states, the 11
   families and the 100 group representatives all live in the raw campaign tree,
   which is not part of this repository, and so do the weighted metric and its
   calibration corpus. None of these figures can be re-derived from what ships
@@ -695,11 +733,11 @@ basin survey stand unchanged.
   one.** Unrotated, plain Jaccard to everything above is 0.285–0.323; over all
   four rotations the largest value reached is **0.386 (0.179 on the periphery),
   attained at ρ³ of Jean's 88**. That is the honest ceiling, and it is not large
-  in context: this circuit's similarity to its own rotations sits at
+  in context: this circuit's similarity to its own rotations is
   **0.333–0.375**, so 0.386 against everything else is only marginally above what
   it scores against a rotated copy of itself. It shares 42 of Jean's 88
-  masks — but **32 of those are the obligatory output targets**, so only **10 of
-  the 56 freely chosen masks** coincide.
+  values — but **32 of those are the obligatory output targets**, so only **10 of
+  the 56 freely chosen values** coincide.
 
 ---
 
@@ -707,8 +745,7 @@ basin survey stand unchanged.
 
 - **Superseded at its Pareto point, retained as documented derived work.** Since
   2026-07-30 the (88, depth 5) point is established by the from-scratch circuit of
-  §7; this one is kept, unchanged and undeleted, because a documented derived
-  result is worth more than a deleted one — it is the record of how the project
+  §7; this one is kept, unchanged and undeleted: it is the record of how the project
   first reached depth 5 at 88 gates, and of the seeding bug that made the route
   derived. Its first-sentence derived disclosure below stands.
 - **Read this first — provenance:** our engine found this circuit, but **its seed
@@ -716,7 +753,7 @@ basin survey stand unchanged.
   an independent construction: it is a "derived from published work" result in the
   sense of [`DEFINITIONS.md`](../DEFINITIONS.md) ("lineage, and foreign
   lineage"), and the sibling of the 88 @ depth 8
-  in §5 — same seed, same root cause. The chain, every link checked by mask
+  in §5 — same seed, same root cause. The chain, every link checked by value
   identity:
 
   ```
@@ -745,9 +782,9 @@ basin survey stand unchanged.
   with the from-scratch 88 @ depth 5 of §7, which supersedes it as the circuit
   establishing that Pareto point. Independently recomputed from the raw JSON against a
   locally rebuilt GF(2⁸) spec: 88 gates, depth 5, 32/32 outputs, **0 dead gates**,
-  0 duplicate masks; 71 of its 88 masks are ρ²-symmetric (80.7 %).
+  0 duplicate values; 71 of its 88 values are ρ²-symmetric (80.7 %).
 - **It is not a new family.** At Jaccard **0.735 to this project's record 89 @
-  depth 5** (75 shared masks, 0.614 on the periphery) it is *above* the 0.7
+  depth 5** (75 shared values, 0.614 on the periphery) it is *above* the 0.7
   same-family threshold used throughout, and closer to that 89 than to any 88
   (best 0.615, our own 88 @ 8; 0.544 to Jean's 88; 0.313 to the 88 @ 6 of §6, and
   0.313 to the from-scratch 88 @ 5 of §7 — the two circuits at (88, depth 5) are
@@ -755,8 +792,8 @@ basin survey stand unchanged.
   basin reached at 88 gates**, not a family of its own.
 - **How:** the same 87-hunt fleet, two workers in series. **`o1`**, a
   ρ²-equivariant orbit ladder, ran cycle 129 on the derived 90 @ depth 9 and saved
-  a mask-identical 90. **`o_polish`** — which reads the orbit workers' saved
-  circuits as plain mask sets and runs the unconstrained engine on them — took
+  a value-identical 90. **`o_polish`** — which reads the orbit workers' saved
+  circuits as plain value sets and runs the unconstrained engine on them — took
   that file as the root of its restart 71 and walked 90 → 88 in 85 s.
 - **Circuit:** `circuits/mixcolumns_88gates_depth5.json` (sha256
   `9bd2019d7d033def…`). Source of record:
@@ -780,7 +817,7 @@ basin survey stand unchanged.
   the family-4 circuit of §6; it was superseded 4.2 s later and is not separately
   archived. The worker ran a further 5 h 51 min without finding an 87.
 - **Certificates:** its k=2 shell is exhaustively empty (all 1 540 windows), so
-  any 87 differs from it by ≥ 3 masks. Its **k=3 shell was never swept**. Together
+  any 87 differs from it by ≥ 3 values. Its **k=3 shell was never swept**. Together
   with our own 88 @ depth 7 — which has no exhaustive shell at any radius, only
   9 exact k=4 windows and 8 windowed-SAT cone windows — it is one of the two least
   certified circuits here (§9).
@@ -800,7 +837,7 @@ The scope, stated exactly:
   1 540 k=2 windows and all 27 720 k=3 windows for each, none reducible. Those
   47 are Jean's 88 (1) + its 12 syl-move plateau siblings (12) + the
   third-family anchor and its 33 representatives (34). Consequence: **any 87
-  differs from each of those 47 by ≥ 4 masks.**
+  differs from each of those 47 by ≥ 4 values.**
 - **This project's own 88 @ depth 7 is *not* one of the 47.** Its exhaustive
   k ≤ 3 sweep was never run; what it has is 9 exact k=4 windows (all
   irreducible) and 8 windowed-SAT cone windows (5 UNSAT, 3 undecided, 0 SAT).
@@ -810,9 +847,9 @@ The scope, stated exactly:
   (verdict logs and the driver in each run archive's `certificates/`):
   the **from-scratch 88 @ depth 5** (§7) has all 1 540 k=2 windows *and* all
   27 720 k=3 windows irreducible — shell exhaustively empty, so any 87 differs
-  from it by ≥ 4 masks (swept 2026-07-30); the **88 @ depth 6** likewise, at both
+  from it by ≥ 4 values (swept 2026-07-30); the **88 @ depth 6** likewise, at both
   radii (re-validated 2026-07-29); the **derived 88 @ depth 5** (§8) has its
-  1 540 k=2 windows irreducible (≥ 3 masks) and its **k=3 shell was not swept**.
+  1 540 k=2 windows irreducible (≥ 3 values) and its **k=3 shell was not swept**.
   Around the 88 @ depth 6, all 8 993 known states of its basin are proven k=2
   irreducible as well, plus 1 200 states beyond the harvest.
 - **The exhaustive shells and the independent lineages now overlap.** The point
@@ -823,7 +860,7 @@ The scope, stated exactly:
   exhaustively empty k ≤ 3 shell *and* a lineage independent of Jean's. The gap is
   narrower than it was; it is not closed, because the 88 @ depth 7 still has no
   exhaustive shell at any radius.
-- **Depth obstructions differ by basin — three patterns now.** The masks whose
+- **Depth obstructions differ by basin — three patterns now.** The values whose
   minimum build depth equals the circuit depth are, for our 88 @ depth 7, output
   rows **3 and 27**; for the 88 @ depth 6 of §6, rows **1, 11, 17 and 25** — four
   weight-7 targets; and for the from-scratch 88 @ depth 5 of §7, rows **1, 7, 12,
@@ -833,7 +870,7 @@ The scope, stated exactly:
   old plateau, and the depth-5 point was not reachable by pushing on the depth-6
   basin either (§6's negative result); each needed a different basin.
   (Recomputable with `pipeline/engines.py:relax`.)
-- **Population sweeps:** 105 801 of the ≈ 139 878 known distinct 88-gate mask
+- **Population sweeps:** 105 801 of the ≈ 139 878 known distinct 88-gate value
   sets proven irreducible at k=2 — 51 899 of families 1–2 (61.1 %, closing the
   whole symdiff ≥ 55 band) plus **all 53 902 states of family 3 (100 %,
   closed)**.
@@ -862,7 +899,7 @@ them**: a 97-gate circuit, nine gates above the best known,
 has an exhaustively empty k = 2 shell and an empty k = 3 sample exactly as an 88
 does. The reason is measurable: over the 74 distinct verified circuits in that
 corpus, the smallest window that could carry one to a strictly smaller *verified*
-circuit is **median 42 masks, minimum 3, maximum 48; 44 of the 45 measurable
+circuit is **median 42 values, minimum 3, maximum 48; 44 of the 45 measurable
 circuits need k ≥ 8**. The certified radius k ≤ 3 is smaller than 44 of those
 45 transitions — by a factor of ~2.7 against the closest and ~14 against the
 median. Stated plainly: **the
@@ -885,9 +922,9 @@ bug was found**, so the ≈ 165 M irreducible verdicts stand.
 
 **Slot-order sensitivity, now measured (2026-07-30).** On windows whose ground
 truth is SAT, `sat_window.py`'s encoding returned UNSAT under **123 of 128
-arbitrary mask orderings** — the caveat is load-bearing, not decorative — but
-under **128/128 legitimate alternative build orders of the same circuit** the
-verdict did not move, and the seed's own gate order is a member of that class.
+arbitrary value orderings** — the caveat matters — but under **128/128
+legitimate alternative build orders of the same circuit** the verdict did not
+move, and the seed's own gate order is a member of that class.
 The depth-capped encoder's claim to be slot-order-free checks out: its CNF is
 byte-identical under every reordering of the kept set.
 
@@ -902,10 +939,10 @@ another 91 of ours, so it inherits the same status.
 
 ---
 
-## Notes
+## Provenance, prior art, and how the archive was normalized
 
-- **Provenance in one line:** 97@d3, 92@d4, 88@d6 and the frontier 88@d5 of §7
-  are from scratch — each rooted in a fresh construction that reads nothing;
+- **Provenance in one line:** 97@d3, 91@d4, 92@d4, 88@d6 and the frontier 88@d5
+  of §7 are from scratch — each rooted in a fresh construction that reads nothing;
   89@d5 and 88@d7 continue the same own-lineage chain, seeded on the project's
   prior output rather than rediscovered cold; 88@d8 (§5) and the derived 88@d5
   (§8) are the derived ones, both through Jean's published 88.
@@ -931,8 +968,8 @@ another 91 of ours, so it inherits the same status.
 - **Paths normalized for publication, 2026-09-03.** The archived logs, stdout
   dumps and `"seed":` provenance strings under `evidence/` were written on the
   machine that ran them and carried that machine's absolute paths. For
-  publication, and *only* the leading directory prefix, two rewrites were
-  applied across 164 files / 254 lines: the repository's own absolute prefix was
+  publication, two rewrites were applied across 164 files / 254 lines, to the
+  leading directory prefix *only*: the repository's own absolute prefix was
   stripped, so `…/slp-plateau-search/campaign_87/agents/…` now reads
   `campaign_87/agents/…` (repo-relative; `campaign_87/` is the campaign working
   tree, not published — the convention `NEGATIVES.md` states applies), and the

@@ -2,10 +2,11 @@
 
 ## The claim
 
-An XOR-SLP is **cancellation-free** when every gate's two operand masks have
-disjoint support — no gate ever destroys a bit an earlier gate produced. Write
-`L_cf(M)` for the minimum size of a cancellation-free XOR-SLP for MixColumns
-(`../matrix.txt`).
+An XOR-SLP is **cancellation-free** when the two operand values of every gate
+have disjoint support: no gate ever destroys a bit an earlier gate produced. (A
+*value*, or mask, is the bit vector of which inputs a signal is the XOR of — see
+[`../../DEFINITIONS.md`](../../DEFINITIONS.md).) Write `L_cf(M)` for the minimum
+size of a cancellation-free XOR-SLP for MixColumns (`../matrix.txt`).
 
 > **`L_cf(M) >= 92`.** A price certificate: a JSON table of integers, checked in
 > **0.03 s** with the Python standard library, no solver anywhere in the loop.
@@ -16,16 +17,16 @@ disjoint support — no gate ever destroys a bit an earlier gate produced. Write
 > published as a first-class record circuit in the records repository
 > (`circuits/mixcolumns_102gates_cf.json`, v3.2.0).
 
-**Why this bound matters more than its size suggests.** It is the only proved
-quantity anywhere in this programme that lies *above* the 88-gate record.
-Every other lower bound is below 88 and therefore says nothing about whether an
-87-gate circuit exists. This one says something sharp and unconditional:
+**What this bound rules out.** It is the only proved quantity anywhere in this
+programme that lies *above* the 88-gate record. Every other lower bound is below
+88 and therefore says nothing about whether an 87-gate circuit exists. This one
+is unconditional:
 
 > **Every XOR circuit for MixColumns with at most 91 gates contains a cancelling
 > gate.** The 88-gate record is 4 gates below the cancellation-free floor, so
 > cancellation is not an optimisation trick in these circuits — it is forced.
 
-(The record 88 measured here has `kappa = 22`. See `RUN.md`.)
+(The record 88 measured here has `kappa = 22`. See [`RUN.md`](RUN.md).)
 
 ## The technique: a laminar price certificate
 
@@ -34,8 +35,8 @@ to one target `t` form a *laminar hierarchy* `H_t` over `supp(t)`: the target is
 an XOR of two disjoint sub-masks, each of which is an XOR of two disjoint
 sub-masks, and so on down to single inputs. Every internal node of `H_t` (every
 subset of size `>= 2`) is the mask of an actual gate, so `H_t ⊆ G` where `G` is
-the gate mask set. This is where cancellation-freeness is spent, and it is the
-only place it is used.
+the set of gate masks. This is where cancellation-freeness is spent, and it is
+the only place it is used.
 
 **The prices.** Assign integers `n[t][m] >= 0`, one per target `t` and mask `m`
 inside `supp(t)`, over a common denominator `D`, subject to a single family of
@@ -78,7 +79,7 @@ reproduced `Check 1 max column sum = 1.0000000, exactly tight, FEASIBLE`.
 cite for the constant; `cert_cf92.json` is the published one and is kept so the
 literature value stays checkable.
 
-## Where this line stops — stated up front
+## Where this line stops: the family's optimum is 91.409884
 
 The 19 exact LP solves behind the sharper table also pin down the **optimum** of
 this entire price family:
@@ -97,17 +98,16 @@ give. The two thresholds anyone would want next —
 all**, symmetric or not. Exploiting the matrix's order-4 symmetry is worth
 `+0.0000003`: the optimum is already symmetric to seven places.
 
-This is a closed door, and the pack says so rather than leaving a reader to
-discover it. The certificate is a keeper as a bound *generator* for other
-matrices; it is a dead end as an *upgrade path* for this one.
+This is a closed door. The certificate remains useful as a bound *generator*
+for other matrices; for this matrix it is a dead end as an *upgrade path*.
 
-Two by-products of the LP form, both unconditional and solver-free, are worth
-knowing because they are about ordinary (cancelling) circuits:
+Two by-products of the LP form are unconditional, solver-free, and about
+ordinary (cancelling) circuits:
 
 * for every XOR-SLP for `M`, `|C| >= 58` **or** `kappa >= 16`;
 * no price table and no multiplier can ever prove `n >= 57` for a circuit with
-  `kappa >= 22` — and the records have `kappa` in 18..28, so the exchange rate
-  is capped below the record's own regime, by proof.
+  `kappa >= 22` — and the records have `kappa` in 18..28, so this family of
+  arguments is capped below the record's own regime, by proof.
 
 ## The upper bound, and what it is not
 
@@ -127,10 +127,10 @@ bound and its witness can be checked without leaving this pack.
 Do not confuse this with the general MixColumns record: 102 here is a
 *cancellation-free* cost, while the unrestricted record is 88.
 
-**A number collision worth naming.** "102" also appears in the literature as a
-published *unrestricted* 2-input XOR count for MixColumns. That is a different
-quantity that happens to share the value; the 102 in this directory is a bound
-on `L_cf`, and it is not a claim about `L`. Within this programme, values of
+**A number collision.** "102" also appears in the literature as a published
+*unrestricted* 2-input XOR count for MixColumns. That is a different quantity
+that happens to share the value; the 102 in this directory is a bound on `L_cf`,
+and it is not a claim about `L`. Within this programme, values of
 103, 104 and 133 appear in older material for `L_cf`; those are superseded
 incumbents, not competing bounds, and should not be quoted.
 

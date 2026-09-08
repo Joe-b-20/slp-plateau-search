@@ -5,6 +5,8 @@
 Let `M` be the 32x32 GF(2) matrix of AES MixColumns (`../matrix.txt`; sha256 in
 `../matrix.sha256`). Let `L(M)` be the minimum number of 2-input XOR gates in
 any straight-line program computing all 32 output bits from the 32 input bits.
+(Terms used below — value/mask, target, fan-out, orbit — are defined in
+[`../../DEFINITIONS.md`](../../DEFINITIONS.md).)
 
 > **Every XOR circuit for MixColumns uses at least 56 gates.**
 
@@ -58,10 +60,10 @@ distinct and of weight `>= 2`, so each is a distinct gate, and `minE_K` counts
 the minimum number of further gate masks needed to realise them. Summing gives
 the claim. ∎
 
-The adaptivity is the point. A fixed keep-set lets an adversary park all the
-high fan-out on the kept columns; choosing `K` *after* seeing where the fan-out
-is, using the symmetry group to have enough keep-sets to choose from, removes
-that escape.
+The adaptivity is what makes the bound work. With a fixed keep-set, an adversary
+can concentrate all the high fan-out on the kept columns; choosing `K` *after*
+seeing where the fan-out is, with the symmetry group supplying enough keep-sets
+to choose from, removes that escape.
 
 ## The certificate
 
@@ -109,7 +111,7 @@ Both report the identical root state (free closure 24/32, `|avail| = 38`, 511
 root candidates); each covers every branch index 0..510 exactly once; all 228
 shard files end `SHARD-DONE ... NO-COMPLETION`.
 
-**The exhaustion is shipped and it is cheap.** `mine.c` (single file, no
+**The exhaustion is shipped and re-runnable.** `mine.c` (single file, no
 dependencies, takes an arbitrary target list) is the searcher, and
 `--minE-depth D` re-runs it in-band:
 
@@ -124,7 +126,7 @@ sharded and, on one of the two code paths, deliberately unpruned. Note the
 distinction honestly: the run reproduced here is the **pruned** code path (the
 last-level and canonical-order prunings, both proved sound in `mine.c`'s header
 comment). The 9.43e10-node **unpruned** exhaustion is what makes the result
-prune-independent, and that one is cited, not re-run. See `RUN.md`.
+prune-independent, and that one is cited, not re-run. See [`RUN.md`](RUN.md).
 
 ## Honest scope
 
@@ -138,9 +140,9 @@ prune-independent, and that one is cited, not re-run. See `RUN.md`.
 * The gap 56..88 is entirely about *middle* gates. In a minimum SLP all 32
   targets are distinct masks of weight `>= 5`, so exactly 32 gates carry target
   masks and the rest are middles: `88 = 32 + 56`, and the bound is `56 = 32 + 24`.
-  The `+32` is free; the proof effort has bought 24 middles against the record's
-  56.
+  The `+32` needs no argument; the proof establishes 24 middles against the
+  record's 56.
 * Theorem N is stated for any GF(2) matrix with distinct non-zero columns and an
   automorphism group; `check_gte56.py` and `mine.c` both take an arbitrary
-  matrix. `../validation/` runs exactly this machinery on small instances whose
-  optimum is known exactly.
+  matrix. [`../validation/`](../validation/) runs exactly this machinery on small
+  instances whose optimum is known exactly.

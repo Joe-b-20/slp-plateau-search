@@ -19,7 +19,7 @@ improvement, constructively. The arrow runs one way only — see the note under
 positive control 1.
 
 **It does not check that your circuit is correct.** Run a verifier first
-(`../records_check/`).
+([`../records_check/RUN.md`](../records_check/RUN.md)).
 
 ---
 
@@ -162,14 +162,15 @@ Full transcript of all of the above: `out/DEMO.txt`.
 ## Scope
 
 The tripwire is a **theorem with a decision rule**, not a rigidity statistic: it
-either hands you a smaller circuit or it does not, and when it does, the smaller
+either produces a smaller circuit or it does not, and when it does, the smaller
 circuit is constructed, not inferred. That is why it survives the repricing that
-applies to this project's neighbourhood negatives (see
-`../calibration/CONTROL_AUDIT.md`) — it is not being used as evidence *about*
-optimality.
+applies to this project's neighbourhood negatives
+([`../calibration/CONTROL_AUDIT.md`](../calibration/CONTROL_AUDIT.md)) — it is
+not being used as evidence *about* optimality.
 
 The much stronger deletion test — delete a gate and allow the surviving 87
-masks to be rebuilt in **any** order — is in `../deletion_certificate/`.
+masks to be rebuilt in **any** order — is in
+[`../deletion_certificate/CERT.md`](../deletion_certificate/CERT.md).
 
 ---
 

@@ -1,7 +1,7 @@
 # How the depth check works
 
-`DEPTH_FORCED.md` states the claims. This file explains the one mechanism behind
-the re-runnable one: how the *minimum possible* depth of a circuit is computed
+`DEPTH_FORCED.md` states the claims. This file explains the mechanism behind the
+re-runnable one: how the *minimum possible* depth of a circuit is computed
 from its value set, and why that number cannot be beaten by rescheduling.
 
 ## 1. The idea
@@ -11,10 +11,10 @@ scheduled differently, ought to give a different depth. For these circuits it is
 not: depth is a property of the **set of values** the circuit computes.
 
 Take a circuit's masks as an unordered set, throw the wiring away, and ask the
-cheapest question you can: *using only masks from this set, how few XOR levels
-does each mask need?* Inputs are at level 0. A mask is at level `d` if it is the
-XOR of two masks whose levels are both below `d`, and `d` is the smallest such
-number. Computing that for every mask is a **least fixpoint**, so it is the
+one question that needs no wiring: *using only masks from this set, how few XOR
+levels does each mask need?* Inputs are at level 0. A mask is at level `d` if it
+is the XOR of two masks whose levels are both below `d`, and `d` is the smallest
+such number. Computing that for every mask is a **least fixpoint**, so it is the
 best any schedule could do — the "as soon as possible" depth of the set.
 
 Compare that to the depth the circuit actually has. If they are equal, the
@@ -45,7 +45,7 @@ circuit in a fraction of a second. On a value set containing a repeated mask the
 level frontier is not well defined, and the code falls back to the original
 all-pairs fixpoint, which computes the same result more slowly.
 
-The script also reports, per circuit, the histogram of how many masks sit at
+The script also reports, per circuit, the histogram of how many masks are at
 each level and which output rows are pinned at the deepest level. Those are the
 gates that would have to move for the circuit to get shallower, and they are why
 the answer is "none of them can".
@@ -53,28 +53,21 @@ the answer is "none of them can".
 ## 2. What it establishes, and what it does not
 
 **It establishes**: every shipped circuit — 88, 89, 91, 92 and 97 gates — is
-already at the shallowest depth its own mask set admits. Consequence: you cannot
-take a cheap 88 found at some large depth and reschedule it down to the record
-depth. Depth records need a different value set, not a cleverer schedule.
+already at the shallowest depth its own value set admits. Consequence: you
+cannot take an 88 found at some larger depth and reschedule it down to the
+record depth. Depth records need a different value set, not a cleverer schedule.
 
 **It does not establish** anything about value sets nobody has: a *different*
-88-mask set could well be shallower. The claim is per circuit, and the
+88-gate value set could be shallower. The claim is per circuit, and the
 population it covers is the shipped one.
 
-The measured/ASAP agreement also has a corollary the companion document leans
-on: since the wiring is recoverable from the value set and the depth is forced by
-it, a mask set is the real identity of one of these circuits — which is the
-convention the rest of `corpus/` uses.
+The measured/ASAP agreement also supports the convention the rest of `corpus/`
+uses: since the wiring is recoverable from the value set and the depth is forced
+by it, the value set is the identity of one of these circuits.
 
-## 3. Run it
+## 3. Running it
 
-From the repository root (the script imports the search engine's depth kernel
-and reads the shipped circuits):
-
-```
-python3 corpus/depth_forced/asap_depth.py
-```
-
-It prints one row per circuit — measured depth, ASAP depth, the level histogram,
-and the pinned output rows — and exits nonzero if any circuit could be
-scheduled shallower. Runtime is a fraction of a second for all nine.
+The command, what it prints and its exit status are in
+[`DEPTH_FORCED.md`](DEPTH_FORCED.md) §2. The script imports the search engine's
+depth kernel and reads the shipped circuits, so it is run from the repository
+root. Runtime is a fraction of a second for all nine circuits.

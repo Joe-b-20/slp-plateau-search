@@ -22,7 +22,7 @@ cd ../../campaign87_run_2026-07-28_got_88at6_fromscratch/code
 sha256sum engines.py hunt_worker.py constructors.py mixcolumns_core.py verify_circuit.py
 ```
 
-**Why this is evidence and not just tidiness.** Those files were committed to a
+**Why this is evidence, not only tidiness.** Those files were committed to a
 public repository on 2026-07-29, and their modification times are 2026-07-27 —
 **two days before** this circuit was found (2026-07-30 10:48:19). The code that
 produced this record was therefore fixed, archived and published before the run

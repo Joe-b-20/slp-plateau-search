@@ -20,17 +20,16 @@ documented solver run with its log. The known upper bound is 97 (an explicit
 verified depth-3 circuit, shipped here as the positive control), so the honest
 depth-3 bracket is `81 <= N_depth3 <= 97`.
 
-For context: the best circuit at any depth uses 88 gates, so *depth 3 already
-costs you gates* — but 81 is still below 88, so this line does not by itself
-rule out an 87 at depth 3. That is exactly why the ladder is documented rather
-than declared finished.
+For context: the best circuit at any depth uses 88 gates, so depth 3 costs
+gates — but 81 is still below 88, so this line does not by itself rule out an
+87-gate depth-3 circuit.
 
 ## The technique
 
 **Step 1 — a complete finite structural model.** For depth `<= 3` the problem
 becomes finite and completely enumerable, which happens nowhere else in this
 programme. Every MixColumns target has weight 5 or 7, and `5 > 2^2 = 4`, so no
-target can be produced at level `<= 2`; every target therefore sits at level
+target can be produced at level `<= 2`; every target therefore lies at level
 exactly 3, and no target feeds another gate. Hence there are exactly 32 level-3
 gates, one per target, and
 
@@ -68,12 +67,18 @@ and 29,180 variables, with
     => |L1| + |L2| >= 48
     => N_depth3 >= 32 + 48 = 80
 
-For scale: without the cuts the LP value is 29.19 (giving only 62); an earlier
-uncertified CP-SAT dual gave 34 (giving 66). One cut family alone (C8) is worth
-`+1.05`.
+For scale, the same model at three stages:
+
+| dual or LP value used | value | resulting bound on `N_depth3` |
+|---|---|---|
+| the relaxation without any cuts | 29.19 | 62 |
+| an earlier, uncertified CP-SAT dual | 34 | 66 |
+| the certified dual shipped here | 47.597998 | 80 |
+
+One cut family alone (C8) accounts for `+1.05` of that.
 
 **Step 4 — where the LP stops, and why 81 needs a MIP.** Only `E ∈ {19, 20}` can
-reach 48, and both sit at LP value **exactly 48.0**, so no further cutting can
+reach 48, and both have LP value **exactly 48.0**, so no further cutting can
 raise the LP bound: everything above 80 has to come from integer reasoning.
 `mip3.py` runs the same model as a MIP; HiGHS's dual bound reached **49**,
 giving `N_depth3 >= 32 + 49 = 81`. That number is real but it is the solver's,
@@ -93,7 +98,7 @@ must satisfy everything:
 | `control_lp.py` | some LP row is not valid | 72,830 rows checked, **0 violated**, objective 65 |
 
 If any of these failed, every bound in this directory would be vacuous. They are
-not optional and they are cheap — see `RUN.md`.
+not optional, and together they run in under a second — see [`RUN.md`](RUN.md).
 
 An independent cross-check on the LP itself: SCIP 10 reproduces the root LP
 value to 7 digits through a completely different code path.
@@ -107,4 +112,4 @@ value to 7 digits through a completely different code path.
   it at a different matrix requires re-deriving the structure theorem first.
 * `>= 80` is a certificate. `>= 81` is a run. Cite them differently.
 * Depth 3 is a *restricted* class: none of this bears on `L(M)`, whose refereed
-  bracket is `56 <= L(M) <= 88` (see `../gte56/`).
+  bracket is `56 <= L(M) <= 88` (see [`../gte56/`](../gte56/)).

@@ -1,8 +1,8 @@
 # reproduce — one command per record, with its measured time
 
-Everything here is dependency-free Python 3 (stdlib only) except
-`construct_91at4.py`, which needs `numpy` and `python-sat` and says so in its
-own header. **Seven of the nine verified circuits have a reproduction command**
+Everything here is standard-library Python 3 except `construct_91at4.py`, which
+needs `numpy` and `python-sat` and says so in its own header. **Seven of the
+nine verified circuits have a reproduction command**
 — five run from this folder, two are pipeline runs — and the table below
 carries all seven, plus one row for a *route* rather than a circuit: the
 cheapest way to reach 88 gates from nothing
@@ -17,9 +17,9 @@ provenance.
 
 **A reproduction command need not be the tool that historically found the
 record.** Where a faster route exists it is named, with what it is, how it
-differs from the original finder, and what "from scratch" means for it — the
-bar being *no record circuit and no record-derived data as input; targets from
-GF(2⁸) and FIPS-197 only*.
+differs from the original finder, and what "from scratch" means for it. The
+standard applied throughout: *no record circuit and no record-derived data as
+input; targets from GF(2⁸) and FIPS-197 only*.
 
 Every search is stochastic. Times below are **what a run actually took**, dated
 and labelled — a measurement, never a promise.
@@ -66,7 +66,7 @@ loaded 20-core box: **57.4 s** and **51.8 s**, both reaching cost 97 on RNG seed
 `gates=97 depth=3 outputs_built=32/32 VALID`. This remains the fastest
 from-scratch route to the depth-3 point the project has: the depth-3 annealer is
 the only method in the whole roster that reaches 97 at depth 3, and the
-closed-form constructions that are faster land at 116 gates.
+closed-form constructions that are faster reach only 116 gates.
 
 This method is specific to depth 3 and was **not** touched by the v2 engine
 rebuild — it does not share a kernel with the pipeline engines.
@@ -74,8 +74,8 @@ rebuild — it does not share a kernel with the pipeline engines.
 ## The 91 @ depth 4 — the command here, and what produced the shipped circuit
 
 The command in the table is **not** the search that found the shipped circuit.
-The fastest way to a 91 @ depth 4 is not a search at all: it is four seconds of
-construction, packaged here as
+The fastest route to a 91 @ depth 4 is not a search at all: it is four seconds
+of construction, packaged here as
 [`construct_91at4.py`](construct_91at4.py) and described in
 [A 91 @ depth 4 in four seconds](#a-91--depth-4-in-four-seconds) below. The
 multi-process cascade search that historically produced the shipped circuit is
@@ -100,16 +100,16 @@ one integer — so the point is from scratch, as
 | | |
 |---|---|
 | the descent that found it, from its root | **3 263 s = 54.4 min**, one core |
-| that depth-4 lane, start to hit | 37 399 s = 10.4 h, one core |
-| the whole fleet to the hit | ~10.6 h wall × 7 processes ≈ 74 process-hours |
+| that depth-4 lane, from start to the find | 37 399 s = 10.4 h, one core |
+| the whole fleet, to the find | ~10.6 h wall × 7 processes ≈ 74 process-hours |
 
 **Why no command is offered.** The fleet's supervisor and its depth-capped
 worker are a separate codebase from `../pipeline/`, and neither is published
 here or in the records repository. Packaging a 91 @ 4 re-run means publishing
 that worker as a run archive with the same provenance argument the two
-from-scratch 88 archives carry — the shape of it is clear and cheap (the
+from-scratch 88 archives carry. That work is well defined and inexpensive — the
 record's restart is rooted at `naive#40426` with chunk seed 40426, so
-`hunt_88at5.py`'s pattern applies verbatim once the capped worker exists here),
+`hunt_88at5.py`'s pattern applies verbatim once the capped worker exists here —
 but it has not been done, and until it is there is no command. It is filed as a
 packaging lead in [`../leads.md`](../leads.md).
 
@@ -125,8 +125,8 @@ two independent reasons:
   (`d4.log`: `ADOPTED reseed 92 gates depth 4`). Later depth-4 work of this
   project, not published here, re-ran that step from this circuit **nine times
   and reached 91 on none of them**.
-- **The archived run never held a 91 at depth 4.** Its depth-4 rung sat on a
-  92 to the end. The stop condition used to be able to latch shut here —
+- **The archived run never held a 91 at depth 4.** Its depth-4 rung stayed at
+  92 to the end. The stop condition used to be able to close permanently here —
   `target_reached` tested only the single Pareto *global* best across all rungs,
   which prefers fewer gates at any depth, so a deeper rung reaching 88 could
   make `gates ≤ 91 and depth ≤ 4` unsatisfiable for the rest of a run while a
@@ -139,9 +139,8 @@ measured, and it is kept pointed at 92 for exactly that reason.
 
 ### A 91 @ depth 4 in four seconds
 
-**The reproduction command for a record does not have to be the tool that
-historically found it.** For this point the fastest route is not the
-cascade at all: it is an *exact construction* that never searches over circuits.
+For this point the fastest route is not the cascade at all: it is an *exact
+construction* that never searches over circuits.
 
 A separate line of this project's work — a standalone MixColumns **generator**,
 built from GF(2⁸), the FIPS-197 matrix and the trace-dual basis, with exact
@@ -160,8 +159,8 @@ python3 construct_91at4.py
 **Dependencies.** This is the one script in this folder that is not
 standard-library Python. It needs `numpy` and `python-sat`
 (`pip install python-sat`) — the SAT back end the exact block solver calls —
-and exits with a named message if either is missing. Nothing else here acquired
-a dependency.
+and exits with a named message if either is missing. No other script here has
+any dependency.
 
 Measured **2026-09-03**, one core, **from an empty solve cache**: **3.9
 seconds**, eight exact sector solves of 7 gates each, then
@@ -185,8 +184,8 @@ the depth-4 claim is tight by the same test
 construction is deterministic: two runs on 2026-09-03 emitted byte-identical
 gate lists.
 
-**It is not the record circuit, and that is the point.** It shares 53 of its 91
-masks with the cascade6 circuit (Jaccard 0.411) — an **independent witness** of
+**It is not the record circuit, and that is deliberate.** It shares 53 of its 91
+values with the cascade6 circuit (Jaccard 0.411): an **independent witness** of
 the same frontier point, constructed rather than found. What it reproduces is
 the *claim* 91 @ depth 4, not the artifact.
 
@@ -206,7 +205,7 @@ was tested rather than assumed. Three checks:
   was repeated in a copied tree with **every menu replaced by garbage** and
   emitted a byte-identical 91-gate depth-4 gate list.
 
-What *is* inherited is the price spectrum — the result of an exact DP over the
+What *is* inherited is the price spectrum: the result of an exact DP over the
 ladder configuration space. That DP is theory-generated, no circuit of any
 provenance enters it, and every configuration it names is **re-solved from
 scratch** by the generator's own solver before anything is emitted. Only the
@@ -218,11 +217,11 @@ audit hook shows it opening only its own module cache and the spectrum. But its
 `--depth` is not a constraint: it accepts the flag, never constrains on it, and
 then reports the miss plainly. Asked for 91 at depth 4 it emits **91 @ depth 5**
 and prints `depth<= 4: VIOLATED / VERDICT: INVALID` (measured here, 0.09 s). The
-merged tool is the one that turns the cap into a constraint the model must meet —
-four places, block by block, with an `InfeasibleAtDepth` exit and a named reason
-if it cannot. That is what makes 91 @ **4** come out, and it is also what drags
-in the inert menu import. A packaged version wants the second tool's depth
-handling and the first one's clean dependency list.
+merged tool is the one that turns the cap into a constraint the model must meet
+— four places, block by block, with an `InfeasibleAtDepth` exit and a named
+reason if it cannot. That is what produces 91 @ **4**, and it is also what pulls
+in the inert menu import. A future packaged version should combine the second
+tool's depth handling with the first one's dependency list.
 
 **What was packaged, and what was not.** `construct91/` holds ten modules of
 the working tree's generator, copied: the field and dual-basis layer, the
@@ -250,16 +249,16 @@ configuration reads all three of its structural commitments off the **derived**
 | with the real record-read menus | **88 gates @ depth 9, VALID, in 30 s** |
 | with every menu replaced by garbage | **no circuit in 15 minutes** — killed at the budget |
 
-Read the second row for exactly what it is: a **timeout and not a verdict**. It does
-not prove no 88 is reachable without the menus; it shows the menus are doing
-real work on that path, 30 s against >900 s. That is the opposite of what the
-ladder did — where the same substitution changed nothing at all, byte for byte —
-and it is why the ladder counts as from scratch and `f4` does not. (A separate review of the `f4` configuration points
-the same way: one of that configuration's structural constants is numerically
-identical to a record's and load-bearing — swap it and the model prices 89, not
-88.) The ladder model cannot reach 88 at all; its optimum is exactly 91. So for
-an 88 from nothing, the route in this folder — `hunt_88at5.py` — remains the
-one this folder offers, and it is a search rather than a construction.
+Read the second row for exactly what it is: a **timeout, not a verdict**. It
+does not prove that no 88 is reachable without the menus; it shows the menus are
+doing real work on that path, 30 s against more than 900 s. The ladder behaved
+the opposite way — the same substitution changed nothing at all, byte for byte —
+and that is why the ladder counts as from scratch and `f4` does not. A separate
+review of the `f4` configuration agrees: one of that configuration's structural
+constants is numerically identical to a record's, and the model depends on it —
+replace it and the model prices 89, not 88. The ladder model cannot reach 88 at
+all; its optimum is exactly 91. So for an 88 from nothing the route here remains
+`hunt_88at5.py`, which is a search rather than a construction.
 
 ## The from-scratch 88 @ depth 5
 
@@ -272,8 +271,8 @@ python3 hunt_88at5.py --rng 2163 --target-depth 6   # the 88 @ depth 6's root
 **There is no seed circuit.** The root is
 `constructors.build("naive", 1958)` — a randomized balanced XOR tree over the 32
 raw inputs, a pure function of the integer 1958 — and it re-derives the record
-run's own root, **146 gates at depth 3**, exactly as its log recorded it. That
-makes this the second of the three frontier points that reproduces from nothing.
+run's own root, **146 gates at depth 3**, exactly as its log recorded it. This
+is the second of the three frontier points that reproduces from nothing.
 
 Like `hunt_88.py`, this script contains **no search code**. It launches one
 process of the *archived worker that produced the record* —
@@ -297,32 +296,33 @@ sha256sum engines.py hunt_worker.py constructors.py mixcolumns_core.py verify_ci
 # compare with ../../campaign87_run_2026-07-30_got_88at5_fromscratch/code/CODE_PROVENANCE.md
 ```
 
-**Why `--rng 1958` is the default, and what it does and does not buy.**
+**Why `--rng 1958` is the default, and what it does and does not reproduce.**
 The record's restart is **session 5, restart 16** of a five-session worker,
 opened on `naive#1958` with RNG seed 1958. The engines take that *integer*, not
 the worker's RNG object, and it advances by +1 per chunk — so a fresh worker
 started with `--seed 1958` begins in exactly restart 16's state, and the root and
 the first chunk are reproduced. Chunk boundaries are **wall-clock**, though
 (120 s walk / 420 s LNS), so from the second chunk on a machine of a different
-speed sits at a different iteration and the trajectories part — the same caveat
-as `hunt_88.py`, and it is why a re-run is a re-run and not a replay.
+speed is at a different iteration and the trajectories separate. That is the
+same caveat as `hunt_88.py`, and it is why this is a re-run and not a replay.
 
 **The root is held, and that is this script's own choice.** The archived worker
 rotates roots — it abandons one after 90 minutes (`--restart-s` 5400 s) or after
 40 minutes with no local improvement (`--stall-s` 2400 s) — which is right for
-one worker of sixteen mining many roots for days, and wrong for a script whose
-whole job is to re-run *one* restart. Both timers are therefore pushed past the
-budget, so the record's root is kept for the entire run; `--rotate-roots` gives
-the archived behaviour back. This was not a precaution: the first re-run here hit
-exactly that rule and lost the root. See the run record below.
+one worker of sixteen searching many roots for days, and wrong for a script
+whose whole job is to re-run *one* restart. Both timers are therefore pushed
+past the budget, so the record's root is kept for the entire run;
+`--rotate-roots` restores the archived behaviour. This was not a precaution: the
+first re-run here hit exactly that rule and lost the root. See the run record
+below.
 
-This is therefore **a re-run of the winning restart, not a blind search**, and
-the distinction is the whole cost story:
+This is therefore **a re-run of the successful restart, not a blind search**,
+and the distinction determines the cost:
 
 | | |
 |---|---|
 | from *this* root (the record's), archived | 88 @ depth 6 at **64.1 min**, 88 @ depth 5 **6.1 s later** |
-| from an arbitrary fresh root (`--rng` anything else) | a lottery, and an expensive one. The distributed run's own accounting, which is not published here, prices this constructor at **~8.6 CPU-hours per 88** and finds ~3.5 % of from-scratch descents reach 88 at all. That landing at *depth 5* is a further sub-event **is** checkable here: the shipped `c_naive.log` records three independent arrivals at 88 gates over that worker's five sessions (depths 8/7/6, then 10/9/8, then 6/**5**), and exactly one of the three reached depth 5 |
+| from an arbitrary fresh root (`--rng` anything else) | expensive and uncertain. The distributed run's own accounting, which is not published here, prices this constructor at **~8.6 CPU-hours per 88**, with ~3.5 % of from-scratch descents reaching 88 at all. That reaching *depth 5* is a further sub-event **is** checkable here: the shipped `c_naive.log` records three independent arrivals at 88 gates over that worker's five sessions (depths 8/7/6, then 10/9/8, then 6/**5**), and exactly one of the three reached depth 5 |
 
 **What re-runs did here, and the packaging bug they caught.** Two re-runs on
 **2026-09-02**, one core each, `nice -n 19`, on a loaded 20-core box. Both
@@ -338,17 +338,17 @@ few seconds — and both were **far ahead of the archived run**:
 | 89 @ 5 | 559 s | 558 s | 3 072 s |
 | **88 @ 6 → 88 @ 5** | root lost at 54 min | **not in 164 min** | 3 843 s / 3 849 s |
 
-Run 1 then sat at 89 and the archived worker's own **stall rule fired at
+Run 1 then stayed at 89 and the archived worker's own **stall rule fired at
 t = 3 240 s (54 min)** — `stalled 2400s at 89 gates -- new root` — dropping the
 record's root **ten minutes before the time the archived descent had needed to
 reach 88 from it**.
 
-That is a bug in this script, not in the record: the archived worker rotates
-roots because it was one of sixteen mining many roots for days, and a re-run of
-*one restart* must not inherit that. Being fast makes it worse, not better — the
-walk banks its improvements early, so the 2 400 s no-improvement clock starts
-sooner. The archived run survived its own rule only by being slower, spreading
-the same improvements over 3 072 s instead of 559 s.
+That is a defect in this script, not in the record: the archived worker rotates
+roots because it was one of sixteen searching many roots for days, and a re-run
+of *one restart* must not inherit that. A faster machine makes it worse, not
+better — the walk records its improvements early, so the 2 400 s
+no-improvement clock starts sooner. The archived run survived its own rule only
+by being slower, spreading the same improvements over 3 072 s instead of 559 s.
 
 `hunt_88at5.py` therefore now **holds the root for the whole budget**, pushing
 both rotation timers past the deadline; `--rotate-roots` restores the archived
@@ -362,14 +362,14 @@ and there is **no** `new root` or `stalled` line anywhere in its 259 chunks
 minutes**, ending at t = 9 837 s (164 min) without an 88.
 
 So the result for this row is: **the descent reproduces, the last gate did
-not.** Down to 89 gates this re-run was 3–5× faster than the archived one; the
+not.** Down to 89 gates this re-run was 3–5× faster than the archived one. The
 step from 89 to 88 is a single lucky walk chunk, and in 164 minutes on this
-machine it did not come, against the archived run's 64 minutes from the same
-root. That is not a failure of the packaging — the root, the seed, the code and
-the first chunk are all reproduced — it is the stochasticity this page keeps
-warning about, and it is why the script ships a 180-minute default and why
-nothing here promises a time. A second attempt is a different RNG draw of the
-same walk; the archived arrival is one sample, and so is this miss.
+machine it did not occur, against the archived run's 64 minutes from the same
+root. The packaging is not at fault — the root, the seed, the code and the first
+chunk are all reproduced. This is the stochasticity stated at the top of this
+page, and it is why the script ships a 180-minute default and why no time is
+promised. A second attempt is a different RNG draw of the same walk; the
+archived arrival is one sample, and so is this miss.
 
 **Provenance.** The root reads nothing off disk — the `constructor:` branch of
 the worker's root selector has no file-reading path at all. Cross-pollination was
@@ -381,13 +381,13 @@ five-part argument, with the log lines and the hash pins, is in
 
 **On the fleet generators.** A separate line of this project's work can emit a
 verified 88 @ depth 5 from a block model in ~46 min of one core. It is **not**
-offered here and should not be mistaken for this: its cell and all three of its
-structural commitments are read off the *derived* 88 @ depth 5 — the circuit
+offered here and must not be mistaken for this route: its cell and all three of
+its structural commitments are read off the *derived* 88 @ depth 5 — the circuit
 whose seed chain runs through published work — and the circuit it emits is that
-one, mask for mask. It is a re-derivation, not a discovery, it needs a SAT solver
-and a census file this repository does not carry, and packaging it would publish
-a recipe for re-emitting derived work. That is the same line this folder already
-declines to cross for the 88 @ 8.
+same one, value for value. It is a re-derivation, not a discovery; it needs a
+SAT solver and a census file this repository does not carry; and packaging it
+would publish a recipe for re-emitting derived work. That is the same boundary
+this folder observes for the 88 @ 8.
 
 ## The cheapest 88 from nothing
 
@@ -396,8 +396,8 @@ python3 hunt_88at5.py --rng 2050 --target-depth 0
 ```
 
 If the question is *"how cheaply can this project reach 88 gates from nothing?"*
-— not at any particular depth, just 88 — the answer is **9.7 minutes of one
-core**, and it is the same script with a different root integer.
+— at any depth, not a particular one — the answer is **9.7 minutes of one
+core**, from the same script with a different root integer.
 
 The producing worker's log holds 58 restarts across five sessions. **Four of
 them reached 88 gates.** Differencing each restart's opening line against its
@@ -424,22 +424,23 @@ is an archived sample, not a re-validated time, and it is quoted with the same
 caveat every other number on this page carries. The 88 it produced was
 superseded inside the same run and **never archived as a circuit file**, so what
 the command reproduces is the *claim* "an 88 from scratch", not an artifact you
-can diff against a shipped file. What comes back is a verified 88 of that
-descent's own basin.
+can diff against a shipped file. What comes back is a verified 88 from that
+descent's own region of the search space.
 
-**And it is a re-run of a known winning restart, not the price of a blind
-draw.** Those are very different numbers. The fleet's own accounting, which is
-not published here, prices this constructor at **~8.6 CPU-hours per 88**, with
-only **~3.5 %** of from-scratch descents reaching 88 at all. Four of 58 logged
-restarts is the same story from the shipped side. Pick a root integer that is
-not one of these four, and the expectation is hours, or nothing.
+**And it is a re-run of a known successful restart, not the price of an
+arbitrary draw.** Those are very different numbers. The fleet's own accounting,
+which is not published here, prices this constructor at **~8.6 CPU-hours per
+88**, with only **~3.5 %** of from-scratch descents reaching 88 at all. Four of
+58 logged restarts is the same proportion from the shipped side. Choose a root
+integer that is not one of these four, and the expectation is hours, or
+nothing.
 
-**Depth 8 is where it stops, and it cannot be converted.** A natural next
-thought is to take this cheap 88 and reschedule it down to the record's depth 5.
+**Depth 8 is where it stops, and it cannot be converted.** The obvious next
+thought is to take this fast 88 and reschedule it down to the record's depth 5.
 That does not work, and the repository carries the measurement rather than the
-assertion: the wiring of an 88 is forced by its mask set, and every shipped
-circuit already sits at the shallowest depth its own mask set admits — so there
-is nothing to reschedule. See
+assertion: the wiring of an 88 is forced by its value set, and every shipped
+circuit is already at the shallowest depth its own value set admits, so there is
+nothing to reschedule. See
 [`../corpus/depth_forced/`](../corpus/depth_forced/DEPTH_FORCED.md), which
 re-checks all nine circuits in 0.02 s. For an 88 **at depth 5** the route is the
 default `hunt_88at5.py` above, and it costs what it costs.
@@ -455,7 +456,7 @@ The historic two-worker sub-89 configuration: an uncapped `lns` worker on this
 project's 89 @ depth 6 circuit and a depth-5-capped one on its 90 @ depth 5,
 reseeding each other, stopping themselves at the target.
 
-The **archived run** (2026-07-14) surfaced the 89 @ depth 5 at t = 592 s (~10 min).
+The **archived run** (2026-07-14) reached 89 @ depth 5 at t = 592 s (~10 min).
 That run used the v1 engine; the shipped engine is the campaign's rebuilt one,
 and it is much faster on this seed. Re-validated **2026-07-27**, twice:
 
@@ -480,13 +481,14 @@ python3 hunt_88.py --target 87 --target-depth 0   # don't stop at 88
 ```
 
 `hunt_88.py` contains no search code: the 88 came out of the pipeline, so this
-script only *aims* it. It writes the shipped configuration into a run folder,
+script only *aims* it at a seed. It writes the shipped configuration into a run
+folder,
 launches **one** `../pipeline/worker.py` process (`alt` mode, uncapped, RNG 1010)
 on the exact seed the record worker used, polls its status file, and stops it as
 soon as an oracle-verified best reaches **88 gates at depth ≤ 7**. Both bounds
 matter: the walk finds the 88 masks at some large depth first and the Pareto
 tie-break carries that same size down to depth 7 a second or two later, so
-stopping on the gate count alone yields an 88 at depth 8–11. The knobs are
+stopping on the gate count alone returns an 88 at depth 8–11. The knobs are
 imported from `../pipeline/ladder_parallel.py` rather than copied, so they cannot
 drift from the shipped ones. The run folder is deleted at the end unless you pass
 `--keep`; the best circuit is copied out to `out_88hunt.json`.
@@ -507,8 +509,8 @@ worker each, on the defaults above:
 | 2 (the shipped stop rule, 88 @ depth ≤ 7) | t = 1 161.6 s (19.4 min), at depth 8 | **t = 1 162.6 s (19.4 min)** | **88 @ 7, 32/32, VALID** |
 
 Archived, for comparison: 1 973 s (32.9 min). Run 2's circuit is **not** a copy
-of the record — it shares 83 of its 88 masks with it (Jaccard 0.892): the same
-plateau basin, a different point in it.
+of the record: it shares 83 of its 88 values with it (Jaccard 0.892) — the same
+plateau region, a different point in it.
 
 The **first chunk is reproduced exactly**, because the seed circuit and the RNG
 seed are the archived worker's: 92 at `it=27`, 91 at `it=32`, 90 @ 9/8/6/5 at
@@ -517,8 +519,8 @@ worker's iteration numbers to the digit, reached in 82 s here against its 202 s
 (one worker on an idle box walks at ~750 it/s; that one, one of ten on a loaded
 box, ran at ~290 it/s). Chunk boundaries are **wall-clock**, though, so from the
 second chunk on a faster machine is at a different iteration and the
-trajectories part — which is why the two re-runs above diverged (31.0 min to
-88 gates under the old stop rule vs 19.4 min to 88 @ depth 7 under the
+trajectories separate — which is why the two re-runs above diverged (31.0 min to
+88 gates under the old stop rule against 19.4 min to 88 @ depth 7 under the
 shipped one).
 
 This is a re-run, not an independent confirmation and not a promise: change the
@@ -551,20 +553,19 @@ common — it does not beat it.
   what must not be substituted for it are
   [above](#the-91--depth-4--the-command-here-and-what-produced-the-shipped-circuit).
 
-**What changed on 2026-09-02.** This section used to name four circuits. The two
-from-scratch 88s — the **88 @ depth 6** and the **from-scratch 88 @ depth 5** —
-were listed here because each came out of one restart of one worker of a
-multi-day 16-process distributed run (restart 18, 18.96 h in; and session 5
-restart 16, 19.22 h in), and no single command reproduced *that whole run*. That was the wrong
-thing to ask for. Re-running the **step** is what a reader wants, the archives
-already hold everything it needs — the roots
+**What the two from-scratch 88s reproduce, since 2026-09-02.** The
+**88 @ depth 6** and the **from-scratch 88 @ depth 5** each came out of one
+restart of one worker of a multi-day 16-process distributed run (restart 18,
+18.96 h in; and session 5 restart 16, 19.22 h in). No single command reproduces
+*that whole run*, and none is offered. What is offered is a re-run of the
+**step**, which the archives fully support: the roots
 `constructors.build("naive", 2163)` and `constructors.build("naive", 1958)`
-re-derive the logged 139-gate and 146-gate depth-3 roots exactly, and the
-producing worker is archived beside them — and the engines turned out to be
-seeded by the restart's own logged integer, so the step is startable directly.
-`hunt_88at5.py` does exactly that, and both are now in the table above. The
-from-scratch 88 @ depth 5 is the frontier's depth-5 point; it is **not** a
-gate-count record, since 88 is Jean's published count and Jean has priority.
+re-derive the logged 139-gate and 146-gate depth-3 roots exactly; the producing
+worker is archived beside them; and the engines are seeded by the restart's own
+logged integer, so the step can be started directly. `hunt_88at5.py` does that,
+and both rows are in the table above. The from-scratch 88 @ depth 5 is the
+frontier's depth-5 point; it is **not** a gate-count record, since 88 is Jean's
+published count and Jean has priority.
 
 To continue the hunt for 87 from the three 88-gate family anchors the pipeline
 ships, use its shipped set: `python3 ladder_parallel.py --mode fixed` (i.e.
@@ -592,11 +593,11 @@ Honest provenance and re-validated times, per method (**2026-07-27**, one core):
 | `"90"` | a 91-gate depth-6 circuit of **our own** earlier lineage (`SEED_91_TRIPLES`) | proves the seed admits no single local cut (duplicate scan, peel, all-pairs remove-2-add-1); with `C90["lns_seconds"] > 0` also runs the pure-Python LNS (reaches ~91) | **0.2 s** for the irreducibility proof |
 
 These reproduce **superseded** results, kept because each is a clean, readable
-statement of one move: the current records are in the table at the top and in
-`../evidence/RESULTS.md`.
-From nothing, method `"89"`'s walk floors near 92 — the 89 needs its seed.
+statement of one move; the current records are in the table at the top and in
+`../evidence/RESULTS.md`. From nothing, method `"89"`'s walk reaches only about
+92 gates: the 89 depends on its seed.
 
-## Which engine is which
+## Three copies of the engine, and which produced what
 
 `reproduce.py` deliberately carries the **original per-method search code** of
 the runs it reproduces, frozen. It is what those results were obtained with, and
@@ -604,10 +605,10 @@ each method reads as one move rather than as a tuned kernel. It is *not* the
 current engine.
 
 The current engine is `../pipeline/engines.py`, rebuilt in the 2026-07 campaign.
-That rebuild is why the 89 @ depth 5 now comes back in seconds and why any of
-the five 88s exist at all; `hunt_88.py` here aims it. [`METHODS_INDEX.md`](../METHODS_INDEX.md) indexes
-every shipped method, and each method's own `HOW.md` documents what it does and
-what it measured.
+That rebuild is why the 89 @ depth 5 now returns in seconds and why any of the
+five 88s exist at all; `hunt_88.py` here aims it.
+[`METHODS_INDEX.md`](../METHODS_INDEX.md) indexes every shipped method, and each
+method's own `HOW.md` documents what it does and what it measured.
 
 `hunt_88at5.py` aims a **third** copy: the `engines.py` archived with the
 from-scratch 88s, which is `../pipeline/engines.py` plus three additions
@@ -633,8 +634,8 @@ diff ../pipeline/mixcolumns_core.py mixcolumns_core.py && echo identical
 | `reproduce.py` | the runnable script: **CONFIG block at the very top** (every knob), then the methods, then the runner | yes — all tuning lives at the top |
 | `hunt_88.py` | aims one pipeline worker at the ρ²-symmetric 94 seed and stops it at the target; CONFIG block at the top, overridable with `--minutes/--target/--rng` | yes — same |
 | `hunt_88at5.py` | aims one *archived* worker at the from-scratch root `naive#1958` — **no seed circuit** — and stops it at 88 gates @ depth ≤ 5; CONFIG block at the top, overridable with `--minutes/--target/--target-depth/--rng` | yes — same |
-| `mixcolumns_core.py` | the MixColumns spec rebuilt from GF(2⁸) + the verifier (byte-identical to the pipeline's copy) | no — this is the trustworthy math |
-| `seeds.py` | the embedded seed circuits (data) | no — starting points, not answers |
+| `mixcolumns_core.py` | the MixColumns spec rebuilt from GF(2⁸) + the verifier (byte-identical to the pipeline's copy) | no — the reference every result here is checked against |
+| `seeds.py` | the embedded seed circuits (data) | no — inputs, not results |
 
 ## Verify independently
 
@@ -660,8 +661,8 @@ ePrint 2026/1481)**, measured at depth 7 here — the paper states no depth;
 and **89 gates at unstated depth (Sun–Yang–Li, ePrint 2025/1493)**, measured
 at depth 9 here. Neither of the last two dominates our
 88 @ depth 5, so **97 @ 3, 91 @ 4 and 88 @ 5** — this project's current frontier
-— all stand against the published points. (The 92 @ 4 and 89 @ 5 in the table
-above were frontier points when they were made and are superseded by this
+— are each undominated by any published point. (The 92 @ 4 and 89 @ 5 in the
+table above were frontier points when they were made, and are superseded by this
 project's own later circuits, not by anyone else's.)
 Both imported circuits are transcribed, oracle-verified and credited
 under `../evidence/campaign87_imported_prior_art/`; the full record table and

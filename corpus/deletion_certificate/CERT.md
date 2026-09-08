@@ -2,8 +2,13 @@
 
 ## 1. The statement
 
+A **value set** is the set of intermediate values a circuit's gates compute, one
+per gate, each written as the 32-bit mask of the inputs it is the XOR of (see
+[`../../DEFINITIONS.md`](../../DEFINITIONS.md)). Everything below is a statement
+about value sets, not about one wiring of them.
+
 > **THE CERTIFICATE.** Let `M` be any of the **1,575,516** distinct verified
-> 88-gate MixColumns mask sets in the corpus — the corpus **entire** — and let
+> 88-gate MixColumns value sets in the corpus — the corpus **entire** — and let
 > `m` be any of its 56 non-target masks. Then `M \ {m}` — an 87-mask set that
 > still contains all 32 MixColumns target masks — is **not realisable as an
 > XOR straight-line program over the 32 inputs**.
@@ -21,7 +26,7 @@ it allows the remaining 87 masks to be rebuilt in any order whatsoever.
 
 | | earlier result | this certificate |
 |---|---|---|
-| mask sets under the deletion test | 498 | **1,575,516 (100 % of the corpus)** |
+| value sets under the deletion test | 498 | **1,575,516 (100 % of the corpus)** |
 | candidate 87-mask sets closed | 27,888 | **88,228,896** |
 | pass the local necessary condition | 10,833 (38.8 %) | **35,323,820 (40.0 %)** |
 | realisable | 0 | **0** |
@@ -31,14 +36,14 @@ using the project's own realisability check, with a positive control that fires.
 
 ---
 
-## 2. Population covered
+## 2. Population covered: the certified set is the index set
 
-The corpus index holds **1,575,516** distinct verified 88-gate mask sets.
+The corpus index holds **1,575,516** distinct verified 88-gate value sets.
 Identity is the sorted mask multiset, hashed: `canon = sha256(",".join("%08x" %
 m for m in sorted(masks)))[:16]`. Admission requires exactly 88 masks with all
 32 MixColumns target masks present among them.
 
-The index carries hashes and provenance only, not the mask sets themselves, so
+The index carries hashes and provenance only, not the value sets themselves, so
 the sets were re-streamed from their sources by `tools/producer.py`, which
 imports the corpus consolidator and calls **that module's own readers** with a
 drop-in sink. Admission and identity are the consolidator's, unchanged, so the
@@ -70,7 +75,7 @@ Two byproducts, over all 1,575,516 sets:
 
 ## 3. The test, and why the fast version is the same test
 
-Per mask set `M` and non-target mask `m`, with `A = inputs ∪ M`:
+Per value set `M` and non-target mask `m`, with `A = inputs ∪ M`:
 
 1. **Local necessary condition.** After deleting `m`, every remaining mask must
    still have at least one derivation pair `{a,b} ⊆ A \ {m}` with `a ^ b = x`.
@@ -98,12 +103,12 @@ include the original Python run against the C on the same records.
 
 ---
 
-## 4. Controls
+## 4. Controls: the tool does fire when a deletion is real
 
 An instrument that cannot fire is not evidence. All three controls are
 re-runnable from this pack in under a second; see `RUN.md`.
 
-**(a) Positive control that CAN fail.** Each of 498 mask sets gets a redundant
+**(a) Positive control that CAN fail.** Each of 498 value sets gets a redundant
 mask `e = a ^ b` planted (`a,b ∈ M`, `e ∉ M ∪ inputs`), giving an 89-mask
 realisable set whose deletion of `e` returns the original, realisable 88. Same
 binary, same filter, same greedy — only the record length differs. A `k = 90`
@@ -117,7 +122,7 @@ ctrl_pos90 : tested 28884, local_pass 11218, realisable 996   (= 2 x 498) FIRES
 Exactly one (resp. two) firing per record, no more and no fewer. The tool can
 fire, the local filter does not swallow a real firing, and the count is right.
 
-**(b) Agreement control against the earlier 498-set result.** The same 498 mask
+**(b) Agreement control against the earlier 498-set result.** The same 498 value
 sets, decoded from their original source rows:
 
 ```
@@ -144,12 +149,12 @@ delcert : tested 29120, local_pass 11875, realisable 0   ( 0.1 s)
 
 Throughput: **2,571 sets/s** per `nice -n 19` thread (88 masks, 56 deletions and
 ~22 full greedy closures per set). The whole corpus took **612.9 s of CPU —
-10.2 minutes**. Streaming the mask sets out of their sources cost 1,457.9 s
+10.2 minutes**. Streaming the value sets out of their sources cost 1,457.9 s
 (24.3 min): **fetching** the corpus costs more than **certifying** it.
 
 ---
 
-## 6. Reading the verdict
+## 6. What is banked, and what a firing would have produced
 
 Everything is banked as it is produced; nothing is held in memory. The banked
 full-corpus record is in `banked/`:
@@ -166,9 +171,9 @@ full-corpus record is in `banked/`:
 realisable 87-mask set, carrying the record index, the deleted mask, and all 88
 masks. **No firing occurred**, and `n_FIRING_lines` in `RESULT.json` is 0.
 
-**A firing would be an 87 by construction.** The full mask set is banked; the
+**A firing would be an 87 by construction.** The full value set is banked; the
 witness is then an 87-gate circuit obtained by re-running the greedy closure to
-recover a build order and handing the result to the verifier.
+recover a build order and passing the result to the verifier.
 
 The two large intermediates — the streamed mask file (554 MB) and its
 provenance table (158 MB) — are **regenerable in one 24-minute producer run**
@@ -184,7 +189,7 @@ entire corpus rather than five circuits or 498: **88,228,896 deletions over
 1,575,516 distinct verified 88-gate value sets, 0 realisable.**
 
 **Does not close.** Two-mask deletion (`88 → 86` plus one new gate); any route
-that leaves the mask sets of known 88s; and of course the existence of an 87
+that leaves the value sets of known 88s; and the existence of an 87
 unrelated to any known 88. The prior on this firing was low and the outcome
 matches it — the value is the size of the population now closed, not surprise.
 

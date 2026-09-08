@@ -1,6 +1,6 @@
 # How the cancellation-free bound works
 
-`STATEMENT.md` states the claim and the three-line soundness argument; `RUN.md`
+[`STATEMENT.md`](STATEMENT.md) states the claim and proves it; [`RUN.md`](RUN.md)
 gives the commands and the expected output. This file explains the mechanism:
 what a price table is, why pricing proves a lower bound, exactly what the
 checker asserts, and what the shipped code does *not* establish.
@@ -8,7 +8,7 @@ checker asserts, and what the shipped code does *not* establish.
 The claim is `92 <= L_cf(M) <= 102`, where `L_cf` counts gates in a
 **cancellation-free** circuit — one in which the two operands of every gate
 have disjoint input support, so no gate ever destroys a bit an earlier gate
-produced. It is the only proved quantity in this project that sits *above* the
+produced. It is the only proved quantity in this project that lies *above* the
 88-gate record: every circuit with at most 91 gates must cancel somewhere.
 
 ## 1. The one structural fact used
@@ -25,9 +25,9 @@ flowchart TD
     A --> A1["weight 2, one gate"]
     A --> A2["weight 2, one gate"]
     B --> B1["weight 2, one gate"]
-    B --> B2["single input, free"]
-    A1 --> C1["single input, free"]
-    A1 --> C2["single input, free"]
+    B --> B2["single input, no gate needed"]
+    A1 --> C1["single input, no gate needed"]
+    A1 --> C2["single input, no gate needed"]
 ```
 
 That is the whole use of cancellation-freeness: with cancellation allowed, a
@@ -43,18 +43,15 @@ constraint, and one only:
 > **(C)** for every mask `m`: the sum of `n[t][m]` over all 32 targets is at
 > most 1. *A gate is one gate however many targets want it.*
 
-Then for any cancellation-free circuit with gate set `G`:
+Three lines of arithmetic then give, for any cancellation-free circuit with gate
+set `G`, that `|G| >= B`, where `B` is the sum over the 32 targets of the
+cheapest full hierarchy under those prices — so `L_cf(M) >= ceil(B)`. The
+derivation is in
+[`STATEMENT.md`](STATEMENT.md#the-technique-a-laminar-price-certificate).
 
-```
-|G|  =  sum over m in G of 1
-     >= sum over m in G of  ( sum over t of n[t][m] )        by (C)
-     >= sum over t of ( sum over m in H_t of n[t][m] )       since H_t is inside G
-     >= sum over t of ( cheapest full hierarchy for t )  =:  B
-```
-
-so `L_cf(M) >= ceil(B)`. Nothing about how the price table was found enters the
-argument — that is exactly what makes the table a certificate. Any table
-satisfying (C) yields *some* bound; a good table yields a large one.
+Nothing about how the price table was found enters the argument — that is what
+makes the table a certificate. Any table satisfying (C) yields *some* bound; a
+good table yields a large one.
 
 ```mermaid
 flowchart LR
@@ -65,8 +62,8 @@ flowchart LR
 ```
 
 The shipped table gives `B = 910019782 / 10⁷ = 91.0019782`, whose ceiling is 92.
-The margin above 91 is thin on purpose: 91.0019782 is what a long optimisation
-run bought, and it is enough, because the quantity being bounded is an integer.
+The margin above 91 is small: 91.0019782 is the value a long optimisation run
+reached, and it suffices, because the quantity being bounded is an integer.
 
 ## 3. Checking it: `check_cf_cert.py`
 
@@ -79,8 +76,8 @@ strings**, valued by integer numerators over the shared `denominator` (10⁷).
 | **A** (with `--aes-crosscheck`) | the matrix in `matrix.txt` really is AES MixColumns, rebuilt independently from GF(2⁸) and compared row for row |
 | **T** | there are exactly as many price tables as targets (32) |
 | **0** | every price is non-negative; every priced mask lies inside its own target's support; every priced mask has weight ≥ 2 |
-| **1** | constraint (C): summed over targets, no mask's column exceeds the denominator. Reported as a ratio — the shipped tables sit at exactly `1.0000000`, i.e. the budget is fully spent |
-| **2** | for each target, the cheapest full hierarchy, by dynamic programming over the ≤ 2⁷ = 128 subsets of its support: `g[S] = price(S) + min over unordered splits of g[S1] + g[S2]`, with singletons free. Summed into an exact integer numerator |
+| **1** | constraint (C): summed over targets, no mask's column exceeds the denominator. Reported as a ratio — the shipped tables reach exactly `1.0000000`, so the budget is fully spent |
+| **2** | for each target, the cheapest full hierarchy, by dynamic programming over the ≤ 2⁷ = 128 subsets of its support: `g[S] = price(S) + min over unordered splits of g[S1] + g[S2]`, with singletons costing nothing. Summed into an exact integer numerator |
 | **3** | the integer ceiling of that sum equals the `bound` field of the certificate |
 
 Everything except the numbers in `prices` is recomputed: the target list comes
@@ -92,8 +89,8 @@ Two tables ship, from two independent derivations: `cert_cf92.json` from
 subgradient ascent on the prices (~25 minutes to generate) and
 `cert_cf92_sharper.json` from solving the price problem exactly as a linear
 program and then exactifying it (`B = 91.4098776`). Both check in 0.03 s, both
-give 92. Neither generator is in this directory; only the checkers are, which is
-the point — verifying must not need the solver stack that found the table.
+give 92. Neither generator is in this directory; only the checkers are:
+verifying must not need the solver stack that found the table.
 
 ## 4. The upper bound and its checker
 
@@ -118,25 +115,22 @@ built, `kappa = 0`, depth 5.
 **Run the negative control too.** Point the same checker at the 88-gate record
 circuit: 32/32 built, but `kappa = 22`, so it is valid and *not*
 cancellation-free — it witnesses `L(M) <= 88` and says nothing about `L_cf`. A
-checker that cannot say no is worthless, and this one says no on the most
-tempting input. It is also the substantive point: the record sits four gates
-below the cancellation-free floor, so it *must* cancel, and it does, 22 times.
+checker that cannot return a negative verdict proves nothing, and this one
+returns it on the record circuit. That verdict is also the substantive point: the
+record lies four gates below the cancellation-free floor, so it *must* cancel,
+and it does, 22 times.
 
-## 5. Where this line stops, measured
+## 5. What the checks cost, measured
 
 - Both certificates: **0.03 s** each to check, one core. The 102-gate witness:
   **0.02 s**.
 - 1 648 distinct priced masks; 1 960 and 1 934 priced (target, mask) pairs in
   the two tables; constraint (C) tight at exactly 1.0000000 in both.
-- The ceiling of this method is known and it is not far away: solving the price
-  problem exactly across its parameter gives a supremum of
-  **`B* = 91.409884`**. Reaching `L_cf >= 93` needs `B > 92`, so **no price table
-  of this family can ever prove 93** — a closed door, stated rather than
-  discovered later. Exploiting the matrix's order-4 symmetry is worth
-  `+0.0000003`.
-- A number collision worth knowing: "102" also appears in the literature as an
-  *unrestricted* XOR count for MixColumns. This 102 is an upper bound on `L_cf`,
-  not on `L`.
+
+Where the method stops is measured too: the optimum over this whole price family
+is **`B* = 91.409884`**, and `L_cf >= 93` would need `B > 92`, so no price table
+of this kind can prove 93. [`STATEMENT.md`](STATEMENT.md) gives that computation,
+and the collision between this 102 and the unrestricted 102 in the literature.
 
 ## 6. Run it
 
@@ -144,11 +138,8 @@ From the `bounds/` directory:
 
 ```
 python3 cf_gte92/check_cf_cert.py --aes-crosscheck
-python3 cf_gte92/check_cf_cert.py --cert cf_gte92/cert_cf92_sharper.json
-
-python3 cf_gte92/check_cancellation_free.py cf_gte92/cf_102gates_depth5.json \
-        --require-cancellation-free
-
-# the negative control: any record circuit, e.g. from the records repository
-python3 cf_gte92/check_cancellation_free.py PATH/mixcolumns_88gates_depth5.json
 ```
+
+[`RUN.md`](RUN.md) gives the other three commands — the second certificate, the
+102-gate witness, and the negative control on the 88-gate record — each with its
+expected output and measured time.

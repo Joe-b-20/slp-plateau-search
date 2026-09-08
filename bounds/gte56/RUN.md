@@ -8,6 +8,7 @@ library only. One C file, compiled with any C compiler.
 | file | what it is |
 |---|---|
 | `STATEMENT.md` | the claim, the technique, the proof sketch |
+| `HOW.md` | the machinery: which parts are arithmetic, how the searcher works, what is taken on trust |
 | `cert56.json` | the certificate: keep-set, symmetry, `m`, `e_K`, provenance |
 | `check_gte56.py` | the checker — reads `../matrix.txt` and the certificate |
 | `mine.c` | the extras-tree searcher (single file, no dependencies) |
@@ -123,13 +124,13 @@ Expected output (the last three lines):
 | nodes | **1,895,523,772**, identical on both runs |
 | historical cost | 16 workers, 114 shards per certificate, run twice: `9.43e10` nodes (unpruned C) and `4.75e9` nodes (pruned Python), both `NO COMPLETION` on all 511/511 root branches |
 
-**Read the difference honestly.** The 166 s run here is the *pruned* code path
-(`-p` last-level restriction and `-o` canonical order, both proved sound in the
-header comment of `mine.c`). It reproduces the published result single-core
-because it is neither sharded nor deliberately unpruned. The value of the
-historical `9.43e10`-node run is that it used *no* prunings at all, so the
-result does not depend on those two arguments being correct. That run is cited,
-not reproduced here.
+**How this run differs from the historical one.** The 166 s run here is the
+*pruned* code path (`-p` last-level restriction and `-o` canonical order, both
+proved sound in the header comment of `mine.c`). It reproduces the published
+result single-core because it is neither sharded nor deliberately unpruned. The
+value of the historical `9.43e10`-node run is that it used *no* prunings at all,
+so the result does not depend on those two arguments being correct. That run is
+cited, not reproduced here.
 
 ---
 
@@ -143,5 +144,5 @@ an arbitrary target list:
 gte56/mine <k> <t0,t1,...> <depth> [-p] [-o] [-w]
 ```
 
-`../validation/` does exactly this on small matrices whose optimum is known
-exactly, and checks the bound never exceeds it.
+[`../validation/`](../validation/) does exactly this on small matrices whose
+optimum is known exactly, and checks the bound never exceeds it.

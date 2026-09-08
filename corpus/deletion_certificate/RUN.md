@@ -21,9 +21,10 @@ Silent on success. **Measured 2026-09-01: 0.4 s.**
 
 ## 1. RE-RUN — the positive control (the instrument must be able to fire)
 
-A `0` from a tool that cannot return anything else is worthless. These fixtures
-are 498 mask sets each carrying one (`k=89`) or two (`k=90`) **planted**
-redundant masks whose deletion provably returns a realisable set. The tool must
+A tool that can only ever report zero realisable deletions is no evidence when
+it reports zero. These fixtures are 498 value sets each carrying one (`k=89`) or
+two (`k=90`) **planted** redundant masks whose deletion provably returns a
+realisable set. The tool must
 find exactly that many and no more.
 
 ```
@@ -44,7 +45,7 @@ two planted deletions per record, no more, no fewer.
 
 ### The negative half of the same control
 
-The same binary on the same 498 mask sets *without* the planted masks must
+The same binary on the same 498 value sets *without* the planted masks must
 return 0, and must reproduce an independently recorded local-pass count of
 10,833 that appears in no machine-generated file:
 
@@ -59,7 +60,7 @@ $ nice -n 19 tools/delcert --bin fixtures/ctrl_neg498.bin --targets targets.txt 
 
 ## 2. RE-RUN — the certificate over the shipped sample
 
-The full corpus (554 MB of mask sets) does not ship. The 520-set sample in
+The full corpus (554 MB of value sets) does not ship. The 520-set sample in
 `../sample/` does, and the certificate runs over it unchanged:
 
 ```
@@ -69,7 +70,7 @@ $ nice -n 19 tools/delcert --bin ../sample/corpus88_sample.bin --targets targets
 
 **Measured 2026-09-01: 0.03 s wall.**
 
-Read it as: 520 mask sets × 56 non-target masks = **29,120 candidate 87-mask
+Read it as: 520 value sets × 56 non-target masks = **29,120 candidate 87-mask
 sets**, 11,875 (40.8 %) survive the cheap local filter, **0** survive the full
 greedy closure. The local-pass rate matches the full corpus's 40.0 %.
 
@@ -79,8 +80,9 @@ greedy closure. The local-pass rate matches the full corpus's 40.0 %.
 
 `tools/pycheck.py` carries the original Python — the local necessary condition
 and the greedy closure — transcribed verbatim, importing nothing from the
-project. A ~300× port is worth nothing unless it is diffed against what it
-ports, so run both on the same slice and compare all three aggregates:
+project. A port that runs ~300× faster proves nothing unless its output is
+compared against the code it ports, so run both on the same slice and compare
+all three aggregates:
 
 ```
 $ nice -n 19 python3 tools/pycheck.py ../sample/corpus88_sample.bin 0 520
@@ -103,7 +105,7 @@ control was run on 300 corpus records: 41.2 s vs 0.14 s, both 16,800 / 6,620 / 0
 ## 4. RE-RUN — re-derive the full-corpus verdict from the banked shards
 
 The full run's per-block output is banked in `banked/`. This recomputes every
-headline number in `CERT.md` from those shards and **proves the certified index
+number in `CERT.md` from those shards and **proves the certified index
 intervals tile `[0, 1575516)` with no gap and no overlap** — the tiling is what
 the "100 % of the corpus" claim rests on. It exits non-zero on any gap.
 
@@ -164,7 +166,7 @@ $ nice -n 19 python3 tools/aggregate.py
 
 | stage | cost |
 |---|---|
-| producer (streaming 1,575,516 mask sets out of the sources) | **1,457.9 s = 24.3 min** |
+| producer (streaming 1,575,516 value sets out of the sources) | **1,457.9 s = 24.3 min** |
 | certificate (88,228,896 deletions, 2 shards) | **612.9 s CPU = 10.2 min** |
 | throughput | **2,571 sets/s** per `nice -n 19` thread |
 
@@ -172,7 +174,7 @@ Fetching the corpus costs more than certifying it.
 
 **Banked result** (`banked/RESULT.json`, reproduced by step 4 above):
 
-> 1,575,516 mask sets, 100.00 % of the index, **88,228,896 deletions tested,
+> 1,575,516 value sets, 100.00 % of the index, **88,228,896 deletions tested,
 > 35,323,820 pass the local filter, 0 realisable**, 0 firings, 0 gaps,
 > 0 overlaps, 56.000000 deletions per set.
 

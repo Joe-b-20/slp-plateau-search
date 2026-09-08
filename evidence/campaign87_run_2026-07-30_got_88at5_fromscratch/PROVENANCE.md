@@ -80,7 +80,7 @@ argument. The rest close routes the run happened to leave shut.
    have had it on even if a configuration had asked for it. (This is stronger
    than the argument published with the 88 @ depth 6, which rested on `pop_glob`
    never being *set* for that worker. Both conclusions are the same; this one is
-   closed by construction. Note that the *earlier* wave-2 and wave-3 fleets ran a
+   closed by construction. The *earlier* wave-2 and wave-3 fleets ran a
    **different** `hunt_worker.py` that set `pop_glob` directly, and there
    cross-pollination genuinely was live — see `../RESULTS.md` §4 and §5. The two
    files share a name and nothing else on this point.)
@@ -232,17 +232,16 @@ outside every family of the campaign's completed census (11 proven-distinct
 families in 14 same-linked groups over 410 222 distinct 88-gate states, in the
 raw campaign tree, not in this repository): across its 100 archived group
 representatives the largest weighted Jaccard reached is **0.293** (G05/F10),
-still under the 0.32 distinct floor, while the group that actually holds Jean's
-circuit sits at **0.0668** and the group holding this project's derived 88s at
-**0.0626**.
+still under the 0.32 distinct floor, while the group holding Jean's circuit is
+at **0.0668** and the group holding this project's derived 88s at **0.0626**.
 
 **The number to quote for novelty is the rotated maximum, not the unrotated one.**
 Unrotated, plain Jaccard to everything above is 0.285–0.323; over all four
 rotations the largest value reached is **0.386 (0.179 on the periphery), attained
-at ρ³ of Jean's 88**. That is the honest ceiling, and it is not even large in
-context: this circuit's similarity to its own rotations sits at
-**0.333–0.375**, so the 0.386 it reaches against everything else is only
-marginally above what it scores against a rotated copy of itself.
+at ρ³ of Jean's 88**. That is the honest ceiling, and it is not large in
+context: this circuit's similarity to its own rotations is **0.333–0.375**, so
+the 0.386 it reaches against everything else is only marginally above what it
+scores against a rotated copy of itself.
 
 It shares 42 of Jean's 88 masks, but **32 of those are the obligatory output
 targets**, so only **10 of the 56 freely chosen masks** coincide.

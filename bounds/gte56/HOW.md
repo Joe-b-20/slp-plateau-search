@@ -1,8 +1,9 @@
 # How the `>= 56` bound works
 
-`STATEMENT.md` is the proof; `RUN.md` is the transcript and the timings. This
-file explains the *machinery*: which parts are arithmetic, which part is a
-search, how the search works, and what the checker does and does not re-derive.
+[`STATEMENT.md`](STATEMENT.md) is the proof; [`RUN.md`](RUN.md) is the transcript
+and the timings. This file explains the *machinery*: which parts are arithmetic,
+which part is a search, how the search works, and what the checker does and does
+not re-derive.
 
 ## 1. The idea in plain words
 
@@ -11,23 +12,23 @@ independent sources that cannot double-count each other:
 
 - **One gate per output.** Every one of the 32 target rows has Hamming weight
   ≥ 2, so each is the mask of some gate, and no two are the same mask. That is
-  `T = 32` gates, free.
-- **One gate per input you are not given for free.** Pick a set `K` of input
-  columns and imagine an adversary hands you every gate that touches only those
-  columns. Each *live* column outside `K` still has to be mixed in at least
-  once, costing `n - |K|` further gates. (This is where the preconditions
+  `T = 32` gates, with no further argument.
+- **One gate per live input outside the keep set.** Pick a set `K` of input
+  columns and suppose an adversary supplies, at no cost, every gate that touches
+  only those columns. Each *live* column outside `K` still has to be mixed in at
+  least once, costing `n - |K|` further gates. (This is where the preconditions
   matter: a column that is all zeros needs no gate at all, so the charge is only
-  valid on nonzero columns — see `../validation/`, which contains a matrix that
-  breaks exactly this step.)
-- **The extras you still cannot avoid.** Even with the `K` columns free, the 32
+  valid on nonzero columns — see [`../validation/`](../validation/), which
+  contains a matrix that breaks exactly this step.)
+- **The extras you still cannot avoid.** Even with those gates supplied, the 32
   targets restricted to `K` cannot all be assembled from each other: you need
   `e_K` extra intermediate masks. This is the only term that requires search.
 
-A fixed `K` would be a weak choice, because an adversary can park all the
+A fixed `K` would be a weak choice, because an adversary can concentrate all the
 sharing on the columns you gave away. So the argument uses a *family* of keep
 sets — the orbit of one `K` under a permutation that is an automorphism of the
 matrix — together with the fact that every choice of `m` columns is missed by at
-least one member of the family. That costs `m` gates and buys the minimum over
+least one member of the family. That costs `m` gates and gives the minimum over
 the whole family.
 
 ```
@@ -39,10 +40,10 @@ L(M)  >=   m   +   (n - |K|)   +      T       +     e_K
 ```
 
 Both bracket ends: `56 <= L(M) <= 88`, the upper end being the best known
-circuit. Of the 56, thirty-two are free; the proof work bought 24 of the
+circuit. Thirty-two of the 56 need no argument; the proof establishes 24 of the
 record's 56 middle gates.
 
-## 2. Two lanes, and only one of them is expensive
+## 2. Two lanes: one is arithmetic, one is a 166 s search
 
 ```mermaid
 flowchart TD
@@ -69,9 +70,6 @@ than re-run it — `check_gte56.py` prints `e_K = 5` as a documented exhaustion
 and says so. `--minE-depth 4` re-runs it.
 
 ## 3. The exhaustion: `mine.c`
-
-This is the part no other document in the pack describes, and the reason this
-file exists.
 
 **The question.** Fix the keep set `K` (`k = |K| = 14` bits) and the list of 32
 target masks restricted to those columns. A set of masks `G` containing all the
@@ -117,27 +115,27 @@ in the header comment of `mine.c` (and *only* there):
 | flag | what it prunes | why it is sound |
 |---|---|---|
 | `-p` | at the last remaining extra, only candidates of the form `target ^ available` are tried | the final extra must itself start the cascade that finishes some target |
-| `-o` | a child skips a candidate smaller than the extra just chosen if that candidate was already addable in the parent | that branch is a reordering of one explored elsewhere; worth up to `d!` |
+| `-o` | a child skips a candidate smaller than the extra just chosen if that candidate was already addable in the parent | that branch is a reordering of one explored elsewhere; saves up to a factor `d!` |
 
 `-s shard -n nshards` splits the *root* branches only, which is how the
 historical run was distributed across 114 shards. `-w` is a debugging aid: on a
 find it prints the witness extras alongside the verdict. It changes nothing
 about the search and no result here depends on it.
 
-The searcher is deliberately ignorant: it takes `k`, a comma-separated target
-list and a depth on the command line, prints one line to stdout, and knows
-nothing about the matrix, the keep set, the permutation or the bound. It never
-reads or writes a file. `check_gte56.py` is the only thing that knows the
-theorem, and it talks to the searcher by argv and stdout.
+The searcher takes no other input: `k`, a comma-separated target list and a
+depth on the command line. It prints one line to stdout and knows nothing about
+the matrix, the keep set, the permutation or the bound. It never reads or writes
+a file. `check_gte56.py` is the only thing that knows the theorem, and it talks
+to the searcher by argv and stdout.
 
 ```
 k=14 depth=4 jam=8 shard=0/1 nodes=1895523772 result=NONE
 ```
 
 `jam` is how many targets are still unreached after the free closure of the
-units alone — the cheap screen from lane A, printed so you can see the searcher
-started from the state the checker expected. Node counts are deterministic, so
-they double as a reproduction fingerprint.
+units alone — the closed-form screen from lane A, printed so you can see that the
+searcher started from the state the checker expected. Node counts are
+deterministic, so they double as a reproduction fingerprint.
 
 ## 4. What is re-verified, and what is taken on trust
 
@@ -154,7 +152,7 @@ One honest detail about the in-band re-run: `--minE-depth 3` establishes
 prunings, whereas the historical `9.43e10`-node run used none — which is what
 made that result prune-independent. It is cited, not reproduced.
 
-## 5. What this is good at, measured
+## 5. Measured cost, and where the method stops
 
 - The closed-form lane: **0.03 s** warm, **0.11 s** cold, one core (2026-09-01).
 - The exhaustion at depth 3: **5 784 927 nodes**, ~0.5 s. At depth 4:
@@ -185,5 +183,6 @@ python3 gte56/check_gte56.py --minE-depth 4  # + re-run the exhaustion (166 s)
 gte56/mine 14 <t0,t1,...,t31> 4 -p -o        # the raw searcher, any instance
 ```
 
-`check_gte56.py` also takes `--matrix`, `--cert` and `--mine` if you want to
+[`RUN.md`](RUN.md) gives the expected transcript of the two checks and the
+measured times. `check_gte56.py` also takes `--matrix`, `--cert` and `--mine`, to
 point the same machinery at another matrix or another certificate.

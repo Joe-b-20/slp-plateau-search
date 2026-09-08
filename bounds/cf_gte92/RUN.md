@@ -8,6 +8,7 @@ solver, no compiler, no network.
 | file | what it is |
 |---|---|
 | `STATEMENT.md` | the claim, the technique, both derivations, and where the line stops |
+| `HOW.md` | the mechanism: what a price table is, what each check asserts, what it costs |
 | `cert_cf92.json` | the published price certificate, `B = 91.0019782` |
 | `cert_cf92_sharper.json` | the independently derived, stronger table, `B = 91.4098776` |
 | `check_cf_cert.py` | the certificate checker |
@@ -81,8 +82,8 @@ Expected output (differing lines only):
 | historical cost to *generate* the table | 60–120 s per multiplier value on 8 threads, 19 values, plus exactification |
 
 Same integer conclusion, better constant, produced by a different lane through
-a different route. Note that `91.4098776` is essentially the family's ceiling
-(`B* = 91.409884`) — see `STATEMENT.md`.
+a different route. `91.4098776` is close to the ceiling of the whole price family
+(`B* = 91.409884`) — see [`STATEMENT.md`](STATEMENT.md).
 
 ## 3. `L_cf(M) <= 102` — the witness, and the cancellation-freeness check
 
@@ -114,8 +115,9 @@ RESULT: VALID and CANCELLATION-FREE.
 
 ### The negative control — run this too
 
-The checker only means something if it can say no. Point it at the 88-gate
-record (in the records repository, `circuits/mixcolumns_88gates_depth5.json`):
+The checker is only informative if it can return a negative verdict. Point it at
+the 88-gate record (in the records repository,
+`circuits/mixcolumns_88gates_depth5.json`):
 
 ```
 python3 cf_gte92/check_cancellation_free.py PATH/TO/mixcolumns_88gates_depth5.json
@@ -134,7 +136,7 @@ RESULT: VALID, but NOT cancellation-free (kappa = 22).
   It witnesses L(M) <= 88; it says nothing about L_cf(M).
 ```
 
-That is the bound doing real work: the 88 is 4 gates below the
-cancellation-free floor of 92, and it pays for it with 22 cancelling gates.
+The 88-gate circuit is 4 gates below the cancellation-free floor of 92, and it
+cancels 22 times.
 The record circuit is not duplicated here — it lives in the records repository
 under a stable name.

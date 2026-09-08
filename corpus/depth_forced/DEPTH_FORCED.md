@@ -10,7 +10,7 @@ cheaply from scratch, then convert it to depth 5."* Step two does not exist.
 
 ---
 
-## 1. The wiring of an 88 is forced by its mask set
+## 1. The wiring of an 88 is forced by its value set
 
 Measured in the project's working tree (`wrapup/day2/STEWARD.md`), by sampling
 random topological realisations of known 88s and counting, at each gate, how
@@ -26,14 +26,14 @@ Ignoring acyclicity there *is* apparent freedom (pairs `{a,b}` with `a^b = m`
 anywhere in the signal set run 1–6 per mask). Acyclicity removes essentially all
 of it. **At 88 gates the DAG is not a free parameter.**
 
-So depth is a function of the mask set. The question "can I reschedule this
+So depth is a function of the value set. The question "can I reschedule this
 circuit shallower?" has a computable answer, and it is the same answer for every
-circuit on that mask set.
+circuit on that value set.
 
 ## 2. Every shipped circuit is already at its minimum possible depth
 
-The **ASAP least-fixpoint schedule** over a mask set is the shallowest schedule
-any circuit on that mask set admits. Computed here for all nine shipped
+The **ASAP least-fixpoint schedule** over a value set is the shallowest schedule
+any circuit on that value set admits. Computed here for all nine shipped
 circuits, against the depth the standalone verifier measures:
 
 | circuit | gates | measured depth | ASAP depth | reschedulable? |
@@ -53,14 +53,17 @@ rewired to depth 5; neither can the 88 @ 7 or the 88 @ 8.
 
 ### Reproduce
 
+Run from the repository root:
+
 ```
 python3 corpus/depth_forced/asap_depth.py
 ```
 
-Stdlib only, about a second, exit 0 iff every circuit is already minimal. It
-prints each circuit's depth profile and the output rows pinned at its top level
-— those rows are *why* the depth cannot come down without changing the value
-set.
+Standard library only, about a second, exit 0 if and only if every circuit is
+already minimal. It prints, per circuit, the measured depth, the ASAP depth, the
+level histogram and the output rows pinned at the deepest level — those rows are
+*why* the depth cannot come down without changing the value set. The mechanism
+is in [`HOW.md`](HOW.md).
 
 ## 3. Size-preserving moves that DO change the value set still do not get there
 
@@ -80,8 +83,8 @@ identity. 400 round-trips from each of the three non-depth-5 88s:
 **Across 727 distinct 88s, transposition never once produced a circuit shallower
 than its seed.** It preserves depth or deepens it. (Consistent with the
 transposition principle: `gates(Mᵀ) = gates(M)` identically, so transposition is
-cost-preserving by identity — it turns out to be depth-non-improving in
-practice too.)
+cost-preserving by identity, and it was depth-non-improving in practice here
+too.)
 
 **(b) Exhaustive plateau enumeration from the 88 @ 6.** Remove-1 plus every
 valid single-mask repair, keeping every neighbour whose ASAP depth is ≤ 6, run
@@ -99,7 +102,7 @@ not a sampling miss.
 
 ## 4. Why — and why the records' own route is not a counterexample
 
-- **92 of 28 796** corpus 88s carrying a build order sit at depth 5: **0.32 %**.
+- **92 of 28 796** corpus 88s carrying a build order are at depth 5: **0.32 %**.
 - The depth-5 88s live in **small closed pockets**. The depth-≤5 component
   around the derived 88 @ 5 is **27 states, exhausted**; around the from-scratch
   88 @ 5 it is **135 states, exhausted**. The two are far apart (Jaccard 0.313)
@@ -112,7 +115,7 @@ Both depth-5 records were made that way, and neither is a conversion. In each
 case a walk reached 88 gates *already inside* a depth-5 pocket, and the Pareto
 depth tie-break then walked at fixed size to depth 5 within seconds:
 
-| circuit | 88 gates first appear | tie-break lands at | elapsed |
+| circuit | 88 gates first appear | tie-break reaches | elapsed |
 |---|---|---|---:|
 | 88 @ 7 | depth 11, it = 45 614 | 7, it = 47 436 | 5.3 s |
 | 88 @ 8 | depth 10, it = 99 444 | 8, it = 100 049 | 1.2 s |
@@ -120,9 +123,10 @@ depth tie-break then walked at fixed size to depth 5 within seconds:
 | 88 @ 5 (derived) | depth 6, it = 38 447 | **5**, it = 40 419 | 4.2 s |
 | 88 @ 5 (from scratch) | depth 6, it = 33 873 | **5**, it = 37 155 | 6.1 s |
 
-The tie-break is free and automatic, but **where it stops is set by the basin the
-walk is already in**, not by any transformation applied afterwards. Two of five
-landed at depth 5. It is not a conversion step and cannot be aimed.
+The tie-break costs no extra search and runs automatically, but **where it stops
+is set by the region of the search space the walk is already in**, not by any
+transformation applied afterwards. Two of the five reached depth 5. It is not a
+conversion step and cannot be aimed at a chosen depth.
 
 ---
 

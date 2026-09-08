@@ -1,7 +1,7 @@
 # `bounds/validation/` — how to run it
 
 Typed from the **pack root** (`bounds/`). Python 3 standard library only, plus
-the searcher from `../gte56/`, which must be compiled once:
+the searcher from [`../gte56/`](../gte56/), which must be compiled once:
 
 ```
 cc -O2 -o gte56/mine gte56/mine.c
@@ -12,6 +12,7 @@ cc -O2 -o gte56/mine gte56/mine.c
 | file | what it is |
 |---|---|
 | `STATEMENT.md` | why the control exists, what it tests, and what it caught |
+| `HOW.md` | the mechanism: what is enumerated, how each optimum is obtained, what each assertion would catch |
 | `known_optima.json` | the instances, their proved optima, and the evidence for each |
 | `instances/*.txt` | the matrices, same format as `../matrix.txt` |
 | `run_validation.py` | the suite |

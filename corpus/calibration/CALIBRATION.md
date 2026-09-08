@@ -1,5 +1,10 @@
 # The clean-room calibration: 93 gates from nothing
 
+How hard the problem is with no project knowledge, measured once. The second
+document in this directory,
+[`CONTROL_AUDIT.md`](CONTROL_AUDIT.md), is separate: it prices this project's
+own negative results.
+
 ## The experiment
 
 One capable agent was given a specification directory containing **two files,
@@ -28,10 +33,10 @@ VERDICT: VALID MixColumns circuit
 `6bb8a324ed9ab61eb6e094d94e4324bf`, matching the value recorded when the lane
 was written up. Transcript: `out/VERIFY.txt`.
 
-## What it means
+## The gap to the record: five gates
 
 This project's record is **88**. A from-scratch effort with no project
-knowledge lands at **93**.
+knowledge reached **93**.
 
 That gap — **five gates** — is the measured value of everything the project
 accumulated: the block decomposition, the currency menus, the SAT ladders, the
@@ -47,13 +52,13 @@ Placed against the published literature, the calibration reads:
 | published (Sun–Yang–Li) | 89 | — |
 | the record | 88 | 7 |
 
-A day of competent from-scratch work gets you to roughly the state of the
-published art. It does not get you near 88. **That is the finding.**
+A day of competent from-scratch work reaches roughly the state of the published
+art. It does not reach 88.
 
 Two supporting numbers make the shape clearer:
 
 * **One worker, unaided, ~2 minutes: 95–101 gates.** Eight independent workers
-  landed at 99, 95, 101, 98, 96, 101, 99, 95. The first 90 % of the descent is
+  returned 99, 95, 101, 98, 96, 101, 99, 95. The first 90 % of the descent is
   cheap; the last few gates are not.
 * **93 is where the lane stopped, and it stopped against a wall, not a clock.**
   The SAT repair loop made **2,623 window attempts, 1,924 of them gate-saving

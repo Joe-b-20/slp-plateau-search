@@ -1,9 +1,10 @@
 # Provenance of the shipped files
 
-Two things have to be true for the theorem in `STATEMENT.md` to mean anything:
-the CNFs must be the formulas that were actually solved, and the instance must
-be the object the whole programme priced. Neither is asserted here. Both are
-checkable, and this page says exactly what was checked and what was edited.
+Two things have to be true for the theorem in [`STATEMENT.md`](STATEMENT.md) to
+mean anything: the CNFs must be the formulas that were actually solved, and the
+instance must be the object the whole programme priced. Neither is asserted
+here. Both are checkable, and this page says what was checked and what was
+edited.
 
 ---
 
@@ -24,9 +25,9 @@ The canonical digest is pinned inside `code/instance_io.py`; every script that
 reads this file refuses to run if it moves.
 
 **Where the pin comes from.** Upstream, that object was produced by a pre-flight
-that asserted it before a second of compute was spent — and earned its keep
-immediately: its first run *failed*, catching eight fabricated intermediate
-values that were leaking into the free supply. The digest of that pre-flight file
+that asserted it before a second of compute was spent. Its first run *failed*,
+catching eight fabricated intermediate values that were leaking into the free
+supply. The digest of that pre-flight file
 (`d4916aef84137088c45e4c09627d4ac00d82420eec94fa9a033f3a822250cf68`), the key
 computed by the upstream programme's own `key_of` function, and the assertions on
 shape and supply are recorded verbatim in every
@@ -39,7 +40,8 @@ supplies: 26 ∪ 25 = 33, with no value off the four lines.
 `code/check_cnf.py` parses each shipped file back into a clause list and compares
 it with a fresh `slp_opt.build_cnf(...)` call **literal for literal and in
 order**. All six ladder levels and the control return `VERDICT: IDENTICAL`; the
-reports are in `results/identity_*.json` and the output is pasted in `RUN.md`.
+reports are in `results/identity_*.json` and the output is pasted in
+[`RUN.md`](RUN.md) §1.
 
 Each file's header also carries the **clause-order sha256** of the encoder's
 output — a digest of the clause list as ordered, independent of file formatting.
@@ -66,8 +68,7 @@ before and after.
 | `k14_joint_W3U4.cnf` | 4 339 694 | **yes** | `1968ae974ce94945a3f0c2e954e3cbe075c17f7724402c8aad619ff9989f935f` | `4d12255ad5ec79e06722370000ec9f90a928d39953c4b3157967c527b01dbea7` |
 | `k7_SUB_U4tgts.cnf` | 1 360 315 | **yes** | `573dc50146146c1c0b2b4e66a493cd26487b1ec29928281a1020e933b6740c63` | `327a924732694e48492c07e91739cdac864638d71387795f949fa11a9f9e3173` |
 
-Clause-body digests (the quantity that is invariant under the edit, and the one
-worth quoting):
+Clause-body digests — the quantity that is invariant under the comment edit:
 
 ```
 k9_joint_W3U4.cnf   59e5632f6a70b10e84b8638779c3850f2562e2603158878f5045b4c8ff43778b

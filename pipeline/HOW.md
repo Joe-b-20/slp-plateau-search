@@ -1,10 +1,9 @@
 # How the search engine works
 
-This file explains the mechanism. `README.md` next to it explains the
-configurations, the knob values and the output files; this one explains what the
-code actually does, from the representation up.
+This file explains the mechanism, from the representation up. `README.md` next
+to it covers the configurations, the knob values and the output files.
 
-Everything here is stdlib Python 3. The four files are
+Everything here is standard-library Python 3. The four files are
 `mixcolumns_core.py` (the problem and the verifier), `engines.py` (the three
 search engines), `worker.py` (one search process), `ladder_parallel.py` (the
 entry point and coordinator).
@@ -13,36 +12,36 @@ entry point and coordinator).
 
 The problem is: compute the 32 output bits of AES MixColumns from the 32 input
 bits using as few 2-input XOR gates as possible. Because every gate is an XOR,
-each signal in a circuit is fully described by *which inputs it is the XOR of* —
-a 32-bit mask. Input `i` is the mask `1 << i`; the 32 outputs are 32 fixed
-target masks (20 of weight 5, 12 of weight 7) computed from GF(2⁸) in
+each signal in a circuit is fully described by its **value**: which inputs it is
+the XOR of, held as a 32-bit mask ([`../DEFINITIONS.md`](../DEFINITIONS.md)).
+Input `i` has value `1 << i`; the 32 outputs are 32 fixed target values (20 of
+weight 5, 12 of weight 7) computed from GF(2⁸) in
 `mixcolumns_core.mixcolumns_masks()`.
 
-So a circuit is a **set of masks**, and the gate count is just the size of the
-set. The wiring does not have to be searched at all: given a set, the code
-recovers a legal gate order from it, and rejects the set if no legal order
-exists.
+A circuit is therefore a **value set**, and the gate count is the size of that
+set. The wiring is not searched at all: given a set, the code recovers a legal
+gate order from it, and rejects the set if no legal order exists.
 
 | concept | in code | meaning |
 |---|---|---|
-| value set | `mask_set`, `Ucur`, `S` | the non-input masks a circuit computes; `len` = gate count |
-| realizable | `realizable(S)`, `closure(S)` | every mask in the set is the XOR of two masks already available, starting from the 32 inputs, and all 32 targets are reachable |
-| depth of a mask | `relax(avail)` | fewest XOR levels needed to build it from the inputs *using only masks in this set*; computed level by level, never trusted from elsewhere |
-| feasible at a cap | `feasible_at(S, cap)` | realizable, and every mask builds at depth ≤ `cap` (`cap=None` = no depth limit, realizability only) |
-| the circuit itself | `indexpairs_from_masks(S, cap)` | masks emitted in depth order as `[a, b]` index pairs, ready for the verifier |
-| trim | `trim_masks(S)` | drop masks that no target's build tree needs |
-| peel | `_peel(S, rng, cap)` | drop any single non-target mask the rest of the set can do without, repeatedly |
+| value set | `mask_set`, `Ucur`, `S` | the non-input values a circuit computes; `len` = gate count |
+| realizable | `realizable(S)`, `closure(S)` | every value in the set is the XOR of two values already available, starting from the 32 inputs, and all 32 targets are reachable |
+| depth of a value | `relax(avail)` | fewest XOR levels needed to build it from the inputs *using only values in this set*; computed level by level, never taken from elsewhere |
+| feasible at a cap | `feasible_at(S, cap)` | realizable, and every value builds at depth ≤ `cap` (`cap=None` = no depth limit, realizability only) |
+| the circuit itself | `indexpairs_from_masks(S, cap)` | values emitted in depth order as `[a, b]` index pairs, ready for the verifier |
+| trim | `trim_masks(S)` | drop values that no target's build tree needs |
+| peel | `_peel(S, rng, cap)` | drop any single non-target value the rest of the set can do without, repeatedly |
 
-Two consequences shape the whole engine. Removing one mask from a set is a
-one-gate improvement *if the rest still builds all 32 targets* — that is one
-membership test, not a re-synthesis. And two circuits of the same size are
+Two consequences shape the whole engine. First, removing one value from a set is
+a one-gate improvement *if the rest still builds all 32 targets* — that is one
+membership test, not a re-synthesis. Second, two circuits of the same size are
 different sets, so the engine can walk sideways across equal-size circuits
-looking for one that has a removable mask. That sideways walk is where the
-smallest circuits came from.
+looking for one that has a removable value. That sideways walk produced the
+smallest circuits in this project.
 
 ## 2. Two safety rules that apply everywhere
 
-- **Verify before claim.** An engine never reports a gate count. It proposes a
+- **Verify before claim.** An engine never reports a gate count directly. It proposes a
   candidate to `ctx.improve()`, which rebuilds MixColumns from GF(2⁸), replays
   the candidate gate by gate, checks all 32 outputs appear and that depth is
   within the worker's cap, and only then saves it (`worker.py:improve`).
@@ -50,34 +49,34 @@ smallest circuits came from.
   the same gate count at strictly lower depth* (`pareto_better`). Without the
   second clause an equal-size but shallower circuit is silently thrown away —
   which is how depth records are lost. Both 88-gate depth results in this
-  project arrived through the second clause, seconds after the same mask set
+  project arrived through the second clause, seconds after the same value set
   first appeared at a greater depth.
 
 ## 3. The three engines
 
 | engine | move | good at | depth |
 |---|---|---|---|
-| `walk` | remove one mask (or two) and, if that breaks the circuit, add back exactly one repair mask | fast sideways motion across equal-size circuits; hundreds of iterations per second | any cap, or uncapped |
-| `lns` | destroy a piece of the circuit and re-synthesise it from a candidate pool | pushing a warm-started circuit down by whole gates | any cap, or uncapped |
+| `walk` | remove one value (or two) and, if that breaks the circuit, add back exactly one repair value | fast sideways motion across equal-size circuits; hundreds of iterations per second | any cap, or uncapped |
+| `lns` | destroy a piece of the circuit and re-synthesise it from a candidate pool | reducing a warm-started circuit by whole gates | any cap, or uncapped |
 | `anneal3` | anneal a structural model in which depth 3 holds by construction | reaching a low count at depth exactly 3 from nothing | 3 only |
 
 `alt` is not an engine but a worker mode: it alternates a short `walk` chunk
 with a longer `lns` chunk, each starting from the worker's own best. The walk
-spreads across the equal-size plateau; the LNS then tries to punch down from
-wherever the walk ended up.
+spreads across the equal-size plateau; the LNS then tries to remove a gate from
+wherever the walk ended.
 
 ### 3.1 `walk` — remove and repair
 
 ```mermaid
 flowchart TD
     A["current set: realizable, builds all 32 targets"] --> B{"hub move?"}
-    B -->|"probability hub_move_p"| C["pick 2 non-target masks"]
-    B -->|"otherwise"| D["pick 1 non-target mask"]
+    B -->|"probability hub_move_p"| C["pick 2 non-target values"]
+    B -->|"otherwise"| D["pick 1 non-target value"]
     C --> E["remove them"]
     D --> E
     E --> F{"do all 32 targets still build?"}
-    F -->|"yes"| G["trim unused masks: this set is smaller"]
-    F -->|"no"| H["enumerate EVERY single mask that repairs it"]
+    F -->|"yes"| G["trim unused values: this set is smaller"]
+    F -->|"no"| H["enumerate EVERY single value that repairs it"]
     H --> I{"any repair found?"}
     I -->|"no"| A
     I -->|"yes"| J["add the best repair, then trim"]
@@ -93,41 +92,41 @@ flowchart TD
     O --> A
 ```
 
-The load-bearing part is the repair step (`_repair`). It is a **complete
+The step the result depends on is the repair (`_repair`). It is a **complete
 enumeration**, not a sample: let `A` be the closure of the reduced set and
-`stuck` the masks that no longer build. A single added mask `w` can only help if
-it is itself buildable now (so `w` is a pairwise sum of `A`) and if it unlocks
-something stuck (so `w = v ^ a` for some stuck `v` and available `a`).
-Intersecting those two sets covers every possible one-mask repair, so "no repair
-exists" is a fact, not a timeout. Among valid repairs the code prefers the one
-whose trimmed set is smallest, tie-broken by low Hamming weight then by how many
-existing masks it pairs with. The masks just removed are forbidden as repairs,
-so the walk cannot ping-pong.
+`stuck` the values that no longer build. A single added value `w` can only help
+if it is itself buildable now (so `w` is a pairwise sum of `A`) and if it makes
+some stuck value buildable (so `w = v ^ a` for some stuck `v` and available
+`a`). Intersecting those two sets covers every possible one-value repair, so "no
+repair exists" is a fact, not a timeout. Among valid repairs the code prefers
+the one whose trimmed set is smallest, tie-broken by low Hamming weight then by
+how many existing values it pairs with. The values just removed are forbidden as
+repairs, so the walk cannot immediately undo its own move.
 
 Accepting equal-size steps is what makes it a plateau walk. The default
-`plateau_slack_p=0.15` also lets it drift one gate uphill near the best, so it
-is not trapped in a single equal-size island.
+`plateau_slack_p=0.15` also lets it move one gate uphill near the best, so it is
+not confined to a single equal-size region.
 
 ### 3.2 `lns` — destroy and rebuild
 
 ```mermaid
 flowchart TD
     A["current set"] --> B["choose a destroy operator"]
-    B --> C["small: 1-4 random masks"]
+    B --> C["small: 1-4 random values"]
     B --> D["cone: a connected piece of the circuit, plus injected local candidates"]
-    B --> E["big: 8-16 random masks, plus injected local candidates"]
-    C --> F["candidate pool: kept masks, pool samples, hot masks, sums of kept pairs, the victims themselves"]
+    B --> E["big: 8-16 random values, plus injected local candidates"]
+    C --> F["candidate pool: kept values, pool samples, hot values, sums of kept pairs, the victims themselves"]
     D --> F
     E --> F
     F --> G["compute every candidate's build depth"]
     G --> H["rebuild all 32 targets top-down, cheapest parents first"]
     H --> I{"rebuild succeeded within the cap?"}
     I -->|"no"| A
-    I -->|"yes"| J{"a few masks too big?"}
-    J -->|"yes"| K["peel redundant masks and re-judge"]
+    I -->|"yes"| J{"a few values too many?"}
+    J -->|"yes"| K["peel redundant values and re-judge"]
     J -->|"no"| L{"accept?"}
     K --> L
-    L -->|"downhill, or annealing says yes"| M["adopt as current; remember reintroduced masks as hot"]
+    L -->|"downhill, or annealing says yes"| M["adopt as current; remember reintroduced values as hot"]
     L -->|"no"| A
     M --> N{"at or below best size?"}
     N -->|"yes"| O["peel, then verify and save through the Pareto rule"]
@@ -135,42 +134,42 @@ flowchart TD
     O --> A
 ```
 
-Details that matter:
+Six details of this loop:
 
 - **The rebuild is greedy top-down** (`_extract`): targets are processed
-  deepest-first, and each mask is built from the pair of shallower candidates
-  with the lowest *pull-in cost*. Cost classes are 1 for a mask the current
-  solution already keeps, 2 for a sampled or injected candidate, 3 for a mask
-  just destroyed. Victims staying available at a penalty is why an iteration
-  can never dead-end: the rebuild can always fall back on what it destroyed,
-  while the penalty pushes it to find something else first.
+  deepest-first, and each value is built from the pair of shallower candidates
+  with the lowest *pull-in cost*. Cost classes are 1 for a value the current
+  solution already keeps, 2 for a sampled or injected candidate, 3 for a value
+  just destroyed. Destroyed values stay available at a penalty, which is why an
+  iteration can never dead-end: the rebuild can always fall back on what it
+  destroyed, while the penalty pushes it to find something else first.
 - **The cone operator** (`_cone_pick`) grows a connected victim set — children
   of victims, plus parents that feed nothing outside the set — using the DAG
   shape behind the current value set (`dag_info`). Removing a connected piece
-  leaves a hole that can genuinely be re-planned; removing unrelated masks
-  usually just gets them re-derived.
+  leaves a hole that can genuinely be re-planned; removing unrelated values
+  usually results in the same values being re-derived.
 - **Injection** (`_inject`) adds repair candidates aimed at the hole: shifted
   copies of each victim (`victim ^ kept`, `victim ^ input`) and pairwise sums of
-  victims. A big destroy has nothing local to rebuild from without them.
+  victims. Without them a large destroy has no local material to rebuild from.
 - **Peel before accepting** (`peel_window=6`): a rebuild that comes out a few
-  masks too big is usually redundant rather than wrong, so it is peeled and
+  values too large is usually redundant rather than wrong, so it is peeled and
   re-judged instead of being rejected outright.
 - **Acceptance** is simulated annealing with reheat by default: uphill moves are
   accepted with probability `exp(-Δ/T)`, `T` cools by `sa_cool` per iteration
   and resets to `sa_T0` after `sa_reheat` iterations without a new best. The
   alternative `accept="threshold"` accepts any move within `up_slack` gates with
   probability `up_prob`; it is the better choice under a tight depth cap, where
-  rebuilds are systematically larger and annealing drifts uphill without
-  recovering. `snapback` restarts from the best once the current set has drifted
+  rebuilds are systematically larger and annealing moves uphill without
+  recovering. `snapback` restarts from the best once the current set has moved
   that many gates above it.
-- **Hot pool**: masks a rebuild recently reintroduced go on a hot list, and
-  `hot_frac` of pool draws come from it, concentrating candidates on masks that
+- **Hot pool**: values a rebuild recently reintroduced go on a hot list, and
+  `hot_frac` of pool draws come from it, concentrating candidates on values that
   have already proved useful in this run.
 
 ### 3.3 `anneal3` — the depth-3 model
 
-At depth 3 the circuit shape is forced enough to model directly, so this engine
-does not search over mask sets at all. Every output `t` is written as
+At depth 3 the circuit shape is constrained enough to model directly, so this
+engine does not search over value sets at all. Every output `t` is written as
 `t = A ^ B` with both parts buildable at depth ≤ 2; each part of weight 3 or 4
 is written as one or two depth-1 pairs of inputs.
 
@@ -209,16 +208,16 @@ wall-clock (`chunk_s`, and `walk_chunk_s` for the walk half of an `alt`
 worker), so two machines of different speeds are at different iteration counts
 from the second chunk on.
 
-**Harvesting** (`harvest`, on by default) writes every distinct equal-size mask
-set the search visits to `<label>.pop.jsonl`, one JSON mask list per line. The
+**Harvesting** (`harvest`, on by default) writes every distinct equal-size value
+set the search visits to `<label>.pop.jsonl`, one JSON value list per line. The
 search constantly walks over sibling circuits of its own size and would
 otherwise discard them; that file is what the exact irreducibility certificates
 in `../corpus/` were run over. It also grows by megabytes per worker-minute.
 
 **Cross-pollination** (`cross_pollinate`, off by default) merges sibling
-workers' harvested masks into this worker's rebuild pool every
-`pop_period_s`. It is a real diversifier, but it mixes the mask provenance of
-every worker in the run: a circuit found in a pool that contains masks from an
+workers' harvested values into this worker's rebuild pool every
+`pop_period_s`. It diversifies the search, but it mixes the provenance of every
+worker in the run: a circuit found in a pool that contains values from an
 imported circuit is derived from published work. Turn it on only for a run whose
 seeds are all your own.
 
@@ -248,23 +247,24 @@ flowchart TD
 Two mode shapes:
 
 - **cascade** — the depth ladder. Rung `d3` starts from nothing with `anneal3`.
-  Each time the frontier rung beats its baseline by `IMPROVE_BY` gates, or sits
-  for `MAX_WAIT_S`, the next deeper rung launches seeded from it. All rungs keep
-  running and keep reseeding each other; the last rung can run uncapped.
+  Each time the frontier rung improves on its baseline by `IMPROVE_BY` gates, or
+  fails to for `MAX_WAIT_S`, the next deeper rung launches, seeded from it. All
+  rungs keep running and keep reseeding each other; the last rung can run
+  uncapped.
 - **fixed** — a fixed worker set launched at once, each with its own depth cap
   and seed circuit. A worker can set `reseed=False` to refuse offers; the
   87-hunting set does exactly that, because an offer is Pareto-better when it is
   equal-size and shallower, so one reseed pass would collapse independently
-  seeded workers onto a single circuit and destroy the diversity that is the
-  point of the set.
+  seeded workers onto a single circuit and destroy the diversity the set exists
+  to provide.
 
-One stop-rule caveat worth knowing before you script a run: `--stop-gates` /
+One caveat about the stop rule, before you script a run: `--stop-gates` /
 `--stop-depth` are tested against one Pareto *global* best across all rungs, and
 that best never regresses. A deep rung that reaches a small gate count at a
 depth above your `--stop-depth` can therefore make the pair unsatisfiable for
 the rest of the run, which then only stops on Ctrl-C.
 
-## 6. What it is good at, measured
+## 6. What it has produced, measured
 
 - **From nothing to 92 gates at depth 4**, cascade mode: reached at t = 9 610 s
   (2.67 h) in the archived run of that configuration.
@@ -273,15 +273,15 @@ the rest of the run, which then only stops on Ctrl-C.
   run of the historic configuration took 592 s).
 - Throughput on a loaded box: `walk` at 480–640 iterations/s, `lns` at
   100–180 iterations/s.
-- Depth 3 from nothing is `anneal3`'s job and it reaches 97 gates there; the
-  single-file version of the same model in `../reproduce/` does it in about a
+- Depth 3 from nothing is `anneal3`'s task, and it reaches 97 gates there; the
+  single-file version of the same model in `../reproduce/` does so in about a
   minute.
-- What it is **not** good at: knob tuning. A sweep of 101 runs across a broad
-  range of settings around the shipped values produced 0 improvements in gate
-  count. The defaults are the measured-good configuration; what moves the
+- What it does **not** respond to: knob tuning. A sweep of 101 runs across a
+  broad range of settings around the shipped values produced 0 improvements in
+  gate count. The defaults are the measured-good configuration; what moves the
   frontier is which circuit a worker is pointed at.
 
-Two of the four seeds in the `hunt87` set descend from published work; see
+Two of the four seeds in the `hunt87` set descend from published work. Read
 `seeds/README.md` before reporting anything those workers produce.
 
 ## 7. Run it
@@ -291,19 +291,11 @@ python3 ladder_parallel.py [--mode cascade|fixed] [--workers hunt87|sub89]
                            [--stop-gates N] [--stop-depth D]
 ```
 
-```
-# from-scratch depth ladder (hours):
-python3 ladder_parallel.py --mode cascade --stop-gates 92 --stop-depth 4
+The three shipped configurations, with the measured cost of each, are in
+[`README.md`](README.md).
 
-# the fixed 87-hunting set, no stop bound, runs until Ctrl-C:
-python3 ladder_parallel.py --mode fixed
-
-# the two-worker set that reaches 89 @ depth 5 (seconds):
-python3 ladder_parallel.py --mode fixed --workers sub89 --stop-gates 89 --stop-depth 5
-```
-
-Output lands in `runs_parallel/<timestamp>/`, including a `code/` copy of the
-exact four source files that produced the run. Check any result with the
+Output is written to `runs_parallel/<timestamp>/`, including a `code/` copy of
+the exact four source files that produced the run. Check any result with the
 standalone oracle, which shares no code with the engines:
 
 ```

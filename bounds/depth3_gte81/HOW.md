@@ -1,16 +1,16 @@
 # How the depth-3 bound works
 
-`STATEMENT.md` is the argument and `RUN.md` the transcript. This file adds the
-machinery a stranger needs to modify it: the variable and row inventory of the
-linear program, how a dual vector becomes a proved integer, and which parts are
-certified versus merely run.
+[`STATEMENT.md`](STATEMENT.md) is the argument and [`RUN.md`](RUN.md) the
+transcript. This file adds the machinery a stranger needs in order to modify it:
+the variable and row inventory of the linear program, how a dual vector becomes
+a proved integer, and which parts are certified versus merely run.
 
 Two different numbers live here, and the difference matters:
 
 | claim | kind of evidence | check cost |
 |---|---|---|
 | `N_depth3 >= 80` | an exact rational dual certificate, re-checkable with the standard library alone | 0.29 s |
-| `N_depth3 >= 81` | a branch-and-cut dual bound from a run that hit its time limit with a 67 % gap — valid, but not a certificate | not re-checkable |
+| `N_depth3 >= 81` | a branch-and-cut dual bound from a run that hit its time limit with a 66.89 % gap — valid, but not a certificate | not re-checkable |
 
 ## 1. The idea: depth 3 forces the circuit's shape
 
@@ -152,10 +152,10 @@ bound cannot be an artefact of an over-constrained model.
 ## 5. Where this line stops
 
 The certified number is 80 and cutting further does not raise it: the LP value
-sits at exactly 48.0, so anything above 80 has to come from integer reasoning
+is exactly 48.0, so anything above 80 has to come from integer reasoning
 rather than from more inequalities. That is what the `>= 81` run is — a HiGHS
 branch-and-cut dual bound of 49 (`32 + 49 = 81`) after ~16.8 hours that never
-left the root node and stopped with a 67 % gap. Valid; not a certificate; and
+left the root node and stopped with a 66.89 % gap. Valid; not a certificate; and
 the shipped log was produced by a slightly looser model than the current
 `mip3.py`, which now also caps the objective at 65 using the 97-gate circuit.
 
@@ -178,4 +178,4 @@ python3 depth3_gte81/mip3.py [seconds]   # the branch-and-cut run (numpy + scipy
 ```
 
 Regeneration writes `cert_depth3_rerun.json` and never overwrites the shipped
-certificate.
+certificate. [`RUN.md`](RUN.md) gives the expected output of each check.

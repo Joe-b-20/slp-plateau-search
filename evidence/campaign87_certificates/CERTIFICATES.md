@@ -1,27 +1,20 @@
 # Machine-checked certificates — campaign 87
 
-**Edited 2026-07-30 (commentary only).** One paragraph in §7 was updated: the
-statement that the best-certified shell and the Jean-independent shell are
-disjoint was scoped to *this folder*, and a dated paragraph was appended noting
-that two from-scratch circuits — the 88 @ depth 6 and the 88 @ depth 5 — now
-have exhaustively empty k ≤ 3 shells *and* lineages independent of Jean's, with
-their verdict logs in their own run archives. Nothing else changed: no verdict
-log, no count, no `code/` file in this folder was touched, and no claim made
-here has been withdrawn. The gap is narrower, not closed — our 88 @ depth 7
-still has no exhaustive shell at any radius.
-
-**Edited again 2026-07-30 (commentary only): §7a added.** It reports the control
-that was missing — the same decider returns "irreducible" on circuits known to
-be nine gates too big — and the audit of the two parts of the machinery that had
-never been tested on a positive instance (the exact decider's cases 1b/2a, and
-the windowed-SAT slot order). No verdict log, count or `code/` file was touched
-and nothing here is withdrawn; the exact certificates all stand. **Read §7a
-before quoting any number in this file.**
-
 Every result below is a **negative** result: a decision procedure was run to
 completion (or a SAT solver returned UNSAT) over a precisely defined
 neighbourhood of a verified circuit, and nothing smaller was found. No 87-gate
 circuit was found anywhere.
+
+**Read §7a before quoting any number in this file.** It carries the control the
+rest of this file lacked — the same decider returns "irreducible" on circuits
+known to be nine gates too big — and the audit of the two parts of the machinery
+that had never been tested on a positive instance (the exact decider's cases
+1b/2a, and the windowed-SAT slot order). The exact certificates themselves all
+stand.
+
+A circuit's **values** are the bit masks of which of the 32 inputs each signal
+is the XOR of; the verdict logs, JSON keys and file names quoted below say
+*mask* for the same object ([`DEFINITIONS.md`](../../DEFINITIONS.md)).
 
 Two different kinds of certificate live here, and they carry different weight:
 
@@ -36,23 +29,28 @@ Two different kinds of certificate live here, and they carry different weight:
   makes the proof is in their docstrings — the certificates are not asked to be
   taken on trust.
 - **Windowed SAT certificates** (`sat_deep/`, `loose_sat/`, `family3_sat/`) —
-  UNSAT **relative to the encoding's fixed slot order** (broken kept masks pinned
-  at their original positions, free slots at the removed masks' positions). This
-  is strong evidence, **not** a completeness proof, and is cited as such
-  throughout.
+  UNSAT **relative to the encoding's fixed slot order** (broken kept values
+  pinned at their original positions, free slots at the removed values'
+  positions). This is strong evidence, **not** a completeness proof, and is
+  cited as such throughout.
 
 The files here are the small per-run verdict summaries and per-window verdict
 logs. The multi-MB resumable progress logs are not included in this repository;
 they are listed at the end by path in the raw campaign archive.
 
+**Revision note (2026-07-30, commentary only).** Two edits were made that day:
+the disjointness statement in §4 was scoped to *this folder* and the paragraph
+that follows it was appended, and §7a was added. Neither touched a verdict log, a
+count or a `code/` file in this folder, and no claim made here was withdrawn.
+
 ---
 
 ## 1. `exact_window/` — the first exact decision procedure
 
-"Remove a window of k masks; can k−1 or fewer new masks restore all 32 targets?"
-Frontier-cascade closure with rollback; exact at budget 1 (k=2) and budget 2
-(k=3); honest partial DFS above that (those runs are recorded as `nosol`, never
-as irreducible). ~113 000 windows decided in total.
+"Remove a window of k values; can k−1 or fewer new values restore all 32
+targets?" Frontier-cascade closure with rollback; exact at budget 1 (k=2) and
+budget 2 (k=3); honest partial DFS above that (those runs are recorded as
+`nosol`, never as irreducible). ~113 000 windows decided in total.
 
 | subject | k=2 (budget 1) | k=3 (budget 2) | file |
 |---|---|---|---|
@@ -62,9 +60,9 @@ as irreducible). ~113 000 windows decided in total.
 | 89 (sub89 rerun), 89@7, 89@10 (`out_89`) | 1 596 / 1 596 exhaustive each | 4 000 structural windows each | `k2_*`, `k3_smart_*` |
 
 **Theorem (k ≤ 3, Jean's 88):** no 87-gate circuit exists within "remove ≤ 3
-masks, re-add fewer" of it — any 87 differs from it by **≥ 4 masks**.
+values, re-add fewer" of it — any 87 differs from it by **≥ 4 values**.
 **Theorem (89 seeds):** the remove-2-add-1 "hub move" neighbourhood of all five
-89 seeds is exactly empty; both record 89s are ≥ 4 masks from any 88 in this
+89 seeds is exactly empty; both record 89s are ≥ 4 values from any 88 in this
 move class.
 
 The k=4/k=5 entries in this folder (`k4_*`, `k5_*`) are **partial** searches —
@@ -75,10 +73,10 @@ their stats show `nosol`, not `irreducible`. They prove nothing on their own.
 ## 2. `exact_k4/` — exact budget-3, the 12 siblings, and the first population sweep
 
 Exact budget-3 ("remove 4, restore with ≤ 3") with the completeness proof in
-`code/exact_k4.py`'s module docstring (shipped here); validated on **1 257 instances against an
-independent complete brute force, 100 % agreement including 122 genuine NOs**,
-identically under CPython 3.10 and PyPy 3.11 (`full_test_cpython.log`,
-`full_test_pypy.log`).
+`code/exact_k4.py`'s module docstring (shipped here); validated on **1 257
+instances against an independent complete brute force, 100 % agreement
+including 122 genuine NOs**, identically under CPython 3.10 and PyPy 3.11
+(`full_test_cpython.log`, `full_test_pypy.log`).
 
 - **12 sibling 88s** (the syl-move plateau siblings of Jean's 88): each swept
   **k=2 exhaustively (1 540) and k=3 exhaustively (27 720)** — 18 480 + 332 640
@@ -129,8 +127,8 @@ identically under CPython 3.10 and PyPy 3.11 (`full_test_cpython.log`,
   highest-priority classes first (`k4_f3.out`).
 
 **Theorem:** any 87 differs from every one of the 53 902 known third-family
-states by ≥ 3 masks, and from the anchor + 33 diverse representatives by
-≥ 4 masks.
+states by ≥ 3 values, and from the anchor + 33 diverse representatives by
+≥ 4 values.
 
 ### Canonical-circuit tally (the "47")
 
@@ -184,7 +182,7 @@ every run resumes.
 - **48 windows on Jean's 88 at budget 87 (r = k−1), k = 9–16: 34 UNSAT,
   14 timeout, 0 SAT** (`results.jsonl`; phase logs `phaseA/B/C.log`).
 - **Max window size proven UNSAT: k = 16** (the earlier frontier was k = 12).
-- Hardness anti-correlates with nB (broken kept masks), not k: every window with
+- Hardness anti-correlates with nB (broken kept values), not k: every window with
   nB ≥ 19 was decided.
 - Pipeline self-test: a planted r=k window came back SAT in 1.6 s and decoded to
   an oracle-VALID 88@7 (`selftest.jsonl`).
@@ -227,11 +225,12 @@ Same toolchain as §6, unchanged, on the 88@8 anchor + the 8 portfolio reps.
 
 ## 7a. The control, and the audit of the machinery (added 2026-07-30)
 
-**Commentary only — no verdict log, count or `code/` file in this folder was
-touched, and no claim made above is withdrawn.** What is added is the control
-that was missing, and the validation of the two parts of the machinery that had
-never been tested on a positive instance. Scripts and raw results:
-`campaign_87/cert_audit/` in the campaign archive; write-up in [`METHODS_INDEX.md`](../../METHODS_INDEX.md).
+This section adds the control that was missing and the validation of the two
+parts of the machinery that had never been tested on a positive instance. It is
+commentary: no verdict log, count or `code/` file in this folder was touched,
+and no claim made above is withdrawn. Scripts and raw results:
+`campaign_87/cert_audit/` in the campaign archive; write-up in
+[`METHODS_INDEX.md`](../../METHODS_INDEX.md).
 
 **1. The same decider says "irreducible" about circuits that are nine gates too
 big.** Every certificate above is an exhaustive k ≤ 3 sweep returning zero
@@ -240,7 +239,7 @@ circuits — every one provably improvable, because an 88 exists in this
 repository — the verdict is the same for all of them. A 97-gate circuit has an
 exhaustively empty k = 2 shell. The reason is measurable: over the 74 distinct
 verified circuits in that corpus, the smallest window that could carry one to a
-strictly smaller *verified* circuit is **median 42 masks, min 3, max 48, with
+strictly smaller *verified* circuit is **median 42 values, min 3, max 48, with
 44 of the 45 measurable circuits needing k ≥ 8**. The certified radius k ≤ 3 is
 smaller than 44 of those 45 transitions — by a factor of ~2.7 against the
 closest and ~14 against the median.
@@ -263,23 +262,22 @@ independent of the decider), `solve_window(budget = 2)` answered correctly
 deleted, **33/33** 2a-shaped witnesses were still recovered by case 2a. **No
 completeness bug was found.** The exact certificates above stand.
 
-**3. The windowed-SAT slot-order caveat is load-bearing, and now quantified.**
-On windows whose ground truth is SAT, the `sat_window`-family encoding returned
-UNSAT under **123 of 128 arbitrary mask orderings** — so the caveat printed
-throughout this file is not decorative. Under **128/128 legitimate alternative
-build orders of the same circuit**, however, the verdict did not move, and the
-seed's own gate order belongs to that class. The residual risk the test does not
-exclude is a completion whose derivation shape no build order of the seed can
-express. The depth-capped encoder's claim to be slot-order-free checks out: its
-CNF is byte-identical under every reordering of the kept set, and planted
-windows return SAT.
+**3. The windowed-SAT slot-order caveat changes verdicts, and is now
+quantified.** On windows whose ground truth is SAT, the `sat_window`-family
+encoding returned UNSAT under **123 of 128 arbitrary value orderings**. Under
+**128/128 legitimate alternative build orders of the same circuit**, however,
+the verdict did not move, and the seed's own gate order belongs to that class.
+The residual risk the test does not exclude is a completion whose derivation
+shape no build order of the seed can express. The depth-capped encoder's claim
+to be slot-order-free checks out: its CNF is byte-identical under every
+reordering of the kept set, and planted windows return SAT.
 
 ---
 
 ## 8. `rho2_symmetric_90s/` — the best known exactly ρ²-symmetric circuits
 
-Not 88-related, but certificate-bearing and load-bearing for the 88@8's
-provenance.
+Not 88-related, but certificate-bearing, and the 88@8's provenance argument
+depends on it.
 
 - `BEST_90gates_depth9_rho2symmetric.json` (basin 1) and
   `BEST_90gates_depth7_rho2symmetric_basin2.json` (basin 2): two **exactly

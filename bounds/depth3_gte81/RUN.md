@@ -11,7 +11,8 @@ depend on a solver stack.
 
 | file | what it is |
 |---|---|
-| `STATEMENT.md` | the claims, the technique, the two controls, the honest split |
+| `STATEMENT.md` | the claims, the technique, the controls, the honest split |
+| `HOW.md` | the model inventory, how a dual vector becomes a proved integer, what is certified and what is only run |
 | `cert_depth3.json` | the exact rational dual certificate (23,450 nonzero duals) |
 | `certify.py` | the checker (`--check`) and the generator (needs numpy/scipy) |
 | `mcmatrix.py` | the only place the matrix enters; reads `../matrix.txt` |
@@ -87,10 +88,10 @@ CONTROL PASS
 | | |
 |---|---|
 | **measured wall times (re-run 2026-09-01)** | `control_primal` **0.05 s**, `control_cuts` **0.12 s**, `control_lp` **0.31 s** |
-| historical cost | the same, seconds; these were always cheap and were always mandatory |
+| historical cost | the same, seconds; they were always mandatory |
 
-Note that the certified dual value 47.598 is comfortably below the control's
-realised objective 65 — as it must be, since 65 is achieved by a real circuit.
+The certified dual value 47.598 is below the control's realised objective 65, as
+it must be, since 65 is achieved by a real circuit.
 
 ## 3. `N_depth3 >= 81` — the solver run (NOT a certificate)
 
@@ -114,7 +115,7 @@ cat depth3_gte81/mip3_L1_run.log
  "mip_dual_bound": 49.0,
  "mip_gap": 0.668918918918919,
  "N_depth3_lower_bound": 81,
- "corrections": [ ... one entry; see §2 below ... ]
+ "corrections": [ ... one entry; see point 2 below ... ]
 }
 ```
 
@@ -159,8 +160,8 @@ python3 depth3_gte81/mip3.py
 1. **It never closed.** Status is *Time limit reached*, terminal gap 66.89 %. The `81` is
    HiGHS's **dual bound** (49), which is a valid lower bound at any point during
    branch-and-cut — that part is sound — but the run proves nothing more than 81
-   and did not converge. The primal value 148 is just an incumbent, not the
-   optimum, and must not be quoted as one.
+   and did not converge. The primal value 148 is an incumbent, not the optimum,
+   and must not be quoted as one.
 2. **The result file's timing field was wrong and has been corrected.**
    `wall_monotonic` read **1369.95 s**; the run's wall time is the
    **60,391.94 s** HiGHS reports, and the process ran from 11:35 to 04:22.

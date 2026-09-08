@@ -2,17 +2,17 @@
 
 ## Why this directory exists
 
-A lower-bound argument is only worth reading if it cannot return a number above
-the truth. That is not something a reader can take on trust from prose, and it
-is not something the MixColumns instance can settle — nobody knows `L(M)`, so
-there is nothing there to compare a bound against.
+A lower-bound argument is sound only if it cannot return a number above the
+truth. That is not something a reader can take on trust from prose, and it is not
+something the MixColumns instance can settle — nobody knows `L(M)`, so there is
+nothing there to compare a bound against.
 
 So the machinery is run on **small matrices whose exact optimum is known**, by a
 method that shares no code, no encoding and no idea with it.
 
 ## What is tested
 
-The instrument under test is `../gte56/` — the Theorem-N bound
+The instrument under test is [`../gte56/`](../gte56/) — the Theorem-N bound
 
     L(M) >= m + min_{K in F} [ (n - |K|) + T + minE_K ]
 
@@ -26,9 +26,9 @@ recorded UNSAT*. That oracle carries its own controls — it was required to agr
 exactly, including on the negative side, with a deliberately naive breadth-first
 enumeration sharing no code with it, on random instances small enough to
 enumerate; a second, independent CNF implementation of the same decision problem
-agreed 10/10 on an unrelated block set. That class of control is not decorative:
-an earlier searcher in this programme failed a 120-instance brute-force control
-8/120 and had to be fixed.
+agreed 10/10 on an unrelated block set. That class of control has caught a real
+defect before: an earlier searcher in this programme failed a 120-instance
+brute-force control 8/120 and had to be fixed.
 
 ## The three checks
 
@@ -57,11 +57,11 @@ which is the regime the MixColumns certificate is actually in, since there
 ## The result, and the one thing it caught
 
 All three instances pass, and the searcher reproduces all three SAT optima
-exactly. But the suite did not pass on the first attempt, and the reason is the
-most useful thing in this directory.
+exactly. The suite did not pass on the first attempt, and the reason is recorded
+here.
 
-`tap_P__Q1_2_4_a` has an **entirely zero column**: the instance hands the circuit
-a free input that no target uses. Theorem N charges `>= 1` gate for every column
+`tap_P__Q1_2_4_a` has an **entirely zero column**: the instance supplies, at no
+cost, an input that no target uses. Theorem N charges `>= 1` gate for every column
 outside the keep-set — that charge is Lemma 1 applied to a *live* column, and a
 zero column costs nothing to zero. Applied to that matrix without the
 precondition gate, the machinery returns **11 against a true optimum of 10**.
@@ -72,10 +72,9 @@ the zero column — which cannot change the optimum, since it is an input nothin
 uses — and requires the machinery to be sound on the reduced matrix. It is.
 
 This is why `check_gte56.py` reports checks A2 (columns non-zero) and A3
-(columns pairwise distinct) before it reports a bound, and why they are not
-presented as boilerplate. On MixColumns all 32 columns are non-zero and pairwise
-distinct, so the `>= 56` is unaffected — but the precondition is doing real work,
-and now there is an instance that proves it.
+(columns pairwise distinct) before it reports a bound. On MixColumns all 32
+columns are non-zero and pairwise distinct, so the `>= 56` is unaffected — but
+the precondition does real work, and this instance demonstrates it.
 
 ## How tight is it?
 
@@ -89,10 +88,9 @@ keep-set below that and the bound degrades gracefully and stays sound:
 | `L1_clean_iso` | 12 | 10 | 10 | 11 | 12 | 12 |
 | `L5_tap_pairQ3` | 10 | 9 | 9 | 10 | 10 | — |
 
-Read that as the honest picture of the method: it is *capable* of being tight,
-and what costs it on MixColumns is not the theorem but the price of the
-exhaustion — `|K| = 14` of 32 columns is deep in the left-hand columns of that
-table.
+So the method is *capable* of being tight, and what limits it on MixColumns is
+not the theorem but the cost of the exhaustion — `|K| = 14` of 32 columns is deep
+in the left-hand columns of that table.
 
 ## Scope of the control
 
@@ -102,7 +100,8 @@ table.
 * They are MixColumns-derived blocks re-expressed in their own input basis, not
   random matrices. A random-matrix sweep would be a stronger control and is not
   claimed here.
-* The control tests the `gte56/` machinery. The `depth3_gte81/` and `cf_gte92/`
+* The control tests the `gte56/` machinery. The
+  [`../depth3_gte81/`](../depth3_gte81/) and [`../cf_gte92/`](../cf_gte92/)
   bounds carry their own controls in their own directories: three mandatory
   primal controls against a verified 97-gate circuit, and a witness plus a
   cancelling-circuit negative control, respectively.

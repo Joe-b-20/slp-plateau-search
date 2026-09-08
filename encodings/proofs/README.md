@@ -4,8 +4,11 @@ An UNSAT verdict is a solver's word for it. A **DRAT refutation** is a
 certificate: a checker replays it against the CNF, deriving each lemma by unit
 propagation, and needs to trust nothing whatever about the solver that wrote it.
 
-This directory holds refutations for **every level of the ladder this pack can
-afford to prove**, plus the positive control's negative leg.
+Four refutations were emitted for this pack: ladder levels **k = 9**, **k = 10**
+and **k = 11**, plus the positive control's negative leg **k = 6**. Three of them
+ship in this directory; k = 11's is 40 MB compressed and is regenerated instead
+(below). The decisive level of the theorem, k = 14, carries **no proof** — see
+[`../STATEMENT.md`](../STATEMENT.md) §5.
 
 ---
 
@@ -24,14 +27,14 @@ reads plain text.
 ### Why k = 11's proof is not in the repository
 
 Its compressed refutation is **40 MB**, four times the rest of this repository
-put together, and it would sit in the history of every clone for ever. It is
-cheaper to make than to fetch: **110 s** of single-core proof logging, from the
-same shipped CNF, with one command.
+put together, and it would remain in the history of every clone. Remaking it
+costs **110 s** of single-core proof logging, from the same shipped CNF, with
+one command.
 
 ```bash
 cd encodings
 sh run_proofs.sh                      # emits k = 6, 9, 10 and 11
-# or just the one:
+# or only that one:
 python3 code/emit_proof.py cnf/k11_joint_W3U4.cnf --out proofs/k11_joint_W3U4.drat
 xz -k proofs/k11_joint_W3U4.drat
 ```
@@ -43,9 +46,9 @@ output is not bit-reproducible across solver builds, so reproduce the
 shipped proofs only.
 
 **k = 12, 13 and 14 carry no proof.** k = 14's solve alone was ≈ 99 core-hours
-and its refutation would be very large. So the decisive level of the theorem
-rests on complete solvers being correct rather than on a checked certificate.
-That is the honest boundary of this pack's evidence.
+and its refutation would be very large. The decisive level of the theorem
+therefore rests on complete solvers being correct rather than on a checked
+certificate. That is the boundary of this pack's evidence.
 
 ## Digests
 
@@ -116,10 +119,11 @@ usual cause of a confusing failure.
 ## What was and was not done here
 
 **Emitted here.** All four proofs — the three shipped and k = 11 — were produced
-on the machine that assembled this pack, by `../code/emit_proof.py`, which parses the clauses **out of the
-shipped DIMACS file** — so each certificate refutes the shipped artifact, not
-something rebuilt in memory. Solver: CaDiCaL 1.9.5 through `python-sat`, one
-core, `nice -n 19`. Proof logging cost roughly 1.5× the plain solve.
+on the machine that assembled this pack, by `../code/emit_proof.py`. That script
+parses the clauses **out of the shipped DIMACS file**, so each certificate
+refutes the shipped artifact rather than something rebuilt in memory. Solver:
+CaDiCaL 1.9.5 through `python-sat`, one core, `nice -n 19`. Proof logging cost
+roughly 1.5× the plain solve.
 
 **Validated here — structurally.** `../code/check_proof_format.py` confirmed for
 each file that every line parses as a clause terminated by `0` (with `d ` for
@@ -135,8 +139,7 @@ own docstring.
 
 ## Regenerating instead of downloading
 
-Every proof here is reproducible in the time given in the table, which for three
-of the four is faster than fetching the file:
+Every proof here is reproducible in the time given in the table:
 
 ```bash
 sh run_proofs.sh        # emit all four, validate each, compress

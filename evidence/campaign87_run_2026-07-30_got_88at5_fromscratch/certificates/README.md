@@ -17,7 +17,7 @@ is the full enumeration.
 
 Both budgets are exhaustive (complete by the first-unlock case analysis proved in
 `exact_window.py`'s docstring), so this is a proof for exactly those radii: **any
-87-gate circuit differs from this one by ≥ 4 masks.** It bounds nothing globally,
+87-gate circuit differs from this one by ≥ 4 values.** It bounds nothing globally,
 and no 87-gate circuit was found anywhere in the campaign.
 
 ```
@@ -37,7 +37,7 @@ byte-identical to the canonical
 
 Not a certificate: a scan. Every distinct 88-gate target-covering value set in
 `c_naive`'s own harvest file was replayed and given its ASAP (least-fixpoint)
-depth by `pipeline/engines.py:relax`, i.e. the shallowest depth that mask set
+depth by `pipeline/engines.py:relax`, i.e. the shallowest depth that value set
 admits at all. Of 37 305 distinct states, **135 realize at depth 5** — the record
 is one of them, and every one of the 135 first appears at or after line 35 285,
 the record's own line. The harvest itself is live and stays in the raw campaign

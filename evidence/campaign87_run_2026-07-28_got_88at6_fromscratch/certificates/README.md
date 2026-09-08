@@ -11,7 +11,7 @@ the 87-hunt used).
 | `k3_shell_88at6_shard[0-3].log` | k = 3, budget 2 | 4 × 6 930 = 27 720 = C(56,3) | **27 720 irreducible, 0 hits** | 432–454 s, 4 processes (CPython, on a loaded box) |
 
 Both budgets are exhaustive, so this is a proof for those radii: **any 87-gate
-circuit differs from this one by ≥ 4 masks.** It bounds nothing globally.
+circuit differs from this one by ≥ 4 values.** It bounds nothing globally.
 
 The input was `../FOUND_88gates_depth6.json`, whose gate list is byte-identical to
 the canonical `../../circuits/mixcolumns_88gates_depth6.json`.

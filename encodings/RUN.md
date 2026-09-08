@@ -1,7 +1,8 @@
 # RUN.md — every command as typed, with the output it produced
 
 Every command below is typed from the **pack root**. Every block of output is
-pasted from a real run, unedited. Nothing here is illustrative.
+pasted from a real run, unedited; none of it is illustrative. What the runs
+establish, and what they do not, is [`STATEMENT.md`](STATEMENT.md).
 
 To repeat the whole thing in one go:
 
@@ -111,13 +112,16 @@ and a different generator, so the comparison is one of *verdicts*, not of speed.
 
 | k | verdict | cost when it was paid | evidence |
 |---|---|---|---|
-| 12 | **UNSAT** | 5 761.73 core-s (1 core, encoding A); 5 202.15 s (8 cores, encoding B) | `logs/BANKED_LOGS.md` §L2, §L3 |
-| 13 | **UNSAT** | 105 083.40 s on 8 cores ≈ **233.5 core-hours** (encoding B) | `logs/BANKED_LOGS.md` §L3 |
-| 14 | **UNSAT** | 356 321.63 core-s ≈ **99.0 core-hours**, one process, kissat 4.0.4 (encoding A) | `logs/BANKED_LOGS.md` §L1 |
+| 12 | **UNSAT** | 5 761.73 core-s (1 core, encoding A); 5 202.15 s (8 cores, encoding B) | [`logs/BANKED_LOGS.md`](logs/BANKED_LOGS.md) §L2, §L3 |
+| 13 | **UNSAT** | 105 083.40 s on 8 cores ≈ **233.5 core-hours** (encoding B) | [`logs/BANKED_LOGS.md`](logs/BANKED_LOGS.md) §L3 |
+| 14 | **UNSAT** | 356 321.63 core-s ≈ **99.0 core-hours**, one process, kissat 4.0.4 (encoding A); independently confirmed by CaDiCaL 3.0.0 on the same hash-pinned CNF, 468 159.51 core-s ≈ **130 core-hours** | [`logs/BANKED_LOGS.md`](logs/BANKED_LOGS.md) §L1, and the two terminal lines in `logs/` |
 
 k = 13 and k = 14 together are over 330 core-hours. They are documented, not
-repeated. k = 14 is the decisive level and was decided by a single complete
-solver running the whole formula — not by a partial cube sweep.
+repeated. k = 14 is the decisive level. Each verdict there came from a complete
+solver running the whole formula in one process, not from a partial cube sweep;
+two engines on one CNF rule out an engine bug and leave an encoding bug open,
+and there is no DRAT proof at k = 14. The scope of that is
+[`STATEMENT.md`](STATEMENT.md) §4 and §5.
 
 ## 5. The positive control: identity and facts
 
@@ -224,7 +228,7 @@ $ python3 code/verify_circuit.py positive_control/mixcolumns_88gates_depth7.json
 ```
 
 That circuit is the output of the programme's rehearsal of the SAT branch: the
-constructive 15-gate program for the merged block was handed to the circuit
+constructive 15-gate program for the merged block was given to the circuit
 generator, which emitted 88 gates at depth 7, and the oracle accepted it twice
 in fresh processes. Depth is *computed* from the gate list, never read from the
 file. This is what makes **88 − 15 + 14 = 87** an end-to-end fact rather than
@@ -238,8 +242,10 @@ $ sh code/make_checksums.sh
 $ sha256sum -c SHA256SUMS
 ```
 ```
-files verified: 32
+files checksummed: 44
 ```
+
+`sha256sum -c` then prints one `OK` line per file and exits 0.
 
 `SHA256SUMS` covers the shipped artifacts. It deliberately excludes `results/`
 and the files `run_all.sh` derives (`*.model`, `*_gates.json`,
@@ -276,18 +282,17 @@ c proof written to proofs/k11_joint_W3U4.drat  (1283970 lines, 845830878 bytes)
 c solver cadical195  status UNSAT  seconds 110.39
 ```
 
-**k = 11 did not need the cap.** The budget allowed 30 minutes per level and
-stopping any level that exceeded it; k = 11 finished proof logging in 110 s, so
-all four levels carry proofs.
+All four levels carry proofs: the emission budget allowed 30 minutes per level,
+and the slowest, k = 11, finished proof logging in 110 s. Proof logging costs
+roughly 1.5× the plain solve (0.58 → 0.98 s, 0.98 → 1.45 s, 9.13 → 15.96 s,
+72.82 → 110.39 s).
 
 **Three of the four `.drat.xz` files ship; k = 11's does not.** Its compressed
 refutation is 40 MB — larger than the rest of this repository combined — and it
 takes 110 s to remake from the shipped CNF. `sh run_proofs.sh` emits it, and
-`proofs/README.md` gives the one-command form and the digests recorded when it
-was emitted here. The `sha256sum -c SHA256SUMS` transcript in §12 below was
-captured before that file was withdrawn; the shipped `SHA256SUMS` now covers 41
-files and no longer lists it. Proof logging costs roughly 1.5× the plain solve
-(0.58 → 0.98 s, 0.98 → 1.45 s, 9.13 → 15.96 s, 72.82 → 110.39 s).
+[`proofs/README.md`](proofs/README.md) gives the one-command form and the
+digests recorded when it was emitted here. The shipped `SHA256SUMS` does not
+list it, so the §12 check passes on a fresh clone.
 
 Structural validation of each — well-formedness, **not** a proof check:
 
@@ -312,7 +317,7 @@ drat-trim cnf/k9_joint_W3U4.cnf proofs/k9_joint_W3U4.drat     # expect: s VERIFI
 ```
 
 Sizes, sha256s of both the compressed and the uncompressed form, and the full
-checking recipe are in `proofs/README.md`.
+checking recipe are in [`proofs/README.md`](proofs/README.md).
 
 ---
 
@@ -324,6 +329,7 @@ checking recipe are in `proofs/README.md`.
 | 2 | k = 9 re-solved from the file | **UNSAT**, 0.98 s ✔ matches banked |
 | 3 | k = 10 re-solved from the file | **UNSAT**, 9.13 s ✔ matches banked |
 | 4 | k = 11 re-solved from the file | **UNSAT**, 72.82 s ✔ matches banked |
+| 5 | control CNF vs a fresh build | **IDENTICAL** |
 | 6 | control at k = 6 | **UNSAT**, 0.58 s ✔ as required |
 | 7 | control at k = 7 | **SAT**, 1.19 s ✔ the encoding can say yes |
 | 8 | model decoded, all clauses re-checked, program replayed | **VALID 7-gate program** |
@@ -332,4 +338,4 @@ checking recipe are in `proofs/README.md`.
 | 11 | 88-gate circuit through the standalone oracle | **VALID**, 32/32 outputs, depth 7 |
 | 12 | checksums | all shipped files verified |
 | 13 | DRAT proofs emitted for k = 6, 9, 10, 11 | 4/4 **WELL-FORMED**, emitted here, **not checked here**; 3 shipped, k = 11 regenerated on demand (110 s) |
-| — | k = 12, 13, 14 | **not re-run** and **no proof**; banked UNSAT, see `logs/BANKED_LOGS.md` |
+| — | k = 12, 13, 14 | **not re-run** and **no proof**; banked UNSAT, see [`logs/BANKED_LOGS.md`](logs/BANKED_LOGS.md) |

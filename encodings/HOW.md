@@ -1,10 +1,14 @@
 # How the SAT encoding works
 
-`STATEMENT.md` states what was proved and why it matters; `RUN.md` is the
-step-by-step transcript; `gen_and_solve.md` covers solver mechanics. This file
-explains the encoding itself — what the variables are, what each group of
+This file explains the encoding: what the variables are, what each group of
 clauses says, how the search space is legitimately restricted, and what is
-deliberately *not* encoded.
+**not** encoded.
+
+The other pages of the pack: [`STATEMENT.md`](STATEMENT.md) states the theorem
+and its scope, [`RUN.md`](RUN.md) is the transcript of commands and output,
+[`gen_and_solve.md`](gen_and_solve.md) covers solver mechanics, and
+[`../DEFINITIONS.md`](../DEFINITIONS.md) defines the terms (value, block
+structure, depth) used here without definition.
 
 ## 1. The question one file asks
 
@@ -19,10 +23,11 @@ none does. There is **one file per `k`** and no "at most `k`" encoding, for a
 reason given in §4: the normal form is not monotone in `k`.
 
 The instance is one merged subproblem: 4 of the 32 output groups, a supply of
-**33** free signals, **8** targets, working in a 16-dimensional coordinate
-space. It brackets at ≤ 15 gates constructively and ≥ 9 by a counting bound, and
-`k = 14` is the decisive level: a 14 would mean the surrounding decomposition
-over-charges by one gate, which is the difference between 88 and 87.
+**33** free signals, **8** targets, in a 16-dimensional coordinate space. It is
+bracketed between 9 and 15 gates before any solve, and `k = 14` is the decisive
+level — a 14 would mean the surrounding decomposition over-charges by one gate,
+which is the difference between 88 and 87. Where those two brackets come from
+is [`STATEMENT.md`](STATEMENT.md) §2.
 
 Before any clause is written, the instance is **normalised**: inputs are reduced
 to a basis of their span and everything is recoded into coordinates over that
@@ -76,8 +81,8 @@ The groups, with their clause counts at `k = 14`:
 Value definition is ~83 % of the file, which is what you would expect: it is the
 only group that talks about all 16 bits of every gate.
 
-Two encoding choices worth stating because they look like bugs and are not.
-`W` is one-directional (`W → V`, never the converse): the at-least-one clause
+Two encoding choices look like bugs and are not. `W` is one-directional
+(`W → V`, never the converse): the at-least-one clause
 forces a genuine carrier, and any real program can set `W` accordingly, so the
 encoding stays faithful. And the optional cone-pruning clauses on `V` — a
 logical *consequence* of the rest, added only because unit-propagating them is
@@ -130,8 +135,8 @@ cube count really is `C(m,2)`, that gate 0's pair list uses only inputs, that
 the at-least-one clause is present, plus two solver-asked checks: two cubes at
 once must be UNSAT, and no cube at all must be UNSAT.
 
-The split costs 26×–85× more total work than one monolithic solve; what it buys
-is parallelism and resumability. Levels 9, 10 and 11 were decided this way
+The split costs 26×–85× more total work than one monolithic solve; in exchange
+it provides parallelism and resumability. Levels 9, 10 and 11 were decided this way
 (528/528 UNSAT each, at 396, 1 836 and 18 540 core-seconds); the `k = 14` sweep
 reached 90 of 528 and was left undecided, and that level's verdict came from the
 monolithic route instead. **No cube driver ships in this directory** — the
@@ -172,21 +177,18 @@ The discipline in that diagram is the point of the pack:
 
 ## 7. The positive control, and why it is not optional
 
-An over-constrained encoding — one bug that forbids a legal gate, one off-by-one
-in target coverage — is UNSAT at every `k` and is indistinguishable from a
-theorem. So the same machinery is pointed at a subproblem with the *same*
-33-signal supply and the *same* dimension but only 4 of the 8 targets, whose
-optimum is independently known to be 7:
+An over-constrained encoding — one bug that forbids a legal gate, one
+off-by-one in target coverage — is UNSAT at every `k` and is indistinguishable
+from a theorem. So the same machinery is pointed at a subproblem with the
+*same* 33-signal supply and the *same* dimension but only 4 of the 8 targets,
+whose optimum is independently known to be 7. It answers **SAT** at k = 7,
+decodes to a real 7-gate program, and still answers UNSAT one gate below.
 
-| leg | required outcome | measured |
-|---|---|---|
-| `k = 6` | UNSAT | UNSAT, 0.58 s |
-| `k = 7` | **SAT**, and the model must decode and replay | SAT, 1.19 s |
-| the decoded 7 gates | must match the independently found witness | gate for gate identical |
-| a model with one literal flipped | must be rejected | rejected, naming 6 broken clauses |
-
-This is the only thing in the pack that shows the encoder *can say yes* on this
-supply at this dimension.
+This is the only part of the pack that shows the encoder *can say yes* on this
+supply at this dimension. The four legs, their measured outcomes and the
+instance it runs on are in
+[`positive_control/README.md`](positive_control/README.md); the commands and
+output are [`RUN.md`](RUN.md) steps 5–11.
 
 ## 8. What is not encoded
 
@@ -195,11 +197,13 @@ carries depth-ish fields, and the circuit oracle takes a depth argument, but no
 clause mentions depth: every depth number in this project is *measured* by
 replaying a circuit, never asserted by a solver.
 
-## 9. Results, measured
+## 9. Formula size and verdict, level by level
 
 All of `k = 9, 10, 11, 12, 13, 14` are **UNSAT**. With the `≥ 9` floor and a
-verified 15-gate program, the merged subproblem's optimum is exactly 15 — so the
-decomposition does not over-charge, and this route to an 87 is closed.
+verified 15-gate program, the merged subproblem's optimum is exactly 15 — so
+the decomposition does not over-charge, and this route to an 87 is closed. The
+theorem and everything it does not say are in
+[`STATEMENT.md`](STATEMENT.md) §3 and §7.
 
 | k | variables | clauses | historical cost | re-run here |
 |---|---|---|---|---|
@@ -210,15 +214,14 @@ decomposition does not over-charge, and this route to an 87 is closed.
 | 13 | 21 020 | 253 580 | ≈ 233 core-hours | not re-run |
 | 14 | 23 323 | 285 480 | ≈ **99 core-hours** on one process (kissat 4.0.4), independently confirmed by a second engine (CaDiCaL 3.0.0) at ≈ 130 core-hours on the same hash-pinned file; both terminal lines ship in `logs/` | not re-run |
 
-Cost grows 20–26× per level, which is why 14 is the end of the ladder rather
-than a waypoint. DRAT proofs ship for the control at `k = 6` and for `k = 9`
-and `k = 10` (the `k = 11` proof is 846 MB uncompressed and is regenerated in
-110 s rather than shipped). **`k = 12, 13, 14` carry no proof**, so the decisive
-level rests on complete solvers being correct — two of them, on one encoding.
-Two engines rule out an engine bug while leaving an encoding bug open. A third engine, a
-cross-encoding reproduction (encoding B reaches only k = 13), or a DRAT
-refutation at k = 14 is named as the boundary of the evidence, and the most valuable
-thing anyone could add.
+Cost grows 20–26× per level, which is why 14 is the end of the ladder. DRAT
+proofs ship for the control at `k = 6` and for `k = 9` and `k = 10`; the
+`k = 11` proof is 846 MB uncompressed and is regenerated in 110 s rather than
+shipped. **`k = 12, 13, 14` carry no proof**, so the decisive level rests on
+complete solvers being correct — two of them, on one encoding. Two engines rule
+out an engine bug and leave an encoding bug open, because both solved the same
+file. That boundary, and what would close it, is
+[`STATEMENT.md`](STATEMENT.md) §5.
 
 ## 10. Run it
 
