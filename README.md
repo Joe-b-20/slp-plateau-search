@@ -10,7 +10,8 @@ open problems.
 optimal.**
 
 One author, Joe, working with AI agents he directed; "we" on these pages means
-that collaboration.
+that collaboration. The choices behind the work, in his words:
+[`DECISIONS.md`](DECISIONS.md).
 
 **Start here — three commands, all stdlib Python 3, all under a minute:**
 
