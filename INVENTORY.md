@@ -3,9 +3,8 @@
 What exists, how big it is, and how to get the parts that are too large to
 host. Nothing here is offered as "available on request" without **either** a
 measured size **or** a measured count next to it. Six rows of the request table
-carry one and not the other; each says so in words rather than leaving a blank,
-because the missing half was never separately measured and inventing it would
-be worse than admitting it.
+carry one and not the other, and each says in words which half is missing: it
+was never separately measured.
 
 ## What ships in this repository
 
@@ -50,7 +49,7 @@ realisable — ran over this.
 
 | | count | size | status |
 |---|---:|---:|---|
-| distinct verified 88-gate **value sets** (mask sets), canonicalised | **1,575,516** | 554 MB as raw masks (`88 × uint32` per record) | **too large to host** |
+| distinct verified 88-gate **value sets**, canonicalised | **1,575,516** | 554 MB as raw values (`88 × uint32` per record) | **too large to host** |
 | provenance index, one row per value set | 1,575,516 | **478,728,370 B** (457 MB), sha256 `acd1cdc811504d33435a8530cf053de9b6ed2ef9c919921e9506f135dd8d1b8a` | **too large to host** |
 | canonical-form table | 1,575,516 | 158 MB | too large to host |
 | **the shipped sample** | **520** distinct value sets, stratified across 18 lineages, all five published record 88s included | 824 KB | **in this repository**, `corpus/sample/` |
@@ -68,25 +67,24 @@ about this corpus:
 
 | number | what it counts | which checks it supports |
 |---:|---|---|
-| **1,575,516** | distinct 88-gate **value sets** (mask sets), canonicalised — the corpus index above | set-level checks only: mask distinctness and the 32 targets, and the 88,228,896-deletion certificate, both of which need nothing but the value set |
-| **28,796** | of those, the ones carrying a **complete build recipe** (a gate-by-gate build order) | everything the value sets support, **plus** every structural test that needs the wiring — including `B`, which cannot be computed from a value set at all |
+| **1,575,516** | distinct 88-gate **value sets**, canonicalised — the corpus index above | set-level checks only: value distinctness and the 32 targets, and the 88,228,896-deletion certificate, both of which need nothing but the value set |
+| **28,796** | of those, the ones carrying a **complete build order**, gate by gate | everything the value sets support, **plus** every structural test that needs the wiring — including `B`, which cannot be computed from a value set at all |
 | **17,283** | **circuit files on disk** at the census, the file-level population the tripwire was swept over (the count `leads.md` #1 quotes) | the complete tripwire screen, file by file |
 
-No one of these is another, and none of them is a count of *circuits proved
-distinct as circuits* — 1,575,516 counts value sets, and many circuits can
-share one.
+No one of these is another, and none of them counts *circuits proved distinct
+as circuits*: 1,575,516 counts value sets, and many circuits can share one.
 
 ## The re-census the vocabulary came from
 
 | | |
 |---:|---|
-| circuit rows accepted (88 masks, all 32 targets) | **1,925,065** |
+| circuit rows accepted (88 values, all 32 targets) | **1,925,065** |
 | rows rejected, wrong length | 257,291 |
 | non-target gate slots examined | **107,803,640** |
-| distinct non-target masks — *the vocabulary* | **1,778** |
+| distinct non-target values — *the vocabulary* | **1,778** |
 
-The vocabulary itself, the per-mask statistics, and a verified 89-gate circuit
-using six masks that appear in **none** of those 107.8 million slots all ship
+The vocabulary itself, the per-value statistics, and a verified 89-gate circuit
+using six values that appear in **none** of those 107.8 million slots all ship
 in `corpus/vocabulary/` (64 KB).
 
 ## Held locally, available on request

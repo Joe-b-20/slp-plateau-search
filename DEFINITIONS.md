@@ -33,32 +33,34 @@ lines. That is the quantity being minimised.
 
 ---
 
-## mask — also called an *intermediate value*, or just a *value*
+## value — also called a *mask*, or an *intermediate value*
 
 Every gate XORs together some subset of the 32 circuit inputs. Write that
 subset as a 32-bit number, one bit per input. That number is the gate's
-**mask**: bit `j` is 1 if and only if input signal `j` is among the inputs
+**value**: bit `j` is 1 if and only if input signal `j` is among the inputs
 XORed together.
 
-A mask says *what* a gate computes and says nothing about *how* — two circuits
-can reach the same mask by different routes. Almost every structural statement
-in this project is a statement about masks.
+A value says *what* a gate computes and says nothing about *how* — two circuits
+can reach the same value by different routes. Almost every structural statement
+in this project is a statement about values.
 
-We avoid the word "word" for a mask; AES already uses "word" for something
+**Value is the word used throughout these pages.** *Mask* is the same thing and
+is what the code, the file formats and some command output call it; the two are
+interchangeable. We avoid the word "word"; AES already uses it for something
 else.
 
 ```
-# print the mask of every gate in a circuit, and how two circuits' masks overlap
+# print the value of every gate in a circuit, and how two circuits' values overlap
 python3 scripts/overlap.py evidence/circuits/mixcolumns_88gates_depth7.json <other.json> --list-shared
 ```
 
 ---
 
-## output mask / target
+## output value / target
 
 MixColumns is a fixed 32×32 matrix over GF(2). Row `r` of that matrix, read as
-a 32-bit number, is the mask output bit `r` must have. Those 32 numbers are the
-**targets**. A circuit is correct exactly when all 32 appear as masks somewhere
+a 32-bit number, is the value output bit `r` must have. Those 32 numbers are the
+**targets**. A circuit is correct exactly when all 32 appear as values somewhere
 in it — nothing else is required, and no test vectors are needed.
 
 The matrix is shipped as `matrix.txt` with its sha256, and is rebuilt from the
@@ -76,7 +78,7 @@ python3 verify_circuit.py <circuit.json>
 
 The map is linear over GF(2). A linear map is completely determined by its
 values on a basis, so checking the 32 unit inputs checks the map on all 2^32
-inputs at once. The verifier does not even do that much work: it compares mask
+inputs at once. The verifier does not even do that much work: it compares value
 sets, which is the same statement in one step.
 
 ---
@@ -125,7 +127,7 @@ corpus are held locally and are not shipped (`INVENTORY.md`).
 
 ## output gate, working gate, and B
 
-A gate is an **output gate** if its mask is one of the 32 targets. Everything
+A gate is an **output gate** if its value is one of the 32 targets. Everything
 else is an intermediate. An intermediate gate is **working** if some later gate
 reads it, and **dead** if nothing does.
 
@@ -160,7 +162,7 @@ python3 tools/tripwire.py --selftest <known.json> # duplicates and dead gates
 Used in two different senses in this project, and they must not be confused.
 
 1. **Irreducible (the tripwire sense).** No gate is deletable by the two
-   mechanisms above: no two gates carry the same mask, and no intermediate
+   mechanisms above: no two gates carry the same value, and no intermediate
    gate is dead. This is the hypothesis under which `B = n − 32`. It is
    decidable in milliseconds — `tripwire.py` decides it.
 
@@ -175,7 +177,7 @@ audit, still weak — see `NEGATIVES.md`.
 
 ## cancellation-free
 
-A gate **cancels** if its two input masks share a set bit: that bit appears
+A gate **cancels** if its two input values share a set bit: that bit appears
 twice in the XOR and vanishes. A circuit is **cancellation-free** if no gate
 does this — formally, if `popcount(mask(a) & mask(b)) == 0` at every gate.
 
@@ -217,26 +219,26 @@ DRAT proof.
 
 ## vocabulary
 
-The union of all masks appearing in a collection of circuits. Across 1,925,065
+The union of all values appearing in a collection of circuits. Across 1,925,065
 verified 88-gate circuits and 107,803,640 gate slots, only **1,778** distinct
-non-target masks ever appear; that set is "the vocabulary".
+non-target values ever appear; that set is "the vocabulary".
 
 It is an observation about a corpus, not a constraint on circuits. A verified
-89-gate circuit exists that is built around a mask outside it, which is what
+89-gate circuit exists that is built around a value outside it, which is what
 tells us leaving the vocabulary costs at most one gate.
 
 ```
 python3 verify_circuit.py corpus/vocabulary/S89_out_of_vocabulary_89gates.json
 # gates=89 depth=10 outputs_built=32/32 problems=0 -> VERDICT: VALID
-python3 corpus/vocabulary/tools/oov_check.py   # -> 6 out-of-vocabulary masks
+python3 corpus/vocabulary/tools/oov_check.py   # -> 6 out-of-vocabulary values
 ```
 
 ---
 
 ## distance, and radius
 
-The **distance** between two circuits is the number of masks in one that are
-not in the other — the size of the symmetric difference of their mask sets,
+The **distance** between two circuits is the number of values in one that are
+not in the other — the size of the symmetric difference of their value sets,
 usually reported as the count on one side. In plain words: **how many of the
 gates' values you would have to change** to turn one into the other.
 
@@ -260,7 +262,7 @@ python3 scripts/overlap.py A.json B.json
 
 Fix a set of rewriting moves that do not change the gate count — re-associating
 an XOR chain, re-parenting a gate onto a different pair that computes the same
-mask. Start from one circuit and apply moves until nothing new appears. The set
+value. Start from one circuit and apply moves until nothing new appears. The set
 you reach is that circuit's **orbit** under those moves.
 
 An orbit is closed by construction against the moves that generated it, and
@@ -270,7 +272,7 @@ says nothing about circuits those moves cannot reach.
 
 ## counting certificate
 
-A lower-bound argument of the form: assign a numeric weight to each mask, show
+A lower-bound argument of the form: assign a numeric weight to each value, show
 that one gate can increase the total weight by at most some amount, and
 conclude that reaching the targets from the inputs takes at least
 `(target weight − input weight) / (gain per gate)` gates. The **certificate**
@@ -303,28 +305,28 @@ decomposition, and none of these classes is proved to contain an 87. A price of
 
 ## realisable / non-realisable
 
-Given a set of masks (no wiring), ask whether *some* circuit of the stated size
+Given a set of values (no wiring), ask whether *some* circuit of the stated size
 builds exactly that set, with every gate free to take any two earlier signals.
 "Allowing arbitrary rewiring" means exactly that: the wiring is not inherited
-from the circuit the mask set came from; it is re-derived from scratch, over
+from the circuit the value set came from; it is re-derived from scratch, over
 all possible wirings.
 
-A mask set is **non-realisable at size k** if no such circuit exists. This is a
-decidable question about the mask set alone, and it is what the single-deletion
+A value set is **non-realisable at size k** if no such circuit exists. This is a
+decidable question about the value set alone, and it is what the single-deletion
 certificate decides 88 million times.
 
 ---
 
 ## verified, certified, known
 
-Three tiers, and they were used loosely in earlier drafts. As of this page:
+Three tiers, and they are not interchangeable:
 
 - **verified** — the circuit file exists and passes `verify_circuit.py`.
 - **certified** — verified, *and* the specific structural computation being
   cited was run on it and banked with its ledger row.
-- **known** — appears somewhere in this project's corpus of mask sets. Most
+- **known** — appears somewhere in this project's corpus of value sets. Most
   known 88s have no build order on disk and are therefore not verified as
-  circuits; they are verified as mask sets.
+  circuits; they are verified as value sets.
 
 Never read "known" as "verified". The counts differ by more than an order of
 magnitude.

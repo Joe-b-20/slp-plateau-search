@@ -3,15 +3,14 @@
 The search for the fewest 2-input XOR gates computing AES MixColumns, and the
 evidence it produced. The circuits themselves are published in
 [aes-mixcolumns-xor-circuits](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits);
-this repo holds the proofs, the negative results, the instruments, and the
+this repository holds the proofs, the negative results, the instruments, and the
 open problems.
 
 **Where it stands: `56 ≤ minimum ≤ 88`. No 87 was found. 88 is not proven
 optimal.**
 
-Sole author, Joe; no employer IP. The search was carried out with heavy use of
-AI agents directed by the author, and "we" on these pages means that
-collaboration.
+One author, Joe, working with AI agents he directed; "we" on these pages means
+that collaboration.
 
 **Start here — three commands, all stdlib Python 3, all under a minute:**
 
@@ -32,11 +31,11 @@ Every claim this project makes, each in exactly one row:
 |---|---|
 | any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
 | any depth-3 circuit needs ≥ 80 gates | **proved** — exact rational certificate, re-checkable in under a second with the standard library: `bounds/depth3_gte81/` |
-| …and ≥ 81 gates | **solver run, not a certificate** — a valid branch-and-cut *dual* bound from a documented HiGHS run that hit its time limit with 66.89 % of the gap still open. Sound, reproducible in hours, and not checkable from a file: `bounds/depth3_gte81/`, log in `REPRODUCE.md` C4 |
+| …and ≥ 81 gates | **solver run, not a certificate** — a valid branch-and-cut *dual* bound from a documented HiGHS run that reached its time limit with 66.89 % of the gap still open. Sound, reproducible in hours, and not checkable from a file: `bounds/depth3_gte81/`, log in `REPRODUCE.md` C4 |
 | cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
-| the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits**, and all three re-derive from scratch with one command each, no seed circuit: `reproduce/`. The 91 @ 4 is a construction from GF(2⁸) in four seconds — the only command here that needs `numpy` and a SAT solver. Caveat on the 88 @ 5: its search is randomized, and the two re-runs recorded in `REPRODUCE.md` Tier R both *missed*. They reproduced the descent to 89 gates faster than the archive (558 s against 3,072 s), then did not find the last gate inside 164 minutes. The command is real and starts from nothing; whether any one run succeeds is a matter of luck |
+| the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits**. All three rebuild from scratch, one command each, no seed circuit: `reproduce/`. The 91 @ 4 is a construction from GF(2⁸) that runs in four seconds — the only command here that needs `numpy` and a SAT solver. Caveat on the 88 @ 5: its search is randomized, and the two re-runs recorded in `REPRODUCE.md` Tier R both *missed*. They reached 89 gates faster than the archived run (558 s against 3,072 s), then did not find the last gate within 164 minutes. The command is real and starts from nothing; whether a single run succeeds is a matter of luck |
 | **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT, with a positive control. The decisive level k = 14 was decided by kissat 4.0.4 and independently confirmed by CaDiCaL 3.0.0 **on the same CNF** (both logs ship): that rules out an engine bug while leaving an encoding bug open, and there is **no DRAT proof at k = 14**. Scope, carried identically everywhere this result appears: the decomposition is a choice of ours, whether every known 88 respects it was not verified, and an 87 with *different* structure is not excluded (see below) |
-| no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all **1,575,516 distinct verified 88-gate value sets** (each a set of 88 intermediate values known to be realisable; 28,796 of them carry a full build order), 0 realisable. The deletion test needs only the value set, which is why it runs over that population rather than the smaller one with build orders — `INVENTORY.md` keeps the counts apart |
+| no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all **1,575,516 distinct verified 88-gate value sets** (each a set of 88 intermediate values known to be realisable; 28,796 of them also carry a full build order), 0 realisable. The deletion test needs only the value set, which is why it runs over that population rather than the smaller one with build orders — `INVENTORY.md` keeps the counts apart |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
 | no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive at that radius**; weak evidence beyond it — see calibration |
 | the known 88s' shared value-vocabulary is *not* forced by smallness | **verified counterexample** — see below |
@@ -52,42 +51,24 @@ J. Jean's published count and Jean has priority; what changed is the depth at
 which 88 is reached. The figure regenerates byte-identically with
 `python3 docs/generate_frontier_svg.py`.*
 
-Terms with precise meanings (value/mask, block structure, irreducible, B,
+Terms with precise meanings (value, block structure, irreducible, B,
 cancellation-free, vocabulary, radius) are defined with runnable checks in
 [`DEFINITIONS.md`](DEFINITIONS.md).
 
 ## What is NOT claimed
 
-Optimality. The 56–88 gap is real and 32 wide. And the small-edit negatives
-above prove exactly their stated radius, no more: genuinely different
-solutions sit ~42 gate-changes apart, far beyond any exhausted radius. The
+Optimality. The 56–88 gap is real and 32 wide. The small-edit negatives above
+prove exactly their stated radius and no more: genuinely different solutions
+are about 42 gate-changes apart, far beyond any radius exhausted here. The
 corpus is one search lineage: **1,575,516 distinct verified 88-gate value
 sets** — each a set of 88 intermediate values known to be realisable —
 collected and set-checked, of which **28,796** carry full build orders and
-support the tests that need the wiring. These are different quantities counting
-different things, kept distinct on purpose (`INVENTORY.md` tabulates all three,
-with the 17,283-file census).
+support the tests that need the wiring. These are different quantities
+counting different things, kept distinct on purpose:
+[`INVENTORY.md`](INVENTORY.md) tabulates both of them and the 17,283-file
+census beside them.
 
-## Instruments you can run on your own circuit
-
-- [`tools/tripwire.py`](tools/tripwire.py) — stdlib, seconds. It replays the
-  circuit and reports dead gates, duplicate values, and B, the number of gates
-  that feed later gates without being outputs. None of the first two can occur
-  in a minimal circuit, and a short lemma forces B = 88 − 32 = 56 on any
-  irreducible 88, so **B ≠ 56 on an 88 from any source means an 87 is one
-  deletion away**. Sound in that direction only; the tool ships the converse's
-  counterexample, and `REPRODUCE.md` Tier A runs it.
-- `verify_circuit.py` — the oracle; rebuilds MixColumns from FIPS-197, proves
-  correctness on the 32 unit inputs, and measures depth rather than reading it.
-- [`scripts/overlap.py`](scripts/overlap.py) — shared-value count between two
-  circuits (the independence statistic).
-
-Every shipped method — search engines, bound checkers, the SAT encoding, the
-corpus instruments — has a HOW doc giving the idea, the algorithm as a diagram,
-what it measured, and its command:
-[`METHODS_INDEX.md`](METHODS_INDEX.md).
-
-## The bounds, as arguments
+## The lower bounds
 
 Each with its statement, a ≤ 1-page writeup of the technique, the certificate,
 and a checker that runs on any 32×32 matrix — validated against small
@@ -97,15 +78,15 @@ instances with known optima (`bounds/README.md`):
   the full exhaustion re-runs inside `bounds/` in ~3 minutes on one core.
 - **≥ 80 at depth 3, certified; ≥ 81 from a solver run** — enumerate a complete
   structural model of every depth-3 circuit, add proved-valid inequalities, and
-  certify an exact *rational LP dual* over the resulting 72,830 × 29,180 system:
-  that yields **80**, and the certificate re-checks in under a second from a
+  certify an exact *rational LP dual* over the resulting 72,830 × 29,180 system.
+  That yields **80**, and the certificate re-checks in under a second from a
   JSON file with no solver and no floating point. The step to **81** is
-  something else — the dual bound of a HiGHS branch-and-cut run on the same
-  model, which is valid at any point in branch-and-cut (so the 81 is sound) but
-  hit its 16.8-hour time limit with a 66.89 % gap. It is a documented run rather than a
-  certificate; it improves with compute and was still climbing when stopped.
-  `bounds/depth3_gte81/STATEMENT.md` states both and says to cite them
-  differently.
+  something else: the dual bound of a HiGHS branch-and-cut run on the same
+  model, valid at any point in branch-and-cut (so the 81 is sound) but reached
+  when the run hit its 16.8-hour time limit with a 66.89 % gap. It is a
+  documented run rather than a certificate; it improves with compute and was
+  still rising when stopped. `bounds/depth3_gte81/STATEMENT.md` states both and
+  says to cite them differently.
 - **≥ 92 cancellation-free** — derived twice independently; with the shipped
   102-gate cancellation-free circuit: `92 ≤ optimum_cf ≤ 102`.
 
@@ -121,10 +102,10 @@ hash-pinned CNF*, 468,159.51 s ≈ 130 core-hours, the same day. Both terminal
 lines ship verbatim as `encodings/logs/mono_14_kissat404.log` and
 `encodings/logs/mono_14_cadical300.log`. That is **two independent engines on
 one encoding.** It rules out a bug in either engine and leaves a bug in the
-encoding open, since a wrong CNF is UNSAT for free. There is **no DRAT
-refutation at k = 14** — the pack ships proofs only for k = 9, k = 10 and the
-k = 6 control. A third engine, or a reproduction under a different encoding,
-remains open and is `leads.md` #2.
+encoding open, because a wrong CNF comes back UNSAT for reasons that have
+nothing to do with circuits. There is **no DRAT refutation at k = 14** — the
+pack ships proofs only for k = 9, k = 10 and the k = 6 control. A third engine,
+or a reproduction under a different encoding, remains open and is `leads.md` #2.
 
 Two further cross-checks do exist, one rung lower: levels 9–13 also hold under
 a second, independently written SAT encoding, and levels 9–11 were additionally
@@ -149,36 +130,75 @@ That says where an 87 cannot be, and says nothing about whether one exists
 elsewhere. Encodings, instances, DRAT proofs for the cheap levels, the banked
 k = 14 logs, and the control are in `encodings/`.
 
+## A hypothesis that died
+
+Every known 88 draws its values from one shared pool of 1,778. It was
+tempting to conclude the pool is forced — that any circuit this small must use
+it, so searching inside it would suffice. A verified 89 built around a value
+from **outside** the pool killed that inference: leaving the pool costs at most
+one gate, so an 87 owes the pool nothing. Other conjectured regularities fell
+the same way; each is a row in [`negatives.jsonl`](negatives.jsonl) with what
+it does *not* imply.
+
 ## Calibration — why we distrust our own negatives
 
 The control audit: our local-search negatives cannot distinguish an optimal
 88 from a non-optimal 89–97, so a clean sweep at radius 3–4 says almost
-nothing about 87's existence. This is our own result, run against our own
-evidence, and it is why the ladder labels those rows the way it does. One
-companion number: a from-scratch attempt carrying none of this project's
-accumulated knowledge plateaus at 93. The last five gates are where the
-knowledge goes, which is the argument for reading `NEGATIVES.md` before
-searching blind.
+nothing about 87's existence. That is why the ladder labels those rows the way
+it does. One companion number: a from-scratch attempt carrying none of this
+project's accumulated knowledge stops at 93. The last five gates are the hard
+part, and they are where the accumulated knowledge goes — which is the argument
+for reading `NEGATIVES.md` before searching blind.
 
-## A hypothesis that died
+## Instruments you can run on your own circuit
 
-Every known 88 draws its values from one shared pool of 1,778. It was
-tempting to conclude the pool is forced — that any circuit this small must
-shop there, so searching inside it would suffice. A verified 89 built around
-a value from **outside** the pool killed that inference: leaving the pool
-costs at most one gate, so an 87 owes the pool nothing. Other conjectured
-regularities fell the same way; each is a row in
-[`negatives.jsonl`](negatives.jsonl) with what it does *not* imply.
+- [`tools/tripwire.py`](tools/tripwire.py) — stdlib, seconds. It replays the
+  circuit and reports dead gates, duplicate values, and B, the number of gates
+  that feed later gates without being outputs. Neither a dead gate nor a
+  duplicate can occur in a minimal circuit, and a short lemma forces
+  B = 88 − 32 = 56 on any irreducible 88, so **B ≠ 56 on an 88 from any source
+  means an 87 is one deletion away**. Sound in that direction only; the tool
+  ships a counterexample to the converse, and `REPRODUCE.md` Tier A runs it.
+- `verify_circuit.py` — the oracle; rebuilds MixColumns from FIPS-197, proves
+  correctness on the 32 unit inputs, and measures depth rather than reading it.
+- [`scripts/overlap.py`](scripts/overlap.py) — shared-value count between two
+  circuits (the independence statistic).
 
-## How this program was run
+Every shipped method — search engines, bound checkers, the SAT encoding, the
+corpus instruments — has a HOW doc giving the idea, the algorithm as a diagram,
+what it measured, and its command:
+[`METHODS_INDEX.md`](METHODS_INDEX.md).
+
+## How to reproduce, and what exists beyond this repository
+
+[`REPRODUCE.md`](REPRODUCE.md) is the manifest: every claim above, the command
+that checks it, the line of output that means it passed, and what it cost. It
+has four tiers:
+
+| tier | budget | contents |
+|---|---|---|
+| **A** | seconds | the oracle, the tripwire, the three bound checkers, the corpus certificates over the shipped sample |
+| **B** | minutes | the SAT ladder at k = 9/10/11 with its positive control and DRAT emission, the `≥ 56` exhaustion, the validation suite |
+| **R** | seconds to hours | the records themselves — [`reproduce/`](reproduce/) rebuilds them from scratch, one command per record with its measured time, for seven of the nine verified circuits, by the fastest route the project has rather than necessarily the one that historically found it; the other two say plainly why they have none |
+| **C** | hours to core-weeks | banked and documented rather than re-run, each with its cost and its artifact |
+
+[`INVENTORY.md`](INVENTORY.md) lists what exists beyond this repository —
+corpora, certificates, instances, logs — with exact counts, sizes, and hashes.
+Samples ship here. The pieces genuinely too large to host are stated as such,
+with how to request them; the largest is the index of the 1,575,516 distinct
+88-gate **value sets**, at 457 MB.
+
+## Why the search stopped, what it cost, and where the instruments go next
 
 **Why it stopped.** k = 14, the last decisive computation, returned UNSAT on
 2026-09-01; every remaining lead was then priced rather than run, in
-[`leads.md`](leads.md). **What it cost:** the runs itemised in `REPRODUCE.md`
-and the STATEMENTs come to **at least 610 core-hours** — 233 at k = 13, 229 at
-k = 14 across two engines, 97 for the out-of-vocabulary 89's search, 20 for the
-clean-room control, 17 for the depth-3 solver bound, 13 at k = 12; three
-further lines carry no core-hour figure, so 610 is a floor.
+[`leads.md`](leads.md).
+
+**What it cost.** The runs itemised in `REPRODUCE.md` and the STATEMENTs come
+to **at least 610 core-hours** — 233 at k = 13, 229 at k = 14 across two
+engines, 97 for the out-of-vocabulary 89's search, 20 for the clean-room
+control, 17 for the depth-3 solver bound, 13 at k = 12. Three further lines
+carry no core-hour figure, so 610 is a floor.
 
 **Where the instruments go next.** Oracle, tripwire, bound checkers and the
 exact-SLP encoding read a target list and nothing else, and are already pointed
@@ -190,28 +210,28 @@ is published for that matrix by anyone.
 
 ## Opinion
 
-*This section is opinion; nothing in it is proved.* We think 88 is the answer, for two reasons that
-survive the calibration section. First, every time we loosened one of the
-rules the known 88s obey and solved the loosened problem exactly, the answer
-came back 88 — about two hundred times in a row — and a tripwire that would
-have handed us an 87 for free stayed silent over 1.58 million circuits.
-Second, everywhere we could afford an exact answer, the optimum turned out
-*tight*: merging the two largest blocks buys exactly zero, a circuit's wiring
-is forced by its values, and the depth of every shipped circuit is already
-its minimum. Structures that rigid usually are what they appear to be.
+*This section is opinion; nothing in it is proved.* We think 88 is the answer,
+for two reasons that survive the calibration section. First, every time we
+loosened one of the rules the known 88s obey and solved the loosened problem
+exactly, the answer came back 88 — about two hundred times in a row — and a
+tripwire that would have produced an 87 immediately stayed silent over 1.58
+million circuits. Second, everywhere we could afford an exact answer, the
+optimum turned out *tight*: merging the two largest blocks saves nothing, a
+circuit's wiring is forced by its values, and the depth of every shipped
+circuit is already its minimum. Structures that rigid are usually optimal.
 
 We hold it loosely all the same. The two places an 87 must live — outside the
 known block structure, possibly outside the shared vocabulary — are exactly
 the places no instrument of ours ever covered, and silence in an unsearched
-region is not evidence. If an 87 exists, we expect it to look alien: no known
-88's block layout, at least 4 values away from everything certified,
-probably depth 4 or more — and found by construction, a genuinely different
-decomposition of the matrix, rather than by searching near known 88s. One
-falsifiable expectation either way: B = 56 will hold on every foreign-lineage
-88 anyone ever tests. We would like to be wrong; the leads below are where we
-would look first.
+region is not evidence. If an 87 exists, we expect it to look unlike anything
+here: no known 88's block layout, at least 4 values away from everything
+certified, probably depth 4 or more — and found by construction, a genuinely
+different decomposition of the matrix, rather than by searching near known 88s.
+One falsifiable expectation either way: B = 56 will hold on every 88 from
+another author's search that anyone ever tests. We would like to be wrong; the
+leads below are where we would look first.
 
-## Already tried / still open
+## Already refuted, and still open
 
 - [`NEGATIVES.md`](NEGATIVES.md) + [`negatives.jsonl`](negatives.jsonl) —
   everything already refuted, machine-readable: scope, strength
@@ -223,29 +243,10 @@ would look first.
   available on request.
 - [`leads.md`](leads.md) — the open attacks, ranked by payoff/cost, priced in
   core-hours, with a startable command where the inputs are public. Cheapest
-  decisive items: any foreign-lineage 88 through the tripwire (lead 1, seconds,
-  runnable now); a possible 90 @ depth 4 one capped solver call away (lead 7);
-  and the single ~42 core-hour solve (150,000 s) that would close lead 5's
-  exhaustive pricing bound from 87 to 88 — the last two need the corpus, which
-  is not public.
-
-## Reproduce / inventory
-
-[`REPRODUCE.md`](REPRODUCE.md) is the manifest: every claim above, the command
-that checks it, the line of output that means it passed, and what it cost.
-Tiered — **A** seconds (the oracle, the tripwire, the three bound checkers, the
-corpus certificates over the shipped sample), **B** minutes (the SAT ladder at
-k = 9/10/11 with its positive control and DRAT emission, the `≥ 56`
-exhaustion, the validation suite), **R** the records themselves —
-[`reproduce/`](reproduce/) rebuilds them from scratch, one command per record
-with its measured time, for seven of the nine verified circuits, by the fastest
-route the project has rather than necessarily the one that historically found
-it; the other two say plainly why they have none — and **C** banked and
-documented rather than re-run, each with its cost and its artifact.
-[`INVENTORY.md`](INVENTORY.md) lists what exists beyond this repo — corpora,
-certificates, instances, logs — with exact counts, sizes, and hashes. Samples
-ship here, and the pieces genuinely too large to host (the index of the
-1,575,516 distinct 88-gate **value sets** is 457 MB) are stated as such with
-how to request them.
+  decisive items: any 88 from another author's search through the tripwire
+  (lead 1, seconds, runnable now); a possible 90 @ depth 4 one capped solver
+  call away (lead 7); and the single ~42 core-hour solve (150,000 s) that would
+  raise lead 5's exhaustive pricing bound from 87 to 88 — the last two need the
+  corpus, which is not public.
 
 MIT. Cite via `CITATION.cff`.

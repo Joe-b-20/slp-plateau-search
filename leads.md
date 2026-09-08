@@ -13,7 +13,7 @@ the previous attempt stopped being informative.
 
 - **runnable now** — the command is given and the files it needs are in these
   repositories.
-- **requires the corpus** — needs the mask-set corpus, the solver harness, or
+- **requires the corpus** — needs the value-set corpus, the solver harness, or
   the run archives, which are not in the public repositories (see the data
   inventory for exact counts and sizes).
 
@@ -30,15 +30,20 @@ The list is ranked by payoff over cost, not by importance.
 
 **Open.** Every circuit in this project's corpus came out of one family of
 search engines. The tripwire — the free check that turns any duplicated or
-unread gate into a smaller circuit — has never fired. On any population: the
-**17,283** circuit files on disk at the census (the complete screen, file by
-file), the **28,796** circuits carrying a full build order (the complete screen
-including `B`), and the **1,575,516** distinct verified 88-gate value sets in
-the corpus index
-(the value-set checks only — `B` is a property of the wiring and cannot be
-computed from a value set). Three populations, three different tests, all
-silent; `INVENTORY.md` keeps them apart. It has never been run on a circuit somebody else's search
-produced, apart from the one published 88 that is public.
+unread gate into a smaller circuit — has never fired on any of three
+populations:
+
+- the **17,283** circuit files on disk at the census — the complete screen,
+  file by file;
+- the **28,796** circuits carrying a full build order — the complete screen,
+  including `B`;
+- the **1,575,516** distinct verified 88-gate value sets in the corpus index —
+  the value-set checks only, because `B` is a property of the wiring and cannot
+  be computed from a value set.
+
+Three populations, three different tests, all silent; `INVENTORY.md` keeps them
+apart. The tripwire has never been run on a circuit produced by somebody else's
+search, apart from the one published 88 that is public.
 
 **Why it is worth doing.** A hit **is** an 87, immediately, by deleting one
 gate. A miss is also worth something: silence on circuits from an unrelated
@@ -54,7 +59,7 @@ python3 verify_circuit.py their_88.json         # check it is a MixColumns
                                                 # circuit in the first place
 ```
 
-**Status of the one foreign circuit that is public.** The published 88-gate
+**The one public circuit from another author.** The published 88-gate
 circuit of J. Jean (ePrint 2026/1481) has been run: `B = 56`, no duplicates, no
 dead gates, silent. That is one data point, and one is not a sample.
 
@@ -80,7 +85,8 @@ nothing more. **There is no DRAT proof at k = 14**, and both engines read the
 that is what this lead is.
 
 **Why it is worth doing.** Two engines on one file rules out an engine bug; it
-does not rule out an encoding bug, and a wrong encoding is UNSAT for free. The
+does not rule out an encoding bug, and a wrong encoding comes back UNSAT for
+reasons that have nothing to do with circuits. The
 second encoding in this programme currently reaches only k = 13
 (`encodings/logs/BANKED_LOGS.md` §L3), so the decisive level has never been
 decided twice *independently of the encoding*. A cross-encoding decision either
@@ -108,20 +114,20 @@ than extending it.
 
 ---
 
-## 3. Push the one circuit that breaks the dictionary down to 88 gates
+## 3. Push the one circuit outside the vocabulary down to 88 gates
 
 **Runnable now** for the verification; **requires the corpus** for the descent
 harness.
 
 **Open.** Across 1,925,065 verified 88-gate circuits and 107,803,640 gate
-slots, only 1,778 distinct intermediate values ever appear. A verified 89-gate
-circuit exists that is built around a value outside that list — delete it and
-six values become unbuildable, four of them outputs. No descent has ever
-*started* from that circuit; every previous run burned its budget getting down
-from 149 gates and never reached it.
+slots, only 1,778 distinct values ever appear — the vocabulary. A verified
+89-gate circuit exists that is built around a value outside it: delete that
+value and six others become unbuildable, four of them outputs. No descent has ever
+*started* from that circuit: every previous run spent its budget descending from
+149 gates and never reached it.
 
 **Why it is worth doing.** Reaching 88 from there would produce the first
-88-gate circuit ever exhibited outside the dictionary — a new structural object
+88-gate circuit ever exhibited outside the vocabulary — a new structural object,
 and an entrance to a region of the plateau nothing has sampled. Failing
 repeatedly is the sharpest available evidence that the 88s really are confined
 to those 1,778 values.
@@ -171,7 +177,7 @@ is another bounded-radius negative.
 
 **Open.** An exhaustive price over 1.41 × 10²⁶ ways of budgeting the circuit's
 shared sub-expressions returns "at least 87". Nine of its ten component bounds
-are exactly tight; all the slack sits in one sub-problem. Deciding that
+are exactly tight; all the slack is in one sub-problem. Deciding that
 sub-problem raises the whole bound from 87 to 88 and closes the family.
 
 **Why it is worth doing.** It would make "88 is optimal" a proved statement
@@ -200,16 +206,15 @@ infeasibility proof. Three downstream floors rest on it.
 **Why it is worth doing.** It is the only inherited numeral in the project that
 still changes a conclusion, and settling it deletes the one branch of the case
 analysis that describes an 87 unlike anything ever built. Highest
-value-per-hour on the board.
+value per hour on this list.
 
 **Cost.** One constraint-programming run; measured at 3–12 hours on one worker,
-with a real chance of returning UNKNOWN. There is a symmetry in the problem
-worth a free factor of four that no existing encoding exploits — break that
-first.
+with a real chance of returning UNKNOWN. The problem has a symmetry worth a
+factor of four in run time that no existing encoding exploits; break it first.
 
-**What it does not settle.** Even if it lands, the proof family it belongs to
-has a proved ceiling that sits below the records' own measured range. Fund it
-knowing that.
+**What it does not settle.** Even if it succeeds, the proof family it belongs
+to has a proved ceiling below the records' own measured range. Fund it knowing
+that.
 
 ---
 
@@ -248,8 +253,7 @@ remaining 93% is genuinely new coverage, not a re-run.
 **Why it is worth doing.** A hit is an 87. A clean sweep is the first
 corpus-wide result for this population.
 
-**Cost.** About 80 CPU-minutes. One CPU-hour of always-on 87 detection that
-nobody has bought.
+**Cost.** About 80 CPU-minutes.
 
 **What it does not settle.** Same fence as every corpus-wide negative: it is a
 statement about circuits reachable from this project's engines.
@@ -269,7 +273,7 @@ verify as valid MixColumns.
 **Why it is worth doing.** Two things. First, they already refute three claims
 this project published about the structure of the plateau — a supposed floor, a
 supposed empty band, and a supposed ridge — and those corrections are banked.
-Second, they sit three gates further into the structural corner where one
+Second, they are three gates further into the structural corner where one
 theory places an 87, which makes an anchored search from them strictly cheaper
 and strictly closer to a witness than anything tried.
 
@@ -328,7 +332,7 @@ because no tool here can aim at it.
 
 **Cost.** Unknown. Building the instrument is the lead.
 
-**What it does not settle, and what must travel with it.** Measured across 498
+**What it does not settle, and what must be quoted with it.** Measured across 498
 circuits, the statistic this region requires to be 2 has a minimum of 18;
 nothing measured is within 16 of it. So: *for* the floor, the region is empty of
 88s in every population ever measured. *Against* the floor, it is also
@@ -360,13 +364,13 @@ module holding the record-read currency menus is not imported at all.
 the shipped file is unpublished. Archiving it means the worker plus its root
 (`constructors.build("naive", 40426)`, chunk seed 40426, depth cap 4, `alt`
 mode, cascade handoff off; **54.4 min** of one core, inside a ~74 process-hour
-run). It is worth less than the construction it would sit beside — it is slower
-by three orders of magnitude and stochastic — which is why it was not the thing
-packaged first.
+run). It is worth less than the construction it would stand beside: three
+orders of magnitude slower, and stochastic. That is why it was not packaged
+first.
 
 **Cost.** No compute. A worker, its config and its logs, lifted and documented.
 
-**What it does not settle.** Nothing about MixColumns — this buys
+**What it does not settle.** Nothing about MixColumns — this adds
 reproducibility rather than knowledge. Note also what the shipped construction
 is *not*: a blind search finding 91 by luck. It is a construction whose *model
 class* prices out at exactly 91 — which is a statement about that class, **not**

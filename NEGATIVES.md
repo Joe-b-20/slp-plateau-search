@@ -1,15 +1,13 @@
 # What has already been tried
 
-Every negative result this project holds, in one table, with the thing each
-one does **not** show written next to it. `negatives.jsonl` is the same
-content, one JSON object per line, for anyone who would rather filter it
-than read it.
+Every negative result this project holds, each with the thing it does **not**
+show written next to it. `negatives.jsonl` is the same content, one JSON object
+per line, for anyone who would rather filter it than read it.
 
-The point of this file is to save you time. If you are considering an
-attack on the 87-gate question, look here first: the odds are it is already
-in the table, and if it is, the `does_not_imply` field tells you where the
-previous attempt stopped being informative - which is usually the more
-useful half.
+The point of this file is to save you time. If you are considering an attack
+on the 87-gate question, look here first: it is probably already listed, and if
+it is, the `does_not_imply` field tells you where the previous attempt stopped
+being informative - usually the more useful half.
 
 ## The three strengths
 
@@ -23,7 +21,7 @@ A `searched` row is not weak evidence for the same claim a `theorem` row
 makes; it is evidence about a different and much smaller claim. The
 distinction is the whole reason this file exists.
 
-## Read the `does_not_imply` column
+## Read the `does_not_imply` field
 
 It is mandatory on every row and it is not boilerplate. Several of these
 results are exhaustive over populations in the hundreds of millions and
@@ -34,8 +32,8 @@ its own audit of its own work - see the last row.
 ## Artifact paths — and the `shipped` flag
 
 **Every row is marked shipped or not shipped, and the machine-readable
-`negatives.jsonl` carries the same mark as a boolean `shipped` field.** Honest
-beats pretty: most of this project's evidence is too large to host.
+`negatives.jsonl` carries the same mark as a boolean `shipped` field.** Most of
+this project's evidence is too large to host, which is why the mark is there.
 
 - **`shipped: true`** (7 of 25 rows) — the artifact is a path *in this
   repository*. Open it now. The row's `artifact` field lists those paths, and
@@ -55,33 +53,37 @@ mean nothing, and the file at the end of the path is the evidence.
 
 ## The table
 
-| # | claim | strength | scope |
-|---|---|---|---|
-| 1 | Every XOR circuit computing AES MixColumns uses at least 56 two-input XOR gates. | `theorem` | Unconditional. All straight-line XOR programs over GF(2) computing the 32x32 MixColumns matrix, any depth, any... |
-| 2 | A circuit in which no gate's two inputs share a term - so no bit is ever computed and then cancelled - needs at least 92 gates. The best such circuit ... | `theorem` | Unconditional over cancellation-free straight-line programs for this matrix. Solver-free certificate. |
-| 3 | Any MixColumns circuit of depth 3 or less needs at least 80 gates. | `theorem` | All depth-<=3 circuits. An exact rational LP dual over a 72,830 x 29,180 system, refereed. |
-| 4 | In any valid circuit for a q-output map, the number of gates that are not outputs and do feed something is at most n - q, and any smaller value hands ... | `theorem` | Theorem is unconditional. The record: 28,796 circuits carrying a build order fully checked; 1,575,516 distinct... |
-| 5 | Take any known 88-gate circuit, delete any one of its 56 working gates, and rebuild the wiring from scratch however you like: the remaining set of val... | `exhaustive` | 88,228,896 deletions = 1,575,516 mask sets x 56 working gates. 35,323,820 survived the local filter; 0 were re... |
-| 6 | No two-gate rewrite improves any known 88: delete any two gates and resynthesise the hole optimally, and you never get below 88. | `exhaustive` | 139,878 of 139,878 mask sets, 1,540 windows each = 215,412,120 exact window decisions, logged in three disjoin... |
-| 7 | No three-gate rewrite improves any known 88 either. The queue is empty, not partial. | `exhaustive` | 200 circuits x 27,720 triples, every one decided. |
-| 8 | A partial four-gate sweep on three circuits found nothing. | `searched` | 56,489 / 39,034 / 34,599 windows out of 367,290 each - 15.4%, 10.6% and 9.4% coverage. |
-| 9 | Across 22 circuits, no single shared helper value rewrites any window to a smaller circuit, and no helper is shared between them. | `exhaustive` | 15,099,957 one-helper rewrite windows, ledger-exact. |
-| 10 | No four of the 32 output rows can be rebuilt more cheaply than the record circuit builds them. | `exhaustive` | All 35,960 four-row subsets refuted at one gate below cost for the depth-5 record; all 35,960 screened on a se... |
-| 11 | Starting from thirteen 88-gate circuits and applying every gate-count-preserving rewiring and re-association move until the orbit closes, you reach 37... | `exhaustive` | 44,793 states across 5 wiring orbits plus 333,396 across 8 further orbits; 4,856,598 re-association sites with... |
-| 12 | At every site in the corpus where deleting a pair of gates could have produced an 87, the replacement it would need provably does not exist. | `exhaustive` | 55,970 candidate sites across 18,355 circuits need a 3-gate replacement: 0 have one. 1,409 need a 4-gate repla... |
-| 13 | No 87 within remove-two-add-one of 33,010 circuits, none within remove-three-add-one of 64 89-gate circuits, none within one operand edit of 6,832,408... | `exhaustive` | As stated. The alarms distribute 89: 12,704, 90: 30,856, 91: 16, 92: 673. |
-| 14 | The two largest sub-blocks of every known 88, built jointly rather than separately, provably cost 15 gates - exactly what they cost apart. Merging the... | `exhaustive` | Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition ... |
-| 15 | The one remaining undecided sub-block whose cost of 12 would have priced its whole class at 87 costs 13. | `exhaustive` | One block. Size 12 proved UNSAT, with an inherited upper bound of 13. |
-| 16 | Pricing the circuit exhaustively over every way of budgeting its shared sub-expressions - 1.41e26 configurations - never returns less than 87. | `exhaustive` | All menu configurations; 9 of the 10 component bounds are exactly tight. |
-| 17 | 749,150 exact optimisation runs over restricted alphabets all returned OPTIMAL, and the best floor found anywhere among them is 88. | `exhaustive` | 749,150 solved to optimality, 125 timeouts. |
-| 18 | Every dimension-8 block cell in the decomposition is proved exactly optimal, each with a positive control that fires. | `exhaustive` | 82 of 82 cells with optimum_proved true; four further dimension-12 regions decided at their split total. |
-| 19 | A gate feeding eight later gates - the one wiring freedom anyone nominated as slack - is not achievable by ANY build order of the record 88s, even tho... | `exhaustive` | 39 mask sets: six record 88s plus 33 further floors. All 39 exact, 0 timeouts, every solve optimal. |
-| 20 | Across 1,925,065 verified 88-gate circuits and 107,803,640 non-output gate slots, only 1,778 distinct intermediate values ever appear - and yet a veri... | `exhaustive` | Census exhaustive over 1,925,065 rows, 0 rejected. The counterexample is one circuit, found by search. |
-| 21 | A proposed lower-bound route based on a linear invariant was closed by one hand computation: a verified greedy witness caps the bound the route could ... | `theorem` | The whole route family. |
-| 22 | Nine named lower-bound proof families are provably incapable of reaching 88 for this matrix, each with an exact computed ceiling: 46.2, 51, 26, 36-40,... | `theorem` | Each ceiling is proved for its own family; together they cover every unconditional technique tried here. |
-| 23 | The linear-programming certificate family that produced the 56 bound cannot be pushed past 91.41 for this matrix; its optimum is 91.409884, below both... | `theorem` | The certificate LP family, exactly. |
-| 24 | This project audited its own negative results and found most of them near information-free about the question they were run to answer. | `searched` | The audit covers the local-search negatives above: bounded-radius irreducibility, the move-class walls, the or... |
-| 25 | An 88-gate circuit you already have cannot be made shallower by rescheduling it. The wiring of an 88 is forced by its mask set, and every circuit ship... | `exhaustive` | Exhaustive and exact where it counts. (i) The ASAP least-fixpoint schedule - the shallowest schedule ANY circu... |
+An index. Every row's full claim, scope, cost, artifact and `does_not_imply`
+field is in the section of the same number below.
+
+| # | result | strength |
+|---|---|---|
+| [1](#1-lb-56) | Every MixColumns circuit needs at least 56 gates. | `theorem` |
+| [2](#2-lb-92-cancellation-free) | Cancellation-free circuits need at least 92 gates; the best one known has 102. | `theorem` |
+| [3](#3-lb-80-depth3) | Circuits of depth 3 or less need at least 80 gates. | `theorem` |
+| [4](#4-tripwire-b-never-fired) | The working-gate count B is at most n - 32, and anything smaller yields a smaller circuit; on every 88 tested B was 56. | `theorem` |
+| [5](#5-no-87-one-deletion) | No 87 is one gate-deletion away from a known 88: 88,228,896 deletions, 0 realisable. | `exhaustive` |
+| [6](#6-irreducible-radius-2) | No two-gate rewrite improves any known 88. | `exhaustive` |
+| [7](#7-irreducible-radius-3) | No three-gate rewrite improves any known 88. | `exhaustive` |
+| [8](#8-radius-4-partial) | A partial four-gate sweep on three circuits found nothing. | `searched` |
+| [9](#9-one-helper-windows) | Across 22 circuits, no single shared helper value rewrites any window to a smaller circuit. | `exhaustive` |
+| [10](#10-drop-4-outputs) | No four of the 32 output rows can be rebuilt more cheaply than the record circuit builds them. | `exhaustive` |
+| [11](#11-neutral-orbits-closed) | Gate-count-preserving moves close over 378,189 circuits and never drop below 88. | `exhaustive` |
+| [12](#12-two-consumer-site-rebuild) | At every corpus site where a two-gate deletion could have given an 87, the replacement it needs does not exist. | `exhaustive` |
+| [13](#13-move-class-walls) | No 87 across four move classes, including remove-two-add-one over 33,010 circuits. | `exhaustive` |
+| [14](#14-merged-block-15) | Under our block decomposition, the merged top block costs exactly 15 gates, so merging saves nothing. | `exhaustive` |
+| [15](#15-last-door-13) | The one remaining undecided sub-block costs 13, not the 12 that would have priced its class at 87. | `exhaustive` |
+| [16](#16-menu-price-87) | Pricing over 1.41e26 ways of budgeting shared sub-expressions never returns less than 87. | `exhaustive` |
+| [17](#17-rc2-floors) | 749,150 exact optimisation runs over restricted alphabets; the best floor anywhere is 88. | `exhaustive` |
+| [18](#18-block-cells-optimal) | All 82 dimension-8 block cells are proved exactly optimal. | `exhaustive` |
+| [19](#19-fanout-8-unreachable) | A gate feeding eight later gates is unreachable by any build order of the record 88s. | `exhaustive` |
+| [20](#20-vocabulary-not-forced) | Only 1,778 distinct values appear across 1,925,065 verified 88s - and yet a verified 89 uses values outside them. | `exhaustive` |
+| [21](#21-route-closed-linear-invariant) | A lower-bound route based on a linear invariant is capped at about 53. | `theorem` |
+| [22](#22-proof-family-ceilings) | Nine lower-bound proof families have exact computed ceilings, all below 88. | `theorem` |
+| [23](#23-certificate-lp-capped) | The certificate-LP family that gave the 56 bound cannot pass 91.41 for this matrix. | `theorem` |
+| [24](#24-own-audit-repriced-negatives) | This project's own audit found most of these negatives near information-free about whether an 87 exists. | `searched` |
+| [25](#25-depth-not-reschedulable) | An 88 you already have cannot be made shallower by rescheduling it. | `exhaustive` |
+
 ## The rows in full
 
 ### 1. lb-56

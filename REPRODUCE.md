@@ -13,7 +13,7 @@ run on 2026-09-01, or — for Tier R — from the re-runs of 2026-09-02.
 |---|---|---|
 | **[A](#tier-a--seconds)** | seconds | the oracle, the tripwire, the three bound checkers, the corpus certificates over the shipped sample. Python 3 standard library only. **Start here.** |
 | **[B](#tier-b--minutes)** | minutes | the SAT ladder at k = 9, 10, 11 with its positive control and DRAT emission; the Python-vs-C agreement control; the self-contained `>= 56` exhaustion; the bound-machinery validation suite. Needs a C compiler and, for the SAT rows, `python-sat`. |
-| **[R](#tier-r--the-records-rebuilt)** | seconds to hours | **the records, rebuilt** — *produced again* by the fastest route the project has for each, rather than verified from a file. Seven of the nine verified circuits have a command; two do not, and the table says why for each. **"From nothing" is a per-row property of the tier rather than a blanket one**: the 97 @ 3, the 91 @ 4, the 88 @ 5, the 88 @ 6 and the 88-at-any-depth rows read no circuit at all; the 89 @ 5 and 92 @ 4 rows start from a shipped seed circuit and reproduce a *depth reduction*. Each row says which it is. Python 3 standard library only, with one exception: the 91 @ 4 construction needs `numpy` and `python-sat`. |
+| **[R](#tier-r--the-records-rebuilt)** | seconds to hours | **the records, rebuilt** — *produced again* by the fastest route the project has for each, rather than verified from a file. Seven of the nine verified circuits have a command; two do not, and the table says why for each. **"From nothing" is true row by row, not of the whole tier**: the 97 @ 3, the 91 @ 4, the 88 @ 5, the 88 @ 6 and the 88-at-any-depth rows read no circuit at all; the 89 @ 5 and 92 @ 4 rows start from a shipped seed circuit and reproduce a *depth reduction*. Each row says which it is. Python 3 standard library only, with one exception: the 91 @ 4 construction needs `numpy` and `python-sat`. |
 | **[C](#tier-c--documented-not-re-run)** | hours to core-weeks | banked. k = 12/13/14, the `>= 81` solver run, the full-corpus deletion run, the prune-free exhaustion, the radius sweeps. Each row names its cost, its artifact, and why re-running it here would add nothing. |
 
 ## Coverage
@@ -30,42 +30,36 @@ Every row of the README's evidence ladder, and where it is checked:
 | no 87 one deletion away from any known 88 | **A** (controls, sample, banked re-derivation) + **B8** (Python/C agreement) + **C5** (the full run) |
 | no 87 within <= 4 gates of a known 88 | **C7** — and read the calibration caveat with it |
 | ~200 relaxations price back to 88 | **C8** |
-| the vocabulary is not forced | **A** (the 89, its 6 out-of-vocabulary masks, the negative control) |
+| the vocabulary is not forced | **A** (the 89, its 6 out-of-vocabulary values, the negative control) |
 | from-scratch reaches 93 | **A** (the circuit) + **C9** (the search) |
 | 88 is optimal | **believed** — no command exists, and none is claimed |
 
-If a command in Tier A or B does not produce the output stated next to it, that
-is a real failure and nothing in this repository should be believed until it is
-explained. Open an issue with your Python version and the full output.
+## Before you run anything
 
----
+**What you need.** Python 3 and its standard library, for all of Tier A and all
+but one row of Tier R. Tier B also needs a C compiler and, for the SAT rows,
+`python-sat`. The one exception in Tier R is the 91 @ 4 construction, which
+needs `numpy` and `python-sat`. Nothing here needs the network: no downloads,
+no solver service, no account.
 
-Tier A's record row checks that the shipped circuits *are* what they claim.
-Tier R is the different and larger claim: that the machinery which produces them
-runs, on one core, and gets there again. Read each Tier R row's starting point
-before quoting it — four rows start from an integer and nothing else, two start
-from a shipped seed circuit, and the difference is exactly what "from scratch"
-does and does not mean here.
+**Everything runs in this repository, with one exception.** Tiers A, B, R and C
+all run here — all nine verified circuits ship under `evidence/circuits/`. The
+companion repository
+[`aes-mixcolumns-xor-circuits`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)
+is where the circuits are *published*, with their own metadata and prior-art
+audit; the only row on this page that needs it is **[B11](#tier-b--minutes)**
+and its `verify_all.py`, and that row says so.
 
 **Environment for the measured times.** Linux, Python 3.12, one core,
 `nice -n 19`, on a 20-core machine carrying an unrelated load throughout. Wall
 times move with that load — two runs of the same command in Tier B differ by
-10 %. Read them as orders of magnitude and as evidence that the shipped files
-return the banked verdicts; they are not a benchmark. Where a pack measured the same
-command twice, both numbers are given.
+10 %. Read them as orders of magnitude, and as evidence that the shipped files
+return the banked verdicts; they are not a benchmark. Where a pack measured the
+same command twice, both numbers are given.
 
-**Nothing here needs the network.** No downloads, no solver service, no
-account. `python-sat` (Tier B, SAT rows only) and a C compiler (Tier B) are the
-only things that are not already in a stock Python 3.
-
-**One repository, with one exception.** Everything in Tiers A, B, R and C runs
-inside *this* repository — all nine verified circuits ship here under
-`evidence/circuits/`. The companion repository
-[`aes-mixcolumns-xor-circuits`](https://github.com/Joe-b-20/aes-mixcolumns-xor-circuits)
-is where the circuits are *published* (with their own metadata and prior-art
-audit); the only row on this page that needs it is **[B11](#tier-b--minutes)**,
-its `verify_all.py`, and that row says so. You do not need it to check anything
-else here, and you do not need the network to check anything here.
+**If a command in Tier A or B does not produce the output stated next to it**,
+that is a real failure, and nothing in this repository should be believed until
+it is explained. Open an issue with your Python version and the full output.
 
 ---
 
@@ -261,13 +255,13 @@ The sample the certificate ran over, re-checked from nothing but this pack:
 | measured | **0.05 s** (0.02 s here) |
 | | |
 | command | `cd corpus/vocabulary && python3 tools/oov_check.py vocab.json S89_out_of_vocabulary_89gates.json` |
-| expected | `OUT of the vocabulary: 6` / `VERDICT: OUT OF VOCABULARY.` — six masks occurring in none of 107,803,640 gate slots across 1,925,065 circuits |
+| expected | `OUT of the vocabulary: 6` / `VERDICT: OUT OF VOCABULARY.` — six values occurring in none of 107,803,640 gate slots across 1,925,065 circuits |
 | measured | **0.05 s** |
 | | |
 | control | `cd corpus/vocabulary && python3 tools/oov_check.py vocab.json ../tripwire_demo/circuits/mixcolumns_88gates_depth5.json` |
 | expected | `IN  the vocabulary  : 56` / `OUT of the vocabulary: 0` / `VERDICT: entirely inside the corpus vocabulary.` |
 | measured | **0.05 s** |
-| **exit code, read this before scripting** | `oov_check.py` exits **0 when it finds an out-of-vocabulary mask** and **1 when it finds none** — the exit code reports *the finding*, not success. So the row above exits 0 and this passing control exits **1**. Script it on the printed `VERDICT:` line rather than on `$?`. |
+| **exit code, read this before scripting** | `oov_check.py` exits **0 when it finds an out-of-vocabulary value** and **1 when it finds none** — the exit code reports *the finding*, not success. So the row above exits 0 and this passing control exits **1**. Script it on the printed `VERDICT:` line rather than on `$?`. |
 | historical | the re-census the vocabulary came from: 1,925,065 rows, 107,803,640 gate slots (banked in `recensus_stats.json`) |
 
 ### Ladder row 10 — *a from-scratch attempt reaches 93* (**measurement**)
@@ -417,8 +411,9 @@ Everything above except the DRAT step is what `sh run_all.sh` does in one go.
 It never starts k = 12, 13 or 14.
 
 <a id="b8"></a>
-**B8. Deletion certificate — Python vs C agreement** (ladder row 6). A ~300×
-port is worth nothing unless it is diffed against what it ports.
+**B8. Deletion certificate — Python vs C agreement** (ladder row 6). A port
+that runs ~300× faster is worth nothing unless it is compared against the code
+it ports.
 
 | | |
 |---|---|
@@ -486,6 +481,13 @@ This one runs in the **records repository** rather than here.
 
 ## Tier R — the records, rebuilt
 
+Tier A's record row checks that the shipped circuits *are* what they claim.
+Tier R is the different and larger claim: that the machinery which produces them
+runs, on one core, and reaches the same records again. Read each row's starting
+point before quoting it — four rows start from an integer and nothing else, two
+start from a shipped seed circuit, and that difference is exactly what "from
+scratch" does and does not mean here.
+
 The asset this project has that a circuit file does not carry: **the machinery
 that produces the records**, packaged so it can be run again from nothing. Each
 row offers the fastest route the project has to its circuit, which is usually,
@@ -508,7 +510,7 @@ archived run instead. Every row here was run; no command here is aspirational.
 |---|---|---|
 | **97 @ 3** — *frontier*, from scratch | `cd reproduce && python3 reproduce.py` | **57.4 s and 51.8 s** in two runs, measured 2026-09-02 (RNG seed 6, its first seed, both times); 81 s on 2026-07-27; 60–156 s across earlier runs |
 | **91 @ 4** — *frontier*, from scratch | `cd reproduce && python3 construct_91at4.py` — an exact **construction** rather than a search: it prices the ladder model, solves its eight sector blocks exactly under the depth cap and emits a circuit. **Needs `numpy` and `python-sat`**; every other command in this tier is stdlib-only, and this row is the reason the tier is not | **3.9 s** measured 2026-09-03, one core, empty solve cache — the fastest reproduction of any record here, and deterministic: two runs emitted byte-identical gate lists. The historical search that found the *shipped* circuit cost **54.4 min** of one core from its from-scratch root `naive#40426`, inside a ~74 process-hour run |
-| **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** against the archived 3 072 s, and **did not reach 88 within 164 min** — the last gate is a single lucky walk chunk. Read the archived 64 min as one sample and not a promise; `reproduce/README.md` has both runs in full |
+| **88 @ 5** — *frontier*, from scratch | `cd reproduce && python3 hunt_88at5.py` | archived: **64 min** of one core from its root `naive#1958`, then 6.1 s to depth 5 via the Pareto tie-break. Two re-runs 2026-09-02 reproduced the descent to **89 gates in 558 s** against the archived 3 072 s, and **did not reach 88 within 164 min** — the last gate came from a single lucky walk chunk. Read the archived 64 min as one sample and not a promise; `reproduce/README.md` has both runs in full |
 | **88 @ 6**, from scratch | `cd reproduce && python3 hunt_88at5.py --rng 2163 --target-depth 6` | archived: **37 min** of one core from its root `naive#2163`. Same script and same archived worker as the row above; not re-measured on 2026-09-02 |
 | **an 88 at any depth, from scratch** — the cheapest route to 88 gates from nothing, and a *route* rather than a shipped circuit | `cd reproduce && python3 hunt_88at5.py --rng 2050 --target-depth 0` | archived: **9.7 min** of one core from its root `naive#2050` (142 gates @ depth 3) to a verified **88 @ depth 8** — the fastest descent to 88 anywhere in the producing worker's log, and 3.8× faster than the 88 @ 6's root. **One measured run of a stochastic search**, and the only one: not re-measured on 2026-09-02. The circuit it produced was superseded within the same run and never archived, so what this row reproduces is the claim *an 88 from scratch* rather than an artifact you can diff. Same script and archived worker as the two rows above, a different root integer |
 | **88 @ 7**, matching the published count with an independent circuit | `cd reproduce && python3 hunt_88.py` | **19.4 min** measured 2026-07-27 under the shipped stop rule; archived 32.9 min |
@@ -521,8 +523,8 @@ archived run instead. Every row here was run; no command here is aspirational.
 times are what a run took; they are not what a run will take, and a re-run can be faster,
 much slower, or miss inside its budget. The two `hunt_*` scripts start from the
 record run's own root and RNG, so each reproduces its first chunk exactly — but
-chunk boundaries are wall-clock, so a machine of a different speed parts company
-with the archived trajectory from the second chunk on, and what comes back is
+chunk boundaries are wall-clock, so a machine of a different speed leaves the
+archived trajectory from the second chunk on, and what comes back is
 another point in the same basin rather than the record circuit. What a re-run
 establishes is narrower and still worth having: the shipped engine, seed and
 knobs are the ones that produced the record, and they run. The 91 @ 4 is the
@@ -558,7 +560,7 @@ filed in [`leads.md`](leads.md).
 ## Tier C — documented, not re-run
 
 Every row here was paid for once. Each names what it cost, where the evidence
-sits, and why re-running it inside a session would add nothing.
+is, and why re-running it inside a session would add nothing.
 
 <a id="c1"></a>
 ### C1–C3. The expensive end of the SAT ladder — ladder row 5
@@ -608,17 +610,17 @@ that the certified 47.597998 is the root relaxation.
 
 | stage | cost |
 |---|---|
-| producer — streaming 1,575,516 distinct mask sets out of ~40 GB of raw run output into `masks.bin` (554 MB) and `canon.tsv` (158 MB) | **1,457.9 s = 24.3 min** |
+| producer — streaming 1,575,516 distinct value sets out of ~40 GB of raw run output into `masks.bin` (554 MB) and `canon.tsv` (158 MB) | **1,457.9 s = 24.3 min** |
 | certificate — **88,228,896 deletions**, two shards | **612.9 s CPU = 10.2 min** |
 | throughput | **2,571 sets/s** per `nice -n 19` thread |
 
 **Banked result** (`corpus/deletion_certificate/banked/RESULT.json`): 1,575,516
-mask sets, 100.00 % of the index, 88,228,896 deletions tested, 35,323,820 pass
+value sets, 100.00 % of the index, 88,228,896 deletions tested, 35,323,820 pass
 the local filter, **0 realisable**, 0 firings, 0 gaps, 0 overlaps, 56.000000
 deletions per set.
 
-**Why not re-run.** The 554 MB mask file and the ~40 GB of source banks it was
-streamed from do not ship; `INVENTORY.md` gives their sizes. What does
+**Why not re-run.** The 554 MB `masks.bin` file and the ~40 GB of source banks
+it was streamed from do not ship; `INVENTORY.md` gives their sizes. What does
 ship is better than a re-run of the same numbers: the 520-set sample the same
 binary processes unchanged, the positive and negative controls, and
 `tools/aggregate.py`, which re-derives every headline figure from the banked
@@ -644,7 +646,7 @@ template, so the full-scale run is reproducible by anyone holding the sources.
 
 | radius | scale | strength |
 |---|---|---|
-| remove-2-add-1 | 139,878 of 139,878 mask sets × 1,540 windows = **215,412,120 exact window decisions**, in three disjoint ledgers | exhaustive |
+| remove-2-add-1 | 139,878 of 139,878 value sets × 1,540 windows = **215,412,120 exact window decisions**, in three disjoint ledgers | exhaustive |
 | remove-3-add-2 | 200 circuits × 27,720 triples, every one decided | exhaustive |
 | remove-4 | 56,489 / 39,034 / 34,599 windows of 367,290 on three circuits — **15.4 %, 10.6 %, 9.4 %** | searched, coverage stated |
 | one operand edit of any one-gate truncation | 6,832,408 genomes over 529 base circuits | exhaustive |
@@ -669,7 +671,7 @@ rather than about optimality.
 | menu pricing over every way of budgeting shared sub-expressions | **1.41e26** configurations, never below 87; 9 of 10 component bounds exactly tight |
 | exact optimisation over restricted alphabets | **749,150** runs returned OPTIMAL, 125 timeouts; best floor anywhere = 88 |
 | dimension-8 block cells proved exactly optimal | **82 of 82**, each with a positive control that fires |
-| the fan-out-8 freedom | 39 mask sets, all exact, 0 timeouts |
+| the fan-out-8 freedom | 39 value sets, all exact, 0 timeouts |
 
 Artifact: `NEGATIVES.md` rows 14–19, `negatives.jsonl`. **Why not re-run:**
 campaign-scale solver time over blocks and populations that do not ship.

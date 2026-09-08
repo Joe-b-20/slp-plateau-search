@@ -14,20 +14,20 @@ measured, and the exact command. One screen; the HOW docs carry the detail.
 | bound validation | runs the same bound machinery on small matrices with independently proved optima, including one instance designed to make it overclaim | [`bounds/validation/`](bounds/validation/) | [`bounds/validation/HOW.md`](bounds/validation/HOW.md) |
 | SAT encoding | asks a solver whether a `k`-gate program exists for one subproblem, with a normal form, a cube partition and a positive control | [`encodings/`](encodings/) | [`encodings/HOW.md`](encodings/HOW.md) |
 | deletion certificate | tests every single-gate deletion of every known 88-gate circuit for realisability with the wiring re-planned freely | [`corpus/deletion_certificate/`](corpus/deletion_certificate/) | [`corpus/deletion_certificate/HOW.md`](corpus/deletion_certificate/HOW.md) |
-| tripwire | replays any circuit and reports a dead gate, a duplicate value, or a middle-gate count that proves one of them exists | [`tools/tripwire.py`](tools/tripwire.py) | [`tools/HOW.md`](tools/HOW.md) |
-| overlap statistic | counts the intermediate values two circuits share — the same-family / independence measure | [`scripts/overlap.py`](scripts/overlap.py) | [`scripts/HOW.md`](scripts/HOW.md) |
+| tripwire | replays any circuit and reports a dead gate, a duplicate value, or a working-gate count `B` that proves one of them exists | [`tools/tripwire.py`](tools/tripwire.py) | [`tools/HOW.md`](tools/HOW.md) |
+| overlap statistic | counts the values two circuits share — the same-family / independence measure | [`scripts/overlap.py`](scripts/overlap.py) | [`scripts/HOW.md`](scripts/HOW.md) |
 | corpus sample | the deterministic, stratified 520-record draw the shipped certificates run over, plus its checker | [`corpus/sample/`](corpus/sample/) | [`corpus/sample/HOW.md`](corpus/sample/HOW.md) |
 | depth check | computes the shallowest depth a circuit's value set admits and compares it with the circuit's own depth | [`corpus/depth_forced/`](corpus/depth_forced/) | [`corpus/depth_forced/HOW.md`](corpus/depth_forced/HOW.md) |
 
-Two more runnable pieces are single files documented where they are used rather
-than by a HOW doc of their own: `verify_circuit.py` at the root — the oracle,
-which rebuilds MixColumns from FIPS-197 and computes depth rather than trusting
-it — and the per-section checkers in `corpus/` (records, vocabulary,
-calibration), each with a `RUN.md` giving its command and real output.
+Two more runnable pieces have no HOW doc of their own and are documented where
+they are used: `verify_circuit.py` at the root — the oracle, which rebuilds
+MixColumns from FIPS-197 and computes depth rather than trusting it — and the
+per-section checkers in `corpus/` (records, vocabulary, calibration), each with
+a `RUN.md` giving its command and real output.
 
-What to run first, if you want one thing: `python3 tools/tripwire.py YOURCIRCUIT.json`
-on any 88-gate MixColumns circuit from any source. Seconds, and a fire would be
-an 87.
+What to run first, if you run one thing: `python3 tools/tripwire.py YOURCIRCUIT.json`
+on any 88-gate MixColumns circuit from any source. It takes seconds, and a
+fired tripwire on an 88 is an 87.
 
 <a id="provenance-classes"></a>
 ## Provenance classes
