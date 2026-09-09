@@ -35,7 +35,7 @@ Every claim this project makes, each in exactly one row:
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
 | cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
 | the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — each rebuilds from scratch with one command (`reproduce/`); the 88 @ 5 search is randomized and its recorded re-runs missed, see `REPRODUCE.md` Tier R |
-| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice and an 87 with a different structure is not excluded — see [The block-structure theorem](#the-block-structure-theorem) |
+| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded — see [The block-structure theorem](#the-block-structure-theorem) |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct verified 88-gate value sets (28,796 of them also carry a full build order), 0 realisable |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
 | no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive at that radius**; weak evidence beyond it — see calibration |
@@ -115,20 +115,34 @@ The encoding's positive control produces and verifies a real circuit at a
 satisfiable setting — proof it can say yes.
 
 **The scope, in full.** The block decomposition this argument is stated over
-was chosen, not measured. Whether every known 88-gate circuit respects it was
-not verified, and the companion records repository ships a verified 91-gate
-depth-6 circuit, `mixcolumns_91gates_depth6`, whose gate 70 has line support
-`{2, 3, 4, 7}` — inside the merged block, but inside neither W3 `{2, 3, 7}` nor
-U4 `{3, 4, 7}` on its own. Real circuits do put values across these boundaries,
-so the decomposition is a reading imposed on the circuits rather than a
-property read off them. That is a live defect, recorded in `DEFINITIONS.md`,
-`encodings/STATEMENT.md` §7.2 and `leads.md` #2, and it is why the theorem is
-quoted with "under our block decomposition" everywhere it appears.
+was chosen, not measured off the circuits. It has now been measured:
 
-The consequence, with that scope carried: an 87, if it exists, is built
-differently from every 88 anyone has found *as this decomposition reads them*.
-That says where an 87 cannot be, and says nothing about whether one exists
-elsewhere. Encodings, instances, DRAT proofs for the cheap levels, the banked
+| known 88-gate circuits | respect the decomposition |
+|---|---|
+| the five published 88s | **5 / 5**, zero violating gates |
+| the 28,796 corpus 88s with a build order on disk | **23,456 = 81.5 %** |
+
+The test can fail, and does: it flags gate 70 of the companion records
+repository's verified `mixcolumns_91gates_depth6`, line support `{2, 3, 4, 7}`
+— inside the merged block, but inside neither W3 `{2, 3, 7}` nor U4
+`{3, 4, 7}` on its own. The 18.5 % that do not respect it almost all carry one
+value spanning lines 0 and 2, which no block of this decomposition holds
+together. A decomposition that does hold them together is respected by 99.2 %,
+but the block that holds them has dimension 16, beyond exact pricing; and at
+the same price (88) and the same maximum block size, a different decomposition
+respects 2,540 more circuits, so ours is not the best even by its own criteria. Measurement to be published
+with the toolkit.
+
+The consequence is unchanged in substance and now quantified: the theorem covers
+the 81.5 % class and the five published 88s, and an 87 outside that class is not
+excluded. The block prices still sum to an *upper* bound on the class rather
+than a lower bound on circuits — reading them downwards would need each block
+priced against every value whose support lies inside it at any level, because a
+respecting circuit may build its operands in any order, and what is priced here
+is the smaller supply that one build order realises. The same scope is recorded
+in `DEFINITIONS.md`, `encodings/STATEMENT.md` §7.2 and `leads.md` #2, and it is
+why the theorem is quoted with "under our block decomposition" everywhere it
+appears. Encodings, instances, DRAT proofs for the cheap levels, the banked
 k = 14 logs, and the control are in `encodings/`.
 
 ## A hypothesis that died

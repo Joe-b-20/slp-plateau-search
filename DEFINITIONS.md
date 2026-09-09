@@ -208,12 +208,16 @@ of the circuit: change the partition and you change the block structure.
 Statements of the form "no 87 shares the block structure of the known 88s" are
 therefore conditional on the decomposition, which is why every one of them in
 these repositories is scoped *under our block decomposition* and names it. The
-decomposition this project's block reasoning uses is a choice; whether every
-known 88 respects it was not verified, and the companion records repository
-ships a verified 91-gate depth-6 circuit whose gate 70 has line support
-`{2, 3, 4, 7}` and so fits no single block of it. That is a known open defect.
-The decisive level of the theorem stated over this decomposition also carries no
-DRAT proof.
+decomposition this project's block reasoning uses is a choice, and which
+circuits respect it has been measured: 5 of the 5 published 88s, and 23,456 of
+the 28,796 corpus 88s with a build order on disk — 81.5 %. The check can fail,
+and does: the companion records repository ships a verified 91-gate depth-6
+circuit whose gate 70 has line support `{2, 3, 4, 7}` and so fits no single
+block of it. The 18.5 % that violate almost all carry one value spanning lines 0
+and 2, which no block holds together. So a block-structure statement covers that
+81.5 % class and the five published 88s, and says nothing outside it.
+Measurement to be published with the toolkit. The decisive level of the theorem
+stated over this decomposition also carries no DRAT proof.
 
 ---
 

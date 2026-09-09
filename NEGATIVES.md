@@ -289,7 +289,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Strength.** **exhaustive** - every case in a stated finite population was decided
 
-**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell. The decomposition is a choice of ours; whether every known 88 respects it was not verified, and there is no DRAT proof at k = 14 - the level rests on two complete solvers agreeing on one CNF.
+**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell. The decomposition is a choice of ours, and the class it names has been measured: 5 of the 5 published 88s respect it, and 23,456 of the 28,796 corpus 88s with a build order on disk - 81.5 %. There is no DRAT proof at k = 14 - the level rests on two complete solvers agreeing on one CNF.
 
 **Cost.** 356,321 core-seconds (about 99 core-hours) for the last size alone, kissat 4.0.4, one monolithic solve; about 30 hours of solver time for the ladder below it.
 
@@ -304,7 +304,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Artifact (shipped).** `encodings/cnf/k14_joint_W3U4.cnf`, `encodings/STATEMENT.md`, `encodings/logs/BANKED_LOGS.md`, `encodings/logs/mono_14_kissat404.log`, `encodings/logs/mono_14_cadical300.log`, `encodings/positive_control/mixcolumns_88gates_depth7.json`
 
-**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched. The decomposition all of this reasoning lives inside was chosen rather than measured off the circuits, whether every known 88 respects it was not verified, and the companion records repository ships a verified 91-gate depth-6 circuit whose gate 70 (line support {2,3,4,7}) fits no single block of it. There is no DRAT proof at k = 14. Partial cube-coverage fractions from this lane must not be quoted.
+**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched, and that is 18.5 % of the corpus 88s. The check can fail, and does: the companion records repository ships a verified 91-gate depth-6 circuit whose gate 70 (line support {2,3,4,7}) fits no single block of it. The violating circuits almost all carry one value spanning lines 0 and 2, which no block holds together; a decomposition that does hold them together is respected by 99.2 % but needs a block of dimension 16, beyond exact pricing, and at the same price (88) and the same maximum block size a different decomposition respects 2,540 more circuits. The block prices sum to an upper bound on the class, never a lower bound on circuits: reading them downwards would need each block priced against every value whose support lies inside it at any level, since a respecting circuit may build its operands in any order, and what is priced is the smaller supply one build order realises. Measurement to be published with the toolkit. There is no DRAT proof at k = 14. Partial cube-coverage fractions from this lane must not be quoted.
 
 ### 15. last-door-13
 

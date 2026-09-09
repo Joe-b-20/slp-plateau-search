@@ -22,10 +22,17 @@ I kept it for one reason: it is where the problem stays decidable. Every
 time I tried to widen a block toward the whole 32-bit problem, the solver
 stopped terminating. The decomposition is the largest piece of structure I
 could afford to ask exact questions about. That is also its weakness, and
-the README says so: whether every known 88-gate circuit respects this
-decomposition was never verified, and a 91-gate circuit in the circuits
-repository has a gate that sits across two blocks. So the theorem excludes
-an 87 that is built the way I read the 88s, and nothing more.
+the README says so. I have since measured it rather than left it as a
+choice: every one of the five published 88s respects it, and 81.5 % of the
+corpus 88s I have build orders for. The check can fail — it flags a gate of
+the 91-gate circuit in the circuits repository, which sits across two
+blocks. The circuits that violate almost all put one value across lines 0
+and 2, which none of my blocks holds together, and a decomposition that does
+hold them together is respected by 99.2 % but has a block too wide to price.
+I also found that a different decomposition at the same price and the same
+block size respects 2,540 more circuits than mine, so mine is not the best
+even by the criteria I chose it under. The theorem excludes an 87 built the
+way that 81.5 % is built, and nothing more.
 
 One thing I got from this that I did not expect: the search is best run over
 choices, not over circuits. Because the solver returns the optimum of a whole

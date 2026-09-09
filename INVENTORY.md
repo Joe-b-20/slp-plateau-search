@@ -34,7 +34,7 @@ Named data files a reader may want to pin:
 db7e7a5922b49045461fb5bde81b77d07050ad417f833503383648735c221b74  corpus/sample/corpus88_sample.jsonl   640,943 B
 3f20018a4a20cf9215a85ded36182d4f0a69b644287b83e0a592dd22cab424b7  corpus/sample/corpus88_sample.bin     183,040 B
 169a1ee5283d1462265b6341099af24646155c3699cf43bbcd1dc36f29144a1b  corpus/vocabulary/vocab.json          18,937 B
-a6171f30c1b02fe98dc30cd142e2b4d57566a135a1844d5e6911dbf63334b833  negatives.jsonl                       25 rows (7 shipped, 18 not)
+0a8a61bc11a039f7ad39fa150f96b8ca5abc26eab1751b633943f1423b053d5b  negatives.jsonl                       25 rows (7 shipped, 18 not)
 ```
 
 The six SAT ladder CNFs (k = 9…14) ship in full — 19 MB, 2.0 to 4.3 MB each —

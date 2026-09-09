@@ -26,7 +26,7 @@ Every row of the README's evidence ladder, and where it is checked:
 | any depth-3 circuit needs >= 80, certified (>= 81 from a solver run) | **A** (certified 80 + three controls) + **C4** (the step to 81, a solver run) |
 | cancellation-free >= 92, best known 102 | **A** (both derivations, the witness, the negative control) |
 | the records 97/91/88 | **A** (oracle + depth tightness) + **B11** (all 13, adversarial suite) + **[R](#tier-r--the-records-rebuilt)** (produced again from nothing, by the fastest route the project has for each: 7 of 9 circuits have a command, 2 do not and say why) |
-| under our block decomposition, no 87 shares the block structure of the known 88s | **B1–B7** (k = 9,10,11 + positive control + DRAT) + **C1–C3** (k = 12,13,14) |
+| under our block decomposition, no 87 shares the block structure of the known 88s | **B1–B7** (k = 9,10,11 + positive control + DRAT) + **C1–C3** (k = 12,13,14). The decomposition itself is measured, not assumed: 5/5 published 88s and 81.5 % of the corpus respect it — measurement to be published with the toolkit, not re-runnable here |
 | no 87 one deletion away from any known 88 | **A** (controls, sample, banked re-derivation) + **B8** (Python/C agreement) + **C5** (the full run) |
 | no 87 within <= 4 gates of a known 88 | **C7** — and read the calibration caveat with it |
 | ~200 relaxations price back to 88 | **C8** |
@@ -576,9 +576,12 @@ a DRAT proof**, so the decisive level of this theorem rests on complete solvers
 being correct rather than on a checked certificate. That is the boundary of this
 repository's evidence, and it is why the cheap levels ship proofs and why the
 positive control in [B4](#b4) exists. The theorem it decides is scoped
-throughout to our own block decomposition, which was chosen rather than measured
-off the circuits — `README.md` and `encodings/STATEMENT.md` §7 carry the full
-statement.
+throughout to our own block decomposition. That decomposition was chosen rather
+than read off the circuits, but which circuits respect it has since been
+measured: 5 of the 5 published 88s, and 81.5 % of the 28,796 corpus 88s with a
+build order on disk. The theorem covers that class and no more; the measurement
+is to be published with the toolkit and is not re-runnable here. `README.md`
+and `encodings/STATEMENT.md` §7 carry the full statement.
 
 Hand `encodings/cnf/k14_joint_W3U4.cnf` to any SAT solver you trust. SAT there
 would mean an 87-gate MixColumns circuit exists in that block class.
