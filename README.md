@@ -35,7 +35,7 @@ Every claim this project makes, each in exactly one row:
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
 | cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
 | the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — each rebuilds from scratch with one command (`reproduce/`); the 88 @ 5 search is randomized and its recorded re-runs missed, see `REPRODUCE.md` Tier R |
-| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded — see [The block-structure theorem](#the-block-structure-theorem) |
+| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded; a decomposition found by search reaches 90.75 % at the same price — see [The block-structure theorem](#the-block-structure-theorem) |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct verified 88-gate value sets (28,796 of them also carry a full build order), 0 realisable |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
 | no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive at that radius**; weak evidence beyond it — see calibration |
@@ -127,10 +127,19 @@ repository's verified `mixcolumns_91gates_depth6`, line support `{2, 3, 4, 7}`
 — inside the merged block, but inside neither W3 `{2, 3, 7}` nor U4
 `{3, 4, 7}` on its own. The 18.5 % that do not respect it almost all carry one
 value spanning lines 0 and 2, which no block of this decomposition holds
-together. A decomposition that does hold them together is respected by 99.2 %,
-but the block that holds them has dimension 16, beyond exact pricing; and at
-the same price (88) and the same maximum block size, a different decomposition
-respects 2,540 more circuits, so ours is not the best even by its own criteria. Measurement to be published
+together. Ours is also not the best that can be priced exactly. A search over
+decompositions found a better one automatically:
+
+| decomposition | respected by | priced exactly |
+|---|---|---|
+| ours | **81.5 %** | yes, total 88 |
+| the one the search found | **90.75 %** = 26,132 | yes, total 88 |
+| one that holds lines 0 and 2 together | **99.2 %** | no — one block of dimension 16 |
+| the ceiling over decompositions that can be priced exactly | **91.1 %** | — |
+
+The one the search found holds 2,676 more circuits than ours, and every one of
+its blocks pays for the values it holds — none of them absorbs circuits for
+free. Measurement to be published
 with the toolkit.
 
 The consequence is unchanged in substance and now quantified: the theorem covers
@@ -139,7 +148,8 @@ excluded. The block prices still sum to an *upper* bound on the class rather
 than a lower bound on circuits — reading them downwards would need each block
 priced against every value whose support lies inside it at any level, because a
 respecting circuit may build its operands in any order, and what is priced here
-is the smaller supply that one build order realises. The same scope is recorded
+is the smaller supply that one build order realises. Turning the sum into a
+lower bound is the open step. The same scope is recorded
 in `DEFINITIONS.md`, `encodings/STATEMENT.md` §7.2 and `leads.md` #2, and it is
 why the theorem is quoted with "under our block decomposition" everywhere it
 appears. Encodings, instances, DRAT proofs for the cheap levels, the banked

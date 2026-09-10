@@ -295,10 +295,13 @@ Read this before quoting the theorem.
    18.5 % that do not respect it almost all carry one value spanning lines 0
    and 2, which no block of this decomposition holds together. A decomposition
    that does hold them together is respected by 99.2 %, but the block that holds
-   them has dimension 16, beyond exact pricing; and at the same price (88) and
-   the same maximum block size a different decomposition respects 2,540 more
-   circuits. So the theorem's scope is that 81.5 % class plus the five
-   published 88s. Measurement to be published
+   them has dimension 16, still beyond exact pricing. Ours is also not the best that can
+   be priced: a search over decompositions found one automatically that is
+   respected by **26,132 of the 28,796 — 90.75 %, 2,676 more than ours** — at
+   the same total price of 88, with every block priced exactly and every block
+   paying for the values it holds. The ceiling over decompositions all of whose
+   blocks can be priced exactly is **91.1 %**. So the theorem's scope is that
+   81.5 % class plus the five published 88s. Measurement to be published
    with the toolkit; this pack does not carry it.
 3. **It closes one class rather than the problem.** The statement it supports
    is: *no 87 exists whose W3 and U4 blocks are built jointly in ≤ 14 gates.*

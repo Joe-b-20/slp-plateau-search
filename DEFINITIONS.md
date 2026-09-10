@@ -214,8 +214,15 @@ the 28,796 corpus 88s with a build order on disk — 81.5 %. The check can fail,
 and does: the companion records repository ships a verified 91-gate depth-6
 circuit whose gate 70 has line support `{2, 3, 4, 7}` and so fits no single
 block of it. The 18.5 % that violate almost all carry one value spanning lines 0
-and 2, which no block holds together. So a block-structure statement covers that
-81.5 % class and the five published 88s, and says nothing outside it.
+and 2, which no block holds together; a decomposition that does hold them
+together is respected by 99.2 % but has a block of dimension 16, beyond exact
+pricing.
+Ours is also not the best that can be priced: a search over decompositions found
+one automatically that is respected by 26,132 of the 28,796 — 90.75 %, 2,676
+more than ours — at the same total price of 88, with every block priced exactly
+and every block paying for the values it holds; 91.1 % is the ceiling over
+decompositions that can be priced exactly. So a block-structure statement covers
+that 81.5 % class and the five published 88s, and says nothing outside it.
 Measurement to be published with the toolkit. The decisive level of the theorem
 stated over this decomposition also carries no DRAT proof.
 

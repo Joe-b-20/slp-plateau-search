@@ -29,9 +29,12 @@ the 91-gate circuit in the circuits repository, which sits across two
 blocks. The circuits that violate almost all put one value across lines 0
 and 2, which none of my blocks holds together, and a decomposition that does
 hold them together is respected by 99.2 % but has a block too wide to price.
-I also found that a different decomposition at the same price and the same
-block size respects 2,540 more circuits than mine, so mine is not the best
-even by the criteria I chose it under. The theorem excludes an 87 built the
+Then I stopped choosing decompositions by hand and searched over them. The
+search found one that is respected by 90.75 % of those circuits — 2,676 more
+than mine — at the same total price of 88, with every block still priced exactly
+and every block paying for what it holds; 91.1 % is as far as that can go while
+every block stays priceable. So mine is not the best even by the criteria I
+chose it under. The theorem excludes an 87 built the
 way that 81.5 % is built, and nothing more.
 
 One thing I got from this that I did not expect: the search is best run over
