@@ -59,7 +59,7 @@ field is in the section of the same number below.
 | # | result | strength |
 |---|---|---|
 | [1](#1-lb-56) | Every MixColumns circuit needs at least 56 gates. | `theorem` |
-| [2](#2-lb-92-cancellation-free) | Cancellation-free circuits need at least 92 gates; the best one known has 102. | `theorem` |
+| [2](#2-lb-96-cancellation-free) | Cancellation-free circuits need at least 96 gates; the best one known has 102. | `theorem` |
 | [3](#3-lb-80-depth3) | Circuits of depth 3 or less need at least 80 gates. | `theorem` |
 | [4](#4-tripwire-b-never-fired) | The working-gate count B is at most n - 32, and anything smaller yields a smaller circuit; on every 88 tested B was 56. | `theorem` |
 | [5](#5-no-87-one-deletion) | No 87 is one gate-deletion away from a known 88: 88,228,896 deletions, 0 realisable. | `exhaustive` |
@@ -100,19 +100,19 @@ field is in the section of the same number below.
 
 **What it does NOT imply.** It is 32 gates below the best circuit anyone has. The statement it supports is 56 <= L(M) <= 88, and the gap is 32 gates. Nothing in this repository narrows it.
 
-### 2. lb-92-cancellation-free
+### 2. lb-96-cancellation-free
 
-**Claim.** A circuit in which no gate's two inputs share a term - so no bit is ever computed and then cancelled - needs at least 92 gates. The best such circuit known has 102.
+**Claim.** A circuit in which no gate's two inputs share a term - so no bit is ever computed and then cancelled - needs at least 96 gates. The best such circuit known has 102. (Refereed 2026-09-26; supersedes the earlier certified 92, whose pack is kept as the published value.)
 
 **Strength.** **theorem** - proved, unconditional within its stated hypothesis
 
-**Scope.** Unconditional over cancellation-free straight-line programs for this matrix. Solver-free certificate.
+**Scope.** Unconditional over cancellation-free straight-line programs for this matrix. Solver-free split-price certificate (prices keyed by target, mask and split), two independent derivations, two independent checkers. The mask-only family that gave 92 is capped at 91.41 and the split family at 95.85, so neither can reach 97; an exact solver run reached a dual bound of 99 (a run, not a certificate).
 
 **Cost.** Solver-free.
 
-**Artifact (shipped).** `bounds/cf_gte92/STATEMENT.md`, `bounds/cf_gte92/cert_cf92.json`, `bounds/cf_gte92/cert_cf92_sharper.json`, `bounds/cf_gte92/cf_102gates_depth5.json`
+**Artifact (shipped).** `bounds/cf_gte96/STATEMENT.md`, `bounds/cf_gte96/cert_cf96_split.json`, `bounds/cf_gte96/cert_cf96_split_referee.json`, `bounds/cf_gte92/cf_102gates_depth5.json`
 
-**What it does NOT imply.** It bounds nothing about circuits that DO cancel, and every record circuit here cancels. It only reframes the question as 'how much does cancellation buy?' - the records answer 'at least 4'; an 87 would answer 'at least 5'. It is not a lower bound on L(M).
+**What it does NOT imply.** It bounds nothing about circuits that DO cancel, and every record circuit here cancels. It only reframes the question as 'how much does cancellation buy?' - the records answer 'at least 8'; an 87 would answer 'at least 9'. It is not a lower bound on L(M).
 
 ### 3. lb-80-depth3
 

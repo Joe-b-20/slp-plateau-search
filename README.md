@@ -33,7 +33,7 @@ Every claim this project makes, each in exactly one row:
 | any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
 | any depth-3 circuit needs ≥ 80 gates | **proved** — rational certificate, re-checks in under a second: `bounds/depth3_gte81/` |
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
-| cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
+| cancellation-free circuits need ≥ 96 (best known: 102) | **proved** — split-price certificate + two checkers, refereed; supersedes the earlier 92: `bounds/cf_gte96/` / verified circuit |
 | the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — each rebuilds from scratch with one command (`reproduce/`); the 88 @ 5 search is randomized and its recorded re-runs missed, see `REPRODUCE.md` Tier R |
 | **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded; a decomposition found by search reaches 90.75 % at the same price — see [The block-structure theorem](#the-block-structure-theorem) |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct verified 88-gate value sets (28,796 of them also carry a full build order), 0 realisable |
@@ -88,8 +88,12 @@ instances with known optima (`bounds/README.md`):
   documented run rather than a certificate; it improves with compute and was
   still rising when stopped. `bounds/depth3_gte81/STATEMENT.md` states both and
   says to cite them differently.
-- **≥ 92 cancellation-free** — derived twice independently; with the shipped
-  102-gate cancellation-free circuit: `92 ≤ optimum_cf ≤ 102`.
+- **≥ 96 cancellation-free** — a split-price certificate (prices keyed by target,
+  mask *and* split), derived twice independently and refereed shared-nothing; with
+  the shipped 102-gate cancellation-free circuit: `96 ≤ optimum_cf ≤ 102`. It
+  supersedes the mask-only 92 (`bounds/cf_gte92/`, kept as the published value).
+  The split family's own optimum is 95.85, so it cannot reach 97; an exact solver
+  run reached a dual bound of 99 (a run, not a certificate).
 
 ## The block-structure theorem
 

@@ -1,5 +1,11 @@
 # Cancellation-free circuits: `92 <= L_cf(M) <= 102`
 
+> **Superseded (2026-09-26).** [`../cf_gte96/`](../cf_gte96/STATEMENT.md) proves
+> `L_cf(M) >= 96` with a *split-price* certificate that contains this family as the
+> split-independent special case. This pack is kept because 92 is the published and
+> cited value, because the 102-gate witness lives here, and because the closed door
+> below (`B* = 91.409884` for mask-only prices) is still true as stated.
+
 ## The claim
 
 An XOR-SLP is **cancellation-free** when the two operand values of every gate

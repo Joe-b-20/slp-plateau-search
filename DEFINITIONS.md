@@ -183,10 +183,11 @@ does this — formally, if `popcount(mask(a) & mask(b)) == 0` at every gate.
 
 Cancellation-free circuits are the easy case: without cancellation the problem
 is a covering problem and admits a lower-bound argument. That argument gives
-**92** for MixColumns, and the best cancellation-free circuit known has 102.
-Every record circuit here cancels, so 92 is *not* a lower bound on the real
+**96** for MixColumns (a split-price certificate, `bounds/cf_gte96/`; the earlier
+mask-only certificate gave 92), and the best cancellation-free circuit known has
+102. Every record circuit here cancels, so 96 is *not* a lower bound on the real
 problem — it is a measurement of how much cancellation is worth, which is at
-least 4 gates.
+least 8 gates.
 
 ```python
 # the predicate, in full

@@ -24,7 +24,7 @@ Every row of the README's evidence ladder, and where it is checked:
 |---|---|
 | any circuit needs >= 56 | **A** (certificate) + **B9** (exhaustion, 166 s) + **C6** (prune-free, cited) |
 | any depth-3 circuit needs >= 80, certified (>= 81 from a solver run) | **A** (certified 80 + three controls) + **C4** (the step to 81, a solver run) |
-| cancellation-free >= 92, best known 102 | **A** (both derivations, the witness, the negative control) |
+| cancellation-free >= 96, best known 102 | **A** (both derivations, the independent checker, the embedded-92 control, the witness, the negative control) |
 | the records 97/91/88 | **A** (oracle + depth tightness) + **B11** (all 13, adversarial suite) + **[R](#tier-r--the-records-rebuilt)** (produced again from nothing, by the fastest route the project has for each: 7 of 9 circuits have a command, 2 do not and say why) |
 | under our block decomposition, no 87 shares the block structure of the known 88s | **B1–B7** (k = 9,10,11 + positive control + DRAT) + **C1–C3** (k = 12,13,14). The decomposition itself is measured, not assumed: 5/5 published 88s and 81.5 % of the corpus respect it, and a decomposition found by search reaches 90.75 % at the same price — measurement to be published with the toolkit, not re-runnable here |
 | no 87 one deletion away from any known 88 | **A** (controls, sample, banked re-derivation) + **B8** (Python/C agreement) + **C5** (the full run) |
@@ -103,7 +103,22 @@ soundness controls are not optional:
 | measured | **0.05 s + 0.12 s + 0.31 s** |
 | historical | the same — seconds, and always mandatory |
 
-### Ladder row 3 — *cancellation-free circuits need >= 92; best known 102* (**proved** / verified circuit)
+### Ladder row 3 — *cancellation-free circuits need >= 96; best known 102* (**proved** / verified circuit)
+
+The certified value is **96** since 2026-09-26 (`bounds/cf_gte96/`, a split-price certificate,
+refereed). The 92 commands below are kept and still run: that pack holds the published
+value and the 102-gate witness, and its table is re-priced by the new checker as a control.
+
+| | |
+|---|---|
+| command | `cd bounds && python3 cf_gte96/check_split_cert.py --aes-crosscheck` |
+| expected | `RESULT: certificate VALID.` / `B = 958521517/10000000 = 95.8521517` / `=> L_cf(M) >= 96` |
+| time | 0.04 s |
+| second derivation | `cd bounds && python3 cf_gte96/check_split_cert.py --cert cf_gte96/cert_cf96_split_referee.json` gives `B = 958521565/10000000 = 95.8521565` / `=> L_cf(M) >= 96` |
+| independent checker | `cd bounds && python3 cf_gte96/check_split_cert_independent.py --matrix matrix.txt --cert cf_gte96/cert_cf96_split.json --claim 96 --aes-crosscheck` prints `RESULT: certificate VALID  (B = 95.8521517, ceil = 96)` in 0.38 s, brute force over all 126,840 hierarchies included |
+| control | `cd bounds && python3 cf_gte96/check_split_cert.py --cert cf_gte96/cert_cf92_sharper_as_split.json` re-prices the old 92 table and gives exactly `B = 914098776/10000000 = 91.4098776` / `=> L_cf(M) >= 92` |
+
+#### The superseded 92, still checked
 
 | | |
 |---|---|

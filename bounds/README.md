@@ -1,7 +1,8 @@
 # Lower bounds, as arguments you can run
 
-Three lower bounds on the cost of AES MixColumns as an XOR circuit. Each one is
-packaged the same way: the claim, the technique named, a proof sketch you can
+Three lower bounds on the cost of AES MixColumns as an XOR circuit, in four
+packs (the cancellation-free bound has two generations). Each pack is built the
+same way: the claim, the technique named, a proof sketch you can
 read in a page, the certificate or data as a file, a checker that runs on it,
 and a `RUN.md` giving the exact command, the real expected output, and a
 measured wall time.
@@ -22,24 +23,25 @@ counting certificate — is defined once in
 
 | directory | claim | kind of evidence | check cost |
 |---|---|---|---|
-| [`cf_gte92/`](cf_gte92/) | `L_cf(M) >= 92` (cancellation-free), and `<= 102` | price certificate, solver-free; derived twice independently; plus an explicit witness | **0.03 s** |
+| [`cf_gte96/`](cf_gte96/) | `L_cf(M) >= 96` (cancellation-free), and `<= 102` | split-price certificate, solver-free; derived twice independently; refereed shared-nothing with a second, independent checker | **0.04 s** + **0.38 s** for the independent checker |
+| [`cf_gte92/`](cf_gte92/) | `L_cf(M) >= 92`, superseded by `cf_gte96/` | the published mask-only price certificate, kept so the cited value stays checkable; holds the 102-gate witness | **0.03 s** |
 | [`gte56/`](gte56/) | `L(M) >= 56`, unconditional | Theorem-N hypotheses checkable in closed form, plus an exhaustion that is shipped and re-runnable | **0.11 s** + **166 s** to re-run the exhaustion |
 | [`depth3_gte81/`](depth3_gte81/) | `N_depth3 >= 80` certified, `>= 81` by solver | exact rational dual certificate, plus three mandatory soundness controls | **0.29 s** + **0.5 s** of controls |
 
-Read `cf_gte92/` first. It is the only proved quantity in the whole programme
+Read `cf_gte96/` first. It is the only proved quantity in the whole programme
 that lies **above** the 88-gate record: every XOR circuit for MixColumns with at
-most 91 gates must contain a cancelling gate.
+most 95 gates must contain a cancelling gate.
 
 Each directory also has a `HOW.md`: the counting argument's shape, what the
 searcher or the checker actually does, and the entry-point command —
-[`cf_gte92/HOW.md`](cf_gte92/HOW.md), [`gte56/HOW.md`](gte56/HOW.md),
+[`cf_gte96/HOW.md`](cf_gte96/HOW.md), [`cf_gte92/HOW.md`](cf_gte92/HOW.md), [`gte56/HOW.md`](gte56/HOW.md),
 [`depth3_gte81/HOW.md`](depth3_gte81/HOW.md),
 [`validation/HOW.md`](validation/HOW.md).
 
 ## The three brackets, and what the gap is about
 
     L(M)         56  <=  L(M)  <= 88          (88 = the best known circuit)
-    L_cf(M)      92  <=  L_cf  <= 102         (cancellation-free only)
+    L_cf(M)      96  <=  L_cf  <= 102         (cancellation-free only)
     N_depth3     81  <=  N_d3  <= 97          (depth <= 3 only)
 
 `L(M) <= 88` and the two upper bounds are witnesses — explicit circuits — and
