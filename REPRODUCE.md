@@ -22,7 +22,8 @@ Every row of the README's evidence ladder, and where it is checked:
 
 | ladder row | tier |
 |---|---|
-| any circuit needs >= 56 | **A** (certificate) + **B9** (exhaustion, 166 s) + **C6** (prune-free, cited) |
+| any circuit needs >= 75 (computer-assisted, review draft) | **A75** (`cd bounds && sh gte75/checks/run_all.sh`, about 2 min: finite facts + exact certificates; see `bounds/gte75/RUN.md`) |
+| any circuit needs >= 56 (superseded by the 75, kept checkable) | **A** (certificate) + **B9** (exhaustion, 166 s) + **C6** (prune-free, cited) |
 | any depth-3 circuit needs >= 80, certified (>= 81 from a solver run) | **A** (certified 80 + three controls) + **C4** (the step to 81, a solver run) |
 | cancellation-free >= 96, best known 102 | **A** (both derivations, the independent checker, the embedded-92 control, the witness, the negative control) |
 | the records 97/91/88 | **A** (oracle + depth tightness) + **B11** (all 13, adversarial suite) + **[R](#tier-r--the-records-rebuilt)** (produced again from nothing, by the fastest route the project has for each: 7 of 9 circuits have a command, 2 do not and say why) |

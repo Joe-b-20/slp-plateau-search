@@ -14,3 +14,11 @@ campaign_87/
 bounds/gte56/mine
 corpus/deletion_certificate/tools/delcert
 encodings/proofs/*.drat
+
+# local proof bundles and archives (private working material; the public packs live in bounds/)
+69/
+75/
+76/
+AES_MixColumns_*
+AES_MixColumns_Lower_Bound_63/
+*:Zone.Identifier

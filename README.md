@@ -16,7 +16,7 @@ that collaboration. The choices behind the work, in his words:
 **Start here — three commands, all stdlib Python 3, all under a minute:**
 
 ```bash
-python3 bounds/gte56/check_gte56.py                  # the >= 56 bound, from its certificate
+sh bounds/gte75/checks/run_all.sh                    # the >= 75 bound: finite facts + exact certificates (about 2 min)
 python3 tools/tripwire.py YOURCIRCUIT.json           # a fired tripwire on an 88 IS an 87
 python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 5
 ```
@@ -30,7 +30,7 @@ Every claim this project makes, each in exactly one row:
 
 | claim | status |
 |---|---|
-| any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
+| any circuit needs ≥ 75 gates | **computer-assisted proof, review draft** — a standalone proof note, fourteen finite facts recomputed by script, exact Farkas certificates with two independent checkers; reviewed only by machine so far: `bounds/gte75/` (supersedes the ≥ 56 pack, which stays checkable). A certified but less reviewed extension to ≥ 76 is described in the same pack |
 | any depth-3 circuit needs ≥ 80 gates | **proved** — rational certificate, re-checks in under a second: `bounds/depth3_gte81/` |
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
 | cancellation-free circuits need ≥ 96 (best known: 102) | **proved** — split-price certificate + two checkers, refereed; supersedes the earlier 92: `bounds/cf_gte96/` / verified circuit |
@@ -75,8 +75,17 @@ Each with its statement, a ≤ 1-page writeup of the technique, the certificate,
 and a checker that runs on any 32×32 matrix — validated against small
 instances with known optima (`bounds/README.md`):
 
-- **≥ 56, unconditional** — a counting argument over reachable value sets;
-  the full exhaustion re-runs inside `bounds/` in ~3 minutes on one core.
+- **≥ 75, unconditional (computer-assisted, review draft)** — parity classes of
+  the signals, an odd-signal graph, exact transposition and a bounded potential
+  over repeated transposition, then a linear system on helper types whose
+  infeasibility at 73 and 74 gates is certified by integer multipliers; every
+  finite fact about the matrix re-computes in 35 s and every certificate
+  re-checks in 30 s (`bounds/gte75/`). Reviewed by programs and by independent
+  machine reviews, by no human yet. A certified extension to **≥ 76** exists
+  but is not yet in citable form (`bounds/gte75/bound_76/README.md`).
+- **≥ 56, unconditional** — the earlier counting argument over reachable value
+  sets, superseded by the 75 but kept checkable; the full exhaustion re-runs
+  inside `bounds/` in ~3 minutes on one core.
 - **≥ 80 at depth 3, certified; ≥ 81 from a solver run** — enumerate a complete
   structural model of every depth-3 circuit, add proved-valid inequalities, and
   certify an exact *rational LP dual* over the resulting 72,830 × 29,180 system.
