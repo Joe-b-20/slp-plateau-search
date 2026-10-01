@@ -286,12 +286,23 @@ Read this before quoting the theorem.
    this block structure" is conditional on this one, which is why every
    statement of the result in these repositories is scoped *under our block
    decomposition*; the decomposition is named above so that the condition is
-   checkable. Whether every known 88-gate circuit respects it was not verified,
-   and this pack does not answer that question. Real circuits do put values
-   across these boundaries: the companion records repository ships a verified
-   91-gate depth-6 circuit, `mixcolumns_91gates_depth6`, whose gate 70 has line
-   support `{2, 3, 4, 7}` — inside the merged block, but inside neither W3
-   `{2, 3, 7}` nor U4 `{3, 4, 7}` on its own.
+   checkable. Which circuits respect it has now been measured: **5 of the 5
+   published 88s, with zero violating gates, and 23,456 of the 28,796 corpus
+   88s that have a build order on disk — 81.5 %.** The test can fail, and does:
+   it flags gate 70 of the companion records repository's verified
+   `mixcolumns_91gates_depth6`, line support `{2, 3, 4, 7}` — inside the merged
+   block, but inside neither W3 `{2, 3, 7}` nor U4 `{3, 4, 7}` on its own. The
+   18.5 % that do not respect it almost all carry one value spanning lines 0
+   and 2, which no block of this decomposition holds together. A decomposition
+   that does hold them together is respected by 99.2 %, but the block that holds
+   them has dimension 16, still beyond exact pricing. Ours is also not the best that can
+   be priced: a search over decompositions found one automatically that is
+   respected by **26,132 of the 28,796 — 90.75 %, 2,676 more than ours** — at
+   the same total price of 88, with every block priced exactly and every block
+   paying for the values it holds. The ceiling over decompositions all of whose
+   blocks can be priced exactly is **91.1 %**. So the theorem's scope is that
+   81.5 % class plus the five published 88s. Measurement to be published
+   with the toolkit; this pack does not carry it.
 3. **It closes one class rather than the problem.** The statement it supports
    is: *no 87 exists whose W3 and U4 blocks are built jointly in ≤ 14 gates.*
    An 87 could still exist that cuts the matrix somewhere else entirely.

@@ -106,11 +106,20 @@ high because the *artifact* is one 4.3 MB file and needs nothing else.
 
 **What it does not settle.** Even a confirmed UNSAT is class-conditional: an 87
 outside that decomposition is untouched. The decomposition it lives inside is a
-choice of ours; whether every known 88 respects it was not verified, and the
-companion records repository ships a verified 91-gate depth-6 circuit whose
-gate 70 (line support `{2, 3, 4, 7}`) fits no single block of it. That is a live
-defect, and it is the reason this lead is about *reproducing* the result rather
-than extending it.
+choice of ours, and the class is now sized: 5 of the 5 published 88s respect it,
+and 23,456 of the 28,796 corpus 88s with a build order on disk — 81.5 %. The
+check can fail, and does: the companion records repository ships a verified
+91-gate depth-6 circuit whose gate 70 (line support `{2, 3, 4, 7}`) fits no
+single block of it. The 18.5 % that violate almost all carry one value spanning
+lines 0 and 2, which no block holds together; a decomposition that does hold
+them together is respected by 99.2 %, but still needs a block of dimension 16,
+beyond exact pricing. Ours is not the best that can be priced either: a search over
+decompositions found one automatically that is respected by 26,132 of the 28,796
+— 90.75 %, 2,676 more than ours — at the same total price of 88, every block
+priced exactly and every block paying for the values it holds; 91.1 % is the
+ceiling over decompositions that can be priced exactly. Measurement
+to be published with the toolkit. Reproducing the k = 14 result is still what
+this lead asks for; it does not widen the class.
 
 ---
 

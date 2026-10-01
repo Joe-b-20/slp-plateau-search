@@ -183,10 +183,11 @@ does this — formally, if `popcount(mask(a) & mask(b)) == 0` at every gate.
 
 Cancellation-free circuits are the easy case: without cancellation the problem
 is a covering problem and admits a lower-bound argument. That argument gives
-**92** for MixColumns, and the best cancellation-free circuit known has 102.
-Every record circuit here cancels, so 92 is *not* a lower bound on the real
+**96** for MixColumns (a split-price certificate, `bounds/cf_gte96/`; the earlier
+mask-only certificate gave 92), and the best cancellation-free circuit known has
+102. Every record circuit here cancels, so 96 is *not* a lower bound on the real
 problem — it is a measurement of how much cancellation is worth, which is at
-least 4 gates.
+least 8 gates.
 
 ```python
 # the predicate, in full
@@ -208,12 +209,23 @@ of the circuit: change the partition and you change the block structure.
 Statements of the form "no 87 shares the block structure of the known 88s" are
 therefore conditional on the decomposition, which is why every one of them in
 these repositories is scoped *under our block decomposition* and names it. The
-decomposition this project's block reasoning uses is a choice; whether every
-known 88 respects it was not verified, and the companion records repository
-ships a verified 91-gate depth-6 circuit whose gate 70 has line support
-`{2, 3, 4, 7}` and so fits no single block of it. That is a known open defect.
-The decisive level of the theorem stated over this decomposition also carries no
-DRAT proof.
+decomposition this project's block reasoning uses is a choice, and which
+circuits respect it has been measured: 5 of the 5 published 88s, and 23,456 of
+the 28,796 corpus 88s with a build order on disk — 81.5 %. The check can fail,
+and does: the companion records repository ships a verified 91-gate depth-6
+circuit whose gate 70 has line support `{2, 3, 4, 7}` and so fits no single
+block of it. The 18.5 % that violate almost all carry one value spanning lines 0
+and 2, which no block holds together; a decomposition that does hold them
+together is respected by 99.2 % but has a block of dimension 16, beyond exact
+pricing.
+Ours is also not the best that can be priced: a search over decompositions found
+one automatically that is respected by 26,132 of the 28,796 — 90.75 %, 2,676
+more than ours — at the same total price of 88, with every block priced exactly
+and every block paying for the values it holds; 91.1 % is the ceiling over
+decompositions that can be priced exactly. So a block-structure statement covers
+that 81.5 % class and the five published 88s, and says nothing outside it.
+Measurement to be published with the toolkit. The decisive level of the theorem
+stated over this decomposition also carries no DRAT proof.
 
 ---
 

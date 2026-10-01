@@ -59,7 +59,7 @@ field is in the section of the same number below.
 | # | result | strength |
 |---|---|---|
 | [1](#1-lb-56) | Every MixColumns circuit needs at least 56 gates. | `theorem` |
-| [2](#2-lb-92-cancellation-free) | Cancellation-free circuits need at least 92 gates; the best one known has 102. | `theorem` |
+| [2](#2-lb-96-cancellation-free) | Cancellation-free circuits need at least 96 gates; the best one known has 102. | `theorem` |
 | [3](#3-lb-80-depth3) | Circuits of depth 3 or less need at least 80 gates. | `theorem` |
 | [4](#4-tripwire-b-never-fired) | The working-gate count B is at most n - 32, and anything smaller yields a smaller circuit; on every 88 tested B was 56. | `theorem` |
 | [5](#5-no-87-one-deletion) | No 87 is one gate-deletion away from a known 88: 88,228,896 deletions, 0 realisable. | `exhaustive` |
@@ -100,19 +100,19 @@ field is in the section of the same number below.
 
 **What it does NOT imply.** It is 32 gates below the best circuit anyone has. The statement it supports is 56 <= L(M) <= 88, and the gap is 32 gates. Nothing in this repository narrows it.
 
-### 2. lb-92-cancellation-free
+### 2. lb-96-cancellation-free
 
-**Claim.** A circuit in which no gate's two inputs share a term - so no bit is ever computed and then cancelled - needs at least 92 gates. The best such circuit known has 102.
+**Claim.** A circuit in which no gate's two inputs share a term - so no bit is ever computed and then cancelled - needs at least 96 gates. The best such circuit known has 102. (Refereed 2026-09-26; supersedes the earlier certified 92, whose pack is kept as the published value.)
 
 **Strength.** **theorem** - proved, unconditional within its stated hypothesis
 
-**Scope.** Unconditional over cancellation-free straight-line programs for this matrix. Solver-free certificate.
+**Scope.** Unconditional over cancellation-free straight-line programs for this matrix. Solver-free split-price certificate (prices keyed by target, mask and split), two independent derivations, two independent checkers. The mask-only family that gave 92 is capped at 91.41 and the split family at 95.85, so neither can reach 97; an exact solver run reached a dual bound of 99 (a run, not a certificate).
 
 **Cost.** Solver-free.
 
-**Artifact (shipped).** `bounds/cf_gte92/STATEMENT.md`, `bounds/cf_gte92/cert_cf92.json`, `bounds/cf_gte92/cert_cf92_sharper.json`, `bounds/cf_gte92/cf_102gates_depth5.json`
+**Artifact (shipped).** `bounds/cf_gte96/STATEMENT.md`, `bounds/cf_gte96/cert_cf96_split.json`, `bounds/cf_gte96/cert_cf96_split_referee.json`, `bounds/cf_gte92/cf_102gates_depth5.json`
 
-**What it does NOT imply.** It bounds nothing about circuits that DO cancel, and every record circuit here cancels. It only reframes the question as 'how much does cancellation buy?' - the records answer 'at least 4'; an 87 would answer 'at least 5'. It is not a lower bound on L(M).
+**What it does NOT imply.** It bounds nothing about circuits that DO cancel, and every record circuit here cancels. It only reframes the question as 'how much does cancellation buy?' - the records answer 'at least 8'; an 87 would answer 'at least 9'. It is not a lower bound on L(M).
 
 ### 3. lb-80-depth3
 
@@ -289,7 +289,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 **Strength.** **exhaustive** - every case in a stated finite population was decided
 
-**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell. The decomposition is a choice of ours; whether every known 88 respects it was not verified, and there is no DRAT proof at k = 14 - the level rests on two complete solvers agreeing on one CNF.
+**Scope.** Sizes 9 through 14 all exhaustively UNSAT for the merged block: dimension 16, 8 targets, at one decomposition cell. The decomposition is a choice of ours, and the class it names has been measured: 5 of the 5 published 88s respect it, and 23,456 of the 28,796 corpus 88s with a build order on disk - 81.5 %. There is no DRAT proof at k = 14 - the level rests on two complete solvers agreeing on one CNF.
 
 **Cost.** 356,321 core-seconds (about 99 core-hours) for the last size alone, kissat 4.0.4, one monolithic solve; about 30 hours of solver time for the ladder below it.
 
@@ -304,7 +304,7 @@ cd encodings && python3 code/solve_dimacs.py cnf/k9_joint_W3U4.cnf
 
 **Artifact (shipped).** `encodings/cnf/k14_joint_W3U4.cnf`, `encodings/STATEMENT.md`, `encodings/logs/BANKED_LOGS.md`, `encodings/logs/mono_14_kissat404.log`, `encodings/logs/mono_14_cadical300.log`, `encodings/positive_control/mixcolumns_88gates_depth7.json`
 
-**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched. The decomposition all of this reasoning lives inside was chosen rather than measured off the circuits, whether every known 88 respects it was not verified, and the companion records repository ships a verified 91-gate depth-6 circuit whose gate 70 (line support {2,3,4,7}) fits no single block of it. There is no DRAT proof at k = 14. Partial cube-coverage fractions from this lane must not be quoted.
+**What it does NOT imply.** Not a proof that no 87 exists - an 87 outside this decomposition is untouched, and that is 18.5 % of the corpus 88s. The check can fail, and does: the companion records repository ships a verified 91-gate depth-6 circuit whose gate 70 (line support {2,3,4,7}) fits no single block of it. The violating circuits almost all carry one value spanning lines 0 and 2, which no block holds together; a decomposition that does hold them together is respected by 99.2 % but still needs a block of dimension 16, beyond exact pricing. Ours is not the best that can be priced either: a search over decompositions found one automatically that is respected by 26,132 of the 28,796 - 90.75 %, 2,676 more than ours - at the same total price of 88, with every block priced exactly and every block paying for the values it holds; 91.1 % is the ceiling over decompositions that can be priced exactly. The block prices sum to an upper bound on the class, never a lower bound on circuits: reading them downwards would need each block priced against every value whose support lies inside it at any level, since a respecting circuit may build its operands in any order, and what is priced is the smaller supply one build order realises, and turning the sum into a lower bound is the open step. Measurement to be published with the toolkit. There is no DRAT proof at k = 14. Partial cube-coverage fractions from this lane must not be quoted.
 
 ### 15. last-door-13
 

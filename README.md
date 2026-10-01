@@ -16,7 +16,7 @@ that collaboration. The choices behind the work, in his words:
 **Start here — three commands, all stdlib Python 3, all under a minute:**
 
 ```bash
-python3 bounds/gte56/check_gte56.py                  # the >= 56 bound, from its certificate
+sh bounds/gte75/checks/run_all.sh                    # the >= 75 bound: finite facts + exact certificates (about 2 min)
 python3 tools/tripwire.py YOURCIRCUIT.json           # a fired tripwire on an 88 IS an 87
 python3 verify_circuit.py evidence/circuits/mixcolumns_88gates_depth5_fromscratch.json 5
 ```
@@ -30,12 +30,12 @@ Every claim this project makes, each in exactly one row:
 
 | claim | status |
 |---|---|
-| any circuit needs ≥ 56 gates | **proved** — certificate + checker: `bounds/` |
+| any circuit needs ≥ 75 gates | **computer-assisted proof, review draft** — a standalone proof note, fourteen finite facts recomputed by script, exact Farkas certificates with two independent checkers; reviewed only by machine so far: `bounds/gte75/` (supersedes the ≥ 56 pack, which stays checkable). A certified but less reviewed extension to ≥ 76 is described in the same pack |
 | any depth-3 circuit needs ≥ 80 gates | **proved** — rational certificate, re-checks in under a second: `bounds/depth3_gte81/` |
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
-| cancellation-free circuits need ≥ 92 (best known: 102) | **proved** / verified circuit |
+| cancellation-free circuits need ≥ 96 (best known: 102) | **proved** — split-price certificate + two checkers, refereed; supersedes the earlier 92: `bounds/cf_gte96/` / verified circuit |
 | the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — each rebuilds from scratch with one command (`reproduce/`); the 88 @ 5 search is randomized and its recorded re-runs missed, see `REPRODUCE.md` Tier R |
-| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice and an 87 with a different structure is not excluded — see [The block-structure theorem](#the-block-structure-theorem) |
+| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded; a decomposition found by search reaches 90.75 % at the same price — see [The block-structure theorem](#the-block-structure-theorem) |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct verified 88-gate value sets (28,796 of them also carry a full build order), 0 realisable |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
 | no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive at that radius**; weak evidence beyond it — see calibration |
@@ -75,8 +75,17 @@ Each with its statement, a ≤ 1-page writeup of the technique, the certificate,
 and a checker that runs on any 32×32 matrix — validated against small
 instances with known optima (`bounds/README.md`):
 
-- **≥ 56, unconditional** — a counting argument over reachable value sets;
-  the full exhaustion re-runs inside `bounds/` in ~3 minutes on one core.
+- **≥ 75, unconditional (computer-assisted, review draft)** — parity classes of
+  the signals, an odd-signal graph, exact transposition and a bounded potential
+  over repeated transposition, then a linear system on helper types whose
+  infeasibility at 73 and 74 gates is certified by integer multipliers; every
+  finite fact about the matrix re-computes in 35 s and every certificate
+  re-checks in 30 s (`bounds/gte75/`). Reviewed by programs and by independent
+  machine reviews, by no human yet. A certified extension to **≥ 76** exists
+  but is not yet in citable form (`bounds/gte75/bound_76/README.md`).
+- **≥ 56, unconditional** — the earlier counting argument over reachable value
+  sets, superseded by the 75 but kept checkable; the full exhaustion re-runs
+  inside `bounds/` in ~3 minutes on one core.
 - **≥ 80 at depth 3, certified; ≥ 81 from a solver run** — enumerate a complete
   structural model of every depth-3 circuit, add proved-valid inequalities, and
   certify an exact *rational LP dual* over the resulting 72,830 × 29,180 system.
@@ -88,8 +97,12 @@ instances with known optima (`bounds/README.md`):
   documented run rather than a certificate; it improves with compute and was
   still rising when stopped. `bounds/depth3_gte81/STATEMENT.md` states both and
   says to cite them differently.
-- **≥ 92 cancellation-free** — derived twice independently; with the shipped
-  102-gate cancellation-free circuit: `92 ≤ optimum_cf ≤ 102`.
+- **≥ 96 cancellation-free** — a split-price certificate (prices keyed by target,
+  mask *and* split), derived twice independently and refereed shared-nothing; with
+  the shipped 102-gate cancellation-free circuit: `96 ≤ optimum_cf ≤ 102`. It
+  supersedes the mask-only 92 (`bounds/cf_gte92/`, kept as the published value).
+  The split family's own optimum is 95.85, so it cannot reach 97; an exact solver
+  run reached a dual bound of 99 (a run, not a certificate).
 
 ## The block-structure theorem
 
@@ -115,20 +128,44 @@ The encoding's positive control produces and verifies a real circuit at a
 satisfiable setting — proof it can say yes.
 
 **The scope, in full.** The block decomposition this argument is stated over
-was chosen, not measured. Whether every known 88-gate circuit respects it was
-not verified, and the companion records repository ships a verified 91-gate
-depth-6 circuit, `mixcolumns_91gates_depth6`, whose gate 70 has line support
-`{2, 3, 4, 7}` — inside the merged block, but inside neither W3 `{2, 3, 7}` nor
-U4 `{3, 4, 7}` on its own. Real circuits do put values across these boundaries,
-so the decomposition is a reading imposed on the circuits rather than a
-property read off them. That is a live defect, recorded in `DEFINITIONS.md`,
-`encodings/STATEMENT.md` §7.2 and `leads.md` #2, and it is why the theorem is
-quoted with "under our block decomposition" everywhere it appears.
+was chosen, not measured off the circuits. It has now been measured:
 
-The consequence, with that scope carried: an 87, if it exists, is built
-differently from every 88 anyone has found *as this decomposition reads them*.
-That says where an 87 cannot be, and says nothing about whether one exists
-elsewhere. Encodings, instances, DRAT proofs for the cheap levels, the banked
+| known 88-gate circuits | respect the decomposition |
+|---|---|
+| the five published 88s | **5 / 5**, zero violating gates |
+| the 28,796 corpus 88s with a build order on disk | **23,456 = 81.5 %** |
+
+The test can fail, and does: it flags gate 70 of the companion records
+repository's verified `mixcolumns_91gates_depth6`, line support `{2, 3, 4, 7}`
+— inside the merged block, but inside neither W3 `{2, 3, 7}` nor U4
+`{3, 4, 7}` on its own. The 18.5 % that do not respect it almost all carry one
+value spanning lines 0 and 2, which no block of this decomposition holds
+together. Ours is also not the best that can be priced exactly. A search over
+decompositions found a better one automatically:
+
+| decomposition | respected by | priced exactly |
+|---|---|---|
+| ours | **81.5 %** | yes, total 88 |
+| the one the search found | **90.75 %** = 26,132 | yes, total 88 |
+| one that holds lines 0 and 2 together | **99.2 %** | no — one block of dimension 16 |
+| the ceiling over decompositions that can be priced exactly | **91.1 %** | — |
+
+The one the search found holds 2,676 more circuits than ours, and every one of
+its blocks pays for the values it holds — none of them absorbs circuits for
+free. Measurement to be published
+with the toolkit.
+
+The consequence is unchanged in substance and now quantified: the theorem covers
+the 81.5 % class and the five published 88s, and an 87 outside that class is not
+excluded. The block prices still sum to an *upper* bound on the class rather
+than a lower bound on circuits — reading them downwards would need each block
+priced against every value whose support lies inside it at any level, because a
+respecting circuit may build its operands in any order, and what is priced here
+is the smaller supply that one build order realises. Turning the sum into a
+lower bound is the open step. The same scope is recorded
+in `DEFINITIONS.md`, `encodings/STATEMENT.md` §7.2 and `leads.md` #2, and it is
+why the theorem is quoted with "under our block decomposition" everywhere it
+appears. Encodings, instances, DRAT proofs for the cheap levels, the banked
 k = 14 logs, and the control are in `encodings/`.
 
 ## A hypothesis that died
