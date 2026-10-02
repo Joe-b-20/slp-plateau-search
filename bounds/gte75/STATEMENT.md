@@ -4,13 +4,14 @@
 32 x 32 matrix `../matrix.txt`) has at least **75** gates. With the verified 88-gate circuits:
 `75 <= L(M) <= 88`. Not claimed: that 88 is optimal, or any 87-gate circuit.
 
-**Status: computer-assisted, review draft (version 1.0, 2026-10-01).** The argument is written out in full in
+**Status: computer-assisted, review draft (note version 1.1, 2026-10-02; first released 2026-10-01).** The argument is written out in full in
 `PROOF_NOTE_75.md` (also as PDF, 18 pages); fourteen finite facts about the matrix are computed by
 `checks/finite_facts.py`; the last two steps (73 and 74 gates) are exact Farkas certificates checked by two
 independent standard-library programs each. The argument was produced with large-language-model assistance
 and has been reviewed by programs and by independent machine reviews (note, section 13); no human
 mathematician has refereed it; nothing is formalized. The canonical copy of the note is in the records
-repository, `aes-mixcolumns-xor-circuits`, folder `lower_bounds/` (tag v4.0.0); the files here are identical.
+repository, `aes-mixcolumns-xor-circuits`, folder `lower_bounds/` (first released as v4.0.0, Zenodo DOI
+10.5281/zenodo.23091495); the files here are identical.
 
 **Technique, in one paragraph.** Classify every signal by the parity of its mask. Then G = 32 + x + y + h
 (odd+odd gates, even+even gates, odd non-output gates). The even span is the parity space of a partition of

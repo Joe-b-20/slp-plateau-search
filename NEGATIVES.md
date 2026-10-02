@@ -98,7 +98,9 @@ field is in the section of the same number below.
 
 **Artifact (shipped).** `bounds/gte56/STATEMENT.md`, `bounds/gte56/cert56.json`, `bounds/gte56/check_gte56.py`, `bounds/gte56/mine.c`
 
-**What it does NOT imply.** It is 32 gates below the best circuit anyone has. The statement it supports is 56 <= L(M) <= 88, and the gap is 32 gates. Nothing in this repository narrows it.
+**What it does NOT imply.** It is 32 gates below the best circuit anyone has. The statement it supports is 56 <= L(M) <= 88, and the gap is 32 gates.
+
+**Superseded (2026-10-01).** The computer-assisted proof in `bounds/gte75/` (a review draft, reviewed by machine only so far) gives 75 <= L(M) <= 88, a gap of 13; this entry is kept as the earlier, pen-and-paper result.
 
 ### 2. lb-96-cancellation-free
 
@@ -285,7 +287,7 @@ nice -n 19 python3 tools/aggregate.py   # re-derives the full-corpus verdict fro
 
 ### 14. merged-block-15
 
-**Claim.** Under our block decomposition, the two largest sub-blocks of every known 88, built jointly rather than separately, provably cost 15 gates - exactly what they cost apart. Merging them buys nothing, so no 87 exists that has the same block structure as the known 88s read through that decomposition.
+**Claim.** Under our block decomposition, the two largest sub-blocks of every known 88, built jointly rather than separately, provably cost 15 gates - exactly what they cost apart. Merging them buys nothing. This is a statement about the fixed encoded block subproblem; it does not by itself exclude an 87 that respects the decomposition, because the block prices sum to an upper bound on the class rather than a lower bound on circuits, and the lower-bound reading is an open step (README, block-structure theorem).
 
 **Strength.** **exhaustive** - every case in a stated finite population was decided
 

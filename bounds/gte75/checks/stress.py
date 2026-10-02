@@ -342,3 +342,7 @@ if __name__ == '__main__':
     rep = {'circuits': n, 'failures': bad, 'min_slack': dict(sorted(mins.items())), 'facts_hist_top': facts_hist.most_common(12)}
     json.dump(rep, open(__file__.replace('.py', '.json'), 'w'), indent=1, default=str)
     print(json.dumps(rep, indent=1, default=str))
+    if bad or n == 0:
+        print(f'STRESS TEST FAILED: {len(bad)} failing circuits, {n} tested', file=sys.stderr)
+        sys.exit(1)
+    print(f'STRESS TEST PASSED: {n} circuits, 0 failures')

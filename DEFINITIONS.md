@@ -223,7 +223,10 @@ one automatically that is respected by 26,132 of the 28,796 — 90.75 %, 2,676
 more than ours — at the same total price of 88, with every block priced exactly
 and every block paying for the values it holds; 91.1 % is the ceiling over
 decompositions that can be priced exactly. So a block-structure statement covers
-that 81.5 % class and the five published 88s, and says nothing outside it.
+that 81.5 % class and the five published 88s, and says nothing outside it; and
+even inside it, the merged-block price of 15 is a statement about the encoded
+subproblem, not yet a lower bound on circuits (the block prices sum to an upper
+bound; the lower-bound reading is the open step recorded in the README).
 Measurement to be published with the toolkit. The decisive level of the theorem
 stated over this decomposition also carries no DRAT proof.
 

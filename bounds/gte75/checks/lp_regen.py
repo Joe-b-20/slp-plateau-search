@@ -126,6 +126,9 @@ if __name__ == '__main__':
     json.dump({'G74_states': len(states), 'G74_claims': len(claims), 'G74_survivors': len(survivors), 'identical_claims': same,
                'mine_below_certified': len(mine_weaker), 'certified_but_feasible_in_mine': len(bad), 'unknown_lp': UNKNOWN},
               open(__file__.replace('.py', '_74.json'), 'w'), indent=1, default=str)
+    if survivors or mine_weaker or bad or UNKNOWN or same != len(claims):
+        print('LP CROSS-CHECK FAILED (see the counts above)', file=sys.stderr); sys.exit(1)
+    print('LP CROSS-CHECK PASSED: 0 survivors at G=74, all claims identical, no certified key feasible')
     if len(sys.argv) > 1 and sys.argv[1] == '75':
         states, claims, survivors = run(75)
         json.dump({'G75_states': len(states), 'G75_claims': len(claims), 'G75_survivors': len(survivors),

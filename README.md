@@ -6,8 +6,9 @@ evidence it produced. The circuits themselves are published in
 this repository holds the proofs, the negative results, the instruments, and the
 open problems.
 
-**Where it stands: `56 ≤ minimum ≤ 88`. No 87 was found. 88 is not proven
-optimal.**
+**Where it stands: `75 ≤ L(M) ≤ 88`. The 75 is a computer-assisted proof
+offered as a review draft (`bounds/gte75/`); the earlier proved floor was 56.
+No 87 was found. 88 is not proven optimal.**
 
 One author, Joe, working with AI agents he directed; "we" on these pages means
 that collaboration. The choices behind the work, in his words:
@@ -35,7 +36,7 @@ Every claim this project makes, each in exactly one row:
 | …and ≥ 81 gates | **solver run, not a certificate** — a sound dual bound from a time-limited run; see [The lower bounds](#the-lower-bounds) |
 | cancellation-free circuits need ≥ 96 (best known: 102) | **proved** — split-price certificate + two checkers, refereed; supersedes the earlier 92: `bounds/cf_gte96/` / verified circuit |
 | the records: 97 @ depth 3, 91 @ depth 4, 88 @ depth 5 | **verified circuits** — each rebuilds from scratch with one command (`reproduce/`); the 88 @ 5 search is randomized and its recorded re-runs missed, see `REPRODUCE.md` Tier R |
-| **under our block decomposition**, no 87 shares the internal block structure of the known 88s (its merged top block needs exactly 15 gates; 9–14 all impossible) | **proved** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded; a decomposition found by search reaches 90.75 % at the same price — see [The block-structure theorem](#the-block-structure-theorem) |
+| **under our block decomposition**, the merged pair of its two largest blocks costs exactly 15 gates (9–14 all impossible). This is a statement about the fixed encoded block subproblem, not a lower bound on circuits: the block prices sum to an *upper* bound on the class, and turning that into "no 87 respects the decomposition" is an open step (see [The block-structure theorem](#the-block-structure-theorem)) | **proved for the encoded block subproblem** — SAT with a positive control; k = 14 decided by two independent solver engines on one encoding, no DRAT proof at that level; the decomposition is our choice, measured as respected by 5/5 published 88s and 81.5 % of the corpus, and an 87 outside that class is not excluded; a decomposition found by search reaches 90.75 % at the same price — see [The block-structure theorem](#the-block-structure-theorem) |
 | no 87 is one gate-deletion away from any known 88, even with free rewiring of the rest | **exhaustive** — 88,228,896 deletions over all 1,575,516 distinct verified 88-gate value sets (28,796 of them also carry a full build order), 0 realisable |
 | every design rule shared by the known 88s, loosened one at a time and the loosened problem solved exactly, still costs 88 | **exhaustive within each variant** — ~200 variants, none below 88 |
 | no 87 within any change of ≤ 4 gates of a known 88 | **exhaustive at that radius**; weak evidence beyond it — see calibration |
@@ -58,7 +59,8 @@ cancellation-free, vocabulary, radius) are defined with runnable checks in
 
 ## What is NOT claimed
 
-Optimality. The 56–88 gap is real and 32 wide. The small-edit negatives above
+Optimality. The 75–88 gap is real and 13 wide (32 wide under the earlier 56
+bound; the 75 is a review draft, not yet refereed by a human). The small-edit negatives above
 prove exactly their stated radius and no more: genuinely different solutions
 are about 42 gate-changes apart, far beyond any radius exhausted here. The
 corpus is one search lineage: **1,575,516 distinct verified 88-gate value
@@ -108,7 +110,11 @@ instances with known optima (`bounds/README.md`):
 
 The known 88s are *read* through one block layout, and this theorem is a
 statement about that layout. Statement: building the merged pair of its two
-largest blocks takes exactly 15 gates — 9 through 14 are UNSAT.
+largest blocks takes exactly 15 gates — 9 through 14 are UNSAT. It is a result
+about the fixed encoded block subproblem; by itself it does not exclude an
+87-gate circuit, not even one that respects the decomposition (see the scope
+paragraph below: the block prices sum to an upper bound, and the lower-bound
+reading is the open step).
 
 **What decided k = 14, exactly.** kissat 4.0.4, one core, 356,321.63 s ≈ 99
 core-hours, 2026-09-01 — and, independently, CaDiCaL 3.0.0 on the *same
