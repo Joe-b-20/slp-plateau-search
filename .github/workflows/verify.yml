@@ -72,6 +72,10 @@ jobs:
           python3 cf_gte96/check_split_cert.py --cert cf_gte96/cert_cf96_split_referee.json
           python3 cf_gte96/check_split_cert.py --cert cf_gte96/cert_cf92_sharper_as_split.json
           python3 cf_gte96/check_split_cert_independent.py --matrix matrix.txt --cert cf_gte96/cert_cf96_split.json --claim 96 --aes-crosscheck
+      # The 75 pack: finite facts, exact certificates, stress test; standard library, about 2 minutes.
+      # Its runner exits nonzero on any failure (fixed 2026-10-02: the first version piped into tail).
+      - name: Lower-bound pack gte75 (75 <= L(M), computer-assisted review draft)
+        run: sh bounds/gte75/checks/run_all.sh
       - name: The tripwire must stay silent on the records and fire on a planted defect
         run: |
           set -e

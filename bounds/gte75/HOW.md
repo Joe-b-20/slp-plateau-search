@@ -20,4 +20,5 @@ The programs compute numbers about the fixed matrix and check integer certificat
 the inequalities are necessary conditions for circuits or that the potential argument is sound; that is the
 text, sections 1-11, and it is what a reviewer must read (note, section 12).
 
-Entry point: `sh checks/run_all.sh` from this directory (about 2 minutes), or the commands in `RUN.md`.
+Entry point: `sh checks/run_all.sh` from this directory (about 2 minutes; exits nonzero on any failure), or the
+commands in `RUN.md`.

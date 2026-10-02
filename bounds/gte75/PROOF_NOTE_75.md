@@ -1,6 +1,7 @@
 # A computer-assisted lower bound of 75 two-input XOR gates for AES MixColumns
 
-**Review draft, version 1.0, 2026-10-01.** Joe Bachir.
+**Review draft, version 1.1, 2026-10-02.** Joe Bachir. (Version 1.0 was 2026-10-01; 1.1 corrects one
+cross-reference in section 10 and the commands of section 14 after a review of the verification runner.)
 
 **Status.** Computer-assisted. The mathematical argument is written out in full below; the fourteen finite
 facts about the fixed matrix that it uses (section 12) are computed by programs shipped next to this note, and
@@ -466,7 +467,8 @@ the aggregates
     (L23) q = 6:  N3 + 3N4 + 4N5 + 4N6 <= 4;   q = 7:  2N3 + 7N4 + 12N5 + 14N6 + 14N7 <= 14,
           where N_j = sum_(u=j) n                                 [missing-label packing]
 
-where rho_6 = 20 (M) or 28 (M^T) and rho = 32 - dim J = 8 (M) or 4 (M^T) with J as in Lemma 10.6.
+where rho_6 = 20 (M) or 28 (M^T) and rho = 32 - dim J = 8 (M) or 4 (M^T), with J the fixed space of
+Lemma 10.2 chosen as in fact F9.
 
 *Proof of (L1)-(L3).* Lemma 4.2 and the definition of v. []
 
@@ -750,8 +752,14 @@ The method repository records all of it.
 
 ## 14. Reproduction
 
-From the folder `lower_bounds/` of this repository, Python 3 standard library only (`lp_regen.py` and
-`stress.py` are optional cross-checks; `lp_regen.py` needs numpy and scipy):
+From the folder `lower_bounds/` of this repository (Python 3 standard library only; the optional LP cross-check
+`lp_regen.py` needs numpy and scipy and is run only with `--with-lp`). The runner stops at the first failing
+check and exits nonzero; a green run ends with `ALL CHECKS PASSED`.
+
+    sh checks/run_all.sh                    # every check below except the LP cross-check (about 2 minutes)
+    sh checks/run_all.sh --with-lp          # the same plus lp_regen.py
+
+Script by script (each exits nonzero on failure):
 
     python3 checks/finite_facts.py          # every finite fact F1-F14; ends with ALL FINITE PREMISES RECOMPUTED AND MATCH (about 35 s)
     python3 checks/check72.py               # Proposition 8.4 enumeration (4, 12, 23 pairs; minimum increments 13, 9, 3)
@@ -761,8 +769,8 @@ From the folder `lower_bounds/` of this repository, Python 3 standard library on
     python3 checks/independent74.py         # the same, second implementation
     python3 checks/certify75.py             # G = 74: 1,102 profiles, 2,204 claims, 4,057 certificates, largest rhs -1
     python3 checks/independent75.py         # the same, second implementation (9,604 references, 927 direct)
-    python3 checks/stress.py                # optional: identities and rows on the repository's circuits (0 failures)
-    python3 checks/lp_regen.py              # optional: regenerates the G = 74 claims with an LP (needs numpy, scipy)
+    python3 checks/stress.py                # identities and rows on the repository's circuits; ends with STRESS TEST PASSED
+    python3 checks/lp_regen.py              # optional: regenerates the G = 74 claims with an LP (numpy, scipy); ends with LP CROSS-CHECK PASSED
     python3 ../verify.py                    # the 88-gate upper bound
 
 Expected outputs are recorded in `checks/EXPECTED_RESULTS.md`.
